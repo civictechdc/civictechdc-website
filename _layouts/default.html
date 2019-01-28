@@ -83,68 +83,56 @@
 
 
     <meta name="application-name" content="Code for DC" />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" />
-    <link rel="stylesheet" href="css_new/uswds.min.css">
-    <link rel="stylesheet" href="css_new/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <style>
+        #map { height: 300px; }
+    </style>
+
 </head>
 
 <body>
 
-    <header class="usa-header usa-header-extended" role="banner">
-        <div class="usa-navbar">
-            <div class="usa-logo" id="extended-logo">
-                <em class="usa-logo-text">
-                    <a href="/" title="Home" aria-label="Home">
-                        Code for DC
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Code for DC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/code-of-conduct">
+                        <span>Code of Conduct</span>
                     </a>
-                </em>
-            </div>
-            <button class="usa-menu-btn">Menu</button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/slack">
+                        <span>Slack</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/codefordc">
+                        <span>Github</span>
+                    </a>
+                </li>
+            </ul>
         </div>
+    </nav>
 
-        <nav role="navigation" class="usa-nav">
-            <div class="usa-nav-inner">
-                <button class="usa-nav-close">
-                    <img src="../img/close.svg" alt="close">
-                </button>
-                <ul class="usa-nav-primary usa-accordion">
-                    <li>
-                        <a class="usa-nav-link" href="/code-of-conduct">
-                            <span>Code of Conduct</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="usa-nav-link" href="/slack">
-                            <span>Slack</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="usa-nav-link" href="https://github.com/codefordc">
-                            <span>Github</span>
-                        </a>
-                    </li>
-                </ul>
-                <div class="usa-nav-secondary">
 
-                    <form class="usa-search usa-search-small  js-search-form">
-                        <div role="search">
-                            <label class="usa-sr-only" for="extended-search-field-small">Search small</label>
-                            <input id="extended-search-field-small" type="search" name="search">
-                            <button type="submit">
-                                <span class="usa-sr-only">Search</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <div class="container content">
+    <div class="container">
         {{content}}
     </div>
 
-    <footer class="usa-footer usa-footer-slim" role="contentinfo">
+    <!-- <footer class="usa-footer usa-footer-slim" role="contentinfo">
         <div id="returnToTop" class="usa-grid usa-footer-return-to-top" style="display: none;">
             <a id="returnToTopLink" href="javascript:void(0);">Return to top</a>
         </div>
@@ -166,9 +154,15 @@
                 </address>
             </div>
         </div>
-    </footer>
-    <script src="js/uswds.min.js"></script>
-    <script src="js/jquery-1.10.1.min.js"></script>
+    </footer> -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script type="text/javascript">
         const showReturnToTopThreshold = 100;
         const returnToTop = () => {
@@ -179,7 +173,7 @@
                 $('#returnToTop').hide();
             }
         };
-        
+
         $(window).on('scroll', () => returnToTop());
         $('#returnToTopLink').click((e) => {
             e.preventDefault();
@@ -187,7 +181,7 @@
                 scrollTop: 0
             }, 700);
         });
-    
+
     </script>
 </body>
 

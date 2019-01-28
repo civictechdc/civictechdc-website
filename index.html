@@ -1,88 +1,113 @@
 ---
 layout: default
 ---
-<div class="usa-grid-wide">
-    <div id="hero-image" class="usa-width-one-whole">
-        <div id="hero-header-text" class="usa-width-two-thirds">
-            <h1 id="hero-text">Code for DC</h1>
-            <div id="hero-p">
-                <p>Founded in 2012, we are a a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.</p>
+<div class="row justify-content-center">
+    <div class="col-sm-6">
+        <h3>Code for DC</h3>
+        <p>
+            Founded in 2012, we are a a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.
+        </p>
+    </div>
+    <div class="col-sm-6">
+        <h3>Come to our next meetup!</h3>
+        <div id='map'></div>
+        <h4>
+            Our next meetup is <span id="meetup-date"></span>
+        </h4>
+        <p id="location" class="text-center"></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card-container">
+        <br>
+        <h2> PROJECT NIGHT </h2>
+        <br>
+        <img style="width: 100%" src="assets/projnight.jpg">
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="project-section-header"> CURRENT PROJECTS </h2>
+        <a href="#"> See all projects </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="assets/projplaceholder.png" alt="Card image cap">
+                    <div class="card-body">
+                    <h3> Project Name </h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. </p>
+                </div>
+            </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <img class="card-img-top" src="assets/projplaceholder.png" alt="Card image cap">
+                <div class="card-body">
+                <h3> Project Name </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. </p>
             </div>
         </div>
     </div>
-</div>
-
-<div class="usa-grid">
-    <div class="usa-width-one-half">
-        <div class="card-container">
-            <br>
-            <h2> PROJECT NIGHT </h2>
-            <br>
-            <img src="assets/projnight.jpg">
-            <br>
-            <p>Our twice-monthly meetups are open to anyone, and offer a chance to learn more about what we do, contribute to a current project, or just snag some free pizza!</p>
-        </div>
-    </div>
-
-    <div class="usa-width-one-half">
-        <div class="beige-section">
-            <br>
-            <h2> SCHEDULE </h2>
-            <br>
-            <h3>Project Night</h3>
-            <p>Tuesday, January 8 @ 6:30pm</p>
-            <p>1325 G Street, NW, 3rd Floor</p>
-            <p>65 do-gooders will be there — what about you?</p>
-            <p><a href="https://www.meetup.com/Code-for-DC/events/">RSVP on Meetup »</a></p>
-            <br>
-            <h3>Project Night</h3>
-            <p>Tuesday, January 29 @ 6:30pm</p>
-            <p>1200 New York Ave NW</p>
-            <p>38 do-gooders will be there — what about you?</p>
-            <p><a href="https://www.meetup.com/Code-for-DC/events/">RSVP on Meetup »</a></p>
-        </div>
+    <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="assets/projplaceholder.png" alt="Card image cap">
+                    <div class="card-body">
+                    <h3> Project Name </h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. </p>
+                </div>
+            </div>
     </div>
 </div>
 
-<div class="usa-grid-wide">
-    <div class="usa-width-one-whole">
-        <br>
-        <h2 class="project-section-header"> CURRENT PROJECTS </h2>
-        <a href="#"> See all projects </a>
-        <br><br>
-    </div>
+<script >
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        mapboxgl.accessToken = 'pk.eyJ1Ijoib3BlbmRhdGFkYyIsImEiOiJjanJneDkweHEycGMxNDNtbXJiNGdndDRuIn0.ToI609oBwJsdC8fiubjl9A';
+        var map = new mapboxgl.Map({
+            container: 'map', // HTML container id
+            style: 'mapbox://styles/mapbox/streets-v9', // style URL
+            center: [ -77.0369, 38.9072 ], // starting position as [lng, lat]
+            zoom: 13
+        });
+        $.ajax({
+            type: "GET",
+            dataType: 'jsonp',
+            url: 'https://api.meetup.com/Code-for-DC/events?photo-host=public&page=20&sig_id=163907222&sig=f5fae4cf26e324516a55732b9ca095aba0cd6e04',
+            crossDomain : true,
+            xhrFields: {
+                withCredentials: true
+            },
+            beforeSend: function() {
+            $('#meetup').addClass('loading'); // Show loader icon
+            },
+            complete: function() {
+            $('#meetup').removeClass('loading'); // Hide loader icon
+            }
+        })
+        .done(( xhr ) => {
+            $('#meetup-date').html(moment(xhr.data[0].time).format('MM/DD/YYYY hh:mm'))
+            $("#location").html(`
+                <a href="https://www.google.com/maps/place/@${xhr.data[0].venue.lat},-${xhr.data[0].venue.lon},13z" target="_blank">${xhr.data[0].venue.address_1}</a>
+            `)
 
-    <div class="usa-width-one-third">
-        <div class="project-card">
-            <img src="assets/projplaceholder.png">
-            <h3> Project Name </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. </p>
-        </div>
-    </div>
+            var popup = new mapboxgl.Popup({ closeOnClick: false })
+                .setLngLat([xhr.data[0].venue.lon, xhr.data[0].venue.lat])
+                .setHTML(`
+                    <p>${xhr.data[0].venue.name}</p>
+                `)
+                .addTo(map);
+        });
+    });
+</script>
 
-    <div class="usa-width-one-third">
-        <div class="project-card">
-            <img src="assets/projplaceholder.png">
-            <h3> Project Name </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. </p>
-        </div>
-    </div>
-
-    <div class="usa-width-one-third">
-        <div class="project-card">
-            <img src="assets/projplaceholder.png">
-            <h3> Project Name </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. </p>
-        </div>
-    </div>
-</div>
-
-<div class="usa-grid-wide">
-    <div class="usa-width-one-whole" align="center">
-        <br>
-        <button> Submit a Proposal </button>
-    </div>
-</div>
