@@ -3,6 +3,8 @@ layout: narrow
 title: Code of Conduct
 type: document
 deeplink: true
+redirect_from:
+  - /resources/codeofconduct.html
 ---
 
 # Code of Conduct
@@ -27,7 +29,7 @@ Code for DC will not tolerate such behavior.
 
 Code for DC is designed as a place for people all of different skill levels and approaches to meet and work together toward common goals. As a result, we do not expect that everybody will share the same opinion. However, we do expect that disagreement is done respectfully.
 
-Additionally, we expect that members will educate others respectfully. To this end, do not assume anybody else's level of expertise or knowledge. Do not belittle a lack of information, or insist on unnecessary precision. We are all learning, so afford others—as well as yourself—room to grow. 
+Additionally, we expect that members will educate others respectfully. To this end, do not assume anybody else's level of expertise or knowledge. Do not belittle a lack of information, or insist on unnecessary precision. We are all learning, so afford others—as well as yourself—room to grow.
 
 ### Keep Your Team Open
 
@@ -68,5 +70,3 @@ Captains may take any appropriate action, including expulsion and a ban from fut
 ## Contributing to This Code
 
 This is a living document and is ultimately owned by the Code for DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this repository, by using the edit link above (which will create an anonymous pull request on your behalf), or by contacting a Captain.
-
-
