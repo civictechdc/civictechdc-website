@@ -195,6 +195,10 @@ redirect_from:
             .done((xhr) => {
                 console.log(xhr.data)
                 const nextMeetup = xhr.data[0]
+                
+                console.log(nextMeetup.venue.lat)
+                console.log(nextMeetup.venue.lon)
+          
                 const futureMeetup = xhr.data[1]
                 $('#next-meetup-date').html(
                   `${moment(nextMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}`
@@ -204,6 +208,10 @@ redirect_from:
                 //    `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}` :
                 //    `Tonight @ ${moment(nextMeetup.time).format('h:mm a')}`
                 //)
+          
+                console.log(nextMeetup.venue.lat)
+                console.log(nextMeetup.venue.lon)
+          
                 $("#next-location").html(
                     `
                 <a href="https://www.google.com/maps/place/@${nextMeetup.venue.lat},-${nextMeetup.venue.lon},13z" target="_blank">${nextMeetup.venue.address_1}</a>
