@@ -1,0 +1,32 @@
+---
+title: 404 Error
+layout: default
+permalink: /404.html
+
+---
+<div class="use-grid-wide" >
+    <div class="usa-width-one-half usa-offset-one-fourth usa-section">
+
+    <h1>Error &nbsp 4 :o 4</h1> 
+    <div id="page-error"></div>
+    </div>
+</div>
+
+
+<script>
+
+function redirectToBlog() {
+    var url = window.location.toString();
+    if (url.includes('blog')) {
+        url = `https://codefordc.github.io/${url.slice(url.indexOf('blog'))}`;
+        document.getElementById('page-error')
+            .innerHTML = `<p>Hey, looks like this content has moved. Here is where you can find it: <a href='${url}'>${url}</a></p>`;
+    } else {
+        document.getElementById('page-error')
+            .innerHTML = `<p>Hey, looks like this page doesn't exist. <a href='https://codefordc.org/'>Back to the site!</a></p>`;
+    }
+}
+
+window.onload = redirectToBlog;
+
+</script>
