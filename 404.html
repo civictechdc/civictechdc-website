@@ -23,7 +23,7 @@ function redirectToBlog() {
             .innerHTML = `<p>Hey, looks like this content has moved. Here is where you can find it: <a href='${url}'>${url}</a></p>`;
     } else {
         document.getElementById('page-error')
-            .innerHTML = `<p>Hey, looks like this page doesn't exist. <a href='https://codefordc.org/'>Back to the site!</a></p>`;
+            .innerHTML = `<p>Hey, looks like this page doesn't exist. <a href="{{ site.baseurl }}">Back to the site!</a></p>`;
     }
 }
 
