@@ -51,7 +51,7 @@ When more people share their knowledge and skills, they give a project a greater
 
 ### Making a Report
 
-If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s). Contact information for each Captain is listed on the [About page](/about.html), and you can also send an anonymous (or non-anonymous) message through the [Contact page](/contact.html), in which case it will be seen by all Captains. Please be aware that electronic reports may not be seen immediately.
+If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s). You can send an anonymous (or non-anonymous) message through the [Contact page](https://codefordc.github.io/contact.html), in which case it will be seen by all Captains. Please be aware that electronic reports may not be seen immediately.
 
 When making a report, the following information is useful, but not required:
 
