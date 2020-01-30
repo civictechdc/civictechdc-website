@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $.ajax({
             type: "GET",
             dataType: 'jsonp',
-            // url: 'https://api.meetup.com/2/events?&sign=true&photo-host=public&group_urlname=Code-for-DC&page=20',
             url: 'https://api.meetup.com/Code-for-DC/events?&page=2',
             crossDomain: true,
             xhrFields: {
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if (futureMeetup) {
                 $('#future-meetup-date').html(
-                    // `${moment(futureMeetup.time).format('DD, MM d, yy')} @ ${moment(futureMeetup.time).format('h:mm')}`
                     `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}`
                 )
                 $("#future-location").html(
