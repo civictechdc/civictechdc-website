@@ -1,0 +1,184 @@
+---
+layout: default
+title: Donate to Code for DC
+---
+
+<div
+  style="display: flex; justify-content: center;flex-direction: column;align-items: center; min-height: 500px; padding: 40px;"
+>
+  <form action="#" class="usa-form" id="donation-form">
+    <fieldset class="usa-fieldset">
+      <legend>Donate</legend>
+      <p>
+        Support our work! Contributions of any size are helpful and welcome.
+      </p>
+      <p>
+        All donations are fully tax-deductible through our fiscal sponsor,
+        <a href="https://districtciviclabs.org">District Civic Labs</a>.
+      </p>
+      <div
+        class="usa-alert usa-alert-success usa-alert-validation"
+        id="success"
+        style="display: none;"
+      >
+        <div class="usa-alert-body">
+          <h3 class="usa-alert-heading">Thank you for your donation!</h3>
+        </div>
+      </div>
+
+      <div
+        class="usa-alert usa-alert-error usa-alert-validation"
+        id="error"
+        style="display: none;"
+      >
+        <div class="usa-alert-body">
+          <h3 class="usa-alert-heading">We're sorry, we ran into an error.</h3>
+        </div>
+      </div>
+
+      <label for="donation-amount" class="usa-label"
+        ><strong>Amount $</strong></label
+      >
+      <input
+        type="number"
+        id="donation-amount"
+        class="usa-input"
+        aria-label="Amount (to the nearest dollar)"
+      />
+
+      <label for="special-instructions" class="usa-label"
+        ><strong>Special Instructions</strong></label
+      >
+
+      <input
+        type="text"
+        class="usa-input"
+        id="special-instructions"
+        placeholder=""
+      />
+
+      <div class="usa-checkbox">
+        <input class="usa-checkbox__input" id="cover-fees" type="checkbox" />
+        <label class="usa-checkbox__label" for="cover-fees"
+          >Cover processing fees (2.9% + $0.30)</label
+        >
+      </div>
+
+      <button type="submit" class="usa-button" id="donationButton">
+        Make donation
+      </button>
+    </fieldset>
+  </form>
+  <hr />
+  <p>
+    All donations are unrestricted. If you are interested in becoming a sponsor
+    for Code for DC, please send an email to
+    <a href="mailto:team@codefordc.org">team@codefordc.org</a>.
+  </p>
+
+  <script src="/assets/js/jquery-3.2.1.min.js"></script>
+  <script src="/assets/js/stripe.v3.min.js"></script>
+  <script src="/assets/js/checkout.js"></script>
+  <script>
+    const donationAmount = document.getElementById('donation-amount');
+    let amount = Number(donationAmount.value) * 100;
+
+    const updateAmount = function() {
+      amount = Number(donationAmount.value);
+      if (document.getElementById('cover-fees').checked) {
+        amount = amount * 1.029 + 0.3;
+      }
+      // Round to two decimal places
+      amount = Math.round((amount + 0.00001) * 100) / 100;
+      // Back to cents
+      amount = amount * 100;
+      document.getElementById('donationButton').textContent =
+        'Make $' + amount / 100 + ' donation';
+    };
+    donationAmount.addEventListener('keyup', updateAmount);
+    document
+      .getElementById('cover-fees')
+      .addEventListener('click', updateAmount);
+
+    let apiKey;
+    let account;
+    if (
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1'
+    ) {
+      // Check if we are working locally and should use test data.
+      apiKey = 'pk_test_NETzOLRKGqVNftlJdCarfUEN';
+      account = 'test';
+    } else {
+      // Use the live key.
+      // Stripe is fine with publishing the *public* API key. There's a separate
+      // secret one that allows for the actual charging of cards and such.
+      apiKey = 'pk_live_eb4XwCEE1e87bbZNKQrp7QiC';
+      account = 'live';
+    }
+    const handler = StripeCheckout.configure({
+      key: apiKey,
+      image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+      locale: 'auto',
+      token: function(token) {
+        const instruction = document.getElementById('special-instructions')
+          .value;
+        // Send a request to our AWS Lambda function, which handles the
+        // secret Stripe stuff.
+        let send = JSON.stringify({
+          token: token.id,
+          amount: amount,
+          instruction: instruction,
+          email: token.email,
+          account: account,
+        });
+
+        $('#donation-amount').attr('disabled', true);
+        $('#special-instructions').attr('disabled', true);
+        $('#donationButton').attr('disabled', true);
+        $('#donationButton').html('Processing...');
+        $.post(
+          'https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/codefordc-stripe-processor',
+          send,
+          function(data, status) {
+            if (data.chargeSuccess) {
+              $('#error').hide();
+              $('#success h3').html(data.message);
+              $('#success').show();
+            } else {
+              $('#success').hide();
+              $('#error h3').html(data.message);
+              $('#error').show();
+            }
+            $('#donation-amount').val('');
+            $('#special-instructions').val('');
+            $('#donation-amount').attr('disabled', false);
+            $('#special-instructions').attr('disabled', false);
+            $('#donationButton').attr('disabled', false);
+            $('#donationButton').html('Make donation');
+          },
+        );
+      },
+    });
+    document
+      .getElementById('donationButton')
+      .addEventListener('click', function(e) {
+        // Open Checkout with further options:
+        handler.open({
+          name: 'Code for DC',
+          description: 'Donation',
+          image: '{{ site.baseurl }}/assets/img/logo/code-for-dc-logo-256.png',
+          amount: amount,
+          allowRememberMe: false,
+        });
+        e.preventDefault();
+        // Hide donation status if this isn't the first
+        $('#success').hide(500);
+        $('#error').hide(500);
+      });
+    // Close Checkout on page navigation:
+    window.addEventListener('popstate', function() {
+      handler.close();
+    });
+  </script>
+</div>
