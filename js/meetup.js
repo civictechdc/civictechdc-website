@@ -27,11 +27,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 //    `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}` :
                 //    `Tonight @ ${moment(nextMeetup.time).format('h:mm a')}`
                 //)
-                $("#next-location").html(
-                    `
-                <a href="https://www.google.com/maps/place/@${nextMeetup.venue.lat},-${nextMeetup.venue.lon},13z" target="_blank">${nextMeetup.venue.address_1}</a>
-                    `
-                )
+                if (nextMeetup.is_online_event) {
+                    $("#next-location").html("Online event")
+                } else {
+                  $("#next-location").html(
+                      `
+                  <a href="https://www.google.com/maps/place/@${nextMeetup.venue.lat},-${nextMeetup.venue.lon},13z" target="_blank">${nextMeetup.venue.address_1}</a>
+                      `
+                  )
+                }
                 $('#next-rsvps').html(nextMeetup.yes_rsvp_count);
                 $('#next-rsvp').attr('href', `https://www.meetup.com/Code-for-DC/events/${nextMeetup.id}`);
 
@@ -39,11 +43,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $('#future-meetup-date').html(
                         `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}`
                     )
-                    $("#future-location").html(
-                        `
-                            <a href="https://www.google.com/maps/place/@${futureMeetup.venue.lat},-${futureMeetup.venue.lon},13z" target="_blank">${futureMeetup.venue.address_1}</a>
-                        `
-                    )
+                    if (futureMeetup.is_online_event) {
+                        $("#next-location").html("Online event")
+                    } else {
+                      $("#next-location").html(
+                          `
+                      <a href="https://www.google.com/maps/place/@${futureMeetup.venue.lat},-${nextMeetup.venue.lon},13z" target="_blank">${nextMeetup.venue.address_1}</a>
+                          `
+                      )
+                    }
                     $('#future-rsvps').html(futureMeetup.yes_rsvp_count);
                     $('#future-rsvp').attr('href', futureMeetup.link);
 
