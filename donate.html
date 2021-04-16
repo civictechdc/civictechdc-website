@@ -92,6 +92,8 @@ title: Donate to Code for DC
       amount = Math.round((amount + 0.00001) * 100) / 100;
       // Back to cents
       amount = amount * 100;
+      // Trim off any fractions of a cents
+      amount = Math.trunc(amount);
       document.getElementById('donationButton').textContent =
         'Make $' + amount / 100 + ' donation';
     };
