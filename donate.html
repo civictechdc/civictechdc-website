@@ -138,10 +138,11 @@ title: Donate to Code for DC
         $('#special-instructions').attr('disabled', true);
         $('#donationButton').attr('disabled', true);
         $('#donationButton').html('Processing...');
-        $.post(
-          'https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/codefordc-stripe-processor',
-          send,
-          function(data, status) {
+        $.ajax({
+          type: 'POST',
+          url: 'https://b9sq87esw7.execute-api.us-east-2.amazonaws.com/prod/codefordc-stripe-processor',
+          data: send,
+          success: function(data, status) {
             if (data.chargeSuccess) {
               $('#error').hide();
               $('#success h3').html(data.message);
@@ -158,7 +159,17 @@ title: Donate to Code for DC
             $('#donationButton').attr('disabled', false);
             $('#donationButton').html('Make donation');
           },
-        );
+          error: function() {
+            $('#success').hide();
+            $('#error h3').html(`
+              Your donation was successful, but an error occurred when
+              processing your special instructions. Send us a message at
+              team@codefordc.org if you have any special instructions for
+              your donation.
+            `);
+            $('#error').show();
+          }
+        });
       },
     });
     document
