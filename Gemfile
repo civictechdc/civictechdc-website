@@ -1,6 +1,7 @@
-source "http://rubygems.org"
+source 'http://rubygems.org'
 
 # web
-gem 'jekyll'
 gem 'github-pages'
+gem 'jekyll'
 gem 'jekyll-redirect-from'
+gem 'webrick'
