@@ -12,7 +12,7 @@ git clone git@github.com:[YOUR GITHUB NAME]/codefordc-website
 
 `git checkout -b [NEW BRANCH NAME]`
 
-3. Now, install the correct version of Ruby. As of March 2023, we are using Ruby 3.2.0.
+3. Now, install the correct version of Ruby. As of March 2023, we are using Ruby 3.2.0. You can use [asdf](https://asdf-vm.com/) to configure Ruby 3.2.0 for this repository with:
 
 `asdf install ruby 3.2.0`
 `asdf local ruby 3.2.0`
