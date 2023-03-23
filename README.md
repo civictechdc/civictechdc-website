@@ -6,7 +6,7 @@ Welcome! This is the repository for the website for Code for DC.
 
 1. First, make sure that you have <a href="https://git-scm.com/downloads">git</a> on your computer. Create your own <a href="https://docs.github.com/en/get-started/quickstart/contributing-to-projects">fork</a> of the repository, then clone it to your computer:
 
-git clone git@github.com:[YOUR GITHUB NAME]/codefordc-2.0.git
+git clone git@github.com:[YOUR GITHUB NAME]/codefordc-website
 
 2. You can work on the master branch (which is the default), but it's preferable to set up a new branch if you're working on a specific feature:
 
