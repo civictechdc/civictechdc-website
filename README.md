@@ -17,7 +17,7 @@ git clone git@github.com:[YOUR GITHUB NAME]/codefordc-2.0.git
 `asdf install ruby 3.2.0`
 `asdf local ruby 3.2.0`
 
-4. Install bundler and required gems.
+4. Install required gems.
 
 `bundle install`
 
