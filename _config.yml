@@ -5,7 +5,7 @@ title: Code for DC
 description: "We are a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city."
 encoding: utf-8
 timezone: America/New_York
-gems:
+plugins:
   - jekyll-redirect-from
 future: true
 baseurl: ''
