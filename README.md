@@ -32,3 +32,4 @@ NOTE: Is this required, or will bundle install cover it?
 7. Open a web browser page at `localhost:4000`
 
 Let us know if you get stuck in the Code for DC Slack channel #codefordc-website. Happy coding!
+
