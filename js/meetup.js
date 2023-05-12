@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 } else {
                   $("#next-location").html(
                       `
-                  <a href="https://www.google.com/maps/place/@${nextMeetup.venue.lat},-${nextMeetup.venue.lon},13z" target="_blank">${nextMeetup.venue.address_1}</a>
+                      <a href="https://www.google.com/maps/search/?api=1&query=${nextMeetup.venue.name}%2C%20${nextMeetup.venue.address_1}%2C%20${nextMeetup.venue.city}%2C%20${nextMeetup.venue.state}" target="_blank">${nextMeetup.venue.address_1}</a>
                       `
                   )
                 }
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     } else {
                       $("#next-location").html(
                           `
-                      <a href="https://www.google.com/maps/place/@${futureMeetup.venue.lat},-${nextMeetup.venue.lon},13z" target="_blank">${nextMeetup.venue.address_1}</a>
+                      <a href="https://www.google.com/maps/search/?api=1&query=${futureMeetup.venue.name}%2C%20${futureMeetup.venue.address_1}%2C%20${futureMeetup.venue.city}%2C%20${futureMeetup.venue.state}" target="_blank">${futureMeetup.venue.address_1}</a>
                           `
                       )
                     }
