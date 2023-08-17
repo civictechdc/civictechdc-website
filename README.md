@@ -1,30 +1,38 @@
 # Code for DC Website
 
-Welcome! This is the repository for the website for Code for DC.
+Welcome! This is the repository for the website for Code for DC. It is a static site built with [Jekyll](https://jekyllrb.com/). It is mostly HTML, Javascript, and CSS.
 
 ## Getting Started
 
 1. First, make sure that you have <a href="https://git-scm.com/downloads">git</a> on your computer. Create your own <a href="https://docs.github.com/en/get-started/quickstart/contributing-to-projects">fork</a> of the repository, then clone it to your computer:
 
-git clone git@github.com:[YOUR GITHUB NAME]/codefordc-website
+`git clone git@github.com:[YOUR GITHUB NAME]/codefordc-website`
 
-1. Now, install the correct version of Ruby. As of March 2023, we are using Ruby 3.2.0. You can use [asdf](https://asdf-vm.com/) and its [ruby plugin](https://github.com/asdf-vm/asdf-ruby) to configure Ruby 3.2.0 for this repository with:
+2. Now, install the correct version of Ruby.
 
-`asdf install ruby 3.2.0`
-`asdf local ruby 3.2.0`
+We use [asdf](https://asdf-vm.com/) and its [ruby plugin](https://github.com/asdf-vm/asdf-ruby) to configure Ruby for this project. You can see which version of Ruby we're using in the [.tool-versions](.tool-versions) file.
 
-1. Install required gems.
+```
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf install
+```
+
+3. Install required gems.
 
 `bundle install`
 
-1. Get the site running on your local server. The previous step will have installed [Jekyll](https://jekyllrb.com/).  
+4. Run a local version of the website.
 
 `bundle exec jekyll serve`
 
-1. Open a web browser page at `localhost:4000`
+5. Open a web browser page at `localhost:4000`
+
+## Issues
+
+If you notice a problem or have an idea for an improvement you can submit an [issue](https://github.com/codefordc/codefordc-website/issues).
 
 ## Contributing
 
-Refer to the [contribution instructions](CONTRIBUTING.md) to contribute to this project.
+Refer to the [contribution instructions](CONTRIBUTING.md) to contribute to this project. We have a [project board](https://github.com/orgs/codefordc/projects/3) where we track issues and ideas to be implemented.
 
 Let us know if you get stuck in the Code for DC Slack channel #codefordc-website. Happy coding!

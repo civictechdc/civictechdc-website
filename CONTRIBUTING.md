@@ -12,7 +12,7 @@ Replace `<your-new-branch-name>` with the name you want to give your new branch.
 
 ## Step 2: Make changes to the code
 
-Once you have a new branch, it's time to start making changes! Open the `Code for DC` repository in your favorite code editor or IDE, and start modifying files and adding new features. Be sure to follow our coding style guidelines (available on GitHub) so that your changes look nice and neat among the rest of the code.
+Once you have a new branch, it's time to start making changes! Open the `Code for DC` repository in your favorite code editor or IDE, and start modifying files and adding new features.
 
 ## Step 3: Commit your changes
 
@@ -39,12 +39,8 @@ Once you have pushed your changes to your own fork, it's time to create a pull r
 
 Once you've created a pull request, it will initiate a CircleCI build that runs a series of checks on your changes. You can watch the build process in real-time on the `Code for DC` repository page. If there are any failures or issues with your code, you'll see them highlighted in the build results. Don't worry – this is a normal part of the contribution process! Just address any comments or requests from reviewers and resubmit your PR when you're ready.
 
-## Step 7: Request a review by a project contributor
+## Step 7: Get merged!
 
-Once you've addressed all comments and issues with your pull request, you can request a review from a project contributor. Just click the "Request a review" button on the right side of the PR card, and a contributor will take a look at your changes.
+Once a project maintainer has reviewed your changes and approved them, they'll merge your pull request into the `master` branch! An updated version of the website will automatically be deployed, and you can see the results in action at (Code for DC)[https://codefordc.org].
 
-## Step 8: Get merged!
-
-Once a project contributor has reviewed your changes and approved them, they'll merge your pull request into the `master` branch! An updated version of the website will automatically be deployed, and you can see the results in action at <your-website-url>.
-
-And that's it! With these steps, you should be able to contribute to the Code for DC website with ease. If you have any questions or get stuck at any point, feel free to ask for help in the `#codefordc-website` slack channel. Happy coding!
+And that's it! Thank you for contributing to the Code for DC website with ease. If you have any questions or get stuck at any point, feel free to ask for help in the `#codefordc-website` slack channel. Happy coding!
