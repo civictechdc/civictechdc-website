@@ -4,7 +4,7 @@ Want to contribute to the Code for DC website? Awesome! We welcome pull requests
 
 ## Step 1: Create a new branch
 
-Before you start working on a feature, it's best to create a new branch off of the `master` branch. This will allow you to work on your changes without messing with the main codebase. To create a new branch, run the following command in your terminal:
+Before you start working on a feature, it's best to create a new branch off of the `main` branch. This will allow you to work on your changes without messing with the main codebase. To create a new branch, run the following command in your terminal:
 ```bash
 git checkout -b <your-new-branch-name>
 ```
@@ -41,6 +41,6 @@ Once you've created a pull request, it will initiate a CircleCI build that runs 
 
 ## Step 7: Get merged!
 
-Once a project maintainer has reviewed your changes and approved them, they'll merge your pull request into the `master` branch! An updated version of the website will automatically be deployed, and you can see the results in action at (Code for DC)[https://codefordc.org].
+Once a project maintainer has reviewed your changes and approved them, they'll merge your pull request into the `main` branch! An updated version of the website will automatically be deployed, and you can see the results in action at (Code for DC)[https://codefordc.org].
 
-And that's it! Thank you for contributing to the Code for DC website with ease. If you have any questions or get stuck at any point, feel free to ask for help in the `#codefordc-website` slack channel. Happy coding!
+Thank you for contributing! If you have any questions or get stuck at any point, feel free to ask for help in the `#codefordc-website` slack channel. Happy coding!
