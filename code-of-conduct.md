@@ -51,7 +51,7 @@ When more people share their knowledge and skills, they give a project a greater
 
 ### Making a Report
 
-If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. You can email us at <a href="mailto:team@civictechdc.org">team@civictechdc.org</a>, which goes to all of the leadership team. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s).
+If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. You can email us at <a href="mailto:team@codefordc.org">team@codefordc.org</a>, which goes to all of the leadership team. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s).
 
 When making a report, the following information is useful, but not required:
 
@@ -69,4 +69,4 @@ Captains may take any appropriate action, including expulsion and a ban from fut
 
 ## Contributing to This Code
 
-This is a living document and is ultimately owned by the Civic Tech DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this [repository](https://github.com/civictechdc/codefordc-website) or by [contacting the leadership team](mailto:team@civictechdc.org).
+This is a living document and is ultimately owned by the Civic Tech DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this [repository](https://github.com/civictechdc/codefordc-website) or by [contacting the leadership team](mailto:team@codefordc.org).
