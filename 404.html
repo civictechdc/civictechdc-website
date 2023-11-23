@@ -18,7 +18,7 @@ permalink: /404.html
 function redirectToBlog() {
     var url = window.location.toString();
     if (url.includes('blog')) {
-        url = `https://codefordc.github.io/${url.slice(url.indexOf('blog'))}`;
+        url = `https://civictechdc.github.io/${url.slice(url.indexOf('blog'))}`;
         document.getElementById('page-error')
             .innerHTML = `<p>Hey, looks like this content has moved. Here is where you can find it: <a href='${url}'>${url}</a></p>`;
     } else {

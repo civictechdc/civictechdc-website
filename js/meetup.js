@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $.ajax({
             type: "GET",
             dataType: 'jsonp',
-            url: 'https://api.meetup.com/Code-for-DC/events?&page=2',
+            url: 'https://api.meetup.com/Civic-Tech-DC/events?&page=2',
             crossDomain: true,
             xhrFields: {
                 withCredentials: true
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                   )
                 }
                 $('#next-rsvps').html(nextMeetup.yes_rsvp_count);
-                $('#next-rsvp').attr('href', `https://www.meetup.com/Code-for-DC/events/${nextMeetup.id}`);
+                $('#next-rsvp').attr('href', `https://www.meetup.com/Civic-Tech-DC/events/${nextMeetup.id}`);
 
                 if (futureMeetup) {
                     $('#future-meetup-date').html(

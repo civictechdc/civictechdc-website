@@ -1,6 +1,6 @@
-# Code for DC Website
+# Civic Tech DC Website
 
-Welcome! This is the repository for the website for Code for DC. It is a static site built with [Jekyll](https://jekyllrb.com/). It is mostly HTML, Javascript, and CSS.
+Welcome! This is the repository for the website for Civic Tech DC. It is a static site built with [Jekyll](https://jekyllrb.com/). It is mostly HTML, Javascript, and CSS.
 
 ## Getting Started
 
@@ -29,10 +29,10 @@ asdf install
 
 ## Issues
 
-If you notice a problem or have an idea for an improvement you can submit an [issue](https://github.com/codefordc/codefordc-website/issues).
+If you notice a problem or have an idea for an improvement you can submit an [issue](https://github.com/civictechdc/codefordc-website/issues).
 
 ## Contributing
 
-Refer to the [contribution instructions](CONTRIBUTING.md) to contribute to this project. We have a [project board](https://github.com/orgs/codefordc/projects/3) where we track issues and ideas to be implemented.
+Refer to the [contribution instructions](CONTRIBUTING.md) to contribute to this project. We have a [project board](https://github.com/orgs/civictechdc/projects/3) where we track issues and ideas to be implemented.
 
-Let us know if you get stuck in the Code for DC Slack channel #codefordc-website. Happy coding!
+Let us know if you get stuck in the Civic Tech DC Slack channel #civictechdc-website. Happy coding!
