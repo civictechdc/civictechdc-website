@@ -3849,9 +3849,13 @@ fieldset {
   overflow: hidden;
 }
 
+#logo-link {
+  display: block;
+}
+
 .usa-navbar {
   border-bottom: 1px solid #aeb0b5;
-  height: 4rem;
+  min-height: 4rem;
 }
 
 @media screen and (min-width: 951px) {
