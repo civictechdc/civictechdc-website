@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>
@@ -157,9 +157,7 @@
       </div>
     </header>
 
-    <div class="container content">
-      {{content}}
-    </div>
+    <div class="container content">{{content}}</div>
     <!-- /container -->
     <footer class="usa-footer usa-footer-slim" role="contentinfo">
       <!-- <div class="usa-footer-primary-section">
@@ -205,7 +203,9 @@
           </div>
           <div class="usa-width-one-third">
             <p>
-              <a href="https://github.com/civictechdc" target="_blank">GitHub</a>
+              <a href="https://github.com/civictechdc" target="_blank"
+                >GitHub</a
+              >
             </p>
             <p>
               <a href="https://twitter.com/civictechdc" target="_blank"
@@ -214,8 +214,14 @@
             </p>
           </div>
           <div class="usa-width-one-third">
-            <p><a href="https://forms.gle/xNkayfBVMJj8dt1X8">Give Feedback</a></p>
-            <p><a href="https://forms.gle/HrpBe69qqCG8NiNo6">Become an Organizer</a></p>
+            <p>
+              <a href="https://forms.gle/xNkayfBVMJj8dt1X8">Give Feedback</a>
+            </p>
+            <p>
+              <a href="https://forms.gle/HrpBe69qqCG8NiNo6"
+                >Become an Organizer</a
+              >
+            </p>
           </div>
         </div>
       </div>
@@ -242,16 +248,16 @@
       const returnToTop = () => {
         const scrollTop = $(window).scrollTop();
         if (scrollTop > showReturnToTopThreshold) {
-          $('#returnToTop').show();
+          $("#returnToTop").show();
         } else {
-          $('#returnToTop').hide();
+          $("#returnToTop").hide();
         }
       };
 
-      $(window).on('scroll', () => returnToTop());
-      $('#returnToTopLink').click(e => {
+      $(window).on("scroll", () => returnToTop());
+      $("#returnToTopLink").click((e) => {
         e.preventDefault();
-        $('html,body').animate(
+        $("html,body").animate(
           {
             scrollTop: 0,
           },

@@ -8,12 +8,17 @@ timezone: America/New_York
 plugins:
   - jekyll-redirect-from
 future: true
-baseurl: ''
+baseurl: ""
 
 collections:
   - projects
 sass:
   sass_dir: _sass
   style: compressed
-exclude: ['sass/bootstrap/docs','sass/bootstrap/docs/index.html', 'sass/bootstrap/index.html']
-include: ['sass/bootstrap/scss']
+exclude:
+  [
+    "sass/bootstrap/docs",
+    "sass/bootstrap/docs/index.html",
+    "sass/bootstrap/index.html",
+  ]
+include: ["sass/bootstrap/scss"]
