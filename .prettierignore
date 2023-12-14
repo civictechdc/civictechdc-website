@@ -1,0 +1,12 @@
+// Ignore build files
+_site/
+
+// Ignore minified js bundles
+assets/js/
+**/*.min.css
+**/*.min.js
+css_new/uswds.css
+js/analytics_lib.js
+
+// Ignore dependencies
+node_modules/
