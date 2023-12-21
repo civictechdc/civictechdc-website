@@ -3850,7 +3850,7 @@ fieldset {
 }
 
 #logo-link {
-  display: block;
+  display: inline-block;
 }
 
 .usa-navbar {
