@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -10,29 +11,31 @@ html, body {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-h1, h2, h3 {
-  font-family: 'Karla', 'Source Sans Pro', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Karla", "Source Sans Pro", sans-serif;
   font-weight: 700;
   /* color: #640000; */
 }
 
 footer {
-  background-color: #F5F6F6;
+  background-color: #f5f6f6;
 }
 
 button {
-  background-color: #0051EF;
+  background-color: #0051ef;
 }
 
 #navbar {
   padding: 1%;
-  background-color: #F5F6F6;
-  display:inline-block;
+  background-color: #f5f6f6;
+  display: inline-block;
 }
 
 img#logo {
@@ -40,7 +43,6 @@ img#logo {
   padding-bottom: 0.5rem;
   max-height: 11rem;
 }
-
 
 #hero-image {
   /* background-image: url("../assets/aa.png"); */
@@ -51,7 +53,6 @@ img#logo {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 }
 
 #hero-header-text {
@@ -82,7 +83,7 @@ img#logo {
   padding: 2.1%;
   padding-left: 8%;
   padding-right: 8%;
-  border-top: solid 2px #0051EF;
+  border-top: solid 2px #0051ef;
 }
 
 #join-slack {
@@ -108,10 +109,11 @@ img#logo {
   margin-left: 6%;
 }
 
-.nav-link, .nav-link:visited  {
+.nav-link,
+.nav-link:visited {
   text-decoration: none;
   font-size: 140%;
-  color: #7A7A7A;
+  color: #7a7a7a;
 }
 
 .project-section-header {
@@ -123,7 +125,7 @@ img#logo {
   float: right;
   margin-top: 3%;
   margin-right: 5%;
-  color: #6F130E;
+  color: #6f130e;
   display: inline-block;
 }
 
@@ -138,6 +140,7 @@ img#logo {
   border-radius: 20px 20px 0 0;
 }
 
-.project-card > h3, .project-card > p {
+.project-card > h3,
+.project-card > p {
   padding-left: 20px;
 }

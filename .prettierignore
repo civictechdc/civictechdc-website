@@ -1,0 +1,19 @@
+// Ignore build files
+_site/
+
+// Ignore minified js/css/etc bundles
+assets/js/
+**/*.min.css
+**/*.min.js
+css_new/uswds.css
+js/analytics_lib.js
+css/dataTables.bootstrap.css
+js/galleria/galleria.js
+js/dataTables.bootstrap.js
+js/galleria/
+js/html5shiv.js
+js/jquery.*
+js/uswds.js
+
+// Ignore dependencies
+node_modules/
