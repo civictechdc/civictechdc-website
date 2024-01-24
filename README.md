@@ -12,6 +12,14 @@ Welcome! This is the repository for the website for Civic Tech DC. It is a stati
 
 We use [asdf](https://asdf-vm.com/) and its [ruby plugin](https://github.com/asdf-vm/asdf-ruby) to configure Ruby for this project. You can see which version of Ruby we're using in the [.tool-versions](.tool-versions) file.
 
+First, if you're on Ubuntu, you may need to install some dependencies. If the `install` step doesn't work, try one or both of these commands:
+```
+sudo apt install libyaml-dev
+sudo apt install libffi-dev
+```
+
+To install the Ruby plugin, run the following commands inside the project's directory:
+
 ```
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install
