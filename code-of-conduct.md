@@ -9,7 +9,7 @@ redirect_from:
 
 # Code of Conduct
 
-Civic Tech DC is an organization about working, as a group, to empower ourselves and others to improve our local community through technology. Civic Tech DC is committed to providing a safe and welcoming space, without regard to age, gender, race, ethnicity, nationality, sexual orientation, gender identity, gender expression, mental or physical disability, physical appearance, neuro(a)typicality, religion, level of knowledge, level of experience, parental status, marital status, socioeconomic status or background, political affiliation, or any other attribute. The captains of Civic Tech DC ("Captains") share the responsibility of enforcing these policies as necessary to maintain an open and welcoming environment.
+Civic Tech DC is an organization working, as a group, to empower ourselves and others to improve our local community through technology. Civic Tech DC is committed to providing a safe and welcoming space, without regard to age, gender, race, ethnicity, nationality, sexual orientation, gender identity, gender expression, mental or physical disability, physical appearance, neuro(a)typicality, religion, level of knowledge, level of experience, parental status, marital status, socioeconomic status or background, political affiliation, or any other attribute. The captains of Civic Tech DC ("Captains") share the responsibility of enforcing these policies as necessary to maintain an open and welcoming environment.
 
 As the organizers of Civic Tech DC, we believe that the below principles are essential to maintaining this environment. In addition, we believe that they are good principles for life in general.
 
@@ -46,6 +46,10 @@ Work to ensure that the community is well-represented in all stages of developme
 ### Empower, Experiment, and Find a Way for Everybody to Contribute
 
 When more people share their knowledge and skills, they give a project a greater chance to succeed. When somebody shows up with an unusual skill, look for ways to fit them into the team rather than reasons why it wouldn't work. Experiment with new approaches, and don't be afraid to try something that might not work.
+
+## Photography
+
+Please be aware that in order to grow and promote our organization, for general record keeping, and to build community amongst our participants, photography and videography often occur at our events. Participation at our events is voluntary. By participating in our events, it is understood that your image or likeness may be included in the photography or videography and shared on public websites and media content. If you would like further information about this policy, please contact team@civictechdc.org.
 
 ## Procedures
 
