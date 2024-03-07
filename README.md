@@ -41,6 +41,6 @@ If you notice a problem or have an idea for an improvement you can submit an [is
 
 ## Contributing
 
-Refer to the [contribution instructions](CONTRIBUTING.md) to contribute to this project. We have a [project board](https://github.com/orgs/civictechdc/projects/3) where we track issues and ideas to be implemented.
+Refer to the [contribution instructions](CONTRIBUTING.md) to contribute to this project. We have a [project board](https://trello.com/b/7QEuWFGE/website) where we track issues and ideas to be implemented.
 
 Let us know if you get stuck in the Civic Tech DC Slack channel #civictechdc-website. Happy coding!
