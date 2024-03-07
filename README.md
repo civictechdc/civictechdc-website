@@ -7,13 +7,13 @@ Welcome! This is the repository for the website for Civic Tech DC. It is a stati
 ### Quickstart with Codespaces
 [Github Codespaces](https://github.com/features/codespaces) is a free development environment based on VS Code that is run entirely in the browser. You can your own copy of the Civic Tech DC Website up and running in a few clicks.
 
-1. Click "Fork" to make your own copy of the repository
+1. Click "Fork" to make your own copy of the repository  
   ![image](https://github.com/mchelen/codefordc-website/assets/30691/307cfd28-64cf-4178-9478-886736491036)
-3. Click "Create codespace on main"
+3. Click "Create codespace on main"  
   ![image](https://github.com/mchelen/codefordc-website/assets/30691/3bb1583d-c27f-41c0-9548-b9a76d21143c)
-4. Wait while your new Codespace starts, the dependencies will be installed and the web server will start automatically.
+4. Wait while your new Codespace starts, the dependencies will be installed and the web server will start automatically.  
   ![image](https://github.com/mchelen/codefordc-website/assets/30691/409df32b-18b4-4376-b12a-fec61416349a)
-5. Click "Open in browser" to see your website running live! Click "Make public" if you would like to share with another user.
+5. Click "Open in browser" to see your website running live! Click "Make public" if you would like to share with another user.  
   ![image](https://github.com/mchelen/codefordc-website/assets/30691/8e764732-cdfa-48c5-84c4-a853b58b14d1)
 7. You can now modify the code and the website will automatically update.
 8. Commit your changes as usual, and open a pull request when ready to share back with the team.
