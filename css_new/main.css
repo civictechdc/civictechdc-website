@@ -41,6 +41,15 @@ img#logo {
   max-height: 11rem;
 }
 
+#logo-link {
+  display: inline-block;
+}
+
+.usa-navbar {
+  min-height: 4rem;
+  height: initial;
+}
+
 
 #hero-image {
   /* background-image: url("../assets/aa.png"); */
