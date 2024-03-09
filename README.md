@@ -5,7 +5,7 @@ Welcome! This is the repository for the website for Civic Tech DC. It is a stati
 ## Getting Started
 
 ### Quickstart with Codespaces
-[Github Codespaces](https://github.com/features/codespaces) is a free development environment based on VS Code that is run entirely in the browser. You can your own copy of the Civic Tech DC Website up and running in a few clicks.
+[Github Codespaces](https://github.com/features/codespaces) is a free development environment based on VS Code that is run entirely in the browser. You can have your own copy of the Civic Tech DC Website up and running in a few clicks.
 
 1. Click "Fork" to make your own copy of the repository  
   ![image](https://github.com/mchelen/codefordc-website/assets/30691/307cfd28-64cf-4178-9478-886736491036)
