@@ -12,13 +12,18 @@ baseurl: ""
 
 collections:
   - projects
-sass:
-  sass_dir: _sass
-  style: compressed
+
+# sass:
+#   sass_dir: assets/stylesheets/
+#   style: compressed
+
 exclude:
-  [
-    "sass/bootstrap/docs",
-    "sass/bootstrap/docs/index.html",
-    "sass/bootstrap/index.html",
-  ]
-include: ["sass/bootstrap/scss"]
+  - /node_modules/
+  - gulpfile.js
+  - Gemfile
+  - Gemfile.lock
+  - npm-debug.log
+  - /css
+  - /screenshots
+  - /sketch-files
+  - /sass
