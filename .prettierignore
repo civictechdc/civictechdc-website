@@ -2,18 +2,14 @@
 _site/
 
 // Ignore minified js/css/etc bundles
-assets/js/
+assets/js/*.min.js
 **/*.min.css
 **/*.min.js
 css_new/uswds.css
-js/analytics_lib.js
-css/dataTables.bootstrap.css
 js/galleria/galleria.js
-js/dataTables.bootstrap.js
-js/galleria/
-js/html5shiv.js
+assets/js/galleria/
 js/jquery.*
-js/uswds.js
+assets/js/uswds*
 
 // Ignore dependencies
 node_modules/

@@ -5,147 +5,63 @@
       {% if page.title %} {{page.title}} - {% endif %} {{site.name}} -
       {{site.description}}
     </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% if page.description %}
-    <meta content="{{ page.description }}" name="description" />
-    {% else %}
-    <meta content="{{ site.description }}" name="description" />
-    {% endif %}
-    <meta content="{{ site.name }}" name="author" />
+    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon.ico" />
 
-    <!-- Facebook metadata -->
-    <meta content="{{ site.title }}" property="og:site_name" />
-    {% if page.title %}
-    <meta content="{{ page.title }} - {{ site.title }}" property="og:title" />
-    {% else %}
-    <meta content="{{ site.title }}" property="og:title" />
-    {% endif %} {% if page.title %}
-    <meta content="article" property="og:type" />
-    {% else %}
-    <meta content="website" property="og:type" />
-    {% endif %} {% if page.description %}
-    <meta content="{{ page.description }}" property="og:description" />
-    {% else %}
-    <meta content="{{ site.description }}" property="og:description" />
-    {% endif %} {% if page.url %}
-    <meta content="{{ site.url }}{{ page.url }}" property="og:url" />
-    {% endif %} {% if page.date %}
-    <meta
-      content="{{ page.date | date_to_xmlschema }}"
-      property="article:published_time"
-    />
-    <meta content="{{ site.url }}/about-us/" property="article:author" />
-    {% endif %} {% if page.image %}
-    <meta content="{{ site.url }}{{page.image}}" property="og:image" />
-    {% else %}
-    <meta
-      content="{{ site.baseurl }}/images/hero-social-tables-800px.png"
-      property="og:image"
-    />
-    {% endif %} {% if page.categories %} {% for category in page.categories
-    limit:1 %}
-    <meta content="{{ category }}" property="article:section" />
-    {% endfor %} {% endif %} {% if page.tags %} {% for tag in page.tags %}
-    <meta content="{{ tag }}" property="article:tag" />
-    {% endfor %} {% endif %}
+    {% include page-components/meta.html %}
 
-    <!-- Twitter metadata -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="{{ site.title }}" />
-    <meta name="twitter:creator" content="{{ site.title }}" />
-    {% if page.title %}
-    <meta name="twitter:title" content="{{ page.title }}" />
-    {% else %}
-    <meta name="twitter:title" content="{{ site.title }}" />
-    {% endif %} {% if page.url %}
-    <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    {% endif %} {% if page.description %}
-    <meta name="twitter:description" content="{{ page.description }}" />
-    {% else %}
-    <meta name="twitter:description" content="{{ site.description }}" />
-    {% endif %} {% if page.image %}
-    <meta name="twitter:image" content="{{ site.url }}{{page.image}}" />
-    {% else %}
-    <meta
-      name="twitter:image:src"
-      content="{{ site.baseurl }}/images/hero-social-tables-800px.png"
-    />
-    {% endif %}
+    {% include page-components/css.html %}
+    {% include page-components/js-head.html %}
 
-    <meta name="application-name" content="Civic Tech DC" />
-    <link rel="stylesheet" href="/css_new/uswds.min.css" />
-    <link rel="stylesheet" href="/css_new/main.css" />
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js"></script>
-    <link
-      href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="{{ site.url }}/images/favicon.ico" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-    <style>
-      #map {
-        height: 300px;
-      }
-    </style>
+   
   </head>
 
   <body>
-    <header class="usa-header usa-header-basic" role="banner">
+    <header class="usa-header usa-header--basic" role="banner">
       <div class="usa-nav-container">
         <div class="usa-navbar">
-          <a id="logo-link" href="/" title="Home" aria-label="Home">
+          <a id="logo-link" href="/" class="civic_logo" title="Home" aria-label="Home">
             <img
               id="logo"
-              src="/images/logo/civic-tech-dc-logo-text-bottom.png"
+              src="/assets/images/logo/civic-tech-dc-logo-text-bottom.png"
               alt="Civic Tech DC"
             />
           </a>
-          <!-- <div class="usa-logo" id="basic-logo">
-                    <em class="usa-logo-text">
-                        <a href="/" title="Home" aria-label="Home">
-                            Civic Tech DC
-                        <img src="../images/logo/civic-tech-dc-logo-text-bottom.png" alt="Civic Tech DC">
-                        </a>
 
-                    </em>
-                </div> -->
           <button class="usa-menu-btn">Menu</button>
         </div>
 
-        <nav role="navigation" class="usa-nav">
-          <button class="usa-nav-close">
-            <img src="/images/uwds/img/close.svg" alt="close" />
+        <nav role="navigation" aria-label="Primary navigation" class="usa-nav">
+          <button class="usa-nav__close">
+            <img src="/assets/images/uwds/img/close.svg" alt="close" />
           </button>
-          <ul class="usa-nav-primary usa-accordion">
-            <li>
-              <a class="usa-nav-link" href="{{ site.baseurl }}/code-of-conduct">
+          <ul class="usa-nav__primary usa-accordion">
+            <li class="usa-nav__primary-item">
+              <a class="usa-nav__link" href="{{ site.baseurl }}/code-of-conduct">
                 <span>Code of Conduct</span>
               </a>
             </li>
-            <li>
-              <a class="usa-nav-link" href="{{ site.baseurl }}/slack">
+            <li class="usa-nav__primary-item">
+              <a class="usa-nav__link" href="{{ site.baseurl }}/slack">
                 <span>Slack</span>
               </a>
             </li>
-            <li>
-              <a class="usa-nav-link" href="{{ site.baseurl }}donate">
+            <li class="usa-nav__primary-item">
+              <a class="usa-nav__link" href="{{ site.baseurl }}donate">
                 <span>Donate</span>
               </a>
             </li>
-            <li>
+            <li class="usa-nav__primary-item">
               <a
-                class="usa-nav-link"
+                class="usa-nav__link"
                 href="https://github.com/civictechdc"
                 target="_blank"
               >
                 <span>GitHub</span>
               </a>
             </li>
-            <li>
+            <li class="usa-nav__primary-item">
               <a
-                class="usa-nav-link"
+                class="usa-nav__link"
                 href="https://www.linkedin.com/company/civic-tech-dc/"
                 target="_blank"
               >
@@ -159,111 +75,60 @@
 
     <div class="container content">{{content}}</div>
     <!-- /container -->
-    <footer class="usa-footer usa-footer-slim" role="contentinfo">
-      <!-- <div class="usa-footer-primary-section">
-            <div class="usa-grid">
-                <nav class="usa-footer-nav usa-width-two-thirds">
-                    <ul class="usa-unstyled-list">
-                        <li class="usa-width-one-fourth usa-footer-primary-content">
-                            <a class="usa-footer-primary-link" href="/code-of-conduct">Code of Conduct</a>
-                        </li>
-                    </ul>
-                </nav>
-                <address>
-                    <div class="usa-width-one-third">
-                        <div class="usa-footer-primary-content usa-footer-contact_info">
-                            <p><a href="mailto:team@codefordc.org">team@codefordc.org</a></p>
-                        </div>
-                    </div>
-                </address>
-            </div>
-        </div> -->
 
-      <div class="usa-footer-secondary_section footer">
-        <div class="usa-grid">
-          <!-- <div class="usa-footer-logo">
-                    <img class="usa-footer-slim-logo-img" src="../images/uwds/img/logo-img.png" alt="">
-                    <h3 class="usa-footer-slim-logo-heading">Civic Tech DC</h3>
-                </div> -->
-          <!-- <div class="usa-width-one-fourth">
-                  <a href="/code-of-conduct">Code of Conduct</a>
-                </div>
-                <div class="usa-width-one-fourth">
-                  <a href="/slack">Join Slack</a>
-                </div>
-                <div class="usa-width-one-fourth">
-                  <a href="https://github.com/civictechdc">GitHub</a>
-                </div>
-                <div class="usa-width-one-fourth">
-                  <a href="https://twitter.com/civictechdc">Twitter</a>
-                </div> -->
-          <div class="usa-width-one-third">
-            <p><a href="/code-of-conduct">Code of Conduct</a></p>
-            <p><a href="/slack">Join Slack</a></p>
+
+
+    <footer class="usa-footer usa-footer--big" role="contentinfo">
+     
+      <div class="grid-container usa-footer__return-to-top">
+        <a href="#">Return to top</a>
+      </div>
+
+      <div class="usa-footer__primary-section">
+        <div class="grid-container">
+         
+          <div class="grid-row grid-gap">
+            <div class="tablet:grid-col-8 desktop:grid-col-12">
+            <nav class="usa-footer__nav" aria-label="Footer navigation" >
+              <div class="grid-row grid-gap-4">
+
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <ul class="usa-list usa-list--unstyled">
+              <li class="usa-footer__secondary-link"><a href="/code-of-conduct">Code of Conduct</a></li>
+              <li class="usa-footer__secondary-link"><a href="/slack">Join Slack</a></li>
+            </ul>
           </div>
-          <div class="usa-width-one-third">
-            <p>
-              <a href="https://github.com/civictechdc" target="_blank"
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <ul class="usa-list usa-list--unstyled">
+              <li class="usa-footer__secondary-link"><a href="https://github.com/civictechdc" target="_blank"
                 >GitHub</a
-              >
-            </p>
-            <p>
-              <a href="https://www.linkedin.com/company/civic-tech-dc/" target="_blank"
+              ></li>
+              <li class="usa-footer__secondary-link">
+                <a href="https://www.linkedin.com/company/civic-tech-dc/" target="_blank"
                 >LinkedIn</a
               >
-            </p>
+              </li>
+            </ul>
+          
           </div>
-          <div class="usa-width-one-third">
-            <p>
-              <a href="https://forms.gle/xNkayfBVMJj8dt1X8">Give Feedback</a>
-            </p>
-            <p>
-              <a href="https://forms.gle/HrpBe69qqCG8NiNo6"
+          <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
+            <ul class="usa-list usa-list--unstyled">
+              <li class="usa-footer__secondary-link"><a href="https://forms.gle/xNkayfBVMJj8dt1X8">Give Feedback</a></li>
+              <li class="usa-footer__secondary-link"> <a href="https://forms.gle/HrpBe69qqCG8NiNo6"
                 >Become an Organizer</a
-              >
-            </p>
+              ></li>
+            </ul>
+            
           </div>
+          </div>
+        </nav>
+      </div>
+        </div>
         </div>
       </div>
     </footer>
-    <script src="/js/uswds.min.js"></script>
-    <script src="/js/jquery-1.10.1.min.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript">
-      const showReturnToTopThreshold = 100;
-      const returnToTop = () => {
-        const scrollTop = $(window).scrollTop();
-        if (scrollTop > showReturnToTopThreshold) {
-          $("#returnToTop").show();
-        } else {
-          $("#returnToTop").hide();
-        }
-      };
 
-      $(window).on("scroll", () => returnToTop());
-      $("#returnToTopLink").click((e) => {
-        e.preventDefault();
-        $("html,body").animate(
-          {
-            scrollTop: 0,
-          },
-          700,
-        );
-      });
-    </script>
+    {% include page-components/js-foot.html %}
+
   </body>
 </html>

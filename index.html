@@ -4,9 +4,9 @@ redirect_from:
   - /contact.html
 ---
 
-<div class="usa-grid-wide">
-  <div id="hero-image" class="usa-width-one-whole">
-    <div id="hero-header-text" class="usa-width-two-thirds">
+<div class="">
+  <div id="hero-image" class="grid-col-12">
+    <div id="hero-header-text" class="grid-col-8">
       <!-- <h1 id="hero-text">Civic Tech DC</h1> -->
       <div id="hero-p">
         <p>
@@ -19,8 +19,8 @@ redirect_from:
   </div>
 </div>
 
-<div class="usa-grid">
-  <div class="usa-width-three-fourths usa-section">
+<div class="grid-container">
+  <div class="grid-col-9 usa-section">
     <h2 id="project-nights">Join us at one of our upcoming project nights!</h2>
     <p>
       Our twice-monthly meetups are open to anyone, and offer a chance to learn
@@ -28,7 +28,7 @@ redirect_from:
       free pizza!
     </p>
   </div>
-  <div class="usa-width-one-half">
+  <div class="grid-col-6">
     <h3 id="next-meetup-date"></h3>
     <p id="next-details">
       <span id="next-location"></span>
@@ -70,10 +70,10 @@ redirect_from:
       >
     </p>
   </div>
-  <div class="usa-width-one-half">
+  <div class="grid-col-6">
     <img src="assets/projnight.jpg" />
   </div>
-  <!-- <div class="usa-width-one-half">
+  <!-- <div class="grid-col-6">
             <br>
             <h2> PROJECT NIGHT </h2>
             <br>
@@ -82,7 +82,7 @@ redirect_from:
             <p>Our twice-monthly meetups are open to anyone, and offer a chance to learn more about what we do, contribute to a current project, or just snag some free pizza!</p>
     </div>
 
-    <div class="usa-width-one-half">
+    <div class="grid-col-6">
         <div class="beige-section">
             <br>
             <h2> SCHEDULE </h2>
@@ -102,9 +102,9 @@ redirect_from:
     </div> -->
 </div>
 
-<div class="usa-grid">
-  <div class="usa-width-one-whole usa-section">
-    <div class="usa-width-one-whole">
+<div class="grid-container">
+  <div class="grid-col-12 usa-section">
+    <div class="grid-col-12">
       <br />
       <!-- <h2 class="project-section-header">Projects</h2> -->
       <h2 id="projects">Projects</h2>
@@ -113,71 +113,29 @@ redirect_from:
         of our past and current projects:
       </p>
       <br />
-      <!-- <a href="#"> See all projects </a> -->
-      <!-- <br><br> -->
+
+      
     </div>
 
-    <!-- <div class="usa-width-one-third">
-        <div class="project-card">
-            <img src="assets/projplaceholder.png">
-            <h3> Project Name </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. </p>
-        </div>
-    </div> -->
+
+    <div class="grid-row grid-gap">
 
     {% include project-card.html project_slug="data-portal" %} {% include
     project-card.html project_slug="anc-finder" %} {% include project-card.html
     project_slug="open-election-map" %}
 
-    <!--
-    {% for project in site.projects %}
-    <div class="usa-width-one-third">
-        <a href="{{ project.link }}"><img src="{{ site.baseurl }}/images/project_thumbnails/{{ project.image }}"></a>
-        <h3>{{ project.name }}</h3>
-        <p>{{ project.content }}</p>
-    </div>
-    {% endfor %} -->
-
-    <!-- <div class="usa-width-one-third">
-        <img src="assets/projplaceholder.png">
-        <h3>Project Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. </p>
-    </div>
-    <div class="usa-width-one-third">
-        <img src="assets/projplaceholder.png">
-        <h3>Project Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. </p>
-    </div>
-    <div class="usa-width-one-third">
-        <img src="assets/projplaceholder.png">
-        <h3>Project Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. </p>
-    </div>
-
-    <div class="usa-width-one-third">
-        <img src="assets/projplaceholder.png">
-        <h3>Project Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. </p>
-    </div>
-    <div class="usa-width-one-third">
-        <img src="assets/projplaceholder.png">
-        <h3>Project Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. </p>
-    </div>
-    <div class="usa-width-one-third">
-        <img src="assets/projplaceholder.png">
-        <h3>Project Name</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore etdolore magna aliqua. </p>
-    </div> -->
+</div>    
   </div>
 </div>
 
-<div class="usa-grid">
-  <div class="usa-section">
-    <div class="usa-width-one-whole">
+<div class="grid-container">
+  <div class="usa-section grid-row grid-gap">
+
+    <div class="grid-col-12">
       <h2 id="about">About</h2>
-      <div class="usa-width-two-thirds">
+      <div class="grid-row grid-gap">
+
+      <div class="grid-col-8">
         <p>
           Founded in 2012, Civic Tech DC is a non-partisan, non-political group
           of volunteer civic hackers working together to solve local issues in
@@ -198,18 +156,19 @@ redirect_from:
         <br />
         <br />
       </div>
-      <div class="usa-width-one-third">
+      <div class="grid-col-4">
         <p></p>
+      </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="usa-grid-wide">
-  <div class="usa-width-one-whole" align="center">
+<div class="">
+  <div class="grid-col-12">
     <!-- <br>
         <button> Submit a Proposal </button> -->
   </div>
 </div>
 
-<script src="{{ site.baseurl }}/js/meetup.js"></script>
+<script src="{{ site.baseurl }}/assets/js/meetup.js"></script>

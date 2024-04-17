@@ -4,6 +4,19 @@
   },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.4.0",
+    "@uswds/compile": "^1.1.0",
     "prettier": "^3.1.1"
+  },
+  "name": "codefordc-website",
+  "description": "Welcome! This is the repository for the website for Civic Tech DC. It is a static site built with [Jekyll](https://jekyllrb.com/). It is mostly HTML, Javascript, and CSS.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uswds/uswds": "3.8.0"
   }
 }
