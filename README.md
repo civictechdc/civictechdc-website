@@ -43,7 +43,7 @@ asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install
 ```
 
-3. Install required gems.
+3. Install dependencies.
 
 `bundle install`
 
@@ -51,7 +51,7 @@ asdf install
 
 This command will run `gulp` as a background process and then jekyll as a foreground process.
 
-`bundle exec gulp & bundle exec jekyll serve`
+`npm run serve`
 
 5. Open a web browser page at `localhost:4000`
 
