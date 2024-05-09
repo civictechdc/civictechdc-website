@@ -46,6 +46,7 @@ asdf install
 3. Install dependencies.
 
 `bundle install`
+`npm install`
 
 4. Run a local version of the website.
 
