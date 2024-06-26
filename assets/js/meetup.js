@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       //    `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}` :
       //    `Tonight @ ${moment(nextMeetup.time).format('h:mm a')}`
       //)
+      $("#next-name").html(nextMeetup.name);
       if (nextMeetup.is_online_event) {
         $("#next-location").html("Online event");
       } else {
@@ -45,10 +46,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#future-meetup-date").html(
           `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}`,
         );
+        $("#future-name").html(futureMeetup.name);
         if (futureMeetup.is_online_event) {
-          $("#next-location").html("Online event");
+          $("#future-location").html("Online event");
         } else {
-          $("#next-location").html(
+          $("#future-location").html(
             `
                       <a href="https://www.google.com/maps/search/?api=1&query=${futureMeetup.venue.name}%2C%20${futureMeetup.venue.address_1}%2C%20${futureMeetup.venue.city}%2C%20${futureMeetup.venue.state}" target="_blank">${futureMeetup.venue.address_1}</a>
                           `,
