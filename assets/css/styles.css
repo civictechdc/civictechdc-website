@@ -11266,7 +11266,7 @@ html.usa-js-loading .usa-nav__submenu.usa-megamenu {
   list-style-type: none;
   padding-left: 0;
   counter-reset: usa-numbered-list;
-  padding: 20px 0 0 calc(2.5rem / 2 - 0.5rem/2);
+  padding: 20px 0 0 calc(2.5rem / 2 - 0.5rem / 2);
   position: relative;
 }
 .usa-process-list__item,
