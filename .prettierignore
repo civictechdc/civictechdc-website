@@ -3,6 +3,7 @@ _site/
 
 // Ignore minified js/css/etc bundles
 assets/js/*.min.js
+assets/css/*
 **/*.min.css
 **/*.min.js
 css_new/uswds.css
