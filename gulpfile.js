@@ -32,4 +32,3 @@ exports.init = uswds.init;
 exports.update = uswds.updateUswds;
 exports.default = uswds.watch;
 exports.copyAll = uswds.copyAll;
-
