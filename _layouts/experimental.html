@@ -1,0 +1,13 @@
+---
+layout: base
+---
+
+<header>{% include header.html %}</header>
+{% include hero.html heading=page.title text=page.description %}
+<div class="container content">
+  <div class="grid-container">
+    <div class="grid-col-12">{{ content }}</div>
+  </div>
+</div>
+
+{% include footer.html %}
