@@ -1,6 +1,6 @@
 ---
 project_name: Ballot Initiative
-image: anc-brigade.png
+image: ballot-initiative.png
 link: https://github.com/Civic-Tech-Ballot-Inititiave/Ballot-Initiative
 ---
 

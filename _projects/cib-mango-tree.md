@@ -1,6 +1,6 @@
 ---
 project_name: CIB Mango Tree
-image: anc-brigade.png
+image: mango.png
 link: https://github.com/CIB-Mango-Tree/CIB-Mango-Tree-Repo
 ---
 

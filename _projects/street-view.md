@@ -1,6 +1,6 @@
 ---
 project_name: StreetView
-image: anc-brigade.png
+image: street-view.png
 link: https://github.com/AmericanRedCross/street-view-green-view/ 
 ---
 

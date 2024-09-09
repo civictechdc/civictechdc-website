@@ -1,6 +1,6 @@
 ---
 project_name: EAVS
-image: anc-brigade.png
+image: eavs.png
 ---
 
 Use the data from the biennial Election Administration and Voting Survey

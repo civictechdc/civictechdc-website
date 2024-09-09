@@ -1,6 +1,6 @@
 ---
 project_name: Daria
-image: anc-brigade.png
+image: daria.png
 link: https://github.com/DCAFEngineering/dcaf_case_management/
 ---
 
