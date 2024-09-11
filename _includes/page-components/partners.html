@@ -8,10 +8,14 @@
       <br />
     </div>
 
-    <div class="grid-row grid-gap">
-      {% include project-card.html project_slug="data-portal" %} {% include
-      project-card.html project_slug="anc-finder" %} {% include
-      project-card.html project_slug="open-election-map" %}
+    <div class="grid-container display-flex flex-column">
+      <div class="grid-row grid-gap-lg">
+        <ul class="usa-card-group usa-list">
+          {% include project-card.html project_slug="data-portal" %} {% include
+          project-card.html project_slug="anc-finder" %} {% include
+          project-card.html project_slug="open-election-map" %}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
