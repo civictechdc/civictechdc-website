@@ -1,4 +1,6 @@
 {
   "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "postCreateCommand": "bundle install && bundle exec gulp & bundle exec jekyll serve"
+  "postCreateCommand": "bundle exec gulp & bundle exec jekyll serve",
+  "forwardPorts": [4000],
+  "onCreateCommand": "bundle install"
 }

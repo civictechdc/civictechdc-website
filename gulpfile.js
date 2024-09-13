@@ -15,7 +15,7 @@ uswds.settings.version = 3;
 uswds.paths.src.projectSass = "./sass/custom";
 // uswds.paths.src.theme = "./sass/theme";
 
-uswds.paths.dist.css = "./assets/css";
+uswds.paths.dist.css = "./dist/css";
 uswds.paths.dist.theme = "./sass/theme";
 uswds.paths.dist.js = "./assets/js";
 uswds.paths.dist.fonts = "./assets/fonts";
