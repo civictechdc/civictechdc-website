@@ -1,5 +1,5 @@
 ---
-layout: narrow
+layout: default
 title: Code of Conduct
 type: document
 deeplink: true
