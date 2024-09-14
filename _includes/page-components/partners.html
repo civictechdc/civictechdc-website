@@ -1,0 +1,21 @@
+<div class="grid-container">
+  <div class="grid-row">
+    <div class="grid-col-12">
+      <p>
+        The list of projects we’re working on is always changing! Here are a few
+        of our past and current projects:
+      </p>
+      <br />
+    </div>
+
+    <div class="grid-container display-flex flex-column">
+      <div class="grid-row grid-gap-lg">
+        <ul class="usa-card-group usa-list">
+          {% include project-card.html project_slug="data-portal" %} {% include
+          project-card.html project_slug="anc-finder" %} {% include
+          project-card.html project_slug="open-election-map" %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

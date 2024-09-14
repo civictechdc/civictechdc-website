@@ -1,5 +1,6 @@
 // Ignore build files
 _site/
+dist/
 
 // Ignore minified js/css/etc bundles
 assets/js/*.min.js

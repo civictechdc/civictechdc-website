@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: hero-image
 redirect_from:
   - /contact.html
 ---
@@ -118,14 +118,15 @@ redirect_from:
     </div>
 
     <div class="grid-row grid-gap">
-      {% include project-card.html project_slug="ballot-initiative" %} {%
-      include project-card.html project_slug="cib-mango-tree" %} {% include
-      project-card.html project_slug="daria" %}
+      <ul class="usa-card-group usa-list">
+        {% include project-card.html project_slug="ballot-initiative" %} {%
+        include project-card.html project_slug="cib-mango-tree" %} {% include
+        project-card.html project_slug="daria" %} {% include project-card.html
+        project_slug="eavs" %} {% include project-card.html
+        project_slug="street-view" %}
+      </ul>
     </div>
-    <div class="grid-row grid-gap">
-      {% include project-card.html project_slug="eavs" %} {% include
-      project-card.html project_slug="street-view" %}
-    </div>
+    <div class="grid-row grid-gap"></div>
   </div>
 </div>
 
