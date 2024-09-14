@@ -93,8 +93,7 @@ We're always looking for new partners! Get in touch with us to see how we can wo
                 </div>
                 <div class="usa-card__body">
                     <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis earum
-                    tenetur quo cupiditate, eaque qui officia recusandae.
+        We're open to other creative partnerships! Have a space where we could host events? An initiative to put time or resources towards community improvement efforts? Let's talk!
                     </p>
                 </div>
                 </div>
