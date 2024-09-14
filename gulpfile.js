@@ -18,8 +18,8 @@ uswds.paths.src.projectSass = "./sass/custom";
 uswds.paths.dist.css = "./dist/css";
 uswds.paths.dist.theme = "./sass/theme";
 uswds.paths.dist.js = "./assets/js";
-uswds.paths.dist.fonts = "./assets/fonts";
-uswds.paths.dist.img = "./assets/img";
+uswds.paths.dist.fonts = "./dist/fonts";
+uswds.paths.dist.img = "./dist/img";
 
 /**
  * Exports
