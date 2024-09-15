@@ -7,7 +7,6 @@ redirect_from:
 <div class="">
   <div id="hero-image" class="grid-col-12">
     <div id="hero-header-text" class="grid-col-8">
-      <!-- <h1 id="hero-text">Civic Tech DC</h1> -->
       <div id="hero-p">
         <p>
           Founded in 2012, Civic Tech DC is a non-partisan, non-political group
@@ -20,46 +19,12 @@ redirect_from:
 </div>
 
 <div class="grid-container">
-  <div class="grid-col-9 usa-section">
+  <div class="usa-section padding-y-0">
     <h2 id="project-nights">Join us at one of our upcoming project nights!</h2>
     <p>
       Our twice-monthly meetups are open to anyone, and offer a chance to learn
       more about what we do, contribute to a current project, or just snag some
       free pizza!
-    </p>
-  </div>
-  <div class="grid-col-6">
-    <h3 id="next-meetup-date"></h3>
-    <h4 id="next-name"></h4>
-    <p id="next-details">
-      <span id="next-location"></span>
-      <br />
-      <span id="next-rsvps"> </span> do-gooders will be there — what about you?
-      <br />
-      <a
-        id="next-rsvp"
-        target="_blank"
-        href="https://www.meetup.com/Civic-Tech-DC/"
-        class="usa-button"
-        >RSVP on Meetup »</a
-      >
-    </p>
-
-    <h3 id="future-meetup-date"></h3>
-    <h4 id="future-name"></h4>
-    <p id="future-details">
-      <span id="future-location"></span>
-      <br />
-      <span id="future-rsvps"> </span> do-gooders will be there — what about
-      you?
-      <br />
-      <a
-        id="future-rsvp"
-        target="_blank"
-        href="https://www.meetup.com/Civic-Tech-DC/"
-        class="usa-button"
-        >RSVP on Meetup »</a
-      >
     </p>
     <p>
       <strong
@@ -72,36 +37,62 @@ redirect_from:
       >
     </p>
   </div>
-  <div class="grid-col-6">
-    <img src="assets/projnight.jpg" />
-  </div>
-  <!-- <div class="grid-col-6">
-            <br>
-            <h2> PROJECT NIGHT </h2>
-            <br>
-            <img src="assets/projnight.jpg">
-            <br>
-            <p>Our twice-monthly meetups are open to anyone, and offer a chance to learn more about what we do, contribute to a current project, or just snag some free pizza!</p>
-    </div>
-
-    <div class="grid-col-6">
-        <div class="beige-section">
-            <br>
-            <h2> SCHEDULE </h2>
-            <br>
-            <h3>Project Night</h3>
-            <p>Tuesday, January 8 @ 6:30pm</p>
-            <p>1325 G Street, NW, 3rd Floor</p>
-            <p>65 do-gooders will be there — what about you?</p>
-            <p><a href="https://www.meetup.com/Civic-Tech-DC/events/">RSVP on Meetup »</a></p>
-            <br>
-            <h3>Project Night</h3>
-            <p>Tuesday, January 29 @ 6:30pm</p>
-            <p>1200 New York Ave NW</p>
-            <p>38 do-gooders will be there — what about you?</p>
-            <p><a href="https://www.meetup.com/Civic-Tech-DC/events/">RSVP on Meetup »</a></p>
+  <ul class="usa-card-group usa-list">
+    <li class="usa-card tablet-lg:grid-col-6 grid-col-4">
+      <div class="usa-card__container">
+        <div class="usa-card__header">
+          <h3 id="next-meetup-date"></h3>
+          <h4 id="next-name"></h4>
         </div>
-    </div> -->
+        <div class="usa-card__body">
+          <p id="next-details">
+            <span id="next-location"></span>
+            <br />
+            <span id="next-rsvps"> </span> problem solvers will be there — what
+            about you?
+            <br />
+            <a
+              id="next-rsvp"
+              target="_blank"
+              href="https://www.meetup.com/Civic-Tech-DC/"
+              class="usa-button"
+              >RSVP on Meetup »</a
+            >
+          </p>
+        </div>
+      </div>
+    </li>
+
+    <li
+      hidden
+      id="future-meetup-card"
+      class="usa-card tablet-lg:grid-col-6 grid-col-4"
+    >
+      <div class="usa-card__container">
+        <div class="usa-card__header">
+          <h4 class="usa-card__heading">{{ project.project_name }}</h4>
+          <h3 id="future-meetup-date usa-card__heading"></h3>
+          <h4 id="future-name"></h4>
+        </div>
+        <div class="usa-card__body">
+          <p id="future-details">
+            <span id="future-location"></span>
+            <br />
+            <span id="future-rsvps"> </span> problem solvers will be there —
+            what about you?
+            <br />
+            <a
+              id="future-rsvp"
+              target="_blank"
+              href="https://www.meetup.com/Civic-Tech-DC/"
+              class="usa-button"
+              >RSVP on Meetup »</a
+            >
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
 
 <div class="grid-container">
