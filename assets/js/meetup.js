@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       $("#meetup").removeClass("loading"); // Hide loader icon
     },
   }).done((xhr) => {
-    console.log(xhr.data);
     const nextMeetup = xhr.data[0];
     const futureMeetup = xhr.data[1];
     if (nextMeetup) {
