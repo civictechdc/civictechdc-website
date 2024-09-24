@@ -5,7 +5,7 @@ on:
 
 jobs:
   lint:
-    name: Lint Codebase
+    name: Lint check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -17,7 +17,7 @@ jobs:
       - name: Run linter
         run: npm run lint
   gulp:
-    name: Gulp compile
+    name: Gulp compile (you may need to run `gulp compile` and commit changed files if this check fails)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
