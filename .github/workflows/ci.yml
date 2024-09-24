@@ -16,3 +16,17 @@ jobs:
 
       - name: Run linter
         run: npm run lint
+  gulp:
+    name: Gulp compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run gulp compile and check if any files changed
+        run: |
+          gulp compile
+          git diff --no-patch --exit-code
