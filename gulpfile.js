@@ -1,4 +1,3 @@
-import { series } from "gulp";
 import uswds from "@uswds/compile";
 
 /**
