@@ -15,11 +15,11 @@ uswds.paths.src.projectSass = "./sass/custom";
 /**
  * Configure USWDS destination paths
  */
-uswds.paths.dist.css = "./dist/css";
+uswds.paths.dist.css = "./assets/css";
 uswds.paths.dist.theme = "./sass/theme";
 uswds.paths.dist.js = "./assets/js";
-uswds.paths.dist.fonts = "./dist/fonts";
-uswds.paths.dist.img = "./dist/img";
+uswds.paths.dist.fonts = "./assets/fonts";
+uswds.paths.dist.img = "./assets/img";
 
 /**
  * Functions exported as gulp tasks
