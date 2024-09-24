@@ -28,6 +28,7 @@ jobs:
 
       - name: Run gulp compile and check if any files changed
         run: |
+          echo "If this check fails then you may need to run `gulp compile` and commit any changes"
           gulp compile
-          echo "If this fails then you need to run `gulp compile` and commit any changes"
+          echo "If this check fails then you may need to run `gulp compile` and commit any changes"
           git diff --no-patch --exit-code
