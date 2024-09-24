@@ -1,6 +1,4 @@
-/* gulpfile.js */
-
-const uswds = require("@uswds/compile");
+import uswds from "@uswds/compile";
 
 /**
  * USWDS version
@@ -9,12 +7,14 @@ const uswds = require("@uswds/compile");
 uswds.settings.version = 3;
 
 /**
- * Path settings
- * Set as many as you need
+ * Configure USWDS source paths
  */
 uswds.paths.src.projectSass = "./sass/custom";
 // uswds.paths.src.theme = "./sass/theme";
 
+/**
+ * Configure USWDS destination paths
+ */
 uswds.paths.dist.css = "./dist/css";
 uswds.paths.dist.theme = "./sass/theme";
 uswds.paths.dist.js = "./assets/js";
@@ -22,13 +22,11 @@ uswds.paths.dist.fonts = "./dist/fonts";
 uswds.paths.dist.img = "./dist/img";
 
 /**
- * Exports
- * Add as many as you need
+ * Functions exported as gulp tasks
  */
 
-exports.compile = uswds.compile;
-exports.watch = uswds.watch;
-exports.init = uswds.init;
-exports.update = uswds.updateUswds;
-exports.default = uswds.watch;
-exports.copyAll = uswds.copyAll;
+export const compile = () => uswds.compile();
+export const watch = () => uswds.watch();
+export const updateUswds = () => uswds.updateUswds();
+export const copyAll = () => uswds.copyAll();
+export default () => watch();

@@ -22,3 +22,5 @@ exclude:
   - /css
   - /sass
   - /assets/css/
+  - /assets/fonts/
+  - /assets/img/

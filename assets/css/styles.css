@@ -28610,15 +28610,6 @@ html {
   min-height: 4rem;
   height: initial;
 }
-#hero-image {
-  background-image: url(/assets/images/hero-social-tables.png);
-  height: 60vh;
-  background-position: center 20%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-}
 #hero-header-text {
   margin: 2% 2% 2% 10%;
 }
