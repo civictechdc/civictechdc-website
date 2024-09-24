@@ -25,8 +25,8 @@ uswds.paths.dist.img = "./assets/img";
  * Functions exported as gulp tasks
  */
 
-export const compile = () => uswds.compile();
-export const watch = () => uswds.watch();
-export const updateUswds = () => uswds.updateUswds();
-export const copyAll = () => uswds.copyAll();
-export default () => watch();
+export const compile = (done) => uswds.compile(done);
+export const watch = (done) => uswds.watch(done);
+export const updateUswds = (done) => uswds.updateUswds(done);
+export const copyAll = (done) => uswds.copyAll(done);
+export default (done) => watch(done);
