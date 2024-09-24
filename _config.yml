@@ -19,6 +19,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - npm-debug.log
-  - /css
   - /sass
-  - /assets/css/

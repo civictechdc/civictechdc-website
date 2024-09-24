@@ -10,6 +10,7 @@
     "prettier": "^3.1.1"
   },
   "name": "codefordc-website",
+  "type": "module",
   "description": "Welcome! This is the repository for the website for Civic Tech DC. It is a static site built with [Jekyll](https://jekyllrb.com/). It is mostly HTML, Javascript, and CSS.",
   "version": "1.0.0",
   "main": "index.js",
