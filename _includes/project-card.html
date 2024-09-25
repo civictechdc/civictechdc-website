@@ -1,7 +1,7 @@
 {% assign project_slug = include.project_slug %} {% assign project =
 site.projects | where: "slug", project_slug | first %}
 
-<li class="usa-card grid-col-12 tablet:grid-col-4">
+<li class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
   <div class="usa-card__container">
     <div class="usa-card__header">
       <a href="{{ project.link }}" target="_blank">
