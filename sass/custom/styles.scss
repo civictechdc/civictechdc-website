@@ -10,7 +10,13 @@ body {
 .ctdc_logo > img {
   padding-top: 1rem;
   padding-bottom: 0.5rem;
-  max-height: 8rem;
+  max-height: 4rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .ctdc_logo > img {
+    max-height: 8rem;
+  }
 }
 
 .usa-navbar {
