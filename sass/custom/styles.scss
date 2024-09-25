@@ -7,20 +7,10 @@ body {
   flex-shrink: 0;
 }
 
-#navbar {
-  padding: 1%;
-  background-color: #f5f6f6;
-  display: inline-block;
-}
-
-.civic_logo > img {
+.ctdc_logo > img {
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   max-height: 8rem;
-}
-
-#logo-link {
-  display: inline-block;
 }
 
 .usa-navbar {
@@ -38,28 +28,17 @@ body {
   overflow: hidden;
 }
 
-#hero-header-text {
-  margin: 2%;
-  margin-left: 10%;
-}
-
-#hero-text {
-  color: white;
-  background-color: #711613;
-  padding: 1rem;
-  display: inline-block;
-  font-size: 320%;
-  right: 0;
-  margin-left: 55%;
-}
-
 #hero-p {
-  width: 50%;
+  width: 94%;
   color: white;
-  margin-left: 10%;
   background: black;
   opacity: 0.75;
-  padding: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  #hero-p {
+    width: 35%;
+  }
 }
 
 .card-container {
@@ -68,16 +47,6 @@ body {
 
 .card-container > * {
   width: 90%;
-}
-
-.navbar-right {
-  margin-top: 1%;
-  float: right;
-  width: 50%;
-}
-
-.navbar-right > * {
-  margin-left: 6%;
 }
 
 .nav-link,
