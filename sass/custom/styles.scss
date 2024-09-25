@@ -3,34 +3,9 @@ body {
   height: 100%;
 }
 
-// .content {
-//   flex: 1 0 auto;
-// }
 .footer {
   flex-shrink: 0;
 }
-
-// body {
-//   font-family: "Source Sans Pro", sans-serif;
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// h1,
-// h2,
-// h3 {
-//   font-family: "Karla", "Source Sans Pro", sans-serif;
-//   font-weight: 700;
-//   /* color: #640000; */
-// }
-
-// footer {
-//   background-color: #f5f6f6;
-// }
-
-// button {
-//   background-color: #0051ef;
-// }
 
 #navbar {
   padding: 1%;
@@ -87,18 +62,6 @@ body {
   padding: 1rem;
 }
 
-#learn-more {
-  padding: 2.1%;
-  padding-left: 8%;
-  padding-right: 8%;
-  border-top: solid 2px #0051ef;
-}
-
-#join-slack {
-  background-color: rgba(255, 255, 255, 0);
-  border: solid 2px white;
-}
-
 .card-container {
   margin-left: 10%;
 }
@@ -122,35 +85,6 @@ body {
   text-decoration: none;
   font-size: 140%;
   color: #7a7a7a;
-}
-
-.project-section-header {
-  margin-left: 5%;
-  display: inline-block;
-}
-
-.project-section-header ~ a {
-  float: right;
-  margin-top: 3%;
-  margin-right: 5%;
-  color: #6f130e;
-  display: inline-block;
-}
-
-.project-card {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
-  border-radius: 20px;
-}
-
-.project-card > img {
-  border-radius: 20px 20px 0 0;
-}
-
-.project-card > h3,
-.project-card > p {
-  padding-left: 20px;
 }
 
 .usa-header--basic .usa-nav-container {

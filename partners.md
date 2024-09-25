@@ -7,7 +7,12 @@ description: Civic Tech DC is a group of technologists and advocates who volunte
 
 ## Projects we've done with partners
 
-{% include page-components/partners.html %}
+<p>
+  The list of projects we’re working on is always changing! Here are a few of current projects:
+</p>
+<br />
+
+{% include page-components/project-cards.html %}
 
 ## Become a partner
 
@@ -18,86 +23,34 @@ We're always looking for new partners! Get in touch with us to see how we can wo
 <div class="grid-container display-flex flex-column measure-6">
 <div class="grid-row grid-gap-lg">
         <ul class="usa-card-group usa-list">
-            <li class="usa-card tablet-lg:grid-col-6 grid-col-6">
-                <div class="usa-card__container">
-                <div class="usa-card__header">
-                    <h4 class="usa-card__heading">Organizations</h4>
-                </div>
-                <div class="usa-card__media">
-                    <div class="usa-card__img">
-                    <img
-                        src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
-                        alt="A placeholder image"
-                    />
-                    </div>
-                </div>
-                <div class="usa-card__body">
-                    <p>
-        Our strongest partners historically have been local nonprofits and community-based organizations. Whether it's digitizing paper processes, building new forms, or building proofs-of-concept we're always interested in seeing how we can use technology to make an impact in our community.
-                    </p>
-                </div>
-                </div>
-            </li>
-            <li class="usa-card tablet-lg:grid-col-6 grid-col-6">
-                <div class="usa-card__container">
-                <div class="usa-card__header">
-                    <h4 class="usa-card__heading">Government</h4>
-                </div>
-                <div class="usa-card__media">
-                    <div class="usa-card__img">
-                    <img
-                        src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
-                        alt="A placeholder image"
-                    />
-                    </div>
-                </div>
-                <div class="usa-card__body">
-                    <p>
-        Local government provides invaluable services and help to our community and we're interested in helping make it more effective. This might mean developing a community outreach and feedback project, building a tool for people to request a particular service, or building some other proof-of-concept for how government interacts with its constituents.
-                    </p>
-                </div>
-                </div>
-            </li>
-            <li class="usa-card tablet-lg:grid-col-6 grid-col-6">
-                <div class="usa-card__container">
-                <div class="usa-card__header">
-                    <h4 class="usa-card__heading">Activists and community members</h4>
-                </div>
-                <div class="usa-card__media">
-                    <div class="usa-card__img">
-                    <img
-                        src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
-                        alt="A placeholder image"
-                    />
-                    </div>
-                </div>
-                <div class="usa-card__body">
-                    <p>
-        Do you have an idea of how technology could help solve a problem in your community? We're interested in hearing more! Those close to or experiencing a problem in our community likely know it best and have ideas for how it can be improved.
-                    </p>
-                </div>
-                </div>
-            </li>
-            <li class="usa-card tablet-lg:grid-col-6 grid-col-6">
-                <div class="usa-card__container">
-                <div class="usa-card__header">
-                    <h4 class="usa-card__heading">And more</h4>
-                </div>
-                <div class="usa-card__media">
-                    <div class="usa-card__img">
-                    <img
-                        src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
-                        alt="A placeholder image"
-                    />
-                    </div>
-                </div>
-                <div class="usa-card__body">
-                    <p>
-        We're open to other creative partnerships! Have a space where we could host events? An initiative to put time or resources towards community improvement efforts? Let's talk!
-                    </p>
-                </div>
-                </div>
-            </li>
+          {% include page-components/card.html
+            class="usa-card grid-col-12 tablet:grid-col-6"
+            header="Organizations"
+            image_src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
+            image_alt_text="Organizations placeholder"
+            body="Our strongest partners historically have been local nonprofits and community-based organizations. Whether it's digitizing paper processes, building new forms, or building proofs-of-concept we're always interested in seeing how we can use technology to make an impact in our community."
+          %}
+          {% include page-components/card.html
+            class="usa-card grid-col-12 tablet:grid-col-6"
+            header="Government"
+            image_src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
+            image_alt_text="Government placeholder"
+            body="Local government provides invaluable services and help to our community and we're interested in helping make it more effective. This might mean developing a community outreach and feedback project, building a tool for people to request a particular service, or building some other proof-of-concept for how government interacts with its constituents."
+          %}
+          {% include page-components/card.html
+            class="usa-card grid-col-12 tablet:grid-col-6"
+            header="Activists and community members"
+            image_src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
+            image_alt_text="Acitivity and community members placeholder"
+            body="Do you have an idea of how technology could help solve a problem in your community? We're interested in hearing more! Those close to or experiencing a problem in our community likely know it best and have ideas for how it can be improved."
+          %}
+          {% include page-components/card.html
+            class="usa-card grid-col-12 tablet:grid-col-6"
+            header="And more"
+            image_src="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
+            image_alt_text="And more placeholder"
+            body="We're open to other creative partnerships! Have a space where we could host events? An initiative to put time or resources towards community improvement efforts? Let's talk!"
+          %}
         </ul>
     </div>
 </div>

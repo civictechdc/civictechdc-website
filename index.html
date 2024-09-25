@@ -4,23 +4,21 @@ redirect_from:
   - /contact.html
 ---
 
-<div class="">
-  <div id="hero-image" class="grid-col-12">
-    <div id="hero-header-text" class="grid-col-8">
-      <div id="hero-p">
-        <p>
-          Founded in 2012, Civic Tech DC is a non-partisan, non-political group
-          of volunteer civic hackers working together to solve local issues and
-          help people engage with the city.
-        </p>
-      </div>
+<div id="hero-image" class="grid-col-12">
+  <div id="hero-header-text" class="grid-col-8">
+    <div id="hero-p">
+      <p>
+        Founded in 2012, Civic Tech DC is a non-partisan, non-political group of
+        volunteer civic hackers working together to solve local issues and help
+        people engage with the city.
+      </p>
     </div>
   </div>
 </div>
 
 <div class="grid-container">
-  <div class="usa-section padding-y-0">
-    <h2 id="project-nights">Join us at one of our upcoming project nights!</h2>
+  <div class="padding-y-0">
+    <h2>Join us at one of our upcoming project nights!</h2>
     <p>
       Our twice-monthly meetups are open to anyone, and offer a chance to learn
       more about what we do, contribute to a current project, or just snag some
@@ -36,128 +34,87 @@ redirect_from:
         ></strong
       >
     </p>
-  </div>
-  <ul class="usa-card-group usa-list">
-    <li class="usa-card tablet-lg:grid-col-6 grid-col-4">
-      <div class="usa-card__container">
-        <div class="usa-card__header">
-          <h3 id="next-meetup-date"></h3>
-          <h4 id="next-name"></h4>
-        </div>
-        <div class="usa-card__body">
-          <p id="next-details">
-            <span id="next-location"></span>
-            <br />
-            <span id="next-rsvps"> </span> problem solvers will be there — what
-            about you?
-            <br />
-            <a
-              id="next-rsvp"
-              target="_blank"
-              href="https://www.meetup.com/Civic-Tech-DC/"
-              class="usa-button"
-              >RSVP on Meetup »</a
-            >
-          </p>
-        </div>
-      </div>
-    </li>
-
-    <li
-      hidden
-      id="future-meetup-card"
-      class="usa-card tablet-lg:grid-col-6 grid-col-4"
-    >
-      <div class="usa-card__container">
-        <div class="usa-card__header">
-          <h4 class="usa-card__heading">{{ project.project_name }}</h4>
-          <h3 id="future-meetup-date usa-card__heading"></h3>
-          <h4 id="future-name"></h4>
-        </div>
-        <div class="usa-card__body">
-          <p id="future-details">
-            <span id="future-location"></span>
-            <br />
-            <span id="future-rsvps"> </span> problem solvers will be there —
-            what about you?
-            <br />
-            <a
-              id="future-rsvp"
-              target="_blank"
-              href="https://www.meetup.com/Civic-Tech-DC/"
-              class="usa-button"
-              >RSVP on Meetup »</a
-            >
-          </p>
-        </div>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="grid-container">
-  <div class="grid-col-12 usa-section">
-    <div class="grid-col-12">
-      <br />
-      <!-- <h2 class="project-section-header">Projects</h2> -->
-      <h2 id="projects">Current Projects</h2>
-      <p>
-        The list of projects we’re working on is always changing! Here are a few
-        of our current projects:
-      </p>
-      <br />
-    </div>
-
-    <div class="grid-row grid-gap">
-      <ul class="usa-card-group usa-list">
-        {% include project-card.html project_slug="ballot-initiative" %} {%
-        include project-card.html project_slug="cib-mango-tree" %} {% include
-        project-card.html project_slug="daria" %} {% include project-card.html
-        project_slug="eavs" %} {% include project-card.html
-        project_slug="street-view" %}
-      </ul>
-    </div>
-    <div class="grid-row grid-gap"></div>
-  </div>
-</div>
-
-<div class="grid-container">
-  <div class="usa-section grid-row grid-gap">
-    <div class="grid-col-12">
-      <h2 id="about">About</h2>
-      <div class="grid-row grid-gap">
-        <div class="grid-col-8">
-          <p>
-            Founded in 2012, Civic Tech DC is a non-partisan, non-political
-            group of volunteer civic hackers working together to solve local
-            issues in the Washington, DC area and helping people engage with the
-            city. We host twice-monthly hacknights and other events to gather,
-            discuss, and get stuff done.
-          </p>
-          <p>
-            We're looking to bring people with all different skill sets together
-            to maximize our potential. Civic hackers aren't just developers —
-            they're journalists, lawyers, designers, and interested citizens in
-            general. The more community participation, the better.
-          </p>
-          <p>To contact us, please email team@civictechdc.org.</p>
-          <br />
-          <br />
-          <br />
-        </div>
-        <div class="grid-col-4">
-          <p></p>
-        </div>
+    <div class="grid-container">
+      <div class="grid-row grid-gap-lg">
+        <ul class="usa-card-group usa-list">
+          <li class="usa-card grid-col-12">
+            <div class="usa-card__container">
+              <div class="usa-card__header">
+                <h3 id="next-meetup-date"></h3>
+                <h4 id="next-name"></h4>
+              </div>
+              <div class="usa-card__body">
+                <p id="next-details">
+                  <span id="next-location"></span>
+                  <br />
+                  <span id="next-rsvps"> </span> problem solvers will be there —
+                  what about you?
+                  <br />
+                  <a
+                    id="next-rsvp"
+                    target="_blank"
+                    href="https://www.meetup.com/Civic-Tech-DC/"
+                    class="usa-button"
+                    >RSVP on Meetup »</a
+                  >
+                </p>
+              </div>
+            </div>
+          </li>
+          <li hidden id="future-meetup-card" class="usa-card grid-col-12">
+            <div class="usa-card__container">
+              <div class="usa-card__header">
+                <h4 class="usa-card__heading">{{ project.project_name }}</h4>
+                <h3 id="future-meetup-date usa-card__heading"></h3>
+                <h4 id="future-name"></h4>
+              </div>
+              <div class="usa-card__body">
+                <p id="future-details">
+                  <span id="future-location"></span>
+                  <br />
+                  <span id="future-rsvps"> </span> problem solvers will be there
+                  — what about you?
+                  <br />
+                  <a
+                    id="future-rsvp"
+                    target="_blank"
+                    href="https://www.meetup.com/Civic-Tech-DC/"
+                    class="usa-button"
+                    >RSVP on Meetup »</a
+                  >
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-</div>
 
-<div class="">
-  <div class="grid-col-12">
-    <!-- <br>
-        <button> Submit a Proposal </button> -->
-  </div>
+  <h2>Current Projects</h2>
+  <p>
+    The list of projects we’re working on is always changing! Here are a few of
+    our current projects:
+  </p>
+  <br />
+
+  {% include page-components/project-cards.html %}
+
+  <h2>About</h2>
+  <p>
+    Founded in 2012, Civic Tech DC is a non-partisan, non-political group of
+    volunteer civic hackers working together to solve local issues in the
+    Washington, DC area and helping people engage with the city. We host
+    twice-monthly hacknights and other events to gather, discuss, and get stuff
+    done.
+  </p>
+  <p>
+    We're looking to bring people with all different skill sets together to
+    maximize our potential. Civic hackers aren't just developers — they're
+    journalists, lawyers, designers, and interested citizens in general. The
+    more community participation, the better.
+  </p>
+  <p>To contact us, please email team@civictechdc.org.</p>
 </div>
 
 <script src="{{ site.baseurl }}/assets/js/meetup.js"></script>
