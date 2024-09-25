@@ -7,20 +7,10 @@ body {
   flex-shrink: 0;
 }
 
-#navbar {
-  padding: 1%;
-  background-color: #f5f6f6;
-  display: inline-block;
-}
-
-.civic_logo > img {
+.ctdc_logo > img {
   padding-top: 1rem;
   padding-bottom: 0.5rem;
   max-height: 8rem;
-}
-
-#logo-link {
-  display: inline-block;
 }
 
 .usa-navbar {
@@ -68,16 +58,6 @@ body {
 
 .card-container > * {
   width: 90%;
-}
-
-.navbar-right {
-  margin-top: 1%;
-  float: right;
-  width: 50%;
-}
-
-.navbar-right > * {
-  margin-left: 6%;
 }
 
 .nav-link,
