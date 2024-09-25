@@ -28,28 +28,17 @@ body {
   overflow: hidden;
 }
 
-#hero-header-text {
-  margin: 2%;
-  margin-left: 10%;
-}
-
-#hero-text {
-  color: white;
-  background-color: #711613;
-  padding: 1rem;
-  display: inline-block;
-  font-size: 320%;
-  right: 0;
-  margin-left: 55%;
-}
-
 #hero-p {
-  width: 50%;
+  width: 94%;
   color: white;
-  margin-left: 10%;
   background: black;
   opacity: 0.75;
-  padding: 1rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  #hero-p {
+    width: 35%;
+  }
 }
 
 .card-container {
