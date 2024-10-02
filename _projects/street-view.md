@@ -1,6 +1,6 @@
 ---
 project_name: StreetView
-image: street-view.png
+image: street-view.jpg
 link: https://github.com/AmericanRedCross/street-view-green-view/
 ---
 
