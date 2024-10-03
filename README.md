@@ -63,8 +63,7 @@ Let us know if you get stuck in the Civic Tech DC Slack channel #civictechdc-web
 ```
 .
 ├── .devcontainer                 // GitHub Codespaces configuration
-├── .github                       // GitHub actions
-├── .gitignore                    // Files and directories that Git should ignore
+├── .github                       // GitHub workflows
 ├── .prettier.rc                  // Prettier linting and formatting configuration
 ├── .prettierignore               // Files and directories that Prettier should ignore
 ├── .python-version               // Python version
