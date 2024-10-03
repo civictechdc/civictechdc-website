@@ -3,6 +3,7 @@ layout: project
 is_active: true
 title: EAVS
 image: eavs.png
+image_alt_text: Voting precinct data table
 github_link: https://github.com/civictechdc/eavs_clc
 slack_channel: eavs_clc
 ---

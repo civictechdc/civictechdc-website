@@ -3,6 +3,7 @@ layout: project
 is_active: true
 title: Daria
 image: daria.png
+image_alt_text: Blue D logo
 github_link: https://github.com/DCAFEngineering/dcaf_case_management/
 slack_channel: daria
 ---
