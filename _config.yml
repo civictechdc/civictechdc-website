@@ -11,7 +11,8 @@ future: true
 baseurl: ""
 
 collections:
-  - projects
+  projects:
+    output: true
 
 exclude:
   - /node_modules/
