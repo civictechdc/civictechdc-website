@@ -1,8 +1,12 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+/*
+ * This script makes a request to meetup.com to check for details about upcoming events and then modifies DOM items to add those
+ * details as appropriate.
+ */
+document.addEventListener("DOMContentLoaded", function () {
   $.ajax({
     type: "GET",
     dataType: "jsonp",
-    url: "https://api.meetup.com/Civic-Tech-DC/events?&page=2",
+    url: "https://api.meetup.com/civic-tech-dc/events?&page=2",
     crossDomain: true,
     xhrFields: {
       withCredentials: true,
@@ -16,57 +20,50 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }).done((xhr) => {
     const nextMeetup = xhr.data[0];
     const futureMeetup = xhr.data[1];
+
     if (nextMeetup) {
-      $("#next-meetup-date").html(
+      // There's at least one upcoming event! Fill out the DOM with details about it.
+      $("#meetup-next-event-date").html(
         `${moment(nextMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}`,
       );
-      //$('#next-meetup-date').html(
-      //    moment(!nextMeetup.time).isSame(moment(), 'day') ?
-      //    `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}` :
-      //    `Tonight @ ${moment(nextMeetup.time).format('h:mm a')}`
-      //)
-      $("#next-name").html(nextMeetup.name);
+      $("#meetup-next-event-title").html(nextMeetup.name);
       if (nextMeetup.is_online_event) {
-        $("#next-location").html("Online event");
+        $("#meetup-next-event-location").html("Online event");
       } else {
-        $("#next-location").html(
+        $("#meetup-next-event-location").html(
           `
                       <a href="https://www.google.com/maps/search/?api=1&query=${nextMeetup.venue.name}%2C%20${nextMeetup.venue.address_1}%2C%20${nextMeetup.venue.city}%2C%20${nextMeetup.venue.state}" target="_blank">${nextMeetup.venue.address_1}</a>
                       `,
         );
       }
-      $("#next-rsvps").html(nextMeetup.yes_rsvp_count);
-      $("#next-rsvp").attr(
+      $("#meetup-next-event-num-rsvps").html(nextMeetup.yes_rsvp_count);
+      $("#meetup-next-event-rsvp-button").attr(
         "href",
-        `https://www.meetup.com/Civic-Tech-DC/events/${nextMeetup.id}`,
+        `https://www.meetup.com/civic-tech-dc/events/${nextMeetup.id}`,
       );
+      $("#meetup-next-event-rsvp-button").html("RSVP on Meetup »");
+      $("#meetup-next-event-details").show();
 
       if (futureMeetup) {
-        $("#future-meetup-date").html(
+        // There are at least two upcoming events! Fill out the DOM with details about the latter of them and then unhide
+        // the "future event" card.
+        $("#meetup-future-event-date").html(
           `${moment(futureMeetup.time).format("dddd, MMMM D, YYYY @ h:mm a")}`,
         );
-        $("#future-name").html(futureMeetup.name);
+        $("#meetup-future-event-title").html(futureMeetup.name);
         if (futureMeetup.is_online_event) {
-          $("#future-location").html("Online event");
+          $("#meetup-future-event-location").html("Online event");
         } else {
-          $("#future-location").html(
+          $("#meetup-future-event-location").html(
             `
                       <a href="https://www.google.com/maps/search/?api=1&query=${futureMeetup.venue.name}%2C%20${futureMeetup.venue.address_1}%2C%20${futureMeetup.venue.city}%2C%20${futureMeetup.venue.state}" target="_blank">${futureMeetup.venue.address_1}</a>
                           `,
           );
         }
-        $("#future-rsvps").html(futureMeetup.yes_rsvp_count);
-        $("#future-rsvp").attr("href", futureMeetup.link);
-      } else {
-        $("#future-meetup-date").hide();
-        $("#future-details").hide();
+        $("#meetup-future-event-num-rsvps").html(futureMeetup.yes_rsvp_count);
+        $("#meetup-future-event-rsvp-button").attr("href", futureMeetup.link);
+        $("#meetup-future-event-card").show();
       }
-    } else {
-      $("#next-meetup-date").hide();
-      $("#next-details").hide();
-      $("#future-meetup-date").hide();
-      $("#future-details").hide();
-      $("#all-meetup-events").addClass("usa-button");
     }
   });
 });
