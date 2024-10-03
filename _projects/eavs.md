@@ -1,7 +1,10 @@
 ---
-project_name: EAVS
+layout: project
+is_active: true
+title: EAVS
 image: eavs.png
-link: https://github.com/civictechdc/eavs_clc
+github_link: https://github.com/civictechdc/eavs_clc
+slack_channel: eavs_clc
 ---
 
 Use the data from the biennial Election Administration and Voting Survey

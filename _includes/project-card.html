@@ -1,11 +1,10 @@
-{% assign project_slug = include.project_slug %} {% assign project =
-site.projects | where: "slug", project_slug | first %}
+{% assign project = include.project %}
 
 <li class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
   <div class="usa-card__container">
     <div class="usa-card__header">
-      <a href="{{ project.link }}" target="_blank">
-        <h4 class="usa-card__heading">{{ project.project_name }}</h4>
+      <a href="{{ project.url }}">
+        <h4 class="usa-card__heading">{{ project.title }}</h4>
       </a>
     </div>
     <div class="usa-card__media">
