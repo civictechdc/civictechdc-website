@@ -8,23 +8,7 @@ permalink: /404.html
   <div class="grid-row grid-gap">
     <div class="grid-col-6 grid-offset-3 usa-section">
       <h1>Error &nbsp 4 :o 4</h1>
-      <div id="page-error"></div>
+      <p>Hey, looks like this page doesn't exist</p>
     </div>
   </div>
 </div>
-
-<script>
-  function redirectToBlog() {
-    var url = window.location.toString();
-    if (url.includes("blog")) {
-      url = `https://civictechdc.github.io/${url.slice(url.indexOf("blog"))}`;
-      document.getElementById("page-error").innerHTML =
-        `<p>Hey, looks like this content has moved. Here is where you can find it: <a href='${url}'>${url}</a></p>`;
-    } else {
-      document.getElementById("page-error").innerHTML =
-        `<p>Hey, looks like this page doesn't exist</p>`;
-    }
-  }
-
-  window.onload = redirectToBlog;
-</script>
