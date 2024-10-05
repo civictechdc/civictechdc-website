@@ -12,17 +12,17 @@ We're always looking for new partners! Get in touch with us to see how we can wo
 <div class="grid-container">
   <div class="grid-row grid-gap-lg">
     <ul class="usa-card-group usa-list">
-      {% include page-components/card.html
+      {% include components/card.html
         class="usa-card grid-col-12 tablet:grid-col-4"
         header="Organizations"
         body="Our strongest partners historically have been local nonprofits and community-based organizations. Whether it's digitizing paper processes, building new forms, or building proofs-of-concept we're always interested in seeing how we can use technology to make an impact in our community."
       %}
-      {% include page-components/card.html
+      {% include components/card.html
         class="usa-card grid-col-12 tablet:grid-col-4"
         header="Government"
         body="Local government provides invaluable services and help to our community and we're interested in helping make it more effective. This might mean developing a community outreach and feedback project, building a tool for people to request a particular service, or building some other proof-of-concept for how government interacts with its constituents."
       %}
-      {% include page-components/card.html
+      {% include components/card.html
         class="usa-card grid-col-12 tablet:grid-col-4"
         header="Activists and community members"
         body="Do you have an idea of how technology could help solve a problem in your community? We're interested in hearing more! Those close to or experiencing a problem in our community likely know it best and have ideas for how it can be improved."
