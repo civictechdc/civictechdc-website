@@ -2,6 +2,7 @@
 layout: base
 ---
 
-{% include core/header.html %} {% include components/hero-text.html
-heading=page.title text=page.description %} {{ content }} {% include
-core/footer.html %}
+{% include core/header.html %} {% include components/hero-image.html
+content=page.description %}
+<div class="grid-container">{{ content }}</div>
+{% include core/footer.html %}

@@ -1,0 +1,71 @@
+<div>
+  <h2>Join us at one of our upcoming project nights!</h2>
+  <p>
+    Our twice-monthly meetups are open to anyone and offer a chance to learn
+    more about what we do, contribute to a current project, or just snag some
+    free pizza!
+  </p>
+  <!--
+    Meetup event cards are rendered and then modified by the assets/js/meetup.js script.
+    meetup.js makes a request to meetup.com to retrieve details about the next two events.
+      * If there are no upcoming events scheduled then no changes are made.
+      * If there is one upcoming event then the "next event" details are added.
+      * If there are two upcoming events then the "next event" and "future event" details are added
+        and the future event card is unhidden.
+    -->
+  <div class="grid-container">
+    <ul class="usa-card-group usa-list">
+      <li class="usa-card grid-col-12 tablet:grid-col-6">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h3 id="meetup-next-event-date">We're still scheduling it!</h3>
+            <h4 id="meetup-next-event-title">Check back soon</h4>
+          </div>
+          <div class="usa-card__body">
+            <p hidden id="meetup-next-event-details">
+              <span id="meetup-next-event-location"></span>
+              <span id="meetup-next-event-num-rsvps"></span> attendees
+            </p>
+            <p>
+              <a
+                id="meetup-next-event-rsvp-button"
+                target="_blank"
+                href="https://www.meetup.com/civic-tech-dc/"
+                class="usa-button"
+                >Follow us on Meetup »</a
+              >
+            </p>
+          </div>
+        </div>
+      </li>
+      <li
+        hidden
+        id="meetup-future-event-card"
+        class="usa-card grid-col-12 tablet:grid-col-6"
+      >
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h3 id="meetup-future-event-date"></h3>
+            <h4 id="meetup-future-event-title"></h4>
+          </div>
+          <div class="usa-card__body">
+            <p>
+              <span id="meetup-future-event-location"></span>
+              <br />
+              <span id="meetup-future-event-num-rsvps"></span> attendees
+            </p>
+            <p>
+              <a
+                id="meetup-future-event-rsvp-button"
+                target="_blank"
+                href="https://www.meetup.com/civic-tech-dc/"
+                class="usa-button"
+                >RSVP on Meetup »</a
+              >
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
