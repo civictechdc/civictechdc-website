@@ -13,7 +13,7 @@ the fullest extent of U.S. law.
 
 <a
   class="usa-button"
-  href="<https://donate.stripe.com/fZe00d7KM3y84c83cc>"
-  target="\_blank">
+  href="https://donate.stripe.com/fZe00d7KM3y84c83cc"
+  target="_blank">
 Donate
 </a>
