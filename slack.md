@@ -6,13 +6,17 @@ redirect_from:
   - /joinslack.html
 ---
 
-# Join our Slack team
+# Join our Slack
 
-Slack is a chat tool that Civic Tech DC uses to communicate outside of in-person meetups.
-Each project has there own dedicated channel that is open to anyone.
+Slack is a free chat application that is available on the web, as a standalone application for a computer, and on mobile devices. It is organized into channels with specific purposes and also allows members to directly message each other.
+
+Civic Tech DC uses Slack extensively to communicate between events, about upcoming events, and to allow members to communicate with each other easily. Each project has their own Slack channel with pinned messages, canvases, lists, and other features that allow for onboarding, project management, and communication.
+
+It's highly recommended that you join our Slack if you want to get involved in a project or start joining our events.
 
 <a
 href="https://join.slack.com/t/civictechdc/shared_invite/zt-25tzhhq50-BkeuG3ibyqqoCMtpGqx_pw"
+target="_blank"
 id="submitrequest"
 type="submit"
 class="usa-button">
