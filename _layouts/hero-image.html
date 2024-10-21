@@ -3,6 +3,7 @@ layout: base
 ---
 
 {% include core/header.html %} {% include core/google-analytics.html %} {%
-include components/hero-image.html content=page.description %}
+include components/hero-image.html heading=page.title content=page.description
+%}
 <div class="grid-container">{{ content }}</div>
 {% include core/footer.html %}
