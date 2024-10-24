@@ -2,7 +2,7 @@
 layout: default
 banner-hero: true
 title: Partners
-description: Civic Tech DC is a group of technologists and advocates who volunteer their skills and time to improve community conditions and local civic issues. We partner with local nonprofits, community-based organizations, and government to help them solve problems using technology.
+hero-text: Civic Tech DC is a group of technologists and advocates who volunteer their skills and time to improve community conditions and local civic issues. We partner with local nonprofits, community-based organizations, and government to help them solve problems using technology.
 ---
 
 ## Become a partner
