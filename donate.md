@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Donate to Civic Tech DC
+hero-image: assets/images/hero-image-partners.jpg
 ---
 
 # Support Civic Tech DC

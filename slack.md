@@ -1,9 +1,6 @@
 ---
 layout: default
-redirect_from:
-  - /resources/slack.html
-  - /joinslack
-  - /joinslack.html
+hero-image: assets/images/hero-image-partners.jpg
 ---
 
 # Join our Slack

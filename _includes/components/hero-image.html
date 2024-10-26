@@ -1,10 +1,20 @@
-<div id="hero-image" class="grid-col-12">
+{% if include.title or include.subtitle %}
+<div
+  class="hero-image grid-col-12"
+  style="background-image: url({{include.image}})"
+>
   <div class="grid-col-12 margin-top-3 margin-left-3 desktop:margin-left-15">
-    <div id="hero-p" class="padding-2 desktop:margin-left-15">
+    <div class="hero-text padding-2 desktop:margin-left-15">
       {% if include.title %}
       <h1 class="margin-top-0">{{include.title}}</h1>
       {% endif %}
-      <p>{{ include.content }}</p>
+      <p>{{ include.subtitle }}</p>
     </div>
   </div>
 </div>
+{% else %}
+<div
+  class="hero-image-small grid-col-12"
+  style="background-image: url({{include.image}})"
+></div>
+{% endif %}
