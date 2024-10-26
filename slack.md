@@ -1,6 +1,6 @@
 ---
 layout: default
-hero-image: assets/images/hero-image-partners.jpg
+hero-image: assets/images/hero-image-slack.jpg
 ---
 
 # Join our Slack
