@@ -2,8 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{{page.title}}</title>
 <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon.ico" />
-{% if page.description %}
-<meta content="{{ page.description }}" name="description" />
+{% if page.subtitle %}
+<meta content="{{ page.subtitle }}" name="description" />
 {% else %}
 <meta content="{{ site.description }}" name="description" />
 {% endif %}
@@ -19,10 +19,10 @@
 <meta content="article" property="og:type" />
 {% else %}
 <meta content="website" property="og:type" />
-{% endif %} {% if page.description %}
-<meta content="{{ page.description }}" property="og:description" />
+{% endif %} {% if page.subtitle %}
+<meta content="{{ page.subtitle }}" property="og:description" />
 {% else %}
-<meta content="{{ site.description }}" property="og:description" />
+<meta content="{{ site.subtitle }}" property="og:description" />
 {% endif %} {% if page.url %}
 <meta content="{{ site.url }}{{ page.url }}" property="og:url" />
 {% endif %} {% if page.date %}
@@ -35,7 +35,7 @@
 <meta content="{{ site.url }}{{page.image}}" property="og:image" />
 {% else %}
 <meta
-  content="{{ site.baseurl }}/assets/images/hero-social-tables-800px.png"
+  content="{{ site.baseurl }}/assets/images/hero-image-homepage"
   property="og:image"
 />
 {% endif %} {% if page.categories %} {% for category in page.categories limit:1
@@ -55,16 +55,16 @@
 <meta name="twitter:title" content="{{ site.title }}" />
 {% endif %} {% if page.url %}
 <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-{% endif %} {% if page.description %}
-<meta name="twitter:description" content="{{ page.description }}" />
+{% endif %} {% if page.subtitle %}
+<meta name="twitter:description" content="{{ page.subtitle }}" />
 {% else %}
-<meta name="twitter:description" content="{{ site.description }}" />
+<meta name="twitter:description" content="{{ site.subtitle }}" />
 {% endif %} {% if page.image %}
 <meta name="twitter:image" content="{{ site.url }}{{page.image}}" />
 {% else %}
 <meta
   name="twitter:image:src"
-  content="{{ site.baseurl }}/assets/images/hero-social-tables-800px.png"
+  content="{{ site.baseurl }}/assets/images/hero-image-homepage"
 />
 {% endif %}
 

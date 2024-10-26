@@ -24,8 +24,7 @@ body {
   height: initial;
 }
 
-#hero-image {
-  background-image: url(/assets/images/hero-social-tables.jpg);
+.hero-image {
   height: 60vh;
   background-position: center 20%;
   background-repeat: no-repeat;
@@ -34,7 +33,16 @@ body {
   overflow: hidden;
 }
 
-#hero-p {
+.hero-image-small {
+  height: 40vh;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text {
   width: 94%;
   color: white;
   background: black;
@@ -42,7 +50,7 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
-  #hero-p {
+  .hero-text {
     width: 35%;
   }
 }

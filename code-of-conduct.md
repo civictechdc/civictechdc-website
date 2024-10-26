@@ -1,10 +1,6 @@
 ---
 layout: default
-title: Code of Conduct
-type: document
-deeplink: true
-redirect_from:
-  - /resources/codeofconduct.html
+hero-image: assets/images/hero-image-code-of-conduct.jpg
 ---
 
 # Code of Conduct
@@ -49,13 +45,13 @@ When more people share their knowledge and skills, they give a project a greater
 
 ## Photography
 
-Please be aware that in order to grow and promote our organization, for general record keeping, and to build community amongst our participants, photography and videography often occur at our events. Participation at our events is voluntary. By participating in our events, it is understood that your image or likeness may be included in the photography or videography and shared on public websites and media content. If you would like further information about this policy, please contact team@civictechdc.org.
+Please be aware that in order to grow and promote our organization, for general record keeping, and to build community amongst our participants, photography and videography often occur at our events. Participation at our events is voluntary. By participating in our events, it is understood that your image or likeness may be included in the photography or videography and shared on public websites and media content. If you would like further information about this policy, please contact <team@civictechdc.org>.
 
 ## Procedures
 
 ### Making a Report
 
-If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. You can email us at team@civictechdc.org, which goes to all of the leadership team. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s).
+If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. You can email us at <team@civictechdc.org>, which goes to all of the leadership team. Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s).
 
 When making a report, the following information is useful, but not required:
 
@@ -73,4 +69,4 @@ Captains may take any appropriate action, including expulsion and a ban from fut
 
 ## Contributing to This Code
 
-This is a living document and is ultimately owned by the Civic Tech DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this [repository](https://github.com/civictechdc/codefordc-website) or by contacting the leadership team at team@civictechdc.org.
+This is a living document and is ultimately owned by the Civic Tech DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this [repository](https://github.com/civictechdc/codefordc-website) or by contacting the leadership team at <team@civictechdc.org>.
