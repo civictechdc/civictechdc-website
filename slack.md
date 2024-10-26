@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Join our Slack
 hero-image: assets/images/hero-image-slack.jpg
 ---
 

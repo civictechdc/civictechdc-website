@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Civic Tech DC
-subtitle: Founded in 2012, Civic Tech DC is a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.
+hero-subtitle: Founded in 2012, Civic Tech DC is a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.
 hero-image: assets/images/hero-image-homepage.jpg
 ---
 
