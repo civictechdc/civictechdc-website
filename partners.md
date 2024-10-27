@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: hero-image
 banner-hero: true
 title: Partners
 hero-title: Partners

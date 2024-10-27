@@ -1,4 +1,3 @@
-{% if include.title or include.subtitle %}
 <div
   class="hero-image grid-col-12"
   style="background-image: url({{include.image}})"
@@ -12,9 +11,3 @@
     </div>
   </div>
 </div>
-{% else %}
-<div
-  class="hero-image-small grid-col-12"
-  style="background-image: url({{include.image}})"
-></div>
-{% endif %}

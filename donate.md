@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: hero-image-small
 title: Donate
 hero-image: assets/images/hero-image-donate.jpg
 ---
