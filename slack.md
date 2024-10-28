@@ -1,7 +1,7 @@
 ---
 layout: hero-image-small
 title: Join our Slack
-hero-image: assets/images/hero-image-slack.jpg
+hero-image: /assets/images/hero-image-slack.jpg
 ---
 
 # Join our Slack
@@ -18,5 +18,5 @@ target="_blank"
 id="submitrequest"
 type="submit"
 class="usa-button">
-<img src="/assets/images/slack_logo.png" style="margin-right: 0.5rem" />Join Our Slack
+<img src="/assets/images/logos/slack.png" style="margin-right: 0.5rem" />Join Our Slack
 </a>

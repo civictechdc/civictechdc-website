@@ -1,7 +1,7 @@
 ---
 layout: hero-image-small
 title: Donate
-hero-image: assets/images/hero-image-donate.jpg
+hero-image: /assets/images/hero-image-donate.jpg
 ---
 
 # Support Civic Tech DC
