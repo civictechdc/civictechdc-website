@@ -1,7 +1,7 @@
 ---
 layout: hero-image-small
 title: Code of Conduct
-hero-image: assets/images/hero-image-code-of-conduct.jpg
+hero-image: /assets/images/hero-image-code-of-conduct.jpg
 ---
 
 # Code of Conduct

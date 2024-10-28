@@ -1,7 +1,7 @@
 ---
 layout: hero-image-small
 title: Join our Slack
-hero-image: assets/images/hero-image-slack.jpg
+hero-image: /assets/images/hero-image-slack.jpg
 ---
 
 # Join our Slack

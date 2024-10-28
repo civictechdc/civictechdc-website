@@ -1,7 +1,7 @@
 ---
 layout: hero-image-small
 title: About Civic Tech DC
-hero-image: assets/images/hero-image-homepage.jpg
+hero-image: /assets/images/hero-image-homepage.jpg
 ---
 
 ## About
