@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="{{ page.lang | default: 'en-US' }}">
   <head>
-    {% include core/meta.html %} {% include core/css.html %}
+    {% include core/google-tag-manager-script.html %} {% include core/meta.html
+    %} {% include core/css.html %}
   </head>
 
   <body
     class="{{ layout.body.class }} {{ page.body.class }} lang-{{ page.lang }}"
   >
-    {{ content }}
+    {% include core/google-tag-manager-noscript.html %} {{ content }}
   </body>
 </html>
