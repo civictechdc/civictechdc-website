@@ -1,9 +1,5 @@
-<div class="grid-container">
-  <div class="grid-row grid-gap-lg">
-    <ul class="usa-card-group usa-list">
-      {% for project in site.projects %} {% if project.is_active ==
-      include.is_active %} {% include components/project-card.html %} {% endif
-      %} {% endfor %}
-    </ul>
-  </div>
-</div>
+<ul class="usa-card-group">
+  {% for project in site.projects %} {% if project.is_active ==
+  include.is_active %} {% include components/project-card.html %} {% endif %} {%
+  endfor %}
+</ul>
