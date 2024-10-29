@@ -14,7 +14,7 @@ The list of projects we’re working on is always changing! Here are a few of ou
 
 ## Past projects
 
-Civic Tech DC has had many dozens of projects since it was founded in 2012. Below are a selection of projects. Very few of its projects before we began cataloguing them in 2022 are included here.
+Since its founding in 2012, Civic Tech DC has worked on dozens of projects. This page features a small selection of historical projects, with most prior to 2023 not listed here.
 
 {% include components/project-cards.html is_active=false %}
 
