@@ -4,20 +4,21 @@
     <div class="usa-navbar">
       <div class="usa-logo margin-y-0">
         <a href="/" class="ctdc_logo" title="Home" aria-label="Home">
-          <img
-            id="logo"
-            src="/assets/images/logos/civic-tech-dc-text-bottom.png"
-            alt="Civic Tech DC logo"
-          />
+          <img id="logo" src="/assets/images/logos/civic-tech-dc-text-bottom.png" alt="Civic Tech DC logo" />
         </a>
       </div>
-      <button type="button" class="usa-menu-btn">Menu</button>
+      <button type="button" id="navbar-hamburger-menu" class="usa-menu-btn">Menu</button>
     </div>
     <nav aria-label="Primary navigation" class="usa-nav">
       <button type="button" class="usa-nav__close">
         <img src="/assets/img/usa-icons/close.svg" role="img" alt="Close" />
       </button>
       <ul class="usa-nav__primary usa-accordion">
+        <li class="usa-nav__primary-item">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/">
+            <span>Home</span>
+          </a>
+        </li>
         <li class="usa-nav__primary-item">
           <a class="usa-nav__link" href="{{ site.baseurl }}/partners">
             <span>Partners</span>
