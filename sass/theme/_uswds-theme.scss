@@ -8,8 +8,11 @@ in the form $setting: value,
 */
 
 @use "uswds-core" with (
-  $theme-show-compile-warnings: false,
+  $theme-show-compile-warnings: true,
   $theme-show-notifications: false,
 
-  $theme-color-primary: #104378
+  $theme-color-primary: #104378,
+  $theme-color-accent-warm: #eec05e,
+  $theme-card-border-color: "accent-warm",
+  $theme-focus-color: "primary"
 );
