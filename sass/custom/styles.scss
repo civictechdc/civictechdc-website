@@ -7,6 +7,7 @@ body {
   flex-shrink: 0;
 }
 
+
 .ctdc_logo > img {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -14,8 +15,8 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
-  .ctdc_logo > img {
-    max-height: 8rem;
+  .ctdc_logo>img {
+    max-height: 4rem;
   }
 }
 
@@ -47,6 +48,10 @@ body {
   color: white;
   background: black;
   opacity: 0.75;
+}
+
+#navbar-hamburger-menu {
+  margin-right: 10px;
 }
 
 @media only screen and (min-width: 1024px) {
