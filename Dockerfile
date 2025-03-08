@@ -1,16 +1,12 @@
 FROM ruby:3.2-bullseye
 
-# Install Node.js
+# Install Nodejs
 RUN apt-get update
 RUN apt-get install -y curl
-# is this necessary?
-# RUN apt-get install -y gcc
-# RUN apt-get install -y make
 RUN curl -fsSL https://deb.nodesource.com/setup_23.x | bash -
 RUN apt-get install -y nodejs
-# RUN npm install -g npm
 
-# Verify installations
+# Verify installations and versions
 RUN ruby -v && node -v && npm -v
 
 # Set the working directory inside the container
