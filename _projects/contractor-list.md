@@ -15,7 +15,7 @@ The Electrify DC Contractor List project is an open-source initiative we're buil
 
 ## Why this matters
 
-Residential buildings account for about 75% of DC's total final emissions, with residential buildings making up a third of that. Electrifying our homes is a critical step in reducing these emissions, but many residents struggle to find qualified contractors who understand modern, sustainable technologies. Our goal is to bridge that gap.
+Buildings account for about 75% of DC's total final emissions, with residential buildings making up a third of that. Electrifying our homes is a critical step in reducing these emissions, but many residents struggle to find qualified contractors who understand modern, sustainable technologies. Our goal is to bridge that gap.
 
 By joining this project, you'll contribute to a tool that:
 
