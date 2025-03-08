@@ -13,6 +13,20 @@ Welcome! This is the repository for the website for Civic Tech DC. It is a stati
 
 ### Local Development
 
+<details>
+<summary>Docker development setup</summary>
+  This project comes with a Docker development setup to ease the job of installing the necessary dependencies.
+
+**Pre-requisites:** Docker is installed and running
+
+1. Build the development development container: `docker-compose build`
+2. Run the development container: `docker-compose up -d`
+3. Connect to it in the browser at address [localhost:4000](http://localhost:4000)
+
+To stop the container you can run: `docker-compose down`. To view logs you can run: `docker-compose logs app`
+
+</details>
+
 1. First, make sure that you have <a href="https://git-scm.com/downloads">git</a> on your computer. Create your own <a href="https://docs.github.com/en/get-started/quickstart/contributing-to-projects">fork</a> of the repository, then clone it to your computer:
 
 `git clone git@github.com:[YOUR GITHUB NAME]/codefordc-website`
