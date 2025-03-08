@@ -1,7 +1,7 @@
 {
   "scripts": {
     "lint": "prettier . --write",
-    "serve": "gulp & bundle exec jekyll serve --livereload"
+    "serve": "gulp & bundle exec jekyll serve --host 0.0.0.0 --livereload"
   },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.9.0",
