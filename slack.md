@@ -13,7 +13,7 @@ Civic Tech DC uses Slack extensively to communicate between events, about upcomi
 It's highly recommended that you join our Slack if you want to get involved in a project or start joining our events.
 
 <a
-href="https://join.slack.com/t/civictechdc/shared_invite/zt-25tzhhq50-BkeuG3ibyqqoCMtpGqx_pw"
+href="https://join.slack.com/t/civictechdc/shared_invite/zt-328ykmsgh-FAH~~3KrJ2JtdZ7BXVYl5w"
 target="_blank"
 id="submitrequest"
 type="submit"
