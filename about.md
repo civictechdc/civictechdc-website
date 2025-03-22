@@ -20,7 +20,7 @@ more community participation, the better.
 To contact us, please email <team@civictechdc.org>.
 
 <!-- Directors Section -->
-<h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem;">Directors</h2>
+<h2 style="text-align: center: 1.8rem;" class="margin-bottom-2 text-align-center">Directors</h2>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0; width: 100%; margin: 0 auto; padding: 0;">
     <!-- Alma Trotter -->
     <div style="flex: 1; min-width: 150px; text-align: center;">
