@@ -23,7 +23,6 @@ hero-image: assets/images/Open-Data-Cover.png
     </a>
 </div>
 
-
 <div style="width: 100%; max-width: 1200px; margin: auto; padding: 1rem;">
     <h1 style="font-size: 2rem; font-weight: bold; color: #f8c45c;">Schedule</h1>
     <ul style="margin-top: 1rem; padding-left: 1rem; line-height: 1.8; font-size: 1.2rem;">
@@ -42,7 +41,7 @@ hero-image: assets/images/Open-Data-Cover.png
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; margin: auto; margin-bottom: 40px;">
     <div style="flex: 1; min-width: 250px; max-width: 400px; text-align: center;">
         <a href="https://civictechdc.org" target="_blank">
-            <img src="assets/images/civic-tech-dc.png" style="max-height: 80px; width: auto;" alt="Civic Tech DC Logo">
+            <img src="assets/images/logos/civic-tech-dc.svg" style="max-height: 80px; width: auto;" alt="Civic Tech DC Logo">
         </a>
         <p style="margin-top: 1rem; font-size: 1rem;">Founded in 2012, Civic Tech DC is a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.</p>
     </div>
@@ -67,7 +66,6 @@ hero-image: assets/images/Open-Data-Cover.png
     </div>
 </div>
 
-
 <div style="text-align: center; margin: 2rem 0;">
     <h1 style="font-size: 2rem; font-weight: bold; color: #f8c45c;">Lightning Talks</h1>
 </div>
@@ -83,7 +81,7 @@ hero-image: assets/images/Open-Data-Cover.png
         <h2 style="font-size: 1.5rem; font-weight: bold;">Providing Greater Visibility on Automated Traffic Enforcement</h2>
         <img src="/assets/images/Data-Showcase-Projects/ddot.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="Mapping Multidimensionality">
         <p style="font-size: 1rem; line-height: 1.5;">
-            DDOT's Automated Traffic Enforcement (ATE) program enhances road safety by reducing traffic-related fatalities and injuries as part of Vision Zero. In <strong>Providing Greater Visibility on Automated Traffic Enforcement</strong>, Sayed Sarchashmah and Erik Garbacik show how by using OpenDataDC’s geospatial data and ATE camera insights, DDOT can provide real-time locations, enforcement statuses, and performance metrics. 
+            DDOT's Automated Traffic Enforcement (ATE) program enhances road safety by reducing traffic-related fatalities and injuries as part of Vision Zero. In <strong>Providing Greater Visibility on Automated Traffic Enforcement</strong>, Sayed Sarchashmah and Erik Garbacik show how by using OpenDataDC’s geospatial data and ATE camera insights, DDOT can provide real-time locations, enforcement statuses, and performance metrics.
         </p>
     </div>
     <div style="width: calc(50% - 20px); min-width: 300px; max-width: 500px; text-align: center; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #ddd; box-sizing: border-box;">
@@ -97,7 +95,7 @@ hero-image: assets/images/Open-Data-Cover.png
         <h2 style="font-size: 1.5rem; font-weight: bold;">GW Data Preservation</h2>
         <img src="/assets/images/Data-Showcase-Projects/gw-data-perservation.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="Mapping Multidimensionality">
         <p style="font-size: 1rem; line-height: 1.5;">
-            Data drives decisions—but what happens when critical datasets disappear? The loss of essential data can disrupt public services, erode trust, and impact effective policymaking. In <strong>GW Data Preservation</strong>, David Lippert and Emily Blumenthal explore the challenges of data loss and the ongoing efforts from George Washington University to rescue vital datasets. 
+            Data drives decisions—but what happens when critical datasets disappear? The loss of essential data can disrupt public services, erode trust, and impact effective policymaking. In <strong>GW Data Preservation</strong>, David Lippert and Emily Blumenthal explore the challenges of data loss and the ongoing efforts from George Washington University to rescue vital datasets.
         </p>
     </div>
     <div style="width: calc(50% - 20px); min-width: 300px; max-width: 500px; text-align: center; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #ddd; box-sizing: border-box;">
@@ -125,3 +123,4 @@ hero-image: assets/images/Open-Data-Cover.png
         </p>
     </div>
 </div>
+

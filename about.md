@@ -19,7 +19,7 @@ more community participation, the better.
 
 To contact us, please email <team@civictechdc.org>.
 
-<h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem; margin-top: 2rem;">Organizers & Directors</h2>
+<h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem; margin-top: 2rem;">Directors</h2>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0; width: 100%; margin: 0 auto; padding: 0;">
     <!-- Alma Trotter -->
     <div style="flex: 1; min-width: 150px; text-align: center;">
@@ -43,7 +43,7 @@ To contact us, please email <team@civictechdc.org>.
     </div>
 </div>
 
-<h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem; margin-top: 2rem;">Organizers & Directors</h2>
+<h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem; margin-top: 2rem;">Organizers</h2>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0; width: 100%; margin: 0 auto; padding: 0;">
     <!-- Evan Tung -->
     <div style="flex: 1; min-width: 150px; text-align: center;">
@@ -73,4 +73,3 @@ To contact us, please email <team@civictechdc.org>.
         <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: bold;"><a href="https://www.linkedin.com/in/nick-stoler-0032b5168/" target="_blank" style="text-decoration: none; color: #0073b1;">Nick Stoler</a></p>
     </div>
 </div>
-
