@@ -1,11 +1,11 @@
 ---
 layout: hero-image-small
 title: Open DC Data Showcase
-hero-image: assets/images/Open-Data-Cover.png
+hero-image: assets/images/events/data-showcase/hero.png
 ---
 
 <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; max-width: 1200px; margin: 70px auto;">
-    <img src="/assets/images/man-on-bike.png" style="width: 100%; max-width: 500px; height: auto; flex: 1;" alt="Man on a bike down the Capitol">
+    <img src="/assets/images/events/data-showcase/man-on-bike.png" style="width: 100%; max-width: 500px; height: auto; flex: 1;" alt="Man on a bike down the Capitol">
     <div style="flex: 1; min-width: 300px; padding-left: 20px;">
         <p style="font-size: 1.2rem; line-height: 1.4;">
             In Celebration with the annual Open Data Week, Civic Tech DC is partnering with the Office of the Chief Technology Officer (OCTO) to host the Open Data DC Showcase 2025, a celebration of Open Data DC and other public datasets about the District.
@@ -47,7 +47,7 @@ hero-image: assets/images/Open-Data-Cover.png
     </div>
     <div style="flex: 1; min-width: 250px; max-width: 400px; text-align: center;">
         <a href="https://octo.dc.gov/page/about-octo" target="_blank">
-            <img src="assets/images/octo-logo.png" style="max-height: 80px; width: auto;" alt="OCTO Logo">
+            <img src="assets/images/logos/octo-logo.png" style="max-height: 80px; width: auto;" alt="OCTO Logo">
         </a>
         <p style="margin-top: 1rem; font-size: 1rem;">OCTO's mission is to direct the strategy, deployment, and management of DC Government technology with an unwavering commitment to IT excellence, efficiency, and value for government, residents, businesses, and visitors.</p>
     </div>
@@ -60,7 +60,7 @@ hero-image: assets/images/Open-Data-Cover.png
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; margin: auto;">
     <div style="flex: 1; min-width: 250px; max-width: 400px; text-align: center;">
         <a href="https://pro.morningconsult.com/" target="_blank">
-            <img src="assets/images/morning-consult.png" style="max-height: 80px; width: auto;" alt="Morning Consult Logo">
+            <img src="assets/images/logos/morning-consult.png" style="max-height: 80px; width: auto;" alt="Morning Consult Logo">
         </a>
         <p style="margin-top: 1rem; font-size: 1rem;">Our venture sponsor is Morning Consult, a global decision intelligence company changing how modern leaders make smarter, faster, better decisions. The company pairs its proprietary high-frequency data with applied artificial intelligence to better inform decisions on what people think and how they will act.</p>
     </div>
@@ -123,4 +123,3 @@ hero-image: assets/images/Open-Data-Cover.png
         </p>
     </div>
 </div>
-
