@@ -20,7 +20,7 @@ hero-image: assets/images/events/data-showcase/hero.png
         <button style="background-color: #f8c45c; color: white; width: 100%; max-width: 450px; padding: 1.5rem; font-size: 1.8rem; font-weight: bold; border-radius: 15px; border: none; cursor: pointer;">
             Register
         </button>
-    </a>
+    </a> 
 </div>
 
 <div style="width: 100%; max-width: 1200px; margin: auto; padding: 1rem;">
@@ -107,7 +107,7 @@ hero-image: assets/images/events/data-showcase/hero.png
     </div>
     <div style="width: calc(50% - 20px); min-width: 300px; max-width: 500px; text-align: center; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #ddd; box-sizing: border-box;">
         <h2 style="font-size: 1.5rem; font-weight: bold;">Improving Homeless Shelter Capacity Management in Washington, D.C.</h2>
-        <img src="/assets/images/events/data_showcase/homeless-capacity.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="Mapping Multidimensionality">
+        <img src="/assets/images/events/data_showcase/homeless_capacity.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="Mapping Multidimensionality">
         <p style="font-size: 1rem; line-height: 1.5;">
         D.C. has transformed shelter bed management by leveraging Survey123, Operations Dashboard, and the ArcGIS Python API to provide real-time data to shelter transportation employees. In <strong>Improving Homeless Shelter Capacity Management in Washington, D.C.</strong>, Adam Gerstenfeld talks about how open data and GIS partnerships are revolutionizing dashboarding and operational capabilities.
         </p>
@@ -117,7 +117,7 @@ hero-image: assets/images/events/data-showcase/hero.png
 <div style="display: flex; justify-content: center; align-items: center;">
     <div style="width: 90%; max-width: 500px; text-align: center; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #ddd; box-sizing: border-box; border-radius: 10px;">
         <h2 style="font-size: 1.5rem; font-weight: bold;">Mapping Multidimensionality: Using Census Data to Understand Neighborhood Communities</h2>
-        <img src="/assets/images/events/data_showcase/Mapping-multidimensionality.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="Sample Image">
+        <img src="/assets/images/events/data_showcase/Mapping_multidimensionality.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="Sample Image">
         <p style="font-size: 1rem; line-height: 1.5;">
         Examining Census Community Resilience Estimates (CREs) alongside other open data sources can shed light on overlooked patterns of structural inequity and social isolation. In <strong>Mapping Multidimensionality: Using Census Data to Understand Neighborhood Communities</strong>” Bayowa Onabajo MBChB, Jibek Gupta, Kyshan Nichols-Smith, and Professors Nathan Alexander and Hye Ryeon (Helen) Jang demonstrate how a mixed-methods approach can guide targeted interventions.
         </p>
