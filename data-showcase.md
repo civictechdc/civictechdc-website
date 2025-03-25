@@ -26,10 +26,10 @@ hero-image: assets/images/events/data-showcase/hero.png
 <div style="width: 100%; max-width: 1200px; margin: auto; padding: 1rem;">
     <h1 style="font-size: 2rem; font-weight: bold; color: #f8c45c;">Schedule</h1>
     <ul style="margin-top: 1rem; padding-left: 1rem; line-height: 1.8; font-size: 1.2rem;">
-        <li>6:30–7pm — Check in, hang out and network, grab a bite</li>
-        <li>7–7:15pm — Introduction</li>
-        <li>7:15–8:45pm — Lightning Talks</li>
-        <li>8:45–9pm — Closing remarks</li>
+        <li>5:45 - 6:10pm  — Check in, hang out and network, grab a bite</li>
+        <li>6:10 - 6:20pm — Introduction</li>
+        <li>6:20 - 8:40pm — Lightning Talks</li>
+        <li>8:40 - 8:45pm — Closing Remarks</li>
         <li>9–9:30pm — Optional happy hour at a nearby bar</li>
     </ul>
 </div>

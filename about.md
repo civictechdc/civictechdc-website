@@ -47,7 +47,7 @@ To contact us, please email <team@civictechdc.org>.
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0; width: 100%; margin: 0 auto; padding: 0;">
     <!-- Evan Tung -->
     <div style="flex: 1; min-width: 150px; text-align: center;">
-        <img src="assets/images/team_photos/Evan-Tung.png" style="width: 100%; max-width: 150px; height: auto; border-radius: 50%;" alt="Evan Tung">
+        <img src="assets/images/team_photos/Evan-Tung.jpg" style="width: 100%; max-width: 150px; height: auto; border-radius: 50%;" alt="Evan Tung">
         <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: bold;"><a href="https://www.linkedin.com/in/ejtung/" target="_blank" style="text-decoration: none; color: #0073b1;">Evan Tung</a></p>
     </div>
     <div style="flex: 1; min-width: 150px; text-align: center;">
