@@ -4,7 +4,7 @@
     "serve": "gulp & bundle exec jekyll serve --host 0.0.0.0 --livereload"
   },
   "devDependencies": {
-    "@shopify/prettier-plugin-liquid": "^1.9.0",
+    "@shopify/prettier-plugin-liquid": "^1.9.3",
     "@uswds/compile": "^1.2.1",
     "gulp": "^5.0.0",
     "prettier": "^3.5.3"
