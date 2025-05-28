@@ -17,12 +17,19 @@
     <li class="usa-card grid-col-12 tablet:grid-col-6">
       <div class="usa-card__container">
         <div class="usa-card__header">
-          <h3 id="meetup-next-event-date">We're still scheduling it!</h3>
+          <!--
+            Note: a recent Chrome security change broke our ability to make queries to the Meetup.com API to display upcoming events.
+            the comments below are the old code, and a workaround that just renders button links to our Meetup and Lu.ma accounts is added.
+            Eventually we should add a serverless API call that will get upcoming events to render. It should be cacheable at the CDN and
+            have very low traffic.
+          -->
+          <!-- <h3 id="meetup-next-event-date">We're still scheduling it!</h3> -->
+          <h3 id="meetup-next-event-date">Join us at our next event</h3>
         </div>
         <div class="usa-card__body">
-          <h4 id="meetup-next-event-title" class="margin-bottom-0">
-            Check back soon
-          </h4>
+          <!-- <h4 id="meetup-next-event-title" class="margin-bottom-0"> -->
+          <!--   Check back soon -->
+          <!-- </h4> -->
           <p hidden id="meetup-next-event-details">
             <span id="meetup-next-event-location"></span>
             <br />
@@ -32,8 +39,15 @@
             <a
               id="meetup-next-event-rsvp-button"
               target="_blank"
-              href="https://www.meetup.com/civic-tech-dc/"
+              href="https://lu.ma/civic-tech-dc"
               class="usa-button"
+              >Follow us on Lu.ma »</a
+            >
+            <a
+              id="meetup-next-event-rsvp-button"
+              target="_blank"
+              href="https://www.meetup.com/civic-tech-dc/"
+              class="usa-button tablet:margin-top-2"
               >Follow us on Meetup »</a
             >
           </p>
