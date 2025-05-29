@@ -59,15 +59,7 @@ To contact us, please email <team@civictechdc.org>.
         <img src="assets/images/team_photos/Justin-Mezetin.jpg" style="width: 100%; max-width: 150px; height: auto; border-radius: 50%;" alt="Justin Mezetin">
         <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: bold;"><a href="https://www.linkedin.com/in/justin-mezetin-3649b866/" target="_blank" style="text-decoration: none; color: #0073b1;">Justin Mezetin</a></p>
     </div>
-    <!-- Yuliya Tkach -->
-    <div style="flex: 1; min-width: 150px; text-align: center;">
-        <img src="assets/images/team_photos/Yuliya-Tkach.jpg" style="width: 100%; max-width: 150px; height: auto; border-radius: 50%;" alt="Yuliya Tkach">
-        <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: bold;"><a href="https://www.linkedin.com/in/yutk93/" target="_blank" style="text-decoration: none; color: #0073b1;">Yuliya Tkach</a></p>
-    </div>
-</div>
-
 <!-- Nick-->
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0; width: 100%; margin: 0 auto; padding: 0;">
     <div style="flex: 1; min-width: 150px; text-align: center;">
         <img src="assets/images/team_photos/Nick-Stoler.jpg" style="width: 100%; max-width: 150px; height: auto; border-radius: 50%;" alt="Nick Stoler">
         <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: bold;"><a href="https://www.linkedin.com/in/nick-stoler-0032b5168/" target="_blank" style="text-decoration: none; color: #0073b1;">Nick Stoler</a></p>
