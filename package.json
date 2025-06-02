@@ -6,7 +6,7 @@
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.9.0",
     "@uswds/compile": "^1.2.1",
-    "gulp": "^5.0.0",
+    "gulp": "^5.0.1",
     "prettier": "^3.5.3"
   },
   "name": "codefordc-website",
