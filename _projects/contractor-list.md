@@ -1,52 +1,98 @@
 ---
 layout: project
 is_active: true
-title: Electrification Contractor List
+title: Electrify DMV
 image: electrify-dc.png
 image_alt_text: Logo for the nonprofit ElectrifyDC
 github_link: https://github.com/civictechdc/repower-dmv/
 slack_channel: ext-electrify-dc
 description: Lower carbon emissions in the DMV by connecting homeowners with the resources and contractors they need to make their homes efficient and electric.
 ---
+<section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
+  <div class="grid-container usa-prose">
+    <em>⚡An easy-to-use contractor finder tool helping homeowners decarbonize their homes and reduce the 25% of emissions they produce.</em>
+  </div>
+</section>
 
-# Help Build a Regional Resource for Home Electrification
+<section class="padding-y-1 usa-prose maxw-none">
+  <div class="grid-container">
+    <h2 class="font-sans-lg">🏠 Why This Matters</h2>
+    <p>
+      Buildings contribute about <strong>75%</strong> of DC's total emissions—residential buildings account for a third of that. Electrifying our homes is essential to achieving climate goals, yet many residents can't find qualified contractors who understand sustainable technology.
+    </p>
+  </div>
+</section>
 
-The Electrify DC Contractor List project is an open-source initiative we're building in collaboration with [Electrify DC](https://electrifydc.org) to support the transition to cleaner, more efficient homes across the DMV region. By creating a high-visibility, searchable list of vetted contractors, we're empowering homeowners to find trusted professionals for their efficiency and electrification projects.
+<section>
+    <div class="usa-alert usa-alert--info margin-y-3">
+      <div class="usa-alert__body">
+        <p class="usa-alert__text">
+          We’re bridging this gap with a tool that:
+        </p>
+        <ul class="usa-list">
+          <li>Connects homeowners with <strong>qualified and trusted contractors</strong></li>
+          <li>Shares <strong>localized info</strong> on rebates and incentives</li>
+          <li>Unlocks <strong>IRA workforce funding</strong> and training opportunities</li>
+        </ul>
+      </div>
+    </div>
+</section>
 
-## Why this matters
+<section class="padding-y-1 usa-prose maxw-none">
+  <div class="grid-container">
+    <h2 class="font-sans-lg">🚀 Our Impact</h2>
+    <p>A contractor finder tool was identified as one of the <strong>top three barriers</strong> to residential decarbonization. Civic Tech DC’s open-source solution will empower similar efforts nationwide—making it easier, faster, and more affordable for people to begin their electrification journey.</p>
+  </div>
+</section>
 
-Buildings account for about 75% of DC's total final emissions, with residential buildings making up a third of that. Electrifying our homes is a critical step in reducing these emissions, but many residents struggle to find qualified contractors who understand modern, sustainable technologies. Our goal is to bridge that gap.
+<section class="padding-y-1 usa-prose maxw-none">
+  <div class="grid-container">
+    <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
+    <p>DMV-based, but designed to be open source and replicable across the country.</p>
+  </div>
+</section>
 
-By joining this project, you'll contribute to a tool that:
+<section class="padding-y-1 usa-prose maxw-none">
+  <div class="grid-container">
+    <h2 class="font-sans-lg">🤝 Community Partners</h2>
+    <a href="https://www.electrifydc.org/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Electrify DC
+    </a>, Building Innovation Hub, Go Electric DMV, and several DMV-area jurisdictions and professional associations.
+    </p>
+  </div>
+</section>
 
-- Connects homeowners with qualified and trusted contractors.
-- Provides digestible, localized information on rebates, incentives, and electrification.
-- Supports the regional workforce by unlocked IRA funding and highlighting in-demand training and credentialing opportunities.
+<section class="padding-y-1 usa-prose maxw-none">
+  <div class="grid-container">
+    <h2 class="font-sans-lg">📖 Our Story</h2>
+    <p>Electrify DMV partnered with jurisdictions across the region and asked Civic Tech DC to lead on data, design, and technical implementation. The result: a user-friendly tool designed with local impact and national scalability in mind.</p>
+  </div>
+</section>
 
-## Our tech stack
+<section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
+  <div class="grid-container text-white">
+    <h2>👋 Come Join Us</h2>
+    <p>Everyone is welcome no matter your skill level or background. We especially need help with:</p>
+    <ul class="usa-list">
+      <li>Product &amp; Project Management</li>
+      <li>Data Exploration &amp; Cleaning</li>
+      <li>Frontend: TypeScript, React, Tailwind</li>
+      <li>Backend: TypeScript, Remix</li>
+    </ul>
+  </div>
+</section>
 
-We're building this project with a modern, developer-friendly stack:
-
-- Remix for a fast and dynamic full-stack web framework.
-- React for a component-based frontend.
-- TypeScript for safer, more predictable code.
-- Tailwind CSS for clean, efficient styling.
-- SQLite as a database and Prisma for the ORM.
-
-## Who we're looking for
-
-This project is a big lift—and we need passionate volunteers with a variety of skills to make it happen! In particular, we're looking for:
-
-🌟 Project Management
-
-Help us coordinate volunteers, keep us on track, and manage our roadmap. You'll be essential to guiding the project from idea to reality.
-
-🎨 UX Design
-
-We're seeking a designer to ensure our site is welcoming, intuitive, and accessible. Wireframes, user flows, and thoughtful design are critical to helping homeowners and contractors alike find what they need.
-
-🛠 Developers
-
-Whether you're experienced with our tech stack or eager to learn, we welcome contributors who can help us build out the frontend, backend, and data integrations.
-
-Join us at an upcoming project night or reach out in our Slack channel to get started!
+<section class="usa-section padding-y-4">
+  <div class="grid-container">
+    <div class="usa-button-group">
+      <a href="https://civictechdc.slack.com/archives/C081LHG72FK" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+        💬 Slack (#ext-electrify-dc)
+      </a>
+      <a href="https://github.com/civictechdc/repower-dmv/" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+        🧩 GitHub Repo
+      </a>
+      <a href="https://electrifydmv.org" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+        🌐 Project Website
+      </a>
+    </div>
+  </div>
+</section>
