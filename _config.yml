@@ -13,10 +13,7 @@ baseurl: ""
 collections:
   projects:
     output: true
-  events:
-    output: true
-    permalink: /events/:name/
-  
+
 exclude:
   - /node_modules/
   - gulpfile.js

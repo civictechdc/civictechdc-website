@@ -1,18 +1,11 @@
 ---
-layout: event
-title: Open Data DC Showcase
-date: 2025-03-26
-location: "Washington DC"
-image: data-cover.png
-image_alt_text: Man on a bike with the words civic tech in the background
-description: |
-  In Celebration with the annual Open Data Week, Civic Tech DC partnered with the Office of the Chief Technology Officer for a Open Data DC Showcase.
+layout: hero-image-small
+title: Open DC Data Showcase
+hero-image: assets/images/events/data-showcase/hero.png
 ---
 
-{% raw %}
-<div style ="font-family: 'Source Sans Pro Web', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
 <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; max-width: 1200px; margin: 70px auto;">
-    <img src="/assets/images/events/data_showcase/man-on-bike.png" style="width: 100%; max-width: 500px; height: auto; flex: 1;" alt="Man on a bike down the Capitol">
+    <img src="/assets/images/events/data-showcase/man-on-bike.png" style="width: 100%; max-width: 500px; height: auto; flex: 1;" alt="Man on a bike down the Capitol">
     <div style="flex: 1; min-width: 300px; padding-left: 20px;">
         <p style="font-size: 1.2rem; line-height: 1.4;">
             In Celebration with the annual Open Data Week, Civic Tech DC is partnering with the Office of the Chief Technology Officer (OCTO) to host the Open Data DC Showcase 2025, a celebration of Open Data DC and other public datasets about the District.
@@ -48,13 +41,13 @@ description: |
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; margin: auto; margin-bottom: 40px;">
     <div style="flex: 1; min-width: 250px; max-width: 400px; text-align: center;">
         <a href="https://civictechdc.org" target="_blank">
-            <img src="assets/images/events/data_showcase/civictech.png" style="max-height: 80px; width: auto;" alt="Civic Tech DC Logo">
+            <img src="assets/images/logos/civic-tech-dc.svg" style="max-height: 80px; width: auto;" alt="Civic Tech DC Logo">
         </a>
         <p style="margin-top: 1rem; font-size: 1rem;">Founded in 2012, Civic Tech DC is a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.</p>
     </div>
     <div style="flex: 1; min-width: 250px; max-width: 400px; text-align: center;">
         <a href="https://octo.dc.gov/page/about-octo" target="_blank">
-            <img src="/assets/images/events/data_showcase/octo-logo.png" style="max-height: 80px; width: auto;" alt="OCTO Logo">
+            <img src="assets/images/logos/octo-logo.png" style="max-height: 80px; width: auto;" alt="OCTO Logo">
         </a>
         <p style="margin-top: 1rem; font-size: 1rem;">OCTO's mission is to direct the strategy, deployment, and management of DC Government technology with an unwavering commitment to IT excellence, efficiency, and value for government, residents, businesses, and visitors.</p>
     </div>
@@ -64,18 +57,14 @@ description: |
     <h1 style="font-size: 2rem; font-weight: bold; color: #f8c45c;">Thank You to Our Sponsors</h1>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; margin: auto; padding: 0 20px;">
-  <div style="flex: 0 1 auto; min-width: 300px; max-width: 450px; text-align: center; margin: 0 auto;">
-    <a href="https://pro.morningconsult.com/" target="_blank">
-      <img src="/assets/images/events/data_showcase/morning-consult.png" style="max-height: 40px; width: auto;" alt="Morning Consult Logo">
-    </a>
-    <p style="margin-top: 1rem; font-size: 1rem;">
-      Our venture sponsor is Morning Consult, a global decision intelligence company changing how modern leaders make smarter, faster, better decisions. The company pairs its proprietary high-frequency data with applied artificial intelligence to better inform decisions on what people think and how they will act.
-    </p>
-  </div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; margin: auto;">
+    <div style="flex: 1; min-width: 250px; max-width: 400px; text-align: center;">
+        <a href="https://pro.morningconsult.com/" target="_blank">
+            <img src="assets/images/logos/morning-consult.png" style="max-height: 80px; width: auto;" alt="Morning Consult Logo">
+        </a>
+        <p style="margin-top: 1rem; font-size: 1rem;">Our venture sponsor is Morning Consult, a global decision intelligence company changing how modern leaders make smarter, faster, better decisions. The company pairs its proprietary high-frequency data with applied artificial intelligence to better inform decisions on what people think and how they will act.</p>
+    </div>
 </div>
-
-
 
 <div style="text-align: center; margin: 2rem 0;">
     <h1 style="font-size: 2rem; font-weight: bold; color: #f8c45c;">Lightning Talks</h1>
@@ -134,5 +123,3 @@ description: |
         </p>
     </div>
 </div>
-</div>
-{% endraw %}
