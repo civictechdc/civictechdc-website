@@ -6,7 +6,9 @@ hero-image: /assets/images/hero-image-code-of-conduct.jpg
 
 # Code of Conduct
 
-Civic Tech DC is an organization working, as a group, to empower ourselves and others to improve our local community through technology. Civic Tech DC is committed to providing a safe and welcoming space, without regard to age, gender, race, ethnicity, nationality, sexual orientation, gender identity, gender expression, mental or physical disability, physical appearance, neuro(a)typicality, religion, level of knowledge, level of experience, parental status, marital status, socioeconomic status or background, political affiliation, or any other attribute. The captains of Civic Tech DC ("Captains") share the responsibility of enforcing these policies as necessary to maintain an open and welcoming environment.
+Civic Tech DC is an organization working, as a group, to empower ourselves and others to improve our local community through technology.
+
+We are committed to providing a safe and welcoming space, without regard to age, gender, race, ethnicity, nationality, sexual orientation, gender identity, gender expression, mental or physical disability, physical appearance, neuro(a)typicality, religion, level of knowledge, level of experience, parental status, marital status, socioeconomic status or background, political affiliation, or any other attribute. The captains of Civic Tech DC ("Captains") share the responsibility of enforcing these policies as necessary to maintain an open and welcoming environment.
 
 As the organizers of Civic Tech DC, we believe that the below principles are essential to maintaining this environment. In addition, we believe that they are good principles for life in general.
 
