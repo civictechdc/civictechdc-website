@@ -23,7 +23,7 @@ description: Building tech tools for congressional staff and increasing transpar
   <div class="grid-container">
     <h2 class="font-sans-lg">🚀 Our Impact</h2>
     <p>
-      Foster a strong relationship between the House Digital Service and Civic Tech DC to find opportunities for engagement with important congressional stakeholders — ultimately increasing efficiency and transparency in legislative operations.
+      To foster a strong relationship between the House Digital Service and Civic Tech DC to find opportunities for engagement with important congressional stakeholders — ultimately increasing efficiency and transparency in legislative operations.
     </p>
   </div>
 </section>
@@ -31,7 +31,7 @@ description: Building tech tools for congressional staff and increasing transpar
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
-    <p>Primarily DMV area, but open source and available for national use.</p>
+    <p>Primarily the DMV area, but open source and available for national use.</p>
   </div>
 </section>
 
@@ -70,7 +70,7 @@ description: Building tech tools for congressional staff and increasing transpar
           <td class="text-no-wrap">@Alex Gurvich</td>
           <td>
             <a href="https://www.linkedin.com/in/alex-b-gurvich/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-            <a href="mailto:alex.b.gurvich@gmail.com" class="usa-link">alex.b.gurvich@gmail.com</a>
+            <a href="mailto:alex.b.gurvich@gmail.com" class="usa-link">Email</a>
           </td>
         </tr>
         <tr>
@@ -110,9 +110,6 @@ description: Building tech tools for congressional staff and increasing transpar
       </a>
       <a href="https://github.com/civictechdc/congressional-tech" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
-      </a>
-      <a href="https://electrifydmv.org" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
-        🌐 Project Website
       </a>
     </div>
   </div>

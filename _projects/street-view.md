@@ -8,28 +8,28 @@ description: Automate mapping of urban vegetation from street level imagery to c
 ---
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
-  <em>We want to automate mapping of urban vegetation from street level imagery to create an informative layer for exploring which areas of a city might be vulnerable to heat-related hazards. The low-cost and open source tools being developed will be used by the Red Cross for community science as part of participatory disaster risk reduction for more data-informed design and analysis of extreme heat interventions, and for engaging people in discussions about green and nature-based solutions for climate adaptation.</em>
+  <em>We want to automate urban vegetation mapping from street-level imagery to create an informative layer for exploring which areas of a city might be vulnerable to heat-related hazards. The low-cost and open-source tools being developed will be used by the Red Cross for community science as part of participatory disaster risk reduction for more data-informed design and analysis of extreme heat interventions, and for engaging people in discussions about green and nature-based solutions for climate adaptation.</em>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🏠 Why This Matters</h2>
-    <p>Urbanization is a global trend, while climate change is exacerbating challenges to urban quality of life including extreme heat. Cities themselves can intensify extreme heat, leading to the urban heat island phenomenon. It will be increasingly important to understand how to mitigate and plan for warming cities – understanding the drivers and the effectiveness of various countermeasures. We expect that citizen science approaches to urban heat island mapping will improve participant’s perceptions of heat hazards, support design of effective nature-based solutions, and enhance advocacy for humanitarian interventions.</p>
+    <p>Urbanization is a global trend, while climate change exacerbates challenges to urban quality of life, including extreme heat. Cities can intensify extreme heat, leading to the urban heat island phenomenon. It will be increasingly important to understand how to mitigate and plan for warming cities, understanding the drivers and the effectiveness of various countermeasures. We expect that citizen science approaches to urban heat island mapping will improve participants' perceptions of heat hazards, support the design of effective nature-based solutions, and enhance advocacy for humanitarian interventions.</p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🚀 Our Impact</h2>
-    <p>Join us to help detect and deter vote suppression and fraud! By helping the Campaign Legal Center to identify outliers in voter registration and votes, we enable their attorneys to take action against any wrongdoing that may be causing the anomalies.</p>
+    <p>Join us to help detect and deter vote suppression and fraud! By helping the Campaign Legal Center identify outliers in voter registration and votes, we enable their attorneys to take action against any wrongdoing that may be causing the anomalies.</p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
-    <p>Initial project focus is Indonesia - but will be open source and can be used globally.</p>
+    <p>The initial project focus is Indonesia - but will be open source and can be used globally.</p>
   </div>
 </section>
 
@@ -43,12 +43,12 @@ description: Automate mapping of urban vegetation from street level imagery to c
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">📖 Our Story</h2>
-    <p>As part of his work at the <strong>American Red Cross, Dan has collected street-level imagery in a variety of contexts</strong> including: tracking the rapidly urbanization of Canaan, Haiti where the Red Cross was supporting residents through health, infrastructure, and livelihoods programs; documenting the aftermath of hurricane Irma in Dominica as teams traveled around the island assessing and providing support; and improving map data in the Philippines working alongside the Philippine Red Cross on recovery activities that include training volunteers in communities on disaster prevention and preparedness. During the 2018 domestic response to hurricane Michael, the American Red Cross collected more than 539,000 images of Panama City, Florida.</p>
+    <p>As part of his work at the <strong>American Red Cross, Dan has collected street-level imagery in a variety of contexts</strong> including: tracking the rapidly urbanization of Canaan, Haiti where the Red Cross was supporting residents through health, infrastructure, and livelihoods programs; documenting the aftermath of hurricane Irma in Dominica as teams traveled around the island assessing and providing support; and improving map data in the Philippines working alongside the Philippine Red Cross on recovery activities that include training volunteers in communities on disaster prevention and preparedness. During the 2018 domestic response to Hurricane Michael, the American Red Cross collected more than 539,000 images of Panama City, Florida.</p>
     <p>The images were used in an <strong>experimental crowdsourcing review tool to identify damages</strong>, and later as the training data for trying a machine learning enabled automated damage assessment process. This project builds on that previous work while seeking to leverage more recent advances in machine learning tools and techniques.</p>
   </div>
 </section>
 
-<section class="padding-y-5 usa-prose maxw-none">
+<section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-xl margin-bottom-2">📇 Current Project Volunteer Contacts</h2>
     <table class="usa-table usa-table--striped usa-table--borderless">
@@ -99,7 +99,7 @@ description: Automate mapping of urban vegetation from street level imagery to c
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
     <h2>👋 Come Join Us</h2>
-    <p>Everyone is welcome no matter your skill level or background. We especially need help with:</p>
+    <p>Everyone is welcome, no matter your skill level or background. We especially need help with:</p>
     <ul class="usa-list">
       <li>Machine learning for image analysis</li>
       <li>Geospatial analysis and visualization</li>
