@@ -6,18 +6,44 @@ hero-image: /assets/images/hero-image-about.jpg
 
 ## About
 
-Founded in 2012, Civic Tech DC is a non-partisan, non-political group of
-volunteer civic hackers working together to solve local issues in the
-Washington, DC area and helping people engage with the city. We host
-twice-monthly project nights and other events to gather, discuss, and get stuff
-done.
+Founded in 2012 as Code for DC, Civic Tech DC is a non-partisan, volunteer-driven 501(c)(3) nonprofit community. We use open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives in the Washington, DC area.
 
-We're looking to bring people with all different skill sets together to
-maximize our potential. Civic hackers aren't just developers — they're
-journalists, lawyers, designers, and interested citizens in general. The
-more community participation, the better.
+We are home to technologists, policy thinkers, researchers, designers, and community leaders passionate about civic impact. We welcome people from all backgrounds, disciplines, and levels of experience. Our work supports:
+
+*   Local and national nonprofits
+*   Think tanks and research orgs
+*   Local governments
+*   Grassroots organizers and engaged residents
 
 To contact us, please email <team@civictechdc.org>.
+
+## How We Work
+
+We gather to discuss ideas, collaborate on projects, and get stuff done. Our community connects through:
+
+*   **Bi-Monthly Project Nights**: Community-led collaboration on active civic tech projects.
+*   **Code & Commit Nights**: Focused work sessions on project delivery.
+*   **Ongoing Collaboration**: We use Slack and GitHub for asynchronous coordination.
+*   **Special Events**: Hackathons, workshops, show & tells, and happy hours.
+
+We believe in building processes—not just tools—and applying human-centered systems thinking to civic technology. Our projects aim to be adaptable to real-world needs, reusable across communities, and scalable for broader impact.
+
+## Our Vision
+
+We build technology that empowers communities in:
+
+*   **Civic Technology**: Participatory tools that engage and inform residents.
+*   **Nonprofit Tech**: Practical solutions to strengthen nonprofit capacity.
+*   **Legislative Tech**: Tools that promote transparency and accountability.
+*   **Election & Campaign Tech**: Lowering the barrier to democratic participation.
+
+## Stay Connected
+
+*   💬 Slack: [civictechdc.org/slack](https://civictechdc.org/slack)
+*   📆 Events: [lu.ma/civic-tech-dc](https://lu.ma/civic-tech-dc)
+*   🌐 Website: [civictechdc.org](https://civictechdc.org)
+*   🧑‍💻 GitHub: [github.com/civictechdc](https://github.com/civictechdc)
+*   🔗 LinkedIn: [linkedin.com/company/civic-tech-dc](https://linkedin.com/company/civic-tech-dc)
 
 <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 1rem; margin-top: 2rem;">Directors</h2>
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0; width: 100%; margin: 0 auto; padding: 0;">
