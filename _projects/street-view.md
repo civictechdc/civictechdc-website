@@ -22,7 +22,7 @@ description: Automate mapping of urban vegetation from street level imagery to c
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🚀 Our Impact</h2>
-    <p>Join us to help detect and deter vote suppression and fraud! By helping the Campaign Legal Center to identify outliers in voter registration and votes, we enable their attorneys to take action against any wrongdoing that may be causing the anomalies.</p>
+    <p>Join us to help communities better understand and prepare for extreme heat events! By automating the mapping of urban vegetation from street-level imagery, we're creating valuable data that helps the Red Cross and local communities identify areas most vulnerable to heat-related hazards. Our open-source tools enable more informed planning for climate adaptation and support the design of effective nature-based solutions to combat urban heat islands.</p>
   </div>
 </section>
 
