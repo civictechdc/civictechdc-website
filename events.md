@@ -14,7 +14,7 @@ hero-image: /assets/images/hero-image-events.jpg
   {% assign upcoming_events = site.events | sort: "date" %}
   {% assign upcoming_events = upcoming_events | where_exp: "e", "e.date >= site.time" %}
   {% for event in upcoming_events %}
-  <p>Event Debug: {{ event.title }} → {{ event.url }}</p>
+  <!-- <p>Event Debug: {{ event.title }} → {{ event.url }}</p> -->
     <li class="usa-card">
       <a class="usa-card__container usa-card__container--clickable" href="{{ event.url | relative_url }}">
         <div class="usa-card__media">

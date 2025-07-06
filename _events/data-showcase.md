@@ -48,7 +48,7 @@ description: |
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 100%; max-width: 1200px; margin: auto; margin-bottom: 40px;">
     <div style="flex: 1; min-width: 250px; max-width: 400px; text-align: center;">
         <a href="https://civictechdc.org" target="_blank">
-            <img src="assets/images/events/data_showcase/civictech.png" style="max-height: 80px; width: auto;" alt="Civic Tech DC Logo">
+            <img src="/assets/images/events/data_showcase/civictech.png" style="max-height: 80px; width: auto;" alt="Civic Tech DC Logo">
         </a>
         <p style="margin-top: 1rem; font-size: 1rem;">Founded in 2012, Civic Tech DC is a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city.</p>
     </div>

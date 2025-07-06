@@ -25,12 +25,12 @@ description: Use the data from the biennial Election Administration and Voting S
     <div class="usa-alert usa-alert--info margin-y-3">
       <div class="usa-alert__body">
         <p class="usa-alert__text">
-          We’re bridging this gap with a tool that:
+          We're bridging this gap with a tool that:
         </p>
         <ul class="usa-list">
-          <li>Connects homeowners with <strong>qualified and trusted contractors</strong></li>
-          <li>Shares <strong>localized info</strong> on rebates and incentives</li>
-          <li>Unlocks <strong>IRA workforce funding</strong> and training opportunities</li>
+          <li>Automates <strong>data processing and analysis</strong> of EAVS survey results</li>
+          <li>Provides <strong>interactive visualizations</strong> to identify trends and outliers</li>
+          <li>Enables <strong>efficient comparison</strong> across states, counties, and years</li>
         </ul>
       </div>
     </div>

@@ -110,10 +110,7 @@ description: Building tech tools for congressional staff and increasing transpar
       </a>
       <a href="https://github.com/civictechdc/congressional-tech" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
-      </a>
-      <a href="https://electrifydmv.org" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
-        🌐 Project Website
-      </a>
+</a>
     </div>
   </div>
 </section>
