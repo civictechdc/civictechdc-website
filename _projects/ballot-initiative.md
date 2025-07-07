@@ -2,7 +2,7 @@
 layout: project
 is_active: true
 title: VoteCatcher
-image: ballot-initiative.png
+image: project_thumbnails/ballot-initiative.png
 image_alt_text: Handwritten PDF scans being converted into machine-readable format
 github_link: https://github.com/Civic-Tech-Ballot-Inititiave/Ballot-Initiative
 slack_channel: ballot_initiative

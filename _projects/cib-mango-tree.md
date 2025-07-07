@@ -2,10 +2,11 @@
 layout: project
 is_active: true
 title: CIB Mango Tree
-image: mango.png
+image: project_thumbnails/mango.png
 image_alt_text: Yellow cartoon mango fruit
 description: An integrated library of open source programs to test datasets of social media activity for signs of coordinated inauthentic behavior (CIB).
 ---
+
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
     <em>To provide open source software that detects coordinated inauthentic behavior (CIB) to researchers, moderators, and journalists. We aim to make our programs intuitive so users do not need programming experience to run our tests.</em>

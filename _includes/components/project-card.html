@@ -1,5 +1,4 @@
 {% assign project = include.project %}
-
 <li class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
   <div class="usa-card__container">
     <div class="usa-card__header">
@@ -9,10 +8,7 @@
     </div>
     <div class="usa-card__media">
       <div class="usa-card__img">
-        <img
-          src="{{ site.baseurl }}/assets/images/project_thumbnails/{{ project.image }}"
-          alt="{{project.image_alt_text}}"
-        />
+        {% include responsive-image.html src=project.image alt=project.image_alt_text %}
       </div>
     </div>
     <div class="usa-card__body">

@@ -2,10 +2,11 @@
 layout: project
 is_active: true
 title: Election Administration and Voting Survey
-image: eavs.jpg
+image: project_thumbnails/eavs.jpg
 image_alt_text: Voting precinct data table
 description: Use the data from the biennial Election Administration and Voting Survey (EAVS) to identify trends and outliers related to voter registration, voter roll maintenance, mail ballots, provisional ballots, voter turnout, and other aspects of how elections are run in states and counties across the U.S.
 ---
+
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
     <em>🗳️ This project works with the U.S. Election Administration and Voting Survey (EAVS) data to support research and analysis by the Campaign Legal Center's Voting Rights team.</em>
