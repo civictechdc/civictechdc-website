@@ -129,7 +129,7 @@ description: |
         <h2 style="font-size: 1.5rem; font-weight: bold;">Mapping Multidimensionality: Using Census Data to Understand Neighborhood Communities</h2>
         <img src="/assets/images/events/data_showcase/Mapping-multidimensionality-400w.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="Mapping Multidimensionality">
         <p style="font-size: 1rem; line-height: 1.5;">
-        Examining Census Community Resilience Estimates (CREs) alongside other open data sources can shed light on overlooked patterns of structural inequity and social isolation. In <strong>Mapping Multidimensionality: Using Census Data to Understand Neighborhood Communities</strong>" Bayowa Onabajo MBChB, Jibek Gupta, Kyshan Nichols-Smith, and Professors Nathan Alexander and Hye Ryeon (Helen) Jang demonstrate how a mixed-methods approach can guide targeted interventions.
+        Examining Census Community Resilience Estimates (CREs) alongside other open data sources can shed light on overlooked patterns of structural inequity and social isolation. In <strong>Mapping Multidimensionality: Using Census Data to Understand Neighborhood Communities</strong>, Bayowa Onabajo MBChB, Jibek Gupta, Kyshan Nichols-Smith, and Professors Nathan Alexander and Hye Ryeon (Helen) Jang demonstrate how a mixed-methods approach can guide targeted interventions.
         </p>
     </div>
 </div>
