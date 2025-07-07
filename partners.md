@@ -35,9 +35,9 @@ We're always looking for new partners! Get in touch with us to see how we can wo
   <li class="usa-process-list__item">
     <h4 class="usa-process-list__heading">Get in touch</h4>
     <p>
-            We're always looking for new and impactful projects where we can use skills to help our community. You can get in touch by emailing us at <a href="mailto:hello@civictechdc.org" target="_blank">hello@civictechdc.org</a> to see if your project is a good fit with Civic Tech DC. This may be some email back-and-forth, a virtual chat, or meeting in person to hear more about the problem you're facing.
+            We're always looking for new and impactful projects where we can use skills to help our community. You can get in touch by emailing us at <a href="mailto:team@civictechdc.org" target="_blank">team@civictechdc.org</a> to see if your project is a good fit with Civic Tech DC. This may be some email back-and-forth, a virtual chat, or meeting in person to hear more about the problem you're facing.
     </p>
-    <a href="mailto:hello@civictechdc.org" target="_blank" class="usa-button">Get in touch</a>
+    <a href="mailto:team@civictechdc.org" target="_blank" class="usa-button">Get in touch</a>
   </li>
   <li class="usa-process-list__item">
     <h4 class="usa-process-list__heading">Develop a project plan and milestones</h4>
