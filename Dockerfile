@@ -1,30 +1,33 @@
 FROM ruby:3.2-bullseye
 
 # Install Nodejs
-RUN apt-get update && apt-get install -y curl \
-    && curl -fsSL https://deb.nodesource.com/setup_23.x | bash - \
-    && apt-get install -y nodejs \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y curl
+RUN curl -fsSL https://deb.nodesource.com/setup_23.x | bash -
+RUN apt-get install -y nodejs
 
 # Verify installations and versions
 RUN ruby -v && node -v && npm -v
 
-# Copy the application code (excluding files in .dockerignore)
-
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# Install dependencies with caching to improve build times
-COPY package.json package-lock.json* ./
-COPY Gemfile Gemfile.lock* ./
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+COPY Gemfile* ./
 
-# Install dependencies
+# Install the application dependencies
 RUN npm install
 RUN bundle install
 
+# Copy the application code into the container
 COPY . .
 
+# Expose port 4000 to the host
 EXPOSE 4000
+
+# Set up a volume to sync code changes
+VOLUME [ "/usr/src/app" ]
 
 # Command to run the application
 CMD ["npm", "run", "serve"]

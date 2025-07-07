@@ -1,7 +1,7 @@
 ---
 layout: hero-image-small
 title: Join our Slack
-hero-image: hero-image-slack.jpg
+hero-image: /assets/images/hero-image-slack.jpg
 ---
 
 # Join our Slack
@@ -12,15 +12,11 @@ Civic Tech DC uses Slack extensively to communicate between events, about upcomi
 
 It's highly recommended that you join our Slack if you want to get involved in a project or start joining our events.
 
-<div style="display: inline-flex; align-items: center;">
 <a
 href="https://join.slack.com/t/civictechdc/shared_invite/zt-328ykmsgh-FAH~~3KrJ2JtdZ7BXVYl5w"
 target="_blank"
 id="submitrequest"
 type="submit"
-class="usa-button"
-style="display: inline-flex; align-items: center; text-decoration: none;">
-{% include responsive-image.html src="logos/slack.png" style="margin-right: 0.5rem; width: 24px; height: auto;" alt="Join our Slack" %}
-Join Our Slack
+class="usa-button">
+<img src="/assets/images/logos/slack.png" style="margin-right: 0.5rem" />Join Our Slack
 </a>
-</div>

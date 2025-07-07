@@ -2,11 +2,10 @@
 layout: project
 is_active: true
 title: Congressional Modernization
-image: project_thumbnails/congress.png
+image: congress.png
 image_alt_text: Building tech tools for congressional staff and increasing transparency for constituents
 description: Building tech tools for congressional staff and increasing transparency for constituents.
 ---
-
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
     <em>Building tools to tackle common technological roadblocks that make congressional staff’s work difficult, while increasing transparency so constituents can better understand their representatives' activities.</em>

@@ -1,9 +1,13 @@
-<div class="hero-image grid-col-12">
-  {% include responsive-image.html src=include.image alt=include.title class="hero-bg-image" %}
-  <div class="hero-text">
-    {% if include.title %}
-    <h1 class="margin-top-0">{{ include.title }}</h1>
-    {% endif %}
-    <p>{{ include.subtitle }}</p>
+<div
+  class="hero-image grid-col-12"
+  style="background-image: url({{include.image}})"
+>
+  <div class="grid-col-12 margin-top-3 margin-left-3 desktop:margin-left-15">
+    <div class="hero-text padding-2 desktop:margin-left-15">
+      {% if include.title %}
+      <h1 class="margin-top-0">{{include.title}}</h1>
+      {% endif %}
+      <p>{{ include.subtitle }}</p>
+    </div>
   </div>
 </div>

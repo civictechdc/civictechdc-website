@@ -2,13 +2,12 @@
 layout: project
 is_active: true
 title: Electrify DMV
-image: project_thumbnails/electrify-dc.png
+image: electrify-dc.png
 image_alt_text: Logo for the nonprofit ElectrifyDC
 github_link: https://github.com/civictechdc/repower-dmv/
 slack_channel: ext-electrify-dc
 description: Lower carbon emissions in the DMV by connecting homeowners with the resources and contractors they need to make their homes efficient and electric.
 ---
-
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
     <em>⚡An easy-to-use contractor finder tool helping homeowners decarbonize their homes and reduce the 25% of emissions they produce.</em>
