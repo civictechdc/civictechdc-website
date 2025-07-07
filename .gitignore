@@ -6,6 +6,7 @@ node_modules/
 .jekyll-metadata
 .ruby-gemset
 .ruby-version
+assets/images/
 
 
 ### JEnv template
