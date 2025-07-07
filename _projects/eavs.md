@@ -1,6 +1,6 @@
 ---
 layout: project
-is_active: true
+is_active: true 
 title: Election Administration and Voting Survey
 image: eavs.jpg
 image_alt_text: Voting precinct data table

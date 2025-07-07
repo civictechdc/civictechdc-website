@@ -41,7 +41,7 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🚀 Our Impact</h2>
-    <p>A contractor finder tool was identified as one of the <strong>top three barriers</strong> to residential decarbonization. Civic Tech DC’s open-source solution will empower similar efforts nationwide—making it easier, faster, and more affordable for people to begin their electrification journey.</p>
+    <p>A contractor finder tool was identified as one of the <strong>top three barriers</strong> to residential decarbonization. Civic Tech DC’s open-source solution will empower similar efforts nationwide - making it easier, faster, and more affordable for people to begin their electrification journey.</p>
   </div>
 </section>
 
@@ -54,23 +54,22 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🤝 Community Partners</h2><p>
+    <h2 class="font-sans-lg">🤝 Community Partners</h2>
     <a href="https://www.electrifydc.org/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Electrify DC</a>, Building Innovation Hub, Go Electric DMV, and several DMV-area jurisdictions and professional associations.
-    </p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">📖 Our Story</h2>
-    <p>Electrify DMV partnered with jurisdictions across the region and asked Civic Tech DC to lead on data, design, and technical implementation. The result: a user-friendly tool designed with local impact and national scalability in mind.</p>
+    <p>Electrify DMV partnered with jurisdictions across the region and asked Civic Tech DC to lead on data, design, and technical implementation. The Result: a user-friendly tool designed with local impact and national scalability in mind.</p>
   </div>
 </section>
 
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
     <h2>👋 Come Join Us</h2>
-    <p>Everyone is welcome no matter your skill level or background. We especially need help with:</p>
+    <p>Everyone is welcome, no matter your skill level or background. We especially need help with:</p>
     <ul class="usa-list">
       <li>Product &amp; Project Management</li>
       <li>Data Exploration &amp; Cleaning</li>
