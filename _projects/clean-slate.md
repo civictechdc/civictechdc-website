@@ -2,7 +2,7 @@
 layout: project
 is_active: false
 title: Clean Slate
-image: clean-slate.jpg
+image: project_thumbnails/clean-slate.jpg
 image_alt_text: Clean Slate DC logo
 github_link: https://github.com/civictechdc/clean-slate
 slack_channel: clean_slate

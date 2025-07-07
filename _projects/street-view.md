@@ -2,10 +2,11 @@
 layout: project
 is_active: true
 title: StreetView
-image: street-view.jpg
+image: project_thumbnails/street-view.jpg
 image_alt_text: View out the windshield of a car on a dirty road overlooking a sprawling beige city. Visible is a Red Cross symbol on the car hood and a dash camera mounted to the windshield.
 description: Automate mapping of urban vegetation from street level imagery to create a layer for exploring which areas of a city might be at greater risk during future heat waves.
 ---
+
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
   <em>We want to automate urban vegetation mapping from street-level imagery to create an informative layer for exploring which areas of a city might be vulnerable to heat-related hazards. The low-cost and open-source tools being developed will be used by the Red Cross for community science as part of participatory disaster risk reduction for more data-informed design and analysis of extreme heat interventions, and for engaging people in discussions about green and nature-based solutions for climate adaptation.</em>
@@ -107,7 +108,6 @@ description: Automate mapping of urban vegetation from street level imagery to c
     </ul>
   </div>
 </section>
-
 
 <section class="usa-section padding-y-4">
   <div class="grid-container">

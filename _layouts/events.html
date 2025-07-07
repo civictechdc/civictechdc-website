@@ -2,25 +2,8 @@
 layout: default
 ---
 
-<h1 class="margin-bottom-1">{{ page.title }}</h1>
+<a href="/events/"><h1>Events</h1></a>
 
-<ul class="margin-top-0 padding-left-0 font-heading-med">
-  {% if page.registration_link %}
-  <li style="display: inline">
-    <a style="white-space: nowrap" href="{{ page.registration_link }}" target="_blank" class="usa-button usa-button--outline">
-      <svg class="usa-icon" aria-hidden="true" focusable="false" role="img" style="height: 1em; width: 1em; vertical-align: middle;">
-        <use xlink:href="/assets/img/sprite.svg#calendar"></use>
-      </svg>
-      Register
-    </a>
-  </li>
-  {% endif %}
-</ul>
+<h2 style="font-size: 2.5em; margin-bottom: 0.5em">{{ page.title }}</h2>
 
-<img class="maxh-mobile margin-bottom-2" src="{{ site.baseurl }}/assets/images/event_thumbnails/{{ page.image }}" alt="{{ page.image_alt_text }}" />
-
-<div class="usa-prose">
-  {{ content }}
-</div>
-
-<p><a href="/events/">← Back to Events</a></p>
+<div class="usa-prose">{{ content }}</div>

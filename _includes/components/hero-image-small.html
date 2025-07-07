@@ -1,4 +1,3 @@
-<div
-  class="hero-image-small grid-col-12"
-  style="background-image: url({{include.image}})"
-></div>
+<div class="hero-image-small grid-col-12">
+  {% include responsive-image.html src=include.image alt=include.alt class="hero-bg-image-small" %}
+</div>
