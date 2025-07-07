@@ -45,7 +45,7 @@ description: Building tech tools for congressional staff and increasing transpar
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">📖 Our Story</h2>
-    <p>Technological roadblocks were gathered organically from Congressional Staffers during the Annual Congressional Hackathon. These needs were compiled by a member of the American Governance Institute (AGI) and shared with Civic Tech DC (CTDC). The AGI–CTDC relationship continues as an ongoing partnership.</p>
+    <p>Technological roadblocks were gathered organically from Congressional Staffers during the Annual Congressional Hackathon. These needs were compiled by a member of the American Governance Institute (AGI) and shared with Civic Tech DC (CTDC). The AGI–CTDC relationship continues as an ongoing partnership. </p>
   </div>
 </section>
 

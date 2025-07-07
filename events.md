@@ -76,7 +76,7 @@ hero-image: /assets/images/hero-image-events.jpg
 </ul>
 
 <h2>Past Events</h2>
-<p>A selection of exciting past events we had!</p>
+<p>A selection of exciting past events we had! More updates coming soon.</p>
 <ul class="usa-card-group">
   {% assign past_events = site.events | sort: "date" | reverse %}
   {% assign past_events = past_events | where_exp: "e", "e.date < site.time" %}

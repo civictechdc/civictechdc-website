@@ -1,7 +1,7 @@
 ---
 layout: events
 title: "Civic Hack DC 2025"
-date: 2025-07-23
+date: 2025-07-26
 location: "Washington DC"
 url: /civichackdc
 description: |
@@ -118,7 +118,7 @@ body { font-family: 'Source Sans Pro Web', 'Helvetica Neue', Helvetica, Roboto, 
 
 <section class="section">
     <div class="container">
-        <h2 class="section-title">✨ Hackathon Goals ✨</h2>
+        <h2 class="section-title">🎯 Hackathon Goals 🎯</h2>
         <div class="goals-grid">
             <div class="goal-card">
                 <div class="goal-number">1</div>

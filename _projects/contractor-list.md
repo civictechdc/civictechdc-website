@@ -2,6 +2,7 @@
 layout: project
 is_active: true
 title: Electrify DMV
+title: Electrify DMV
 image: electrify-dc.png
 image_alt_text: Logo for the nonprofit ElectrifyDC
 github_link: https://github.com/civictechdc/repower-dmv/
