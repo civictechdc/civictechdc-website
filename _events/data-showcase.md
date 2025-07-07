@@ -1,14 +1,12 @@
 ---
-layout: event
+layout: events
 title: Open Data DC Showcase
 date: 2025-03-26
 location: "Washington DC"
-image: data-cover.png
-image_alt_text: Man on a bike with the words civic tech in the background
+url: /data-showcase
 description: |
   In Celebration with the annual Open Data Week, Civic Tech DC partnered with the Office of the Chief Technology Officer for a Open Data DC Showcase.
 ---
-
 {% raw %}
 <div style ="font-family: 'Source Sans Pro Web', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">
 <div style="display: flex; flex-wrap: wrap; align-items: center; width: 100%; max-width: 1200px; margin: 70px auto;">
@@ -74,8 +72,6 @@ description: |
     </p>
   </div>
 </div>
-
-
 
 <div style="text-align: center; margin: 2rem 0;">
     <h1 style="font-size: 2rem; font-weight: bold; color: #f8c45c;">Lightning Talks</h1>

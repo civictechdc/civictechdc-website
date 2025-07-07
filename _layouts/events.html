@@ -17,17 +17,10 @@ layout: default
   {% endif %}
 </ul>
 
-<p class="usa-hero__subheading margin-top-0 margin-bottom-2">
-  <strong>Date:</strong> {{ page.date | date: "%B %-d, %Y" }}<br />
-  {% if page.location %}
-  <strong>Location:</strong> {{ page.location }}
-  {% endif %}
-</p>
-
 <img class="maxh-mobile margin-bottom-2" src="{{ site.baseurl }}/assets/images/event_thumbnails/{{ page.image }}" alt="{{ page.image_alt_text }}" />
 
 <div class="usa-prose">
-  {{ page.description | markdownify }}
+  {{ content }}
 </div>
 
 <p><a href="/events/">← Back to Events</a></p>

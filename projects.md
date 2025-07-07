@@ -21,3 +21,4 @@ Since its founding in 2012, Civic Tech DC has worked on dozens of projects. This
 ## Interested in pitching us a project?
 
 We're always interested in hearing about potential projects or partnerships! See the [Partners]({% link partners.md %}) page for information on how to pitch a project at Civic Tech DC.
+
