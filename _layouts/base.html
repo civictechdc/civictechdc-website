@@ -1,8 +1,18 @@
 <!doctype html>
 <html lang="{{ page.lang | default: 'en-US' }}">
   <head>
-    {% include core/google-tag-manager-script.html %} {% include core/meta.html
-    %} {% include core/css.html %}
+    {% include core/google-tag-manager-script.html %}
+    {% include core/meta.html%}
+    {% include core/css.html %}
+     {% if page.page_css %}
+      {% assign css_filename = page.page_css | split: '/' | last %}
+      {% if site.data.css-manifest[css_filename] %}
+        {% assign hashed_css_file = site.data.css-manifest[css_filename] %}
+        <link rel="stylesheet" href="{{ '/assets/css/' | append: hashed_css_file | relative_url }}" />
+      {% else %}
+        <link rel="stylesheet" href="{{ page.page_css | relative_url }}" />
+      {% endif %}
+    {% endif %}
   </head>
 
   <body

@@ -1,0 +1,59 @@
+.usa-card__media-text-wrapper {
+  border: 3px solid #eec05e;
+  width: 600px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.2s;
+}
+
+.usa-card__media-text-wrapper:hover {
+  box-shadow: 0 0 0 9px #eec05e33;
+}
+
+.usa-card__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.usa-card__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.usa-card__body {
+  padding: 0;
+}
+
+.usa-card__heading {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.event-description {
+  font-size: 16px;
+  margin: 0 0 8px 0;
+}
+
+/* New styles for past events grid */
+.past-events-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.past-events-grid .usa-card__media-text-wrapper {
+  width: auto;
+  flex: 1 1 300px;
+  max-width: 350px;
+}
+
+.past-events-grid .usa-card__img {
+  max-height: 200px;
+} 

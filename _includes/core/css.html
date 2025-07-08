@@ -5,4 +5,9 @@
   rel="stylesheet"
 />
 
-<link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+{% if site.data.css-manifest %}
+  {% assign css_file = site.data.css-manifest["styles.css"] %}
+  <link rel="stylesheet" href="{{ '/assets/css/' | append: css_file | relative_url }}" />
+{% else %}
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+{% endif %}
