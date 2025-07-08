@@ -30,6 +30,9 @@ description: |
         <div class="cta-buttons">
             <a href="https://lu.ma/czi3y05y" class="btn btn-secondary">Register Now</a>
             <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="cta-buttons">
+                <a href="#problem-statements" class="btn btn-secondary">Submit a Problem Statement</a>
         </div>
         
         <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">
@@ -51,6 +54,7 @@ description: |
             <a href="https://www.meetup.com/data-visualization-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dataviz-400w.png" alt="Data Viz"></a>
             <a href="https://www.dc2.org/data-science-dc" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC"></a>
             <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a>
+            <a href="https://www.meetup.com/DataKind-DC/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/logos/datakinddc-400w.png" alt="DataKindDC"></a>
         </div>
     </div>
 </section>
@@ -73,7 +77,7 @@ description: |
         <div style="max-width: 700px; margin: 0 auto; text-align: center;">
             <p style="font-size: 1.1rem; line-height: 1.6;">Every year, millions of Americans submit comments on proposed federal rules, but accessing and analyzing this data remains frustratingly difficult. <strong>We aim to change that.</strong></p>
             <p style="font-size: 1.1rem; line-height: 1.6;">By building open-source tools, we'll make it easier for citizens, researchers, agencies, and advocates to understand how public input shapes the rules that govern our lives.</p>
-            
+
         </div>
     </div>
 </section>
@@ -82,8 +86,8 @@ description: |
         <div class="container">
         <h2 class="section-title">📊 Why this matters 📊</h2>
         <div class="about-text" style="max-width: 800px; margin: 2rem auto 0; text-align: left;">
-            <p>For the past 50 years, when the federal government has proposed a rule through <a href="https://www.regulations.gov/" target="_blank" rel="noopener noreferrer">Regulations.gov</a> to implement a law, it has solicited public comment from stakeholders as part of the rulemaking process. Depending on the scope of the rule, the government may receive thousands of comments from individuals, advocates, and corporate interests. Agencies are required to meaningfully consider and respond to these comments before finalizing the rule.</p>
-            <p>However, despite the importance of this process, outdated technological infrastructure continues to limit the public's ability to access, analyze, and engage with submitted comments in a meaningful way. This creates barriers to transparency and makes it difficult to understand how citizen input actually influences policy.</p>
+            <p>For the past 50 years, when the federal government has proposed a rule through <a href="https://www.regulations.gov/" target="_blank" rel="noopener noreferrer">Regulations.gov</a>, it has solicited public comment from stakeholders as part of the rulemaking process. Depending on the scope of the rule, the government may receive thousands of comments from individuals, advocates, and corporate interests. Agencies are required to meaningfully consider and respond to these comments before finalizing the rule.</p>
+            <p>However, while the data is technically public, it's not practically usable. Comments are often locked away in PDFs, messy spreadsheets, and other formats that are difficult for data scientists and engineers to work with at scale. This creates a major barrier not just to public transparency, but to effective, data-driven policy analysis.</p>
         </div>
     </div>
 </section>
@@ -102,20 +106,38 @@ description: |
     </div>
 </section>
 
-<section class="section alt">
+<section class="section alt" id="problem-statements">
     <div class="container">
         <h2 class="section-title">📝 Submit Your Problem Statements 📝</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p>We're actively seeking problem statements from policy experts to explore during the hackathon. If you have an idea, please submit it via the form below before <strong>July 23, 2025</strong>. Our review board will evaluate submissions and select the top 5 problem statement tracks for hackathon participants to tackle.</p>
+                    <p>We're actively seeking problem statements from policy experts to explore during the hackathon. If you have an idea, please submit it via the form below before <strong>July 23, 2025</strong>. Our review board will evaluate submissions and select the top 5 problem statement tracks for hackathon participants to tackle.</p>
+
+            <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(76, 175, 80, 0.15); border-radius: 8px; border: 2px solid rgba(76, 175, 80, 0.3); text-align: left;">
+                <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem; color: #4CAF50;">✅ Track 1 Confirmed:</p>
+                <p style="margin-bottom: 0;">Inter-agency analysis of the <a href="https://www.federalregister.gov/documents/2025/05/16/2025-08701/request-for-information-health-technology-ecosystem" target="_blank" rel="noopener noreferrer" style="color: #0066cc; text-decoration: underline;">recent CMS RFI on patient-centered health technology</a> — helping agencies efficiently triage and synthesize thousands of public comments to inform policy decisions.</p>
+            </div>
+
+            <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; border: 2px solid rgba(255, 255, 255, 0.2); text-align: center;">
+                <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">🤔 What should the next 4 tracks be?</p>
+                <p style="margin-bottom: 0; font-style: italic; opacity: 0.9;">We need YOUR expertise to define the challenges that matter most. What regulatory data questions keep your organization up at night?</p>
+            </div>
+            
             <div style="margin: 2rem 0; text-align: left;">
-                <p style="font-weight: 500; margin-bottom: 1rem;">Examples of potential problem statements:</p>
-                <ul style="list-style-type: disc; margin-left: 2rem; text-align: left;">
-                    <li>Who's commenting? How can we identify and categorize commenters (individuals, nonprofits, corporations)?</li>
-                    <li>What are the major themes, sentiments, and sector-specific concerns across different rulemakings?</li>
-                    <li>Can we detect copy-paste campaigns or coordinated submission efforts?</li>
-                    <li>What are organizations' historical commenting trends and motivations?</li>
-                    <li>Which public comments directly influenced the final regulatory outcomes?</li>
+                <p style="font-weight: 500; margin-bottom: 1rem;">What makes a good problem statement?</p>
+                <p>We're looking for real challenges you face when working with regulatory data. Think about:</p>
+                <ul style="list-style-type: disc; margin-left: 2rem; text-align: left; line-height: 1.8;">
+                    <li style="margin-bottom: 0.8rem;">What questions about public comments frequently come up?</li>
+                    <li style="margin-bottom: 0.8rem;">What insights would transform how your organization operates?</li>
+                    <li style="margin-bottom: 0.8rem;">What data analysis would help you better serve your constituents?</li>
                 </ul>
+
+                <p style="margin-top: 2rem; margin-bottom: 1rem;">For example, a strong problem statement might focus on a specific challenge, such as:</p>
+                <ul style="list-style-type: disc; margin-left: 2rem; text-align: left; line-height: 1.8;">
+                    <li style="margin-bottom: 0.8rem;"><strong>Categorizing Commenters:</strong> How can we reliably identify and categorize commenters as individuals, non-profits, or corporations?</li>
+                    <li style="margin-bottom: 0.8rem;"><strong>Detecting Coordinated Efforts:</strong> How can we detect copy-paste campaigns or other coordinated submission efforts?</li>
+                    <li style="margin-bottom: 0.8rem;"><strong>Tracking Influence:</strong> How can we systematically track which public comments influenced final regulatory outcomes?</li>
+                </ul>
+                <p style="margin-top: 1rem; font-style: italic;">Your unique perspective—whether from government, nonprofits, academia, or elsewhere—is crucial for shaping the tools we build together.</p>
             </div>
             <div class="cta-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSGLrrTdu85aPlaLKGb2qZPPQ4wVJowmIpmAOu9e_MviG-sQ/viewform?usp=dialog" class="btn btn-secondary" style="background-color: #0066cc; color: white; border: 2px solid #0066cc;">Submit a Problem Statement</a>
