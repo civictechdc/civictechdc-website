@@ -25,11 +25,18 @@ description: |
         <p style="font-size: 1.3rem; text-align: center; max-width: 800px; margin: 0 auto; font-weight: 500;">Calling policy experts, data engineers, and civic technologists to build tools that make government more transparent.</p>
         <br/>
         <p style="font-size: 1rem; text-align: center; max-width: 800px; margin: 0 auto; opacity: 0.9;">A collaborative hackathon bringing together experienced practitioners to unlock public federal regulatory comment data using AI, data science, and data engineering.</p>
-        <p style="font-size: 0.95rem; text-align: center; margin: 1rem auto; opacity: 0.8;"><strong>Limited to 150 participants</strong> • Registration closes when full</p>
+        <p style="font-size: 0.95rem; text-align: center; margin: 1rem auto; opacity: 0.8;"><strong>Limited to 150 participants</strong> • We will have a waitlist</p>
         <!-- <p style="font-size: 0.9rem; text-align: center; margin: 0.5rem auto; opacity: 0.7;">Free to attend (optional $5 donation, refundable upon attendance)</p> -->
         <div class="cta-buttons">
             <a href="https://lu.ma/czi3y05y" class="btn btn-secondary">Register Now</a>
             <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 8px; border: 1px solid rgba(255,255,255,0.2);">
+            <p style="margin: 0; font-size: 0.95rem; opacity: 0.9;">
+                <strong>Seeking Sponsors & Venue Partners:</strong> We're looking for financial support, venue donations, and computing resources. <br/>
+                <a href="mailto:hack2025@civictechdc.org" style="color: #FFD700; text-decoration: underline;">Contact hack2025@civictechdc.org</a>
+            </p>
         </div>
     </div>
 
@@ -53,8 +60,9 @@ description: |
         <h2 class="section-title">🤔 What is a hackathon? 🤔</h2>
         <div class="about-text" style="max-width: 800px; margin: 2rem auto 0; text-align: left;">
             <p>A hackathon is a collaborative, time-limited event where participants come together to build innovative solutions—often using technology—to address a specific challenge.</p>
-            <p>This hackathon brings together subject matter experts from government, nonprofits, and academia with experienced data engineers and data scientists to tackle real public comment datasets. We're looking for people who understand either the technical challenges of working with large datasets or the federal rule making process.</p>
-            <p>Technical participants should be ready to build robust, reusable tools. Policy and domain experts should come prepared to guide problem definition, interpret results, and ensure solutions address real-world needs. We provide datasets, infrastructure access, and a collaborative environment where domain expertise meets technical implementation.</p>
+            <p>This hackathon brings together subject matter experts from government, nonprofits, and academia with experienced data engineers and data scientists to improve public access and understanding of stakeholder comments informing the federal rulemaking process.</p>
+            <p>We seek individuals skilled in handling large datasets or proficient in data science and analysis, as well as those knowledgeable about the federal rulemaking process. Technical participants will build reusable tools, while policy experts will guide problem definition and ensure solutions meet real-world needs. </p>
+            <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.1); border-radius: 6px; font-style: italic;">Not sure if this is right for you? Have questions about the format or your potential contribution? <a href="mailto:hack2025@civictechdc.org" style="color: #0066cc; text-decoration: underline;">Email us at hack2025@civictechdc.org</a> – we're happy to discuss how your expertise can contribute.</p>
         </div>
     </div>
 </section>
@@ -110,7 +118,7 @@ description: |
                 </ul>
             </div>
             <div class="cta-buttons">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSGLrrTdu85aPlaLKGb2qZPPQ4wVJowmIpmAOu9e_MviG-sQ/viewform?usp=dialog" class="btn btn-secondary">Submit a Problem Statement</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSGLrrTdu85aPlaLKGb2qZPPQ4wVJowmIpmAOu9e_MviG-sQ/viewform?usp=dialog" class="btn btn-secondary" style="background-color: #0066cc; color: white; border: 2px solid #0066cc;">Submit a Problem Statement</a>
             </div>
         </div>
     </div>
