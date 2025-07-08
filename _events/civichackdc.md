@@ -19,14 +19,16 @@ description: |
         <h2><b>Saturday, July 26</b></h2>
         <h4><i>10:00 AM - 6:30 PM </i></h4>
         <h3><b>Location: <span style="color: #FFD700;">TBA</span></b></h3>
-        <p><i>(metro-accessible)</i></p>
+        <p><i>(metro-accessible venue in DC - details coming soon)</i></p>
         <br/>
 
-        <p>Please reach out to <a href="mailto:hack2025@civictechdc.org" style="color: white;">hack2025@civictechdc.org</a> if you are interested in sponsoring the event!</p>
+        <p style="font-size: 1.3rem; text-align: center; max-width: 800px; margin: 0 auto; font-weight: 500;">Calling policy experts, data engineers, and civic technologists to build tools that make government more transparent.</p>
         <br/>
-        <p style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto;">A collaborative, hands-on hackathon dedicated to using AI, data science, and data engineering techniques to unlock public-comment data and illuminate how the public influences federal policies.</p>
+        <p style="font-size: 1rem; text-align: center; max-width: 800px; margin: 0 auto; opacity: 0.9;">A collaborative hackathon bringing together experienced practitioners to unlock public federal regulatory comment data using AI, data science, and data engineering.</p>
+        <p style="font-size: 0.95rem; text-align: center; margin: 1rem auto; opacity: 0.8;"><strong>Limited to 150 participants</strong> • Registration closes when full</p>
+        <!-- <p style="font-size: 0.9rem; text-align: center; margin: 0.5rem auto; opacity: 0.7;">Free to attend (optional $5 donation, refundable upon attendance)</p> -->
         <div class="cta-buttons">
-            <a href="https://lu.ma/czi3y05y" class="btn btn-secondary">Register</a>
+            <a href="https://lu.ma/czi3y05y" class="btn btn-secondary">Register Now</a>
             <a href="#about" class="btn btn-secondary">Learn More</a>
         </div>
     </div>
@@ -46,13 +48,48 @@ description: |
     </div>
 </section>
 
-<section class="section" id="about">
+<section class="section">
     <div class="container">
+        <h2 class="section-title">🤔 What is a hackathon? 🤔</h2>
+        <div class="about-text" style="max-width: 800px; margin: 2rem auto 0; text-align: left;">
+            <p>A hackathon is a collaborative, time-limited event where participants come together to build innovative solutions—often using technology—to address a specific challenge.</p>
+            <p>This hackathon brings together subject matter experts from government, nonprofits, and academia with experienced data engineers and data scientists to tackle real public comment datasets. We're looking for people who understand either the technical challenges of working with large datasets or the federal rule making process.</p>
+            <p>Technical participants should be ready to build robust, reusable tools. Policy and domain experts should come prepared to guide problem definition, interpret results, and ensure solutions address real-world needs. We provide datasets, infrastructure access, and a collaborative environment where domain expertise meets technical implementation.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container">
+        <h2 class="section-title">🎯 The Impact 🎯</h2>
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <p style="font-size: 1.1rem; line-height: 1.6;">Every year, millions of Americans submit comments on proposed federal rules, but accessing and analyzing this data remains frustratingly difficult. <strong>We aim to change that.</strong></p>
+            <p style="font-size: 1.1rem; line-height: 1.6;">By building open-source tools, we'll make it easier for citizens, researchers, agencies, and advocates to understand how public input shapes the rules that govern our lives.</p>
+            
+        </div>
+    </div>
+</section>
+
+<section class="section" id="about">
+        <div class="container">
         <h2 class="section-title">📊 Why this matters 📊</h2>
         <div class="about-text" style="max-width: 800px; margin: 2rem auto 0; text-align: left;">
-            <p>Each time a federal agency proposes new rules or seeks public input via <a href="https://www.regulations.gov/" target="_blank" rel="noopener noreferrer">regulations.gov</a>, thousands of comments pour in from individuals, advocacy groups, corporations, and more. Yet the data is notoriously difficult to access, analyze, and utilize effectively.</p>
-            <p>To bridge this gap, Professor Ben Coleman and his students at Moravian University developed a robust open-source data pipeline. Powered by donated API keys, their tool continuously downloads and publishes public comments across agencies to <a href="https://aws.amazon.com/marketplace/pp/prodview-ypmw3cvvwhv3y" target="_blank" rel="noopener noreferrer">S3 on AWS through its Open Data Platform</a>, making the comments freely available for exploration and analysis.</p>
-            <p>On July 26, we're hosting a hackathon to create open-source tools that can be used to examine public comments on any future or past regulations or RFIs. We will explore several datasets, including a <a href="https://www.federalregister.gov/documents/2025/05/16/2025-08701/request-for-information-health-technology-ecosystem">recent CMS RFI</a> seeking input on improving the health tech ecosystem for patients. Professor Coleman will be on-site to walk participants through the data download tool and structure.</p>
+            <p>For the past 50 years, when the federal government has proposed a rule through <a href="https://www.regulations.gov/" target="_blank" rel="noopener noreferrer">Regulations.gov</a> to implement a law, it has solicited public comment from stakeholders as part of the rulemaking process. Depending on the scope of the rule, the government may receive thousands of comments from individuals, advocates, and corporate interests. Agencies are required to meaningfully consider and respond to these comments before finalizing the rule.</p>
+            <p>However, despite the importance of this process, outdated technological infrastructure continues to limit the public's ability to access, analyze, and engage with submitted comments in a meaningful way. This creates barriers to transparency and makes it difficult to understand how citizen input actually influences policy.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🔧 How will we do this? 🔧</h2>
+        <div class="about-text" style="max-width: 800px; margin: 2rem auto 0; text-align: left;">
+            <p>To bridge this gap, Professor Ben Coleman and his students at Moravian University have developed a robust open-source data pipeline. Powered by donated API keys, their tool continuously downloads and publishes public comments across all federal agencies to <a href="https://aws.amazon.com/marketplace/pp/prodview-ypmw3cvvwhv3y" target="_blank" rel="noopener noreferrer">S3 bucket on AWS through its Open Data Platform</a>, making comments easily accessible to the public for exploration and analysis. The dataset includes over 2.3 TB of data (640 GB of text) and is updated every 4 hours.</p>
+            <p>During this hackathon, we'll tackle real challenges in this data including multi-format inputs (JSON, PDFs, images, spreadsheets), low-quality OCR conversions, and complex metadata structures. The tools we build will be designed to work with any regulatory data—past, present, or future—creating lasting infrastructure for civic engagement. Professor Coleman will kick off the event with a comprehensive data tour, and we'll provide starter kits to help teams quickly begin building impactful solutions.</p>
+
+        </div>
+        <div style="text-align: center; margin: 2rem auto;">
+            <a href="https://lu.ma/czi3y05y" class="btn btn-secondary">Register Today</a>
         </div>
     </div>
 </section>
@@ -61,7 +98,17 @@ description: |
     <div class="container">
         <h2 class="section-title">📝 Submit Your Problem Statements 📝</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <p>We're actively seeking problem statements from policy experts to explore during the hackathon. If you have an idea, please submit it through our form; we'll review submissions and select key problems for participants to tackle. For example, one of our primary problem statements will address the recent CMS RFI on patient-centered health technology, but we encourage submissions on other topics as well.</p>
+            <p>We're actively seeking problem statements from policy experts to explore during the hackathon. If you have an idea, please submit it via the form below before <strong>July 23, 2025</strong>. Our review board will evaluate submissions and select the top 5 problem statement tracks for hackathon participants to tackle.</p>
+            <div style="margin: 2rem 0; text-align: left;">
+                <p style="font-weight: 500; margin-bottom: 1rem;">Examples of potential problem statements:</p>
+                <ul style="list-style-type: disc; margin-left: 2rem; text-align: left;">
+                    <li>Who's commenting? How can we identify and categorize commenters (individuals, nonprofits, corporations)?</li>
+                    <li>What are the major themes, sentiments, and sector-specific concerns across different rulemakings?</li>
+                    <li>Can we detect copy-paste campaigns or coordinated submission efforts?</li>
+                    <li>What are organizations' historical commenting trends and motivations?</li>
+                    <li>Which public comments directly influenced the final regulatory outcomes?</li>
+                </ul>
+            </div>
             <div class="cta-buttons">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSGLrrTdu85aPlaLKGb2qZPPQ4wVJowmIpmAOu9e_MviG-sQ/viewform?usp=dialog" class="btn btn-secondary">Submit a Problem Statement</a>
             </div>
@@ -70,30 +117,13 @@ description: |
 </section>
 
 <section class="section">
-  <div class="container">
-    <h2 class="section-title">✨ What We'll Build Together ✨</h2>
-    <p class="section-description" style="max-width: 800px; margin: 0 auto; text-align: center;">
-      In this collaborative, non-competitive event, participants will develop open-source tools designed for reuse with any public comment dataset, past or future, exploring questions such as:
-    </p>
-    <br>
-    <div class="question-grid">
-      <div class="question-card">Who's commenting? (Individuals, nonprofits, corporations)</div>
-      <div class="question-card">What are the major themes, sentiments, and sector-specific concerns?</div>
-      <div class="question-card">Can we detect copy-paste campaigns or coordinated submissions?</div>
-      <div class="question-card">What are organizations' historical commenting trends and motivations?</div>
-      <div class="question-card">Which public comments directly influenced the final regulatory outcomes?</div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
     <div class="container">
         <h2 class="section-title">✨ Hackathon Goals ✨</h2>
         <div class="goals-grid">
             <div class="goal-card">
                 <div class="goal-number">1</div>
-                <h3>Bring Together Contributors</h3>
-                <p>Connect researchers, designers, data scientists, policy experts, and civic advocates to collaborate on civic tech solutions.</p>
+                <h3>Unite Experts Across Disciplines</h3>
+                <p>Connect experienced data engineers with policy researchers, government officials, nonprofit leaders, and academic experts to collaborate on high-impact civic technology solutions.</p>
             </div>
             <div class="goal-card">
                 <div class="goal-number">2</div>
@@ -107,8 +137,8 @@ description: |
             </div>
             <div class="goal-card">
                 <div class="goal-number">4</div>
-                <h3>Have Fun!</h3>
-                <p>No prior experience is required! Just bring your curiosity, ideas, and laptop. We'll provide starter kits, roaming mentors, food, and drinks. This will be a collaborative, not competitive, hackathon.</p>
+                <h3>Build & Connect</h3>
+                <p>Bring your expertise—whether technical skills, policy knowledge, or both—and be ready to collaborate. We'll provide datasets, infrastructure, mentorship from experts, food, and drinks. This is a collaborative, not competitive, environment for meaningful impact.</p>
             </div>
         </div>
     </div>
@@ -116,27 +146,58 @@ description: |
 
 <section class="section">
     <div class="container">
-        <h2 class="section-title">🤝 We're Looking For 🤝</h2>
+        <h2 class="section-title">🤝 Who Should Attend 🤝</h2>
         <div class="goals-grid">
             <div class="goal-card">
-                <h3>Partnerships</h3>
-                <p>Organizations interested in co-hosting, promoting, and helping us facilitate the event.</p>
+                <h3>Technical Contributors</h3>
+                <p>Data engineers, data scientists, and software developers with experience in data pipelines, large-scale data analysis, and AI/ML infrastructure. Students with strong technical backgrounds are welcome.</p>
             </div>
             <div class="goal-card">
-                <h3>Subject Matter Experts</h3>
-                <p>Individuals with expertise willing to serve on our problem review board and provide insights on submitted problem statements.</p>
+                <h3>Policy & Domain Experts</h3>
+                <p>Government officials, nonprofit leaders, policy researchers, and academics who understand regulatory processes, public engagement, or how citizens interact with government. Your expertise guides what we build and ensures it serves real needs.</p>
             </div>
             <div class="goal-card">
-                <h3>Sponsorships</h3>
-                <p>Financial support, venue donations, food and beverage provision, or computing infrastructure; including cloud credits, AI resources, and infrastructure support. Please reach out to <a href="mailto:hack2025@civictechdc.org">hack2025@civictechdc.org</a></p>
+                <h3>Partners & Sponsors</h3>
+                <p>Organizations interested in co-hosting, promoting, and helping us facilitate the event. Financial support, venue donations, food and beverage provision, or computing infrastructure including cloud credits and AI resources.</p>
+                <p><strong>Interested in sponsoring?</strong> Please reach out to <a href="mailto:hack2025@civictechdc.org">hack2025@civictechdc.org</a></p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section alt" id="schedule">
+<!-- <section class="section alt">
+    <div class="container">
+        <h2 class="section-title">🏆 Prizes & Recognition 🏆</h2>
+        <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+            <p>All tools developed during the hackathon will be open-source and benefit the civic tech community. Teams creating the most impactful solutions will receive:</p>
+            <ul style="list-style: none; padding: 0; margin: 2rem 0;">
+                <li style="margin: 1rem 0;">• Cloud compute credits (AWS, GCP, or Azure)</li>
+                <li style="margin: 1rem 0;">• API credits for AI/ML services</li>
+                <li style="margin: 1rem 0;">• Recognition on Civic Tech DC platforms</li>
+                <li style="margin: 1rem 0;">• Opportunities to present solutions to government agencies and nonprofits</li>
+            </ul>
+            <p style="font-style: italic;">Final prize details will be announced closer to the event date.</p>
+        </div>
+    </div>
+</section> -->
+
+<section class="section" id="schedule">
     <div class="container">
         <h2 class="section-title">📅 Event Schedule 📅</h2>
-        <p style="text-align: center; font-size: 2rem;">TBD</p>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 8px;">
+                <p style="margin-bottom: 1.5rem;"><strong>Saturday, July 26, 2025</strong></p>
+                <div style="line-height: 2;">
+                    <p><strong>9:30 AM</strong> - Registration & Breakfast</p>
+                    <p><strong>10:00 AM</strong> - Welcome & Data Tour with Prof. Coleman</p>
+                    <p><strong>10:30 AM</strong> - Problem Statement Overview & Team Formation</p>
+                    <p><strong>11:00 AM</strong> - Hacking Begins (starter kits provided)</p>
+                    <p><strong>1:00 PM</strong> - Lunch</p>
+                    <p><strong>2:00 PM</strong> - Deep Work Session</p>
+                    <p><strong>5:45 PM</strong> - Final Presentations & Closing Remarks</p>
+                    <p><strong>6:30 PM</strong> - Networking & Wrap-up</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
