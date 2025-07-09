@@ -4,7 +4,7 @@ title: "Civic Hack DC 2025"
 date: 2025-07-26
 location: "Washington DC"
 url: /civichackdc
-card_image: events/civichackdc/mainhackathonimage.png
+card_image: hero-image-hackathon.png
 registration_link: https://lu.ma/czi3y05y
 page_css: /assets/css/civichackdc.css
 description: |
@@ -14,7 +14,7 @@ description: |
 <section class="hero">
     <div class="container">
         <div class="hero-banner">
-            {% include responsive-image.html class="usa-card__img" src="events/civichackdc/mainhackathonimage.png" alt="Civic Hack DC banner" %}
+            {% include responsive-image.html class="usa-card__img" src="hero-image-hackathon.png" alt="Civic Hack DC banner" %}
         </div>
         <h2><b>Saturday, July 26</b></h2>
         <h4><i>10:00 AM - 6:30 PM </i></h4>
@@ -53,7 +53,7 @@ description: |
             <a href="https://www.meetup.com/data-wranglers-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dataengineers-400w.png" alt="Data Engineers"></a>
             <a href="https://www.meetup.com/data-visualization-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dataviz-400w.png" alt="Data Viz"></a>
             <a href="https://www.dc2.org/data-science-dc" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC"></a>
-            <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a>
+            {% comment %} <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a> {% endcomment %}
             <a href="https://www.meetup.com/DataKind-DC/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/logos/datakinddc-400w.png" alt="DataKindDC"></a>
         </div>
     </div>
