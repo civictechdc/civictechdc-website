@@ -47,17 +47,27 @@ description: |
 
 <section class="section">
     <div class="container">
+        <h2 class="section-title">🎉 Sponsors 🎉</h2>
         <div class="partners-grid">
-            <a href="https://www.moravian.edu" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/Moravian-400w.png" alt="Moravian"></a>
-            <a href="https://careset.com/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/careset-400w.png" alt="Careset"></a>
-            <a href="https://www.meetup.com/data-wranglers-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dataengineers-400w.png" alt="Data Engineers"></a>
-            <a href="https://www.meetup.com/data-visualization-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dataviz-400w.png" alt="Data Viz"></a>
-            <a href="https://www.dc2.org/data-science-dc" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC"></a>
-            {% comment %} <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a> {% endcomment %}
-            <a href="https://www.meetup.com/DataKind-DC/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/logos/datakinddc-400w.png" alt="DataKindDC"></a>
+            <a href="https://careset.com/" target="_blank" rel="noopener noreferrer"> <img style="height: 100px; width: auto;" class="partner-logo" src="/assets/images/events/civichackdc/careset-400w.png" alt="Careset"></a>
         </div>
     </div>
 </section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🤝 Partners 🤝</h2>
+        <div class="partners-grid">
+            <a href="https://www.moravian.edu" target="_blank" rel="noopener noreferrer"> <img style="height: 75px;" class="partner-logo" src="/assets/images/events/civichackdc/Moravian-400w.png" alt="Moravian"></a>
+            <a href="https://www.meetup.com/data-wranglers-dc/" target="_blank" rel="noopener noreferrer"> <img style="height: 75px;" class="partner-logo" src="/assets/images/events/civichackdc/dataengineers-400w.png" alt="Data Engineers"></a>
+            <a href="https://www.meetup.com/data-visualization-dc/" target="_blank" rel="noopener noreferrer"> <img style="height: 75px;" class="partner-logo" src="/assets/images/events/civichackdc/dataviz-400w.png" alt="Data Viz"></a>
+            <a href="https://www.dc2.org/data-science-dc" target="_blank" rel="noopener noreferrer"> <img style="height: 75px;" class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC"></a>
+            {% comment %} <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a> {% endcomment %}
+            <a href="https://www.meetup.com/DataKind-DC/" target="_blank" rel="noopener noreferrer"> <img style="height: 75px;" class="partner-logo" src="/assets/images/logos/datakinddc-400w.png" alt="DataKindDC"></a>
+        </div>
+    </div>
+</section>
+
 
 <section class="section">
     <div class="container">
