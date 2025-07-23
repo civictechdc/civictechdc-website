@@ -132,6 +132,13 @@ description: |
                      src="/assets/images/logos/taoti-800w.jpg"
                      alt="Taoti Creative">
             </a>
+            <a href="https://www.thundercompute.com/" target="_blank" rel="noopener noreferrer">
+                <img style="height: 140px;
+                            width: auto"
+                     class="partner-logo"
+                     src="/assets/images/logos/thunder_logo_text-400w.png"
+                     alt="Thunder Compute">
+            </a>
         </div>
     </div>
 </section>
