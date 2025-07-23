@@ -86,24 +86,34 @@ description: |
         </div>
     </div>
 </section>
-
 <section class="section alt">
     <div class="container">
         <h2 class="section-title">🔄 Event Update</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: left;">
             <h3>📍 Venue Confirmed</h3>
-            <p>We're excited to announce that we've secured the downstairs space at Taoti Creative for July 26. Taoti has been a longtime supporter of the civic tech community here in DC, and we're grateful to have them as both venue host and sponsor. Their commitment to using creative and technical expertise for social good aligns perfectly with our mission.</p>
+            <p>
+                We're excited to announce that we've secured the downstairs space at Taoti Creative for July 26. Taoti has been a longtime supporter of the civic tech community here in DC, and we're grateful to have them as both venue host and sponsor. Their commitment to using creative and technical expertise for social good aligns perfectly with our mission.
+            </p>
             <br />
             <h3>🌟 HackDC2025 Part 2: September 20th, 2025</h3>
-            <p>The response to this hackathon has been incredible. We've heard from nonprofits, policy experts, and technologists who all see the same thing we do: this problem space is huge, urgent, and worth investing in.</p>
-            <p>As we've explored the data and talked with partners, it's become clear that one event won't be enough. There's too much opportunity here to rush it.</p>
-            <p>We're still moving forward with the July 26 event. This first hackathon will focus on foundational data engineering work and analysis,anchored by a problem statement from CMS.</p>
-            <p>We're also planning a follow-up event in September. That extra runway will help us bring in more nonprofit collaborators, secure additional funding, and build on what we learn in July.</p>
-            <p><strong>This is shaping up to be an exciting problem space. Hope to see you on July 26th!</strong></p>
+            <p>
+                The response to this hackathon has been incredible. We've heard from nonprofits, policy experts, and technologists who all see the same thing we do: this problem space is huge, urgent, and worth investing in.
+            </p>
+            <p>
+                As we've explored the data and talked with partners, it's become clear that one event won't be enough. There's too much opportunity here to rush it.
+            </p>
+            <p>
+                We're still moving forward with the July 26 event. This first hackathon will focus on foundational data engineering work and analysis,anchored by a problem statement from CMS.
+            </p>
+            <p>
+                We're also planning a follow-up event in September. That extra runway will help us bring in more nonprofit collaborators, secure additional funding, and build on what we learn in July.
+            </p>
+            <p>
+                <strong>This is shaping up to be an exciting problem space. Hope to see you on July 26th!</strong>
+            </p>
         </div>
     </div>
 </section>
-
 <section class="section">
     <div class="container">
         <h2 class="section-title">🎉 Sponsors 🎉</h2>
@@ -137,30 +147,15 @@ description: |
                      src="/assets/images/events/civichackdc/Moravian-400w.png"
                      alt="Moravian">
             </a>
-            <a href="https://www.meetup.com/data-wranglers-dc/"
-               target="_blank"
-               rel="noopener noreferrer">
-                <img style="height: 75px"
-                     class="partner-logo"
-                     src="/assets/images/events/civichackdc/dataengineers-400w.png"
-                     alt="Data Engineers">
+            {% comment %} <a href="https://www.meetup.com/data-wranglers-dc/" target="_blank" rel="noopener noreferrer">
+                <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dataengineers-400w.png" alt="Data Engineers">
             </a>
-            <a href="https://www.meetup.com/data-visualization-dc/"
-               target="_blank"
-               rel="noopener noreferrer">
-                <img style="height: 75px"
-                     class="partner-logo"
-                     src="/assets/images/events/civichackdc/dataviz-400w.png"
-                     alt="Data Viz">
+            <a href="https://www.meetup.com/data-visualization-dc/" target="_blank" rel="noopener noreferrer">
+                <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dataviz-400w.png" alt="Data Viz">
             </a>
-            <a href="https://www.dc2.org/data-science-dc"
-               target="_blank"
-               rel="noopener noreferrer">
-                <img style="height: 75px"
-                     class="partner-logo"
-                     src="/assets/images/events/civichackdc/dsdc-400w.png"
-                     alt="DSDC">
-            </a>
+            <a href="https://www.dc2.org/data-science-dc" target="_blank" rel="noopener noreferrer">
+                <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC">
+            </a> {% endcomment %}
             {% comment %} <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a> {% endcomment %}
             <a href="https://www.meetup.com/DataKind-DC/"
                target="_blank"
