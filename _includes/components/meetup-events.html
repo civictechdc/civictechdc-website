@@ -1,122 +1,139 @@
 <div>
-  <h2>Join us at one of our upcoming project nights!</h2>
-  <p>
-    We meet up twice a month to work on cool projects, learn new things, and eat
-    pizza together. Everyone's welcome—whether you're a seasoned dev, policy nerd,
-    designer, product person, or just curious about civic tech.
-  </p>
-  <!--
-    Meetup event cards are rendered and then modified by the assets/js/meetup.js script.
-    meetup.js makes a request to meetup.com to retrieve details about the next two events.
-      * If there are no upcoming events scheduled then no changes are made.
-      * If there is one upcoming event then the "next event" details are added.
-      * If there are two upcoming events then the "next event" and "future event" details are added
-        and the future event card is unhidden.
-    -->
-  <ul class="usa-card-group">
-    <li class="usa-card grid-col-12">
-      <div class="usa-card__container">
-        <div class="usa-card__header">
-          <!--
-            Note: a recent Chrome security change broke our ability to make queries to the Meetup.com API to display upcoming events.
-            the comments below are the old code, and a workaround that just renders button links to our Meetup and Lu.ma accounts is added.
-            Eventually we should add a serverless API call that will get upcoming events to render. It should be cacheable at the CDN and
-            have very low traffic.
-          -->
-          <!-- <h3 id="meetup-next-event-date">We're still scheduling it!</h3> -->
-          <div
-            class="display-flex flex-align-center flex-justify-center flex-direction-column margin-bottom-3"
-          >
-            <h3
-              id="meetup-next-event-date"
-              class="margin-bottom-2 margin-right-2"
+  <!-- Featured Event Section -->
+  <div class="margin-bottom-4">
+    <h2>Featured Event</h2>
+    <p>Don't miss our upcoming special event!</p>
+    
+    <ul class="usa-card-group">
+      <li class="usa-card grid-col-12">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <div class="margin-bottom-2">
+              <iframe
+                src="https://lu.ma/embed/event/evt-pYJocT519lBu0G4/simple"
+                width="100%"
+                height="434"
+                frameborder="0"
+                allowfullscreen=""
+                aria-hidden="false"
+                class="border-1px border-base-lighter radius-sm"
+                tabindex="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Regular Events Section -->
+  <div>
+    <h2>Join us at one of our upcoming project nights!</h2>
+    <p>
+      We meet up twice a month to work on cool projects, learn new things, and eat
+      pizza together. Everyone's welcome—whether you're a seasoned dev, policy nerd,
+      designer, product person, or just curious about civic tech.
+    </p>
+    <!--
+      Meetup event cards are rendered and then modified by the assets/js/meetup.js script.
+      meetup.js makes a request to meetup.com to retrieve details about the next two events.
+        * If there are no upcoming events scheduled then no changes are made.
+        * If there is one upcoming event then the "next event" details are added.
+        * If there are two upcoming events then the "next event" and "future event" details are added
+          and the future event card is unhidden.
+      -->
+    <ul class="usa-card-group">
+      <li class="usa-card grid-col-12">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <!--
+              Note: a recent Chrome security change broke our ability to make queries to the Meetup.com API to display upcoming events.
+              the comments below are the old code, and a workaround that just renders button links to our Meetup and Lu.ma accounts is added.
+              Eventually we should add a serverless API call that will get upcoming events to render. It should be cacheable at the CDN and
+              have very low traffic.
+            -->
+            <!-- <h3 id="meetup-next-event-date">We're still scheduling it!</h3> -->
+            <div
+              class="display-flex flex-align-center flex-justify-center flex-direction-column margin-bottom-3"
             >
-              Join us at our next event
-            </h3>
-            <div class="display-flex flex-justify-center gap-2">
-              <a
-                id="meetup-next-event-rsvp-button"
-                target="_blank"
-                href="https://lu.ma/civic-tech-dc"
-                class="usa-button margin-right-1"
-                >Follow us on Lu.ma »</a
+              <h3
+                id="meetup-next-event-date"
+                class="margin-bottom-2 margin-right-2"
               >
+                Join us at our next event
+              </h3>
+              <div class="display-flex flex-justify-center gap-2">
+                <a
+                  id="meetup-next-event-rsvp-button"
+                  target="_blank"
+                  href="https://lu.ma/civic-tech-dc"
+                  class="usa-button margin-right-1"
+                  >Follow us on Lu.ma »</a
+                >
+                <a
+                  id="meetup-next-event-rsvp-button"
+                  target="_blank"
+                  href="https://www.meetup.com/civic-tech-dc/"
+                  class="usa-button"
+                  >Follow us on Meetup »</a
+                >
+              </div>
+            </div>
+            <div>
+              <iframe
+                src="https://lu.ma/embed/event/evt-Ki4837MUheQfuis/simple"
+                width="100%"
+                height="464"
+                frameborder="0"
+                allowfullscreen=""
+                aria-hidden="false"
+                class="border-1px border-base-lighter radius-sm"
+                tabindex="0"
+              ></iframe>
+            </div>
+            <div class="margin-bottom-2">
+              <iframe
+                src="https://lu.ma/embed/event/evt-4cKzKy1IYj9CGdW/simple"
+                frameborder="0"
+                width="100%"
+                height="434"
+                allowfullscreen=""
+                aria-hidden="false"
+                class="border-1px border-base-lighter radius-sm"
+                tabindex="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li
+        hidden
+        id="meetup-future-event-card"
+        class="usa-card grid-col-12 tablet:grid-col-6"
+      >
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h3 id="meetup-future-event-date"></h3>
+          </div>
+          <div class="usa-card__body">
+            <h4 id="meetup-future-event-title" class="margin-bottom-0"></h4>
+            <p>
+              <span id="meetup-future-event-location"></span>
+              <br />
+              <span id="meetup-future-event-num-rsvps"></span> attendees
+            </p>
+            <p>
               <a
-                id="meetup-next-event-rsvp-button"
+                id="meetup-future-event-rsvp-button"
                 target="_blank"
                 href="https://www.meetup.com/civic-tech-dc/"
                 class="usa-button"
-                >Follow us on Meetup »</a
+                >RSVP on Meetup »</a
               >
-            </div>
-          </div>
-
-          <div class="margin-bottom-2">
-            <iframe
-              src="https://lu.ma/embed/event/evt-OolPKcJ0S02ftbU/simple"
-              frameborder="0"
-              width="100%"
-              height="434"
-              allowfullscreen=""
-              aria-hidden="false"
-              style="border: 1px solid #bfcbda88; border-radius: 4px"
-              tabindex="0"
-            ></iframe>
-          </div>
-          <div class="margin-bottom-2">
-            <iframe
-              src="https://lu.ma/embed/event/evt-Ki4837MUheQfuis/simple"
-              width="100%"
-              height="434"
-              frameborder="0"
-              allowfullscreen=""
-              aria-hidden="false"
-              style="border: 1px solid #bfcbda88; border-radius: 4px"
-              tabindex="0"
-            ></iframe>
-          </div>
-          <div>
-            <iframe
-              src="https://lu.ma/embed/event/evt-pYJocT519lBu0G4/simple"
-              width="100%"
-              height="464"
-              frameborder="0"
-              allowfullscreen=""
-              aria-hidden="false"
-              style="border: 1px solid #bfcbda88; border-radius: 4px"
-              tabindex="0"
-            ></iframe>
+            </p>
           </div>
         </div>
-      </div>
-    </li>
-    <li
-      hidden
-      id="meetup-future-event-card"
-      class="usa-card grid-col-12 tablet:grid-col-6"
-    >
-      <div class="usa-card__container">
-        <div class="usa-card__header">
-          <h3 id="meetup-future-event-date"></h3>
-        </div>
-        <div class="usa-card__body">
-          <h4 id="meetup-future-event-title" class="margin-bottom-0"></h4>
-          <p>
-            <span id="meetup-future-event-location"></span>
-            <br />
-            <span id="meetup-future-event-num-rsvps"></span> attendees
-          </p>
-          <p>
-            <a
-              id="meetup-future-event-rsvp-button"
-              target="_blank"
-              href="https://www.meetup.com/civic-tech-dc/"
-              class="usa-button"
-              >RSVP on Meetup »</a
-            >
-          </p>
-        </div>
-      </div>
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
 </div>
