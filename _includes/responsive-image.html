@@ -5,6 +5,7 @@
   - alt: The alt text for the image.
   - class: (Optional) A class to add to the image tag.
   - style: (Optional) Inline styles to add to the image tag.
+  - sizes: (Optional) Custom sizes attribute. Defaults to 100vw.
 {% endcomment %}
 
 {%- assign path_parts = include.src | split: '.' -%}
@@ -33,7 +34,7 @@
             {{ srcset_800 }} 800w,
             {{ srcset_1200 }} 1200w,
             {{ srcset_1800 }} 1800w"
-    sizes="{{ include.sizes | default: '(max-width: 800px) 100vw, 800px' }}"
+    sizes="{{ include.sizes | default: '100vw' }}"
     alt="{{ include.alt | escape }}"
     class="{{ include.class }}"
     style="{{ include.style }}"
