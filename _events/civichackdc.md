@@ -95,7 +95,7 @@ description: |
                 We're excited to announce that we've secured the downstairs space at Taoti Creative for July 26. Taoti has been a longtime supporter of the civic tech community here in DC, and we're grateful to have them as both venue host and sponsor. Their commitment to using creative and technical expertise for social good aligns perfectly with our mission.
             </p>
             <br />
-            <h3>🌟 HackDC2025 Part 2: September 20th, 2025</h3>
+            <h3>🌟 HackDC2025 Part 2: Fall 2025</h3>
             <p>
                 The response to this hackathon has been incredible. We've heard from nonprofits, policy experts, and technologists who all see the same thing we do: this problem space is huge, urgent, and worth investing in.
             </p>
@@ -106,7 +106,7 @@ description: |
                 We're still moving forward with the July 26 event. This first hackathon will focus on foundational data engineering work and analysis,anchored by a problem statement from CMS.
             </p>
             <p>
-                We're also planning a follow-up event in September. That extra runway will help us bring in more nonprofit collaborators, secure additional funding, and build on what we learn in July.
+                We're also planning a follow-up event in Fall 2025. That extra runway will help us bring in more nonprofit collaborators, secure additional funding, and build on what we learn in July.
             </p>
             <p>
                 <strong>This is shaping up to be an exciting problem space. Hope to see you on July 26th!</strong>
@@ -132,8 +132,19 @@ description: |
                      src="/assets/images/logos/taoti-800w.jpg"
                      alt="Taoti Creative">
             </a>
-            <a href="https://www.thundercompute.com/" target="_blank" rel="noopener noreferrer">
-                <img style="height: 140px;
+            <a href="https://www.prefect.io"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img style="height: 120px;
+                            width: auto"
+                     class="partner-logo"
+                     src="/assets/images/logos/prefect-400w.png"
+                     alt="Prefect">
+            </a>
+            <a href="https://www.thundercompute.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img style="height: 80px;
                             width: auto"
                      class="partner-logo"
                      src="/assets/images/logos/thunder_logo_text-400w.png"
