@@ -8,11 +8,11 @@ tags: [civic hackdc, hackathon, open data, regulatory tech, volunteer, data for 
 excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public feedback and strengthen our democracy. Here's what we built, what we learned, and what's next."
 ---
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
-<div class="pa-carousel-widget" style="width:100%; height:480px; display:none;"
-  data-link="https://photos.app.goo.gl/AYcR6qTsjCkaehAy5"
-  data-title="Civic Hack DC 2025 · Dec 6, 2000 – Jul 29, 2025 📸"
-  data-description="Shared album · Tap to view!"
-  data-delay="3">
+<div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
+  data-link="https://photos.google.com/share/AF1QipNu_JtIDljh0AlA8c5s_B6UjIoF9tfhJ7lGd-U35iKTQF-JdTNuysfFM1agZBkmpg?key=czNoTDF5VlJBUTF1MU5MOVFnZ2ZWMG85dER6X193"
+  data-delay="2"
+  data-title="Civic Hack DC 2025 · Jul 26, 2025 📸"
+  data-description="Shared album · Tap to view!">
   <object data="https://lh3.googleusercontent.com/pw/AP1GczNOGscwFA0CeO20syJhLlH-oDZZUkbTccwV36PG8MYArRlp2MPHthLcDYqT8NrAAezyIRHQ4Bcr6M0fN3zfpHiG46Amg7jPerJsX26et0GJzQb6Tco=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczO7v7vwExwIshnlfGjEsnCiHn-SqUDgTFu0DRx-V4X9Dm9I8l0aUldTdysZnUrZ65OsWKlA08xCW9zEf9rmilrLTh_Y4JZIgif2Eh7uE5mGsClwnIE=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczPI_pZ4-6txfB5TvOzogVxUct1-TuW4saFprj7kz38WX_y9JkPUHfe7uwmEYzm3jSuC3cqNgkTi54OflKElK3mdHLUBZKA1SETDxQ95RCDikITcdYQ=w1920-h1080"></object>
