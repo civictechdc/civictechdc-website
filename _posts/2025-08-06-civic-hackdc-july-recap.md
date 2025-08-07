@@ -433,7 +433,7 @@ One team recognized that improving access to Regulations.gov data was only part 
 
 Finally, the **Within-Docket Dataset** team tackled perhaps the most ambitious challenge: understanding how public comments actually influence final rules. Their tool links specific comments to changes between proposed and final rules, using a combination of time-window analysis, text similarity, and semantic matching to identify which suggestions were adopted and which concerns were addressed. One judge said that this addresses the fundamental question of whether public commenting actually matters. While the technical implementation was just beginning, the conceptual framework they developed provides a roadmap for a critical tool in the Mirrulations ecosystem.
 
-All the projects can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/projects), and their evaluations [here](https://github.com/civictechdc/hackdc2025/tree/main/evaluations).
+*All the projects can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/projects), and their evaluations [here](https://github.com/civictechdc/hackdc2025/tree/main/evaluations).*
 
 ## The Patterns of Success and Failure
 
