@@ -16,7 +16,7 @@ collections:
     output: true
   events:
     output: true
-    permalink: /events/:name/
+    permalink: /special-events/:name/
 
 # Jekyll Archives for tag and category pages
 jekyll-archives:

@@ -48,7 +48,7 @@ To contribute, reach out to us on [Slack]({{ site.baseurl }}/slack) in the #civi
 
 - Join our [Slack community]({{ site.baseurl }}/slack) for daily discussions
 - Check out our current [projects]({{ site.baseurl }}/projects)
-- Learn about upcoming [special events]({{ site.baseurl }}/events)
+- Learn about upcoming [special events]({{ site.baseurl }}/special-events)
 - Follow us on social media for the latest updates
 
 We're excited to share this journey with you and look forward to highlighting the incredible work happening in DC's civic tech space. Together, we're building technology that serves the public good!
