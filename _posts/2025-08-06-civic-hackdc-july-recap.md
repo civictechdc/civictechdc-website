@@ -9,7 +9,7 @@ tags: [civic hackdc, hackathon, open data, regulatory tech, volunteer, data for 
 excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public feedback and strengthen our democracy. Here's what we built, what we learned, and what's next."
 ---
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
-<div class="pa-gallery-player-widget" style="width:100%; height:480px; display:none;"
+<div class="pa-gallery-player-widget padding-bottom-4" style="width:100%; height:480px; display:none;"
   data-link="https://photos.google.com/share/AF1QipNu_JtIDljh0AlA8c5s_B6UjIoF9tfhJ7lGd-U35iKTQF-JdTNuysfFM1agZBkmpg?key=czNoTDF5VlJBUTF1MU5MOVFnZ2ZWMG85dER6X193"
   data-delay="2"
   data-title="Civic Hack DC 2025 · Jul 26, 2025 📸"
@@ -316,7 +316,9 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
   <object data="https://lh3.googleusercontent.com/pw/AP1GczN3IIDdPNXv74vmw9eNDRrUcdbXH9hGW2bUBDDf1do2Jv4l4o68WsuqJ2heRgIxn5zqywC91W-nZE_jPnEJ4oJJiqjR-t8hxXNTej1qnzegUJJS36Uw=w1920-h1080"></object>
 </div>
 
-<section class="section">
+---
+
+<section class="padding-top-0 padding-bottom-1">
     <div class="container">
         <h2 class="section-title">🎉 Sponsors 🎉</h2>
         <div class="partners-grid">
@@ -343,10 +345,10 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
                      src="/assets/images/logos/prefect-400w.png"
                      alt="Prefect">
             </a>
-                        <a href="https://tealwolf.consulting"
+            <a href="https://tealwolf.consulting"
                target="_blank"
                rel="noopener noreferrer">
-                <img style="height: 120px;
+                <img style="height: 170px;
                             width: auto"
                      class="partner-logo"
                      src="/assets/images/logos/tealwolf-400w.png"
@@ -364,7 +366,10 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
         </div>
     </div>
 </section>
-<section class="section">
+
+---
+
+<section class="padding-top-0 padding-bottom-2">
     <div class="container">
         <h2 class="section-title">🤝 Partners 🤝</h2>
         <div class="partners-grid">
@@ -397,6 +402,8 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
         </div>
     </div>
 </section>
+
+---
 
 # Making Public Comments Count: How 80 Civic-Technologists Hacked on Regulatory Data for a More Transparent Government
 
