@@ -8,7 +8,11 @@ node_modules/
 .ruby-version
 
 # Ignore local style changes
-styles-*.css
+assets/css/styles-*.css
+assets/css/*-*.css
+assets/css/styles.css
+assets/css/styles.css.map
+assets/images
 
 ### JEnv template
 # JEnv local Java version configuration file

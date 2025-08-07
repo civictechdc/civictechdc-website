@@ -3,6 +3,7 @@ layout: post
 title: "Making Public Comments Count: How 80 Civic-Technologists Hacked Regulatory Data for a More Transparent Government"
 date: 2025-08-06 16:00:00 -0500
 author: "Michael Deeb"
+page_css: /assets/css/hack2025.css
 categories: [Events, Community]
 tags: [civic hackdc, hackathon, open data, regulatory tech, volunteer, data for good]
 excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public feedback and strengthen our democracy. Here's what we built, what we learned, and what's next."
@@ -314,6 +315,88 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
   <object data="https://lh3.googleusercontent.com/pw/AP1GczNLR6jO3uFW8crHiV84di94Gd_koPkBfkdWzLah9E6sI7qdBxPxsO9nCkwe3ACjP8xur1R5gC20VMUMZaCuriwOMmjujO2n9ctCHcYL8kzddPs7l1wT=w1920-h1080"></object>
   <object data="https://lh3.googleusercontent.com/pw/AP1GczN3IIDdPNXv74vmw9eNDRrUcdbXH9hGW2bUBDDf1do2Jv4l4o68WsuqJ2heRgIxn5zqywC91W-nZE_jPnEJ4oJJiqjR-t8hxXNTej1qnzegUJJS36Uw=w1920-h1080"></object>
 </div>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🎉 Sponsors 🎉</h2>
+        <div class="partners-grid">
+            <a href="https://careset.com/" target="_blank" rel="noopener noreferrer">
+                <img style="height: 100px;
+                            width: auto"
+                     class="partner-logo"
+                     src="/assets/images/events/civichackdc/careset-400w.png"
+                     alt="Careset">
+            </a>
+            <a href="https://taoti.com/" target="_blank" rel="noopener noreferrer">
+                <img style="height: 140px;
+                            width: auto"
+                     class="partner-logo"
+                     src="/assets/images/logos/taoti-800w.jpg"
+                     alt="Taoti Creative">
+            </a>
+            <a href="https://www.prefect.io"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img style="height: 120px;
+                            width: auto"
+                     class="partner-logo"
+                     src="/assets/images/logos/prefect-400w.png"
+                     alt="Prefect">
+            </a>
+                        <a href="https://tealwolf.consulting"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img style="height: 120px;
+                            width: auto"
+                     class="partner-logo"
+                     src="/assets/images/logos/tealwolf-400w.png"
+                     alt="Tealwolf Consulting">
+            </a>
+            <a href="https://www.thundercompute.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img style="height: 80px;
+                            width: auto"
+                     class="partner-logo"
+                     src="/assets/images/logos/thunder_logo_text-400w.png"
+                     alt="Thunder Compute">
+            </a>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">🤝 Partners 🤝</h2>
+        <div class="partners-grid">
+            <a href="https://www.moravian.edu"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img style="height: 75px"
+                     class="partner-logo"
+                     src="/assets/images/events/civichackdc/Moravian-400w.png"
+                     alt="Moravian">
+            </a>
+            {% comment %} <a href="https://www.meetup.com/data-wranglers-dc/" target="_blank" rel="noopener noreferrer">
+                <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dataengineers-400w.png" alt="Data Engineers">
+            </a>
+            <a href="https://www.meetup.com/data-visualization-dc/" target="_blank" rel="noopener noreferrer">
+                <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dataviz-400w.png" alt="Data Viz">
+            </a>
+            <a href="https://www.dc2.org/data-science-dc" target="_blank" rel="noopener noreferrer">
+                <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC">
+            </a> {% endcomment %}
+            {% comment %} <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a> {% endcomment %}
+            <a href="https://www.meetup.com/DataKind-DC/"
+               target="_blank"
+               rel="noopener noreferrer">
+                <img style="height: 75px"
+                     class="partner-logo"
+                     src="/assets/images/logos/datakinddc-400w.png"
+                     alt="DataKindDC">
+            </a>
+        </div>
+    </div>
+</section>
 
 # Making Public Comments Count: How 80 Civic-Technologists Hacked on Regulatory Data for a More Transparent Government
 
