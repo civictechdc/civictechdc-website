@@ -10,9 +10,12 @@ page_css: /assets/css/events.css
 <h1 class="margin-bottom-1">Events</h1>
 
 <h2>Upcoming Events</h2>
+{% assign upcoming_events = site.events | sort: "date" %}
+{% assign upcoming_events = upcoming_events | where_exp: "e", "e.date >= site.time" %}
+{% if upcoming_events.size == 0 %}
+<p>There are no upcoming events at this time. Check back soon for new events!</p>
+{% else %}
 <ul class="usa-card-group">
-  {% assign upcoming_events = site.events | sort: "date" %}
-  {% assign upcoming_events = upcoming_events | where_exp: "e", "e.date >= site.time" %}
   {% for event in upcoming_events %}
     <li class="usa-card__media-text-wrapper">
       {% if event.url %}
@@ -32,6 +35,7 @@ page_css: /assets/css/events.css
     </li>
   {% endfor %}
 </ul>
+{% endif %}
 
 <h2>Past Events</h2>
 <p>A selection of exciting past events we had!</p>

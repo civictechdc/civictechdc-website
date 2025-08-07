@@ -3,6 +3,44 @@ body {
   height: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+/* Mobile-only fixes for horizontal scroll */
+@media only screen and (max-width: 1023px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  
+  .usa-nav-container,
+  .usa-navbar,
+  .grid-container,
+  .grid-row {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .usa-header {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Fix grid gaps on mobile */
+@media only screen and (max-width: 767px) {
+  .grid-gap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .grid-gap > * {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
 .footer {
   flex-shrink: 0;
 }
@@ -22,6 +60,32 @@ body {
 .usa-navbar {
   min-height: 4rem;
   height: initial;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Mobile menu button styling */
+.usa-menu-btn {
+  margin-right: 0;
+  padding: 0.75rem 1rem;
+}
+
+@media only screen and (max-width: 1023px) {
+  .usa-navbar {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .usa-menu-btn {
+    margin-right: 0.5rem;
+  }
+  
+  /* Logo adjustments for mobile */
+  .ctdc_logo > img {
+    max-height: 3rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
 }
 
 .hero-image {
@@ -32,6 +96,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 3rem;
+  width: 100%;
 }
 
 .hero-image img {
@@ -71,6 +136,17 @@ body {
   border-radius: 0.25rem;
 }
 
+@media only screen and (max-width: 767px) {
+  .hero-image {
+    padding: 1.5rem;
+  }
+  
+  .hero-text {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .hero-image {
     padding-left: 15rem;
@@ -89,3 +165,102 @@ body {
 .usa-header--basic .usa-nav-container {
   align-items: center;
 }
+
+/* Navigation text wrapping fix */
+.usa-nav__primary .usa-nav__link span {
+  white-space: nowrap;
+}
+
+.usa-nav__primary-item {
+  flex-shrink: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .usa-nav__primary {
+    gap: 0.5rem;
+  }
+}
+
+/* Blog-specific styles */
+.blog-post-meta {
+  font-size: 0.875rem;
+}
+
+.blog-post-excerpt {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.blog-post-tags .usa-tag {
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.blog-post-navigation {
+  font-size: 0.875rem;
+}
+
+.blog-nav-previous,
+.blog-nav-next {
+  text-align: left;
+}
+
+@media only screen and (min-width: 768px) {
+  .blog-nav-next {
+    text-align: right;
+  }
+}
+
+
+
+.blog-tag-cloud .usa-tag {
+  font-size: 0.75rem;
+  display: inline-block;
+}
+
+.usa-footer__primary-section {
+  padding-bottom: 2rem;
+}
+
+/* Add spacing between wrapped footer nav items */
+.usa-footer__nav .usa-list {
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.usa-footer__nav .usa-list > li {
+  margin-bottom: 0.75rem;
+}
+
+/* Ensure proper spacing for wrapped navigation */
+.usa-footer__nav {
+  line-height: 1.6;
+}
+
+.usa-footer__nav a {
+  display: inline-block;
+  padding: 0.25rem 0;
+}
+
+/* Simple footer cleanup */
+.usa-footer__primary-content h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.grid-row-gap-05 {
+  row-gap: 0.5rem;
+}
+
+.grid-row-gap-1 {
+  row-gap: 1rem;
+}
+
+.grid-row-gap-2 {
+  row-gap: 2rem;
+}
+
+.grid-row-gap-4 {
+  row-gap: 4rem;
+}
+

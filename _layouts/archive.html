@@ -1,0 +1,186 @@
+---
+layout: default
+---
+
+<div class="grid-row grid-gap">
+  <div class="tablet:grid-col-8">
+    <header class="margin-bottom-4">
+      {% if page.type == "tag" %}
+        <h1 class="font-heading-xl">Posts tagged "{{ page.title }}"</h1>
+        <p class="font-body-lg text-base-darker">
+          {{ page.posts.size }} post
+          {% if page.posts.size != 1 %}s{% endif %}
+          found with this tag.
+        </p>
+        {% elsif page.type == "category" %}
+        <h1 class="font-heading-xl">Posts in "{{ page.title }}"</h1>
+        <p class="font-body-lg text-base-darker">
+          {{ page.posts.size }} post
+          {% if page.posts.size != 1 %}s{% endif %}
+          found in this category.
+        </p>
+      {% else %}
+        <h1 class="font-heading-xl">{{ page.title }}</h1>
+      {% endif %}
+      <a href="{{ site.baseurl }}/blog" class="usa-link">← Back to all posts</a>
+    </header>
+    {% if page.posts.size > 0 %}
+      <div class="blog-posts">
+        {% for post in page.posts %}
+          <article class="usa-card margin-bottom-4">
+            <div class="usa-card__container">
+              <div class="usa-card__header">
+                <h2 class="usa-card__heading">
+                  <a href="{{ post.url }}" class="usa-link">{{ post.title }}</a>
+                </h2>
+              </div>
+              <div class="usa-card__body">
+                <div class="blog-post-meta text-base-dark margin-bottom-2">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">
+                    {{ post.date | date: "%B %d, %Y" }}
+                  </time>
+                  {% if post.author %}
+                    <span class="margin-x-1">•</span>
+                    <span>by {{ post.author }}</span>
+                  {% endif %}
+                  {% if post.categories.size > 0 %}
+                    <span class="margin-x-1">•</span>
+                    <span>in
+                      {% for category in post.categories %}
+                        {% if page.type == "category" and category == page.title %}
+                          <span class="text-bold">{{ category }}</span>
+                        {% else %}
+                          <a href="{{ site.baseurl }}/blog/category/{{ category | slugify }}"
+                             class="usa-link">{{ category }}</a>
+                        {% endif %}
+                        {% unless forloop.last %}, {% endunless %}
+                      {% endfor %}
+                    </span>
+                  {% endif %}
+                </div>
+                {% if post.excerpt %}
+                  <div class="blog-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</div>
+                {% endif %}
+                {% if post.tags.size > 0 %}
+                  <div class="blog-post-tags margin-top-2">
+                    {% for tag in post.tags %}
+                      {% if page.type == "tag" and tag == page.title %}
+                        <span class="usa-tag usa-tag--small bg-primary">{{ tag }}</span>
+                      {% else %}
+                        <a href="{{ site.baseurl }}/blog/tag/{{ tag | slugify }}"
+                           class="usa-tag usa-tag--small">{{ tag }}</a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+              <div class="usa-card__footer">
+                <a href="{{ post.url }}" class="usa-button usa-button--outline">Read More</a>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="usa-alert usa-alert--info">
+        <div class="usa-alert__body">
+          <h3 class="usa-alert__heading">No posts found</h3>
+          <p class="usa-alert__text">
+            {% if page.type == "tag" %}
+              No posts were found with the tag "{{ page.title }}".
+              {% elsif page.type == "category" %}
+              No posts were found in the category "{{ page.title }}".
+            {% endif %}
+            <a href="{{ site.baseurl }}/blog" class="usa-link">Browse all posts</a>.
+          </p>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <aside class="tablet:grid-col-4">
+    <div class="blog-sidebar padding-left-3">
+      {% if page.type == "tag" %}
+        <div class="usa-card margin-bottom-3">
+          <div class="usa-card__container">
+            <div class="usa-card__header">
+              <h3 class="usa-card__heading">All Tags</h3>
+            </div>
+            <div class="usa-card__body">
+              <div class="blog-tag-cloud">
+                {% assign all_tags = site.tags | sort %}
+                {% for tag_item in all_tags %}
+                  {% if tag_item[0] == page.title %}
+                    <span class="usa-tag margin-right-05 margin-bottom-05 bg-primary">{{ tag_item[0] }} ({{ tag_item[1].size }})</span>
+                  {% else %}
+                    <a href="{{ site.baseurl }}/blog/tag/{{ tag_item[0] | slugify }}"
+                       class="usa-tag margin-right-05 margin-bottom-05">{{ tag_item[0] }} ({{ tag_item[1].size }})</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% if page.type == "category" %}
+        <div class="usa-card margin-bottom-3">
+          <div class="usa-card__container">
+            <div class="usa-card__header">
+              <h3 class="usa-card__heading">All Categories</h3>
+            </div>
+            <div class="usa-card__body">
+              {% assign categories = site.categories | sort %}
+              <ul class="add-list-reset">
+                {% for cat in categories %}
+                  {% if cat[0] == page.title %}
+                    <li class="margin-bottom-1">
+                      <span class="text-bold">{{ cat[0] }} ({{ cat[1].size }})</span>
+                    </li>
+                  {% else %}
+                    <li class="margin-bottom-1">
+                      <a href="{{ site.baseurl }}/blog/category/{{ cat[0] | slugify }}"
+                         class="usa-link">{{ cat[0] }} ({{ cat[1].size }})</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      <div class="usa-card">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h3 class="usa-card__heading">
+              {% if page.type == "tag" %}
+                Categories
+              {% else %}
+                Popular Tags
+              {% endif %}
+            </h3>
+          </div>
+          <div class="usa-card__body">
+            {% if page.type == "tag" %}
+              {% assign categories = site.categories | sort %}
+              <ul class="add-list-reset">
+                {% for category in categories %}
+                  <li class="margin-bottom-1">
+                    <a href="{{ site.baseurl }}/blog/category/{{ category[0] | slugify }}"
+                       class="usa-link">{{ category[0] }} ({{ category[1].size }})</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <div class="blog-tag-cloud">
+                {% assign all_tags = site.tags | sort %}
+                {% for tag in all_tags limit:10 %}
+                  <a href="{{ site.baseurl }}/blog/tag/{{ tag[0] | slugify }}"
+                     class="usa-tag margin-right-05 margin-bottom-05">{{ tag[0] }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>

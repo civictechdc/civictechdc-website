@@ -7,6 +7,8 @@ node_modules/
 .ruby-gemset
 .ruby-version
 
+# Ignore local style changes
+styles-*.css
 
 ### JEnv template
 # JEnv local Java version configuration file

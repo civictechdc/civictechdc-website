@@ -1,0 +1,113 @@
+---
+layout: default
+---
+
+<div class="grid-row grid-gap">
+  <div class="tablet:grid-col-8">
+    <article class="usa-prose">
+      <header class="blog-post-header margin-bottom-4">
+        <h1 class="font-heading-xl margin-bottom-2">{{ page.title }}</h1>
+        <div class="blog-post-meta text-base-dark margin-bottom-3">
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+          {% if page.author %}
+            <span class="margin-x-1">•</span>
+            <span>by {{ page.author }}</span>
+          {% endif %}
+          {% if page.categories.size > 0 %}
+            <span class="margin-x-1">•</span>
+            <span>in 
+              {% for category in page.categories %}
+                <a href="{{ site.baseurl }}/blog/category/{{ category | slugify }}" class="usa-link">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </span>
+          {% endif %}
+        </div>
+        {% if page.excerpt %}
+          <div class="blog-post-excerpt font-body-lg text-base-darker margin-bottom-3">
+            {{ page.excerpt }}
+          </div>
+        {% endif %}
+      </header>
+
+      <div class="blog-post-content">
+        {{ content }}
+      </div>
+
+      {% if page.tags.size > 0 %}
+        <footer class="blog-post-footer margin-top-4 padding-top-2 border-top border-base-lighter">
+          <div class="blog-post-tags">
+            <span class="text-bold">Tags: </span>
+            {% for tag in page.tags %}
+              <a href="{{ site.baseurl }}/blog/tag/{{ tag | slugify }}" class="usa-tag">{{ tag }}</a>
+            {% endfor %}
+          </div>
+        </footer>
+      {% endif %}
+    </article>
+
+    <nav class="blog-post-navigation margin-top-5 padding-top-3 border-top border-base-lighter">
+      <div class="grid-row grid-gap">
+        {% if page.previous.url %}
+          <div class="tablet:grid-col-6">
+            <div class="blog-nav-previous">
+              <span class="text-base-dark text-bold">Previous post</span>
+              <a href="{{ page.previous.url }}" class="usa-link display-block">{{ page.previous.title }}</a>
+            </div>
+          </div>
+        {% endif %}
+        {% if page.next.url %}
+          <div class="tablet:grid-col-6 text-right">
+            <div class="blog-nav-next">
+              <span class="text-base-dark text-bold">Next post</span>
+              <a href="{{ page.next.url }}" class="usa-link display-block">{{ page.next.title }}</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </nav>
+  </div>
+
+  <aside class="tablet:grid-col-4">
+    <div class="blog-sidebar padding-left-3">
+      <div class="usa-card margin-bottom-3">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h3 class="usa-card__heading">Recent Posts</h3>
+          </div>
+          <div class="usa-card__body">
+            <ul class="add-list-reset">
+              {% for post in site.posts limit:5 %}
+                <li class="margin-bottom-2">
+                  <a href="{{ post.url }}" class="usa-link">{{ post.title }}</a>
+                  <div class="text-base-dark font-mono-2xs">{{ post.date | date: "%b %d, %Y" }}</div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="usa-card">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h3 class="usa-card__heading">Categories</h3>
+          </div>
+          <div class="usa-card__body">
+            {% assign categories = site.categories | sort %}
+            <ul class="add-list-reset">
+              {% for category in categories %}
+                <li class="margin-bottom-1">
+                  <a href="{{ site.baseurl }}/blog/category/{{ category[0] | slugify }}" class="usa-link">
+                    {{ category[0] }} ({{ category[1].size }})
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+</div>
