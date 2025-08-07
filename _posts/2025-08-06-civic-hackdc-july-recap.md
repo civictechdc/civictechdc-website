@@ -475,51 +475,51 @@ By breaking the problem down into these discrete but overlapping and interconnec
 
 Over the course of eight intensive hours, thirteen teams produced a remarkable portfolio of tools. Rather than competing against each other, they focused on creating solutions that work together as an ecosystem. These are the highlights.
 
-### The Foundation: Making Data Accessible
+### **The Foundation: Making Data Accessible**
 
 Teams recognized that all the analysis in the world wouldn't matter if people couldn't actually access the data. Each took a different approach to this fundamental challenge.
 
-#### Mirrulations CLI
+#### [Mirrulations CLI](https://github.com/civictechdc/hackdc2025/tree/main/projects/mirrulations-cli)
 
 The Mirrulations CLI team created what might be the day's simplest but universally valuable contribution. They recognized that while the Mirrulations data was technically available, actually downloading and working with it required writing custom scripts and understanding the underlying S3 structure. Their solution was elegantly straightforward: package the essential tools into a professional command-line interface that anyone can install with a single command. With `pip install mirrulations-cli`, researchers can now download entire dockets, convert comments to CSV format, and begin analysis immediately. As one judge noted, "We should highly value contributions like this." It's not flashy, but it removes a critical barrier that was preventing many potential users from even getting started.
 
-#### Hive-Partitioned Parquet
+#### [Hive-Partitioned Parquet](https://github.com/civictechdc/hackdc2025/tree/main/projects/hive-partitioned-parquet)
 
 While that team focused on making downloads easier, the **Hive-Partitioned Parquet** team reimagined how the data should be stored in the first place. The original JSON format is flexible but incredibly inefficient for analysis. Querying the full dataset meant downloading and parsing terabytes of text, a slow and expensive process even with modern cloud computing. Their conversion to Hive-partitioned Parquet files created a transformation so dramatic that queries which previously took hours and cost dollars now run in seconds for pennies. One judge, a healthcare data technologist at CMS, said it "totally made me rethink how to use S3 as a database."
 
-#### LLM.gov
+#### [LLM.gov (CMS Docket Assistant)](https://github.com/civictechdc/hackdc2025/tree/main/projects/llmgov)
 
 The **LLM.gov (CMS Docket Assistant)** team took an entirely different approach to accessibility. Instead of making the raw data easier to work with, they asked: what if users never had to see the raw data at all? They built a chat interface that lets users ask questions about regulatory dockets in plain English. The system uses Retrieval-Augmented Generation to understand questions like "What does this rule say about patient data access?" and provide highlighted content from hundreds of pages of dense regulatory text. This wasn't just about technical sophistication; it was about recognizing that the ultimate users aren't data scientists but nurses, small business owners, and engaged citizens.
 
-### The Pipeline: Improving Data Quality
+### **The Pipeline: Improving Data Quality**
 
 Teams tackled the unglamorous but essential work of improving the quality of the data itself, recognizing that better input data would improve every analysis built on top of it.
 
-#### Taskmasters
+#### [Taskmasters](https://github.com/civictechdc/hackdc2025/tree/main/projects/taskmasters)
 
 The **Taskmasters** team built a comprehensive pipeline for handling the chaos of real-world document formats. Government comments come in everything from pristine PDFs to badly scanned images to Word documents with complex formatting. Their system extracts text from all these formats, handling edge cases like documents embedded within documents and images of handwritten comments. They even integrated keyword extraction to automatically identify the main topics in each comment. One judge praised it as a "cohesive pipeline" that addresses the data quality problem that undermines so many analyses.
 
-### The Intelligence Layer: Understanding Content
+### **The Intelligence Layer: Understanding Content**
 
 Teams built tools to extract meaning from the raw comment text, each focusing on a different aspect of understanding.
 
-#### Rules Talk
+#### [Rules Talk](https://github.com/civictechdc/hackdc2025/tree/main/projects/rules-talk)
 
 The **Rules Talk** team created what they called a "Policy Comment Analyzer" that uses Google's Gemini API to automatically understand both the structure of a proposed rule and the substance of comments about it. Their system doesn't just count positive and negative responses; it identifies specific issues raised, maps them to sections of the proposed rule, and generates comprehensive reports showing how different organizations' critiques and support fit into the broader conversation. The judges were particularly impressed by the thoughtful JSON schemas that made the output immediately useful for downstream analysis.
 
-#### Can of Spam
+#### [Can of Spam](https://github.com/civictechdc/hackdc2025/tree/main/projects/canOfSpam)
 
 The **Can of Spam** team focused on a different but equally critical problem: detecting fraudulent and coordinated comment campaigns. They built sophisticated algorithms to identify temporal patterns that indicate bot submissions, such as thousands of identical comments submitted within seconds of each other. Their tool also detects template-based campaigns where slight variations mask coordinated efforts. This isn't just about data quality; it's about the integrity of the democratic process itself.
 
 ### **The Expansion: Growing the Dataset**
 
-#### The Scrapers
+#### [The Scrapers](https://github.com/civictechdc/hackdc2025/tree/main/projects/the-scrapers)
 
 One team recognized that improving access to Regulations.gov data was only part of the solution. **The Scrapers** researched and prototyped tools to gather public comments from agencies that maintain their own systems outside the federal portal. They discovered that the FCC provides a reasonable API for accessing comment data, while the SEC actively blocks automated access, requiring more sophisticated approaches. Rather than just building scrapers, they documented the landscape of federal comment systems, creating a roadmap for systematically expanding the dataset to include all federal agencies. As one judge observed, "The possibility that Mirrulations could expand beyond regulations.gov is truly exciting."
 
 ### **The Analysis: Connecting Comments to Outcomes**
 
-#### Within-Docket Dataset
+#### [Within-Docket Dataset](https://github.com/civictechdc/hackdc2025/tree/main/projects/within-docket-dataset)
 
 Finally, the **Within-Docket Dataset** team tackled perhaps the most ambitious challenge: understanding how public comments actually influence final rules. Their tool links specific comments to changes between proposed and final rules, using a combination of time-window analysis, text similarity, and semantic matching to identify which suggestions were adopted and which concerns were addressed. One judge said that this addresses the fundamental question of whether public commenting actually matters. While the technical implementation was just beginning, the conceptual framework they developed provides a roadmap for a critical tool in the Mirrulations ecosystem.
 
