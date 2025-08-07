@@ -1,0 +1,57 @@
+{% if site.posts.size > 0 %}
+<div class="margin-bottom-4">
+  <h2>Latest from our Blog</h2>
+  <p>Stay up to date with the latest news, project updates, and insights from the Civic Tech DC community.</p>
+  
+  {% assign latest_post = site.posts.first %}
+  <div class="usa-card">
+    <div class="usa-card__container">
+      <div class="usa-card__header">
+        <h3 class="usa-card__heading">
+          <a href="{{ latest_post.url }}" class="usa-link">{{ latest_post.title }}</a>
+        </h3>
+      </div>
+      <div class="usa-card__body">
+        <div class="blog-post-meta text-base-dark margin-bottom-2">
+          <time datetime="{{ latest_post.date | date_to_xmlschema }}">
+            {{ latest_post.date | date: "%B %d, %Y" }}
+          </time>
+          {% if latest_post.author %}
+            <span class="margin-x-1">•</span>
+            <span>by {{ latest_post.author }}</span>
+          {% endif %}
+          {% if latest_post.categories.size > 0 %}
+            <span class="margin-x-1">•</span>
+            <span>in 
+              {% for category in latest_post.categories %}
+                {{ category }}{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </span>
+          {% endif %}
+        </div>
+        
+        {% if latest_post.excerpt %}
+          <div class="blog-post-excerpt margin-bottom-2">
+            {{ latest_post.excerpt | strip_html | truncatewords: 30 }}
+          </div>
+        {% endif %}
+        
+        {% if latest_post.tags.size > 0 %}
+          <div class="blog-post-tags margin-bottom-2">
+            {% for tag in latest_post.tags limit:3 %}
+              <span class="usa-tag usa-tag--small">{{ tag }}</span>
+            {% endfor %}
+            {% if latest_post.tags.size > 3 %}
+              <span class="text-base-dark margin-left-1">+{{ latest_post.tags.size | minus: 3 }} more</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+      <div class="usa-card__footer">
+        <a href="{{ latest_post.url }}" class="usa-button usa-button--outline margin-right-1">Read More</a>
+        <a href="{{ site.baseurl }}/blog" class="usa-button usa-button--secondary">View All Posts</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
