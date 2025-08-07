@@ -319,7 +319,7 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
 
 > TL;DR: Federal regulations generate millions of public comments annually, but finding and analyzing them is nearly impossible due to technical barriers. Over one Saturday in July, 80 civic-technologists from government, non-profits, and tech companies built 13 open-source tools that make this data truly accessible for the first time. We created everything from simple command-line tools that let researchers download entire regulatory dockets, to AI-powered chat interfaces that answer plain-English questions about complex rules, to infrastructure improvements that make analytical queries 100x faster. More importantly, we proved that sustainable civic technology comes from diverse coalitions of subject matter experts and technologists working on validated problems, not isolated hackathon weekends. The code is live, the community is growing, and Part 2 is already in planning.
 
-[Hackathon Github Archive | Including problem statements, code, photos, and evaluations.](https://github.com/civictechdc/hackdc2025)
+[Hackathon Github Archive - Including problem statements, code, photos, and evaluations.](https://github.com/civictechdc/hackdc2025)
 
 ---
 
