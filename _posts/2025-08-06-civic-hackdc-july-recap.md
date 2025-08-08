@@ -411,13 +411,24 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
 
 [Hackathon Github Archive - Including problem statements, code, photos, and evaluations.](https://github.com/civictechdc/hackdc2025)
 
+- [The Problem That Brought Us Together](#the-problem-that-brought-us-together)
+- [The Coalition We Built](#the-coalition-we-built)
+- [The Foundation: Understanding Mirrulations](#the-foundation-understanding-mirrulations)
+- [The Problem Map](#the-problem-map)
+- [What We Built](#what-we-built-a-portfolio-of-innovation)
+- [Patterns of Success and Failure](#the-patterns-of-success-and-failure)
+- [The Human Impact](#the-human-impact)
+- [How You Can Help](#how-you-can-help)
+- [A Note of Gratitude](#a-note-of-gratitude)
+- [What’s Next](#whats-next)
+
 ---
 
 On July 26th, a sweaty DMV Saturday in July, something remarkable happened in Southeast DC. Eighty people from different professional worlds came together with a shared conviction: the desire to make federal regulations and the comments that shape them more transparent. What emerged from that single day of collaboration was more than just code. It was a blueprint for how civic tech can mature this work from a weekend hackathon into a sustained movement for democratic transparency.
 
 ## The Problem That Brought Us Together
 
-The story begins with a frustration that anyone who works with federal regulations knows too well. Melanie Kourbage, who leads public health informatics at the Association of Public Health Laboratories, captured it perfectly when she told us about her daily struggle: "It is often difficult to locate comments from sister organizations on Regulations.gov, even when I know they submitted them. As a workaround, I usually reach out to them directly and ask for a copy."
+The story begins with a frustration that anyone who works with federal regulations knows too well. Melanie Kourbage, who leads public health informatics at the Association of Public Health Laboratories, captured it perfectly when she told us about her daily struggle: _"It is often difficult to locate comments from sister organizations on Regulations.gov, even when I know they submitted them. As a workaround, I usually reach out to them directly and ask for a copy."_
 
 Think about what that means. Here's a professional whose job involves tracking how public health organizations engage with federal rulemaking, and she can't even reliably find the comments she knows exist. She has to resort to calling colleagues and asking them to email her copies of documents that are supposedly public. This isn't a minor inconvenience; it's a fundamental breakdown in how our democracy is supposed to work.
 
@@ -431,7 +442,12 @@ We knew from the start that this problem couldn't be solved by technologists alo
 
 The room that Saturday morning was unlike any typical hackathon. Yes, we had data engineers, software developers, and data scientists. But sitting next to them were policy analysts from non-profits who spend their days parsing the nuances of healthcare regulations. We had government technologists from the Centers for Medicare and Medicaid Services working alongside civic tech volunteers who maintain open-source projects in their spare time. Academic researchers shared tables with journalists who cover regulatory policy.
 
-This diversity wasn't decorative; it was essential to our success. When one team started building a sophisticated algorithm for detecting malicious campaigns based on the timing of comment submissions, a policy expert asked a simple question: "But what if those were submitted on behalf of another group? That happens all the time, it doesn’t mean they were bad actors." That question completely reframed the problem. The team realized that their work was not isolated, but was interdependent with the work the other teams were working on, such as the entity resolution team, working on a tool that could identify organizations even when they're referenced inconsistently across documents. To achieve the desired outcome, everyone needed to be able to understand the real world nuance of how these comments are submitted, and begin to explore how they could connect the various work streams to achieve their goals.
+This diversity wasn't decorative; it was essential to our success. When one team started building a sophisticated algorithm for detecting malicious campaigns based on the timing of comment submissions, a policy expert asked a simple question: _"But what if those were submitted on behalf of another group? That happens all the time, it doesn’t mean they were bad actors."_ That question completely reframed the problem. The team realized that their work was not isolated, but was interdependent with the work the other teams were working on, such as the entity resolution team, working on a tool that could identify organizations even when they're referenced inconsistently across documents. To achieve the desired outcome, everyone needed to be able to understand the real world nuance of how these comments are submitted, and begin to explore how they could connect the various work streams to achieve their goals.
+
+<figure class="margin-y-2">
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczNOGscwFA0CeO20syJhLlH-oDZZUkbTccwV36PG8MYArRlp2MPHthLcDYqT8NrAAezyIRHQ4Bcr6M0fN3zfpHiG46Amg7jPerJsX26et0GJzQb6Tco=w1920-h1080" alt="Introduction to the hackathon." style="width:100%;height:auto;">
+  <figcaption>Introduction to the hackathon.</figcaption>
+  </figure>
 
 Similarly, when developers discovered they could convert the entire dataset to a more efficient format that would make queries hundreds of times faster, it was the policy experts who helped them understand which types of queries actually mattered. There's no point optimizing for speed if you're not enabling the analyses that practitioners actually need to perform.
 
@@ -443,37 +459,32 @@ Regulations.gov, the federal government's central portal for regulatory document
 
 The result is 2.3 terabytes of regulatory data, constantly updated, freely available to anyone. But even with this incredible resource, significant barriers remained. The data was still in JSON format, which is great for APIs but terrible for analysis. Many of the comments were extracted into plaintext, but many weren’t, and the extraction process left a lot of document structure, images, and context on the cutting room floor. There were no tools for easily downloading specific dockets. And most importantly, there was no way for non-technical users to explore or understand what was in this vast dataset. These were the gaps we set out to fill.
 
-*The github repository for the Mirrulations project can be found [here](https://github.com/mirrulations/mirrulations).*
+_The github repository for the Mirrulations project can be found [here](https://github.com/mirrulations/mirrulations)._
 
-## The Architecture of Change: Mapping the Problem Space
+## The Problem Map
 
-Before anyone wrote a line of code, we spent weeks mapping the terrain. We didn’t produce just a list of tasks, but a comprehensive blueprint for a system of interdependent spaces, designed to tackle the entire regulatory data lifecycle from raw ingestion to actionable insights. We deliberately structured the hackathon around this interconnected space, encouraging teams to tackle different but tangential topics, knowing their solutions would ultimately strengthen one another.
+Here’s the end-to-end system we organized around, based on feedback from various stakeholders and subject matter experts:
 
-This systemic journey begins at the foundational layer of data acquisition and preparation. Imagine trying to understand a new healthcare rule.
+- **Data access and cost**: Find and fetch the right materials from a 2.3 TB mirror without burning time or budget.
+- **Agency scrapers**: Pull in comments from agencies outside Regulations.gov (e.g., FCC, SEC) to complete the picture.
+- **Data quality**: Extract clean, structured text from PDFs, scans, and Word docs.
+- **Integrity checks**: Detect spam and coordinated campaigns so signal rises above noise.
+- **Entity resolution**: Identify who’s commenting (e.g., “American Medical Association” vs. “AMA”) to enable cross-docket insights.
+- **Analysis and discovery**: Summarize dockets, compare across related rules, and trace influence from comments to final text.
+- **Usability**: Make all of this explorable for non-technical users through search, dashboards, and chat.
 
-First, you face the challenge of **Data Accessibility & Cost**: finding and downloading the right documents from a 2.3 terabyte morass of cumbersome JSON files. Even if you succeed, you hit the next wall: many crucial agencies have their own siloed websites, demanding a strategy for **Scraping Specific Agency Comment Systems**.
+We split teams across these layers so outputs stack and strengthen each other.
 
-Once you've gathered this fragmented data, you confront its chaotic state. **The Data Quality & Derived Layers** challenge involves extracting clean, structured text from a messy mix of PDFs, scanned images, and Word documents.
-
-This immediately feeds the crucial integrity layer of **Campaign Detection**, where you must filter out the noise of bot-generated spam and coordinated campaigns to isolate the signal of authentic public feedback.
-
-With a normalized dataset established, the system moves to a sophisticated analytical layer. The cornerstone is **Entity Resolution**, the difficult task of identifying who is commenting by unifying inconsistent names like "American Medical Association," "AMA," and "Am. Medical Assoc.", or the formal names and emails of submitters.  
-
-This canonical map of organizations is the essential key that unlocks two of the most powerful forms of analysis. First, it enables **Cross-Docket Analysis**, which tracks an entity's engagement across multiple related rules over time, revealing strategic patterns that single-docket analysis would miss. Second, and perhaps most importantly, it makes **Influence Mapping** possible; the "holy grail" of tracing which specific comments from which entities led to tangible changes in a final rule.
-
-In parallel, a content analysis vertical focuses on understanding what is being said, using **Docket-Level Analysis** to summarize key themes within a single rule and granular **Position & Sentiment Analysis** to capture the nuanced stances behind the feedback.
-
-Finally, all these powerful components can feed a user-facing discovery and usability layer. This addresses the upstream problem of **Regulatory Document Discovery & Navigation**, helping users find the right documents in the first place amidst a sea of confusingly similar titles.
-
-It culminates in the overarching goal of **Usability for Non-Technical Stakeholders**, transforming the complex outputs of the entire system; the cleaned data, the entity maps, the influence analysis; into the interactive dashboards, AI-powered chat interfaces, and digestible reports that empower citizens, advocates, and journalists.
-
-By breaking the problem down into these discrete but overlapping and interconnected spaces we allowed a large group of people to work on these problems in parallel and sprint towards our collective goal. This systems-thinking approach reflects how we think about civic technology. We weren't just asking teams to “hack” on data; we were inviting them to help design and support a greater goal that directly supports people solving real problems.
-
-*More Details can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/docs).*
+_More Details can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/docs)._
 
 ## What We Built: A Portfolio of Innovation
 
 Over the course of eight intensive hours, thirteen teams produced a remarkable portfolio of tools. Rather than competing against each other, they focused on creating solutions that work together as an ecosystem. These are the highlights.
+
+<figure class="margin-y-2">
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczPWVCmsZv247MxaSML21MuQnYzvTVT7cK6hjy_zzbgxlXH1cF2iYbd5xgD1LKOk50hn3vFHkdCPwMh-WcIJ1GjEOpDWNqH8cdF7e-K7YZeV9qbEnuo=w1920-h1080" alt="Demos and prototypes from 13 teams." style="width:100%;height:auto;">
+  <figcaption>Demos and prototypes from 13 teams.</figcaption>
+</figure>
 
 ### **The Foundation: Making Data Accessible**
 
@@ -481,11 +492,11 @@ Teams recognized that all the analysis in the world wouldn't matter if people co
 
 #### [Mirrulations CLI](https://github.com/civictechdc/hackdc2025/tree/main/projects/mirrulations-cli)
 
-The Mirrulations CLI team created what might be the day's simplest but universally valuable contribution. They recognized that while the Mirrulations data was technically available, actually downloading and working with it required writing custom scripts and understanding the underlying S3 structure. Their solution was elegantly straightforward: package the essential tools into a professional command-line interface that anyone can install with a single command. With `pip install mirrulations-cli`, researchers can now download entire dockets, convert comments to CSV format, and begin analysis immediately. As one judge noted, "We should highly value contributions like this." It's not flashy, but it removes a critical barrier that was preventing many potential users from even getting started.
+The Mirrulations CLI team created what might be the day's simplest but universally valuable contribution. They recognized that while the Mirrulations data was technically available, actually downloading and working with it required writing custom scripts and understanding the underlying S3 structure. Their solution was elegantly straightforward: package the essential tools into a professional command-line interface that anyone can install with a single command. With `pip install mirrulations-cli`, researchers can now download entire dockets, convert comments to CSV format, and begin analysis immediately. As one judge noted, _"We should highly value contributions like this."_ It's not flashy, but it removes a critical barrier that was preventing many potential users from even getting started.
 
 #### [Hive-Partitioned Parquet](https://github.com/civictechdc/hackdc2025/tree/main/projects/hive-partitioned-parquet)
 
-While that team focused on making downloads easier, the **Hive-Partitioned Parquet** team reimagined how the data should be stored in the first place. The original JSON format is flexible but incredibly inefficient for analysis. Querying the full dataset meant downloading and parsing terabytes of text, a slow and expensive process even with modern cloud computing. Their conversion to Hive-partitioned Parquet files created a transformation so dramatic that queries which previously took hours and cost dollars now run in seconds for pennies. One judge, a healthcare data technologist at CMS, said it "totally made me rethink how to use S3 as a database."
+While that team focused on making downloads easier, the **Hive-Partitioned Parquet** team reimagined how the data should be stored in the first place. The original JSON format is flexible but incredibly inefficient for analysis. Querying the full dataset meant downloading and parsing terabytes of text, a slow and expensive process even with modern cloud computing. Their conversion to Hive-partitioned Parquet files created a transformation so dramatic that queries which previously took hours and cost dollars now run in seconds for pennies. One judge, a healthcare data technologist at CMS, said it _"totally made me rethink how to use S3 as a database."_
 
 #### [LLM.gov (CMS Docket Assistant)](https://github.com/civictechdc/hackdc2025/tree/main/projects/llmgov)
 
@@ -497,7 +508,7 @@ Teams tackled the unglamorous but essential work of improving the quality of the
 
 #### [Taskmasters](https://github.com/civictechdc/hackdc2025/tree/main/projects/taskmasters)
 
-The **Taskmasters** team built a comprehensive pipeline for handling the chaos of real-world document formats. Government comments come in everything from pristine PDFs to badly scanned images to Word documents with complex formatting. Their system extracts text from all these formats, handling edge cases like documents embedded within documents and images of handwritten comments. They even integrated keyword extraction to automatically identify the main topics in each comment. One judge praised it as a "cohesive pipeline" that addresses the data quality problem that undermines so many analyses.
+The **Taskmasters** team built a comprehensive pipeline for handling the chaos of real-world document formats. Government comments come in everything from pristine PDFs to badly scanned images to Word documents with complex formatting. Their system extracts text from all these formats, handling edge cases like documents embedded within documents and images of handwritten comments. They even integrated keyword extraction to automatically identify the main topics in each comment. One judge praised it as a _"cohesive pipeline"_ that addresses the data quality problem that undermines so many analyses.
 
 ### **The Intelligence Layer: Understanding Content**
 
@@ -515,7 +526,7 @@ The **Can of Spam** team focused on a different but equally critical problem: de
 
 #### [The Scrapers](https://github.com/civictechdc/hackdc2025/tree/main/projects/the-scrapers)
 
-One team recognized that improving access to Regulations.gov data was only part of the solution. **The Scrapers** researched and prototyped tools to gather public comments from agencies that maintain their own systems outside the federal portal. They discovered that the FCC provides a reasonable API for accessing comment data, while the SEC actively blocks automated access, requiring more sophisticated approaches. Rather than just building scrapers, they documented the landscape of federal comment systems, creating a roadmap for systematically expanding the dataset to include all federal agencies. As one judge observed, "The possibility that Mirrulations could expand beyond regulations.gov is truly exciting."
+One team recognized that improving access to Regulations.gov data was only part of the solution. **The Scrapers** researched and prototyped tools to gather public comments from agencies that maintain their own systems outside the federal portal. They discovered that the FCC provides a reasonable API for accessing comment data, while the SEC actively blocks automated access, requiring more sophisticated approaches. Rather than just building scrapers, they documented the landscape of federal comment systems, creating a roadmap for systematically expanding the dataset to include all federal agencies. As one judge observed, _"The possibility that Mirrulations could expand beyond regulations.gov is truly exciting."_
 
 ### **The Analysis: Connecting Comments to Outcomes**
 
@@ -523,7 +534,7 @@ One team recognized that improving access to Regulations.gov data was only part 
 
 Finally, the **Within-Docket Dataset** team tackled perhaps the most ambitious challenge: understanding how public comments actually influence final rules. Their tool links specific comments to changes between proposed and final rules, using a combination of time-window analysis, text similarity, and semantic matching to identify which suggestions were adopted and which concerns were addressed. One judge said that this addresses the fundamental question of whether public commenting actually matters. While the technical implementation was just beginning, the conceptual framework they developed provides a roadmap for a critical tool in the Mirrulations ecosystem.
 
-*All the projects can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/projects), and their evaluations [here](https://github.com/civictechdc/hackdc2025/tree/main/evaluations).*
+_All the projects can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/projects), and their evaluations [here](https://github.com/civictechdc/hackdc2025/tree/main/evaluations)._
 
 ## The Patterns of Success and Failure
 
@@ -545,27 +556,19 @@ The event also served as a proof point for a different model of civic technology
 
 By starting with validated problems, mapping out the problem space, creating sustainable documentation, and framing the event as "Part 1" of a longer journey, we set expectations that this work would continue. The GitHub repository we created preserves context, documentation, and connections to upstream development. Projects aren't abandoned; they're critical building blocks for the teams that have the resources to continue development.
 
-## The Path Forward
-
-Civic Hack DC 2025 was deliberately named "Part 1" because we knew a single day couldn't solve decades of accumulated technical debt in our regulatory infrastructure. But we also knew that starting was important, that demonstrating what's possible can catalyze broader change.
-
-The immediate path forward is clear. The projects started at the hackathon need to be refined, integrated, and deployed. The Mirrulations CLI needs to be promoted to research institutions and non-profits. The Parquet conversion process needs to be explored further, potentially integrating Apache Iceberg or LanceDB. The LLM interface needs to be scaled beyond prototype to handle real-world usage, and used for both abstractive analysis but facilitating extractive exploration. The new agency scrapers need to be systematized and expanded.
-
-But the longer-term vision is more ambitious. We imagine a future where any citizen can easily explore and understand how their government makes rules. Where non-profits can track their impact and build coalitions based on data, not guesswork. Where journalists can quickly analyze patterns across thousands of regulatory actions. Where government agencies can efficiently synthesize public feedback and respond meaningfully to their constituents.
-
-This future requires more than just better tools. It requires a sustained commitment to building and maintaining civic infrastructure. It requires funding models that recognize the value of public data goods. It requires communities that can bridge the gap between technology and policy. It requires people who are willing to do the unglamorous work of cleaning data, writing documentation, and maintaining systems that others depend on.
-
-We're already planning Part 2 for late 2025 or early 2026\. We'll build on the foundation laid at this event, tackling harder problems with the benefit of lessons learned. We'll expand our coalition to include more agencies, more non-profits, and more technologists who understand that code can be a form of civic engagement.
+<figure class="margin-y-2">
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczPzUPaLRbq-hNXXXIWmUe6FcT4vNPpFysTAsjNyp_MLUy2bSTk4weBJ7fZfY1gNn_lxrWoaBZH4VWWT24vXVlra6IWToDpBw_v1qRpvvcjrR2dXHB-N=w1920-h1080" alt="Full room during project share-outs." style="width:100%;height:auto;">
+  <figcaption>Full room during project share-outs.</figcaption>
+</figure>
 
 ## How You Can Help
 
-If this vision resonates with you, there are many ways to contribute. Developers and data scientists can explore the projects on our GitHub repository, contribute improvements, or build new tools that fill gaps in the ecosystem. Every pull request, bug report, and documentation improvement makes the system more robust and accessible.
+- **Developers and data scientists**: Try the various projects, file issues, and send PRs. Help advance the projects and the community.
+- **Government staff and non-profit professionals**: Pilot the tools on real dockets. Tell us what workflows matter, where the data breaks, and what would make this usable day-to-day.
+- **Organizations**: Support public-good infrastructure with cloud credits, funding for maintenance, or staff time for testing and documentation.
+- **Everyone**: Share this post with colleagues who work with regulatory data and invite them to the repo.
 
-Government staff and non-profit professionals can help by testing these tools with real-world use cases. We need feedback on what works, what doesn't, and what's missing. Your expertise in navigating regulatory processes is invaluable for ensuring these tools solve actual problems rather than imagined ones.
-
-Organizations can contribute by providing resources, whether that's funding for development, cloud computing credits for processing data, or staff time for testing and feedback. The infrastructure we're building is a public good that benefits everyone who cares about transparent, responsive government.
-
-Anyone can help by spreading awareness. The biggest barrier to impact isn't technical; it's that most people who could benefit from these tools don't know they exist. Share this story with colleagues who work with regulatory data. Tell your organization's leadership about these resources. Help us connect with communities that have been excluded from regulatory participation due to technical barriers.
+Contact us at <team@civictechdc.org> and explore the projects on GitHub.
 
 ## A Note of Gratitude
 
@@ -577,20 +580,14 @@ The judges who evaluated projects brought decades of collective experience in go
 
 Most importantly, we're grateful to every participant who gave up a summer Saturday to build a better government. You proved that civic technology isn't just about apps and algorithms; it's about people coming together to strengthen the infrastructure of democracy.
 
-## Conclusion: More Than Code
+Special thanks to Michael Deeb, Helen Glover, Taylor Wilson, Evan Tung, Alma Trotter, Alex Gurvich, and Fred Trotter for their significant contributions before and during the event.
 
-The code the participants wrote on July 26th was just the beginning. The real product of Civic Hack DC 2025 was a community that understands both the challenge and the opportunity of making government data truly public.
+## What’s Next
 
-We live in an era where technology companies routinely process billions of interactions, where artificial intelligence can parse human language with increasing sophistication, where data science can find patterns in chaos. Yet somehow, we've normalized a system where public comments disappear into a black box, where influence is invisible, where democratic participation is limited by technical barriers rather than civic interest.
+This was “Part 1”—a working proof that access, quality, integrity, and usability can be tackled together. Next, we’ll work with the participants to iterate on their projects, bring them to life, and expand the community. We hope to host a Part 2 event in Spring to bring these projects together into a single, comprehensive system that will allow citizens, advocates, journalists, and public servants to find, analyze, and understand regulatory feedback and how it influences government decisions.
 
-Civic Hack DC 2025 was a declaration that we don't have to accept this status quo. Over a single day, 80 people proved that we have the tools, the expertise, and the will to build better civic infrastructure. We showed that the gap between government data and public understanding isn't a law of nature; it's a solvable engineering problem.
-
-But more than that, we demonstrated that solving this problem doesn't require a massive federal program or a Silicon Valley startup. It requires exactly what we assembled: people with different skills working toward a common goal, building on each other's work, creating public goods that benefit everyone.
-
-The path from here isn't easy. Maintaining open-source infrastructure is hard. Bridging technical and policy communities requires constant translation. Building sustainable funding models for public goods challenges traditional categories of philanthropic and government support. But the hardest part, getting the ball rolling, is behind us.
-
-The work continues. The code is public. The community is growing. The infrastructure is being built. Join us.
+Sustainable civic tech is infrastructure: it takes maintenance, documentation, and communities that bridge policy and engineering. The code is public. The community is growing. Join us: <team@civictechdc.org>.
 
 ---
 
-*For more information about Civic Hack DC 2025, to access the code, or to get involved in Part 2, visit our [GitHub repository](https://github.com/civictechdc/hackdc2025) or contact us at [team@civictechdc.org](mailto:team@civictechdc.org).*  
+_For more information about Civic Hack DC 2025, to access the code, or to get involved in Part 2, visit our [GitHub repository](https://github.com/civictechdc/hackdc2025) or contact us at [team@civictechdc.org](mailto:team@civictechdc.org)._  
