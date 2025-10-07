@@ -5,6 +5,26 @@ title: Election Administration and Voting Survey
 image: project_thumbnails/eavs.jpg
 image_alt_text: Voting precinct data table
 description: Use the data from the biennial Election Administration and Voting Survey (EAVS) to identify trends and outliers related to voter registration, voter roll maintenance, mail ballots, provisional ballots, voter turnout, and other aspects of how elections are run in states and counties across the U.S.
+slack_channel: C07HS3V6AAF
+positions:
+  - title: Data Analyst (Elections)
+    is_active: true
+    summary: Explore EAVS trends and build comparison tables/visualizations that help attorneys spot outliers.
+    skills: [Python, Pandas, Data Visualization]
+    commitment: 2–4 hrs/week
+    location: Remote
+    slack: eavs_clc
+    apply_url: https://github.com/civictechdc/eavs_clc/issues/new?title=Volunteer%20Data%20Analyst
+    posted_on: 2025-08-06
+  - title: UX Researcher
+    is_active: true
+    summary: Interview users and refine workflows to make insights easier to find and share.
+    skills: [UX Research]
+    commitment: Project-based
+    location: DC/Remote
+    slack: eavs_clc
+    apply_url: https://github.com/civictechdc/eavs_clc/issues/new?title=Volunteer%20UX%20Researcher
+    posted_on: 2025-08-06
 ---
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
@@ -63,7 +83,7 @@ description: Use the data from the biennial Election Administration and Voting S
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">📖 Our Story</h2>
-    <p>The Campaign Legal Center wants to <strong>identify states and counties that suspicious patterns in voter registration or voting</strong>, so it can take legal action to remedy the problems. For example, one state had an unusually high rate of rejection for voter registration applications submitted at public service offices, which turned out to be because of a glitch in the self-service kiosks used at public service offices in that state.</p> 
+    <p>The Campaign Legal Center wants to <strong>identify states and counties that suspicious patterns in voter registration or voting</strong>, so it can take legal action to remedy the problems. For example, one state had an unusually high rate of rejection for voter registration applications submitted at public service offices, which turned out to be because of a glitch in the self-service kiosks used at public service offices in that state.</p>
     <p>The current process the Campaign Legal Center uses is <strong>identifying the variables that interest them in the EAVS raw data file and codebook</strong>. Then they copy and paste the relevant columns into a new Excel spreadsheet. In order to calculate the voter registration rejection rates they are interested in, they use Excel formulas (for example, dividing the column that contains the number of applications rejected by the sum of the column that contains the number of applications accepted and the column that contains the number of applications rejected). Then they use the Excel subtotal feature to aggregate the data by state, since the raw data is only presented by county (although one of their interns wrote an R script to add up the county totals to get state totals). If they want to calculate how rates have changed, they copy and paste the relevant columns from the Excel spreadsheets they made for previous surveys into the current year spreadsheet.</p>
     <p>One of the major pain points is that all of this copying and pasting, aside from being labor-intensive, can result in human error. Also, it is difficult for the Campaign Legal Center attorneys to find what they are looking for in the Excel spreadsheet. Thus, the Campaign Legal Center needs <strong>Civic Tech volunteers to help them with data analysis and visualization.</strong></p>
   </div>
