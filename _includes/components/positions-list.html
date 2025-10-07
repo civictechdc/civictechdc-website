@@ -1,0 +1,45 @@
+<ul class="usa-card-group">
+  {% assign shown = 0 %}
+  {% for project in site.projects %}
+    {% if include.limit and shown >= include.limit %}
+      {% break %}
+    {% endif %}
+    {% if project.positions %}
+      {% for pos in project.positions %}
+        {% if include.limit and shown >= include.limit %}
+          {% break %}
+        {% endif %}
+        {% if pos.is_active != false %}
+          <li class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+            <div class="usa-card__container">
+              <div class="usa-card__header">
+                <h4 class="usa-card__heading">{{ pos.title }}</h4>
+                <p class="margin-top-05 font-sans-2xs text-italic">{{ project.title }}</p>
+              </div>
+              <div class="usa-card__body">
+                {% if pos.summary %}<p>{{ pos.summary }}</p>{% endif %}
+                <ul class="usa-list usa-list--unstyled margin-top-1">
+                  {% if pos.skills %}<li><strong>Skills:</strong> {{ pos.skills | join: ", " }}</li>{% endif %}
+                  {% if pos.commitment %}<li><strong>Time:</strong> {{ pos.commitment }}</li>{% endif %}
+                  {% if pos.location %}<li><strong>Location:</strong> {{ pos.location }}</li>{% endif %}
+                  {% if pos.slack %}<li><strong>Slack:</strong> #{{ pos.slack }}</li>{% endif %}
+                  {% if pos.posted_on %}<li class="font-sans-3xs text-base">Posted {{ pos.posted_on }}</li>{% endif %}
+                </ul>
+              </div>
+              <div class="usa-card__footer">
+                {% if pos.apply_url %}
+                  <a class="usa-button" href="{{ pos.apply_url }}" target="_blank" rel="noopener noreferrer">Apply</a>
+                {% elsif project.slack_channel %}
+                  <a class="usa-button" href="https://civictechdc.slack.com/archives/{{ project.slack_channel }}" target="_blank" rel="noopener noreferrer">Slack</a>
+                {% endif %}
+                <a class="usa-button usa-button--outline" href="{{ project.url }}">Project page</a>
+              </div>
+            </div>
+          </li>
+          {% assign shown = shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</ul>
+

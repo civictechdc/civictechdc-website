@@ -15,4 +15,12 @@ We're always incubating new projects and iterating on existing ones! Here are so
 
 {% include components/project-cards.html is_active=true %}
 
+{% comment %}
+## Help wanted
+
+Looking to contribute? Here are a few current needs. See more on our [Volunteer board]({% link volunteer.md %}).
+
+{% include components/positions-list.html limit=6 %}
+{% endcomment %}
+
 <script src="{{ site.baseurl }}/assets/js/meetup.js"></script>
