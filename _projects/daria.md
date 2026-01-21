@@ -1,6 +1,6 @@
 ---
 layout: project
-is_active: true
+is_active: false
 title: Daria
 image: project_thumbnails/daria.png
 image_alt_text: Blue D logo
