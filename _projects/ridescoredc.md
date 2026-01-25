@@ -2,7 +2,7 @@
 layout: project
 is_active: true
 title: Ride Score DC
-image: ridescoredc.png
+image: project_thumbnails/ridescoredc.png
 image_alt_text: The logo of Ride Score - the text on a gold and blue map
 description: Rating every street segment in DC for cyclist safety - visualizing risk on an interactive map to inform riders and advocates.
 ---
