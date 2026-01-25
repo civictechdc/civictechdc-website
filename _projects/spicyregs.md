@@ -2,7 +2,7 @@
 layout: project
 is_active: true
 title: SpicyRegs
-image: project_thumbnails/spicyregs.jpeg
+image: project_thumbnails/spicyregs.jpg
 image_alt_text: A image from the 2025 hackathon
 description: A platform that turns federal regulations and public comments into accessible, actionable insights.
 ---
@@ -25,7 +25,7 @@ description: A platform that turns federal regulations and public comments into 
   <div class="grid-container">
     <h2 class="font-sans-lg">📖 Our Story</h2>
     <p class="margin-bottom-2">
-    On July 26, 2025, over 80 civic technologists, policy experts, and government staff came together to make federal regulations and public comments more transparent and actionable. In a single day, they built 13 open-source tools that combined technical innovation with real-world needs. <br> 
+    On July 26, 2025, over 80 civic technologists, policy experts, and government staff came together to make federal regulations and public comments more transparent and actionable. In a single day, they built 13 open-source tools that combined technical innovation with real-world needs. <br> <br>
     Building on Moravian University's Mirrulations project, which mirrors 27 million regulatory documents, the teams created tools for easy data access, AI-powered Q&A, data pipelines, and dashboards. SpicyRegs is a continuation of the hackathon to build a open, contributor-friendly platform for exploring and analyzing regulations.gov data, usable by both technical and non-technical users. Read more in our <a href="https://www.civictechdc.org/events/community/2025/08/06/civic-hackdc-july-recap.html" target="_blank" rel="noopener noreferrer">blog</a>. 
     </p>
   </div>
@@ -62,7 +62,6 @@ description: A platform that turns federal regulations and public comments into 
           <th scope="row">Eugene Kim</th>
           <td><strong>🧩 Project Volunteer</strong></td>
           <td class ="text-no-wrap">@Eugene Kim</td>
-          </td>
           <!-- <td>
             <a href="mailto:eleanor.ory@gmail.com" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Email</a><br>
             <a href="https://www.linkedin.com/in/echo-eleanor-ory-ph-d-2aa22a242/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a>

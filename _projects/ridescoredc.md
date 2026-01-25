@@ -73,7 +73,6 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
           <th scope="row">EChO</th>
           <td><strong>🧩 Project Lead</strong></td>
           <td class ="text-no-wrap">@EChO (Eleanor Claire-higgins Ory)</td>
-          </td>
           <td>
             <a href="mailto:eleanor.ory@gmail.com" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Email</a><br>
             <a href="https://www.linkedin.com/in/echo-eleanor-ory-ph-d-2aa22a242/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a>
