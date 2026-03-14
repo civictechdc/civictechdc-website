@@ -4,7 +4,7 @@ is_active: true
 title: VoteCatcher
 image: project_thumbnails/ballot-initiative.png
 image_alt_text: Handwritten PDF scans being converted into machine-readable format
-github_link: https://github.com/Civic-Tech-Ballot-Inititiave/Ballot-Initiative
+github_link: https://github.com/civictechdc/votecatcher
 slack_channel: vote_catcher
 description: Building open source campaign infrastructure that any grassroots organizer can use - starting with signature validation processes.
 ---
