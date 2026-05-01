@@ -45,14 +45,14 @@ Making this data easier to clean, compare, and analyze across jurisdictions and 
 <li>Analysis-ready datasets designed for dashboards and further investigation</li>
 </ul>
   
-The goal is to reduce the time and effort required to work with EAVS data and to make analyses more transparent, reproducible, and scalable.
+<p>The goal is to reduce the time and effort required to work with EAVS data and to make analyses more transparent, reproducible, and scalable.
     </p>
   </div>
 </section>
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">Current Project Status</h2>
-    <p>The project is currently in a mid-to-late stage of development, with strong foundations in place and ongoing work in several areas.
+    <p>The project is currently in a mid-to-late stage of development, with strong foundations in place and ongoing work in several areas.</p>
 <ul>
 <li>Core datasets for 2020, 2022, and 2024 have been cleaned and standardized</li>
 <li>Combined multi-year datasets and time-series outputs have been created</li>
@@ -60,7 +60,7 @@ The goal is to reduce the time and effort required to work with EAVS data and to
 <li>Dashboard development and analysis concepts are in progress</li>
 <li>The team is actively engaging in outreach and user discovery to ensure the work aligns with real-world needs</li>
 </ul>
-The focus now is on refining the pipeline, expanding analysis and visualization, and working with potential users to guide further development.
+<p>The focus now is on refining the pipeline, expanding analysis and visualization, and working with potential users to guide further development.
     </p>
   </div>
 </section>
@@ -82,7 +82,7 @@ The project has since evolved into building a reusable, multi-year data pipeline
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">How the Project Is Organised</h2>
-    <p>The project is organized into five areas:
+    <p>The project is organized into five areas:</p>
 
 <ul>
 <li>Data Cleaning / Pipeline (Python) – cleaning and standardizing datasets, building reproducible workflows</li>
@@ -91,7 +91,7 @@ The project has since evolved into building a reusable, multi-year data pipeline
 <li>Outreach – connecting with potential users and partners to understand needs and use cases</li>
 <li>Project Management – coordinating tasks, documentation, and team processes</li>
 </ul>
-Volunteers are welcome to contribute to one or more areas depending on their interests and experience.
+<p>Volunteers are welcome to contribute to one or more areas depending on their interests and experience.
     </p>
   </div>
 </section>
