@@ -35,14 +35,16 @@ Making this data easier to clean, compare, and analyze across jurisdictions and 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">What We're Building</h2>
-    <p>The EAVS project is building a reproducible, open workflow to make election administration data easier to use. Current work includes:
+    <p>The EAVS project is building a reproducible, open workflow to make election administration data easier to use. Current work includes:</p>
 
-* A Python-based data pipeline to clean and standardize EAVS datasets
-* Cleaned datasets for 2020, 2022, and 2024, along with combined multi-year outputs
-* Time-series data to support analysis across election cycles
-* Data enrichment with demographic and jurisdictional information (e.g., Census-based data)
-* Analysis-ready datasets designed for dashboards and further investigation
-
+<ul>
+<li>A Python-based data pipeline to clean and standardize EAVS datasets</li>
+<li>Cleaned datasets for 2020, 2022, and 2024, along with combined multi-year outputs</li>
+<li>Time-series data to support analysis across election cycles</li>
+<li>Data enrichment with demographic and jurisdictional information (e.g., Census-based data)</li>
+<li>Analysis-ready datasets designed for dashboards and further investigation</li>
+<ul>
+  
 The goal is to reduce the time and effort required to work with EAVS data and to make analyses more transparent, reproducible, and scalable.
     </p>
   </div>
@@ -51,13 +53,13 @@ The goal is to reduce the time and effort required to work with EAVS data and to
   <div class="grid-container">
     <h2 class="font-sans-lg">Current Project Status</h2>
     <p>The project is currently in a mid-to-late stage of development, with strong foundations in place and ongoing work in several areas.
-
-* Core datasets for 2020, 2022, and 2024 have been cleaned and standardized
-* Combined multi-year datasets and time-series outputs have been created
-* Demographic enrichment has been partially integrated
-* Dashboard development and analysis concepts are in progress
-* The team is actively engaging in outreach and user discovery to ensure the work aligns with real-world needs
-
+<ul>
+<li>Core datasets for 2020, 2022, and 2024 have been cleaned and standardized</li>
+<li>Combined multi-year datasets and time-series outputs have been created</li>
+<li>Demographic enrichment has been partially integrated</li>
+<li>Dashboard development and analysis concepts are in progress</li>
+<li>The team is actively engaging in outreach and user discovery to ensure the work aligns with real-world needs</li>
+</ul>
 The focus now is on refining the pipeline, expanding analysis and visualization, and working with potential users to guide further development.
     </p>
   </div>
@@ -82,12 +84,13 @@ The project has since evolved into building a reusable, multi-year data pipeline
     <h2 class="font-sans-lg">How the Project Is Organised</h2>
     <p>The project is organized into five areas:
 
-* Data Cleaning / Pipeline (Python) – cleaning and standardizing datasets, building reproducible workflows
-* Dashboard (Tableau) – developing visualizations and user-facing tools
-* Analysis / Insights – exploring data, identifying patterns, and generating findings
-* Outreach – connecting with potential users and partners to understand needs and use cases
-* Project Management – coordinating tasks, documentation, and team processes
-
+<ul>
+<li>Data Cleaning / Pipeline (Python) – cleaning and standardizing datasets, building reproducible workflows</li>
+<li>Dashboard (Tableau) – developing visualizations and user-facing tools</li>
+<li>Analysis / Insights – exploring data, identifying patterns, and generating findings</li>
+<li>Outreach – connecting with potential users and partners to understand needs and use cases</li>
+<li>Project Management – coordinating tasks, documentation, and team processes</li>
+</ul>
 Volunteers are welcome to contribute to one or more areas depending on their interests and experience.
     </p>
   </div>
