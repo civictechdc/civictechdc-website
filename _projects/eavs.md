@@ -105,7 +105,7 @@ Making this data easier to clean, compare, and analyze across jurisdictions and 
 <p>The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.</p>
 
 <p>To get involved, join the Slack workspace here: https://www.civictechdc.org/slack Once there, look for the #eavs_clc channel, where we share updates, tasks, questions, and resources. Joining is not a commitment—just a way to learn more.</p>
-    </ul>
+
   </div>
 </section>
 
