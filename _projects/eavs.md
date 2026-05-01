@@ -43,7 +43,7 @@ Making this data easier to clean, compare, and analyze across jurisdictions and 
 <li>Time-series data to support analysis across election cycles</li>
 <li>Data enrichment with demographic and jurisdictional information (e.g., Census-based data)</li>
 <li>Analysis-ready datasets designed for dashboards and further investigation</li>
-<ul>
+</ul>
   
 The goal is to reduce the time and effort required to work with EAVS data and to make analyses more transparent, reproducible, and scalable.
     </p>
