@@ -68,14 +68,9 @@ Making this data easier to clean, compare, and analyze across jurisdictions and 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">Our Story</h2>
-    <p>The EAVS dataset is rich but not user-friendly. Working with it often requires identifying relevant variables across multiple files and codebooks, cleaning and standardizing inconsistent formats, calculating key metrics, and comparing results across years and jurisdictions. In practice, this has often meant manual, spreadsheet-based workflows that are time-consuming, difficult to reproduce, and prone to error.
+    <p>The EAVS dataset is rich but not user-friendly. Working with it often requires identifying relevant variables across multiple files and codebooks, cleaning and standardizing inconsistent formats, calculating key metrics, and comparing results across years and jurisdictions. In practice, this has often meant manual, spreadsheet-based workflows that are time-consuming, difficult to reproduce, and prone to error.</p>
 
-Civic Tech DC volunteers began this project to make EAVS data more accessible and usable. Early work focused on understanding how organizations and researchers were working with the data and where the biggest bottlenecks existed.
-
-One example: in prior analysis, a large drop in in-person voting in a county was initially interpreted as a potential issue—but was later explained by the rollout of a new ballot marking device that changed how votes were recorded. This highlighted both the value of the data and the importance of making it easier to analyze accurately and consistently.
-
-The project has since evolved into building a reusable, multi-year data pipeline and supporting tools to enable more reliable and scalable analysis.
-    </p>
+<p>Civic Tech DC volunteers began this project to make EAVS data more accessible and usable. Early work focused on understanding how Campaign Legal Center was working with the data and where the biggest bottlenecks existed. The project has since evolved into building a reusable, multi-year data pipeline and supporting tools to enable more reliable and scalable analysis.</p>
   </div>
 </section>
 
@@ -107,11 +102,9 @@ The project has since evolved into building a reusable, multi-year data pipeline
 <li>Outreach – identifying and connecting with potential users of the work</li>
 <li>Project Management and Coordination – supporting organization, onboarding, and communication</li>
 </ul>
-<p>The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.
+<p>The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.</p>
 
-To get involved, join the Slack workspace here: https://www.civictechdc.org/slack
-
-Once there, look for the #eavs_clc channel, where we share updates, tasks, questions, and resources. Joining is not a commitment—just a way to learn more.</p>
+<p>To get involved, join the Slack workspace here: https://www.civictechdc.org/slack Once there, look for the #eavs_clc channel, where we share updates, tasks, questions, and resources. Joining is not a commitment—just a way to learn more.</p>
     </ul>
   </div>
 </section>
