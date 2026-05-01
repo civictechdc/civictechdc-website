@@ -9,76 +9,106 @@ description: Use the data from the biennial Election Administration and Voting S
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
-    <em>🗳️ This project works with the U.S. Election Administration and Voting Survey (EAVS) data to support research and analysis by the Campaign Legal Center's Voting Rights team.</em>
+    <em>🗳️ This project works with the U.S. Election Administration and Voting Survey (EAVS) data to support research and analysis for public-interest groups.</em>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🏠 Why This Matters</h2>
+    <h2 class="font-sans-lg"> Why This Matters</h2>
     <p>
-      By using data from the biennial Election Administration and Voting Survey, we can identify trends and outliers in voter registration, voter roll maintenance, mail ballots, and other aspects of U.S. elections.
-    </p>
-  </div>
-</section>
+Election administration data can reveal patterns that may point to administrative issues, data quality problems, or practices that warrant further review. The U.S. Election Administration and Voting Survey (EAVS) provides detailed information on how elections are run across states and counties—covering voter registration, mail ballots, provisional ballots, voter list maintenance, and more.
 
-<section>
-    <div class="usa-alert usa-alert--info margin-y-3">
-      <div class="usa-alert__body">
-        <p class="usa-alert__text">
-          We're bridging this gap with a tool that:
-        </p>
-        <ul class="usa-list">
-          <li>Automates <strong>data processing and analysis</strong> of EAVS survey results</li>
-          <li>Provides <strong>interactive visualizations</strong> to identify trends and outliers</li>
-          <li>Enables <strong>efficient comparison</strong> across states, counties, and years</li>
-        </ul>
-      </div>
-    </div>
-</section>
-
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg">🚀 Our Impact</h2>
-    <p>
-    Join us to help detect and deter vote suppression and fraud! By assisting the Campaign Legal Center identify outliers in voter registration and votes, we enable their attorneys to take action against any wrongdoing that may be causing the anomalies.
+Making this data easier to clean, compare, and analyze across jurisdictions and over time can support research, oversight, advocacy, and other public-interest work.
     </p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
-    <p>DMV-based, but designed to be open source and replicable across the country.</p>
+    <h2 class="font-sans-lg">Our Impact</h2>
+    <p>By making EAVS data easier to clean, analyze, and compare across time and geography, this project supports election officials, researchers, advocacy organizations, legal teams, journalists, public-interest organizations to identify patterns that may warrant further investigation. The work aims to lower barriers to using election administration data and to enable more consistent, transparent, and scalable analysis.
+    </p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🤝 Community Partners</h2>
-      <a href="https://campaignlegal.org/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer"> Campaign Legal Center + Nonprofit</a>
+    <h2 class="font-sans-lg">What We're Building</h2>
+    <p>The EAVS project is building a reproducible, open workflow to make election administration data easier to use. Current work includes:
+
+* A Python-based data pipeline to clean and standardize EAVS datasets
+* Cleaned datasets for 2020, 2022, and 2024, along with combined multi-year outputs
+* Time-series data to support analysis across election cycles
+* Data enrichment with demographic and jurisdictional information (e.g., Census-based data)
+* Analysis-ready datasets designed for dashboards and further investigation
+
+The goal is to reduce the time and effort required to work with EAVS data and to make analyses more transparent, reproducible, and scalable.
+    </p>
+  </div>
+</section>
+<section class="padding-y-1 usa-prose maxw-none">
+  <div class="grid-container">
+    <h2 class="font-sans-lg">Current Project Status</h2>
+    <p>The project is currently in a mid-to-late stage of development, with strong foundations in place and ongoing work in several areas.
+
+* Core datasets for 2020, 2022, and 2024 have been cleaned and standardized
+* Combined multi-year datasets and time-series outputs have been created
+* Demographic enrichment has been partially integrated
+* Dashboard development and analysis concepts are in progress
+* The team is actively engaging in outreach and user discovery to ensure the work aligns with real-world needs
+
+The focus now is on refining the pipeline, expanding analysis and visualization, and working with potential users to guide further development.
+    </p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">📖 Our Story</h2>
-    <p>The Campaign Legal Center wants to <strong>identify states and counties that suspicious patterns in voter registration or voting</strong>, so it can take legal action to remedy the problems. For example, one state had an unusually high rate of rejection for voter registration applications submitted at public service offices, which turned out to be because of a glitch in the self-service kiosks used at public service offices in that state.</p> 
-    <p>The current process the Campaign Legal Center uses is <strong>identifying the variables that interest them in the EAVS raw data file and codebook</strong>. Then they copy and paste the relevant columns into a new Excel spreadsheet. In order to calculate the voter registration rejection rates they are interested in, they use Excel formulas (for example, dividing the column that contains the number of applications rejected by the sum of the column that contains the number of applications accepted and the column that contains the number of applications rejected). Then they use the Excel subtotal feature to aggregate the data by state, since the raw data is only presented by county (although one of their interns wrote an R script to add up the county totals to get state totals). If they want to calculate how rates have changed, they copy and paste the relevant columns from the Excel spreadsheets they made for previous surveys into the current year spreadsheet.</p>
-    <p>One of the major pain points is that all of this copying and pasting, aside from being labor-intensive, can result in human error. Also, it is difficult for the Campaign Legal Center attorneys to find what they are looking for in the Excel spreadsheet. Thus, the Campaign Legal Center needs <strong>Civic Tech volunteers to help them with data analysis and visualization.</strong></p>
+    <h2 class="font-sans-lg">Our Story</h2>
+    <p>The EAVS dataset is rich but not user-friendly. Working with it often requires identifying relevant variables across multiple files and codebooks, cleaning and standardizing inconsistent formats, calculating key metrics, and comparing results across years and jurisdictions. In practice, this has often meant manual, spreadsheet-based workflows that are time-consuming, difficult to reproduce, and prone to error.
+
+Civic Tech DC volunteers began this project to make EAVS data more accessible and usable. Early work focused on understanding how organizations and researchers were working with the data and where the biggest bottlenecks existed.
+
+One example: in prior analysis, a large drop in in-person voting in a county was initially interpreted as a potential issue—but was later explained by the rollout of a new ballot marking device that changed how votes were recorded. This highlighted both the value of the data and the importance of making it easier to analyze accurately and consistently.
+
+The project has since evolved into building a reusable, multi-year data pipeline and supporting tools to enable more reliable and scalable analysis.
+    </p>
+  </div>
+</section>
+
+<section class="padding-y-1 usa-prose maxw-none">
+  <div class="grid-container">
+    <h2 class="font-sans-lg">How the Project Is Organised</h2>
+    <p>The project is organized into five areas:
+
+* Data Cleaning / Pipeline (Python) – cleaning and standardizing datasets, building reproducible workflows
+* Dashboard (Tableau) – developing visualizations and user-facing tools
+* Analysis / Insights – exploring data, identifying patterns, and generating findings
+* Outreach – connecting with potential users and partners to understand needs and use cases
+* Project Management – coordinating tasks, documentation, and team processes
+
+Volunteers are welcome to contribute to one or more areas depending on their interests and experience.
+    </p>
   </div>
 </section>
 
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
     <h2>👋 Come Join Us</h2>
-    <p>Everyone is welcome, no matter your skill level or background. We especially need help with:</p>
-    <ul class="usa-list">
-      <li>Data Modeling</li>
-      <li>Data Analysis</li>
-      <li>Project Management</li>
-      <li>User Experience</li>
-      <li>Python</li>
+    <p>We welcome volunteers with a range of skills and interests. Current needs include:
+
+* Python / Data Pipeline – cleaning and standardizing datasets, improving and extending the pipeline
+* Tableau / Dashboarding – building and refining visualizations (experienced Tableau users especially welcome)
+* Analysis / Insights – conducting quality checks, exploratory analysis, and identifying meaningful patterns
+* Outreach – identifying and connecting with potential users of the work
+* Project Management and Coordination – supporting organization, onboarding, and communication
+
+The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.
+
+To get involved, join the Slack workspace here: https://www.civictechdc.org/slack
+
+Once there, look for the #eavs_clc channel, where we share updates, tasks, questions, and resources. Joining is not a commitment—just a way to learn more.</p>
     </ul>
   </div>
 </section>
