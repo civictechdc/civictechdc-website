@@ -99,15 +99,15 @@ The project has since evolved into building a reusable, multi-year data pipeline
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
     <h2>👋 Come Join Us</h2>
-    <p>We welcome volunteers with a range of skills and interests. Current needs include:
-
-* Python / Data Pipeline – cleaning and standardizing datasets, improving and extending the pipeline
-* Tableau / Dashboarding – building and refining visualizations (experienced Tableau users especially welcome)
-* Analysis / Insights – conducting quality checks, exploratory analysis, and identifying meaningful patterns
-* Outreach – identifying and connecting with potential users of the work
-* Project Management and Coordination – supporting organization, onboarding, and communication
-
-The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.
+    <p>We welcome volunteers with a range of skills and interests. Current needs include:</p>
+<ul>
+<li>Python / Data Pipeline – cleaning and standardizing datasets, improving and extending the pipeline</li>
+<li>Tableau / Dashboarding – building and refining visualizations (experienced Tableau users especially welcome)</li>
+<li>Analysis / Insights – conducting quality checks, exploratory analysis, and identifying meaningful patterns</li>
+<li>Outreach – identifying and connecting with potential users of the work</li>
+<li>Project Management and Coordination – supporting organization, onboarding, and communication</li>
+</ul>
+<p>The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.
 
 To get involved, join the Slack workspace here: https://www.civictechdc.org/slack
 
