@@ -1,0 +1,9 @@
+---
+layout: project
+is_active: false
+title: Our DC Schools
+image: project_thumbnails/ourdcschools.png
+image_alt_text: Image of the website where people can add their address
+description: An open source CRM software for abortion funds, created by abortion funders and friends of abortion funders. DARIA went into service in July 2016 for the DC Abortion Fund and is now used by multiple abortion funds across the U.S.
+---
+OurDCSchools.org helped residents understand and respond to proposed DC school boundary and student assignment policy changes. The platform allowed users to enter an address, view how proposed school boundary changes would affect them, rate proposed policies, and submit feedback to the DC Deputy Mayor for Education. It was developed in collaboration with the Deputy Mayor for Education and built on top of geographic and policy data on the school boundary review process. 
