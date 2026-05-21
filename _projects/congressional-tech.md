@@ -50,7 +50,7 @@ description: Building tech tools for congressional staff and increasing transpar
   </div>
 </section>
 
-<section class="padding-y-5 usa-prose maxw-none">
+<!-- <section class="padding-y-5 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-xl margin-bottom-2">📇 Current Project Volunteer Contacts</h2>
     <table class="usa-table usa-table--striped usa-table--borderless">
@@ -87,7 +87,7 @@ description: Building tech tools for congressional staff and increasing transpar
       </tbody>
     </table>
   </div>
-</section>
+</section> -->
 
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
