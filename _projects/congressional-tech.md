@@ -68,10 +68,10 @@ description: Building tech tools for congressional staff and increasing transpar
           <td>
             <strong>🧩 Project Lead</strong><br>
           </td>
-          <td class="text-no-wrap">@Alex Gurvich</td>
+          <td class="text-no-wrap">@Matthew Zamora</td>
           <td>
-            <a href="https://www.linkedin.com/in/alex-b-gurvich/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-            <a href="mailto:alex.b.gurvich@gmail.com" class="usa-link">Email</a>
+            <a href="https://www.linkedin.com/in/matthew-zamora-18433656/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
+            <a href="mailto:matt@mocomakers.com" class="usa-link">Email</a>
           </td>
         </tr>
         <tr>
