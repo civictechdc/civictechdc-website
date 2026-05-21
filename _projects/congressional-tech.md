@@ -64,7 +64,7 @@ description: Building tech tools for congressional staff and increasing transpar
       </thead>
       <tbody>
         <tr>
-          <th scope="row" class="text-no-wrap">Alex Gurvich</th>
+          <th scope="row" class="text-no-wrap">Matthew Zamora</th>
           <td>
             <strong>🧩 Project Lead</strong><br>
           </td>
