@@ -23,7 +23,7 @@
 {% endif %} {% if page.subtitle %}
 <meta content="{{ page.subtitle }}" property="og:description" />
 {% else %}
-<meta content="{{ site.subtitle }}" property="og:description" />
+<meta content="{{ site.description }}" property="og:description" />
 {% endif %} {% if page.url %}
 <meta content="{{ site.url }}{{ page.url }}" property="og:url" />
 {% endif %} {% if page.date %}
@@ -36,7 +36,7 @@
 <meta content="{{ site.url }}{{page.image}}" property="og:image" />
 {% else %}
 <meta
-  content="{{ site.baseurl }}/assets/images/hero-image-homepage"
+  content="{{ site.url }}/assets/images/hero-image-homepage-1200w.jpg"
   property="og:image"
 />
 {% endif %} {% if page.categories %} {% for category in page.categories limit:1
@@ -59,13 +59,13 @@
 {% endif %} {% if page.subtitle %}
 <meta name="twitter:description" content="{{ page.subtitle }}" />
 {% else %}
-<meta name="twitter:description" content="{{ site.subtitle }}" />
+<meta name="twitter:description" content="{{ site.description }}" />
 {% endif %} {% if page.image %}
 <meta name="twitter:image" content="{{ site.url }}{{page.image}}" />
 {% else %}
 <meta
   name="twitter:image:src"
-  content="{{ site.baseurl }}/assets/images/hero-image-homepage"
+  content="{{ site.url }}/assets/images/hero-image-homepage-1200w.jpg"
 />
 {% endif %}
 
