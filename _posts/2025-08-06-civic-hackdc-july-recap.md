@@ -5,6 +5,8 @@ date: 2025-08-06 16:00:00 -0500
 author: "Michael Deeb"
 page_css: /assets/css/hack2025.css
 categories: [Events, Community]
+redirect_from:
+  - /events/community/2025/08/06/civic-hackdc-july-recap.html
 tags: [civic hackdc, hackathon, open data, regulatory tech, volunteer, data for good]
 excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public feedback and strengthen our democracy. Here's what we built, what we learned, and what's next."
 ---

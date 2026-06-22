@@ -4,6 +4,8 @@ title: "Welcome to the Civic Tech DC Blog!"
 date: 2025-08-06 10:00:00 -0500
 author: "Civic Tech DC Team"
 categories: [Community, Announcements]
+redirect_from:
+  - /community/announcements/2025/08/06/welcome-to-the-civic-tech-dc-blog.html
 tags: [civic tech, community, blogging, announcements]
 excerpt: "We're excited to launch our new blog to share updates, insights, and stories from the DC civic technology community."
 ---
