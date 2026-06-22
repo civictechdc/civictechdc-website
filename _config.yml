@@ -35,3 +35,7 @@ exclude:
   - Gemfile.lock
   - npm-debug.log
   - /sass
+  - README.md
+  - CONTRIBUTING.md
+  - package.json
+  - package-lock.json
