@@ -27,5 +27,3 @@ Looking to contribute? Here are a few current needs. See more on our [Volunteer 
 
 {% include components/positions-list.html limit=6 %}
 {% endcomment %}
-
-<script src="{{ site.baseurl }}/assets/js/meetup.js"></script>

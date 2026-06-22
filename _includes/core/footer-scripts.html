@@ -1,31 +1,20 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
 <script src="/assets/js/uswds.min.js"></script>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"
-></script>
 
 <script type="text/javascript">
-  const showReturnToTopThreshold = 100;
-  const returnToTop = () => {
-    const scrollTop = $(window).scrollTop();
-    if (scrollTop > showReturnToTopThreshold) {
-      $("#returnToTop").show();
-    } else {
-      $("#returnToTop").hide();
+  // Smooth-scroll the "Return to top" link. Progressive enhancement:
+  // the href="#top" anchor still works if JS is unavailable.
+  document.addEventListener("DOMContentLoaded", function () {
+    const link = document.getElementById("returnToTopLink");
+    if (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     }
-  };
-
-  $(window).on("scroll", () => returnToTop());
-  $("#returnToTopLink").click((e) => {
-    e.preventDefault();
-    $("html,body").animate(
-      {
-        scrollTop: 0,
-      },
-      700,
-    );
   });
 </script>
+
+{% comment %} Per-page scripts: add `page_scripts: [foo.js]` to a page's front matter {% endcomment %}
+{% for script in page.page_scripts %}
+<script src="{{ site.baseurl }}/assets/js/{{ script }}"></script>
+{% endfor %}
