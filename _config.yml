@@ -11,6 +11,18 @@ plugins:
 future: true
 baseurl: ""
 
+# Keep blog posts under /blog/ regardless of their categories.
+# Scoped to posts only (via defaults) so the global permalink style is unchanged
+# and projects/events/pages keep their existing URLs. Without this, Jekyll's default
+# scheme prefixes a post's categories to its URL (e.g. a "Community" post lands at
+# /community/..., colliding with the Community page).
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      permalink: /blog/:year/:month/:day/:title/
+
 collections:
   projects:
     output: true

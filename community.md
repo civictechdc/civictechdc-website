@@ -1,3 +1,9 @@
+---
+layout: default
+title: Community
+permalink: /community/
+---
+
 # Community
 
 Strong communities are built through participation, feedback, and continuous learning. This page serves as a collection of resources that help make our community more transparent and collaborative.
