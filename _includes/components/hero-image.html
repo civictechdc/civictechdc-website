@@ -1,5 +1,6 @@
+{% assign hero_alt = include.alt | default: include.title %}
 <div class="hero-image grid-col-12">
-  {% include responsive-image.html src=include.image alt=include.title class="hero-bg-image" %}
+  {% include responsive-image.html src=include.image alt=hero_alt class="hero-bg-image" eager=true %}
   <div class="hero-text">
     {% if include.title %}
     <h1 class="margin-top-0">{{ include.title }}</h1>

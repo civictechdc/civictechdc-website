@@ -2,9 +2,10 @@
 layout: hero-image-small
 title: About Civic Tech DC
 hero-image: hero-image-about.jpg
+hero-image-alt: Civic Tech DC members working together on laptops in an office meeting space
 ---
 
-## About
+# About
 
 Founded in 2012 as Code for DC, Civic Tech DC is a non-partisan, volunteer-driven 501(c)(3) nonprofit community. We use open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives in the Washington, DC area.
 

@@ -17,48 +17,48 @@
       </button>
       <ul class="usa-nav__primary usa-accordion">
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/projects">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/projects"{% if page.url contains '/projects' %} aria-current="page"{% endif %}>
             <span>Projects</span>
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/blog">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/blog"{% if page.url contains '/blog' %} aria-current="page"{% endif %}>
             <span>Blog</span>
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/community">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/community"{% if page.url contains '/community' %} aria-current="page"{% endif %}>
             <span>Community</span>
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/special-events">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/special-events"{% if page.url contains '/special-events' %} aria-current="page"{% endif %}>
             <span>Special Events</span>
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/partners">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/partners"{% if page.url contains '/partners' %} aria-current="page"{% endif %}>
             <span>Partners</span>
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/donate">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/donate"{% if page.url contains '/donate' %} aria-current="page"{% endif %}>
             <span>Donate</span>
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/slack">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/slack"{% if page.url contains '/slack' %} aria-current="page"{% endif %}>
             <span>Slack</span>
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <a class="usa-nav__link" href="{{ site.baseurl }}/about">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/about"{% if page.url contains '/about' %} aria-current="page"{% endif %}>
             <span>About</span>
             <span aria-hidden="true">▾</span>
           </a>
           <ul class="usa-nav__submenu">
             <li class="usa-nav__submenu-item">
-              <a href="{{ site.baseurl }}/code-of-conduct">
+              <a href="{{ site.baseurl }}/code-of-conduct"{% if page.url contains '/code-of-conduct' %} aria-current="page"{% endif %}>
                 <span>Code of Conduct</span>
               </a>
             </li>

@@ -19,7 +19,7 @@
     alt="{{ include.alt | escape }}"
     class="{{ include.class }}"
     style="{{ include.style }}"
-    loading="lazy"
+    {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
   >
 {%- else -%}
   {%- comment -%} Raster images (JPG/PNG) get responsive treatment {%- endcomment -%}
@@ -38,6 +38,6 @@
     alt="{{ include.alt | escape }}"
     class="{{ include.class }}"
     style="{{ include.style }}"
-    loading="lazy"
+    {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
   >
 {%- endif -%} 
