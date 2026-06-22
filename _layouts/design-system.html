@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<div class="margin-top-4 margin-bottom-8">
+  <div class="grid-row grid-gap">
+    
+    <!-- Sidebar Navigation -->
+    <div class="desktop:grid-col-3">
+      <nav aria-label="Design System Navigation" class="margin-bottom-4">
+        <ul class="usa-sidenav">
+          <li class="usa-sidenav__item">
+            <a href="{{ '/design-system/' | relative_url }}" {% if page.url == '/design-system/' %}class="usa-current"{% endif %}>Overview</a>
+          </li>
+          <li class="usa-sidenav__item">
+            <a href="{{ '/design-system/colors/' | relative_url }}" {% if page.url == '/design-system/colors/' %}class="usa-current"{% endif %}>Colors</a>
+          </li>
+          <li class="usa-sidenav__item">
+            <a href="{{ '/design-system/typography/' | relative_url }}" {% if page.url == '/design-system/typography/' %}class="usa-current"{% endif %}>Typography</a>
+          </li>
+          <li class="usa-sidenav__item">
+            <a href="{{ '/design-system/components/' | relative_url }}" {% if page.url == '/design-system/components/' %}class="usa-current"{% endif %}>Components</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="desktop:grid-col-9" id="main-content">
+      <div class="usa-prose">
+        <h1 class="margin-top-0">{{ page.title }}</h1>
+        {% if page.description %}
+          <p class="usa-intro">{{ page.description }}</p>
+        {% endif %}
+        
+        {{ content }}
+      </div>
+    </main>
+
+  </div>
+</div>
