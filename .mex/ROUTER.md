@@ -26,6 +26,7 @@ Then read this file fully before doing anything else in this session.
 ## Current Project State
 
 **Working:**
+
 - Full Jekyll site live at civictechdc.org / www.civictechdc.org, auto-deployed from `main` to GitHub Pages.
 - `projects` collection (`_projects/`) → rendered with the `project` layout; project cards on the projects page.
 - `events` collection (`_events/`) → permalink `/special-events/:name/`, often with page-specific CSS.
@@ -34,10 +35,12 @@ Then read this file fully before doing anything else in this session.
 - Responsive image pipeline: originals in `_images/` → resized variants in `assets/images/` via `responsive-image.html`.
 
 **Not yet built / absent:**
+
 - No automated test suite.
 - No backend, database, or server-side code — fully static.
 
 **Known issues / watch-outs:**
+
 - CI fails if committed `assets/` don't match a fresh `gulp compile` — always run `npm run build` after touching `sass/` or `_images/`.
 - Package name in `package.json` is still `codefordc-website` (project was renamed from Code for DC to Civic Tech DC).
 
@@ -45,14 +48,14 @@ Then read this file fully before doing anything else in this session.
 
 Load the relevant file based on the current task. Always load `context/architecture.md` first if not already in context this session.
 
-| Task type | Load |
-|-----------|------|
-| Understanding how the system works | `context/architecture.md` |
-| Working with a specific technology | `context/stack.md` |
-| Writing or reviewing code | `context/conventions.md` |
-| Making a design decision | `context/decisions.md` |
-| Setting up or running the project | `context/setup.md` |
-| Any specific task | Check `patterns/INDEX.md` for a matching pattern |
+| Task type                          | Load                                             |
+| ---------------------------------- | ------------------------------------------------ |
+| Understanding how the system works | `context/architecture.md`                        |
+| Working with a specific technology | `context/stack.md`                               |
+| Writing or reviewing code          | `context/conventions.md`                         |
+| Making a design decision           | `context/decisions.md`                           |
+| Setting up or running the project  | `context/setup.md`                               |
+| Any specific task                  | Check `patterns/INDEX.md` for a matching pattern |
 
 ## Behavioural Contract
 

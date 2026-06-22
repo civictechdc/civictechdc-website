@@ -20,6 +20,6 @@ The goal is not to create a public voting system or guarantee implementation of 
   View the Learning in Public Log →
 </a>
 
-<img width="750" height="465" alt="image" src="https://github.com/user-attachments/assets/613026d4-0361-4aea-91f2-ecb328b23b69" />
+{% include responsive-image.html src="learning-in-public-log.png" alt="Learning in Public Log preview" %}
 
 ### Playbook - Coming in July 2026

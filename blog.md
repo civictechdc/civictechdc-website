@@ -34,20 +34,20 @@ permalink: /blog/
                   {% endif %}
                   {% if post.categories.size > 0 %}
                     <span class="margin-x-1">•</span>
-                    <span>in 
+                    <span>in
                       {% for category in post.categories %}
                         <a href="{{ site.baseurl }}/blog/category/{{ category | slugify }}" class="usa-link">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
                       {% endfor %}
                     </span>
                   {% endif %}
                 </div>
-                
+
                 {% if post.excerpt %}
                   <div class="blog-post-excerpt">
                     {{ post.excerpt | strip_html | truncatewords: 50 }}
                   </div>
                 {% endif %}
-                
+
                 {% if post.tags.size > 0 %}
                   <div class="blog-post-tags margin-top-2">
                     {% for tag in post.tags limit:3 %}
@@ -76,6 +76,7 @@ permalink: /blog/
         </div>
       </div>
     {% endif %}
+
   </div>
 
   <aside class="tablet:grid-col-4">
@@ -167,5 +168,6 @@ permalink: /blog/
         </div>
       </div>
     </div>
+
   </aside>
 </div>

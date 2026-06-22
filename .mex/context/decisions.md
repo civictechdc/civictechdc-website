@@ -26,6 +26,7 @@ last_updated: 2026-06-22
 ## Decision Log
 
 ### Host on GitHub Pages with the github-pages gem
+
 **Date:** 2018-04-04 (project inception)
 **Status:** Active
 **Decision:** Build with Jekyll pinned via the `github-pages` gem and deploy to GitHub Pages.
@@ -34,6 +35,7 @@ last_updated: 2026-06-22
 **Consequences:** Jekyll is locked to 3.x (GitHub Pages does not support Jekyll 4). No server-side logic; everything is static. Deploy is automatic on push to `main`.
 
 ### Adopt USWDS 3 as the design system
+
 **Date:** 2024-04-16
 **Status:** Active
 **Decision:** Use the U.S. Web Design System v3, compiled with the @uswds/compile gulp toolchain, as the styling foundation.
@@ -42,6 +44,7 @@ last_updated: 2026-06-22
 **Consequences:** Styling is extended through `sass/custom/` and USWDS theme settings, not a competing framework. USWDS v2 patterns do not apply. A Sass→CSS build step (gulp) is now required.
 
 ### Build a gulp pipeline for responsive images and CSS cache-busting
+
 **Date:** 2025-07-07
 **Status:** Active
 **Decision:** Process source images in `_images/` into multiple responsive sizes and content-hash compiled CSS, all via `gulpfile.js`, fronted by the `responsive-image.html` include.
@@ -50,6 +53,7 @@ last_updated: 2026-06-22
 **Consequences:** Authors must add originals to `_images/` and use the include; `assets/` and `_data/css-manifest.json` are generated artifacts. CI enforces that committed `assets/` match a fresh `gulp compile`.
 
 ### Lint/format with Prettier + the Shopify Liquid plugin
+
 **Date:** 2025 (see git history)
 **Status:** Active
 **Decision:** Use Prettier with the @shopify/prettier-plugin-liquid plugin as the sole formatter, enforced in CI.

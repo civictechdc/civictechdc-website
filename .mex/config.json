@@ -1,5 +1,3 @@
 {
-  "aiTools": [
-    "claude"
-  ]
+  "aiTools": ["claude"]
 }

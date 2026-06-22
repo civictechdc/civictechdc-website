@@ -1,14 +1,15 @@
 ---
 layout: default
 ---
-
 <h1 class="margin-bottom-1">Project: {{ page.title }}</h1>
 <ul class="margin-top-0 padding-left-0 font-heading-med">
   {% if page.github_link %}
     <li style="display: inline">
-      <a style="white-space: nowrap"
-         href="{{ page.github_link }}"
-         target="_blank">
+      <a
+        style="white-space: nowrap"
+        href="{{ page.github_link }}"
+        target="_blank"
+      >
         <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
           <use xlink:href="/assets/img/sprite.svg#code"></use>
         </svg>
@@ -19,9 +20,11 @@ layout: default
   {% endif %}
   {% if page.slack_channel %}
     <li style="display: inline">
-      <a style="white-space: nowrap"
-         href="https://slack.com/app_redirect?channel={{ page.slack_channel }}"
-         target="_blank">
+      <a
+        style="white-space: nowrap"
+        href="https://slack.com/app_redirect?channel={{ page.slack_channel }}"
+        target="_blank"
+      >
         <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
           <use xlink:href="/assets/img/sprite.svg#forum"></use>
         </svg>
@@ -30,5 +33,8 @@ layout: default
     </li>
   {% endif %}
 </ul>
-{% include responsive-image.html src=page.image alt=page.image_alt_text class="maxh-mobile" %}
+{%
+  include responsive-image.html src=page.image alt=page.image_alt_text
+  class="maxh-mobile"
+%}
 <p>{{ page.content }}</p>

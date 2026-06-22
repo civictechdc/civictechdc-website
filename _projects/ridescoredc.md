@@ -28,6 +28,7 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
       <li>Identifies high impact opportunities for infrastructure improvements</li>
       <li>Supports Vision Zero DC’s goal of eliminating traffic deaths</li>
     </ul>
+
   </div>
 </section>
 

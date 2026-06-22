@@ -28,6 +28,7 @@ If you're contributing to the Civic Tech DC website, familiarizing yourself with
 ### Modifying the Design System
 
 To make changes to the design system:
+
 1. Update USWDS theme variables in `sass/theme/_uswds-theme.scss`.
 2. Add custom SCSS styles in `sass/custom/styles.scss`.
 3. Document any new or modified components in this style guide.

@@ -11,6 +11,7 @@ This scaffold is currently empty. Follow the steps below to populate it for your
 ```
 
 The script handles everything automatically:
+
 1. Detects your project state (existing codebase, fresh project, or partial)
 2. Asks which AI tool you use and copies the right config file
 3. Pre-scans your codebase with `mex init` to build a structured brief (~5-8k tokens vs ~50k from AI exploration)
@@ -214,6 +215,7 @@ in any scaffold file.
 "Read `.mex/ROUTER.md` and tell me what you now know about this project."
 
 A well-populated scaffold should give the agent enough to:
+
 - Describe the architecture without looking at code
 - Name the non-negotiable conventions
 - Know which files to load for any given task type

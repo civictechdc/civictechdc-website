@@ -21,10 +21,10 @@ Lookup table for all pattern files in this directory. Check here before starting
      Keep this table sorted alphabetically. One row per task (not per file).
      If you create a new pattern, add it here. If you delete one, remove it. -->
 
-| Pattern | Use when |
-|---------|----------|
-| [add-content.md#task-add-a-project](add-content.md#task-add-a-project) | Adding a new project to the `_projects` collection |
-| [add-content.md#task-add-a-special-event](add-content.md#task-add-a-special-event) | Adding a new event to the `_events` collection |
-| [add-content.md#task-add-a-blog-post](add-content.md#task-add-a-blog-post) | Adding a new blog post under `_posts` |
-| [responsive-images.md](responsive-images.md) | Adding or referencing any image (responsive variants, lazy-loading) |
-| [styling-css.md](styling-css.md) | Changing styles via USWDS/Sass, page-specific CSS, or the gulp build |
+| Pattern                                                                            | Use when                                                             |
+| ---------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [add-content.md#task-add-a-project](add-content.md#task-add-a-project)             | Adding a new project to the `_projects` collection                   |
+| [add-content.md#task-add-a-special-event](add-content.md#task-add-a-special-event) | Adding a new event to the `_events` collection                       |
+| [add-content.md#task-add-a-blog-post](add-content.md#task-add-a-blog-post)         | Adding a new blog post under `_posts`                                |
+| [responsive-images.md](responsive-images.md)                                       | Adding or referencing any image (responsive variants, lazy-loading)  |
+| [styling-css.md](styling-css.md)                                                   | Changing styles via USWDS/Sass, page-specific CSS, or the gulp build |

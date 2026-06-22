@@ -87,7 +87,7 @@ description: A platform that turns federal regulations and public comments into 
         <li><strong>Community Engagement</strong> Partnering with civic tech volunteers, government staff, and researchers to ground-truth tools and workflow.</li>
     </ul>
   </div>
-</section> 
+</section>
 
 <section class="usa-section padding-y-4">
   <div class="grid-container">

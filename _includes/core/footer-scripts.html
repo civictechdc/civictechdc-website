@@ -14,7 +14,7 @@
   });
 </script>
 
-{% comment %} Per-page scripts: add `page_scripts: [foo.js]` to a page's front matter {% endcomment %}
-{% for script in page.page_scripts %}
+{% comment %} Per-page scripts: add `page_scripts: [foo.js]` to a page's front
+matter {% endcomment %} {% for script in page.page_scripts %}
 <script src="{{ site.baseurl }}/assets/js/{{ script }}"></script>
 {% endfor %}

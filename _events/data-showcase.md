@@ -21,6 +21,7 @@ description: |
             On Wednesday, March 26th, we're inviting local data practitioners, data journalists, and university students to give 10-minute lightning talks on how they've used Open Data DC or other publicly available datasets to solve city problems, tell compelling stories, or build helpful tools.
         </p>
     </div>
+
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; height: auto; margin: 20px 0;">

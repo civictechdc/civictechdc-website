@@ -42,12 +42,12 @@ You can use these colors in custom SCSS using USWDS color functions:
 ```scss
 // Background color
 .my-custom-element {
-  background-color: color('primary');
+  background-color: color("primary");
 }
 
 // Text color
 .my-custom-text {
-  color: color('accent-warm');
+  color: color("accent-warm");
 }
 ```
 
@@ -56,11 +56,7 @@ You can use these colors in custom SCSS using USWDS color functions:
 Alternatively, use USWDS utility classes directly in your HTML:
 
 ```html
-<div class="bg-primary text-white padding-2">
-  Primary Background
-</div>
+<div class="bg-primary text-white padding-2">Primary Background</div>
 
-<div class="text-primary text-bold">
-  Primary Text
-</div>
+<div class="text-primary text-bold">Primary Text</div>
 ```

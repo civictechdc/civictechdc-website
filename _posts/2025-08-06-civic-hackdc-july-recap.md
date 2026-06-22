@@ -7,9 +7,18 @@ page_css: /assets/css/hack2025.css
 categories: [Events, Community]
 redirect_from:
   - /events/community/2025/08/06/civic-hackdc-july-recap.html
-tags: [civic hackdc, hackathon, open data, regulatory tech, volunteer, data for good]
+tags:
+  [
+    civic hackdc,
+    hackathon,
+    open data,
+    regulatory tech,
+    volunteer,
+    data for good,
+  ]
 excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public feedback and strengthen our democracy. Here's what we built, what we learned, and what's next."
 ---
+
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
 <div class="pa-gallery-player-widget padding-bottom-4" style="width:100%; height:480px; display:none;"
   data-link="https://photos.google.com/share/AF1QipNu_JtIDljh0AlA8c5s_B6UjIoF9tfhJ7lGd-U35iKTQF-JdTNuysfFM1agZBkmpg?key=czNoTDF5VlJBUTF1MU5MOVFnZ2ZWMG85dER6X193"
@@ -592,4 +601,4 @@ Sustainable civic tech is infrastructure: it takes maintenance, documentation, a
 
 ---
 
-_For more information about Civic Hack DC 2025, to access the code, or to get involved in Part 2, visit our [GitHub repository](https://github.com/civictechdc/hackdc2025) or contact us at [team@civictechdc.org](mailto:team@civictechdc.org)._  
+_For more information about Civic Hack DC 2025, to access the code, or to get involved in Part 2, visit our [GitHub repository](https://github.com/civictechdc/hackdc2025) or contact us at [team@civictechdc.org](mailto:team@civictechdc.org)._

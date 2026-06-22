@@ -11,6 +11,7 @@ This folder contains task-specific guidance — the things you would tell your a
 ## What belongs here
 
 A pattern file is worth creating when:
+
 - A task type is common in this project and has a repeatable workflow
 - There are integration gotchas between components that aren't obvious from code
 - Something broke and you want to prevent it from breaking the same way again
@@ -19,6 +20,7 @@ A pattern file is worth creating when:
 ## When to skip a pattern
 
 Default to generating a pattern. Only skip if:
+
 - The exact same guidance is already in `context/conventions.md` with concrete examples
 - The task truly has no project-specific gotchas (e.g. "how to write a for loop")
 
@@ -43,21 +45,27 @@ last_updated: [YYYY-MM-DD]
 # [Pattern Name]
 
 ## Context
+
 [What to load or know before starting this task type]
 
 ## Steps
+
 [The workflow — what to do, in what order]
 
 ## Gotchas
+
 [The things that go wrong. What to watch out for.]
 
 ## Verify
+
 [Checklist to run after completing this task type]
 
 ## Debug
+
 [What to check when this task type breaks]
 
 ## Update Scaffold
+
 - [ ] Update `.mex/ROUTER.md` "Current Project State" if what's working/not built has changed
 - [ ] Update any `.mex/context/` files that are now out of date
 - [ ] If this is a new task type without a pattern, create one in `.mex/patterns/` and add to `INDEX.md`
@@ -83,25 +91,31 @@ last_updated: [YYYY-MM-DD]
 # [Pattern Name]
 
 ## Context
+
 [Shared context for all tasks in this file]
 
 ## Task: [First Task Name]
 
 ### Steps
+
 [...]
 
 ### Gotchas
+
 [...]
 
 ### Verify
+
 [...]
 
 ## Task: [Second Task Name]
 
 ### Steps
+
 [...]
 
 ## Update Scaffold
+
 - [ ] Update `.mex/ROUTER.md` "Current Project State" if what's working/not built has changed
 - [ ] Update any `.mex/context/` files that are now out of date
 - [ ] If this is a new task type without a pattern, create one in `.mex/patterns/` and add to `INDEX.md`
@@ -113,6 +127,7 @@ Only group tasks that genuinely share context.
 ## How many patterns to generate
 
 Do not use a fixed number. Generate one pattern per:
+
 - Each major task type a developer does repeatedly in this project
 - Each external dependency with non-obvious integration gotchas
 - Each major failure boundary in the architecture flow
@@ -133,6 +148,7 @@ Derive from: `context/architecture.md` (what are the major components?) and
 `context/conventions.md` (what patterns exist for extending them?)
 
 Examples by project type:
+
 - API: "add new endpoint", "add new model/entity", "add auth to a route"
 - Frontend: "add new page/route", "add new component", "add form with validation"
 - CLI: "add new command", "add new flag/option"

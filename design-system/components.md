@@ -62,7 +62,10 @@ Cards are used to group related information. We have several custom card templat
       <h3 class="usa-card__heading">Card Heading</h3>
     </div>
     <div class="usa-card__body">
-      <p>This is the content of the card. It provides a brief summary of the topic.</p>
+      <p>
+        This is the content of the card. It provides a brief summary of the
+        topic.
+      </p>
     </div>
     <div class="usa-card__footer">
       <a href="#" class="usa-button">Read more</a>
@@ -125,12 +128,10 @@ Alerts provide important feedback or information to the user.
 
 Project cards are used to showcase Civic Tech DC projects (like ANC Finder). Include it by passing a `project` object. It displays an image, title, and description.
 
-<div class="grid-row margin-bottom-4">
-  <div class="desktop:grid-col-6">
-    {% assign sample_project = site.projects.first %}
-    {% include components/project-card.html project=sample_project %}
-  </div>
-</div>
+<ul class="usa-card-group margin-bottom-4">
+  {% assign sample_project = site.projects.first %}
+  {% include components/project-card.html project=sample_project %}
+</ul>
 
 ```liquid
 {% raw %}
@@ -151,5 +152,69 @@ The latest blog post component is used to highlight recent news. It automaticall
 ```liquid
 {% raw %}
 {% include components/latest-blog-post.html %}
+{% endraw %}
+```
+
+### Generic Card
+
+The generic card component is a flexible template used to display structured information. It accepts a custom class, header, body, and an optional image. It must be wrapped inside a `usa-card-group` element.
+
+<ul class="usa-card-group margin-bottom-4">
+  {% include components/card.html 
+     class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4" 
+     header="Custom Card Title" 
+     body="This is the card body text where you can describe any project or information."
+  %}
+</ul>
+
+```liquid
+{% raw %}
+{% include components/card.html
+   class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4"
+   header="Custom Card Title"
+   body="This is the card body text where you can describe any project or information."
+%}
+{% endraw %}
+```
+
+### Positions List
+
+The positions list component automatically retrieves and displays active volunteer listings defined inside our projects. It accepts an optional `limit` parameter to cap the number of items shown.
+
+<div class="margin-bottom-4">
+  {% include components/positions-list.html limit=3 %}
+</div>
+
+```liquid
+{% raw %}
+{% include components/positions-list.html limit=3 %}
+{% endraw %}
+```
+
+### Supporters Section
+
+This component displays the logos and names of Civic Tech DC sponsors and supporting organizations.
+
+<div class="margin-bottom-4">
+  {% include components/supporters.html %}
+</div>
+
+```liquid
+{% raw %}
+{% include components/supporters.html %}
+{% endraw %}
+```
+
+### Community Partners Section
+
+This component displays the logos and names of partner organizations Civic Tech DC collaborates with.
+
+<div class="margin-bottom-4">
+  {% include components/community-partners.html %}
+</div>
+
+```liquid
+{% raw %}
+{% include components/community-partners.html %}
 {% endraw %}
 ```

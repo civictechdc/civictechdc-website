@@ -14,9 +14,11 @@ hero-image-alt: Civic Tech DC volunteers collaborating on laptops around tables 
 We're always incubating new projects and iterating on existing ones! Here are the projects we're currently supporting:
 
 ### Active Projects
+
 {% include components/project-cards.html is_active=true %}
 
 ### Past Projects
+
 {% include components/project-cards.html is_active=false %}
 
 {% comment %}

@@ -57,4 +57,4 @@ We're excited to share this journey with you and look forward to highlighting th
 
 ---
 
-*Have a story to share or an idea for a blog post? We'd love to hear from you! Connect with us on Slack or at one of our events.*
+_Have a story to share or an idea for a blog post? We'd love to hear from you! Connect with us on Slack or at one of our events._

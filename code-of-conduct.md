@@ -55,8 +55,9 @@ Please be aware that in order to grow and promote our organization, for general 
 ### Making a Report
 
 If you are unable to resolve the issue, or are uncomfortable doing so, you should contact a Captain, either in person or electronically. There are two ways to make a report electronically:
-* Email the leadership team at <team@civictechdc.org>
-* Use [this form](https://docs.google.com/forms/d/e/1FAIpQLSeyyeiA7P6FgegxwRFaHmBHmgZyZktja79cY9Dvo7PGyJOpEA/viewform?usp=header) to submit a report anonymously.
+
+- Email the leadership team at <team@civictechdc.org>
+- Use [this form](https://docs.google.com/forms/d/e/1FAIpQLSeyyeiA7P6FgegxwRFaHmBHmgZyZktja79cY9Dvo7PGyJOpEA/viewform?usp=header) to submit a report anonymously.
 
 Captains agree to keep information shared in association with a Code of Conduct violation private, and may reveal it only with the approval of the affected person(s).
 
