@@ -1,6 +1,7 @@
 {
   "scripts": {
     "lint": "prettier . --write",
+    "dev": "npm run serve",
     "serve": "gulp & bundle exec jekyll serve --host 0.0.0.0 --livereload",
     "build": "gulp compile"
   },

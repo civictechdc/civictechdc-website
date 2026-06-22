@@ -1,6 +1,7 @@
 // Ignore build files
 _site/
 assets/css/
+_data/css-manifest.json
 
 // Ignore minified js/css/etc bundles
 assets/js/*.min.js
@@ -14,3 +15,8 @@ assets/js/uswds*
 
 // Ignore dependencies
 node_modules/
+
+# Ignore files with liquid syntax errors in prettier html parser
+_includes/components/project-card.html
+_includes/core/header.html
+
