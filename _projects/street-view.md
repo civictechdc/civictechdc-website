@@ -1,6 +1,6 @@
 ---
 layout: project
-is_active: true
+is_active: false
 title: StreetView
 image: project_thumbnails/street-view.jpg
 image_alt_text: View out the windshield of a car on a dirty road overlooking a sprawling beige city. Visible is a Red Cross symbol on the car hood and a dash camera mounted to the windshield.

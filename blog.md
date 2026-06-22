@@ -153,7 +153,7 @@ permalink: /blog/
             </p>
             <div style="display: inline-flex; align-items: center;">
             <a
-            href="https://join.slack.com/t/civictechdc/shared_invite/zt-328ykmsgh-FAH~~3KrJ2JtdZ7BXVYl5w"
+            href="https://join.slack.com/t/civictechdc/shared_invite/zt-3o4t7g0ch-xy3JOE91ZQdaNXra~1j2HQ"
             target="_blank"
             id="submitrequest"
             type="submit"

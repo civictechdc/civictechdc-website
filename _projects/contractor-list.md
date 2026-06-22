@@ -1,6 +1,6 @@
 ---
 layout: project
-is_active: true
+is_active: false
 title: Electrify DMV
 image: project_thumbnails/electrify-dc.png
 image_alt_text: Logo for the nonprofit ElectrifyDC
