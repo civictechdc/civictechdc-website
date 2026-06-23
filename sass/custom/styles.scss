@@ -121,16 +121,16 @@ body {
 
   /* Navigation Links on Desktop */
   .usa-nav__link {
-    color: rgba(255, 255, 255, 0.8) !important;
-    font-size: 0.95rem !important;
-    font-weight: 600 !important;
-    background-color: transparent !important;
-    padding: 0.5rem 0.75rem !important;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: transparent;
+    padding: 0.5rem 0.75rem;
     position: relative;
-    transition: color 0.25s ease, transform 0.25s ease !important;
+    transition: color 0.25s ease, transform 0.25s ease;
 
     &:hover {
-      color: var(--ctdc-gold) !important;
+      color: var(--ctdc-gold);
       transform: translateY(-1px);
     }
 
@@ -178,7 +178,7 @@ body {
   /* Active State (Gold line thread) */
   .usa-nav__link[aria-current="page"],
   .usa-nav__link[aria-current] {
-    color: var(--ctdc-gold) !important;
+    color: var(--ctdc-gold);
 
     @media only screen and (min-width: 1024px) {
       &::after {
@@ -460,6 +460,14 @@ body {
 .blog-tag-cloud .usa-tag {
   font-size: 0.75rem;
   display: inline-block;
+}
+
+/* Reset the sidebar's left padding once it stacks below the main column
+   on narrow viewports (USWDS tablet breakpoint = 640px). */
+@media only screen and (max-width: 639px) {
+  .blog-sidebar {
+    padding-left: 0;
+  }
 }
 
 /* ==========================================================================
@@ -1047,6 +1055,16 @@ pre code {
   line-height: 1.65;
   color: var(--ctdc-text-muted);
   margin-bottom: 1.5rem;
+}
+
+/* Centered variant: keep the gold underline aligned under centered
+   headings (e.g. team-section headings on /about). */
+.ctdc-content-area > h2.text-center,
+.ctdc-section-heading.text-center {
+  &::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 /* ==========================================================================
