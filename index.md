@@ -27,6 +27,8 @@ We're always incubating new projects and iterating on existing ones! Here are th
 
 </div>
 
+{% include components/pitch-cta.html %}
+
 {% comment %}
 
 ## Help wanted
