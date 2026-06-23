@@ -115,10 +115,10 @@ Making this data easier to clean, compare, and analyze across jurisdictions and 
 <section class="usa-section padding-y-4">
   <div class="grid-container">
     <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C07HS3V6AAF" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://civictechdc.slack.com/archives/C07HS3V6AAF" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         💬 Slack (#eavs_clc)
       </a>
-      <a href="https://github.com/civictechdc/eavs_clc" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/civictechdc/eavs_clc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
       </a>
     </div>

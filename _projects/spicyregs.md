@@ -92,10 +92,10 @@ description: A platform that turns federal regulations and public comments into 
 <section class="usa-section padding-y-4">
   <div class="grid-container">
     <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         💬 Slack (#spicyreg)
       </a>
-      <a href="https://github.com/civictechdc/hackdc2025" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/civictechdc/hackdc2025" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
       </a>
     </div>

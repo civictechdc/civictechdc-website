@@ -105,10 +105,10 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
 <section class="usa-section padding-y-4">
   <div class="grid-container">
     <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         💬 Slack (#ride-score-dc)
       </a>
-      <a href="https://github.com/civictechdc/ridescoredc" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/civictechdc/ridescoredc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
       </a>
     </div>

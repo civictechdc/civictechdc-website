@@ -1,8 +1,9 @@
 ---
 layout: default
 ---
-<a href="/special-events"><h1>Events</h1></a>
-
-<h2 style="font-size: 2.5em; margin-bottom: 0.5em">{{ page.title }}</h2>
+<p class="margin-top-0 margin-bottom-2">
+  <a href="{{ '/special-events' | relative_url }}" class="usa-link">← All Events</a>
+</p>
+<h1 class="font-heading-2xl margin-top-0 margin-bottom-3">{{ page.title }}</h1>
 
 <div class="usa-prose">{{ content }}</div>

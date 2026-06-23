@@ -85,13 +85,13 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
 <section class="usa-section padding-y-4">
   <div class="grid-container">
     <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C081LHG72FK" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://civictechdc.slack.com/archives/C081LHG72FK" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         💬 Slack (#ext-electrify-dc)
       </a>
-      <a href="https://github.com/civictechdc/repower-dmv/" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/civictechdc/repower-dmv/" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
       </a>
-      <a href="https://electrifydmv.org" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://electrifydmv.org" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         🌐 Project Website
       </a>
     </div>

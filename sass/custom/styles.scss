@@ -1,3 +1,20 @@
+:root {
+  --ctdc-navy: #0b1a30;
+  --ctdc-navy-deep: #061121;
+  --ctdc-brand-blue: #104378;
+  --ctdc-gold: #eec05e;
+  --ctdc-text-dark: #1e293b;
+  --ctdc-text-muted: #4a5568;
+  --ctdc-border-light: #e2e8f0;
+  --ctdc-bg-light: #f4f6f9;
+  --ctdc-button-dark: #253551;
+
+  /* RGB channels for alpha color variants */
+  --ctdc-navy-rgb: 11 26 48;
+  --ctdc-brand-blue-rgb: 16 67 120;
+  --ctdc-gold-rgb: 238 192 94;
+}
+
 html,
 body {
   height: 100%;
@@ -67,7 +84,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(11, 26, 48, 0.95);
+    background: rgb(var(--ctdc-navy-rgb) / 0.95);
     backdrop-filter: blur(12px) saturate(160%);
     -webkit-backdrop-filter: blur(12px) saturate(160%);
     z-index: -1;
@@ -113,7 +130,7 @@ body {
     transition: color 0.25s ease, transform 0.25s ease !important;
 
     &:hover {
-      color: #eec05e !important;
+      color: var(--ctdc-gold) !important;
       transform: translateY(-1px);
     }
 
@@ -126,7 +143,7 @@ body {
         left: 0.75rem;
         right: 0.75rem;
         height: 2px;
-        background-color: #eec05e;
+        background-color: var(--ctdc-gold);
         border-radius: 2px;
         transform: scaleX(0);
         transform-origin: center;
@@ -153,7 +170,7 @@ body {
 
       &[aria-expanded="true"] {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23eec05e'%3E%3Cpath d='M7 14l5-5 5 5z'/%3E%3C/svg%3E") !important;
-        color: #eec05e !important;
+        color: var(--ctdc-gold) !important;
       }
     }
   }
@@ -161,7 +178,7 @@ body {
   /* Active State (Gold line thread) */
   .usa-nav__link[aria-current="page"],
   .usa-nav__link[aria-current] {
-    color: #eec05e !important;
+    color: var(--ctdc-gold) !important;
 
     @media only screen and (min-width: 1024px) {
       &::after {
@@ -182,7 +199,7 @@ body {
 
     /* Desktop dropdown submenus */
     .usa-nav__submenu {
-      background-color: rgba(11, 26, 48, 0.98) !important;
+      background-color: rgb(var(--ctdc-navy-rgb) / 0.98) !important;
       backdrop-filter: blur(16px) saturate(160%);
       -webkit-backdrop-filter: blur(16px) saturate(160%);
       border: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -204,13 +221,13 @@ body {
           display: block;
 
           &:hover {
-            color: #eec05e !important;
+            color: var(--ctdc-gold) !important;
             background-color: rgba(255, 255, 255, 0.05) !important;
             padding-left: 1.5rem !important; /* Slide-in effect */
           }
 
           &[aria-current="page"] {
-            color: #eec05e !important;
+            color: var(--ctdc-gold) !important;
             font-weight: 600 !important;
           }
         }
@@ -246,7 +263,7 @@ body {
 
     /* Drawer backdrop overlays */
     .usa-nav {
-      background-color: #0b1a30 !important;
+      background-color: var(--ctdc-navy) !important;
       box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3) !important;
       padding: 1.5rem !important;
 
@@ -293,7 +310,7 @@ body {
 
       /* Submenu drawer matching */
       .usa-nav__submenu {
-        background-color: #061121 !important;
+        background-color: var(--ctdc-navy-deep) !important;
         border-radius: 8px;
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
@@ -305,7 +322,7 @@ body {
         font-weight: 500 !important;
         
         &:hover {
-          color: #eec05e !important;
+          color: var(--ctdc-gold) !important;
           background: transparent !important;
         }
       }
@@ -357,12 +374,7 @@ body {
   width: 100%;
   max-width: 520px;
   color: white;
-  background: rgba(
-    16,
-    67,
-    120,
-    0.65
-  ); /* Modern glassmorphism with primary brand blue */
+  background: rgb(var(--ctdc-brand-blue-rgb) / 0.65); /* Modern glassmorphism with primary brand blue */
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -455,13 +467,13 @@ body {
    ========================================================================== */
 
 .ctdc-footer {
-  background: linear-gradient(180deg, #0b1a30 0%, #061121 100%);
+  background: linear-gradient(180deg, var(--ctdc-navy) 0%, var(--ctdc-navy-deep) 100%);
   color: rgba(255, 255, 255, 0.7);
   padding: 4.5rem 0 3rem 0;
   font-family:
     "Source Sans Pro Web", "Helvetica Neue", Helvetica, Roboto, Arial,
     sans-serif;
-  border-top: 3px solid #eec05e; /* Warm gold accent line at the very top */
+  border-top: 3px solid var(--ctdc-gold); /* Warm gold accent line at the very top */
   position: relative;
   overflow: hidden;
 
@@ -475,7 +487,7 @@ body {
     bottom: 0;
     background: radial-gradient(
       circle at 80% 20%,
-      rgba(16, 67, 120, 0.15) 0%,
+      rgb(var(--ctdc-brand-blue-rgb) / 0.15) 0%,
       transparent 50%
     );
     pointer-events: none;
@@ -594,7 +606,7 @@ body {
       bottom: 0;
       width: 2rem;
       height: 2px;
-      background-color: #eec05e; /* Warm gold accent underline */
+      background-color: var(--ctdc-gold); /* Warm gold accent underline */
     }
   }
 
@@ -626,9 +638,9 @@ body {
 
     &:hover {
       color: #ffffff;
-      background: #104378; /* Brand blue background */
+      background: var(--ctdc-brand-blue); /* Brand blue background */
       transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(16, 67, 120, 0.3);
+      box-shadow: 0 4px 12px rgb(var(--ctdc-brand-blue-rgb) / 0.3);
     }
   }
 
@@ -659,7 +671,7 @@ body {
       padding: 0.15rem 0;
 
       &:hover {
-        color: #eec05e; /* Warm gold color on hover */
+        color: var(--ctdc-gold); /* Warm gold color on hover */
         transform: translateX(4px); /* micro-animation */
       }
     }
@@ -744,7 +756,7 @@ body {
 
 pre {
   background-color: #f8f9fa;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--ctdc-border-light);
   border-radius: 6px;
   padding: 1.25rem;
   overflow-x: auto; /* Enable horizontal scrolling */
@@ -759,7 +771,7 @@ code {
   font-family: "Source Code Pro", Consolas, Monaco, monospace;
   font-size: 0.85em;
   background-color: #f1f5f9;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--ctdc-border-light);
   border-radius: 4px;
   padding: 0.15rem 0.35rem;
   color: #0f172a;
@@ -773,7 +785,7 @@ pre code {
   border: none;
   border-radius: 0;
   padding: 0;
-  color: #1e293b;
+  color: var(--ctdc-text-dark);
   display: block;
   white-space: pre;
   word-break: normal;
@@ -800,7 +812,7 @@ pre code {
 
 /* Maintain .usa-card--clean for compatibility if referenced in markdown */
 .usa-card--clean .usa-card__container {
-  border-color: #e2e8f0;
+  border-color: var(--ctdc-border-light);
 }
 
 .usa-card--clean:hover .usa-card__container {
@@ -840,7 +852,7 @@ pre code {
 
 .ctdc-logo-section {
   padding: 3rem 0 2.5rem;
-  background: #f4f6f9; /* Refined off-white, not flat USWDS gray */
+  background: var(--ctdc-bg-light); /* Refined off-white, not flat USWDS gray */
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 
   &--partners {
@@ -869,7 +881,7 @@ pre code {
 .ctdc-logo-section__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0b1a30;
+  color: var(--ctdc-navy);
   margin: 0 0 0.5rem 0;
   letter-spacing: -0.01em;
   position: relative;
@@ -882,14 +894,14 @@ pre code {
     bottom: 0;
     width: 2.5rem;
     height: 3px;
-    background: #eec05e;
+    background: var(--ctdc-gold);
     border-radius: 2px;
   }
 }
 
 .ctdc-logo-section__desc {
   font-size: 1rem;
-  color: #4a5568;
+  color: var(--ctdc-text-muted);
   margin: 0;
   margin-top: 0.75rem;
   line-height: 1.6;
@@ -946,7 +958,7 @@ pre code {
 
   /* Text labels beside/below logos */
   .ctdc-logo-card__text {
-    color: #1e293b;
+    color: var(--ctdc-text-dark);
     font-size: 0.85rem;
     line-height: 1.35;
     transition: color 0.3s ease;
@@ -960,14 +972,14 @@ pre code {
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    border-color: rgba(238, 192, 94, 0.55);
+    border-color: rgb(var(--ctdc-gold-rgb) / 0.55);
 
     img {
       transform: scale(1.04);
     }
 
     .ctdc-logo-card__text {
-      color: #104378;
+      color: var(--ctdc-brand-blue);
     }
   }
 }
@@ -996,7 +1008,7 @@ pre code {
 .ctdc-section-heading {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #0b1a30;
+  color: var(--ctdc-navy);
   letter-spacing: -0.01em;
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -1010,7 +1022,7 @@ pre code {
     bottom: 0;
     width: 3rem;
     height: 3px;
-    background: #eec05e;
+    background: var(--ctdc-gold);
     border-radius: 2px;
   }
 }
@@ -1023,7 +1035,7 @@ pre code {
 .ctdc-content-area > h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--ctdc-text-dark);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -1033,7 +1045,7 @@ pre code {
 .ctdc-section-desc {
   font-size: 1.05rem;
   line-height: 1.65;
-  color: #4a5568;
+  color: var(--ctdc-text-muted);
   margin-bottom: 1.5rem;
 }
 
@@ -1139,8 +1151,8 @@ pre code {
   top: -100%;
   left: 1rem;
   z-index: 9999;
-  background: #0b1a30;
-  color: #eec05e;
+  background: var(--ctdc-navy);
+  color: var(--ctdc-gold);
   padding: 0.75rem 1.5rem;
   border-radius: 0 0 8px 8px;
   font-weight: 600;
@@ -1150,8 +1162,47 @@ pre code {
 
   &:focus {
     top: 0;
-    outline: 2px solid #eec05e;
+    outline: 2px solid var(--ctdc-gold);
     outline-offset: 2px;
+  }
+}
+
+/* ==========================================================================
+   Project Page CTA Button & Link List
+   ========================================================================== */
+
+.usa-button--dark {
+  background-color: var(--ctdc-button-dark);
+  color: #ffffff;
+}
+
+.ctdc-project-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion (Accessibility)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

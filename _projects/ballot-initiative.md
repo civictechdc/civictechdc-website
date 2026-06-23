@@ -65,10 +65,10 @@ description: Building open source campaign infrastructure that any grassroots or
 <section class="usa-section padding-y-4">
   <div class="grid-container">
     <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C077YB2ES84" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://civictechdc.slack.com/archives/C077YB2ES84" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         💬 Slack (#ballot_initiative)
       </a>
-      <a href="https://github.com/Civic-Tech-Ballot-Inititiave/Ballot-Initiative" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Civic-Tech-Ballot-Inititiave/Ballot-Initiative" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
       </a>
     </div>

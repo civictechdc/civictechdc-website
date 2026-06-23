@@ -112,10 +112,10 @@ description: Automate mapping of urban vegetation from street level imagery to c
 <section class="usa-section padding-y-4">
   <div class="grid-container">
     <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C06B3AANMDH" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://civictechdc.slack.com/archives/C06B3AANMDH" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         💬 Slack (street-level-imagery)
       </a>
-      <a href="https://github.com/AmericanRedCross/street-view-green-view/" class="usa-button" style="background-color: #253551; color: #ffffff;" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/AmericanRedCross/street-view-green-view/" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         🧩 GitHub Repo
       </a>
     </div>
