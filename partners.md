@@ -3,9 +3,11 @@ layout: hero-image
 banner-hero: true
 title: Partners
 hero-title: Partners
-hero-subtitle: Civic Tech DC is a group of technologists and advocates who volunteer their skills and time to improve community conditions and local civic issues. We partner with local nonprofits, community-based organizations, and government to help them solve problems using technology.
+hero-subtitle: We partner with local nonprofits, community-based organizations, and government to help them solve problems using technology.
 hero-image: hero-image-partners.jpg
 ---
+
+{% include components/community-partners.html cta=false %}
 
 ## Become a partner
 
@@ -15,17 +17,17 @@ We're always looking for new partners! Get in touch with us to see how we can wo
   {% include components/card.html
     class="usa-card grid-col-12 tablet:grid-col-4"
     header="Organizations"
-    body="Our strongest partners historically have been local nonprofits and community-based organizations. Whether it's digitizing paper processes, building new forms, or building proofs-of-concept we're always interested in seeing how we can use technology to make an impact in our community."
+    body="Our strongest partners have been local nonprofits and community-based organizations — digitizing paper processes, building new tools, and creating proofs-of-concept for civic impact."
   %}
   {% include components/card.html
     class="usa-card grid-col-12 tablet:grid-col-4"
     header="Government"
-    body="Local government provides invaluable services and help to our community and we're interested in helping make it more effective. This might mean developing a community outreach and feedback project, building a tool for people to request a particular service, or building some other proof-of-concept for how government interacts with its constituents."
+    body="We help local government work more effectively — building community outreach tools, service request forms, and other technology that improves how government interacts with constituents."
   %}
   {% include components/card.html
     class="usa-card grid-col-12 tablet:grid-col-4"
     header="Activists and community members"
-    body="Do you have an idea of how technology could help solve a problem in your community? We're interested in hearing more! Those close to or experiencing a problem in our community likely know it best and have ideas for how it can be improved."
+    body="Have an idea for how technology could solve a problem in your community? Those closest to a problem often know it best. We want to hear from you."
   %}
 </ul>
 
@@ -35,29 +37,26 @@ We're always looking for new partners! Get in touch with us to see how we can wo
   <li class="usa-process-list__item">
     <h4 class="usa-process-list__heading">Get in touch</h4>
     <p>
-            We're always looking for new and impactful projects where we can use skills to help our community. You can get in touch by emailing us at <a href="mailto:team@civictechdc.org" target="_blank">team@civictechdc.org</a> to see if your project is a good fit with Civic Tech DC. This may be some email back-and-forth, a virtual chat, or meeting in person to hear more about the problem you're facing.
+      Email us at <a href="mailto:team@civictechdc.org">team@civictechdc.org</a> to see if your project is a good fit. This might be a quick email exchange, a virtual chat, or an in-person conversation to hear more about the problem you're facing.
     </p>
-    <a href="mailto:team@civictechdc.org" target="_blank" class="usa-button">Get in touch</a>
+    <a href="mailto:team@civictechdc.org" class="usa-button">Get in touch</a>
   </li>
   <li class="usa-process-list__item">
     <h4 class="usa-process-list__heading">Develop a project plan and milestones</h4>
     <p>
-            If your project sounds like a good fit we'll work with you to develop a loose project plan with achievable milestones. This will include a description of the problem you're solving, the technology or skills that you need to help solve it, and concrete steps that will build towards the solution.
+      If it's a good fit, we'll work with you to develop a loose project plan with achievable milestones — describing the problem, the skills needed, and concrete steps toward a solution.
     </p>
   </li>
   <li class="usa-process-list__item">
-    <h4 class="usa-process-list__heading">Attend an event and pitch your project to see who wants to help build it</h4>
+    <h4 class="usa-process-list__heading">Pitch your project at an event</h4>
     <p>
-            Attend one of our events where you can pitch your project to our members and start working on it.
+      Attend one of our events, pitch your project to our members, and start building.
     </p>
   </li>
   <li class="usa-process-list__item">
-    <h4 class="usa-process-list__heading">Continue attending events periodically to keep the work moving and on-track</h4>
+    <h4 class="usa-process-list__heading">Keep the momentum going</h4>
     <p>
-            You don't need to attend every one of our events but successful projects do require consistency. Some of our members may be interested in helping you lead the project in which case they show up to events and work on the project while coordinating with you so that you can attend less frequently.
-    </p>
-    <p>
-            Some projects also organize additional working sessions independent of Civic Tech DC events to make even faster and more focused progress.
+      You don't need to attend every event, but successful projects require consistency. Some members may step up to help lead the project — coordinating with you so you can attend less frequently. Many projects also organize independent working sessions to move faster.
     </p>
   </li>
 </ol>
