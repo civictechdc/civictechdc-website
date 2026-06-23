@@ -9,8 +9,6 @@ permalink: /support/
 redirect_from: /donate/
 ---
 
-{% include components/supporters.html %}
-
 ## Donate
 
 Your donation funds our events, project nights, and the costs of keeping this community free and open to everyone.
@@ -29,8 +27,4 @@ Civic Tech DC is a registered 501(c)(3) nonprofit. All donations are tax-deducti
   <p class="ctdc-donate-cta__note">Contributions of any size are welcome.</p>
 </div>
 
-## For organizations
-
-Organizations can support Civic Tech DC financially or in-kind — past supporters have provided event space, food, and compute resources. Sponsors are recognized on our website, at events, and across our community channels.
-
-<a href="mailto:team@civictechdc.org" class="usa-button">Get in touch</a>
+{% include components/supporters.html %}

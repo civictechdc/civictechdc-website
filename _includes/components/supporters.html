@@ -86,5 +86,24 @@
         </a>
       </div>
     </div>
+
+    <!-- Closing invitation: the wall's second job is recruitment.
+         Suppressed with cta=false (e.g. in the shared supporters-footer layout,
+         where community-partners already carries the CTA). -->
+    {% unless include.cta == false %}
+    <div class="ctdc-logo-cta">
+      <p class="ctdc-logo-cta__text">
+        Civic Tech DC runs on organizations like these — through funding, event
+        space, food, and compute. If your company or foundation wants to back
+        free and open civic tech, we'd love to talk. Supporters are recognized
+        on our website, at events, and across our community channels.
+      </p>
+      <div class="ctdc-logo-cta__actions">
+        <a href="mailto:team@civictechdc.org" class="usa-button"
+          >Become a supporter</a
+        >
+      </div>
+    </div>
+    {% endunless %}
   </div>
 </section>
