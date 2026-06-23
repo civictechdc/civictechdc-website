@@ -20,6 +20,8 @@ The goal is not to create a public voting system or guarantee implementation of 
   View the Learning in Public Log →
 </a>
 
-{% include responsive-image.html src="learning-in-public-log.png" alt="Learning in Public Log preview" %}
+<div class="margin-top-2">
+  {% include responsive-image.html src="learning-in-public-log.png" alt="Learning in Public Log preview" class="width-full maxw-tablet" sizes="(min-width: 640px) 640px, 100vw" %}
+</div>
 
 ### Playbook - Coming in July 2026
