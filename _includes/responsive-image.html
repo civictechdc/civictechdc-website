@@ -8,16 +8,22 @@
 {%- assign path_parts = include.src | split: '.' -%}
 {%- assign image_ext = path_parts | last -%}
 {%- assign base_path = path_parts | pop | join: '.' -%}
-{%- if image_ext == 'svg' or image_ext == 'gif' -%}
+{%- if image_ext == 'svg' or image_ext == 'gif' or image_ext == 'webp' -%}
   {%- comment -%}
-    SVGs and
-    GIFs are not resized, so use original image
+    SVGs, GIFs, and
+    WebPs are not resized, so use original image
   {%- endcomment -%}
   <img
     src="{{ '/assets/images/' | append: include.src | relative_url }}"
     alt="{{ include.alt | escape }}"
     class="{{ include.class }}"
     style="{{ include.style }}"
+    {% if include.width %}
+      width="{{ include.width }}"
+    {% endif %}
+    {% if include.height %}
+      height="{{ include.height }}"
+    {% endif %}
     {% if include.eager %}
       fetchpriority="high"
     {% else %}
