@@ -15,11 +15,15 @@ We're always incubating new projects and iterating on existing ones! Here are th
 
 ### Active Projects
 
-{% include components/project-cards.html is_active=true %}
+{% include components/project-cards.html is_active=true columns=2 %}
+
+<div class="ctdc-archive-section" markdown="1">
 
 ### Past Projects
 
-{% include components/project-cards.html is_active=false %}
+{% include components/project-cards.html is_active=false columns=4 %}
+
+</div>
 
 {% comment %}
 

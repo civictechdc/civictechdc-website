@@ -1,11 +1,18 @@
 {% assign project = include.project | default: project %}
 {% assign card_heading = include.heading | default: 4 %}
-<li class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4">
+{% if project.is_active %}{% assign ctdc_card_modifier = "ctdc-project-card--active" %}{% else %}{% assign ctdc_card_modifier = "ctdc-project-card--past" %}{% endif %}
+{% if include.columns == 2 %}{% assign desktop_col = "desktop:grid-col-6" %}{% elsif include.columns == 4 %}{% assign desktop_col = "desktop:grid-col-3" %}{% else %}{% assign desktop_col = "desktop:grid-col-4" %}{% endif %}
+<li class="usa-card grid-col-12 tablet:grid-col-6 {{ desktop_col }} {{ ctdc_card_modifier }}">
   <div class="usa-card__container">
     <div class="usa-card__header">
-      <a href="{{ project.url }}">
-        <h{{ card_heading }} class="usa-card__heading">{{ project.title }}</h{{ card_heading }}>
-      </a>
+      {% if project.is_active %}
+        <span class="ctdc-project-badge ctdc-project-badge--active">Active</span>
+      {% else %}
+        <span class="ctdc-project-badge ctdc-project-badge--past">Past</span>
+      {% endif %}
+      <h{{ card_heading }} class="usa-card__heading">
+        <a href="{{ project.url }}">{{ project.title }}</a>
+      </h{{ card_heading }}>
     </div>
     <div class="usa-card__media">
       <div class="usa-card__img">

@@ -1,5 +1,5 @@
 <ul class="usa-card-group">
   {% for project in site.projects %} {% if project.is_active ==
   include.is_active %} {% include components/project-card.html project=project
-  heading=include.heading %} {% endif %} {% endfor %}
+  heading=include.heading columns=include.columns %} {% endif %} {% endfor %}
 </ul>
