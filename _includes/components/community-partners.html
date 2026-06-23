@@ -56,6 +56,34 @@
         </a>
       </div>
 
+      <!-- OCTO — DC Office of the Chief Technology Officer -->
+      <div class="ctdc-logo-card ctdc-logo-card--wide">
+        <a
+          href="https://octo.dc.gov/page/about-octo"
+          target="_blank"
+          rel="noopener"
+          aria-label="Office of the Chief Technology Officer (OCTO)"
+        >
+          {% include responsive-image.html src="logos/octo.png" alt="OCTO —
+          Office of the Chief Technology Officer" class="logo--lg" sizes="260px"
+          %}
+        </a>
+      </div>
+
+      <!-- Alliance of Civic Technologists -->
+      <div class="ctdc-logo-card ctdc-logo-card--wide">
+        <a
+          href="https://www.civictechnologists.org/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Alliance of Civic Technologists"
+        >
+          {% include responsive-image.html
+          src="logos/alliance-civic-technologists.png" alt="Alliance of Civic
+          Technologists" class="logo--lg" sizes="260px" %}
+        </a>
+      </div>
+
       <!-- DC Reentry Housing Alliance -->
       {% assign reentry_project = site.projects | where_exp: "p", "p.title ==
       'DC Reentry Housing Project'" | first %}
