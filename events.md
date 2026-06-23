@@ -1,8 +1,8 @@
 ---
 layout: hero-image
 title: Events
-hero-title: Special Events
-hero-subtitle: In addition to our biweekly Project Nights, Civic Tech DC hosts occasional events, roughly once a quarter, where we partner with local organizations to raise awareness about civic tech and foster community collaboration.
+hero-title: Events
+hero-subtitle: From our twice-monthly Project Nights to special events with local partners, here's what's happening at Civic Tech DC — and how to get involved.
 hero-image: hero-image-events.jpg
 page_css: /assets/css/events.css
 redirect_from:
@@ -10,57 +10,94 @@ redirect_from:
   - /special-events/
 ---
 
-<h1 class="margin-bottom-1">Events</h1>
+<h2>Recurring events</h2>
+<p>The steady rhythm of Civic Tech DC — no registration, no commitment, just show up.</p>
 
-<h2>Upcoming Events</h2>
+<div class="ctdc-recurring">
+  <p class="ctdc-recurring__eyebrow">Twice a month</p>
+  <h3 class="ctdc-recurring__title">Project Nights</h3>
+  <p class="ctdc-recurring__text">
+    We get together to work on civic-tech projects, learn from each other, and
+    share a few slices of pizza. Bring a project or jump onto one that's already
+    rolling — and if it's your first time, we'll help you find something to dig
+    into. Developers, designers, data folks, policy nerds, and the plain curious
+    are all welcome.
+  </p>
+  <dl class="ctdc-recurring__facts">
+    <div class="ctdc-recurring__fact">
+      <dt>Cadence</dt>
+      <dd>Twice a month</dd>
+    </div>
+    <div class="ctdc-recurring__fact">
+      <dt>Who</dt>
+      <dd>Everyone — no experience needed</dd>
+    </div>
+    <div class="ctdc-recurring__fact">
+      <dt>What</dt>
+      <dd>Project work, learning &amp; pizza</dd>
+    </div>
+    <div class="ctdc-recurring__fact">
+      <dt>RSVP</dt>
+      <dd>Free — see the calendar below</dd>
+    </div>
+  </dl>
+  <div class="ctdc-recurring__actions">
+    <a
+      href="https://lu.ma/civic-tech-dc"
+      target="_blank"
+      rel="noopener"
+      class="usa-button"
+      >See upcoming dates</a
+    >
+    <a href="{{ site.baseurl }}/slack" class="usa-button usa-button--outline"
+      >Join us on Slack</a
+    >
+  </div>
+</div>
+
+<h2>Special events</h2>
 {% assign upcoming_events = site.events | sort: "date" %}
 {% assign upcoming_events = upcoming_events | where_exp: "e", "e.date >= site.time" %}
 {% if upcoming_events.size == 0 %}
-<p>There are no upcoming events at this time. Check back soon for new events!</p>
+<div class="ctdc-events-empty">
+  <p class="ctdc-events-empty__title">No special events on the calendar right now.</p>
+  <p class="ctdc-events-empty__text">
+    Check the calendar below for what's coming up next, or follow us so you hear
+    about the next one first.
+  </p>
+  <a href="{{ site.baseurl }}/slack" class="usa-button">Join us on Slack</a>
+</div>
 {% else %}
-<ul class="usa-card-group">
+<ul class="usa-card-group ctdc-event-grid">
   {% for event in upcoming_events %}
-    <li class="usa-card__media-text-wrapper">
-      {% if event.url %}
-        <a class="usa-card__link" href="{{ event.url }}">
-      {% endif %}
-          {% include responsive-image.html src=event.card_image alt=event.title class="usa-card__img" %}
-          <div class="usa-card__body">
-            <h3 class="usa-card__heading">{{ event.title }}</h3>
-            <p class="event-description">{{ event.description }}</p>
-            <p>
-              {{ event.date | date: "%B %-d, %Y" }}{% if event.location %} — {{ event.location }}{% endif %}
-            </p>
-          </div>
-      {% if event.url %}
-        </a>
-      {% endif %}
-    </li>
+    {% include components/event-card.html event=event columns=2 %}
   {% endfor %}
 </ul>
 {% endif %}
 
-<h2>Past Events</h2>
-<p>A selection of exciting past events we had!</p>
-<ul class="usa-card-group past-events-grid">
+{% include components/meetup-events.html %}
+
+<h2>Past events</h2>
+<p>A look back at the special events we've hosted.</p>
+<ul class="usa-card-group ctdc-event-grid">
   {% assign past_events = site.events | sort: "date" | reverse %}
   {% assign past_events = past_events | where_exp: "e", "e.date < site.time" %}
-  {% for event in past_events limit: 3 %}
-    <li class="usa-card__media-text-wrapper">
-      {% if event.url %}
-        <a class="usa-card__link" href="{{ event.url }}">
-      {% endif %}
-          {% include responsive-image.html src=event.card_image alt=event.title class="usa-card__img" %}
-          <div class="usa-card__body">
-            <h3 class="usa-card__heading">{{ event.title }}</h3>
-            <p class="event-description">{{ event.description }}</p>
-            <p>
-              {{ event.date | date: "%B %-d, %Y" }}{% if event.location %} — {{ event.location }}{% endif %}
-            </p>
-          </div>
-      {% if event.url %}
-        </a>
-      {% endif %}
-    </li>
+  {% for event in past_events %}
+    {% include components/event-card.html event=event past=true %}
   {% endfor %}
 </ul>
+<p class="ctdc-events-archive-link">
+  <a href="https://lu.ma/civic-tech-dc?period=past" target="_blank" rel="noopener">
+    See all past events on Lu.ma
+    <svg
+      class="ctdc-icon"
+      viewBox="0 0 24 24"
+      width="16"
+      height="16"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+    </svg>
+  </a>
+</p>

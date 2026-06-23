@@ -1,0 +1,88 @@
+{% comment %} Event card for the events listing. Mirrors
+components/project-card.html. Params: - event: the event object (required) -
+past: truthy for past events (muted accent + "View recap" CTA) - columns: 2 or 3
+(default) — desktop grid width Link target: if the event has `redirect_to` (an
+external page, e.g. its Lu.ma event), the card opens that in a new tab;
+otherwise it links to the event's own on-site detail page. {% endcomment %} {%-
+assign event = include.event -%} {%- if include.past -%}{%- assign variant =
+"past" -%}{%- else -%}{%- assign variant = "upcoming" -%}{%- endif -%} {%-
+assign cols = include.columns | default: 3 -%} {%- if cols == 2 -%}{%- assign
+desktop_col = "desktop:grid-col-6" -%}{%- else -%}{%- assign desktop_col =
+"desktop:grid-col-4" -%}{%- endif -%} {%- assign event_external = false -%} {%-
+if event.redirect_to -%}{%- assign event_external = true -%}{%- endif -%} {%-
+assign event_link = event.redirect_to | default: event.url -%}
+<li
+  class="usa-card grid-col-12 tablet:grid-col-6 {{ desktop_col }} ctdc-event-card ctdc-event-card--{{ variant }}"
+>
+  <div class="usa-card__container">
+    {% if event_link %}<a
+      class="ctdc-event-card__link"
+      href="{% if event_external %}{{ event.redirect_to }}{% else %}{{ event.url | relative_url }}{% endif %}"
+      {%
+      if
+      event_external
+      %}
+      target="_blank"
+      rel="noopener"
+      {%
+      endif
+      %}
+      >{% endif %} {% if event.card_image %}
+      <div class="usa-card__media">
+        <div class="usa-card__img">
+          {% include responsive-image.html src=event.card_image alt=event.title
+          %}
+        </div>
+      </div>
+      {% endif %}
+      <div class="usa-card__header">
+        <p class="ctdc-event-card__meta">
+          <span class="ctdc-event-card__date">
+            <svg
+              class="ctdc-icon"
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"
+              />
+            </svg>
+            <time datetime="{{ event.date | date_to_xmlschema }}"
+              >{{ event.date | date: "%b %-d, %Y" }}</time
+            >
+          </span>
+          {% if event.location %}<span class="ctdc-event-card__loc"
+            >{{ event.location }}</span
+          >{% endif %}
+        </p>
+        <h3 class="usa-card__heading">{{ event.title }}</h3>
+      </div>
+      <div class="usa-card__body">
+        <p class="event-description">{{ event.description }}</p>
+      </div>
+      {% if event_link %}
+      <div class="ctdc-event-card__footer">
+        <span class="ctdc-event-card__cta"
+          >{% if event_external %}View on Lu.ma{% elsif include.past %}View
+          recap{% else %}Learn more{% endif %}
+          <svg
+            class="ctdc-icon"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+            />
+          </svg>
+        </span>
+      </div>
+      {% endif %} {% if event_link %}</a
+    >{% endif %}
+  </div>
+</li>
