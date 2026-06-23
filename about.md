@@ -10,7 +10,7 @@ hero-image-alt: Civic Tech DC members working together on laptops in an office m
 We became a 501(c)(3) nonprofit in 2022. We use open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives in the Washington, DC area.
 {:.ctdc-lead}
 
-We welcome designers, product managers, project managers, communicators, policy thinkers, researchers, and community leaders — as well as technologists — from all backgrounds, disciplines, and levels of experience. Our work supports local and national nonprofits, think tanks, local governments, and grassroots organizers across the region.
+We welcome designers, product managers, project managers, communicators, policy thinkers, researchers, and community leaders, as well as technologists, from all backgrounds, disciplines, and levels of experience. Our work supports local and national nonprofits, think tanks, local governments, and grassroots organizers across the region.
 
 ## Focus Areas
 
@@ -56,7 +56,7 @@ We gather to discuss ideas, collaborate on projects, and get things done.
   </div>
 </div>
 
-We believe in building processes — not just tools — and applying human-centered systems thinking to civic technology. Our projects aim to be adaptable, reusable across communities, and scalable for broader impact.
+We believe in building processes, not just tools, and applying human-centered systems thinking to civic technology. Our projects aim to be adaptable, reusable across communities, and scalable for broader impact.
 
 <h2 class="text-center margin-top-4 margin-bottom-2">Directors</h2>
 <p class="text-center margin-bottom-4">Our board of directors provides governance and strategic oversight for Civic Tech DC as a 501(c)(3) nonprofit.</p>

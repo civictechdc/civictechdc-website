@@ -9,14 +9,14 @@ description: A real-time water quality map that tells DC Metro residents whether
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
-    <em>WaterVoice DMV is a real-time water quality map for DC Metro waterways — so residents can see at a glance whether the Potomac, Anacostia, Four Mile Run, or Rock Creek is safe to swim, kayak, fish, or wade.</em>
+    <em>WaterVoice DMV is a real-time water quality map for DC Metro waterways, so residents can see at a glance whether the Potomac, Anacostia, Four Mile Run, or Rock Creek is safe to swim, kayak, fish, or wade.</em>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🌊 Why This Matters</h2>
-    <p>No unified tool tells residents whether their local waterways are safe to swim, kayak, or fish. Water quality data is scattered across federal agencies, county departments, and utilities — each with its own format, cadence, and reach. <strong>The result is that the people who actually use these waters have nowhere to look before they get in.</strong></p>
+    <p>No unified tool tells residents whether their local waterways are safe to swim, kayak, or fish. Water quality data is scattered across federal agencies, county departments, and utilities, each with its own format, cadence, and reach. <strong>The result is that the people who actually use these waters have nowhere to look before they get in.</strong></p>
   </div>
 </section>
 
@@ -25,11 +25,11 @@ description: A real-time water quality map that tells DC Metro residents whether
     <h2 class="font-sans-lg">🗺️ The Solution</h2>
     <p>An interactive map covering the Potomac, Anacostia, Four Mile Run, and Rock Creek that turns scattered data into a clear, activity-aware safety read.</p>
     <ul class="usa-list">
-      <li><strong>Safe / Caution / Unsafe by activity</strong> — swim, kayak, fish, and wade, since the right answer differs by how you use the water.</li>
-      <li><strong>Multi-source data</strong> — USGS, EPA, Arlington County, and Alexandria Renew, unified into one view.</li>
-      <li><strong>Post-storm alerts</strong> — flagging the runoff conditions that make waterways unsafe after rain.</li>
-      <li><strong>Water Quality Index (WQI) display</strong> — the underlying readings, not just a label.</li>
-      <li><strong>Mobile-ready</strong> — built for checking conditions at the water's edge.</li>
+      <li><strong>Safe / Caution / Unsafe by activity</strong>: swim, kayak, fish, and wade, since the right answer differs by how you use the water.</li>
+      <li><strong>Multi-source data</strong>: USGS, EPA, Arlington County, and Alexandria Renew, unified into one view.</li>
+      <li><strong>Post-storm alerts</strong>: flagging the runoff conditions that make waterways unsafe after rain.</li>
+      <li><strong>Water Quality Index (WQI) display</strong>: the underlying readings, not just a label.</li>
+      <li><strong>Mobile-ready</strong>: built for checking conditions at the water's edge.</li>
     </ul>
   </div>
 </section>
@@ -37,7 +37,7 @@ description: A real-time water quality map that tells DC Metro residents whether
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
-    <p>Focused on the DC Metro region's waterways — the Potomac, Anacostia, Four Mile Run, and Rock Creek — serving residents across the DMV.</p>
+    <p>Focused on the DC Metro region's waterways (the Potomac, Anacostia, Four Mile Run, and Rock Creek), serving residents across the DMV.</p>
   </div>
 </section>
 

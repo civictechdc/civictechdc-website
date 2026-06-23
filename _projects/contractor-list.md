@@ -19,7 +19,7 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
   <div class="grid-container">
     <h2 class="font-sans-lg">🏠 Why This Matters</h2>
     <p>
-      Buildings contribute about <strong>75%</strong> of DC's total emissions — residential buildings account for a third of that. Electrifying our homes is essential to achieving climate goals, yet many residents can't find qualified contractors who understand sustainable technology.
+      Buildings contribute about <strong>75%</strong> of DC's total emissions. Residential buildings account for a third of that. Electrifying our homes is essential to achieving climate goals, yet many residents can't find qualified contractors who understand sustainable technology.
     </p>
   </div>
 </section>

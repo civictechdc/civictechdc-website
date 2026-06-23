@@ -196,7 +196,7 @@ description: |
                     margin: 2rem auto 0;
                     text-align: left">
             <p>
-                A hackathon is a collaborative, time-limited event where participants come together to build innovative solutions — often using technology — to address a specific challenge.
+                A hackathon is a collaborative, time-limited event where participants come together to build innovative solutions, often using technology, to address a specific challenge.
             </p>
             <p>
                 This hackathon brings together subject matter experts from government, nonprofits, and academia with experienced data engineers and data scientists to improve public access and understanding of stakeholder comments informing the federal rulemaking process.
@@ -260,7 +260,7 @@ description: |
     rel="noopener noreferrer">S3 bucket on AWS through its Open Data Platform</a>, making comments easily accessible to the public for exploration and analysis. The dataset includes over 2.3 TB of data (640 GB of text) and is updated every 4 hours.
             </p>
             <p>
-                During this hackathon, we'll tackle real challenges in this data including multi-format inputs (JSON, PDFs, images, spreadsheets), low-quality OCR conversions, and complex metadata structures. The tools we build will be designed to work with any regulatory data — past, present, or future — creating lasting infrastructure for civic engagement. Professor Coleman will kick off the event with a comprehensive data tour, and we'll provide starter kits to help teams quickly begin building impactful solutions.
+                During this hackathon, we'll tackle real challenges in this data including multi-format inputs (JSON, PDFs, images, spreadsheets), low-quality OCR conversions, and complex metadata structures. The tools we build will be designed to work with any regulatory data (past, present, or future), creating lasting infrastructure for civic engagement. Professor Coleman will kick off the event with a comprehensive data tour, and we'll provide starter kits to help teams quickly begin building impactful solutions.
             </p>
         </div>
         <div style="text-align: center; margin: 2rem auto;">
@@ -290,7 +290,7 @@ description: |
     target="_blank"
     rel="noopener noreferrer"
     style="color: #0066cc;
-           text-decoration: underline">recent CMS RFI on patient-centered health technology</a> — helping agencies efficiently triage and synthesize thousands of public comments to inform policy decisions.
+           text-decoration: underline">recent CMS RFI on patient-centered health technology</a>, helping agencies efficiently triage and synthesize thousands of public comments to inform policy decisions.
                 </p>
             </div>
             <div style="margin: 2rem 0;
@@ -333,7 +333,7 @@ description: |
                     </li>
                 </ul>
                 <p style="margin-top: 1rem; font-style: italic;">
-                    Your unique perspective — whether from government, nonprofits, academia, or elsewhere — is crucial for shaping the tools we build together.
+                    Your unique perspective (whether from government, nonprofits, academia, or elsewhere) is crucial for shaping the tools we build together.
                 </p>
             </div>
             <div class="cta-buttons">
@@ -373,7 +373,7 @@ description: |
                 <div class="goal-number">4</div>
                 <h3>Build & Connect</h3>
                 <p>
-                    Bring your expertise — whether technical skills, policy knowledge, or both — and be ready to collaborate. We'll provide datasets, infrastructure, mentorship from experts, food, and drinks. This is a collaborative, not competitive, environment for meaningful impact.
+                    Bring your expertise (whether technical skills, policy knowledge, or both) and be ready to collaborate. We'll provide datasets, infrastructure, mentorship from experts, food, and drinks. This is a collaborative, not competitive, environment for meaningful impact.
                 </p>
             </div>
         </div>

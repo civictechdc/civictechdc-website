@@ -2,7 +2,7 @@
 layout: hero-image
 title: Join our Slack
 hero-title: Join our Slack
-hero-subtitle: Our Slack is where Civic Tech DC happens between events — where projects move forward, questions get answered, and new members find their footing.
+hero-subtitle: Our Slack is where Civic Tech DC happens between events. It's where projects move forward, questions get answered, and new members find their footing.
 hero-image: hero-image-slack.jpg
 ---
 

@@ -37,11 +37,11 @@ description: |
 <div style="width: 100%; max-width: 1200px; margin: auto; padding: 1rem;">
     <h1 style="font-size: 2rem; font-weight: bold; color: #f8c45c;">Schedule</h1>
     <ul style="margin-top: 1rem; padding-left: 1rem; line-height: 1.8; font-size: 1.2rem;">
-        <li>5:45 - 6:10pm  — Check in, hang out and network, grab a bite</li>
-        <li>6:10 - 6:20pm — Introduction</li>
-        <li>6:20 - 8:40pm — Lightning Talks</li>
-        <li>8:40 - 8:45pm — Closing Remarks</li>
-        <li>9–9:30pm — Optional happy hour at a nearby bar</li>
+        <li>5:45–6:10pm: Check in, hang out and network, grab a bite</li>
+        <li>6:10–6:20pm: Introduction</li>
+        <li>6:20–8:40pm: Lightning Talks</li>
+        <li>8:40–8:45pm: Closing Remarks</li>
+        <li>9–9:30pm: Optional happy hour at a nearby bar</li>
     </ul>
 </div>
 
@@ -108,7 +108,7 @@ description: |
         <h2 style="font-size: 1.5rem; font-weight: bold;">GW Data Preservation</h2>
         <img src="/assets/images/events/data_showcase/gw-data-perservation-400w.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="GW Data Preservation">
         <p style="font-size: 1rem; line-height: 1.5;">
-            Data drives decisions — but what happens when critical datasets disappear? The loss of essential data can disrupt public services, erode trust, and impact effective policymaking. In <strong>GW Data Preservation</strong>, David Lippert and Emily Blumenthal explore the challenges of data loss and the ongoing efforts from George Washington University to rescue vital datasets.
+            Data drives decisions. But what happens when critical datasets disappear? The loss of essential data can disrupt public services, erode trust, and impact effective policymaking. In <strong>GW Data Preservation</strong>, David Lippert and Emily Blumenthal explore the challenges of data loss and the ongoing efforts from George Washington University to rescue vital datasets.
         </p>
     </div>
     <div style="width: calc(50% - 20px); min-width: 300px; max-width: 500px; text-align: center; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #ddd; box-sizing: border-box;">

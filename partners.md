@@ -3,15 +3,15 @@ layout: hero-image
 banner-hero: true
 title: Partners
 hero-title: Partners
-hero-subtitle: We team up with nonprofits, community groups, government, and mission-aligned organizations — to build civic tech, co-host events, and grow the community. If your organization wants to work with us, let's talk.
+hero-subtitle: We team up with nonprofits, community groups, government, and mission-aligned organizations, to build civic tech, co-host events, and grow the community. If your organization wants to work with us, let's talk.
 hero-image: hero-image-partners.jpg
 ---
 
-{% include components/community-partners.html title="Organizations we've worked with" desc="The nonprofits, institutions, and groups we've built tools with and collaborated alongside." cta=false %}
+{% include components/community-partners.html title="Organizations we've worked with" desc="The nonprofits, institutions, and groups we've built tools with and worked alongside." cta=false %}
 
 ## Ways to partner
 
-However you want to work with us — building a tool, hosting an event, or opening a door — we'd like to hear from you.
+However you want to work with us (building a tool, hosting an event, or opening a door), we'd like to hear from you.
 
 <ul class="ctdc-partner-paths usa-list usa-list--unstyled">
   <li class="ctdc-partner-path">
@@ -24,7 +24,7 @@ However you want to work with us — building a tool, hosting an event, or openi
   <li class="ctdc-partner-path">
     <h3 class="ctdc-partner-path__title">Co-host an event</h3>
     <p class="ctdc-partner-path__body">
-      Workshops, hackathons, panels, and meetups — bringing your community
+      Workshops, hackathons, panels, and meetups that bring your community
       together with ours around civic technology.
     </p>
   </li>
@@ -48,7 +48,7 @@ However you want to work with us — building a tool, hosting an event, or openi
           <h3 class="ctdc-process__heading">Get in touch</h3>
           <p class="ctdc-process__text">
             Tell us the problem you need solved, or the solution you want built,
-            and who it's for. A quick email, a call, or a coffee — whatever's
+            and who it's for. A quick email, a call, or a coffee. Whatever's
             easiest.
           </p>
           <a href="mailto:team@civictechdc.org" class="usa-button ctdc-process__cta"
@@ -61,7 +61,7 @@ However you want to work with us — building a tool, hosting an event, or openi
         <div class="ctdc-process__content">
           <h3 class="ctdc-process__heading">Shape it together</h3>
           <p class="ctdc-process__text">
-            We turn it into a scoped plan — the problem, the skills it needs, and
+            We turn it into a scoped plan: the problem, the skills it needs, and
             clear milestones. Bringing a ready-made solution? We'll vet it and pin
             down timeline, requirements, and context.
           </p>

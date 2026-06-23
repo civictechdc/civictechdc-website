@@ -36,7 +36,7 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
   <div class="grid-container">
     <h2 class="font-sans-lg">📖 Our Story</h2>
     <p class="margin-bottom-2">
-      RideScore DC was born from a simple question: "Why isn't there a safety rating for bike routes like there is for restaurants?" After discovering that DC has rich open data on crashes, bike lanes, and street characteristics — but no integrated safety scoring system — we decided to build one.
+      RideScore DC was born from a simple question: "Why isn't there a safety rating for bike routes like there is for restaurants?" After discovering that DC has rich open data on crashes, bike lanes, and street characteristics, but no integrated safety scoring system, we decided to build one.
       <br><br>
       Inspired by proven methodologies like <a href="https://bna.peopleforbikes.org/#/" target="_blank" rel="noopener noreferrer">PeopleForBikes' Bicycle Network Analysis</a> and the Level of Traffic Stress framework, we're combining DC's excellent open data with modern data science to create actionable safety insights. Our goal is to leverage the same principles that helped cities like Minneapolis and Brooklyn dramatically improve their cycling networks.
     </p>

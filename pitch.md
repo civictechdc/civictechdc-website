@@ -3,49 +3,49 @@ layout: hero-image
 banner-hero: true
 title: Pitch
 hero-title: Pitch an idea
-hero-subtitle: Spotted a problem worth solving, or have something you want to build? Pitch it to the Civic Tech DC team — privately, first. We'll help you shape it, and if it's a fit, turn it into a real project with a partner and a team behind it.
+hero-subtitle: Spotted a problem worth solving, or have something you want to build? Pitch it to the Civic Tech DC team, privately at first. We'll help you shape it, and if it's a fit, turn it into a real project with a partner and a team behind it.
 hero-image: hero-image-about.jpg
 ---
 
 ## What you can pitch
 
-You don't need a finished plan — or even a solution. You just need something you care about enough to start.
+You don't need a finished plan, or even a solution. You just need something you care about enough to start.
 
 <ul class="ctdc-partner-paths ctdc-partner-paths--two usa-list usa-list--unstyled">
   <li class="ctdc-partner-path">
     <h3 class="ctdc-partner-path__title">A problem</h3>
     <p class="ctdc-partner-path__body">
       Something broken or frustrating in DC that technology could help with. You
-      don't need to know the fix — just a problem worth solving.
+      don't need to know the fix, just a problem worth solving.
     </p>
   </li>
   <li class="ctdc-partner-path">
     <h3 class="ctdc-partner-path__title">An idea or a build</h3>
     <p class="ctdc-partner-path__body">
       You already know what to make, or you've started building. Bring it and
-      we'll help you take it further — and find the people to build it with.
+      we'll help you take it further, and find the people to build it with.
     </p>
   </li>
 </ul>
 
 ## What every project needs
 
-Bring whatever you've got — but to become a Civic Tech DC project, it has to clear three bars. These are also what we'll help you work toward.
+Bring whatever you've got, but to become a Civic Tech DC project, it has to clear three bars. These are also what we'll help you work toward.
 
 <ul class="ctdc-partner-paths usa-list usa-list--unstyled">
   <li class="ctdc-partner-path">
     <h3 class="ctdc-partner-path__title">A real user to validate it</h3>
     <p class="ctdc-partner-path__body">
-      Every project needs someone who's actually the user — or has direct access
+      Every project needs someone who's actually the user, or has direct access
       to them. A resident, a community organizer, a city employee, an elected
       official, a nonprofit: anyone close enough to confirm the problem is real
-      and the solution would help, so the team builds toward a real need.
+      and the solution would help, so the team builds on evidence, not a hunch.
     </p>
   </li>
   <li class="ctdc-partner-path">
     <h3 class="ctdc-partner-path__title">Open source</h3>
     <p class="ctdc-partner-path__body">
-      Everything we build is open source — free for anyone to use, learn from,
+      Everything we build is open source: free for anyone to use, learn from,
       and improve. No walled gardens, no lock-in.
     </p>
   </li>
@@ -68,7 +68,7 @@ Bring whatever you've got — but to become a Civic Tech DC project, it has to c
         <div class="ctdc-process__content">
           <h3 class="ctdc-process__heading">Pitch it to the team</h3>
           <p class="ctdc-process__text">
-            Send your problem or idea straight to the Civic Tech DC team — a short
+            Send your problem or idea straight to the Civic Tech DC team. A short
             email is plenty. This first conversation is just with us, not a public
             pitch, and it doesn't need to be polished.
           </p>
@@ -83,8 +83,8 @@ Bring whatever you've got — but to become a Civic Tech DC project, it has to c
           <h3 class="ctdc-process__heading">We review it with you</h3>
           <p class="ctdc-process__text">
             We're a bit like an incubator: we talk it through, pressure-test it,
-            and shape a rough plan together. Not every pitch becomes a project —
-            starting privately is what lets us be honest about which ones are
+            and shape a rough plan together. Not every pitch becomes a project.
+            Starting privately is what lets us be honest about which ones are
             ready.
           </p>
         </div>
@@ -116,4 +116,4 @@ Bring whatever you've got — but to become a Civic Tech DC project, it has to c
 
 ## Just want to help?
 
-Looking to jump onto an existing project rather than start your own? That's what Project Nights are for — <a href="{{ site.baseurl }}/events">come to an event</a> or <a href="{{ site.baseurl }}/slack">say hi in Slack</a>.
+Looking to jump onto an existing project rather than start your own? That's what Project Nights are for: <a href="{{ site.baseurl }}/events">come to an event</a> or <a href="{{ site.baseurl }}/slack">say hi in Slack</a>.

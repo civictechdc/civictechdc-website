@@ -28,7 +28,7 @@ Civic Tech DC will not tolerate such behavior.
 
 Civic Tech DC is designed as a place for people all of different skill levels and approaches to meet and work together toward common goals. As a result, we do not expect that everybody will share the same opinion. However, we do expect that disagreement is done respectfully.
 
-Additionally, we expect that members will educate others respectfully. To this end, do not assume anybody else's level of expertise or knowledge. Do not belittle a lack of information, or insist on unnecessary precision. We are all learning, so afford others—as well as yourself—room to grow.
+Additionally, we expect that members will educate others respectfully. To this end, do not assume anybody else's level of expertise or knowledge. Do not belittle a lack of information, or insist on unnecessary precision. We are all learning, so afford others, as well as yourself, room to grow.
 
 ### Keep Your Team Open
 
@@ -40,7 +40,7 @@ While this document exists primarily to prevent certain bad behavior, we also be
 
 ### Build With, Not For
 
-Work to ensure that the community is well-represented in all stages of development. Seek out those who are under-represented, and remove barriers to access. Listen as much—or more—than you speak, and give full consideration to all ideas, even if they seem improbable at first.
+Work to ensure that the community is well-represented in all stages of development. Seek out those who are under-represented, and remove barriers to access. Listen at least as much as you speak, and give full consideration to all ideas, even if they seem improbable at first.
 
 ### Empower, Experiment, and Find a Way for Everybody to Contribute
 

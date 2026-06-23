@@ -230,7 +230,7 @@ description: |
                                padding-left: 1rem;
                                padding-right: 1rem">
                         <strong>1:50 PM</strong>
-                        <span><strong>Solution pods</strong> — 90 min of collaborative work</span>
+                        <span><strong>Solution pods</strong>: 90 min of collaborative work</span>
                     </div>
                     <div style="display: grid;
                                grid-template-columns: 120px 1fr;

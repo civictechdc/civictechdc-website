@@ -24,7 +24,7 @@ description: Building tech tools for congressional staff and increasing transpar
   <div class="grid-container">
     <h2 class="font-sans-lg">🚀 Our Impact</h2>
     <p>
-      To foster a strong relationship between the House Digital Service and Civic Tech DC to find opportunities for engagement with important congressional stakeholders — ultimately increasing efficiency and transparency in legislative operations.
+      To foster a strong relationship between the House Digital Service and Civic Tech DC to find opportunities for engagement with important congressional stakeholders, ultimately increasing efficiency and transparency in legislative operations.
     </p>
   </div>
 </section>

@@ -19,7 +19,7 @@ As part of the effort to address the lingering effects of criminal records from 
 
 ## How It Worked
 
-The Clean Slate app functioned as a triage tool, developed using JavaScript and React, that guided users through a series of questions to determine their eligibility. Based on users’ responses, the app would provide an initial determination — whether they were currently eligible, might be eligible after a certain period, or did not meet eligibility criteria. However, the app was not a replacement for legal counsel; it was a starting point. Lawyers would manually review each case to ensure accuracy and compliance.
+The Clean Slate app functioned as a triage tool, developed using JavaScript and React, that guided users through a series of questions to determine their eligibility. Based on users’ responses, the app would provide an initial determination: whether they were currently eligible, might be eligible after a certain period, or did not meet eligibility criteria. However, the app was not a replacement for legal counsel; it was a starting point. Lawyers would manually review each case to ensure accuracy and compliance.
 
 ## Impact and Transition
 

@@ -3,7 +3,7 @@ layout: hero-image
 banner-hero: true
 title: Support Civic Tech DC
 hero-title: Support Us
-hero-subtitle: Civic Tech DC runs on the generosity of our community — individuals who donate and organizations that sponsor our work or contribute in-kind. Every contribution goes directly toward events, projects, and keeping this community free and open to everyone.
+hero-subtitle: "Civic Tech DC runs on the generosity of our community: individuals who donate and organizations that sponsor our work or contribute in-kind. Every contribution goes directly toward events, projects, and keeping this community free and open to everyone."
 hero-image: hero-image-donate.jpg
 permalink: /support/
 redirect_from: /donate/
@@ -11,7 +11,7 @@ redirect_from: /donate/
 
 ## Donate
 
-Your donation funds our events, project nights, and the costs of keeping this community free and open to everyone.
+Your donation goes directly to the work: our events, our Project Nights, and the behind-the-scenes costs of keeping them free for everyone.
 
 Civic Tech DC is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the full extent allowed by law.
 

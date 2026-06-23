@@ -4,12 +4,12 @@ is_active: true
 title: Data and Democracy Project
 image: project_thumbnails/eavs.jpg
 image_alt_text: Voting precinct data table
-description: We build data tools for election protection — cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings.
+description: "We build data tools for election protection: cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings."
 ---
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
-    <em>🗳️ We build data tools for election protection — cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings.</em>
+    <em>🗳️ We build data tools for election protection: cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings.</em>
   </div>
 </section>
 
@@ -17,9 +17,9 @@ description: We build data tools for election protection — cleaning, analyzing
   <div class="grid-container">
     <h2 class="font-sans-lg">Why This Matters</h2>
     <p>
-Elections in the United States generate enormous amounts of public data, but that data is scattered, inconsistent, and hard to use. Patterns that matter — administrative issues, data quality problems, or practices that warrant a closer look — stay buried in spreadsheets and codebooks that few people have the time or tooling to work through.
+Elections in the United States generate enormous amounts of public data, but that data is scattered, inconsistent, and hard to use. Patterns that matter (administrative issues, data quality problems, or practices that warrant a closer look) stay buried in spreadsheets and codebooks that few people have the time or tooling to work through.
 
-Our work makes public election data easier to clean, compare, and analyze across jurisdictions and over time, so that the people protecting elections — journalists, advocates, legal teams, and election administrators — can find those patterns and act on them.
+Our work makes public election data easier to clean, compare, and analyze across jurisdictions and over time, so that the people protecting elections (journalists, advocates, legal teams, and election administrators) can find those patterns and act on them.
 
 </p>
 
@@ -37,7 +37,7 @@ Our work makes public election data easier to clean, compare, and analyze across
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">What We're Building</h2>
-    <p>Our flagship effort is a reproducible, open workflow built around the U.S. Election Administration and Voting Survey (EAVS) — the most detailed national dataset on how elections are actually run, covering voter registration, mail ballots, provisional ballots, voter list maintenance, and more. Current work includes:</p>
+    <p>Our flagship effort is a reproducible, open workflow built around the U.S. Election Administration and Voting Survey (EAVS), the most detailed national dataset on how elections are actually run, covering voter registration, mail ballots, provisional ballots, voter list maintenance, and more. Current work includes:</p>
 
 <ul>
 <li>A Python-based data pipeline to clean and standardize EAVS datasets</li>
@@ -70,9 +70,9 @@ Our work makes public election data easier to clean, compare, and analyze across
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">Our Story</h2>
-    <p>The project is led by a small core team — Michael, Yashin, and Cameron — alongside Civic Tech DC volunteers. It began with a simple observation: the data that could help protect elections is rich but not user-friendly. Working with it often requires identifying relevant variables across multiple files and codebooks, cleaning and standardizing inconsistent formats, calculating key metrics, and comparing results across years and jurisdictions. In practice, this has often meant manual, spreadsheet-based workflows that are time-consuming, difficult to reproduce, and prone to error.</p>
+    <p>The project is led by a small core team (Michael, Yashin, and Cameron) alongside Civic Tech DC volunteers. It began with a simple observation: the data that could help protect elections is rich but not user-friendly. Working with it often requires identifying relevant variables across multiple files and codebooks, cleaning and standardizing inconsistent formats, calculating key metrics, and comparing results across years and jurisdictions. In practice, this has often meant manual, spreadsheet-based workflows that are time-consuming, difficult to reproduce, and prone to error.</p>
 
-<p>Early work focused on understanding how the Campaign Legal Center was working with EAVS data and where the biggest bottlenecks existed. The project has since evolved into building a reusable, multi-year data pipeline and supporting tools to enable more reliable and scalable analysis — and into a broader effort to make public election data usable for everyone working to protect the vote.</p>
+<p>Early work focused on understanding how the Campaign Legal Center was working with EAVS data and where the biggest bottlenecks existed. The project has since evolved into building a reusable, multi-year data pipeline and supporting tools to enable more reliable and scalable analysis, and into a broader effort to make public election data usable for everyone working to protect the vote.</p>
   </div>
 </section>
 
@@ -96,7 +96,7 @@ Our work makes public election data easier to clean, compare, and analyze across
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
     <h2>👋 Come Join Us</h2>
-    <p>We're looking for volunteers with skills in Python data pipelines, data visualization, analytics and modeling, and outreach — but the most important thing is curiosity about how elections actually work and who gets to participate in them. Current needs include:</p>
+    <p>We're looking for volunteers with skills in Python data pipelines, data visualization, analytics and modeling, and outreach. But the most important thing is curiosity about how elections actually work and who gets to participate in them. Current needs include:</p>
 <ul>
 <li>Data Cleaning / Pipeline Building (Python) – cleaning and standardizing datasets, improving and extending the pipeline</li>
 <li>Data Visualization (Tableau, Plotly, etc.) – building and refining dashboards and visualizations</li>

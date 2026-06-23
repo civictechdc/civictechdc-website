@@ -2,7 +2,7 @@
 layout: hero-image
 title: Events
 hero-title: Events
-hero-subtitle: From our twice-monthly Project Nights to special events with local partners, here's what's happening at Civic Tech DC — and how to get involved.
+hero-subtitle: From our twice-monthly Project Nights to special events with local partners, here's what's happening at Civic Tech DC, and how to get involved.
 hero-image: hero-image-events.jpg
 page_css: /assets/css/events.css
 redirect_from:
@@ -11,7 +11,7 @@ redirect_from:
 ---
 
 <h2>Recurring events</h2>
-<p>The steady rhythm of Civic Tech DC — no registration, no commitment, just show up.</p>
+<p>The steady rhythm of Civic Tech DC: no registration, no commitment, just show up.</p>
 
 <div class="ctdc-recurring">
   <p class="ctdc-recurring__eyebrow">Twice a month</p>
@@ -19,7 +19,7 @@ redirect_from:
   <p class="ctdc-recurring__text">
     We get together to work on civic-tech projects, learn from each other, and
     share a few slices of pizza. Bring a project or jump onto one that's already
-    rolling — and if it's your first time, we'll help you find something to dig
+    rolling. And if it's your first time, we'll help you find something to dig
     into. Developers, designers, data folks, policy nerds, and the plain curious
     are all welcome.
   </p>
@@ -30,7 +30,7 @@ redirect_from:
     </div>
     <div class="ctdc-recurring__fact">
       <dt>Who</dt>
-      <dd>Everyone — no experience needed</dd>
+      <dd>Everyone, no experience needed</dd>
     </div>
     <div class="ctdc-recurring__fact">
       <dt>What</dt>
@@ -38,7 +38,7 @@ redirect_from:
     </div>
     <div class="ctdc-recurring__fact">
       <dt>RSVP</dt>
-      <dd>Free — see the calendar below</dd>
+      <dd>Free. See the calendar below</dd>
     </div>
   </dl>
   <div class="ctdc-recurring__actions">
