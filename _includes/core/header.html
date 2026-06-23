@@ -51,21 +51,9 @@
           </a>
         </li>
         <li class="usa-nav__primary-item">
-          <button type="button" class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="basic-nav-section-about">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/about"{% if page.url contains '/about' %} aria-current="page"{% endif %}>
             <span>About</span>
-          </button>
-          <ul id="basic-nav-section-about" class="usa-nav__submenu" hidden>
-            <li class="usa-nav__submenu-item">
-              <a href="{{ site.baseurl }}/about"{% if page.url contains '/about' and page.url != '/code-of-conduct/' %} aria-current="page"{% endif %}>
-                <span>About Us</span>
-              </a>
-            </li>
-            <li class="usa-nav__submenu-item">
-              <a href="{{ site.baseurl }}/code-of-conduct"{% if page.url contains '/code-of-conduct' %} aria-current="page"{% endif %}>
-                <span>Code of Conduct</span>
-              </a>
-            </li>
-          </ul>
+          </a>
         </li>
       </ul>
     </nav>
