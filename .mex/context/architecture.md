@@ -32,7 +32,7 @@ Locally, `npm run serve` runs gulp in the background and `jekyll serve` in the f
 
 - `_layouts` — page templates. `_layouts/base.html` is the HTML shell (resolves `page_css` against the manifest); `_layouts/default.html` is the standard page; specialized layouts include `_layouts/project.html`, `_layouts/events.html`, `_layouts/post.html`, `_layouts/archive.html`, `_layouts/design-system.html`, and several hero-image variants.
 - `_includes` — Liquid partials. `_includes/core/` holds structural partials (header, footer, meta, css, GTM); `_includes/components/` holds reusable UI (cards, project-cards, supporters, meetup-events); `_includes/responsive-image.html` is the canonical image tag generator.
-- Collections — `_projects` (civic-tech project pages, `project` layout) and `_events` (special-event pages, permalink `/special-events/:name/`). Defined in `_config.yml`.
+- Collections — `_projects` (civic-tech project pages, `project` layout) and `_events` (special-event pages, permalink `/events/:name/`). Defined in `_config.yml`.
 - `gulpfile.js` — the entire build pipeline: image processing, USWDS compile, and CSS cache-busting (the addHashToCSS task).
 - `sass` — CSS source. `sass/custom` is the USWDS project Sass; `sass/theme` holds USWDS theme settings; `sass/main.scss` is the entry.
 

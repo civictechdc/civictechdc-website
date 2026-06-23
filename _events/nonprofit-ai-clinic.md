@@ -4,6 +4,8 @@ title: "Nonprofit AI Problem Clinic"
 date: 2025-10-24
 location: "Ronald Reagan Int'l Trade Center, Washington DC"
 url: /nonprofit-ai-clinic
+redirect_from:
+  - /special-events/nonprofit-ai-clinic/
 card_image: events/non-profit-clinic/hero.jpg
 registration_link: https://luma.com/ylw43blh
 page_css: /assets/css/civichackdc.css

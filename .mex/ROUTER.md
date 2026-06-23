@@ -29,7 +29,7 @@ Then read this file fully before doing anything else in this session.
 
 - Full Jekyll site live at civictechdc.org / www.civictechdc.org, auto-deployed from `main` to GitHub Pages.
 - `projects` collection (`_projects/`) → rendered with the `project` layout; project cards on the projects page.
-- `events` collection (`_events/`) → permalink `/special-events/:name/`, often with page-specific CSS.
+- `events` collection (`_events/`) → permalink `/events/:name/`, often with page-specific CSS.
 - Blog (`_posts/`) with `jekyll-archives` category/tag pages.
 - USWDS 3.12 design system compiled from `sass/` via gulp; CSS cache-busted into `_data/css-manifest.json`.
 - Brand colors live as CSS custom properties on `:root` in `sass/custom/styles.scss` (`--ctdc-navy`, `--ctdc-gold`, `--ctdc-button-dark`, `--ctdc-*-rgb` channels); a `prefers-reduced-motion` guard and `.usa-button--dark` / `.ctdc-project-links` helpers exist. All page layouts route content through `default.html`'s single `<main id="main-content">` landmark (skip-link target).

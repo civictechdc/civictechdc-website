@@ -24,7 +24,7 @@ last_updated: 2026-06-22
 Content lives in Jekyll collections and posts:
 
 - Projects → `_projects/<slug>.md` (collection, `output: true`, `project` layout).
-- Events → `_events/<slug>.md` (collection, permalink `/special-events/<slug>/`, `events` layout).
+- Events → `_events/<slug>.md` (collection, permalink `/events/<slug>/`, `events` layout).
 - Blog posts → `_posts/YYYY-MM-DD-<slug>.md` (`post` layout).
 
 All start with YAML front matter. Images referenced in content must follow `patterns/responsive-images.md`. Read `context/conventions.md` first.
@@ -64,7 +64,7 @@ All start with YAML front matter. Images referenced in content must follow `patt
 
 ### Steps
 
-1. Create `_events/<kebab-slug>.md` → URL becomes `/special-events/<slug>/`.
+1. Create `_events/<kebab-slug>.md` → URL becomes `/events/<slug>/`.
 2. Front matter (mirror `_events/civichackdc.md`):
    ```yaml
    ---
@@ -89,7 +89,7 @@ All start with YAML front matter. Images referenced in content must follow `patt
 
 ### Verify
 
-- [ ] Reachable at `/special-events/<slug>/`.
+- [ ] Reachable at `/events/<slug>/`.
 - [ ] Any `page_css` resolves (custom CSS actually loads), or omit the field.
 
 ## Task: Add a Blog Post

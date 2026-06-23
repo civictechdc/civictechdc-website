@@ -4,6 +4,8 @@ title: "Civic Hack DC 2025: Part 1"
 date: 2025-07-26
 location: "Washington DC"
 url: /civichackdc
+redirect_from:
+  - /special-events/civichackdc/
 card_image: hero-image-hackathon.png
 registration_link: https://lu.ma/czi3y05y
 page_css: /assets/css/civichackdc.css

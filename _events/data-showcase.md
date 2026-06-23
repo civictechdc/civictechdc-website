@@ -4,6 +4,8 @@ title: Open Data DC Showcase
 date: 2025-03-26
 location: "Washington DC"
 url: /data-showcase
+redirect_from:
+  - /special-events/data-showcase/
 card_image: events/data_showcase/man-on-bike.png
 description: |
   In Celebration with the annual Open Data Week, Civic Tech DC partnered with the Office of the Chief Technology Officer for a Open Data DC Showcase.

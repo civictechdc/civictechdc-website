@@ -5,6 +5,9 @@ hero-title: Special Events
 hero-subtitle: In addition to our biweekly Project Nights, Civic Tech DC hosts occasional events, roughly once a quarter, where we partner with local organizations to raise awareness about civic tech and foster community collaboration.
 hero-image: hero-image-events.jpg
 page_css: /assets/css/events.css
+redirect_from:
+  - /special-events
+  - /special-events/
 ---
 
 <h1 class="margin-bottom-1">Events</h1>
