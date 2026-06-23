@@ -2,10 +2,12 @@
 layout: hero-image
 title: About Civic Tech DC
 hero-title: About Us
-hero-subtitle: Founded in 2012 as Code for DC, Civic Tech DC is a non-partisan, volunteer-driven community. We became a 501(c)(3) nonprofit in 2022. We use open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives in the Washington, DC area.
+hero-subtitle: Founded in 2012 as Code for DC, Civic Tech DC is a non-partisan, volunteer-driven community.
 hero-image: hero-image-about.jpg
 hero-image-alt: Civic Tech DC members working together on laptops in an office meeting space
 ---
+
+We became a 501(c)(3) nonprofit in 2022. We use open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives in the Washington, DC area.
 
 We welcome designers, product managers, project managers, communicators, policy thinkers, researchers, and community leaders — as well as technologists — from all backgrounds, disciplines, and levels of experience. Our work supports local and national nonprofits, think tanks, local governments, and grassroots organizers across the region.
 
