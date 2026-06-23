@@ -30,7 +30,8 @@ last_updated: 2026-06-22
 - Layouts nest: specialized layout → `default.html` → `base.html`. `base.html` owns `<head>`, meta, CSS linking, and GTM.
 - Styles go in `sass/` only — `sass/custom/` for project Sass, `sass/theme/` for USWDS settings. Never write CSS directly into `assets/css/`.
 - USWDS utility classes are used directly in markup (e.g. `class="margin-top-0 padding-left-0 font-heading-med"`); prefer utilities over new custom CSS where possible.
-- Generated output (`assets/`, `_site/`, `_data/css-manifest.json`) is committed but treated as build artifacts — regenerate, don't edit.
+- Generated output is treated as build artifacts — regenerate, don't edit. Tracking is selective: under `assets/`, only `assets/img`, `assets/fonts`, `assets/js`, and the unhashed `assets/css/civichackdc.css` + `assets/css/events.css` are committed. The hashed `assets/css/*-*.css` and `assets/css/styles*.css`, plus all of `assets/images/`, are gitignored and rebuilt on deploy. `_data/css-manifest.json` is the committed fingerprint the CI gulp-compile job diffs against, so after editing `sass/` you must run `npm run build` and commit the updated manifest.
+- Brand colors are centralized as CSS custom properties on `:root` in `sass/custom/styles.scss` (e.g. `--ctdc-navy`, `--ctdc-gold`, plus `--ctdc-*-rgb` channel vars for alpha variants). Reuse these instead of hardcoding hex values.
 
 ## Patterns
 

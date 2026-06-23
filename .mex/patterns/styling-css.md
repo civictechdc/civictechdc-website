@@ -34,7 +34,9 @@ All CSS is compiled from `sass` by the @uswds/compile gulp toolchain — never e
 
 ## Gotchas
 
-- CI's "Gulp compile" job runs `gulp compile` and fails on any diff — your committed `assets/` must exactly match a fresh build.
+- CI's "Gulp compile" job runs `gulp compile` then `git diff --exit-code`. Most build output is gitignored (`assets/css/*-*.css`, `styles*.css`, `assets/images/`), so the gate that actually fails is the tracked `_data/css-manifest.json` — run `npm run build` and commit the updated manifest. (The unhashed `civichackdc.css`/`events.css` are also tracked and must match.)
+- **Do not run `npm run lint` repo-wide without reviewing the diff.** The `@shopify/prettier-plugin-liquid` reformatter wraps Liquid `{% include %}` argument strings across lines (e.g. `alt="Campaign\nLegal Center"`), corrupting `responsive-image.html` parameters. Format Liquid files by hand to match surrounding style. CI's lint job uses `prettier --write`, which never exits non-zero, so it is advisory only.
+- When overriding USWDS component styles, prefer raising selector specificity (e.g. `.ctdc-header .usa-nav__link`) over `!important` — custom `sass/` compiles after USWDS, so a `.ctdc-*`-scoped descendant selector already wins. Verify the competing USWDS selector's specificity in the compiled `assets/css/styles-*.css` before dropping `!important`.
 - `base.html` only links a hashed file if its basename is in `css-manifest.json`; otherwise it falls back to the raw `page_css` path (which won't be cache-busted and may not exist).
 - A new page-specific CSS file won't be hashed until you add it to the `addHashToCSS` glob.
 - This is USWDS v3 — v2 mixins/patterns do not apply.
