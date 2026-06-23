@@ -106,7 +106,7 @@ description: |
         <h2 style="font-size: 1.5rem; font-weight: bold;">GW Data Preservation</h2>
         <img src="/assets/images/events/data_showcase/gw-data-perservation-400w.png" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;" alt="GW Data Preservation">
         <p style="font-size: 1rem; line-height: 1.5;">
-            Data drives decisions—but what happens when critical datasets disappear? The loss of essential data can disrupt public services, erode trust, and impact effective policymaking. In <strong>GW Data Preservation</strong>, David Lippert and Emily Blumenthal explore the challenges of data loss and the ongoing efforts from George Washington University to rescue vital datasets.
+            Data drives decisions — but what happens when critical datasets disappear? The loss of essential data can disrupt public services, erode trust, and impact effective policymaking. In <strong>GW Data Preservation</strong>, David Lippert and Emily Blumenthal explore the challenges of data loss and the ongoing efforts from George Washington University to rescue vital datasets.
         </p>
     </div>
     <div style="width: calc(50% - 20px); min-width: 300px; max-width: 500px; text-align: center; padding: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid #ddd; box-sizing: border-box;">

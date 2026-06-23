@@ -17,7 +17,7 @@ description: Use the data from the biennial Election Administration and Voting S
   <div class="grid-container">
     <h2 class="font-sans-lg"> Why This Matters</h2>
     <p>
-Election administration data can reveal patterns that may point to administrative issues, data quality problems, or practices that warrant further review. The U.S. Election Administration and Voting Survey (EAVS) provides detailed information on how elections are run across states and counties—covering voter registration, mail ballots, provisional ballots, voter list maintenance, and more.
+Election administration data can reveal patterns that may point to administrative issues, data quality problems, or practices that warrant further review. The U.S. Election Administration and Voting Survey (EAVS) provides detailed information on how elections are run across states and counties — covering voter registration, mail ballots, provisional ballots, voter list maintenance, and more.
 
 Making this data easier to clean, compare, and analyze across jurisdictions and over time can support research, oversight, advocacy, and other public-interest work.
 

@@ -595,7 +595,7 @@ Special thanks to Michael Deeb, Helen Glover, Taylor Wilson, Evan Tung, Alma Tro
 
 ## What’s Next
 
-This was “Part 1”—a working proof that access, quality, integrity, and usability can be tackled together. Next, we’ll work with the participants to iterate on their projects, bring them to life, and expand the community. We hope to host a Part 2 event in Spring to bring these projects together into a single, comprehensive system that will allow citizens, advocates, journalists, and public servants to find, analyze, and understand regulatory feedback and how it influences government decisions.
+This was “Part 1” — a working proof that access, quality, integrity, and usability can be tackled together. Next, we’ll work with the participants to iterate on their projects, bring them to life, and expand the community. We hope to host a Part 2 event in Spring to bring these projects together into a single, comprehensive system that will allow citizens, advocates, journalists, and public servants to find, analyze, and understand regulatory feedback and how it influences government decisions.
 
 Sustainable civic tech is infrastructure: it takes maintenance, documentation, and communities that bridge policy and engineering. The code is public. The community is growing. Join us: <team@civictechdc.org>.
 

@@ -55,7 +55,7 @@ We gather to discuss ideas, collaborate on projects, and get things done.
   </div>
 </div>
 
-We believe in building processes—not just tools—and applying human-centered systems thinking to civic technology. Our projects aim to be adaptable, reusable across communities, and scalable for broader impact.
+We believe in building processes — not just tools — and applying human-centered systems thinking to civic technology. Our projects aim to be adaptable, reusable across communities, and scalable for broader impact.
 
 <h2 class="text-center margin-top-4 margin-bottom-2">Directors</h2>
 <p class="text-center margin-bottom-4">Our board of directors provides governance and strategic oversight for Civic Tech DC as a 501(c)(3) nonprofit.</p>

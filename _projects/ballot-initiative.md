@@ -36,14 +36,14 @@ description: Building open source campaign infrastructure that any grassroots or
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">🚀 The Big Picture</h2>
-    <p>Signature validation is just the beginning. The systems we're creating—for voter file integration, data validation, and workflow automation—are the building blocks for a full suite of open source campaign infrastructure. Our vision is to support candidate campaigns, issue advocacy, and other community organizing efforts, letting them focus on what matters: talking to people.</p>
+    <p>Signature validation is just the beginning. The systems we're creating — for voter file integration, data validation, and workflow automation — are the building blocks for a full suite of open source campaign infrastructure. Our vision is to support candidate campaigns, issue advocacy, and other community organizing efforts, letting them focus on what matters: talking to people.</p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">📖 Our Story</h2>
-    <p>VoteCatcher grew out of conversations with organizers who were spending more time on data entry and money on expensive software than running their campaign. We're a group of volunteers who believe that good campaign technology should be a public resource, accessible to everyone—not just well-funded efforts with dedicated tech teams.</p>
+    <p>VoteCatcher grew out of conversations with organizers who were spending more time on data entry and money on expensive software than running their campaign. We're a group of volunteers who believe that good campaign technology should be a public resource, accessible to everyone — not just well-funded efforts with dedicated tech teams.</p>
   </div>
 </section>
 
