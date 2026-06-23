@@ -2,67 +2,111 @@
   <div class="grid-container">
     <div class="ctdc-logo-section__header">
       <h2 class="ctdc-logo-section__title">Community Partners</h2>
-      <p class="ctdc-logo-section__desc">Working together with these organizations to build technology for civic and social good.</p>
+      <p class="ctdc-logo-section__desc">
+        Working together with these organizations to build technology for civic
+        and social good.
+      </p>
     </div>
-    <div class="grid-row grid-gap-2 flex-align-stretch flex-justify-center">
+    <div class="ctdc-logo-grid">
       <!-- Campaign Legal Center -->
-      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
-        <div class="ctdc-logo-card">
-          <a href="https://campaignlegal.org/" target="_blank" rel="noopener" aria-label="Campaign Legal Center">
-            {% include responsive-image.html src="logos/clc.svg" alt="Campaign Legal Center" %}
-          </a>
-        </div>
-      </div>
-
-      <!-- Electrify DC -->
-      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
-        <div class="ctdc-logo-card">
-          <a href="https://www.electrifydc.org/" target="_blank" rel="noopener" aria-label="Electrify DC">
-            {% include responsive-image.html src="logos/electrify_dc_logo_white.png" alt="Electrify DC" class="logo-invert" %}
-          </a>
-        </div>
+      <div class="ctdc-logo-card">
+        <a
+          href="https://campaignlegal.org/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Campaign Legal Center"
+        >
+          {% include responsive-image.html src="logos/clc.svg" alt="Campaign
+          Legal Center" class="logo--lg" width="120" %}
+        </a>
       </div>
 
       <!-- GW OSPO -->
-      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
-        <div class="ctdc-logo-card">
-          <a href="https://ospo.gwu.edu/" target="_blank" rel="noopener" aria-label="GW Open Source Program Office" class="display-flex flex-align-center text-no-underline gap-2">
-            {% include responsive-image.html src="logos/gw-header-image-53.png" alt="GW logo" sizes="64px" %}
-            <div class="ctdc-logo-card__text text-left">
-              <span class="text-bold">Open Source</span><br />
-              <span class="text-bold">Program Office</span>
-            </div>
-          </a>
-        </div>
+      <div class="ctdc-logo-card ctdc-logo-card--wide">
+        <a
+          href="https://ospo.gwu.edu/"
+          target="_blank"
+          rel="noopener"
+          aria-label="GW Open Source Program Office"
+          class="display-flex flex-align-center text-no-underline gap-2"
+        >
+          {% include responsive-image.html src="logos/gw-header-image-53.png"
+          alt="GW logo" sizes="64px" %}
+          <div class="ctdc-logo-card__text text-left">
+            <span class="text-bold">Open Source</span><br />
+            <span class="text-bold">Program Office</span>
+          </div>
+        </a>
       </div>
 
       <!-- American Governance Institute -->
-      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
-        <div class="ctdc-logo-card">
-          <a href="https://americalabs.org/" target="_blank" rel="noopener" aria-label="American Governance Institute" class="display-flex flex-column flex-align-center text-no-underline">
-            {% include responsive-image.html src="logos/agi.webp" alt="American Governance Institute" %}
-            <div class="ctdc-logo-card__text text-center margin-top-1">
-              <span class="text-bold">American Governance Institute</span>
-            </div>
-          </a>
-        </div>
+      <div class="ctdc-logo-card ctdc-logo-card--wide">
+        <a
+          href="https://americalabs.org/"
+          target="_blank"
+          rel="noopener"
+          aria-label="American Governance Institute"
+          class="display-flex flex-column flex-align-center text-no-underline"
+        >
+          {% include responsive-image.html src="logos/agi.webp" alt="American
+          Governance Institute" class="logo--sm" %}
+          <div class="ctdc-logo-card__text text-center margin-top-1">
+            <span class="text-bold">American Governance Institute</span>
+          </div>
+        </a>
       </div>
 
       <!-- Red Cross Organizations -->
-      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
-        <div class="ctdc-logo-card">
-          <div class="display-flex flex-column flex-align-center flex-justify-center width-full">
-            <a href="https://www.redcross.org/" target="_blank" rel="noopener" aria-label="American Red Cross">
-              {% include responsive-image.html src="logos/red-cross.png" alt="American Red Cross" %}
-            </a>
-            <div class="margin-y-2" style="height:1px;background:rgba(0,0,0,0.06);width:60%;"></div>
-            <a href="https://www.pmi.or.id/" target="_blank" rel="noopener" aria-label="Indonesian Red Cross (Palang Merah Indonesia)">
-              {% include responsive-image.html src="logos/indonesian-rc.png" alt="Indonesian Red Cross (Palang Merah Indonesia)" %}
-            </a>
-          </div>
+      <div class="ctdc-logo-card">
+        <div
+          class="display-flex flex-column flex-align-center flex-justify-center width-full"
+        >
+          <a
+            href="https://www.redcross.org/"
+            target="_blank"
+            rel="noopener"
+            aria-label="American Red Cross"
+          >
+            {% include responsive-image.html src="logos/red-cross.png"
+            alt="American Red Cross" %}
+          </a>
+          <div
+            class="margin-y-1"
+            style="height: 1px; background: rgba(0, 0, 0, 0.06); width: 60%"
+          ></div>
+          <a
+            href="https://www.pmi.or.id/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Indonesian Red Cross (Palang Merah Indonesia)"
+          >
+            {% include responsive-image.html src="logos/indonesian-rc.png"
+            alt="Indonesian Red Cross (Palang Merah Indonesia)" %}
+          </a>
         </div>
-
       </div>
     </div>
+
+    <!-- Closing invitation: the wall's second job is recruitment.
+         Suppressed with cta=false (e.g. on the Partners page itself). -->
+    {% unless include.cta == false %}
+    <div class="ctdc-logo-cta">
+      <p class="ctdc-logo-cta__text">
+        Civic Tech DC runs on volunteer time and the organizations who back it.
+        Whether you can support our work or build something alongside us, we'd
+        love to hear from you.
+      </p>
+      <div class="ctdc-logo-cta__actions">
+        <a href="{{ site.baseurl }}/support" class="usa-button"
+          >Support our work</a
+        >
+        <a
+          href="{{ site.baseurl }}/partners"
+          class="usa-button usa-button--outline"
+          >Become a partner</a
+        >
+      </div>
+    </div>
+    {% endunless %}
   </div>
 </section>
