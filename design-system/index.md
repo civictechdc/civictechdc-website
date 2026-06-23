@@ -21,6 +21,7 @@ The Civic Tech DC website is built on top of the **U.S. Web Design System (USWDS
 
 If you're contributing to the Civic Tech DC website, familiarizing yourself with this guide is the best place to start. Use the sidebar to navigate through our colors, typography, and specific components.
 
+- **[Design Vision]({{ '/design-system/vision/' | relative_url }})**: Our vision for modernizing the civic-hacker interface.
 - **[Colors]({{ '/design-system/colors/' | relative_url }})**: Our brand palette and how to use it.
 - **[Typography]({{ '/design-system/typography/' | relative_url }})**: Fonts, headings, and text styles.
 - **[Components]({{ '/design-system/components/' | relative_url }})**: Reusable UI elements like buttons and cards.
