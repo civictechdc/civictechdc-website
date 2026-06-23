@@ -42,6 +42,7 @@ jekyll-archives:
 
 exclude:
   - /node_modules/
+  - /.playwright-mcp/
   - gulpfile.js
   - Gemfile
   - Gemfile.lock
