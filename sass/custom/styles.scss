@@ -121,13 +121,13 @@ body {
 
   /* Navigation Links on Desktop */
   .usa-nav__link {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.95rem;
-    font-weight: 600;
-    background-color: transparent;
-    padding: 0.5rem 0.75rem;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    background-color: transparent !important;
+    padding: 0.5rem 0.75rem !important;
     position: relative;
-    transition: color 0.25s ease, transform 0.25s ease;
+    transition: color 0.25s ease, transform 0.25s ease !important;
 
     &:hover {
       color: var(--ctdc-gold);
