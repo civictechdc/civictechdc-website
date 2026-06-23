@@ -1,110 +1,295 @@
-.usa-card__media-text-wrapper {
-  border: 3px solid #eec05e;
-  width: 100%;
-  max-width: 600px;
-  box-sizing: border-box;
-  padding: 10px;
-  margin-bottom: 20px;
-  transition: box-shadow 0.2s;
+/* ==========================================================================
+   Special Events listing — Civic Premium Dark
+   Event cards reuse the global .usa-card polish (white paper, hairline border,
+   soft shadow, hover lift) and add event-specific structure: a date chip, a
+   variant top-accent, and a sliding "Learn more" CTA that mirrors the footer
+   and project-card hover language. Tokens come from :root in custom/styles.scss.
+   ========================================================================== */
+
+.ctdc-event-grid {
+  margin-top: 1.75rem;
 }
 
-.usa-card__media-text-wrapper:hover {
-  box-shadow: 0 0 0 9px #eec05e33;
+/* On this page the Lu.ma calendar sits mid-page (not first, as on the homepage),
+   so its heading's global `.ctdc-section-heading:first-child` margin reset leaves
+   it too tight against the section above. Restore the 3rem section rhythm to
+   match the gaps above/below it. */
+.ctdc-events-section {
+  margin-top: 3rem;
 }
 
-.usa-card__link {
-  display: block;
+/* Whole card is the click target; keep it quiet and inherit card colors. */
+.ctdc-event-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-decoration: none;
   color: inherit;
+
+  &:focus-visible {
+    outline: 3px solid var(--ctdc-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }
 
-.usa-card__img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 10px;
+/* Variant top accent — gold for what's coming, muted for what's past. */
+.ctdc-event-card--upcoming .usa-card__container {
+  border-top: 3px solid var(--ctdc-gold);
 }
 
-.usa-card__body {
-  padding: 0;
+.ctdc-event-card--past .usa-card__container {
+  border-top: 3px solid var(--ctdc-border-light);
 }
 
-.usa-card__heading {
-  margin-top: 0;
-  margin-bottom: 8px;
+/* Media: uniform 16:9 crop so mixed source images line up across the grid. */
+.ctdc-event-card .usa-card__media {
+  margin: 0;
 }
 
-.event-description {
-  font-size: 16px;
-  margin: 0 0 8px 0;
+.ctdc-event-card .usa-card__img {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
 }
 
-/* New styles for past events grid */
-.past-events-grid {
+.ctdc-event-card:hover .usa-card__img img {
+  transform: scale(
+    1.04
+  ); /* subtle zoom-on-hover; reduced-motion guard kills it */
+}
+
+/* Meta row: a date "chip" + a muted location. */
+.ctdc-event-card__meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-  padding-left: 0;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.6rem;
 }
 
-.past-events-grid .usa-card__media-text-wrapper {
-  width: auto;
-  flex: 1 1 300px;
-  max-width: 350px;
-}
+.ctdc-event-card__date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  white-space: nowrap;
 
-.past-events-grid .usa-card__img {
-  max-height: 200px;
-}
-
-/* Mobile responsive styles */
-@media (max-width: 768px) {
-  .usa-card__media-text-wrapper {
-    width: 100%;
-    max-width: none;
-    padding: 8px;
-    margin-bottom: 16px;
-  }
-
-  .past-events-grid {
-    gap: 16px;
-  }
-
-  .past-events-grid .usa-card__media-text-wrapper {
-    flex: 1 1 100%;
-    max-width: none;
-  }
-
-  .past-events-grid .usa-card__img {
-    max-height: 180px;
-  }
-
-  .event-description {
-    font-size: 14px;
+  .ctdc-icon {
+    flex-shrink: 0;
   }
 }
 
-@media (max-width: 480px) {
-  .usa-card__media-text-wrapper {
-    padding: 6px;
-    margin-bottom: 12px;
+.ctdc-event-card--upcoming .ctdc-event-card__date {
+  background-color: rgb(var(--ctdc-gold-rgb) / 0.15);
+  color: var(--ctdc-button-dark);
+  border: 1px solid rgb(var(--ctdc-gold-rgb) / 0.4);
+}
+
+.ctdc-event-card--past .ctdc-event-card__date {
+  background-color: var(--ctdc-bg-light);
+  color: var(--ctdc-text-muted);
+  border: 1px solid var(--ctdc-border-light);
+}
+
+.ctdc-event-card__loc {
+  font-size: 0.85rem;
+  color: var(--ctdc-text-muted);
+}
+
+.ctdc-event-card .usa-card__heading {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--ctdc-navy);
+  letter-spacing: -0.01em;
+}
+
+.ctdc-event-card .event-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ctdc-text-muted);
+  margin: 0;
+}
+
+/* Footer CTA: hairline rule + a cue that slides right on hover. */
+.ctdc-event-card__footer {
+  border-top: 1px solid var(--ctdc-border-light);
+  padding: 0.875rem 1.25rem 1rem;
+  margin-top: auto;
+}
+
+.ctdc-event-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--ctdc-brand-blue);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.25s ease;
+
+  .ctdc-icon {
+    transition: transform 0.25s ease;
+  }
+}
+
+.ctdc-event-card:hover .ctdc-event-card__cta {
+  color: var(--ctdc-navy);
+
+  .ctdc-icon {
+    transform: translateX(3px);
+  }
+}
+
+/* "See all past events" — points to the full Lu.ma archive below the
+   3 highlight cards. Uses the sliding-arrow hover idiom from the cards/footer. */
+.ctdc-events-archive-link {
+  margin-top: 1.5rem;
+  text-align: center;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--ctdc-brand-blue);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+
+    .ctdc-icon {
+      transition: transform 0.25s ease;
+    }
+
+    &:hover {
+      color: var(--ctdc-navy);
+
+      .ctdc-icon {
+        transform: translateX(3px);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ctdc-gold);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+  }
+}
+
+/* Empty state: an invitation, not a dead end. */
+.ctdc-events-empty {
+  margin-top: 1.75rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: var(--ctdc-bg-light);
+  border: 1px dashed var(--ctdc-border-light);
+  border-radius: 12px;
+}
+
+.ctdc-events-empty__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ctdc-navy);
+  margin: 0 0 0.35rem;
+}
+
+.ctdc-events-empty__text {
+  color: var(--ctdc-text-muted);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+/* ==========================================================================
+   Recurring events — Project Nights feature panel
+   A single, substantial feature block (not a thin card) carrying the gold
+   left-thread. Complements the live calendar embed: the calendar shows dates,
+   this explains the regular rhythm and what to expect.
+   ========================================================================== */
+
+.ctdc-recurring {
+  margin-top: 1.75rem;
+  background: #ffffff;
+  border: 1px solid var(--ctdc-border-light);
+  border-left: 3px solid var(--ctdc-gold);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 1.75rem 1.75rem 1.85rem;
+}
+
+.ctdc-recurring__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ctdc-button-dark);
+  margin: 0 0 0.35rem;
+}
+
+.ctdc-recurring__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ctdc-navy);
+  margin: 0 0 0.6rem;
+}
+
+.ctdc-recurring__text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ctdc-text-muted);
+  margin: 0 0 1.5rem;
+  max-width: 52rem;
+}
+
+.ctdc-recurring__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 2rem;
+  margin: 0 0 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--ctdc-border-light);
+}
+
+.ctdc-recurring__fact {
+  dt {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--ctdc-text-muted);
+    margin: 0 0 0.15rem;
   }
 
-  .past-events-grid {
-    gap: 12px;
+  dd {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--ctdc-text-dark);
   }
+}
 
-  .past-events-grid .usa-card__img {
-    max-height: 150px;
-  }
+.ctdc-recurring__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
 
-  .usa-card__heading {
-    font-size: 1.2em;
-  }
-
-  .event-description {
-    font-size: 13px;
+@media only screen and (max-width: 480px) {
+  .ctdc-recurring__facts {
+    grid-template-columns: 1fr;
   }
 }

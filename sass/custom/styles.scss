@@ -109,14 +109,23 @@ body {
     max-height: 3.8rem;
     width: auto;
     display: block;
-    filter: brightness(0) invert(79%) sepia(28%) saturate(1450%) hue-rotate(345deg) brightness(99%) contrast(92%);
+    filter: brightness(0) invert(79%) sepia(28%) saturate(1450%)
+      hue-rotate(345deg) brightness(99%) contrast(92%);
     opacity: 0.95;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
 
   .ctdc_logo:hover img {
     opacity: 1;
     transform: scale(1.02);
+  }
+
+  .ctdc_logo:focus-visible {
+    outline: 2px solid var(--ctdc-gold);
+    outline-offset: 4px;
+    border-radius: 4px;
   }
 
   /* Navigation Links on Desktop */
@@ -127,11 +136,20 @@ body {
     background-color: transparent !important;
     padding: 0.5rem 0.75rem !important;
     position: relative;
-    transition: color 0.25s ease, transform 0.25s ease !important;
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease !important;
 
     &:hover {
       color: var(--ctdc-gold);
       transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ctdc-gold);
+      outline-offset: 2px;
+      border-radius: 4px;
+      color: var(--ctdc-gold);
     }
 
     /* Elegant hover underline growth effect (Desktop only) */
@@ -259,6 +277,11 @@ body {
         background-color: rgba(255, 255, 255, 0.15) !important;
         border-color: rgba(255, 255, 255, 0.4);
       }
+
+      &:focus-visible {
+        outline: 2px solid var(--ctdc-gold);
+        outline-offset: 2px;
+      }
     }
 
     /* Drawer backdrop overlays */
@@ -287,6 +310,11 @@ body {
         &:hover {
           background-color: rgba(255, 255, 255, 0.15) !important;
           border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        &:focus-visible {
+          outline: 2px solid var(--ctdc-gold);
+          outline-offset: 2px;
         }
       }
 
@@ -320,7 +348,7 @@ body {
       .usa-nav__submenu-item a {
         color: rgba(255, 255, 255, 0.65) !important;
         font-weight: 500 !important;
-        
+
         &:hover {
           color: var(--ctdc-gold) !important;
           background: transparent !important;
@@ -374,7 +402,9 @@ body {
   width: 100%;
   max-width: 520px;
   color: white;
-  background: rgb(var(--ctdc-brand-blue-rgb) / 0.65); /* Modern glassmorphism with primary brand blue */
+  background: rgb(
+    var(--ctdc-brand-blue-rgb) / 0.65
+  ); /* Modern glassmorphism with primary brand blue */
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -475,7 +505,11 @@ body {
    ========================================================================== */
 
 .ctdc-footer {
-  background: linear-gradient(180deg, var(--ctdc-navy) 0%, var(--ctdc-navy-deep) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--ctdc-navy) 0%,
+    var(--ctdc-navy-deep) 100%
+  );
   color: rgba(255, 255, 255, 0.7);
   padding: 4.5rem 0 3rem 0;
   font-family:
@@ -585,6 +619,11 @@ body {
     &:active {
       transform: translateY(0);
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--ctdc-gold);
+      outline-offset: 2px;
+    }
   }
 
   /* Main Grid styling */
@@ -650,11 +689,32 @@ body {
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgb(var(--ctdc-brand-blue-rgb) / 0.3);
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--ctdc-gold);
+      outline-offset: 2px;
+    }
   }
 
   /* Navigation columns */
   .usa-footer__nav {
     padding: 0;
+
+    /* Below tablet the columns stack (full-width <480px, 2x2 480–639px).
+       Add vertical spacing so stacked columns don't crowd each other. */
+    @media (max-width: 639px) {
+      .grid-row > [class*="grid-col"] {
+        margin-bottom: 2rem;
+      }
+    }
+
+    /* In the 2x2 layout USWDS columns float, so an uneven column can snag
+       the next row. Clear the left column so rows drop cleanly. */
+    @media (min-width: 480px) and (max-width: 639px) {
+      .grid-row > [class*="grid-col"]:nth-child(odd) {
+        clear: left;
+      }
+    }
   }
 
   .ctdc-footer__list {
@@ -682,6 +742,12 @@ body {
         color: var(--ctdc-gold); /* Warm gold color on hover */
         transform: translateX(4px); /* micro-animation */
       }
+
+      &:focus-visible {
+        outline: 2px solid var(--ctdc-gold);
+        outline-offset: 2px;
+        color: var(--ctdc-gold);
+      }
     }
   }
 
@@ -695,7 +761,7 @@ body {
     flex-wrap: wrap;
     gap: 1rem;
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.45);
+    color: rgba(255, 255, 255, 0.65);
   }
 
   .ctdc-footer__copyright {
@@ -858,6 +924,10 @@ pre code {
    Logo Section Wrapper (Supporters & Community Partners)
    ========================================================================== */
 
+.ctdc-content-area .ctdc-logo-section {
+  padding-top: 2rem;
+}
+
 .ctdc-logo-section {
   padding: 3rem 0 2.5rem;
   background: var(--ctdc-bg-light); /* Refined off-white, not flat USWDS gray */
@@ -874,12 +944,16 @@ pre code {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+}
 
-  /* Make grid columns flex containers so height:100% on cards works */
-  .grid-row > [class*="grid-col"] {
-    display: flex;
-    flex-direction: column;
-  }
+/* Logo grid: wraps evenly, last row centers gracefully, widths capped so
+   logos never stretch into banners. Replaces the USWDS grid-col columns. */
+.ctdc-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .ctdc-logo-section__header {
@@ -920,16 +994,19 @@ pre code {
    ========================================================================== */
 
 .ctdc-logo-card {
+  /* Quiet "paper": the logo is the ink; the card just neutralizes the mixed
+     logo backgrounds (jpgs, light PNGs). Hairline border, one soft shadow. */
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.07);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  padding: 1.25rem 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  padding: 1rem 1.5rem; /* normal, comfortable gap around the logo */
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 140px; /* Fixed height — uniform grid regardless of logo size */
-  flex: 1; /* Fill parent flex column */
+  min-height: 118px; /* Tightened; rows equalize to their tallest card */
+  flex: 1 1 180px; /* Grow to fill a row... */
+  max-width: 220px; /* ...but never stretch into a banner */
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
   overflow: hidden;
@@ -945,9 +1022,14 @@ pre code {
     text-decoration: none;
   }
 
+  /* Optical normalization: cap BOTH dimensions so wide wordmarks hit the
+     width limit and compact marks hit the height limit — balancing visual
+     mass rather than raw pixels. Per-logo modifiers tune the outliers. */
   img {
-    max-height: 48px;
-    max-width: 85%;
+    /* Fill the card: wide wordmarks max out on width, compact marks on
+       height. Interior is ~86px tall (118 min-height − 2×1rem padding). */
+    max-height: 78px;
+    max-width: 90%;
     width: auto;
     object-fit: contain;
     filter: none;
@@ -957,20 +1039,30 @@ pre code {
     &.logo-invert {
       filter: invert(1);
     }
+
+    &.logo--lg {
+      max-height: 82px;
+      max-width: 82%;
+    } /* compact / icon-like marks */
+
+    &.logo--sm {
+      max-height: 56px;
+      max-width: 94%;
+    } /* tall or visually heavy wordmarks */
   }
 
-  /* Multi-logo card (e.g. Red Cross): constrain each logo */
+  /* Multi-logo card (Red Cross): two stacked + divider must fit ~86px */
   .display-flex.flex-column img {
-    max-height: 36px;
+    max-height: 32px;
+    max-width: 78%;
   }
 
   /* Text labels beside/below logos */
   .ctdc-logo-card__text {
     color: var(--ctdc-text-dark);
-    font-size: 0.85rem;
-    line-height: 1.35;
+    font-size: 0.8rem;
+    line-height: 1.3;
     transition: color 0.3s ease;
-    white-space: nowrap;
 
     .text-bold {
       font-weight: 700;
@@ -979,8 +1071,8 @@ pre code {
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    border-color: rgb(var(--ctdc-gold-rgb) / 0.55);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+    border-color: rgb(var(--ctdc-gold-rgb) / 0.5);
 
     img {
       transform: scale(1.04);
@@ -989,6 +1081,45 @@ pre code {
     .ctdc-logo-card__text {
       color: var(--ctdc-brand-blue);
     }
+  }
+}
+
+/* Cards carrying a text label (GW, AGI) need more room than a logo tile */
+.ctdc-logo-card--wide {
+  flex-basis: 240px;
+  max-width: 300px;
+
+  /* Keep an unclassed icon (GW) balanced next to its label, not dwarfing it */
+  img:not([class*="logo--"]) {
+    max-height: 56px;
+    max-width: 54%;
+  }
+}
+
+/* Partners are the relationship-rich tier — we build WITH them — so their
+   cards carry the gold "thread" from the vision doc. Supporters stay calm. */
+.ctdc-logo-section--partners .ctdc-logo-card {
+  border-left: 3px solid rgb(var(--ctdc-gold-rgb) / 0.7);
+}
+
+/* Closing invitation — the wall's second job is recruiting the next partner. */
+.ctdc-logo-cta {
+  margin-top: 2.5rem;
+  text-align: center;
+
+  &__text {
+    font-size: 1rem;
+    color: var(--ctdc-text-muted);
+    margin: 0 auto 1.25rem;
+    max-width: 34rem;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
   }
 }
 
@@ -1013,6 +1144,7 @@ pre code {
    ========================================================================== */
 
 .ctdc-content-area > h2,
+.ctdc-archive-section > h2,
 .ctdc-section-heading {
   font-size: 1.75rem;
   font-weight: 700;
@@ -1036,11 +1168,13 @@ pre code {
 }
 
 .ctdc-content-area > h2:first-child,
+.ctdc-archive-section > h2:first-child,
 .ctdc-section-heading:first-child {
   margin-top: 0;
 }
 
-.ctdc-content-area > h3 {
+.ctdc-content-area > h3,
+.ctdc-archive-section > h3 {
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--ctdc-text-dark);
@@ -1053,6 +1187,14 @@ pre code {
 .ctdc-section-desc {
   font-size: 1.05rem;
   line-height: 1.65;
+  color: var(--ctdc-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Lead / standfirst paragraph — bridges a hero into the page body */
+.ctdc-content-area .ctdc-lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
   color: var(--ctdc-text-muted);
   margin-bottom: 1.5rem;
 }
@@ -1125,9 +1267,113 @@ pre code {
   flex-grow: 1;
 }
 
-/* Ensure visual break between Active/Past project grids */
-.ctdc-content-area > .usa-card-group + h3 {
-  margin-top: 3rem;
+/* Archive section — full-bleed tinted band for past projects */
+.ctdc-archive-section {
+  background: var(--ctdc-bg-light);
+  border-top: 1px solid var(--ctdc-border-light);
+  border-bottom: 1px solid var(--ctdc-border-light);
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 2.5rem 1rem 3rem;
+
+  @media (min-width: 64em) {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  > h2 {
+    margin-top: 0;
+  }
+
+  /* Past cards: tighter image, compact feel */
+  .ctdc-project-card--past .usa-card__img img {
+    max-height: 8rem;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Project Cards — Footer-Inspired Polish
+   ========================================================================== */
+
+/* Active: gold top accent mirroring footer's border-top */
+.ctdc-project-card--active .usa-card__container {
+  border-top: 3px solid var(--ctdc-gold);
+}
+
+/* Past: subtle muted top stripe */
+.ctdc-project-card--past .usa-card__container {
+  border-top: 3px solid var(--ctdc-border-light);
+}
+
+/* Card heading: brand-colored, no default browser link blue */
+.usa-card__heading a {
+  color: var(--ctdc-navy);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--ctdc-brand-blue);
+    text-decoration: underline;
+  }
+}
+
+/* Status badge — pill echoing footer's "Back to top" pill */
+.ctdc-project-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.ctdc-project-badge--active {
+  background-color: rgb(var(--ctdc-gold-rgb) / 0.15);
+  color: var(--ctdc-button-dark);
+  border: 1px solid rgb(var(--ctdc-gold-rgb) / 0.4);
+}
+
+.ctdc-project-badge--past {
+  background-color: var(--ctdc-bg-light);
+  color: var(--ctdc-text-muted);
+  border: 1px solid var(--ctdc-border-light);
+}
+
+/* Card footer: hairline separator + "View project →" CTA */
+.ctdc-project-card__footer {
+  border-top: 1px solid var(--ctdc-border-light);
+  padding: 0.875rem 1.25rem 1rem;
+  margin-top: auto;
+}
+
+.ctdc-project-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--ctdc-brand-blue);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  .ctdc-icon {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: var(--ctdc-navy);
+    transform: translateX(4px); /* mirrors footer nav link hover */
+
+    .ctdc-icon {
+      transform: translateX(2px);
+    }
+  }
 }
 
 /* ==========================================================================
@@ -1194,6 +1440,35 @@ pre code {
   color: #ffffff;
 }
 
+/* ==========================================================================
+   Tactile CTA Buttons (Civic Premium Dark)
+   Pill shape, hover lift, and gold focus ring per the design vision.
+   Excludes --unstyled (link-style) buttons.
+   ========================================================================== */
+
+.usa-button:not(.usa-button--unstyled) {
+  border-radius: 20px;
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: 2px solid var(--ctdc-gold);
+    outline-offset: 2px;
+  }
+}
+
 .ctdc-project-links {
   list-style: none;
   display: flex;
@@ -1224,3 +1499,474 @@ pre code {
   }
 }
 
+/* ==========================================================================
+   Donate Page
+   ========================================================================== */
+
+.ctdc-donate-reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0 3rem;
+}
+
+.ctdc-donate-reason {
+  padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+  border-left: 3px solid var(--ctdc-gold);
+  background: var(--ctdc-bg-light);
+  border-radius: 0 8px 8px 0;
+}
+
+.ctdc-donate-reason__label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ctdc-navy);
+  margin-bottom: 0.5rem;
+}
+
+.ctdc-donate-reason p {
+  font-size: 0.95rem;
+  color: var(--ctdc-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ctdc-donate-cta {
+  background: var(--ctdc-navy);
+  border-radius: 12px;
+  border-top: 3px solid var(--ctdc-gold);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  margin: 2rem 0 3rem;
+}
+
+.ctdc-donate-cta__lead {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.ctdc-donate-cta__buttons {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.ctdc-donate-cta__note {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.875rem;
+  margin: 1.25rem 0 0;
+}
+
+/* Gold primary button inside donate panel */
+.ctdc-donate-btn-primary.usa-button {
+  background-color: var(--ctdc-gold);
+  color: var(--ctdc-navy);
+  font-weight: 700;
+
+  &:hover {
+    background-color: #f5cc7a;
+    color: var(--ctdc-navy);
+    box-shadow: 0 4px 14px rgba(238, 192, 94, 0.4);
+  }
+
+  &:focus {
+    outline-color: #ffffff;
+  }
+}
+
+/* Ghost outline button inside donate panel */
+.ctdc-donate-btn-outline.usa-button {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.65);
+    box-shadow: none;
+    transform: translateY(-2px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ctdc-donate-cta {
+    padding: 2rem 1.25rem;
+  }
+
+  .ctdc-donate-reasons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   About Page
+   ========================================================================== */
+
+.ctdc-about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.ctdc-about-card {
+  padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+  border-left: 3px solid var(--ctdc-gold);
+  background: var(--ctdc-bg-light);
+  border-radius: 0 8px 8px 0;
+}
+
+.ctdc-about-card__title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ctdc-navy);
+  margin-bottom: 0.5rem;
+}
+
+.ctdc-about-card p {
+  font-size: 0.95rem;
+  color: var(--ctdc-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ctdc-about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.ctdc-about-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--ctdc-border-light);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ctdc-navy);
+  text-decoration: none;
+  background: var(--ctdc-bg-light);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    background-color: var(--ctdc-navy);
+    color: #ffffff;
+    border-color: var(--ctdc-navy);
+    transform: translateY(-2px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ctdc-about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Partners — "Who we partner with" cards (Civic Premium Dark)
+   Quiet light cards with the gold left-thread + ambient lift. They stay
+   restrained on purpose; the process timeline below is the loud element.
+   ========================================================================== */
+
+.ctdc-partner-paths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ctdc-partner-path {
+  background: #ffffff;
+  border: 1px solid var(--ctdc-border-light);
+  border-left: 3px solid rgb(var(--ctdc-gold-rgb) / 0.7); /* the gold thread */
+  border-radius: 12px;
+  padding: 1.5rem 1.5rem 1.5rem 1.35rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-left-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    border-left-color: var(--ctdc-gold);
+  }
+}
+
+.ctdc-partner-path__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ctdc-navy);
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+
+.ctdc-partner-path__body {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--ctdc-text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Partners — "How partnering works" process timeline (Civic Premium Dark)
+   A full-bleed dark anchor band dropped into the light page. A continuous
+   gold thread links numbered nodes — the content is a real ordered sequence,
+   so the numbering carries information rather than decorating. This band is
+   the page's signature element.
+   ========================================================================== */
+
+.ctdc-process {
+  /* Break out of the centered content column to a full-viewport anchor band.
+     On <=1023px the .grid-container ancestor clips overflow-x, which trims
+     these margins exactly to the viewport edge — so it bleeds at every size.
+     The negative bottom margin cancels .ctdc-content-area's bottom padding so
+     the band meets the footer's gold line directly, anchor to anchor. */
+  margin-top: 4rem;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: -4rem;
+  padding: 4rem 0 4.5rem;
+  background: linear-gradient(
+    180deg,
+    var(--ctdc-navy) 0%,
+    var(--ctdc-navy-deep) 100%
+  );
+  border-top: 3px solid var(--ctdc-gold); /* echoes the footer's gold top line */
+}
+
+.ctdc-process > .grid-container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.ctdc-process__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ctdc-gold);
+  margin: 0 0 0.75rem;
+}
+
+.ctdc-process__title {
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 2.75rem;
+}
+
+.ctdc-process__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ctdc-process__step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.75rem 1fr;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  /* The thread: a gold line from this node down to the next one. The last
+     step gets none, so the sequence terminates cleanly. */
+  &:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 1.375rem; /* centre of the 2.75rem node column */
+    top: 2.75rem; /* start just below this node */
+    bottom: 0; /* reach the next node */
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      180deg,
+      rgb(var(--ctdc-gold-rgb) / 0.55) 0%,
+      rgb(var(--ctdc-gold-rgb) / 0.25) 100%
+    );
+  }
+}
+
+.ctdc-process__node {
+  position: relative;
+  z-index: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgb(var(--ctdc-brand-blue-rgb) / 0.25);
+  border: 2px solid var(--ctdc-gold);
+  color: var(--ctdc-gold);
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 0 18px rgb(var(--ctdc-gold-rgb) / 0.18); /* soft glow on the dark band */
+}
+
+.ctdc-process__heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+  margin: 0.5rem 0 0.5rem; /* nudge so the text centres against the node */
+}
+
+.ctdc-process__text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgb(255 255 255 / 0.72);
+  margin: 0;
+  max-width: 46rem;
+
+  a {
+    color: var(--ctdc-gold);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+      color: #f5d489;
+    }
+  }
+}
+
+.ctdc-process .ctdc-process__cta {
+  margin-top: 1.25rem;
+
+  &.usa-button {
+    background-color: var(--ctdc-gold);
+    color: var(--ctdc-navy-deep);
+    font-weight: 700;
+  }
+
+  &.usa-button:hover {
+    background-color: #f4cd79;
+    color: var(--ctdc-navy-deep);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ctdc-partner-paths {
+    grid-template-columns: 1fr;
+  }
+
+  .ctdc-process {
+    margin-top: 2.5rem;
+    margin-bottom: -2.5rem; /* matches .ctdc-content-area mobile bottom padding */
+    padding: 3rem 0 3.5rem;
+  }
+}
+
+/* ==========================================================================
+   Project Detail Page — Footer-Inspired Polish
+   The chrome around a project's prose: a back link, a status-badged header
+   with a lead standfirst and resource buttons, and a framed hero image.
+   The body ({{ content }}) is author-controlled and left untouched.
+   ========================================================================== */
+
+.ctdc-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ctdc-text-muted);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+
+  .usa-icon {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: var(--ctdc-navy);
+
+    .usa-icon {
+      transform: translateX(-3px); /* slides back toward "all projects" */
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--ctdc-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+.ctdc-project-detail__header {
+  padding-bottom: 1.75rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid var(--ctdc-border-light);
+
+  .ctdc-project-badge {
+    margin-bottom: 0.85rem;
+  }
+
+  .ctdc-project-links {
+    margin-top: 1.5rem;
+  }
+}
+
+.ctdc-project-detail__title {
+  font-size: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ctdc-navy);
+  margin: 0;
+}
+
+.ctdc-project-detail__lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--ctdc-text-muted);
+  margin: 0.85rem 0 0;
+  max-width: 46rem;
+}
+
+/* Framed hero image: rounded, soft shadow, height-capped so the listing
+   thumbnails never stretch past their native resolution. */
+.ctdc-project-detail__media {
+  margin-bottom: 2.5rem;
+
+  img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 420px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .ctdc-project-detail__media img {
+    max-height: 280px;
+  }
+}
