@@ -5,6 +5,8 @@ hero-title: Civic Tech DC
 hero-subtitle: Founded in 2012, Civic Tech DC is a non-partisan 501(c)(3) nonprofit community of volunteers using open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives.
 hero-image: hero-image-homepage.jpg
 hero-image-alt: Civic Tech DC volunteers collaborating on laptops around tables at a project night
+hero-cta-label: Get involved
+hero-cta-link: /slack
 ---
 
 {% include components/meetup-events.html %}

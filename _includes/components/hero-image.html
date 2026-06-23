@@ -7,5 +7,12 @@
     <h1 class="margin-top-0">{{ include.title }}</h1>
     {% endif %}
     <p>{{ include.subtitle }}</p>
+    {% if include.cta_label and include.cta_link %}
+    <p class="hero-text__cta">
+      <a href="{{ include.cta_link | relative_url }}" class="usa-button"
+        >{{ include.cta_label }}</a
+      >
+    </p>
+    {% endif %}
   </div>
 </div>
