@@ -56,6 +56,34 @@
         </a>
       </div>
 
+      <!-- DC Reentry Housing Alliance -->
+      {% assign reentry_project = site.projects | where_exp: "p", "p.title ==
+      'DC Reentry Housing Project'" | first %}
+      <div class="ctdc-logo-card">
+        <a
+          href="{{ reentry_project.url | relative_url }}"
+          aria-label="DC Reentry Housing Alliance"
+        >
+          {% include responsive-image.html
+          src="logos/dc-reentry-housing-alliance.jpg" alt="DC Reentry Housing
+          Alliance" sizes="220px" %}
+        </a>
+      </div>
+
+      <!-- Four Mile Run Conservancy -->
+      <div class="ctdc-logo-card">
+        <a
+          href="https://www.fourmilerun.org/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Four Mile Run Conservancy"
+        >
+          {% include responsive-image.html
+          src="logos/four-mile-run-conservancy.png" alt="Four Mile Run
+          Conservancy" sizes="160px" %}
+        </a>
+      </div>
+
       <!-- Red Cross Organizations -->
       <div class="ctdc-logo-card">
         <div
