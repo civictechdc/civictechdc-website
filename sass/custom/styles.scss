@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  background-color: #ffffff;
 }
 
 * {
@@ -53,12 +54,25 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(11, 26, 48, 0.95);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  isolation: isolate; /* Contain backdrop-filter stacking context */
+  background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(11, 26, 48, 0.95);
+    backdrop-filter: blur(12px) saturate(160%);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    z-index: -1;
+    pointer-events: none;
+  }
 
   .usa-nav-container {
     max-width: 64rem;
@@ -70,17 +84,16 @@ body {
     background: transparent;
     min-height: 4rem;
     height: initial;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 0.5rem 1rem;
   }
 
   /* Logo */
   .ctdc_logo img {
-    max-height: 2.8rem;
+    max-height: 3.8rem;
     width: auto;
     display: block;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
+    filter: brightness(0) invert(79%) sepia(28%) saturate(1450%) hue-rotate(345deg) brightness(99%) contrast(92%);
+    opacity: 0.95;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
@@ -94,7 +107,7 @@ body {
     color: rgba(255, 255, 255, 0.8) !important;
     font-size: 0.95rem !important;
     font-weight: 600 !important;
-    background: transparent !important;
+    background-color: transparent !important;
     padding: 0.5rem 0.75rem !important;
     position: relative;
     transition: color 0.25s ease, transform 0.25s ease !important;
@@ -104,11 +117,39 @@ body {
       transform: translateY(-1px);
     }
 
+    /* Elegant hover underline growth effect (Desktop only) */
+    @media only screen and (min-width: 1024px) {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0.75rem;
+        right: 0.75rem;
+        height: 2px;
+        background-color: #eec05e;
+        border-radius: 2px;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
     /* Submenu button focus state reset */
     &.usa-accordion__button {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") !important;
       background-size: 1.25rem !important;
+      background-repeat: no-repeat !important;
+      background-position: right 0.5rem center !important;
       padding-right: 1.75rem !important;
+
+      /* Hide default USWDS arrow mask */
+      span::after {
+        display: none !important;
+      }
 
       &[aria-expanded="true"] {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23eec05e'%3E%3Cpath d='M7 14l5-5 5 5z'/%3E%3C/svg%3E") !important;
@@ -122,22 +163,58 @@ body {
   .usa-nav__link[aria-current] {
     color: #eec05e !important;
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0.75rem;
-      right: 0.75rem;
-      height: 2px;
-      background-color: #eec05e;
-      border-radius: 2px;
+    @media only screen and (min-width: 1024px) {
+      &::after {
+        transform: scaleX(1) !important;
+      }
     }
   }
 
-  /* Desktop layout alignment helper */
+  /* Desktop layout alignment helper and dropdown modernization */
   @media only screen and (min-width: 1024px) {
+    .usa-navbar {
+      padding: 0.875rem 1rem !important;
+    }
+
     .ctdc_logo img {
-      max-height: 3.5rem;
+      max-height: 4.8rem;
+    }
+
+    /* Desktop dropdown submenus */
+    .usa-nav__submenu {
+      background-color: rgba(11, 26, 48, 0.98) !important;
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 12px !important;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
+      padding: 0.5rem 0 !important;
+      top: 100% !important;
+      margin-top: 0.5rem !important;
+      min-width: 12rem !important;
+      overflow: hidden;
+
+      .usa-nav__submenu-item {
+        a {
+          color: rgba(255, 255, 255, 0.8) !important;
+          padding: 0.75rem 1.25rem !important;
+          background-color: transparent !important;
+          transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          font-weight: 500 !important;
+          display: block;
+
+          &:hover {
+            color: #eec05e !important;
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            padding-left: 1.5rem !important; /* Slide-in effect */
+          }
+
+          &[aria-current="page"] {
+            color: #eec05e !important;
+            font-weight: 600 !important;
+          }
+        }
+      }
     }
   }
 }
@@ -208,6 +285,7 @@ body {
           &[aria-current]::after {
             bottom: 6px;
             left: 0.5rem;
+            right: auto;
             width: 1.5rem;
           }
         }
@@ -755,3 +833,325 @@ pre code {
   width: 24px !important;
   height: auto !important;
 }
+
+/* ==========================================================================
+   Logo Section Wrapper (Supporters & Community Partners)
+   ========================================================================== */
+
+.ctdc-logo-section {
+  padding: 3rem 0 2.5rem;
+  background: #f4f6f9; /* Refined off-white, not flat USWDS gray */
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+
+  &--partners {
+    background: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .grid-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Make grid columns flex containers so height:100% on cards works */
+  .grid-row > [class*="grid-col"] {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.ctdc-logo-section__header {
+  margin-bottom: 1.75rem;
+}
+
+.ctdc-logo-section__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0b1a30;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-bottom: 0.75rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.5rem;
+    height: 3px;
+    background: #eec05e;
+    border-radius: 2px;
+  }
+}
+
+.ctdc-logo-section__desc {
+  font-size: 1rem;
+  color: #4a5568;
+  margin: 0;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Modern Polished Logo Grid & Cards (Civic Premium Dark Partner Styling)
+   ========================================================================== */
+
+.ctdc-logo-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px; /* Fixed height — uniform grid regardless of logo size */
+  flex: 1; /* Fill parent flex column */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  overflow: hidden;
+
+  /* All direct link wrappers fill the card */
+  > a,
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+
+  img {
+    max-height: 48px;
+    max-width: 85%;
+    width: auto;
+    object-fit: contain;
+    filter: none;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &.logo-invert {
+      filter: invert(1);
+    }
+  }
+
+  /* Multi-logo card (e.g. Red Cross): constrain each logo */
+  .display-flex.flex-column img {
+    max-height: 36px;
+  }
+
+  /* Text labels beside/below logos */
+  .ctdc-logo-card__text {
+    color: #1e293b;
+    font-size: 0.85rem;
+    line-height: 1.35;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    .text-bold {
+      font-weight: 700;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-color: rgba(238, 192, 94, 0.55);
+
+    img {
+      transform: scale(1.04);
+    }
+
+    .ctdc-logo-card__text {
+      color: #104378;
+    }
+  }
+}
+
+/* ==========================================================================
+   Content Area (Hero → Supporters gap)
+   ========================================================================== */
+
+.ctdc-content-area {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .ctdc-content-area {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* ==========================================================================
+   Section Headings (Consistent premium styling for markdown-rendered h2/h3)
+   ========================================================================== */
+
+.ctdc-content-area > h2,
+.ctdc-section-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0b1a30;
+  letter-spacing: -0.01em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3px;
+    background: #eec05e;
+    border-radius: 2px;
+  }
+}
+
+.ctdc-content-area > h2:first-child,
+.ctdc-section-heading:first-child {
+  margin-top: 0;
+}
+
+.ctdc-content-area > h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.ctdc-section-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Events Section
+   ========================================================================== */
+
+.ctdc-events-section {
+  margin-bottom: 1rem;
+}
+
+.ctdc-events-section__embed {
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.ctdc-events-iframe {
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 767px) {
+  .ctdc-events-iframe {
+    height: clamp(320px, 55vh, 464px);
+  }
+}
+
+.ctdc-events-section__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   Project Cards — Equalize Heights & Spacing
+   ========================================================================== */
+
+.ctdc-content-area .usa-card-group {
+  margin-bottom: 1rem;
+}
+
+.usa-card-group {
+  align-items: stretch;
+}
+
+.usa-card__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.usa-card__body {
+  flex-grow: 1;
+}
+
+/* Ensure visual break between Active/Past project grids */
+.ctdc-content-area > .usa-card-group + h3 {
+  margin-top: 3rem;
+}
+
+/* ==========================================================================
+   Hero Text Overlay — Typography Tuning
+   ========================================================================== */
+
+.hero-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.hero-text p {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ==========================================================================
+   Skip to Content (Accessibility)
+   ========================================================================== */
+
+.ctdc-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: #0b1a30;
+  color: #eec05e;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
+    outline: 2px solid #eec05e;
+    outline-offset: 2px;
+  }
+}
+

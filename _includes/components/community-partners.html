@@ -1,131 +1,68 @@
-<div class="grid-container margin-bottom-2">
-  <h2>Community Partners</h2>
-  Working together with these organizations to build technology for civic and
-  social good.
-</div>
-
-<section class="usa-graphic-list usa-section bg-base-lightest">
+<section class="ctdc-logo-section ctdc-logo-section--partners">
   <div class="grid-container">
-    <!-- First row: Campaign Legal Center, Electrify DC -->
-    <div
-      class="usa-graphic-list__row grid-row grid-gap flex-align-center margin-bottom-4"
-    >
-      <div
-        class="usa-media-block tablet:grid-col display-flex flex-align-center flex-justify-center"
-      >
-        <div
-          class="usa-card__container bg-white border-accent-warm border-2px padding-3 border-radius-md"
-        >
-          <a
-            href="https://campaignlegal.org/"
-            target="_blank"
-            class="display-flex flex-align-center flex-justify-center"
-          >
-            {% include responsive-image.html src="logos/clc.svg" alt="Campaign
-            Legal Center logo" width="200" %}
-          </a>
-        </div>
-      </div>
-      <div
-        class="usa-media-block tablet:grid-col display-flex flex-align-center flex-justify-center"
-      >
-        <div
-          class="usa-card__container bg-white border-accent-warm border-2px padding-3 border-radius-md"
-        >
-          <a
-            href="https://www.electrifydc.org/"
-            target="_blank"
-            class="display-flex flex-align-center flex-justify-center"
-          >
-            {% include responsive-image.html
-            src="logos/electrify_dc_logo_white.png" alt="Electrify DC logo"
-            class="logo-invert" %}
-          </a>
-        </div>
-      </div>
+    <div class="ctdc-logo-section__header">
+      <h2 class="ctdc-logo-section__title">Community Partners</h2>
+      <p class="ctdc-logo-section__desc">Working together with these organizations to build technology for civic and social good.</p>
     </div>
+    <div class="grid-row grid-gap-2 flex-align-stretch flex-justify-center">
+      <!-- Campaign Legal Center -->
+      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
+        <div class="ctdc-logo-card">
+          <a href="https://campaignlegal.org/" target="_blank" rel="noopener" aria-label="Campaign Legal Center">
+            {% include responsive-image.html src="logos/clc.svg" alt="Campaign Legal Center" %}
+          </a>
+        </div>
+      </div>
 
-    <!-- Second row: GW and AGI -->
-    <div
-      class="usa-graphic-list__row grid-row grid-gap flex-align-center margin-bottom-4"
-    >
-      <div
-        class="usa-media-block tablet:grid-col display-flex flex-align-center flex-justify-center"
-      >
-        <div
-          class="usa-card__container bg-white border-accent-warm border-2px padding-3 border-radius-md"
-        >
-          <a
-            href="https://ospo.gwu.edu/"
-            target="_blank"
-            class="display-flex flex-align-center text-no-underline"
-          >
-            {% include responsive-image.html src="logos/gw-header-image-53.png"
-            alt="GW logo" class="margin-right-2" sizes="80px" %}
-            <div class="text-base-darkest">
-              <span class="font-sans-lg text-bold">Open Source</span><br />
-              <span class="font-sans-lg text-bold">Program Office</span>
+      <!-- Electrify DC -->
+      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
+        <div class="ctdc-logo-card">
+          <a href="https://www.electrifydc.org/" target="_blank" rel="noopener" aria-label="Electrify DC">
+            {% include responsive-image.html src="logos/electrify_dc_logo_white.png" alt="Electrify DC" class="logo-invert" %}
+          </a>
+        </div>
+      </div>
+
+      <!-- GW OSPO -->
+      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
+        <div class="ctdc-logo-card">
+          <a href="https://ospo.gwu.edu/" target="_blank" rel="noopener" aria-label="GW Open Source Program Office" class="display-flex flex-align-center text-no-underline gap-2">
+            {% include responsive-image.html src="logos/gw-header-image-53.png" alt="GW logo" sizes="64px" %}
+            <div class="ctdc-logo-card__text text-left">
+              <span class="text-bold">Open Source</span><br />
+              <span class="text-bold">Program Office</span>
             </div>
           </a>
         </div>
       </div>
-      <div
-        class="usa-media-block tablet:grid-col display-flex flex-align-center flex-justify-center"
-      >
-        <div
-          class="usa-card__container bg-white border-accent-warm border-2px padding-3 border-radius-md"
-        >
-          <a
-            href="https://americalabs.org/"
-            target="_blank"
-            class="display-flex flex-column flex-align-center text-no-underline"
-          >
-            {% include responsive-image.html src="logos/agi.webp" alt="American
-            Governance Institute logo" sizes="200px" %}
-            <div class="text-base-darkest text-center margin-top-1">
-              <span class="font-sans-md text-bold"
-                >American Governance Institute</span
-              >
+
+      <!-- American Governance Institute -->
+      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
+        <div class="ctdc-logo-card">
+          <a href="https://americalabs.org/" target="_blank" rel="noopener" aria-label="American Governance Institute" class="display-flex flex-column flex-align-center text-no-underline">
+            {% include responsive-image.html src="logos/agi.webp" alt="American Governance Institute" %}
+            <div class="ctdc-logo-card__text text-center margin-top-1">
+              <span class="text-bold">American Governance Institute</span>
             </div>
           </a>
         </div>
       </div>
-    </div>
 
-    <!-- Third row: Red Cross organizations grouped together -->
-    <div
-      class="usa-graphic-list__row grid-row grid-gap flex-align-center flex-justify-center"
-    >
-      <div
-        class="usa-media-block tablet:grid-col-6 display-flex flex-align-center flex-justify-center"
-      >
-        <div
-          class="usa-card__container bg-white border-accent-warm border-2px padding-3 border-radius-md"
-        >
-          <div
-            class="display-flex flex-column flex-align-center flex-justify-center"
-          >
-            <div class="margin-bottom-2">
-              <a href="https://www.redcross.org/" target="_blank">
-                {% include responsive-image.html src="logos/red-cross.png"
-                alt="American Red Cross logo" sizes="180px" %}
-              </a>
-            </div>
-            <div>
-              <a href="https://www.pmi.or.id/" target="_blank">
-                {% include responsive-image.html src="logos/indonesian-rc.png"
-                alt="Indonesian Red Cross logo" sizes="200px" %}
-              </a>
-            </div>
+      <!-- Red Cross Organizations -->
+      <div class="grid-col-12 tablet:grid-col-6 desktop:grid-col margin-bottom-2">
+        <div class="ctdc-logo-card">
+          <div class="display-flex flex-column flex-align-center flex-justify-center width-full">
+            <a href="https://www.redcross.org/" target="_blank" rel="noopener" aria-label="American Red Cross">
+              {% include responsive-image.html src="logos/red-cross.png" alt="American Red Cross" %}
+            </a>
+            <div class="margin-y-2" style="height:1px;background:rgba(0,0,0,0.06);width:60%;"></div>
+            <a href="https://www.pmi.or.id/" target="_blank" rel="noopener" aria-label="Indonesian Red Cross (Palang Merah Indonesia)">
+              {% include responsive-image.html src="logos/indonesian-rc.png" alt="Indonesian Red Cross (Palang Merah Indonesia)" %}
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  .logo-invert {
-    filter: invert(1);
-  }
-</style>
