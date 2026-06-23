@@ -1,10 +1,9 @@
 <section class="ctdc-logo-section ctdc-logo-section--partners">
   <div class="grid-container">
     <div class="ctdc-logo-section__header">
-      <h2 class="ctdc-logo-section__title">Community Partners</h2>
+      <h2 class="ctdc-logo-section__title">{{ include.title | default: "Community Partners" }}</h2>
       <p class="ctdc-logo-section__desc">
-        Working together with these organizations to build technology for civic
-        and social good.
+        {{ include.desc | default: "Working together with these organizations to build technology for civic and social good." }}
       </p>
     </div>
     <div class="ctdc-logo-grid">
