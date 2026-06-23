@@ -1,16 +1,19 @@
 ---
-layout: hero-image-small
+layout: hero-image
+banner-hero: true
 title: Support Civic Tech DC
+hero-title: Support Us
+hero-subtitle: Civic Tech DC runs on the generosity of our community — individuals who donate and organizations that sponsor our work or contribute in-kind. Every contribution goes directly toward events, projects, and keeping this community free and open to everyone.
+hero-image: hero-image-donate.jpg
 permalink: /support/
 redirect_from: /donate/
-hero-image: hero-image-donate.jpg
 ---
 
-# Support Civic Tech DC
-
-Civic Tech DC runs entirely on the generosity of our community — individuals who donate and organizations that sponsor our work or contribute in-kind. Every contribution goes directly toward events, projects, and keeping this community free and open to everyone.
+{% include components/supporters.html %}
 
 ## Donate
+
+Your donation funds our events, project nights, and the costs of keeping this community free and open to everyone.
 
 Civic Tech DC is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the full extent allowed by law.
 
@@ -26,18 +29,8 @@ Civic Tech DC is a registered 501(c)(3) nonprofit. All donations are tax-deducti
   <p class="ctdc-donate-cta__note">Contributions of any size are welcome.</p>
 </div>
 
-## Become a sponsor
+## For organizations
 
-Organizations can support Civic Tech DC through financial sponsorship. We offer sponsorship tiers that include recognition at events, on our website, and across our community channels.
+Organizations can support Civic Tech DC financially or in-kind — past supporters have provided event space, food, and compute resources. Sponsors are recognized on our website, at events, and across our community channels.
 
-<!-- TODO: add tier names, amounts, and benefits -->
-
-<a href="mailto:team@civictechdc.org" class="usa-button">Get in touch about sponsorship</a>
-
-## In-kind support
-
-We also welcome in-kind contributions from organizations. Past supporters have provided event space, food and drinks, and compute resources. If your organization can offer something that helps us run events or build projects, we'd love to hear from you.
-
-<a href="mailto:team@civictechdc.org" class="usa-button usa-button--outline">Get in touch about in-kind support</a>
-
-{% include components/supporters.html %}
+<a href="mailto:team@civictechdc.org" class="usa-button">Get in touch</a>
