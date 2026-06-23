@@ -1722,6 +1722,12 @@ pre code {
   margin: 0;
 }
 
+/* Two-up variant (e.g. /pitch "What you can pitch"). Falls back to a single
+   column on mobile via the shared .ctdc-partner-paths rule below. */
+.ctdc-partner-paths--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* ==========================================================================
    Partners — "How partnering works" process timeline (Civic Premium Dark)
    A full-bleed dark anchor band dropped into the light page. A continuous
@@ -1733,13 +1739,10 @@ pre code {
 .ctdc-process {
   /* Break out of the centered content column to a full-viewport anchor band.
      On <=1023px the .grid-container ancestor clips overflow-x, which trims
-     these margins exactly to the viewport edge — so it bleeds at every size.
-     The negative bottom margin cancels .ctdc-content-area's bottom padding so
-     the band meets the footer's gold line directly, anchor to anchor. */
+     these margins exactly to the viewport edge — so it bleeds at every size. */
   margin-top: 4rem;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  margin-bottom: -4rem;
   padding: 4rem 0 4.5rem;
   background: linear-gradient(
     180deg,
@@ -1747,6 +1750,13 @@ pre code {
     var(--ctdc-navy-deep) 100%
   );
   border-top: 3px solid var(--ctdc-gold); /* echoes the footer's gold top line */
+}
+
+/* When the band is the last thing on the page (e.g. /partners), cancel the
+   content area's bottom padding so it meets the footer's gold line, anchor to
+   anchor. On pages with content after it (e.g. /pitch) it keeps normal flow. */
+.ctdc-process:last-child {
+  margin-bottom: -4rem;
 }
 
 .ctdc-process > .grid-container {
@@ -1874,9 +1884,50 @@ pre code {
 
   .ctdc-process {
     margin-top: 2.5rem;
-    margin-bottom: -2.5rem; /* matches .ctdc-content-area mobile bottom padding */
     padding: 3rem 0 3.5rem;
   }
+
+  .ctdc-process:last-child {
+    margin-bottom: -2.5rem; /* matches .ctdc-content-area mobile bottom padding */
+  }
+}
+
+/* ==========================================================================
+   Pitch CTA — cross-page call to action pointing at /pitch (Projects, home)
+   ========================================================================== */
+
+.ctdc-pitch-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  margin: 3rem 0 0;
+  padding: 1.75rem 2rem;
+  background: var(--ctdc-bg-light);
+  border: 1px solid var(--ctdc-border-light);
+  border-left: 3px solid var(--ctdc-gold);
+  border-radius: 12px;
+}
+
+.ctdc-pitch-cta__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ctdc-navy);
+  margin: 0 0 0.35rem;
+}
+
+.ctdc-pitch-cta__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ctdc-text-muted);
+  margin: 0;
+  max-width: 44rem;
+}
+
+.ctdc-pitch-cta__btn {
+  flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -1968,5 +2019,117 @@ pre code {
 @media only screen and (max-width: 640px) {
   .ctdc-project-detail__media img {
     max-height: 280px;
+  }
+}
+
+/* ==========================================================================
+   Hero CTA button (optional — only renders when a page passes cta_label/link)
+   Gold pill so it pops against the blue glassmorphic hero panel.
+   ========================================================================== */
+
+.hero-text__cta {
+  margin: 1.25rem 0 0;
+
+  .usa-button {
+    background-color: var(--ctdc-gold);
+    color: var(--ctdc-navy-deep);
+    font-weight: 700;
+
+    &:hover {
+      background-color: #f4cd79;
+      color: var(--ctdc-navy-deep);
+    }
+  }
+}
+
+/* ==========================================================================
+   Closing CTA band — the homepage's deliberate "work with us" ask.
+   A saturated brand-blue moment between the light logo walls and the deep
+   navy footer; two clearly-differentiated paths instead of one hedged block.
+   ========================================================================== */
+
+.ctdc-cta-band {
+  background: var(--ctdc-brand-blue);
+  padding: 3.5rem 0 3.75rem;
+}
+
+.ctdc-cta-band__eyebrow {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ctdc-gold);
+  margin: 0 0 0.6rem;
+}
+
+.ctdc-cta-band__title {
+  text-align: center;
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+}
+
+.ctdc-cta-band__paths {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.ctdc-cta-band__path {
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 12px;
+  padding: 1.85rem 1.5rem;
+  text-align: center;
+}
+
+.ctdc-cta-band__path-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.5rem;
+}
+
+.ctdc-cta-band__path-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 0.8);
+  margin: 0 auto 1.35rem;
+  max-width: 22rem;
+}
+
+.ctdc-cta-band .usa-button {
+  background-color: var(--ctdc-gold);
+  color: var(--ctdc-navy-deep);
+  font-weight: 700;
+
+  &:hover {
+    background-color: #f4cd79;
+    color: var(--ctdc-navy-deep);
+  }
+}
+
+.ctdc-cta-band .usa-button--outline {
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.6);
+
+  &:hover {
+    background-color: rgb(255 255 255 / 0.1);
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .ctdc-cta-band__paths {
+    grid-template-columns: 1fr;
   }
 }
