@@ -1,96 +1,195 @@
-<footer class="usa-footer usa-footer--big" role="contentinfo">
-  <div class="grid-container usa-footer__return-to-top">
-    <a href="#top" id="returnToTopLink">Return to top</a>
-  </div>
-  <div class="usa-footer__primary-section">
-    <div class="grid-container">
-      <div class="grid-row grid-gap">
-        <div class="tablet:grid-col-8 desktop:grid-col-12">
-          <nav class="usa-footer__nav" aria-label="Footer navigation">
-            <div class="grid-row grid-gap-4 grid-row-gap-2">
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section class="usa-footer__primary-content">
-                  <h4 class="usa-footer__primary-link">Get Involved</h4>
-                  <ul class="usa-list usa-list--unstyled">
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/special-events">Events</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/projects">Projects</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/slack">Join Slack</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/partners">Partners</a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section class="usa-footer__primary-content">
-                  <h4 class="usa-footer__primary-link">Learn More</h4>
-                  <ul class="usa-list usa-list--unstyled">
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/about">About</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/blog">Blog</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/code-of-conduct"
-                        >Code of Conduct</a
-                      >
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section class="usa-footer__primary-content">
-                  <h4 class="usa-footer__primary-link">Support</h4>
-                  <ul class="usa-list usa-list--unstyled">
-                    <li class="usa-footer__secondary-link">
-                      <a href="{{ site.baseurl }}/donate">Donate</a>
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a
-                        href="https://forms.gle/HrpBe69qqCG8NiNo6"
-                        target="_blank"
-                        >Become an Organizer</a
-                      >
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a
-                        href="https://forms.gle/xNkayfBVMJj8dt1X8"
-                        target="_blank"
-                        >Give Feedback</a
-                      >
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div class="mobile-lg:grid-col-6 desktop:grid-col-3">
-                <section class="usa-footer__primary-content">
-                  <h4 class="usa-footer__primary-link">Connect</h4>
-                  <ul class="usa-list usa-list--unstyled">
-                    <li class="usa-footer__secondary-link">
-                      <a href="https://github.com/civictechdc" target="_blank"
-                        >GitHub</a
-                      >
-                    </li>
-                    <li class="usa-footer__secondary-link">
-                      <a
-                        href="https://www.linkedin.com/company/civic-tech-dc/"
-                        target="_blank"
-                        >LinkedIn</a
-                      >
-                    </li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-          </nav>
+<footer class="ctdc-footer" role="contentinfo">
+  <div class="grid-container">
+    <!-- Top Row: Logo/Brand and Return to Top Link -->
+    <div class="ctdc-footer__top-row">
+      <div class="ctdc-footer__brand-container">
+        <a
+          href="{{ site.baseurl }}/"
+          class="ctdc-footer__logo"
+          aria-label="Civic Tech DC Home"
+        >
+          {% include responsive-image.html src="logos/civic-tech-dc.svg"
+          alt="Civic Tech DC logo" eager=true %}
+        </a>
+      </div>
+      <div class="ctdc-footer__return-to-top">
+        <a href="#top" id="returnToTopLink" class="ctdc-footer__scroll-link">
+          <span>Back to top</span>
+          <svg
+            class="ctdc-icon"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+            />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Navigation Grid -->
+    <div class="ctdc-footer__main-grid grid-row grid-gap-4">
+      <!-- Left Column: About Civic Tech DC -->
+      <div class="tablet:grid-col-4 ctdc-footer__about-col">
+        <h3 class="ctdc-footer__heading">About Civic Tech DC</h3>
+        <p class="ctdc-footer__description">
+          We are a non-partisan, non-political group of volunteer civic hackers
+          working together to solve local issues and help people engage with the
+          city.
+        </p>
+        <div class="ctdc-footer__social-links">
+          <a
+            href="https://github.com/civictechdc"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            class="ctdc-footer__social-link"
+          >
+            <svg
+              class="ctdc-icon"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/company/civic-tech-dc/"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            class="ctdc-footer__social-link"
+          >
+            <svg
+              class="ctdc-icon"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+              />
+            </svg>
+          </a>
+          <a
+            href="{{ site.baseurl }}/slack"
+            aria-label="Slack"
+            class="ctdc-footer__social-link"
+          >
+            <svg
+              class="ctdc-icon"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M5.04 15.17a2.52 2.52 0 1 1-2.52-2.52h2.52v2.52zM6.3 15.17a2.52 2.52 0 0 1 2.52-2.52h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52H8.82a2.52 2.52 0 0 1-2.52-2.52v-5.04zM8.82 5.04a2.52 2.52 0 1 1 2.52 2.52H8.82V5.04zM8.82 6.3a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52H3.78A2.52 2.52 0 0 1 1.26 13.86V8.82A2.52 2.52 0 0 1 3.78 6.3h5.04zM18.96 8.82a2.52 2.52 0 1 1 2.52 2.52h-2.52V8.82zM17.7 8.82a2.52 2.52 0 0 1-2.52 2.52h-5.04a2.52 2.52 0 0 1-2.52-2.52V3.78A2.52 2.52 0 0 1 10.14 1.26h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04zM15.18 18.96a2.52 2.52 0 1 1-2.52-2.52h2.52v2.52zM15.18 17.7a2.52 2.52 0 0 1-2.52-2.52v-5.04a2.52 2.52 0 0 1 2.52-2.52h5.04a2.52 2.52 0 0 1 2.52 2.52v5.04a2.52 2.52 0 0 1-2.52 2.52h-5.04z"
+              />
+            </svg>
+          </a>
         </div>
+      </div>
+
+      <!-- Navigation Columns -->
+      <div class="tablet:grid-col-8">
+        <nav class="usa-footer__nav" aria-label="Footer navigation">
+          <div class="grid-row grid-gap-4">
+            <!-- Get Involved Column -->
+            <div class="mobile-lg:grid-col-3">
+              <h3 class="ctdc-footer__heading">Get Involved</h3>
+              <ul class="ctdc-footer__list">
+                <li><a href="{{ site.baseurl }}/special-events">Events</a></li>
+                <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
+                <li><a href="{{ site.baseurl }}/slack">Join Slack</a></li>
+                <li><a href="{{ site.baseurl }}/partners">Partners</a></li>
+              </ul>
+            </div>
+
+            <!-- Learn More Column -->
+            <div class="mobile-lg:grid-col-3">
+              <h3 class="ctdc-footer__heading">Learn More</h3>
+              <ul class="ctdc-footer__list">
+                <li><a href="{{ site.baseurl }}/about">About Us</a></li>
+                <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
+                <li>
+                  <a href="{{ site.baseurl }}/code-of-conduct"
+                    >Code of Conduct</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Support Column -->
+            <div class="mobile-lg:grid-col-3">
+              <h3 class="ctdc-footer__heading">Support</h3>
+              <ul class="ctdc-footer__list">
+                <li><a href="{{ site.baseurl }}/donate">Donate</a></li>
+                <li>
+                  <a
+                    href="https://forms.gle/HrpBe69qqCG8NiNo6"
+                    target="_blank"
+                    rel="noopener"
+                    >Become an Organizer</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://forms.gle/xNkayfBVMJj8dt1X8"
+                    target="_blank"
+                    rel="noopener"
+                    >Give Feedback</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Connect Column -->
+            <div class="mobile-lg:grid-col-3">
+              <h3 class="ctdc-footer__heading">Connect</h3>
+              <ul class="ctdc-footer__list">
+                <li>
+                  <a
+                    href="https://github.com/civictechdc"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/civic-tech-dc/"
+                    target="_blank"
+                    rel="noopener"
+                    >LinkedIn</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright / Meta Section -->
+    <div class="ctdc-footer__bottom">
+      <div class="ctdc-footer__copyright">
+        &copy; {{ 'now' | date: "%Y" }} Civic Tech DC. All rights reserved.
+      </div>
+      <div class="ctdc-footer__meta">
+        Built with volunteer power in Washington, D.C.
       </div>
     </div>
   </div>

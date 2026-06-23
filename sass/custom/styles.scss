@@ -13,7 +13,7 @@ body {
   body {
     overflow-x: hidden;
   }
-  
+
   .usa-nav-container,
   .usa-navbar,
   .grid-container,
@@ -21,7 +21,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
   }
-  
+
   .usa-header {
     width: 100%;
     max-width: 100%;
@@ -34,7 +34,7 @@ body {
     margin-left: 0;
     margin-right: 0;
   }
-  
+
   .grid-gap > * {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -45,46 +45,193 @@ body {
   flex-shrink: 0;
 }
 
-.ctdc_logo > img {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  max-height: 4rem;
-}
+/* ==========================================================================
+   Modern Polished Header Styles (Civic Premium Dark)
+   ========================================================================== */
 
-@media only screen and (min-width: 1024px) {
-  .ctdc_logo > img {
-    max-height: 8rem;
+.ctdc-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 26, 48, 0.95);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+
+  .usa-nav-container {
+    max-width: 64rem;
+    margin: 0 auto;
   }
-}
 
-.usa-navbar {
-  min-height: 4rem;
-  height: initial;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-/* Mobile menu button styling */
-.usa-menu-btn {
-  margin-right: 0;
-  padding: 0.75rem 1rem;
-}
-
-@media only screen and (max-width: 1023px) {
   .usa-navbar {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    border-bottom: none;
+    background: transparent;
+    min-height: 4rem;
+    height: initial;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
-  
-  .usa-menu-btn {
-    margin-right: 0.5rem;
+
+  /* Logo */
+  .ctdc_logo img {
+    max-height: 2.8rem;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
-  
-  /* Logo adjustments for mobile */
-  .ctdc_logo > img {
-    max-height: 3rem;
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
+
+  .ctdc_logo:hover img {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+
+  /* Navigation Links on Desktop */
+  .usa-nav__link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    background: transparent !important;
+    padding: 0.5rem 0.75rem !important;
+    position: relative;
+    transition: color 0.25s ease, transform 0.25s ease !important;
+
+    &:hover {
+      color: #eec05e !important;
+      transform: translateY(-1px);
+    }
+
+    /* Submenu button focus state reset */
+    &.usa-accordion__button {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") !important;
+      background-size: 1.25rem !important;
+      padding-right: 1.75rem !important;
+
+      &[aria-expanded="true"] {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23eec05e'%3E%3Cpath d='M7 14l5-5 5 5z'/%3E%3C/svg%3E") !important;
+        color: #eec05e !important;
+      }
+    }
+  }
+
+  /* Active State (Gold line thread) */
+  .usa-nav__link[aria-current="page"],
+  .usa-nav__link[aria-current] {
+    color: #eec05e !important;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0.75rem;
+      right: 0.75rem;
+      height: 2px;
+      background-color: #eec05e;
+      border-radius: 2px;
+    }
+  }
+
+  /* Desktop layout alignment helper */
+  @media only screen and (min-width: 1024px) {
+    .ctdc_logo img {
+      max-height: 3.5rem;
+    }
+  }
+}
+
+/* Mobile Nav Drawer Styles (Civic Premium Dark Drawer) */
+@media only screen and (max-width: 1023px) {
+  .ctdc-header {
+    .usa-navbar {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Mobile Hamburger Menu Button */
+    .usa-menu-btn {
+      margin-right: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      color: #ffffff !important;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      font-weight: 600;
+      padding: 0.75rem 1rem;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    /* Drawer backdrop overlays */
+    .usa-nav {
+      background-color: #0b1a30 !important;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3) !important;
+      padding: 1.5rem !important;
+
+      .usa-nav__close {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        width: 2.25rem !important;
+        height: 2.25rem !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+
+        img {
+          filter: brightness(0) invert(1);
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.15) !important;
+          border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+      }
+
+      /* Stack items vertically on mobile */
+      .usa-nav__primary-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+        .usa-nav__link {
+          padding: 1rem 0.5rem !important;
+          font-size: 1.05rem !important;
+
+          &[aria-current="page"]::after,
+          &[aria-current]::after {
+            bottom: 6px;
+            left: 0.5rem;
+            width: 1.5rem;
+          }
+        }
+      }
+
+      /* Submenu drawer matching */
+      .usa-nav__submenu {
+        background-color: #061121 !important;
+        border-radius: 8px;
+        margin-top: 0.25rem;
+        margin-bottom: 0.5rem;
+        padding-left: 0.5rem !important;
+      }
+
+      .usa-nav__submenu-item a {
+        color: rgba(255, 255, 255, 0.65) !important;
+        font-weight: 500 !important;
+        
+        &:hover {
+          color: #eec05e !important;
+          background: transparent !important;
+        }
+      }
+    }
   }
 }
 
@@ -128,19 +275,28 @@ body {
 .hero-text {
   position: relative;
   z-index: 2;
-  padding: 1.5rem;
+  padding: 2rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   color: white;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 0.25rem;
+  background: rgba(
+    16,
+    67,
+    120,
+    0.65
+  ); /* Modern glassmorphism with primary brand blue */
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (max-width: 767px) {
   .hero-image {
     padding: 1.5rem;
   }
-  
+
   .hero-text {
     max-width: 100%;
     width: 100%;
@@ -211,41 +367,281 @@ body {
   }
 }
 
-
-
 .blog-tag-cloud .usa-tag {
   font-size: 0.75rem;
   display: inline-block;
 }
 
-.usa-footer__primary-section {
-  padding-bottom: 2rem;
+/* ==========================================================================
+   Modern Polished Footer Styles
+   ========================================================================== */
+
+.ctdc-footer {
+  background: linear-gradient(180deg, #0b1a30 0%, #061121 100%);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4.5rem 0 3rem 0;
+  font-family:
+    "Source Sans Pro Web", "Helvetica Neue", Helvetica, Roboto, Arial,
+    sans-serif;
+  border-top: 3px solid #eec05e; /* Warm gold accent line at the very top */
+  position: relative;
+  overflow: hidden;
+
+  /* Decorative subtle grid overlay or radial gradient for depth */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at 80% 20%,
+      rgba(16, 67, 120, 0.15) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  .grid-container {
+    position: relative;
+    z-index: 1;
+    max-width: 64rem; /* Match standard USWDS container max-width */
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* Top Row styling */
+  .ctdc-footer__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .ctdc-footer__brand-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .ctdc-footer__logo {
+    display: inline-block;
+
+    img {
+      max-height: 3.5rem;
+      width: auto;
+      display: block;
+      filter: brightness(0) invert(1);
+      opacity: 0.85;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    &:hover img {
+      opacity: 1;
+      transform: scale(1.02);
+    }
+  }
+
+  /* Return to top link */
+  .ctdc-footer__return-to-top {
+    display: flex;
+    align-items: center;
+  }
+
+  .ctdc-footer__scroll-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    .ctdc-icon {
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+
+      .ctdc-icon {
+        transform: translateY(-3px);
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  /* Main Grid styling */
+  .ctdc-footer__main-grid {
+    margin-bottom: 3rem;
+  }
+
+  .ctdc-footer__about-col {
+    padding-right: 2rem;
+  }
+
+  .ctdc-footer__heading {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 2rem;
+      height: 2px;
+      background-color: #eec05e; /* Warm gold accent underline */
+    }
+  }
+
+  .ctdc-footer__description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Social links */
+  .ctdc-footer__social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .ctdc-footer__social-link {
+    color: rgba(255, 255, 255, 0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    text-decoration: none;
+
+    &:hover {
+      color: #ffffff;
+      background: #104378; /* Brand blue background */
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(16, 67, 120, 0.3);
+    }
+  }
+
+  /* Navigation columns */
+  .usa-footer__nav {
+    padding: 0;
+  }
+
+  .ctdc-footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: inline-block;
+      transition: all 0.25s ease;
+      padding: 0.15rem 0;
+
+      &:hover {
+        color: #eec05e; /* Warm gold color on hover */
+        transform: translateX(4px); /* micro-animation */
+      }
+    }
+  }
+
+  /* Bottom Copyright row */
+  .ctdc-footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.45);
+  }
+
+  .ctdc-footer__copyright {
+    font-weight: 400;
+  }
+
+  .ctdc-footer__meta {
+    font-style: italic;
+  }
 }
 
-/* Add spacing between wrapped footer nav items */
-.usa-footer__nav .usa-list {
-  gap: 1rem 2rem;
-  flex-wrap: wrap;
-}
+/* Responsive Overrides */
+@media (max-width: 767px) {
+  .ctdc-footer {
+    padding: 3.5rem 0 2rem 0;
 
-.usa-footer__nav .usa-list > li {
-  margin-bottom: 0.75rem;
-}
+    .ctdc-footer__top-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
 
-/* Ensure proper spacing for wrapped navigation */
-.usa-footer__nav {
-  line-height: 1.6;
-}
+    .ctdc-footer__return-to-top {
+      align-self: flex-end;
+    }
 
-.usa-footer__nav a {
-  display: inline-block;
-  padding: 0.25rem 0;
-}
+    .ctdc-footer__main-grid {
+      margin-bottom: 2rem;
+    }
 
-/* Simple footer cleanup */
-.usa-footer__primary-content h4 {
-  font-weight: 700;
-  margin-bottom: 1rem;
+    .ctdc-footer__about-col {
+      padding-right: 0;
+      margin-bottom: 2.5rem;
+    }
+
+    .ctdc-footer__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding-top: 1.5rem;
+    }
+  }
 }
 
 .grid-row-gap-05 {
@@ -264,3 +660,98 @@ body {
   row-gap: 4rem;
 }
 
+/* ==========================================================================
+   Code Blocks & Inline Code Styling
+   ========================================================================== */
+
+pre {
+  background-color: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 1.25rem;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  max-width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: block;
+}
+
+code {
+  font-family: "Source Code Pro", Consolas, Monaco, monospace;
+  font-size: 0.85em;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0.15rem 0.35rem;
+  color: #0f172a;
+  word-break: break-word;
+}
+
+pre code {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: #1e293b;
+  display: block;
+  white-space: pre;
+  word-break: normal;
+  word-wrap: normal;
+}
+
+/* ==========================================================================
+   Custom Card Variations & Micro-animations
+   ========================================================================== */
+
+.usa-card__container {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.usa-card:hover .usa-card__container {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+/* Maintain .usa-card--clean for compatibility if referenced in markdown */
+.usa-card--clean .usa-card__container {
+  border-color: #e2e8f0;
+}
+
+.usa-card--clean:hover .usa-card__container {
+  border-color: #cbd5e1;
+}
+
+/* ==========================================================================
+   Team Members Grid
+   ========================================================================== */
+
+.team-member-photo {
+  border-radius: 50%;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.linkedin-link {
+  text-decoration: none;
+  color: #0073b1;
+}
+
+.linkedin-link:hover {
+  text-decoration: underline;
+}
+
+.slack-btn-icon {
+  margin-right: 0.5rem !important;
+  width: 24px !important;
+  height: auto !important;
+}

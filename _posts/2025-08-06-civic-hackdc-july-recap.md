@@ -3,7 +3,7 @@ layout: post
 title: "Making Public Comments Count: How 80 Civic-Technologists Hacked Regulatory Data for a More Transparent Government"
 date: 2025-08-06 16:00:00 -0500
 author: "Michael Deeb"
-page_css: /assets/css/hack2025.css
+page_css: /assets/css/civichackdc.css
 categories: [Events, Community]
 redirect_from:
   - /events/community/2025/08/06/civic-hackdc-july-recap.html
