@@ -39,7 +39,7 @@ jobs:
           # flaky external hosts. On schedule/dispatch scan everything.
           args: >-
             --config lychee.toml
-            --base _site
+            --root-dir "${{ github.workspace }}/_site"
             ${{ github.event_name == 'pull_request' && '--offline' || '' }}
             "./_site/**/*.html"
           fail: true
