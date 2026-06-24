@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "civichackdc.css": "civichackdc-edc33b8c21.css",
   "events.css": "events-058e074c3f.css",
 <<<<<<< HEAD
@@ -12,6 +13,10 @@
   "styles.css": "styles-68acff56bd.css"
 >>>>>>> 4e73a92 (Tokenize remaining transition durations)
 =======
+=======
+  "civichackdc.css": "civichackdc-a77c1560b0.css",
+  "events.css": "events-a3db11ce2a.css",
+>>>>>>> 9a02a0e (Tokenize page-scoped event stylesheets with design tokens)
   "styles.css": "styles-0d123ff72c.css"
 >>>>>>> 6d11176 (Point homepage hero CTA to events and add Slack button)
 }

@@ -1,15 +1,23 @@
+/* ==========================================================================
+   Civic Hack DC / Nonprofit AI Clinic — legacy event landing styles
+   Page-scoped (page_css) layout for two special-event pages. Compiles to its
+   own civichackdc.css; styles.css loads first, so the --ctdc-* design tokens
+   from :root resolve here at runtime. Hardcoded brand values have been mapped
+   onto those tokens.
+   ========================================================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family:
-    "Source Sans Pro Web", "Helvetica Neue", Helvetica, Roboto, Arial,
-    sans-serif;
-  line-height: 1.6;
-  color: #333;
+  font-family: var(--ctdc-font-sans);
+  line-height: var(--ctdc-leading-relaxed);
+  color: var(--ctdc-text-dark);
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -17,21 +25,23 @@ body {
 }
 
 .hero {
-  background: linear-gradient(0deg, #104377);
+  background: linear-gradient(0deg, var(--ctdc-brand-blue));
   color: white;
   padding: 4rem 0;
   text-align: center;
 }
+
 .hero h1 {
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: var(--ctdc-text-5xl);
+  font-weight: var(--ctdc-weight-bold);
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 .hero-banner {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--ctdc-on-dark-border);
   padding: 1rem 2rem;
-  border-radius: 10px;
+  border-radius: var(--ctdc-radius-lg);
   margin: 2rem auto;
   max-width: 600px;
   backdrop-filter: blur(10px);
@@ -40,14 +50,16 @@ body {
 .section {
   padding: 3rem 0;
 }
+
 .section.alt {
-  background: #f8f9fa;
+  background: var(--ctdc-bg-light);
 }
+
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: var(--ctdc-text-4xl);
   margin-bottom: 2rem;
-  color: #333;
+  color: var(--ctdc-text-dark);
 }
 
 .cta-buttons {
@@ -56,54 +68,27 @@ body {
   justify-content: center;
   margin-top: 2rem;
 }
+
 .btn {
   padding: 12px 30px;
   border: none;
-  border-radius: 25px;
-  font-weight: 600;
+  border-radius: var(--ctdc-radius-pill);
+  font-weight: var(--ctdc-weight-semibold);
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s;
+  transition: all var(--ctdc-duration-base) var(--ctdc-ease);
   cursor: pointer;
 }
+
 .btn-secondary {
-  background: #f8f9fa;
-  color: #333;
-  border: 2px solid #e9ecef;
-}
-.btn-secondary:hover {
-  background: #104377;
-  transform: translateY(-2px);
+  background: var(--ctdc-bg-light);
+  color: var(--ctdc-text-dark);
+  border: 2px solid var(--ctdc-border-light);
 }
 
-.focus-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
-}
-.focus-icon {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-.focus-icon:hover {
-  transform: translateY(-4px);
-}
-.focus-icon-symbol {
-  width: 40px;
-  height: 40px;
-  background: #4a90e2;
-  border-radius: 50%;
-  margin: 0 auto 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.2rem;
+.btn-secondary:hover {
+  background: var(--ctdc-brand-blue);
+  transform: translateY(-2px);
 }
 
 .goals-grid {
@@ -111,49 +96,33 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
+
 .goal-card {
-  background: #f8f9fa;
+  background: var(--ctdc-bg-light);
   padding: 2rem;
-  border-radius: 12px;
-  border-left: 4px solid #4a90e2;
+  border-radius: var(--ctdc-radius-lg);
+  border-left: 4px solid var(--ctdc-brand-blue);
   transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+    transform var(--ctdc-duration-base) var(--ctdc-ease),
+    box-shadow var(--ctdc-duration-base) var(--ctdc-ease);
 }
+
 .goal-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--ctdc-shadow-lg);
 }
+
 .goal-number {
-  background: #104377;
+  background: var(--ctdc-brand-blue);
   color: white;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: var(--ctdc-radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: var(--ctdc-weight-bold);
   margin-bottom: 1rem;
-}
-
-.question-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-.question-card {
-  background: #f8f9fa;
-  padding: 0.8rem;
-  border-radius: 12px;
-  border-left: 4px solid #4a90e2;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
-}
-.question-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .partners-grid {
@@ -165,6 +134,7 @@ body {
   padding: 0;
   align-items: center;
 }
+
 .partner-logo {
   width: 120px;
   height: auto;
@@ -184,10 +154,7 @@ body {
     gap: 1rem;
   }
   .hero h1 {
-    font-size: 2.5rem;
-  }
-  .focus-grid {
-    grid-template-columns: repeat(2, 1fr);
+    font-size: var(--ctdc-text-4xl);
   }
   .goals-grid {
     grid-template-columns: 1fr;
