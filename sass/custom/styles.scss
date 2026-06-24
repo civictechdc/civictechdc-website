@@ -1270,9 +1270,32 @@ pre code {
 /* Lead / standfirst paragraph — bridges a hero into the page body */
 .ctdc-content-area .ctdc-lead {
   font-size: var(--ctdc-text-lg);
-  line-height: 1.7;
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--ctdc-space-lg);
+}
+
+/* Body copy — default markdown paragraphs and lists. This content area is a
+   bespoke prose container (not .usa-prose), so its body text needs the design
+   system applied explicitly; otherwise classless markdown falls back to the
+   browser default line-height and reads cramped. */
+.ctdc-content-area > p,
+.ctdc-content-area > ul,
+.ctdc-content-area > ol {
+  font-size: var(--ctdc-text-base);
+  line-height: var(--ctdc-leading-relaxed);
+  color: var(--ctdc-text-dark);
+  margin-bottom: var(--ctdc-space-lg);
+}
+
+.ctdc-content-area > ul,
+.ctdc-content-area > ol {
+  padding-left: var(--ctdc-space-lg);
+}
+
+.ctdc-content-area > ul > li,
+.ctdc-content-area > ol > li {
+  margin-bottom: var(--ctdc-space-2xs);
 }
 
 /* Centered variant: keep the gold underline aligned under centered
