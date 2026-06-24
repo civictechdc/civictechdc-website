@@ -353,7 +353,7 @@ Here is the high-level flow:
 9. A maintainer reviews and merges. The site deploys automatically to
    [civictechdc.org](https://civictechdc.org) after merge.
 
-For the full step-by-step contribution instructions, see [CONTRIBUTING.md](../CONTRIBUTING.md).
+For the full step-by-step contribution instructions, see [CONTRIBUTING.md](https://github.com/civictechdc/civictechdc-website/blob/main/CONTRIBUTING.md).
 
 If you get stuck, ask in the **#civictechdc-website** channel on the
 [Civic Tech DC Slack](https://civictechdc.org/slack). We're happy to help.

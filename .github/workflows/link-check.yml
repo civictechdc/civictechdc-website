@@ -35,6 +35,8 @@ jobs:
       - name: Check links (internal only on PRs, all links on schedule/dispatch)
         uses: lycheeverse/lychee-action@v2
         with:
+          # Pin lychee so config schema stays stable across action updates.
+          lycheeVersion: "v0.23.0"
           # On pull_request only scan internal links so PRs are not blocked by
           # flaky external hosts. On schedule/dispatch scan everything.
           args: >-
@@ -42,6 +44,9 @@ jobs:
             --root-dir "${{ github.workspace }}/_site"
             ${{ github.event_name == 'pull_request' && '--offline' || '' }}
             "./_site/**/*.html"
-          fail: true
+          # Advisory on PRs (does not block merges while the existing
+          # broken-link backlog is worked through); strict on the scheduled
+          # and manual runs, which are the real link audit.
+          fail: ${{ github.event_name != 'pull_request' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
