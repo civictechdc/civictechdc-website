@@ -5,17 +5,44 @@ description: The fonts and text styles used across the Civic Tech DC website.
 permalink: /design-system/typography/
 ---
 
-Civic Tech DC uses the standard USWDS typography system, which ensures readability, accessibility, and a clear hierarchy.
+Civic Tech DC runs on **one type system**: a single sans-serif for everything a
+person reads, and a single monospace for code. It builds on USWDS typography —
+which gives us readability, accessibility, and a clear hierarchy — with the
+project's [type scale]({{ '/design-system/foundations/#type-scale' | relative_url }})
+layered on top.
 
-## Font Families
+## Font families
 
-By default, the USWDS theme uses modern, legible sans-serif fonts for both headings and body text.
+One family does the work of headings, body, and UI. Don't introduce a second
+display or body face — consolidation is the point.
 
-- **Primary Typeface (Body & Headings):** `Public Sans` (or standard USWDS defaults depending on configuration).
+- **Sans (everything):** **Source Sans Pro** — set explicitly in
+  `sass/theme/_uswds-theme.scss` (`$theme-font-type-sans`) and mirrored as the
+  `--ctdc-font-sans` token. Headings, body, and UI all resolve to it, so the
+  page reads as one voice.
+- **Monospace (code only):** **Source Code Pro** (system-mono fallback),
+  exposed as `--ctdc-font-mono` and used by inline `code` and `pre` blocks.
+
+Reference the tokens rather than hand-writing a font stack:
+
+```scss
+font-family: var(--ctdc-font-sans);
+/* code */
+font-family: var(--ctdc-font-mono);
+```
+
+## Type scale
+
+Sizes come from the named ramp — `--ctdc-text-2xs` (12px) through
+`--ctdc-text-4xl` (40px) — documented in full on the
+[Foundations page]({{ '/design-system/foundations/#type-scale' | relative_url }}).
+Pick the nearest step instead of inventing a one-off `rem` value.
 
 ## Headings
 
-Use headings to create a clear document structure. In Jekyll/Markdown, these correspond to `#` through `######`.
+Use headings to create a clear document structure. In Jekyll/Markdown, these
+correspond to `#` through `######`. On long-form pages the section `h2`/`h3`
+styles add the gold underline accent automatically — no extra classes needed.
 
 ### Examples
 
@@ -28,17 +55,21 @@ Use headings to create a clear document structure. In Jekyll/Markdown, these cor
   <h6>Heading 6</h6>
 </div>
 
-## Body Text
+## Body text
 
-Standard body text is optimized for readability.
+Standard body text is optimized for readability — `--ctdc-text-base` at a
+relaxed line height.
 
 <div class="margin-bottom-4">
   <p>This is standard body text. We are a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city. We host events, work on projects, and build community.</p>
 </div>
 
-## Typography Utility Classes
+The **lead / standfirst** paragraph (`.ctdc-lead`) bridges a hero into the page
+body at `--ctdc-text-lg`. Use it for the first paragraph after a hero.
 
-You can adjust text size and weight using USWDS utility classes:
+## Typography utility classes
+
+Adjust size and weight with USWDS utility classes, which share the same scale:
 
 - `.font-sans-xs`, `.font-sans-sm`, `.font-sans-md`, `.font-sans-lg`, `.font-sans-xl`
 - `.text-bold`, `.text-normal`, `.text-italic`

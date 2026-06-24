@@ -13,6 +13,84 @@
   --ctdc-navy-rgb: 11 26 48;
   --ctdc-brand-blue-rgb: 16 67 120;
   --ctdc-gold-rgb: 238 192 94;
+
+  /* ======================================================================
+     Design Tokens — "Civic Premium Dark" content-style strategy
+     Single source of truth for type, spacing, radius, elevation & motion,
+     extracted from the footer (the system's reference implementation).
+     Documented at /design-system/foundations/ and /design-system/typography/.
+     ====================================================================== */
+
+  /* Typeface — one sans for UI/body/headings, one mono for code */
+  --ctdc-font-sans:
+    "Source Sans Pro Web", "Helvetica Neue", Helvetica, Roboto, Arial,
+    sans-serif;
+  --ctdc-font-mono: "Source Code Pro", Consolas, Monaco, monospace;
+
+  /* Type scale (rem) — a restrained, purposeful ramp */
+  --ctdc-text-2xs: 0.75rem; /* 12px · badges, eyebrows, tags */
+  --ctdc-text-xs: 0.8125rem; /* 13px · captions, fine print */
+  --ctdc-text-sm: 0.875rem; /* 14px · secondary / meta UI text */
+  --ctdc-text-base: 1rem; /* 16px · body default */
+  --ctdc-text-md: 1.125rem; /* 18px · large body */
+  --ctdc-text-lg: 1.25rem; /* 20px · lead paragraphs, card titles */
+  --ctdc-text-xl: 1.5rem; /* 24px · sub-headings */
+  --ctdc-text-2xl: 1.75rem; /* 28px · section headings */
+  --ctdc-text-3xl: 2rem; /* 32px · hero / page titles */
+  --ctdc-text-4xl: 2.5rem; /* 40px · large hero titles */
+
+  /* Line height */
+  --ctdc-leading-tight: 1.2; /* display / hero */
+  --ctdc-leading-snug: 1.3; /* headings */
+  --ctdc-leading-normal: 1.5; /* compact UI copy */
+  --ctdc-leading-relaxed: 1.65; /* body prose */
+
+  /* Letter spacing */
+  --ctdc-tracking-tight: -0.02em; /* large display type */
+  --ctdc-tracking-snug: -0.01em; /* headings */
+  --ctdc-tracking-wide: 0.08em; /* uppercase labels */
+  --ctdc-tracking-wider: 0.12em; /* eyebrows */
+
+  /* Font weight */
+  --ctdc-weight-normal: 400;
+  --ctdc-weight-medium: 500;
+  --ctdc-weight-semibold: 600;
+  --ctdc-weight-bold: 700;
+
+  /* Spacing scale (rem) — 4px base grid, the footer's rhythm */
+  --ctdc-space-3xs: 0.25rem;
+  --ctdc-space-2xs: 0.5rem;
+  --ctdc-space-xs: 0.75rem;
+  --ctdc-space-sm: 1rem;
+  --ctdc-space-md: 1.25rem;
+  --ctdc-space-lg: 1.5rem;
+  --ctdc-space-xl: 2rem;
+  --ctdc-space-2xl: 2.5rem;
+  --ctdc-space-3xl: 3rem;
+  --ctdc-space-4xl: 4rem;
+
+  /* Corner radius */
+  --ctdc-radius-xs: 4px; /* tags, small chips */
+  --ctdc-radius-sm: 6px; /* code blocks, inputs */
+  --ctdc-radius-md: 8px; /* media, panels */
+  --ctdc-radius-lg: 12px; /* cards, CTA bands */
+  --ctdc-radius-pill: 20px; /* buttons, pills, nav chips */
+  --ctdc-radius-full: 50%; /* avatars, icon bubbles */
+
+  /* Elevation — ambient, low-contrast shadows */
+  --ctdc-shadow-xs: 0 1px 4px rgba(0, 0, 0, 0.04);
+  --ctdc-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --ctdc-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --ctdc-shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.09);
+  --ctdc-shadow-xl: 0 12px 28px rgba(0, 0, 0, 0.08);
+
+  /* Motion — the footer's smooth, tactile easing */
+  --ctdc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ctdc-duration-fast: 0.2s;
+  --ctdc-duration-base: 0.3s;
+
+  /* Focus ring — gold, consistent across every interactive element */
+  --ctdc-focus-ring: 2px solid var(--ctdc-gold);
 }
 
 html,
@@ -75,7 +153,7 @@ body {
   background: transparent;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease;
+  transition: background var(--ctdc-duration-base) ease;
 
   &::before {
     content: "";
@@ -113,8 +191,8 @@ body {
       hue-rotate(345deg) brightness(99%) contrast(92%);
     opacity: 0.95;
     transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
+      opacity var(--ctdc-duration-base) ease,
+      transform var(--ctdc-duration-base) ease;
   }
 
   .ctdc_logo:hover img {
@@ -123,7 +201,7 @@ body {
   }
 
   .ctdc_logo:focus-visible {
-    outline: 2px solid var(--ctdc-gold);
+    outline: var(--ctdc-focus-ring);
     outline-offset: 4px;
     border-radius: 4px;
   }
@@ -146,7 +224,7 @@ body {
     }
 
     &:focus-visible {
-      outline: 2px solid var(--ctdc-gold);
+      outline: var(--ctdc-focus-ring);
       outline-offset: 2px;
       border-radius: 4px;
       color: var(--ctdc-gold);
@@ -221,7 +299,7 @@ body {
       backdrop-filter: blur(16px) saturate(160%);
       -webkit-backdrop-filter: blur(16px) saturate(160%);
       border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      border-radius: 12px !important;
+      border-radius: var(--ctdc-radius-lg) !important;
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
       padding: 0.5rem 0 !important;
       top: 100% !important;
@@ -234,7 +312,7 @@ body {
           color: rgba(255, 255, 255, 0.8) !important;
           padding: 0.75rem 1.25rem !important;
           background-color: transparent !important;
-          transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+          transition: all var(--ctdc-duration-fast) var(--ctdc-ease) !important;
           font-weight: 500 !important;
           display: block;
 
@@ -268,10 +346,10 @@ body {
       background-color: rgba(255, 255, 255, 0.08) !important;
       color: #ffffff !important;
       border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
+      border-radius: var(--ctdc-radius-pill);
       font-weight: 600;
       padding: 0.75rem 1rem;
-      transition: all 0.2s ease;
+      transition: all var(--ctdc-duration-fast) ease;
 
       &:hover {
         background-color: rgba(255, 255, 255, 0.15) !important;
@@ -279,7 +357,7 @@ body {
       }
 
       &:focus-visible {
-        outline: 2px solid var(--ctdc-gold);
+        outline: var(--ctdc-focus-ring);
         outline-offset: 2px;
       }
     }
@@ -292,14 +370,14 @@ body {
 
       .usa-nav__close {
         background-color: rgba(255, 255, 255, 0.05) !important;
-        border-radius: 50%;
+        border-radius: var(--ctdc-radius-full);
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
         width: 2.25rem !important;
         height: 2.25rem !important;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all 0.2s ease;
+        transition: all var(--ctdc-duration-fast) ease;
 
         img {
           filter: brightness(0) invert(1);
@@ -313,7 +391,7 @@ body {
         }
 
         &:focus-visible {
-          outline: 2px solid var(--ctdc-gold);
+          outline: var(--ctdc-focus-ring);
           outline-offset: 2px;
         }
       }
@@ -339,7 +417,7 @@ body {
       /* Submenu drawer matching */
       .usa-nav__submenu {
         background-color: var(--ctdc-navy-deep) !important;
-        border-radius: 8px;
+        border-radius: var(--ctdc-radius-md);
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
         padding-left: 0.5rem !important;
@@ -408,7 +486,7 @@ body {
   backdrop-filter: blur(12px) saturate(160%);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
+  border-radius: var(--ctdc-radius-md);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -459,11 +537,11 @@ body {
 
 /* Blog-specific styles */
 .blog-post-meta {
-  font-size: 0.875rem;
+  font-size: var(--ctdc-text-sm);
 }
 
 .blog-post-excerpt {
-  font-size: 1.125rem;
+  font-size: var(--ctdc-text-md);
   line-height: 1.6;
 }
 
@@ -473,7 +551,7 @@ body {
 }
 
 .blog-post-navigation {
-  font-size: 0.875rem;
+  font-size: var(--ctdc-text-sm);
 }
 
 .blog-nav-previous,
@@ -488,7 +566,7 @@ body {
 }
 
 .blog-tag-cloud .usa-tag {
-  font-size: 0.75rem;
+  font-size: var(--ctdc-text-2xs);
   display: inline-block;
 }
 
@@ -512,9 +590,7 @@ body {
   );
   color: rgba(255, 255, 255, 0.7);
   padding: 4.5rem 0 3rem 0;
-  font-family:
-    "Source Sans Pro Web", "Helvetica Neue", Helvetica, Roboto, Arial,
-    sans-serif;
+  font-family: var(--ctdc-font-sans);
   border-top: 3px solid var(--ctdc-gold); /* Warm gold accent line at the very top */
   position: relative;
   overflow: hidden;
@@ -571,8 +647,8 @@ body {
       filter: brightness(0) invert(1);
       opacity: 0.85;
       transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+        opacity var(--ctdc-duration-base) ease,
+        transform var(--ctdc-duration-base) ease;
     }
 
     &:hover img {
@@ -597,12 +673,12 @@ body {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+    border-radius: var(--ctdc-radius-pill);
     background: rgba(255, 255, 255, 0.03);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all var(--ctdc-duration-base) var(--ctdc-ease);
 
     .ctdc-icon {
-      transition: transform 0.3s ease;
+      transition: transform var(--ctdc-duration-base) ease;
     }
 
     &:hover {
@@ -621,7 +697,7 @@ body {
     }
 
     &:focus-visible {
-      outline: 2px solid var(--ctdc-gold);
+      outline: var(--ctdc-focus-ring);
       outline-offset: 2px;
     }
   }
@@ -637,7 +713,7 @@ body {
 
   .ctdc-footer__heading {
     color: #ffffff;
-    font-size: 1rem;
+    font-size: var(--ctdc-text-base);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -678,9 +754,9 @@ body {
     justify-content: center;
     width: 2.25rem;
     height: 2.25rem;
-    border-radius: 50%;
+    border-radius: var(--ctdc-radius-full);
     background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all var(--ctdc-duration-base) var(--ctdc-ease);
     text-decoration: none;
 
     &:hover {
@@ -691,7 +767,7 @@ body {
     }
 
     &:focus-visible {
-      outline: 2px solid var(--ctdc-gold);
+      outline: var(--ctdc-focus-ring);
       outline-offset: 2px;
     }
   }
@@ -744,7 +820,7 @@ body {
       }
 
       &:focus-visible {
-        outline: 2px solid var(--ctdc-gold);
+        outline: var(--ctdc-focus-ring);
         outline-offset: 2px;
         color: var(--ctdc-gold);
       }
@@ -831,7 +907,7 @@ body {
 pre {
   background-color: #f8f9fa;
   border: 1px solid var(--ctdc-border-light);
-  border-radius: 6px;
+  border-radius: var(--ctdc-radius-sm);
   padding: 1.25rem;
   overflow-x: auto; /* Enable horizontal scrolling */
   max-width: 100%;
@@ -842,7 +918,7 @@ pre {
 }
 
 code {
-  font-family: "Source Code Pro", Consolas, Monaco, monospace;
+  font-family: var(--ctdc-font-mono);
   font-size: 0.85em;
   background-color: #f1f5f9;
   border: 1px solid var(--ctdc-border-light);
@@ -853,7 +929,7 @@ code {
 }
 
 pre code {
-  font-size: 0.875rem;
+  font-size: var(--ctdc-text-sm);
   line-height: 1.6;
   background-color: transparent;
   border: none;
@@ -871,16 +947,16 @@ pre code {
    ========================================================================== */
 
 .usa-card__container {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--ctdc-shadow-xs);
   transition:
-    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    transform var(--ctdc-duration-fast) var(--ctdc-ease),
+    box-shadow var(--ctdc-duration-fast) ease,
+    border-color var(--ctdc-duration-fast) ease;
 }
 
 .usa-card:hover .usa-card__container {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--ctdc-shadow-lg);
   border-color: #cbd5e1;
 }
 
@@ -898,7 +974,7 @@ pre code {
    ========================================================================== */
 
 .team-member-photo {
-  border-radius: 50%;
+  border-radius: var(--ctdc-radius-full);
   max-width: 150px;
   height: auto;
   margin: 0 auto;
@@ -961,7 +1037,7 @@ pre code {
 }
 
 .ctdc-logo-section__title {
-  font-size: 1.5rem;
+  font-size: var(--ctdc-text-xl);
   font-weight: 700;
   color: var(--ctdc-navy);
   margin: 0 0 0.5rem 0;
@@ -982,7 +1058,7 @@ pre code {
 }
 
 .ctdc-logo-section__desc {
-  font-size: 1rem;
+  font-size: var(--ctdc-text-base);
   color: var(--ctdc-text-muted);
   margin: 0;
   margin-top: 0.75rem;
@@ -998,8 +1074,8 @@ pre code {
      logo backgrounds (jpgs, light PNGs). Hairline border, one soft shadow. */
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border-radius: var(--ctdc-radius-lg);
+  box-shadow: var(--ctdc-shadow-xs);
   padding: 1rem 1.5rem; /* normal, comfortable gap around the logo */
   display: flex;
   align-items: center;
@@ -1007,7 +1083,7 @@ pre code {
   min-height: 118px; /* Tightened; rows equalize to their tallest card */
   flex: 1 1 180px; /* Grow to fill a row... */
   max-width: 220px; /* ...but never stretch into a banner */
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all var(--ctdc-duration-base) var(--ctdc-ease);
   text-align: center;
   overflow: hidden;
 
@@ -1034,7 +1110,7 @@ pre code {
     object-fit: contain;
     filter: none;
     display: block;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform var(--ctdc-duration-base) var(--ctdc-ease);
 
     &.logo-invert {
       filter: invert(1);
@@ -1062,7 +1138,7 @@ pre code {
     color: var(--ctdc-text-dark);
     font-size: 0.8rem;
     line-height: 1.3;
-    transition: color 0.3s ease;
+    transition: color var(--ctdc-duration-base) ease;
 
     .text-bold {
       font-weight: 700;
@@ -1071,7 +1147,7 @@ pre code {
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
+    box-shadow: var(--ctdc-shadow-lg);
     border-color: rgb(var(--ctdc-gold-rgb) / 0.5);
 
     img {
@@ -1108,7 +1184,7 @@ pre code {
   text-align: center;
 
   &__text {
-    font-size: 1rem;
+    font-size: var(--ctdc-text-base);
     color: var(--ctdc-text-muted);
     margin: 0 auto 1.25rem;
     max-width: 34rem;
@@ -1146,7 +1222,7 @@ pre code {
 .ctdc-content-area > h2,
 .ctdc-archive-section > h2,
 .ctdc-section-heading {
-  font-size: 1.75rem;
+  font-size: var(--ctdc-text-2xl);
   font-weight: 700;
   color: var(--ctdc-navy);
   letter-spacing: -0.01em;
@@ -1175,7 +1251,7 @@ pre code {
 
 .ctdc-content-area > h3,
 .ctdc-archive-section > h3 {
-  font-size: 1.25rem;
+  font-size: var(--ctdc-text-lg);
   font-weight: 600;
   color: var(--ctdc-text-dark);
   margin-top: 2.5rem;
@@ -1193,10 +1269,33 @@ pre code {
 
 /* Lead / standfirst paragraph — bridges a hero into the page body */
 .ctdc-content-area .ctdc-lead {
-  font-size: 1.25rem;
-  line-height: 1.7;
+  font-size: var(--ctdc-text-lg);
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--ctdc-space-lg);
+}
+
+/* Body copy — default markdown paragraphs and lists. This content area is a
+   bespoke prose container (not .usa-prose), so its body text needs the design
+   system applied explicitly; otherwise classless markdown falls back to the
+   browser default line-height and reads cramped. */
+.ctdc-content-area > p,
+.ctdc-content-area > ul,
+.ctdc-content-area > ol {
+  font-size: var(--ctdc-text-base);
+  line-height: var(--ctdc-leading-relaxed);
+  color: var(--ctdc-text-dark);
+  margin-bottom: var(--ctdc-space-lg);
+}
+
+.ctdc-content-area > ul,
+.ctdc-content-area > ol {
+  padding-left: var(--ctdc-space-lg);
+}
+
+.ctdc-content-area > ul > li,
+.ctdc-content-area > ol > li {
+  margin-bottom: var(--ctdc-space-2xs);
 }
 
 /* Centered variant: keep the gold underline aligned under centered
@@ -1219,16 +1318,16 @@ pre code {
 
 .ctdc-events-section__embed {
   margin-top: 1.5rem;
-  border-radius: 8px;
+  border-radius: var(--ctdc-radius-md);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--ctdc-shadow-sm);
 }
 
 .ctdc-events-iframe {
   display: block;
   width: 100%;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--ctdc-radius-md);
 }
 
 @media only screen and (max-width: 767px) {
@@ -1329,7 +1428,7 @@ pre code {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 0.2rem 0.6rem;
-  border-radius: 20px;
+  border-radius: var(--ctdc-radius-pill);
   margin-bottom: 0.5rem;
 }
 
@@ -1357,7 +1456,7 @@ pre code {
   align-items: center;
   gap: 0.3rem;
   color: var(--ctdc-brand-blue);
-  font-size: 0.875rem;
+  font-size: var(--ctdc-text-sm);
   font-weight: 600;
   text-decoration: none;
   transition: all 0.25s ease;
@@ -1381,7 +1480,7 @@ pre code {
    ========================================================================== */
 
 .hero-text h1 {
-  font-size: 2rem;
+  font-size: var(--ctdc-text-3xl);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -1389,7 +1488,7 @@ pre code {
 }
 
 .hero-text p {
-  font-size: 1rem;
+  font-size: var(--ctdc-text-base);
   line-height: 1.65;
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
@@ -1398,7 +1497,7 @@ pre code {
 
 @media only screen and (min-width: 1024px) {
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: var(--ctdc-text-4xl);
   }
 
   .hero-text p {
@@ -1422,11 +1521,11 @@ pre code {
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
-  transition: top 0.2s ease;
+  transition: top var(--ctdc-duration-fast) ease;
 
   &:focus {
     top: 0;
-    outline: 2px solid var(--ctdc-gold);
+    outline: var(--ctdc-focus-ring);
     outline-offset: 2px;
   }
 }
@@ -1447,11 +1546,11 @@ pre code {
    ========================================================================== */
 
 .usa-button:not(.usa-button--unstyled) {
-  border-radius: 20px;
+  border-radius: var(--ctdc-radius-pill);
   transition:
-    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.2s ease;
+    transform var(--ctdc-duration-fast) var(--ctdc-ease),
+    box-shadow var(--ctdc-duration-fast) var(--ctdc-ease),
+    background-color var(--ctdc-duration-fast) ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -1464,7 +1563,7 @@ pre code {
   }
 
   &:focus {
-    outline: 2px solid var(--ctdc-gold);
+    outline: var(--ctdc-focus-ring);
     outline-offset: 2px;
   }
 }
@@ -1510,22 +1609,28 @@ pre code {
   margin: 2rem 0 3rem;
 }
 
-.ctdc-donate-reason {
-  padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+/* Accent panels — the gold-thread card shared by the About focus areas and
+   the Donate "why give" reasons. One pattern, two pages (see About section). */
+.ctdc-donate-reason,
+.ctdc-about-card {
+  padding: var(--ctdc-space-lg) var(--ctdc-space-lg) var(--ctdc-space-lg)
+    var(--ctdc-space-md);
   border-left: 3px solid var(--ctdc-gold);
   background: var(--ctdc-bg-light);
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--ctdc-radius-md) var(--ctdc-radius-md) 0;
 }
 
-.ctdc-donate-reason__label {
+.ctdc-donate-reason__label,
+.ctdc-about-card__title {
   display: block;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: var(--ctdc-text-base);
+  font-weight: var(--ctdc-weight-bold);
   color: var(--ctdc-navy);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--ctdc-space-2xs);
 }
 
-.ctdc-donate-reason p {
+.ctdc-donate-reason p,
+.ctdc-about-card p {
   font-size: 0.95rem;
   color: var(--ctdc-text-muted);
   line-height: 1.6;
@@ -1534,7 +1639,7 @@ pre code {
 
 .ctdc-donate-cta {
   background: var(--ctdc-navy);
-  border-radius: 12px;
+  border-radius: var(--ctdc-radius-lg);
   border-top: 3px solid var(--ctdc-gold);
   padding: 3rem 2.5rem;
   text-align: center;
@@ -1543,7 +1648,7 @@ pre code {
 
 .ctdc-donate-cta__lead {
   color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
+  font-size: var(--ctdc-text-base);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -1555,7 +1660,7 @@ pre code {
 
 .ctdc-donate-cta__note {
   color: rgba(255, 255, 255, 0.45);
-  font-size: 0.875rem;
+  font-size: var(--ctdc-text-sm);
   margin: 1.25rem 0 0;
 }
 
@@ -1609,31 +1714,12 @@ pre code {
 .ctdc-about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0 2rem;
+  gap: var(--ctdc-space-md);
+  margin: var(--ctdc-space-lg) 0 var(--ctdc-space-xl);
 }
 
-.ctdc-about-card {
-  padding: 1.5rem 1.5rem 1.5rem 1.25rem;
-  border-left: 3px solid var(--ctdc-gold);
-  background: var(--ctdc-bg-light);
-  border-radius: 0 8px 8px 0;
-}
-
-.ctdc-about-card__title {
-  display: block;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--ctdc-navy);
-  margin-bottom: 0.5rem;
-}
-
-.ctdc-about-card p {
-  font-size: 0.95rem;
-  color: var(--ctdc-text-muted);
-  line-height: 1.6;
-  margin: 0;
-}
+/* .ctdc-about-card / __title / p share the accent-panel pattern defined with
+   .ctdc-donate-reason in the Donate section above. */
 
 .ctdc-about-links {
   display: flex;
@@ -1647,17 +1733,17 @@ pre code {
   align-items: center;
   padding: 0.5rem 1.25rem;
   border: 1px solid var(--ctdc-border-light);
-  border-radius: 20px;
+  border-radius: var(--ctdc-radius-pill);
   font-size: 0.9rem;
   font-weight: 600;
   color: var(--ctdc-navy);
   text-decoration: none;
   background: var(--ctdc-bg-light);
   transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+    background-color var(--ctdc-duration-fast) ease,
+    color var(--ctdc-duration-fast) ease,
+    border-color var(--ctdc-duration-fast) ease,
+    transform var(--ctdc-duration-fast) ease;
 
   &:hover {
     background-color: var(--ctdc-navy);
@@ -1692,17 +1778,17 @@ pre code {
   background: #ffffff;
   border: 1px solid var(--ctdc-border-light);
   border-left: 3px solid rgb(var(--ctdc-gold-rgb) / 0.7); /* the gold thread */
-  border-radius: 12px;
+  border-radius: var(--ctdc-radius-lg);
   padding: 1.5rem 1.5rem 1.5rem 1.35rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    border-left-color 0.3s ease;
+    transform var(--ctdc-duration-base) var(--ctdc-ease),
+    box-shadow var(--ctdc-duration-base) var(--ctdc-ease),
+    border-left-color var(--ctdc-duration-base) ease;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--ctdc-shadow-xl);
     border-left-color: var(--ctdc-gold);
   }
 }
@@ -1827,7 +1913,7 @@ pre code {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--ctdc-radius-full);
   background: rgb(var(--ctdc-brand-blue-rgb) / 0.25);
   border: 2px solid var(--ctdc-gold);
   color: var(--ctdc-gold);
@@ -1845,7 +1931,7 @@ pre code {
 }
 
 .ctdc-process__text {
-  font-size: 1rem;
+  font-size: var(--ctdc-text-base);
   line-height: 1.65;
   color: rgb(255 255 255 / 0.72);
   margin: 0;
@@ -1907,7 +1993,7 @@ pre code {
   background: var(--ctdc-bg-light);
   border: 1px solid var(--ctdc-border-light);
   border-left: 3px solid var(--ctdc-gold);
-  border-radius: 12px;
+  border-radius: var(--ctdc-radius-lg);
 }
 
 .ctdc-pitch-cta__title {
@@ -1919,7 +2005,7 @@ pre code {
 }
 
 .ctdc-pitch-cta__text {
-  font-size: 1rem;
+  font-size: var(--ctdc-text-base);
   line-height: 1.6;
   color: var(--ctdc-text-muted);
   margin: 0;
@@ -1963,7 +2049,7 @@ pre code {
   }
 
   &:focus-visible {
-    outline: 2px solid var(--ctdc-gold);
+    outline: var(--ctdc-focus-ring);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -2011,7 +2097,7 @@ pre code {
     max-width: 100%;
     max-height: 420px;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: var(--ctdc-radius-lg);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 }
@@ -2085,7 +2171,7 @@ pre code {
 .ctdc-cta-band__path {
   background: rgb(255 255 255 / 0.06);
   border: 1px solid rgb(255 255 255 / 0.14);
-  border-radius: 12px;
+  border-radius: var(--ctdc-radius-lg);
   padding: 1.85rem 1.5rem;
   text-align: center;
 }
