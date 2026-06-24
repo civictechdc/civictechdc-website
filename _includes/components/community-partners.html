@@ -85,6 +85,19 @@
         </a>
       </div>
 
+      <!-- Technical.ly -->
+      <div class="ctdc-logo-card ctdc-logo-card--wide">
+        <a
+          href="https://technical.ly/"
+          target="_blank"
+          rel="noopener"
+          aria-label="Technical.ly"
+        >
+          {% include responsive-image.html src="logos/technically.svg" alt=""
+          class="logo--lg" width="200" %}
+        </a>
+      </div>
+
       <!-- DC Reentry Housing Alliance -->
       {% assign reentry_project = site.projects | where_exp: "p", "p.title ==
       'DC Reentry Housing Project'" | first %}
