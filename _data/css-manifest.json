@@ -27,6 +27,10 @@
 =======
   "civichackdc.css": "civichackdc-7c77dae101.css",
   "events.css": "events-a3db11ce2a.css",
+<<<<<<< HEAD
   "styles.css": "styles-2e56497cd7.css"
 >>>>>>> 99948c7 (Address review findings: restore legacy hero size, document specificity trap)
+=======
+  "styles.css": "styles-ab263bbc5e.css"
+>>>>>>> 3af4eff (Fix donate note contrast on navy support panels)
 }
