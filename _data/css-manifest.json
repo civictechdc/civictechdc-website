@@ -16,7 +16,11 @@
 =======
   "civichackdc.css": "civichackdc-a77c1560b0.css",
   "events.css": "events-a3db11ce2a.css",
+<<<<<<< HEAD
 >>>>>>> 9a02a0e (Tokenize page-scoped event stylesheets with design tokens)
   "styles.css": "styles-0d123ff72c.css"
 >>>>>>> 6d11176 (Point homepage hero CTA to events and add Slack button)
+=======
+  "styles.css": "styles-3bd11cf126.css"
+>>>>>>> 9ffaa06 (Add Sass mixins, extend tokens, and refactor custom styles)
 }
