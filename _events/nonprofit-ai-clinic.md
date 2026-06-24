@@ -21,9 +21,9 @@ description: |
         <h2>
             <b>Friday, October 24, 2025</b>
         </h2>
-        <h4>
+        <h3>
             <i>1:00 PM - 3:30 PM</i>
-        </h4>
+        </h3>
         <h3>
             <b>Location:</b> Ronald Reagan Int'l Trade Center
         </h3>
@@ -84,7 +84,7 @@ description: |
                            padding: 1.5rem;
                            background: rgba(255,255,255,0.05);
                            border-radius: 8px">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎤</div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">🎤</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Pitch</h3>
                     <p style="font-size: 0.95rem; opacity: 0.9;">4 nonprofits present real problems (2-3 min each)</p>
                 </div>
@@ -92,7 +92,7 @@ description: |
                            padding: 1.5rem;
                            background: rgba(255,255,255,0.05);
                            border-radius: 8px">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">💬</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Clarify</h3>
                     <p style="font-size: 0.95rem; opacity: 0.9;">Panel Q&A to understand the challenges</p>
                 </div>
@@ -100,7 +100,7 @@ description: |
                            padding: 1.5rem;
                            background: rgba(255,255,255,0.05);
                            border-radius: 8px">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛠️</div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">🛠️</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Build</h3>
                     <p style="font-size: 0.95rem; opacity: 0.9;">Solution pods rapidly prototype with AI tools (90 min)</p>
                 </div>
@@ -108,7 +108,7 @@ description: |
                            padding: 1.5rem;
                            background: rgba(255,255,255,0.05);
                            border-radius: 8px">
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;" aria-hidden="true">📊</div>
                     <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Share</h3>
                     <p style="font-size: 0.95rem; opacity: 0.9;">Demos and recommendations</p>
                 </div>

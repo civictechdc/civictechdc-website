@@ -15,7 +15,7 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🏠 Why This Matters</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🏠</span> Why This Matters</h2>
     <p>
       Nearly 5,000 cyclists were involved in crashes in DC between 2013 and 2022, yet there is no easy way for riders to know which streets are safest before they ride. Cyclists often rely on instinct, word of mouth, or trial and error to find comfortable routes.  
     </p>
@@ -34,7 +34,7 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">📖 Our Story</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
     <p class="margin-bottom-2">
       RideScore DC was born from a simple question: "Why isn't there a safety rating for bike routes like there is for restaurants?" After discovering that DC has rich open data on crashes, bike lanes, and street characteristics, but no integrated safety scoring system, we decided to build one.
       <br><br>
@@ -45,21 +45,21 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🌍</span> Geography / Reach</h2>
     <p>DMV-based, with DC as the initial focus. The open-source methodology can be adapted to any city with crash and infrastructure data. </p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🤝 Community Partners</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🤝</span> Community Partners</h2>
       <p>We don’t have any currently, but would love to partner with WABA, DDOT, or Zero Vision.</p>
   </div>
 </section>
 
 <section class="padding-y-5" style="width: 100%;">
   <div style="max-width: 900px; margin: 0 auto; padding: 0;">
-    <h2 class="font-sans-xl margin-bottom-2">📇 Current Project Volunteer Contacts</h2>
+    <h2 class="font-sans-xl margin-bottom-2"><span aria-hidden="true">📇</span> Current Project Volunteer Contacts</h2>
     <table class="usa-table usa-table--striped usa-table--borderless" style="width: 100%;">
       <thead>
         <tr>
@@ -72,7 +72,7 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
       <tbody>
         <tr>
           <th scope="row">EChO</th>
-          <td><strong>🧩 Project Lead</strong></td>
+          <td><strong><span aria-hidden="true">🧩</span> Project Lead</strong></td>
           <td class ="text-no-wrap">@EChO (Eleanor Claire-higgins Ory)</td>
           <td>
             <a href="mailto:eleanor.ory@gmail.com" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Email</a><br>
@@ -86,7 +86,7 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
 
 <section class="bg-primary-darker text-white padding-y-5" style="width: 100%;">
   <div style="width: 100%; padding: 0 2rem; margin: 0;">
-    <h2 style="margin-bottom: 1rem;">👋 Come Join Us</h2>
+    <h2 style="margin-bottom: 1rem;"><span aria-hidden="true">👋</span> Come Join Us</h2>
     <p style="margin-bottom: 1rem;">Everyone is welcome no matter your skill level or background. We especially need help with:</p>
     <ul style="margin: 0; padding-left: 1.5rem; list-style-position: inside; line-height: 1.6;">
         <li><strong>Transportation Domain Expertise</strong> Understanding bike infrastructure, safety factors, and urban cycling conditions.</li>
@@ -106,10 +106,10 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
   <div class="grid-container">
     <div class="usa-button-group">
       <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        💬 Slack (#ride-score-dc)
+        <span aria-hidden="true">💬</span> Slack (#ride-score-dc)
       </a>
       <a href="https://github.com/civictechdc/ridescoredc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        🧩 GitHub Repo
+        <span aria-hidden="true">🧩</span> GitHub Repo
       </a>
     </div>
   </div>

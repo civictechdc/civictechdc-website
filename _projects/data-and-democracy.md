@@ -9,7 +9,7 @@ description: "We build data tools for election protection: cleaning, analyzing, 
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
-    <em>🗳️ We build data tools for election protection: cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings.</em>
+    <em><span aria-hidden="true">🗳️</span> We build data tools for election protection: cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings.</em>
   </div>
 </section>
 
@@ -95,7 +95,7 @@ Our work makes public election data easier to clean, compare, and analyze across
 
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
-    <h2>👋 Come Join Us</h2>
+    <h2><span aria-hidden="true">👋</span> Come Join Us</h2>
     <p>We're looking for volunteers with skills in Python data pipelines, data visualization, analytics and modeling, and outreach. But the most important thing is curiosity about how elections actually work and who gets to participate in them. Current needs include:</p>
 <ul>
 <li>Data Cleaning / Pipeline Building (Python) – cleaning and standardizing datasets, improving and extending the pipeline</li>
@@ -116,10 +116,10 @@ Our work makes public election data easier to clean, compare, and analyze across
   <div class="grid-container">
     <div class="usa-button-group">
       <a href="https://civictechdc.slack.com/archives/C07HS3V6AAF" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        💬 Slack (#eavs_clc)
+        <span aria-hidden="true">💬</span> Slack (#eavs_clc)
       </a>
       <a href="https://github.com/civictechdc/eavs_clc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        🧩 GitHub Repo
+        <span aria-hidden="true">🧩</span> GitHub Repo
       </a>
     </div>
   </div>
