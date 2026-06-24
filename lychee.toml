@@ -17,9 +17,14 @@ max_retries = 3
 # Limit concurrent requests to be polite to remote hosts.
 max_concurrency = 8
 
-# Ignore anchors (fragment IDs) — these require rendering JS and produce
+# Ignore anchors (fragment IDs); these require rendering JS and produce
 # many false positives on static builds.
 include_fragments = false
+
+# Extensionless internal links like /about map to about.html in the built
+# site (GitHub Pages serves these without the extension). Tell lychee to try
+# the .html extension so these root-relative links resolve to local files.
+fallback_extensions = ["html"]
 
 # Skip common false-positive sources:
 #   - localhost URLs in code examples
