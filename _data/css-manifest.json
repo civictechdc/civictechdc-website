@@ -1,36 +1,5 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "civichackdc.css": "civichackdc-edc33b8c21.css",
-  "events.css": "events-058e074c3f.css",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "styles.css": "styles-68acff56bd.css"
-=======
-  "styles.css": "styles-f637c89d57.css"
->>>>>>> 2df2dc2 (Apply design tokens to content area body copy)
-=======
-  "styles.css": "styles-68acff56bd.css"
->>>>>>> 4e73a92 (Tokenize remaining transition durations)
-=======
-=======
-  "civichackdc.css": "civichackdc-a77c1560b0.css",
-  "events.css": "events-a3db11ce2a.css",
-<<<<<<< HEAD
->>>>>>> 9a02a0e (Tokenize page-scoped event stylesheets with design tokens)
-  "styles.css": "styles-0d123ff72c.css"
->>>>>>> 6d11176 (Point homepage hero CTA to events and add Slack button)
-=======
-  "styles.css": "styles-3bd11cf126.css"
->>>>>>> 9ffaa06 (Add Sass mixins, extend tokens, and refactor custom styles)
-=======
   "civichackdc.css": "civichackdc-7c77dae101.css",
   "events.css": "events-a3db11ce2a.css",
-<<<<<<< HEAD
-  "styles.css": "styles-2e56497cd7.css"
->>>>>>> 99948c7 (Address review findings: restore legacy hero size, document specificity trap)
-=======
   "styles.css": "styles-ab263bbc5e.css"
->>>>>>> 3af4eff (Fix donate note contrast on navy support panels)
 }
