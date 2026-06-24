@@ -15,9 +15,6 @@ description: |
 
 <section class="hero">
     <div class="container">
-        <div class="hero-banner">
-            {% include responsive-image.html class="usa-card__img" src="hero-image-hackathon.png" alt="Civic Hack DC banner" %}
-        </div>
         <h2>
             <b>Saturday, July 26</b>
         </h2>

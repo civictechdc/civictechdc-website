@@ -7,6 +7,7 @@ url: /data-showcase
 redirect_from:
   - /special-events/data-showcase/
 card_image: events/data_showcase/man-on-bike.png
+banner_in_content: true
 description: |
   In Celebration with the annual Open Data Week, Civic Tech DC partnered with the Office of the Chief Technology Officer for a Open Data DC Showcase.
 ---

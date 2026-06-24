@@ -15,9 +15,6 @@ description: |
 
 <section class="hero">
     <div class="container">
-        <div class="hero-banner">
-            {% include responsive-image.html class="usa-card__img" src="events/non-profit-clinic/hero.jpg" alt="Nonprofit AI Problem Clinic banner" %}
-        </div>
         <h2>
             <b>Friday, October 24, 2025</b>
         </h2>

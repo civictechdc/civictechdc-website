@@ -1,9 +1,26 @@
 ---
 layout: default
 ---
-<p class="margin-top-0 margin-bottom-2">
-  <a href="{{ '/events' | relative_url }}" class="usa-link">← All Events</a>
-</p>
-<h1 class="font-heading-2xl margin-top-0 margin-bottom-3">{{ page.title }}</h1>
+<article class="ctdc-event-detail">
+  <a href="{{ '/events' | relative_url }}" class="ctdc-back-link">
+    <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
+      <use xlink:href="/assets/img/sprite.svg#arrow_back"></use>
+    </svg>
+    All events
+  </a>
 
-<div class="usa-prose">{{ content }}</div>
+  <header class="ctdc-project-detail__header">
+    <h1 class="ctdc-project-detail__title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="ctdc-project-detail__lead">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  {% if page.card_image and page.banner_in_content != true %}
+    <div class="ctdc-project-detail__media">
+      {% include responsive-image.html src=page.card_image alt=page.title %}
+    </div>
+  {% endif %}
+
+  <div class="usa-prose ctdc-event-detail__body">{{ content }}</div>
+</article>
