@@ -14,5 +14,14 @@ in the form $setting: value,
   $theme-color-primary: #104378,
   $theme-color-accent-warm: #eec05e,
   $theme-card-border-color: "base-lighter",
-  $theme-focus-color: "primary"
+  $theme-focus-color: "primary",
+
+  // Typography — one explicit sans family across UI, body, and headings.
+  // Mirrored as the --ctdc-font-* tokens in sass/custom/styles.scss and
+  // documented at /design-system/typography/. Set explicitly (not left to
+  // USWDS defaults) so the type system has a single, intentional source.
+  $theme-font-type-sans: "source-sans-pro",
+  $theme-font-role-heading: "sans",
+  $theme-font-role-body: "sans",
+  $theme-font-role-ui: "sans"
 );

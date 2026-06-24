@@ -29,6 +29,15 @@ layout: default
           </li>
           <li class="usa-sidenav__item">
             <a
+              href="{{ '/design-system/foundations/' | relative_url }}"
+              {% if page.url == '/design-system/foundations/' %}
+                class="usa-current"
+              {% endif %}
+              >Foundations</a
+            >
+          </li>
+          <li class="usa-sidenav__item">
+            <a
               href="{{ '/design-system/colors/' | relative_url }}"
               {% if page.url == '/design-system/colors/' %}
                 class="usa-current"
