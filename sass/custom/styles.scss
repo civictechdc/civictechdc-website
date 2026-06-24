@@ -754,8 +754,9 @@ body {
       max-height: 3.5rem;
       width: auto;
       display: block;
-      filter: brightness(0) invert(1);
-      opacity: 0.85;
+      filter: brightness(0) invert(79%) sepia(28%) saturate(1450%)
+        hue-rotate(345deg) brightness(99%) contrast(92%);
+      opacity: 0.95;
       transition:
         opacity var(--ctdc-duration-base) var(--ctdc-ease),
         transform var(--ctdc-duration-base) var(--ctdc-ease);
