@@ -21,9 +21,9 @@ description: |
         <h2>
             <b>Saturday, July 26</b>
         </h2>
-        <h4>
+        <h3>
             <i>10:00 AM - 6:30 PM </i>
-        </h4>
+        </h3>
         <h3>
             <b>Location:</b>
             <img src="/assets/images/logos/taoti-800w.jpg"
@@ -90,14 +90,14 @@ description: |
 </section>
 <section class="section alt">
     <div class="container">
-        <h2 class="section-title">🔄 Event Update</h2>
+        <h2 class="section-title"><span aria-hidden="true">🔄</span> Event Update</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-            <h3>📍 Venue Confirmed</h3>
+            <h3><span aria-hidden="true">📍</span> Venue Confirmed</h3>
             <p>
                 We're excited to announce that we've secured the downstairs space at Taoti Creative for July 26. Taoti has been a longtime supporter of the civic tech community here in DC, and we're grateful to have them as both venue host and sponsor. Their commitment to using creative and technical expertise for social good aligns perfectly with our mission.
             </p>
             <br />
-            <h3>🌟 HackDC2025 Part 2: Fall 2025</h3>
+            <h3><span aria-hidden="true">🌟</span> HackDC2025 Part 2: Fall 2025</h3>
             <p>
                 The response to this hackathon has been incredible. We've heard from nonprofits, policy experts, and technologists who all see the same thing we do: this problem space is huge, urgent, and worth investing in.
             </p>
@@ -118,7 +118,7 @@ description: |
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="section-title">🎉 Sponsors 🎉</h2>
+        <h2 class="section-title"><span aria-hidden="true">🎉</span> Sponsors <span aria-hidden="true">🎉</span></h2>
         <div class="partners-grid">
             <a href="https://careset.com/" target="_blank" rel="noopener noreferrer">
                 <img style="height: 100px;
@@ -157,7 +157,7 @@ description: |
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="section-title">🤝 Partners 🤝</h2>
+        <h2 class="section-title"><span aria-hidden="true">🤝</span> Partners <span aria-hidden="true">🤝</span></h2>
         <div class="partners-grid">
             <a href="https://www.moravian.edu"
                target="_blank"
@@ -190,7 +190,7 @@ description: |
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="section-title">🤔 What is a hackathon? 🤔</h2>
+        <h2 class="section-title"><span aria-hidden="true">🤔</span> What is a hackathon? <span aria-hidden="true">🤔</span></h2>
         <div class="about-text"
              style="max-width: 800px;
                     margin: 2rem auto 0;
@@ -218,7 +218,7 @@ description: |
 </section>
 <section class="section alt">
     <div class="container">
-        <h2 class="section-title">🎯 The Impact 🎯</h2>
+        <h2 class="section-title"><span aria-hidden="true">🎯</span> The Impact <span aria-hidden="true">🎯</span></h2>
         <div style="max-width: 700px; margin: 0 auto; text-align: center;">
             <p style="font-size: 1.1rem; line-height: 1.6;">
                 Every year, millions of Americans submit comments on proposed federal rules, but accessing and analyzing this data remains frustratingly difficult. <strong>We aim to change that.</strong>
@@ -231,7 +231,7 @@ description: |
 </section>
 <section class="section" id="about">
     <div class="container">
-        <h2 class="section-title">📊 Why this matters 📊</h2>
+        <h2 class="section-title"><span aria-hidden="true">📊</span> Why this matters <span aria-hidden="true">📊</span></h2>
         <div class="about-text"
              style="max-width: 800px;
                     margin: 2rem auto 0;
@@ -249,7 +249,7 @@ description: |
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="section-title">🔧 How will we do this? 🔧</h2>
+        <h2 class="section-title"><span aria-hidden="true">🔧</span> How will we do this? <span aria-hidden="true">🔧</span></h2>
         <div class="about-text"
              style="max-width: 800px;
                     margin: 2rem auto 0;
@@ -270,7 +270,7 @@ description: |
 </section>
 <section class="section alt" id="problem-statements">
     <div class="container">
-        <h2 class="section-title">📝 Submit Your Problem Statements 📝</h2>
+        <h2 class="section-title"><span aria-hidden="true">📝</span> Submit Your Problem Statements <span aria-hidden="true">📝</span></h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
             <p>
                 We're actively seeking problem statements from policy experts to explore during the hackathon. If you have an idea, please submit it via the form below before <strong>July 23, 2025</strong>. Our review board will evaluate submissions and select the top 5 problem statement tracks for hackathon participants to tackle.
@@ -284,12 +284,12 @@ description: |
                 <p style="font-weight: 600;
                           margin-bottom: 0.5rem;
                           font-size: 1.1rem;
-                          color: #4CAF50">✅ Track 1 Confirmed:</p>
+                          color: #1b5e20"><span aria-hidden="true">✅</span> Track 1 Confirmed:</p>
                 <p style="margin-bottom: 0;">
                     Inter-agency analysis of the <a href="https://www.federalregister.gov/documents/2025/05/16/2025-08701/request-for-information-health-technology-ecosystem"
     target="_blank"
     rel="noopener noreferrer"
-    style="color: #0066cc;
+    style="color: #0056b3;
            text-decoration: underline">recent CMS RFI on patient-centered health technology</a>, helping agencies efficiently triage and synthesize thousands of public comments to inform policy decisions.
                 </p>
             </div>
@@ -299,7 +299,7 @@ description: |
                         border-radius: 8px;
                         border: 2px solid rgba(255, 255, 255, 0.2);
                         text-align: center">
-                <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;">🤔 What should the next 4 tracks be?</p>
+                <p style="font-weight: 600; margin-bottom: 0.5rem; font-size: 1.1rem;"><span aria-hidden="true">🤔</span> What should the next 4 tracks be?</p>
                 <p style="margin-bottom: 0; font-style: italic; opacity: 0.9;">
                     We need YOUR expertise to define the challenges that matter most. What regulatory data questions keep your organization up at night?
                 </p>
@@ -348,7 +348,7 @@ description: |
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="section-title">✨ Hackathon Goals ✨</h2>
+        <h2 class="section-title"><span aria-hidden="true">✨</span> Hackathon Goals <span aria-hidden="true">✨</span></h2>
         <div class="goals-grid">
             <div class="goal-card">
                 <div class="goal-number">1</div>
@@ -381,7 +381,7 @@ description: |
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="section-title">🤝 Who Should Attend 🤝</h2>
+        <h2 class="section-title"><span aria-hidden="true">🤝</span> Who Should Attend <span aria-hidden="true">🤝</span></h2>
         <div class="goals-grid">
             <div class="goal-card">
                 <h3>Technical Contributors</h3>
@@ -409,7 +409,7 @@ description: |
 </section>
 <!-- <section class="section alt">
     <div class="container">
-        <h2 class="section-title">🏆 Prizes & Recognition 🏆</h2>
+        <h2 class="section-title"><span aria-hidden="true">🏆</span> Prizes & Recognition <span aria-hidden="true">🏆</span></h2>
         <div style="max-width: 700px; margin: 0 auto; text-align: center;">
             <p>All tools developed during the hackathon will be open-source and benefit the civic tech community. Teams creating the most impactful solutions will receive:</p>
             <ul style="list-style: none; padding: 0; margin: 2rem 0;">
@@ -424,7 +424,7 @@ description: |
 </section> -->
 <section class="section" id="schedule">
     <div class="container">
-        <h2 class="section-title">📅 Event Schedule 📅</h2>
+        <h2 class="section-title"><span aria-hidden="true">📅</span> Event Schedule <span aria-hidden="true">📅</span></h2>
         <div style="max-width: 600px; margin: 0 auto;">
             <div style="background: rgba(255,255,255,0.1);
                         padding: 2rem;

@@ -2,16 +2,19 @@
 layout: base
 ---
 {% include core/header.html %}
-{%
-  include components/hero-image.html
-  title=page.hero-title subtitle=page.hero-subtitle image=page.hero-image
-  alt=page.hero-image-alt cta_label=page.hero-cta-label cta_link=page.hero-cta-link
-%}
 <main id="main-content">
+  {%
+    include components/hero-image.html
+    title=page.hero-title subtitle=page.hero-subtitle image=page.hero-image
+    alt=page.hero-image-alt cta_label=page.hero-cta-label cta_link=page.hero-cta-link
+    cta2_label=page.hero-cta2-label cta2_link=page.hero-cta2-link
+    cta2_icon=page.hero-cta2-icon
+  %}
   <div class="grid-container ctdc-content-area">{{ content }}</div>
+
+  {% include components/supporters.html cta=false %}
+  {% include components/community-partners.html cta=false %}
+  {% include components/closing-cta.html %}
 </main>
 
-{% include components/supporters.html cta=false %}
-{% include components/community-partners.html cta=false %}
-{% include components/closing-cta.html %}
 {% include core/footer.html %}

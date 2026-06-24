@@ -331,7 +331,7 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
 
 <section class="padding-top-0 padding-bottom-1">
     <div class="container">
-        <h2 class="section-title">🎉 Sponsors 🎉</h2>
+        <h2 class="section-title"><span aria-hidden="true">🎉</span> Sponsors <span aria-hidden="true">🎉</span></h2>
         <div class="partners-grid">
             <a href="https://careset.com/" target="_blank" rel="noopener noreferrer">
                 <img style="height: 100px;
@@ -382,7 +382,7 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
 
 <section class="padding-top-0 padding-bottom-2">
     <div class="container">
-        <h2 class="section-title">🤝 Partners 🤝</h2>
+        <h2 class="section-title"><span aria-hidden="true">🤝</span> Partners <span aria-hidden="true">🤝</span></h2>
         <div class="partners-grid">
             <a href="https://www.moravian.edu"
                target="_blank"
@@ -415,8 +415,6 @@ excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public
 </section>
 
 ---
-
-# Making Public Comments Count: How 80 Civic-Technologists Hacked on Regulatory Data for a More Transparent Government
 
 > TL;DR: Federal regulations generate millions of public comments annually, but finding and analyzing them is nearly impossible due to technical barriers. Over one Saturday in July, 80 civic-technologists from government, non-profits, and tech companies built 13 open-source tools that make this data truly accessible for the first time. We created everything from simple command-line tools that let researchers download entire regulatory dockets, to AI-powered chat interfaces that answer plain-English questions about complex rules, to infrastructure improvements that make analytical queries 100x faster. More importantly, we proved that sustainable civic technology comes from diverse coalitions of subject matter experts and technologists working on validated problems, not isolated hackathon weekends. The code is live, the community is growing, and Part 2 is already in planning.
 
@@ -470,7 +468,7 @@ Regulations.gov, the federal government's central portal for regulatory document
 
 The result is 2.3 terabytes of regulatory data, constantly updated, freely available to anyone. But even with this incredible resource, significant barriers remained. The data was still in JSON format, which is great for APIs but terrible for analysis. Many of the comments were extracted into plaintext, but many weren’t, and the extraction process left a lot of document structure, images, and context on the cutting room floor. There were no tools for easily downloading specific dockets. And most importantly, there was no way for non-technical users to explore or understand what was in this vast dataset. These were the gaps we set out to fill.
 
-_The github repository for the Mirrulations project can be found [here](https://github.com/mirrulations/mirrulations)._
+_Browse the [Mirrulations project repository](https://github.com/mirrulations/mirrulations) on GitHub._
 
 ## The Problem Map
 
@@ -486,7 +484,7 @@ Here’s the end-to-end system we organized around, based on feedback from vario
 
 We split teams across these layers so outputs stack and strengthen each other.
 
-_More Details can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/docs)._
+_Read more in the [HackDC 2025 documentation](https://github.com/civictechdc/hackdc2025/tree/main/docs)._
 
 ## What We Built: A Portfolio of Innovation
 
@@ -545,7 +543,7 @@ One team recognized that improving access to Regulations.gov data was only part 
 
 Finally, the **Within-Docket Dataset** team tackled perhaps the most ambitious challenge: understanding how public comments actually influence final rules. Their tool links specific comments to changes between proposed and final rules, using a combination of time-window analysis, text similarity, and semantic matching to identify which suggestions were adopted and which concerns were addressed. One judge said that this addresses the fundamental question of whether public commenting actually matters. While the technical implementation was just beginning, the conceptual framework they developed provides a roadmap for a critical tool in the Mirrulations ecosystem.
 
-_All the projects can be found [here](https://github.com/civictechdc/hackdc2025/tree/main/projects), and their evaluations [here](https://github.com/civictechdc/hackdc2025/tree/main/evaluations)._
+_Browse [all the projects](https://github.com/civictechdc/hackdc2025/tree/main/projects) and their [evaluations](https://github.com/civictechdc/hackdc2025/tree/main/evaluations)._
 
 ## The Patterns of Success and Failure
 

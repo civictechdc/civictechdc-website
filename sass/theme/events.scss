@@ -3,7 +3,11 @@
    Event cards reuse the global .usa-card polish (white paper, hairline border,
    soft shadow, hover lift) and add event-specific structure: a date chip, a
    variant top-accent, and a sliding "Learn more" CTA that mirrors the footer
-   and project-card hover language. Tokens come from :root in custom/styles.scss.
+   and project-card hover language.
+
+   This file compiles to its own events.css (page_css), but styles.css loads
+   first on every page, so the --ctdc-* design tokens from :root are available
+   here at runtime. Use them, not raw values.
    ========================================================================== */
 
 .ctdc-event-grid {
@@ -27,9 +31,9 @@
   color: inherit;
 
   &:focus-visible {
-    outline: 3px solid var(--ctdc-gold);
+    outline: var(--ctdc-focus-ring);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: var(--ctdc-radius-2xs);
   }
 }
 
@@ -57,7 +61,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform var(--ctdc-duration-base) var(--ctdc-ease);
   }
 }
 
@@ -80,11 +84,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: var(--ctdc-text-xs);
+  font-weight: var(--ctdc-weight-bold);
   letter-spacing: 0.01em;
   padding: 0.2rem 0.6rem;
-  border-radius: 20px;
+  border-radius: var(--ctdc-radius-pill);
   white-space: nowrap;
 
   .ctdc-icon {
@@ -105,22 +109,22 @@
 }
 
 .ctdc-event-card__loc {
-  font-size: 0.85rem;
+  font-size: var(--ctdc-text-sm);
   color: var(--ctdc-text-muted);
 }
 
 .ctdc-event-card .usa-card__heading {
   margin: 0;
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: var(--ctdc-text-md);
+  font-weight: var(--ctdc-weight-bold);
+  line-height: var(--ctdc-leading-snug);
   color: var(--ctdc-navy);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--ctdc-tracking-snug);
 }
 
 .ctdc-event-card .event-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: var(--ctdc-text-sm);
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
   margin: 0;
 }
@@ -137,12 +141,12 @@
   align-items: center;
   gap: 0.3rem;
   color: var(--ctdc-brand-blue);
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: color 0.25s ease;
+  font-size: var(--ctdc-text-sm);
+  font-weight: var(--ctdc-weight-semibold);
+  transition: color var(--ctdc-duration-fast) var(--ctdc-ease);
 
   .ctdc-icon {
-    transition: transform 0.25s ease;
+    transition: transform var(--ctdc-duration-fast) var(--ctdc-ease);
   }
 }
 
@@ -165,13 +169,13 @@
     align-items: center;
     gap: 0.35rem;
     color: var(--ctdc-brand-blue);
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: var(--ctdc-text-sm);
+    font-weight: var(--ctdc-weight-semibold);
     text-decoration: none;
-    transition: color 0.25s ease;
+    transition: color var(--ctdc-duration-fast) var(--ctdc-ease);
 
     .ctdc-icon {
-      transition: transform 0.25s ease;
+      transition: transform var(--ctdc-duration-fast) var(--ctdc-ease);
     }
 
     &:hover {
@@ -183,9 +187,9 @@
     }
 
     &:focus-visible {
-      outline: 2px solid var(--ctdc-gold);
+      outline: var(--ctdc-focus-ring);
       outline-offset: 3px;
-      border-radius: 2px;
+      border-radius: var(--ctdc-radius-2xs);
     }
   }
 }
@@ -197,19 +201,19 @@
   text-align: center;
   background: var(--ctdc-bg-light);
   border: 1px dashed var(--ctdc-border-light);
-  border-radius: 12px;
+  border-radius: var(--ctdc-radius-lg);
 }
 
 .ctdc-events-empty__title {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: var(--ctdc-text-md);
+  font-weight: var(--ctdc-weight-bold);
   color: var(--ctdc-navy);
   margin: 0 0 0.35rem;
 }
 
 .ctdc-events-empty__text {
   color: var(--ctdc-text-muted);
-  line-height: 1.6;
+  line-height: var(--ctdc-leading-relaxed);
   margin: 0 0 1.25rem;
 }
 
@@ -225,31 +229,31 @@
   background: #ffffff;
   border: 1px solid var(--ctdc-border-light);
   border-left: 3px solid var(--ctdc-gold);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border-radius: var(--ctdc-radius-lg);
+  box-shadow: var(--ctdc-shadow-md);
   padding: 1.75rem 1.75rem 1.85rem;
 }
 
 .ctdc-recurring__eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  font-weight: 700;
+  letter-spacing: var(--ctdc-tracking-wider);
+  font-size: var(--ctdc-text-xs);
+  font-weight: var(--ctdc-weight-bold);
   color: var(--ctdc-button-dark);
   margin: 0 0 0.35rem;
 }
 
 .ctdc-recurring__title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: var(--ctdc-text-xl);
+  font-weight: var(--ctdc-weight-bold);
+  letter-spacing: var(--ctdc-tracking-snug);
   color: var(--ctdc-navy);
   margin: 0 0 0.6rem;
 }
 
 .ctdc-recurring__text {
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: var(--ctdc-text-base);
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
   margin: 0 0 1.5rem;
   max-width: 52rem;
@@ -266,18 +270,18 @@
 
 .ctdc-recurring__fact {
   dt {
-    font-size: 0.72rem;
+    font-size: var(--ctdc-text-2xs);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 700;
+    letter-spacing: var(--ctdc-tracking-wide);
+    font-weight: var(--ctdc-weight-bold);
     color: var(--ctdc-text-muted);
     margin: 0 0 0.15rem;
   }
 
   dd {
     margin: 0;
-    font-size: 0.98rem;
-    font-weight: 600;
+    font-size: var(--ctdc-text-sm);
+    font-weight: var(--ctdc-weight-semibold);
     color: var(--ctdc-text-dark);
   }
 }

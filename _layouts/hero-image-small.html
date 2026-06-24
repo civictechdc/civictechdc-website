@@ -2,11 +2,11 @@
 layout: base
 ---
 {% include core/header.html %}
-{%
-  include components/hero-image-small.html
-  image=page.hero-image alt=page.hero-image-alt
-%}
 <main id="main-content">
+  {%
+    include components/hero-image-small.html
+    image=page.hero-image alt=page.hero-image-alt
+  %}
   <div class="grid-container ctdc-content-area">{{ content }}</div>
 </main>
 

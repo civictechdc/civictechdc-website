@@ -15,7 +15,7 @@ description: A platform that turns federal regulations and public comments into 
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🏠 Why This Matters</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🏠</span> Why This Matters</h2>
     <p>
       Our work unlocks public comment data from Regulations.gov and other federal portals, making complex regulatory information accessible to both technical and non-technical users. By creating tools that analyze and summarize this data, we are empowering citizens to engage meaningfully with policymaking processes. </p>
   </div>
@@ -23,7 +23,7 @@ description: A platform that turns federal regulations and public comments into 
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">📖 Our Story</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
     <p class="margin-bottom-2">
     On July 26, 2025, over 80 civic technologists, policy experts, and government staff came together to make federal regulations and public comments more transparent and actionable. In a single day, they built 13 open-source tools that combined technical innovation with real-world needs. <br> <br>
     Building on Moravian University's Mirrulations project, which mirrors 27 million regulatory documents, the teams created tools for easy data access, AI-powered Q&A, data pipelines, and dashboards. SpicyRegs is a continuation of the hackathon to build a open, contributor-friendly platform for exploring and analyzing regulations.gov data, usable by both technical and non-technical users. Read more in our <a href="https://www.civictechdc.org/events/community/2025/08/06/civic-hackdc-july-recap.html" target="_blank" rel="noopener noreferrer">blog</a>. 
@@ -33,21 +33,21 @@ description: A platform that turns federal regulations and public comments into 
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🌍</span> Geography / Reach</h2>
     <p>DMV-based with our platform aggregating nationwide federal regulatory data. </p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🤝 Community Partners</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🤝</span> Community Partners</h2>
       <p>Our project collaborates with Moravian University and DataKindDC.</p>
   </div>
 </section>
 
 <section class="padding-y-5" style="width: 100%;">
   <div style="max-width: 900px; margin: 0 auto; padding: 0;">
-    <h2 class="font-sans-xl margin-bottom-2">📇 Current Project Volunteer Contacts</h2>
+    <h2 class="font-sans-xl margin-bottom-2"><span aria-hidden="true">📇</span> Current Project Volunteer Contacts</h2>
     <table class="usa-table usa-table--striped usa-table--borderless" style="width: 100%;">
       <thead>
         <tr>
@@ -60,7 +60,7 @@ description: A platform that turns federal regulations and public comments into 
       <tbody>
         <tr>
           <th scope="row">Eugene Kim</th>
-          <td><strong>🧩 Project Volunteer</strong></td>
+          <td><strong><span aria-hidden="true">🧩</span> Project Volunteer</strong></td>
           <td class ="text-no-wrap">@Eugene Kim</td>
           <!-- <td>
             <a href="mailto:eleanor.ory@gmail.com" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Email</a><br>
@@ -74,7 +74,7 @@ description: A platform that turns federal regulations and public comments into 
 
 <section class="bg-primary-darker text-white padding-y-5" style="width: 100%;">
   <div style="width: 100%; padding: 0 2rem; margin: 0;">
-    <h2 style="margin-bottom: 1rem;">👋 Come Join Us</h2>
+    <h2 style="margin-bottom: 1rem;"><span aria-hidden="true">👋</span> Come Join Us</h2>
     <p style="margin-bottom: 1rem;">Everyone is welcome no matter your skill level or background. We especially need help with:</p>
     <ul style="margin: 0; padding-left: 1.5rem; list-style-position: inside; line-height: 1.6;">
         <li><strong>Regulatory & Policy Expertise</strong> Understanding federal regulations, public comment processes, and domain-specific nuances.</li>
@@ -93,10 +93,10 @@ description: A platform that turns federal regulations and public comments into 
   <div class="grid-container">
     <div class="usa-button-group">
       <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        💬 Slack (#spicyreg)
+        <span aria-hidden="true">💬</span> Slack (#spicyreg)
       </a>
       <a href="https://github.com/civictechdc/hackdc2025" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        🧩 GitHub Repo
+        <span aria-hidden="true">🧩</span> GitHub Repo
       </a>
     </div>
   </div>

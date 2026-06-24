@@ -11,13 +11,13 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
-    <em>⚡An easy-to-use contractor finder tool helping homeowners decarbonize their homes and reduce the 25% of emissions they produce.</em>
+    <em><span aria-hidden="true">⚡</span>An easy-to-use contractor finder tool helping homeowners decarbonize their homes and reduce the 25% of emissions they produce.</em>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🏠 Why This Matters</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🏠</span> Why This Matters</h2>
     <p>
       Buildings contribute about <strong>75%</strong> of DC's total emissions. Residential buildings account for a third of that. Electrifying our homes is essential to achieving climate goals, yet many residents can't find qualified contractors who understand sustainable technology.
     </p>
@@ -41,21 +41,21 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🚀 Our Impact</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🚀</span> Our Impact</h2>
     <p>A contractor finder tool was identified as one of the <strong>top three barriers</strong> to residential decarbonization. Civic Tech DC’s open-source solution will empower similar efforts nationwide - making it easier, faster, and more affordable for people to begin their electrification journey.</p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🌍 Geography / Reach</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🌍</span> Geography / Reach</h2>
     <p>DMV-based, but designed to be open source and replicable across the country.</p>
   </div>
 </section>
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">🤝 Community Partners</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">🤝</span> Community Partners</h2>
     <p>
     <a href="https://www.electrifydc.org/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Electrify DC</a>, Building Innovation Hub, Go Electric DMV, and several DMV-area jurisdictions and professional associations.
     </p>
@@ -64,14 +64,14 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
 
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
-    <h2 class="font-sans-lg">📖 Our Story</h2>
+    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
     <p>Electrify DMV partnered with jurisdictions across the region and asked Civic Tech DC to lead on data, design, and technical implementation. The Result: a user-friendly tool designed with local impact and national scalability in mind.</p>
   </div>
 </section>
 
 <section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
   <div class="grid-container text-white">
-    <h2>👋 Come Join Us</h2>
+    <h2><span aria-hidden="true">👋</span> Come Join Us</h2>
     <p>Everyone is welcome, no matter your skill level or background. We especially need help with:</p>
     <ul class="usa-list">
       <li>Product &amp; Project Management</li>
@@ -86,13 +86,13 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
   <div class="grid-container">
     <div class="usa-button-group">
       <a href="https://civictechdc.slack.com/archives/C081LHG72FK" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        💬 Slack (#ext-electrify-dc)
+        <span aria-hidden="true">💬</span> Slack (#ext-electrify-dc)
       </a>
       <a href="https://github.com/civictechdc/repower-dmv/" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        🧩 GitHub Repo
+        <span aria-hidden="true">🧩</span> GitHub Repo
       </a>
       <a href="https://electrifydmv.org" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        🌐 Project Website
+        <span aria-hidden="true">🌐</span> Project Website
       </a>
     </div>
   </div>

@@ -1,11 +1,57 @@
+/* ==========================================================================
+   Civic Tech DC — Custom styles
+   Compiled (after USWDS) into assets/css/styles.css via sass/theme/styles.scss.
+   "Civic Premium Dark" content-style strategy. The footer is the reference
+   implementation; its rhythm, motion, and elevation seed the design tokens
+   below. Documented at /design-system/foundations/ and /typography/.
+
+   TABLE OF CONTENTS
+     1.  Design tokens (:root)
+     2.  Internal Sass mixins (DRY helpers — expand to the same CSS)
+     3.  Base / reset / mobile overflow fixes
+     4.  Header (Civic Premium Dark)
+     5.  Hero image + overlay
+     6.  Navigation (misc)
+     7.  Blog
+     8.  Footer (reference implementation)
+     9.  Layout utilities (grid row gaps)
+     10. Code blocks
+     11. Cards (shared base + hover)
+     12. Team members
+     13. Logo walls (supporters & partners)
+     14. Content area + section headings + body copy
+     15. Events section (homepage embed)
+     16. Project cards (listing + archive)
+     17. Hero text typography
+     18. Skip link (a11y)
+     19. Buttons (global pill + project links)
+     20. Donate page
+     21. About page
+     22. Partners (paths + process timeline)
+     23. Pitch CTA
+     24. Project detail page
+     25. Hero CTA + closing CTA band
+     26. Reduced motion (a11y)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Design tokens
+   Single source of truth for color, type, spacing, radius, elevation & motion.
+   Authored as CSS custom properties (not Sass vars) so the separately-compiled
+   page stylesheets (events.css, civichackdc.css) can share them at runtime.
+   ========================================================================== */
+
 :root {
+  /* Brand color */
   --ctdc-navy: #0b1a30;
   --ctdc-navy-deep: #061121;
   --ctdc-brand-blue: #104378;
   --ctdc-gold: #eec05e;
+  --ctdc-gold-hover: #f4cd79; /* lifted gold for button/link hover states */
   --ctdc-text-dark: #1e293b;
   --ctdc-text-muted: #4a5568;
   --ctdc-border-light: #e2e8f0;
+  --ctdc-border-hover: #cbd5e1; /* slightly darker hairline on hover */
   --ctdc-bg-light: #f4f6f9;
   --ctdc-button-dark: #253551;
 
@@ -14,12 +60,10 @@
   --ctdc-brand-blue-rgb: 16 67 120;
   --ctdc-gold-rgb: 238 192 94;
 
-  /* ======================================================================
-     Design Tokens — "Civic Premium Dark" content-style strategy
-     Single source of truth for type, spacing, radius, elevation & motion,
-     extracted from the footer (the system's reference implementation).
-     Documented at /design-system/foundations/ and /design-system/typography/.
-     ====================================================================== */
+  /* On-dark scrims — the two most common white overlays on dark surfaces
+     (header, footer, process band, CTA band). Rarer one-off alphas stay inline. */
+  --ctdc-on-dark-bg: rgba(255, 255, 255, 0.05); /* faint fill */
+  --ctdc-on-dark-border: rgba(255, 255, 255, 0.1); /* hairline divider */
 
   /* Typeface — one sans for UI/body/headings, one mono for code */
   --ctdc-font-sans:
@@ -38,6 +82,8 @@
   --ctdc-text-2xl: 1.75rem; /* 28px · section headings */
   --ctdc-text-3xl: 2rem; /* 32px · hero / page titles */
   --ctdc-text-4xl: 2.5rem; /* 40px · large hero titles */
+  --ctdc-text-5xl: 3rem; /* 48px · display */
+  --ctdc-text-6xl: 3.5rem; /* 56px · large display (event landing heroes) */
 
   /* Line height */
   --ctdc-leading-tight: 1.2; /* display / hero */
@@ -70,6 +116,7 @@
   --ctdc-space-4xl: 4rem;
 
   /* Corner radius */
+  --ctdc-radius-2xs: 2px; /* decorative accent bars (gold underlines) */
   --ctdc-radius-xs: 4px; /* tags, small chips */
   --ctdc-radius-sm: 6px; /* code blocks, inputs */
   --ctdc-radius-md: 8px; /* media, panels */
@@ -84,7 +131,7 @@
   --ctdc-shadow-lg: 0 10px 24px rgba(0, 0, 0, 0.09);
   --ctdc-shadow-xl: 0 12px 28px rgba(0, 0, 0, 0.08);
 
-  /* Motion — the footer's smooth, tactile easing */
+  /* Motion — the footer's smooth, tactile easing. One curve, two speeds. */
   --ctdc-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ctdc-duration-fast: 0.2s;
   --ctdc-duration-base: 0.3s;
@@ -92,6 +139,57 @@
   /* Focus ring — gold, consistent across every interactive element */
   --ctdc-focus-ring: 2px solid var(--ctdc-gold);
 }
+
+/* ==========================================================================
+   2. Internal Sass mixins
+   Local DRY helpers for patterns repeated across components. Each expands to
+   the same declarations it replaces — no rendering change, just one source.
+   ========================================================================== */
+
+/* Gold focus ring + offset (border-radius set per call site where needed). */
+@mixin ctdc-focus-ring($offset: 2px) {
+  outline: var(--ctdc-focus-ring);
+  outline-offset: $offset;
+}
+
+/* The gold accent bar drawn under headings via ::after. */
+@mixin ctdc-gold-underline($width, $height, $radius: 0) {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: $width;
+  height: $height;
+  background: var(--ctdc-gold);
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+/* Uppercase micro-label sitting above a heading. */
+@mixin ctdc-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: var(--ctdc-tracking-wider);
+  font-size: var(--ctdc-text-xs);
+  font-weight: var(--ctdc-weight-bold);
+}
+
+/* Gold pill button (gold fill, deep-navy ink) used by the hero, process and
+   CTA-band actions. */
+@mixin ctdc-gold-pill-button {
+  background-color: var(--ctdc-gold);
+  color: var(--ctdc-navy-deep);
+  font-weight: var(--ctdc-weight-bold);
+
+  &:hover {
+    background-color: var(--ctdc-gold-hover);
+    color: var(--ctdc-navy-deep);
+  }
+}
+
+/* ==========================================================================
+   3. Base / reset / mobile overflow fixes
+   ========================================================================== */
 
 html,
 body {
@@ -142,7 +240,10 @@ body {
 }
 
 /* ==========================================================================
-   Modern Polished Header Styles (Civic Premium Dark)
+   4. Header (Civic Premium Dark)
+   Custom styles compile after USWDS, and .ctdc-header is on the same element
+   as .usa-header--basic, so .ctdc-header descendant selectors match or exceed
+   USWDS specificity and win on source order — no !important needed.
    ========================================================================== */
 
 .ctdc-header {
@@ -151,9 +252,9 @@ body {
   z-index: 1000;
   isolation: isolate; /* Contain backdrop-filter stacking context */
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--ctdc-on-dark-border);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: background var(--ctdc-duration-base) ease;
+  transition: background var(--ctdc-duration-base) var(--ctdc-ease);
 
   &::before {
     content: "";
@@ -191,8 +292,8 @@ body {
       hue-rotate(345deg) brightness(99%) contrast(92%);
     opacity: 0.95;
     transition:
-      opacity var(--ctdc-duration-base) ease,
-      transform var(--ctdc-duration-base) ease;
+      opacity var(--ctdc-duration-base) var(--ctdc-ease),
+      transform var(--ctdc-duration-base) var(--ctdc-ease);
   }
 
   .ctdc_logo:hover img {
@@ -201,36 +302,45 @@ body {
   }
 
   .ctdc_logo:focus-visible {
-    outline: var(--ctdc-focus-ring);
-    outline-offset: 4px;
-    border-radius: 4px;
+    @include ctdc-focus-ring(4px);
+    border-radius: var(--ctdc-radius-xs);
   }
 
-  /* Navigation Links on Desktop */
-  .usa-nav__link {
-    color: #ffffff !important;
-    font-size: 0.95rem !important;
-    font-weight: 600 !important;
-    background-color: transparent !important;
-    padding: 0.5rem 0.75rem !important;
+  /* Navigation links. USWDS colors its nav anchors via
+     `.usa-nav__primary a:not(.usa-button)` (specificity 0,3,1). We match that
+     selector depth — `.usa-nav__primary a.usa-nav__link` is also (0,3,1) — so the
+     Civic Premium Dark treatment wins on source order (custom compiles after
+     USWDS), with no !important. */
+  .usa-nav__primary a.usa-nav__link {
+    color: #ffffff;
+    font-size: var(--ctdc-text-base);
+    font-weight: var(--ctdc-weight-semibold);
+    background-color: transparent;
+    padding: 0.5rem 0.75rem;
     position: relative;
     transition:
-      color 0.25s ease,
-      transform 0.25s ease !important;
+      color var(--ctdc-duration-fast) var(--ctdc-ease),
+      transform var(--ctdc-duration-fast) var(--ctdc-ease);
 
     &:hover {
       color: var(--ctdc-gold);
+      background-color: transparent; /* override USWDS's #f0f0f0 hover box */
       transform: translateY(-1px);
     }
 
     &:focus-visible {
-      outline: var(--ctdc-focus-ring);
-      outline-offset: 2px;
-      border-radius: 4px;
+      @include ctdc-focus-ring;
+      border-radius: var(--ctdc-radius-xs);
       color: var(--ctdc-gold);
     }
 
-    /* Elegant hover underline growth effect (Desktop only) */
+    /* Active state — gold thread */
+    &[aria-current="page"],
+    &[aria-current] {
+      color: var(--ctdc-gold);
+    }
+
+    /* Elegant hover / active underline growth effect (Desktop only) */
     @media only screen and (min-width: 1024px) {
       &::after {
         content: "";
@@ -240,91 +350,82 @@ body {
         right: 0.75rem;
         height: 2px;
         background-color: var(--ctdc-gold);
-        border-radius: 2px;
+        border-radius: var(--ctdc-radius-2xs);
         transform: scaleX(0);
         transform-origin: center;
-        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform var(--ctdc-duration-fast) var(--ctdc-ease);
       }
 
-      &:hover::after {
+      &:hover::after,
+      &[aria-current="page"]::after,
+      &[aria-current]::after {
         transform: scaleX(1);
-      }
-    }
-
-    /* Submenu button focus state reset */
-    &.usa-accordion__button {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") !important;
-      background-size: 1.25rem !important;
-      background-repeat: no-repeat !important;
-      background-position: right 0.5rem center !important;
-      padding-right: 1.75rem !important;
-
-      /* Hide default USWDS arrow mask */
-      span::after {
-        display: none !important;
-      }
-
-      &[aria-expanded="true"] {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23eec05e'%3E%3Cpath d='M7 14l5-5 5 5z'/%3E%3C/svg%3E") !important;
-        color: var(--ctdc-gold) !important;
       }
     }
   }
 
-  /* Active State (Gold line thread) */
-  .usa-nav__link[aria-current="page"],
-  .usa-nav__link[aria-current] {
-    color: var(--ctdc-gold);
+  /* Dropdown toggle arrows (defensive — current markup has no dropdowns). Kept
+     class-scoped (not anchor-scoped) so it still applies to a <button> toggle. */
+  .usa-nav__link.usa-accordion__button {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-size: 1.25rem;
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    padding-right: 1.75rem;
 
-    @media only screen and (min-width: 1024px) {
-      &::after {
-        transform: scaleX(1) !important;
-      }
+    /* Hide default USWDS arrow mask */
+    span::after {
+      display: none;
+    }
+
+    &[aria-expanded="true"] {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23eec05e'%3E%3Cpath d='M7 14l5-5 5 5z'/%3E%3C/svg%3E");
+      color: var(--ctdc-gold);
     }
   }
 
   /* Desktop layout alignment helper and dropdown modernization */
   @media only screen and (min-width: 1024px) {
     .usa-navbar {
-      padding: 0.875rem 1rem !important;
+      padding: 0.875rem 1rem;
     }
 
     .ctdc_logo img {
       max-height: 4.8rem;
     }
 
-    /* Desktop dropdown submenus */
+    /* Desktop dropdown submenus (defensive) */
     .usa-nav__submenu {
-      background-color: rgb(var(--ctdc-navy-rgb) / 0.98) !important;
+      background-color: rgb(var(--ctdc-navy-rgb) / 0.98);
       backdrop-filter: blur(16px) saturate(160%);
       -webkit-backdrop-filter: blur(16px) saturate(160%);
-      border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      border-radius: var(--ctdc-radius-lg) !important;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
-      padding: 0.5rem 0 !important;
-      top: 100% !important;
-      margin-top: 0.5rem !important;
-      min-width: 12rem !important;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--ctdc-radius-lg);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      padding: 0.5rem 0;
+      top: 100%;
+      margin-top: 0.5rem;
+      min-width: 12rem;
       overflow: hidden;
 
       .usa-nav__submenu-item {
         a {
-          color: rgba(255, 255, 255, 0.8) !important;
-          padding: 0.75rem 1.25rem !important;
-          background-color: transparent !important;
-          transition: all var(--ctdc-duration-fast) var(--ctdc-ease) !important;
-          font-weight: 500 !important;
+          color: rgba(255, 255, 255, 0.8);
+          padding: 0.75rem 1.25rem;
+          background-color: transparent;
+          transition: all var(--ctdc-duration-fast) var(--ctdc-ease);
+          font-weight: var(--ctdc-weight-medium);
           display: block;
 
           &:hover {
-            color: var(--ctdc-gold) !important;
-            background-color: rgba(255, 255, 255, 0.05) !important;
-            padding-left: 1.5rem !important; /* Slide-in effect */
+            color: var(--ctdc-gold);
+            background-color: var(--ctdc-on-dark-bg);
+            padding-left: 1.5rem; /* Slide-in effect */
           }
 
           &[aria-current="page"] {
-            color: var(--ctdc-gold) !important;
-            font-weight: 600 !important;
+            color: var(--ctdc-gold);
+            font-weight: var(--ctdc-weight-semibold);
           }
         }
       }
@@ -343,41 +444,40 @@ body {
     /* Mobile Hamburger Menu Button */
     .usa-menu-btn {
       margin-right: 0.5rem;
-      background-color: rgba(255, 255, 255, 0.08) !important;
-      color: #ffffff !important;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: var(--ctdc-radius-pill);
-      font-weight: 600;
+      font-weight: var(--ctdc-weight-semibold);
       padding: 0.75rem 1rem;
-      transition: all var(--ctdc-duration-fast) ease;
+      transition: all var(--ctdc-duration-fast) var(--ctdc-ease);
 
       &:hover {
-        background-color: rgba(255, 255, 255, 0.15) !important;
+        background-color: rgba(255, 255, 255, 0.15);
         border-color: rgba(255, 255, 255, 0.4);
       }
 
       &:focus-visible {
-        outline: var(--ctdc-focus-ring);
-        outline-offset: 2px;
+        @include ctdc-focus-ring;
       }
     }
 
     /* Drawer backdrop overlays */
     .usa-nav {
-      background-color: var(--ctdc-navy) !important;
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3) !important;
-      padding: 1.5rem !important;
+      background-color: var(--ctdc-navy);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+      padding: 1.5rem;
 
       .usa-nav__close {
-        background-color: rgba(255, 255, 255, 0.05) !important;
+        background-color: var(--ctdc-on-dark-bg);
         border-radius: var(--ctdc-radius-full);
-        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        width: 2.25rem !important;
-        height: 2.25rem !important;
+        border: 1px solid var(--ctdc-on-dark-border);
+        width: 2.25rem;
+        height: 2.25rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: all var(--ctdc-duration-fast) ease;
+        transition: all var(--ctdc-duration-fast) var(--ctdc-ease);
 
         img {
           filter: brightness(0) invert(1);
@@ -386,23 +486,22 @@ body {
         }
 
         &:hover {
-          background-color: rgba(255, 255, 255, 0.15) !important;
-          border-color: rgba(255, 255, 255, 0.3) !important;
+          background-color: rgba(255, 255, 255, 0.15);
+          border-color: rgba(255, 255, 255, 0.3);
         }
 
         &:focus-visible {
-          outline: var(--ctdc-focus-ring);
-          outline-offset: 2px;
+          @include ctdc-focus-ring;
         }
       }
 
       /* Stack items vertically on mobile */
       .usa-nav__primary-item {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid var(--ctdc-on-dark-bg);
 
         .usa-nav__link {
-          padding: 1rem 0.5rem !important;
-          font-size: 1.05rem !important;
+          padding: 1rem 0.5rem;
+          font-size: var(--ctdc-text-base);
 
           &[aria-current="page"]::after,
           &[aria-current]::after {
@@ -416,25 +515,29 @@ body {
 
       /* Submenu drawer matching */
       .usa-nav__submenu {
-        background-color: var(--ctdc-navy-deep) !important;
+        background-color: var(--ctdc-navy-deep);
         border-radius: var(--ctdc-radius-md);
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
-        padding-left: 0.5rem !important;
+        padding-left: 0.5rem;
       }
 
       .usa-nav__submenu-item a {
-        color: rgba(255, 255, 255, 0.65) !important;
-        font-weight: 500 !important;
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: var(--ctdc-weight-medium);
 
         &:hover {
-          color: var(--ctdc-gold) !important;
-          background: transparent !important;
+          color: var(--ctdc-gold);
+          background: transparent;
         }
       }
     }
   }
 }
+
+/* ==========================================================================
+   5. Hero image + overlay
+   ========================================================================== */
 
 .hero-image {
   height: 60vh;
@@ -511,6 +614,10 @@ body {
   }
 }
 
+/* ==========================================================================
+   6. Navigation (misc)
+   ========================================================================== */
+
 .nav-link,
 .nav-link:visited {
   text-decoration: none;
@@ -535,14 +642,17 @@ body {
   }
 }
 
-/* Blog-specific styles */
+/* ==========================================================================
+   7. Blog
+   ========================================================================== */
+
 .blog-post-meta {
   font-size: var(--ctdc-text-sm);
 }
 
 .blog-post-excerpt {
   font-size: var(--ctdc-text-md);
-  line-height: 1.6;
+  line-height: var(--ctdc-leading-relaxed);
 }
 
 .blog-post-tags .usa-tag {
@@ -579,7 +689,7 @@ body {
 }
 
 /* ==========================================================================
-   Modern Polished Footer Styles
+   8. Footer (reference implementation)
    ========================================================================== */
 
 .ctdc-footer {
@@ -625,7 +735,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--ctdc-on-dark-border);
     padding-bottom: 2rem;
     margin-bottom: 3rem;
     flex-wrap: wrap;
@@ -647,8 +757,8 @@ body {
       filter: brightness(0) invert(1);
       opacity: 0.85;
       transition:
-        opacity var(--ctdc-duration-base) ease,
-        transform var(--ctdc-duration-base) ease;
+        opacity var(--ctdc-duration-base) var(--ctdc-ease),
+        transform var(--ctdc-duration-base) var(--ctdc-ease);
     }
 
     &:hover img {
@@ -668,8 +778,8 @@ body {
     align-items: center;
     gap: 0.5rem;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: var(--ctdc-text-sm);
+    font-weight: var(--ctdc-weight-semibold);
     text-decoration: none;
     padding: 0.5rem 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -678,12 +788,12 @@ body {
     transition: all var(--ctdc-duration-base) var(--ctdc-ease);
 
     .ctdc-icon {
-      transition: transform var(--ctdc-duration-base) ease;
+      transition: transform var(--ctdc-duration-base) var(--ctdc-ease);
     }
 
     &:hover {
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--ctdc-on-dark-border);
       border-color: rgba(255, 255, 255, 0.5);
       transform: translateY(-2px);
 
@@ -697,8 +807,7 @@ body {
     }
 
     &:focus-visible {
-      outline: var(--ctdc-focus-ring);
-      outline-offset: 2px;
+      @include ctdc-focus-ring;
     }
   }
 
@@ -714,28 +823,22 @@ body {
   .ctdc-footer__heading {
     color: #ffffff;
     font-size: var(--ctdc-text-base);
-    font-weight: 700;
+    font-weight: var(--ctdc-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: var(--ctdc-tracking-wide);
     margin-top: 0;
     margin-bottom: 1.25rem;
     position: relative;
     padding-bottom: 0.5rem;
 
     &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 2rem;
-      height: 2px;
-      background-color: var(--ctdc-gold); /* Warm gold accent underline */
+      @include ctdc-gold-underline(2rem, 2px);
     }
   }
 
   .ctdc-footer__description {
-    font-size: 0.9rem;
-    line-height: 1.6;
+    font-size: var(--ctdc-text-sm);
+    line-height: var(--ctdc-leading-relaxed);
     color: rgba(255, 255, 255, 0.65);
     margin-bottom: 1.5rem;
   }
@@ -755,7 +858,7 @@ body {
     width: 2.25rem;
     height: 2.25rem;
     border-radius: var(--ctdc-radius-full);
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--ctdc-on-dark-bg);
     transition: all var(--ctdc-duration-base) var(--ctdc-ease);
     text-decoration: none;
 
@@ -767,8 +870,7 @@ body {
     }
 
     &:focus-visible {
-      outline: var(--ctdc-focus-ring);
-      outline-offset: 2px;
+      @include ctdc-focus-ring;
     }
   }
 
@@ -809,9 +911,9 @@ body {
     a {
       color: rgba(255, 255, 255, 0.65);
       text-decoration: none;
-      font-size: 0.92rem;
+      font-size: var(--ctdc-text-sm);
       display: inline-block;
-      transition: all 0.25s ease;
+      transition: all var(--ctdc-duration-fast) var(--ctdc-ease);
       padding: 0.15rem 0;
 
       &:hover {
@@ -820,8 +922,7 @@ body {
       }
 
       &:focus-visible {
-        outline: var(--ctdc-focus-ring);
-        outline-offset: 2px;
+        @include ctdc-focus-ring;
         color: var(--ctdc-gold);
       }
     }
@@ -829,19 +930,19 @@ body {
 
   /* Bottom Copyright row */
   .ctdc-footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--ctdc-on-dark-border);
     padding-top: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    font-size: 0.85rem;
+    font-size: var(--ctdc-text-sm);
     color: rgba(255, 255, 255, 0.65);
   }
 
   .ctdc-footer__copyright {
-    font-weight: 400;
+    font-weight: var(--ctdc-weight-normal);
   }
 
   .ctdc-footer__meta {
@@ -884,6 +985,10 @@ body {
   }
 }
 
+/* ==========================================================================
+   9. Layout utilities (grid row gaps)
+   ========================================================================== */
+
 .grid-row-gap-05 {
   row-gap: 0.5rem;
 }
@@ -901,11 +1006,11 @@ body {
 }
 
 /* ==========================================================================
-   Code Blocks & Inline Code Styling
+   10. Code blocks & inline code
    ========================================================================== */
 
 pre {
-  background-color: #f8f9fa;
+  background-color: var(--ctdc-bg-light);
   border: 1px solid var(--ctdc-border-light);
   border-radius: var(--ctdc-radius-sm);
   padding: 1.25rem;
@@ -919,18 +1024,18 @@ pre {
 
 code {
   font-family: var(--ctdc-font-mono);
-  font-size: 0.85em;
-  background-color: #f1f5f9;
+  font-size: 0.85em; /* relative to surrounding text — intentionally em, not a token */
+  background-color: var(--ctdc-bg-light);
   border: 1px solid var(--ctdc-border-light);
-  border-radius: 4px;
+  border-radius: var(--ctdc-radius-xs);
   padding: 0.15rem 0.35rem;
-  color: #0f172a;
+  color: var(--ctdc-text-dark);
   word-break: break-word;
 }
 
 pre code {
   font-size: var(--ctdc-text-sm);
-  line-height: 1.6;
+  line-height: var(--ctdc-leading-relaxed);
   background-color: transparent;
   border: none;
   border-radius: 0;
@@ -943,21 +1048,34 @@ pre code {
 }
 
 /* ==========================================================================
-   Custom Card Variations & Micro-animations
+   11. Cards (shared base + hover)
+   One base rule for .usa-card__container (consolidates two former blocks):
+   equal-height flex column, ambient elevation, hover lift.
    ========================================================================== */
 
+.usa-card-group {
+  align-items: stretch;
+}
+
 .usa-card__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   box-shadow: var(--ctdc-shadow-xs);
   transition:
     transform var(--ctdc-duration-fast) var(--ctdc-ease),
-    box-shadow var(--ctdc-duration-fast) ease,
-    border-color var(--ctdc-duration-fast) ease;
+    box-shadow var(--ctdc-duration-fast) var(--ctdc-ease),
+    border-color var(--ctdc-duration-fast) var(--ctdc-ease);
+}
+
+.usa-card__body {
+  flex-grow: 1;
 }
 
 .usa-card:hover .usa-card__container {
   transform: translateY(-3px);
   box-shadow: var(--ctdc-shadow-lg);
-  border-color: #cbd5e1;
+  border-color: var(--ctdc-border-hover);
 }
 
 /* Maintain .usa-card--clean for compatibility if referenced in markdown */
@@ -966,11 +1084,11 @@ pre code {
 }
 
 .usa-card--clean:hover .usa-card__container {
-  border-color: #cbd5e1;
+  border-color: var(--ctdc-border-hover);
 }
 
 /* ==========================================================================
-   Team Members Grid
+   12. Team members
    ========================================================================== */
 
 .team-member-photo {
@@ -983,7 +1101,7 @@ pre code {
 
 .linkedin-link {
   text-decoration: none;
-  color: #0073b1;
+  color: #0073b1; /* LinkedIn brand blue */
 }
 
 .linkedin-link:hover {
@@ -997,7 +1115,7 @@ pre code {
 }
 
 /* ==========================================================================
-   Logo Section Wrapper (Supporters & Community Partners)
+   13. Logo walls (supporters & community partners)
    ========================================================================== */
 
 .ctdc-content-area .ctdc-logo-section {
@@ -1038,22 +1156,15 @@ pre code {
 
 .ctdc-logo-section__title {
   font-size: var(--ctdc-text-xl);
-  font-weight: 700;
+  font-weight: var(--ctdc-weight-bold);
   color: var(--ctdc-navy);
   margin: 0 0 0.5rem 0;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--ctdc-tracking-snug);
   position: relative;
   padding-bottom: 0.75rem;
 
   &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 2.5rem;
-    height: 3px;
-    background: var(--ctdc-gold);
-    border-radius: 2px;
+    @include ctdc-gold-underline(2.5rem, 3px, var(--ctdc-radius-2xs));
   }
 }
 
@@ -1062,13 +1173,10 @@ pre code {
   color: var(--ctdc-text-muted);
   margin: 0;
   margin-top: 0.75rem;
-  line-height: 1.6;
+  line-height: var(--ctdc-leading-relaxed);
 }
 
-/* ==========================================================================
-   Modern Polished Logo Grid & Cards (Civic Premium Dark Partner Styling)
-   ========================================================================== */
-
+/* Logo cards (Civic Premium Dark partner styling) */
 .ctdc-logo-card {
   /* Quiet "paper": the logo is the ink; the card just neutralizes the mixed
      logo backgrounds (jpgs, light PNGs). Hairline border, one soft shadow. */
@@ -1136,12 +1244,12 @@ pre code {
   /* Text labels beside/below logos */
   .ctdc-logo-card__text {
     color: var(--ctdc-text-dark);
-    font-size: 0.8rem;
-    line-height: 1.3;
-    transition: color var(--ctdc-duration-base) ease;
+    font-size: var(--ctdc-text-xs);
+    line-height: var(--ctdc-leading-snug);
+    transition: color var(--ctdc-duration-base) var(--ctdc-ease);
 
     .text-bold {
-      font-weight: 700;
+      font-weight: var(--ctdc-weight-bold);
     }
   }
 
@@ -1188,7 +1296,7 @@ pre code {
     color: var(--ctdc-text-muted);
     margin: 0 auto 1.25rem;
     max-width: 34rem;
-    line-height: 1.6;
+    line-height: var(--ctdc-leading-relaxed);
   }
 
   &__actions {
@@ -1200,7 +1308,7 @@ pre code {
 }
 
 /* ==========================================================================
-   Content Area (Hero → Supporters gap)
+   14. Content area + section headings + body copy
    ========================================================================== */
 
 .ctdc-content-area {
@@ -1215,31 +1323,21 @@ pre code {
   }
 }
 
-/* ==========================================================================
-   Section Headings (Consistent premium styling for markdown-rendered h2/h3)
-   ========================================================================== */
-
+/* Consistent premium styling for markdown-rendered h2/h3 */
 .ctdc-content-area > h2,
 .ctdc-archive-section > h2,
 .ctdc-section-heading {
   font-size: var(--ctdc-text-2xl);
-  font-weight: 700;
+  font-weight: var(--ctdc-weight-bold);
   color: var(--ctdc-navy);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--ctdc-tracking-snug);
   margin-top: 3rem;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
   position: relative;
 
   &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 3rem;
-    height: 3px;
-    background: var(--ctdc-gold);
-    border-radius: 2px;
+    @include ctdc-gold-underline(3rem, 3px, var(--ctdc-radius-2xs));
   }
 }
 
@@ -1252,7 +1350,7 @@ pre code {
 .ctdc-content-area > h3,
 .ctdc-archive-section > h3 {
   font-size: var(--ctdc-text-lg);
-  font-weight: 600;
+  font-weight: var(--ctdc-weight-semibold);
   color: var(--ctdc-text-dark);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
@@ -1261,8 +1359,8 @@ pre code {
 }
 
 .ctdc-section-desc {
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-size: var(--ctdc-text-base);
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
   margin-bottom: 1.5rem;
 }
@@ -1309,7 +1407,7 @@ pre code {
 }
 
 /* ==========================================================================
-   Events Section
+   15. Events section (homepage embed)
    ========================================================================== */
 
 .ctdc-events-section {
@@ -1345,25 +1443,11 @@ pre code {
 }
 
 /* ==========================================================================
-   Project Cards — Equalize Heights & Spacing
+   16. Project cards (listing + archive)
    ========================================================================== */
 
 .ctdc-content-area .usa-card-group {
   margin-bottom: 1rem;
-}
-
-.usa-card-group {
-  align-items: stretch;
-}
-
-.usa-card__container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.usa-card__body {
-  flex-grow: 1;
 }
 
 /* Archive section — full-bleed tinted band for past projects */
@@ -1394,10 +1478,6 @@ pre code {
   }
 }
 
-/* ==========================================================================
-   Project Cards — Footer-Inspired Polish
-   ========================================================================== */
-
 /* Active: gold top accent mirroring footer's border-top */
 .ctdc-project-card--active .usa-card__container {
   border-top: 3px solid var(--ctdc-gold);
@@ -1423,10 +1503,10 @@ pre code {
 .ctdc-project-badge {
   display: inline-flex;
   align-items: center;
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: var(--ctdc-text-2xs);
+  font-weight: var(--ctdc-weight-bold);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: var(--ctdc-tracking-wide);
   padding: 0.2rem 0.6rem;
   border-radius: var(--ctdc-radius-pill);
   margin-bottom: 0.5rem;
@@ -1457,12 +1537,12 @@ pre code {
   gap: 0.3rem;
   color: var(--ctdc-brand-blue);
   font-size: var(--ctdc-text-sm);
-  font-weight: 600;
+  font-weight: var(--ctdc-weight-semibold);
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all var(--ctdc-duration-fast) var(--ctdc-ease);
 
   .ctdc-icon {
-    transition: transform 0.25s ease;
+    transition: transform var(--ctdc-duration-fast) var(--ctdc-ease);
   }
 
   &:hover {
@@ -1476,20 +1556,20 @@ pre code {
 }
 
 /* ==========================================================================
-   Hero Text Overlay — Typography Tuning
+   17. Hero text typography
    ========================================================================== */
 
 .hero-text h1 {
   font-size: var(--ctdc-text-3xl);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-weight: var(--ctdc-weight-bold);
+  line-height: var(--ctdc-leading-tight);
+  letter-spacing: var(--ctdc-tracking-tight);
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .hero-text p {
   font-size: var(--ctdc-text-base);
-  line-height: 1.65;
+  line-height: var(--ctdc-leading-relaxed);
   color: rgba(255, 255, 255, 0.92);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
   margin-bottom: 0;
@@ -1501,12 +1581,12 @@ pre code {
   }
 
   .hero-text p {
-    font-size: 1.1rem;
+    font-size: var(--ctdc-text-md);
   }
 }
 
 /* ==========================================================================
-   Skip to Content (Accessibility)
+   18. Skip link (a11y)
    ========================================================================== */
 
 .ctdc-skip-link {
@@ -1517,21 +1597,20 @@ pre code {
   background: var(--ctdc-navy);
   color: var(--ctdc-gold);
   padding: 0.75rem 1.5rem;
-  border-radius: 0 0 8px 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
+  border-radius: 0 0 var(--ctdc-radius-md) var(--ctdc-radius-md);
+  font-weight: var(--ctdc-weight-semibold);
+  font-size: var(--ctdc-text-sm);
   text-decoration: none;
-  transition: top var(--ctdc-duration-fast) ease;
+  transition: top var(--ctdc-duration-fast) var(--ctdc-ease);
 
   &:focus {
     top: 0;
-    outline: var(--ctdc-focus-ring);
-    outline-offset: 2px;
+    @include ctdc-focus-ring;
   }
 }
 
 /* ==========================================================================
-   Project Page CTA Button & Link List
+   19. Buttons (global pill + project links)
    ========================================================================== */
 
 .usa-button--dark {
@@ -1539,18 +1618,14 @@ pre code {
   color: #ffffff;
 }
 
-/* ==========================================================================
-   Tactile CTA Buttons (Civic Premium Dark)
-   Pill shape, hover lift, and gold focus ring per the design vision.
-   Excludes --unstyled (link-style) buttons.
-   ========================================================================== */
-
+/* Tactile CTA buttons — pill shape, hover lift, gold focus ring per the design
+   vision. Excludes --unstyled (link-style) buttons. */
 .usa-button:not(.usa-button--unstyled) {
   border-radius: var(--ctdc-radius-pill);
   transition:
     transform var(--ctdc-duration-fast) var(--ctdc-ease),
     box-shadow var(--ctdc-duration-fast) var(--ctdc-ease),
-    background-color var(--ctdc-duration-fast) ease;
+    background-color var(--ctdc-duration-fast) var(--ctdc-ease);
 
   &:hover {
     transform: translateY(-2px);
@@ -1563,8 +1638,7 @@ pre code {
   }
 
   &:focus {
-    outline: var(--ctdc-focus-ring);
-    outline-offset: 2px;
+    @include ctdc-focus-ring;
   }
 }
 
@@ -1584,22 +1658,7 @@ pre code {
 }
 
 /* ==========================================================================
-   Reduced Motion (Accessibility)
-   ========================================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* ==========================================================================
-   Donate Page
+   20. Donate page
    ========================================================================== */
 
 .ctdc-donate-reasons {
@@ -1631,9 +1690,9 @@ pre code {
 
 .ctdc-donate-reason p,
 .ctdc-about-card p {
-  font-size: 0.95rem;
+  font-size: var(--ctdc-text-sm);
   color: var(--ctdc-text-muted);
-  line-height: 1.6;
+  line-height: var(--ctdc-leading-relaxed);
   margin: 0;
 }
 
@@ -1649,7 +1708,7 @@ pre code {
 .ctdc-donate-cta__lead {
   color: rgba(255, 255, 255, 0.8);
   font-size: var(--ctdc-text-base);
-  line-height: 1.6;
+  line-height: var(--ctdc-leading-relaxed);
   margin-bottom: 2rem;
 }
 
@@ -1659,7 +1718,8 @@ pre code {
 }
 
 .ctdc-donate-cta__note {
-  color: rgba(255, 255, 255, 0.45);
+  // 0.55 alpha keeps the note muted while clearing WCAG AA (>=4.5:1) on the navy panel.
+  color: rgba(255, 255, 255, 0.55);
   font-size: var(--ctdc-text-sm);
   margin: 1.25rem 0 0;
 }
@@ -1668,12 +1728,12 @@ pre code {
 .ctdc-donate-btn-primary.usa-button {
   background-color: var(--ctdc-gold);
   color: var(--ctdc-navy);
-  font-weight: 700;
+  font-weight: var(--ctdc-weight-bold);
 
   &:hover {
-    background-color: #f5cc7a;
+    background-color: var(--ctdc-gold-hover);
     color: var(--ctdc-navy);
-    box-shadow: 0 4px 14px rgba(238, 192, 94, 0.4);
+    box-shadow: 0 4px 14px rgb(var(--ctdc-gold-rgb) / 0.4);
   }
 
   &:focus {
@@ -1689,7 +1749,7 @@ pre code {
   box-shadow: none;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--ctdc-on-dark-border);
     color: #ffffff;
     border-color: rgba(255, 255, 255, 0.65);
     box-shadow: none;
@@ -1708,7 +1768,7 @@ pre code {
 }
 
 /* ==========================================================================
-   About Page
+   21. About page
    ========================================================================== */
 
 .ctdc-about-grid {
@@ -1719,7 +1779,11 @@ pre code {
 }
 
 /* .ctdc-about-card / __title / p share the accent-panel pattern defined with
-   .ctdc-donate-reason in the Donate section above. */
+   .ctdc-donate-reason in the Donate section above. About-card body copy reads
+   one scale step larger than the donate reasons; the title stays shared. */
+.ctdc-about-card p {
+  font-size: var(--ctdc-text-base);
+}
 
 .ctdc-about-links {
   display: flex;
@@ -1734,16 +1798,16 @@ pre code {
   padding: 0.5rem 1.25rem;
   border: 1px solid var(--ctdc-border-light);
   border-radius: var(--ctdc-radius-pill);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: var(--ctdc-text-sm);
+  font-weight: var(--ctdc-weight-semibold);
   color: var(--ctdc-navy);
   text-decoration: none;
   background: var(--ctdc-bg-light);
   transition:
-    background-color var(--ctdc-duration-fast) ease,
-    color var(--ctdc-duration-fast) ease,
-    border-color var(--ctdc-duration-fast) ease,
-    transform var(--ctdc-duration-fast) ease;
+    background-color var(--ctdc-duration-fast) var(--ctdc-ease),
+    color var(--ctdc-duration-fast) var(--ctdc-ease),
+    border-color var(--ctdc-duration-fast) var(--ctdc-ease),
+    transform var(--ctdc-duration-fast) var(--ctdc-ease);
 
   &:hover {
     background-color: var(--ctdc-navy);
@@ -1760,9 +1824,9 @@ pre code {
 }
 
 /* ==========================================================================
-   Partners — "Who we partner with" cards (Civic Premium Dark)
-   Quiet light cards with the gold left-thread + ambient lift. They stay
-   restrained on purpose; the process timeline below is the loud element.
+   22. Partners — paths + process timeline
+   Quiet light cards with the gold left-thread + ambient lift (paths), then a
+   full-bleed dark process band — the page's signature element.
    ========================================================================== */
 
 .ctdc-partner-paths {
@@ -1780,11 +1844,11 @@ pre code {
   border-left: 3px solid rgb(var(--ctdc-gold-rgb) / 0.7); /* the gold thread */
   border-radius: var(--ctdc-radius-lg);
   padding: 1.5rem 1.5rem 1.5rem 1.35rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  box-shadow: var(--ctdc-shadow-md);
   transition:
     transform var(--ctdc-duration-base) var(--ctdc-ease),
     box-shadow var(--ctdc-duration-base) var(--ctdc-ease),
-    border-left-color var(--ctdc-duration-base) ease;
+    border-left-color var(--ctdc-duration-base) var(--ctdc-ease);
 
   &:hover {
     transform: translateY(-4px);
@@ -1794,16 +1858,16 @@ pre code {
 }
 
 .ctdc-partner-path__title {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: var(--ctdc-text-md);
+  font-weight: var(--ctdc-weight-bold);
   color: var(--ctdc-navy);
-  letter-spacing: -0.01em;
+  letter-spacing: var(--ctdc-tracking-snug);
   margin: 0 0 0.5rem;
 }
 
 .ctdc-partner-path__body {
-  font-size: 0.98rem;
-  line-height: 1.6;
+  font-size: var(--ctdc-text-sm);
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
   margin: 0;
 }
@@ -1814,14 +1878,8 @@ pre code {
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* ==========================================================================
-   Partners — "How partnering works" process timeline (Civic Premium Dark)
-   A full-bleed dark anchor band dropped into the light page. A continuous
-   gold thread links numbered nodes — the content is a real ordered sequence,
-   so the numbering carries information rather than decorating. This band is
-   the page's signature element.
-   ========================================================================== */
-
+/* Process timeline — a full-bleed dark anchor band. A continuous gold thread
+   links numbered nodes; the numbering carries real sequence information. */
 .ctdc-process {
   /* Break out of the centered content column to a full-viewport anchor band.
      On <=1023px the .grid-container ancestor clips overflow-x, which trims
@@ -1853,19 +1911,16 @@ pre code {
 }
 
 .ctdc-process__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  font-weight: 700;
+  @include ctdc-eyebrow;
   color: var(--ctdc-gold);
   margin: 0 0 0.75rem;
 }
 
 .ctdc-process__title {
   font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.1rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-weight: var(--ctdc-weight-bold);
+  line-height: var(--ctdc-leading-tight);
+  letter-spacing: var(--ctdc-tracking-snug);
   color: #ffffff;
   margin: 0 0 2.75rem;
 }
@@ -1917,22 +1972,22 @@ pre code {
   background: rgb(var(--ctdc-brand-blue-rgb) / 0.25);
   border: 2px solid var(--ctdc-gold);
   color: var(--ctdc-gold);
-  font-weight: 700;
-  font-size: 1.05rem;
+  font-weight: var(--ctdc-weight-bold);
+  font-size: var(--ctdc-text-base);
   box-shadow: 0 0 18px rgb(var(--ctdc-gold-rgb) / 0.18); /* soft glow on the dark band */
 }
 
 .ctdc-process__heading {
-  font-size: 1.15rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: var(--ctdc-text-md);
+  font-weight: var(--ctdc-weight-bold);
+  line-height: var(--ctdc-leading-snug);
   color: #ffffff;
   margin: 0.5rem 0 0.5rem; /* nudge so the text centres against the node */
 }
 
 .ctdc-process__text {
   font-size: var(--ctdc-text-base);
-  line-height: 1.65;
+  line-height: var(--ctdc-leading-relaxed);
   color: rgb(255 255 255 / 0.72);
   margin: 0;
   max-width: 46rem;
@@ -1943,7 +1998,7 @@ pre code {
     text-underline-offset: 2px;
 
     &:hover {
-      color: #f5d489;
+      color: var(--ctdc-gold-hover);
     }
   }
 }
@@ -1952,14 +2007,7 @@ pre code {
   margin-top: 1.25rem;
 
   &.usa-button {
-    background-color: var(--ctdc-gold);
-    color: var(--ctdc-navy-deep);
-    font-weight: 700;
-  }
-
-  &.usa-button:hover {
-    background-color: #f4cd79;
-    color: var(--ctdc-navy-deep);
+    @include ctdc-gold-pill-button;
   }
 }
 
@@ -1979,7 +2027,7 @@ pre code {
 }
 
 /* ==========================================================================
-   Pitch CTA — cross-page call to action pointing at /pitch (Projects, home)
+   23. Pitch CTA — cross-page call to action pointing at /pitch
    ========================================================================== */
 
 .ctdc-pitch-cta {
@@ -1997,16 +2045,16 @@ pre code {
 }
 
 .ctdc-pitch-cta__title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: var(--ctdc-text-lg);
+  font-weight: var(--ctdc-weight-bold);
+  letter-spacing: var(--ctdc-tracking-snug);
   color: var(--ctdc-navy);
   margin: 0 0 0.35rem;
 }
 
 .ctdc-pitch-cta__text {
   font-size: var(--ctdc-text-base);
-  line-height: 1.6;
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
   margin: 0;
   max-width: 44rem;
@@ -2017,7 +2065,7 @@ pre code {
 }
 
 /* ==========================================================================
-   Project Detail Page — Footer-Inspired Polish
+   24. Project detail page — footer-inspired polish
    The chrome around a project's prose: a back link, a status-badged header
    with a lead standfirst and resource buttons, and a framed hero image.
    The body ({{ content }}) is author-controlled and left untouched.
@@ -2027,17 +2075,17 @@ pre code {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: var(--ctdc-text-sm);
+  font-weight: var(--ctdc-weight-semibold);
   color: var(--ctdc-text-muted);
   text-decoration: none;
   margin-bottom: 1.5rem;
   transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+    color var(--ctdc-duration-fast) var(--ctdc-ease),
+    transform var(--ctdc-duration-fast) var(--ctdc-ease);
 
   .usa-icon {
-    transition: transform 0.25s ease;
+    transition: transform var(--ctdc-duration-fast) var(--ctdc-ease);
   }
 
   &:hover {
@@ -2049,9 +2097,8 @@ pre code {
   }
 
   &:focus-visible {
-    outline: var(--ctdc-focus-ring);
-    outline-offset: 3px;
-    border-radius: 2px;
+    @include ctdc-focus-ring(3px);
+    border-radius: var(--ctdc-radius-2xs);
   }
 }
 
@@ -2071,16 +2118,16 @@ pre code {
 
 .ctdc-project-detail__title {
   font-size: clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
-  font-weight: 700;
+  font-weight: var(--ctdc-weight-bold);
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--ctdc-tracking-tight);
   color: var(--ctdc-navy);
   margin: 0;
 }
 
 .ctdc-project-detail__lead {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: var(--ctdc-text-lg);
+  line-height: var(--ctdc-leading-relaxed);
   color: var(--ctdc-text-muted);
   margin: 0.85rem 0 0;
   max-width: 46rem;
@@ -2109,42 +2156,53 @@ pre code {
 }
 
 /* ==========================================================================
-   Hero CTA button (optional — only renders when a page passes cta_label/link)
-   Gold pill so it pops against the blue glassmorphic hero panel.
+   25. Hero CTA + closing CTA band
    ========================================================================== */
 
+/* Hero CTA buttons (optional — only render when a page passes cta_label/link).
+   Gold pill primary so it pops against the blue glassmorphic hero panel; a
+   white-outline secondary for a second, lower-emphasis action. */
 .hero-text__cta {
   margin: 1.25rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 
   .usa-button {
-    background-color: var(--ctdc-gold);
-    color: var(--ctdc-navy-deep);
-    font-weight: 700;
+    margin: 0;
+    @include ctdc-gold-pill-button;
+  }
+
+  .hero-text__cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
 
     &:hover {
-      background-color: #f4cd79;
-      color: var(--ctdc-navy-deep);
+      background-color: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
     }
+  }
+
+  .hero-text__cta-icon {
+    flex: none;
   }
 }
 
-/* ==========================================================================
-   Closing CTA band — the homepage's deliberate "work with us" ask.
-   A saturated brand-blue moment between the light logo walls and the deep
-   navy footer; two clearly-differentiated paths instead of one hedged block.
-   ========================================================================== */
-
+/* Closing CTA band — the homepage's deliberate "work with us" ask. A saturated
+   brand-blue moment between the light logo walls and the deep navy footer; two
+   clearly-differentiated paths instead of one hedged block. */
 .ctdc-cta-band {
   background: var(--ctdc-brand-blue);
   padding: 3.5rem 0 3.75rem;
 }
 
 .ctdc-cta-band__eyebrow {
+  @include ctdc-eyebrow;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  font-weight: 700;
   color: var(--ctdc-gold);
   margin: 0 0 0.6rem;
 }
@@ -2152,9 +2210,9 @@ pre code {
 .ctdc-cta-band__title {
   text-align: center;
   font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-weight: var(--ctdc-weight-bold);
+  line-height: var(--ctdc-leading-tight);
+  letter-spacing: var(--ctdc-tracking-snug);
   color: #ffffff;
   max-width: 36rem;
   margin: 0 auto 2rem;
@@ -2177,29 +2235,22 @@ pre code {
 }
 
 .ctdc-cta-band__path-title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: var(--ctdc-text-lg);
+  font-weight: var(--ctdc-weight-bold);
   color: #ffffff;
   margin: 0 0 0.5rem;
 }
 
 .ctdc-cta-band__path-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: var(--ctdc-text-sm);
+  line-height: var(--ctdc-leading-relaxed);
   color: rgb(255 255 255 / 0.8);
   margin: 0 auto 1.35rem;
   max-width: 22rem;
 }
 
 .ctdc-cta-band .usa-button {
-  background-color: var(--ctdc-gold);
-  color: var(--ctdc-navy-deep);
-  font-weight: 700;
-
-  &:hover {
-    background-color: #f4cd79;
-    color: var(--ctdc-navy-deep);
-  }
+  @include ctdc-gold-pill-button;
 }
 
 .ctdc-cta-band .usa-button--outline {
@@ -2217,5 +2268,20 @@ pre code {
 @media only screen and (max-width: 640px) {
   .ctdc-cta-band__paths {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   26. Reduced motion (a11y)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

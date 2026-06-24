@@ -50,5 +50,6 @@ exclude:
   - /sass
   - README.md
   - CONTRIBUTING.md
+  - CLAUDE.md
   - package.json
   - package-lock.json
