@@ -7,7 +7,7 @@
     "check:a11y": "bash scripts/check-a11y-includes.sh"
   },
   "devDependencies": {
-    "@shopify/prettier-plugin-liquid": "^1.9.3",
+    "@shopify/prettier-plugin-liquid": "^1.10.3",
     "@uswds/compile": "^1.2.1",
     "gulp": "^5.0.1",
     "gulp-imagemin": "^9.1.0",
