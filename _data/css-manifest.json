@@ -1,5 +1,9 @@
 {
   "civichackdc.css": "civichackdc-edc33b8c21.css",
   "events.css": "events-058e074c3f.css",
+<<<<<<< HEAD
   "styles.css": "styles-68acff56bd.css"
+=======
+  "styles.css": "styles-f637c89d57.css"
+>>>>>>> 2df2dc2 (Apply design tokens to content area body copy)
 }
