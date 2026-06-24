@@ -1,0 +1,41 @@
+# Lychee link-checker configuration
+# https://lychee.cli.rs/usage/config/
+
+# Only check links inside _site/ (relative / root-relative).
+# External requests are skipped on PRs; the scheduled run checks everything.
+
+# Treat these HTTP status codes as success so transient upstream blips
+# don't fail the build.
+accept = [200, 206, 429]
+
+# Wait up to 20 seconds per request before giving up.
+timeout = 20
+
+# Retry up to 3 times before marking a link broken.
+max_retries = 3
+
+# Limit concurrent requests to be polite to remote hosts.
+max_concurrency = 8
+
+# Ignore anchors (fragment IDs) — these require rendering JS and produce
+# many false positives on static builds.
+include_fragments = false
+
+# Skip common false-positive sources:
+#   - localhost URLs in code examples
+#   - mailto: and tel: links (not HTTP)
+#   - GitHub edit/blob/tree links that may require auth
+#   - LinkedIn (rate-limits crawlers aggressively)
+#   - Twitter/X (rate-limits crawlers aggressively)
+exclude = [
+  "^mailto:",
+  "^tel:",
+  "localhost",
+  "127\\.0\\.0\\.1",
+  "linkedin\\.com",
+  "twitter\\.com",
+  "x\\.com",
+  "t\\.co",
+  "instagram\\.com",
+  "facebook\\.com",
+]

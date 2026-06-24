@@ -1,0 +1,47 @@
+name: Link Check
+
+on:
+  pull_request:
+  schedule:
+    # Run every Monday at 08:00 UTC
+    - cron: "0 8 * * 1"
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    name: Check links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compile assets
+        run: npm run build
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Check links (internal only on PRs, all links on schedule/dispatch)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # On pull_request only scan internal links so PRs are not blocked by
+          # flaky external hosts. On schedule/dispatch scan everything.
+          args: >-
+            --config lychee.toml
+            --base _site
+            ${{ github.event_name == 'pull_request' && '--offline' || '' }}
+            "./_site/**/*.html"
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
