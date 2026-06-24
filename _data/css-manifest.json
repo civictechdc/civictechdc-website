@@ -3,6 +3,7 @@
   "events.css": "events-058e074c3f.css",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   "styles.css": "styles-68acff56bd.css"
 =======
   "styles.css": "styles-f637c89d57.css"
@@ -10,4 +11,7 @@
 =======
   "styles.css": "styles-68acff56bd.css"
 >>>>>>> 4e73a92 (Tokenize remaining transition durations)
+=======
+  "styles.css": "styles-0d123ff72c.css"
+>>>>>>> 6d11176 (Point homepage hero CTA to events and add Slack button)
 }
