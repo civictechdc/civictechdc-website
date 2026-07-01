@@ -7,6 +7,8 @@ hero-image: hero-image-projects.jpg
 hero-image-alt: People gathered at tables during a Civic Tech DC community event
 ---
 
+{% include components/pitch-cta.html %}
+
 ## Current projects
 
 We're always incubating new projects and iterating on existing ones! Here are some of the active projects we're currently supporting:
@@ -22,5 +24,3 @@ Since its founding in 2012, Civic Tech DC has worked on dozens of projects. This
 {% include components/project-cards.html is_active=false heading=3 columns=4 %}
 
 </div>
-
-{% include components/pitch-cta.html %}
