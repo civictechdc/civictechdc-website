@@ -61,7 +61,7 @@ Standard body text is optimized for readability — `--ctdc-text-base` at a
 relaxed line height.
 
 <div class="margin-bottom-4">
-  <p>This is standard body text. We are a non-partisan, non-political group of volunteer civic hackers working together to solve local issues and help people engage with the city. We host events, work on projects, and build community.</p>
+  <p>This is standard body text. We are a non-partisan volunteer community in the DMV using open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives locally and nationally. We host events, work on projects, and build community.</p>
 </div>
 
 The **lead / standfirst** paragraph (`.ctdc-lead`) bridges a hero into the page

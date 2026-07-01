@@ -18,7 +18,7 @@ On this blog, you'll find:
 
 ### Project Spotlights
 
-We'll regularly feature the amazing projects our community is working on, from improving government transparency to building tools that help residents engage with their city.
+We'll regularly feature the amazing projects our community is working on, from improving government transparency to building open-source tools that strengthen democracy and civic engagement.
 
 ### Community Stories
 

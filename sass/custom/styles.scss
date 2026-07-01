@@ -1118,13 +1118,9 @@ pre code {
    13. Logo walls (supporters & community partners)
    ========================================================================== */
 
-.ctdc-content-area .ctdc-logo-section {
-  padding-top: 2rem;
-}
-
 .ctdc-logo-section {
-  padding: 3rem 0 2.5rem;
-  background: var(--ctdc-bg-light); /* Refined off-white, not flat USWDS gray */
+  padding: var(--ctdc-space-3xl) 0 var(--ctdc-space-2xl);
+  background: var(--ctdc-bg-light);
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 
   &--partners {
@@ -1138,6 +1134,30 @@ pre code {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+}
+
+/* Nested in page content (support, partners pages) */
+.ctdc-content-area > .ctdc-logo-section {
+  padding-top: var(--ctdc-space-2xl);
+}
+
+/* Homepage: full-bleed logo bands follow .ctdc-content-area as main > siblings */
+main:has(> .ctdc-content-area + .ctdc-logo-section) > .ctdc-content-area {
+  padding-bottom: 0;
+}
+
+main > .ctdc-content-area + .ctdc-logo-section {
+  padding-top: var(--ctdc-space-3xl);
+  padding-bottom: var(--ctdc-space-2xl);
+}
+
+main > .ctdc-logo-section + .ctdc-logo-section {
+  padding-top: var(--ctdc-space-2xl);
+  padding-bottom: var(--ctdc-space-2xl);
+}
+
+main > .ctdc-logo-section + .ctdc-cta-band {
+  margin-top: 0;
 }
 
 /* Logo grid: wraps evenly, last row centers gracefully, widths capped so
@@ -1312,15 +1332,25 @@ pre code {
    ========================================================================== */
 
 .ctdc-content-area {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: var(--ctdc-space-4xl);
+  padding-bottom: var(--ctdc-space-3xl);
 }
 
 @media only screen and (max-width: 767px) {
   .ctdc-content-area {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+    padding-top: var(--ctdc-space-2xl);
+    padding-bottom: var(--ctdc-space-2xl);
   }
+}
+
+/* First block after the hero inherits top padding from .ctdc-content-area */
+.ctdc-content-area > .ctdc-pitch-cta:first-child {
+  margin-top: 0;
+}
+
+/* One section gap between pitch CTA and the next heading */
+.ctdc-content-area > .ctdc-pitch-cta + h2 {
+  margin-top: 0;
 }
 
 /* Consistent premium styling for markdown-rendered h2/h3 */
@@ -1343,6 +1373,7 @@ pre code {
 
 .ctdc-content-area > h2:first-child,
 .ctdc-archive-section > h2:first-child,
+.ctdc-archive-section > h3:first-child,
 .ctdc-section-heading:first-child {
   margin-top: 0;
 }
@@ -1411,7 +1442,7 @@ pre code {
    ========================================================================== */
 
 .ctdc-events-section {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .ctdc-events-section__embed {
@@ -1457,7 +1488,7 @@ pre code {
   border-bottom: 1px solid var(--ctdc-border-light);
   margin-left: -1rem;
   margin-right: -1rem;
-  padding: 2.5rem 1rem 3rem;
+  padding: var(--ctdc-space-lg) 1rem var(--ctdc-space-2xl);
 
   @media (min-width: 64em) {
     margin-left: -2rem;
@@ -1476,6 +1507,13 @@ pre code {
     object-fit: cover;
     width: 100%;
   }
+}
+
+/* Homepage: breathing room between past projects band and supporters wall */
+main:has(> .ctdc-content-area + .ctdc-logo-section)
+  .ctdc-content-area
+  > .ctdc-archive-section:last-child {
+  margin-bottom: var(--ctdc-space-3xl);
 }
 
 /* Active: gold top accent mirroring footer's border-top */
@@ -2036,7 +2074,7 @@ pre code {
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem 2rem;
-  margin: 3rem 0 0;
+  margin: var(--ctdc-space-3xl) 0;
   padding: 1.75rem 2rem;
   background: var(--ctdc-bg-light);
   border: 1px solid var(--ctdc-border-light);
@@ -2197,7 +2235,7 @@ pre code {
    clearly-differentiated paths instead of one hedged block. */
 .ctdc-cta-band {
   background: var(--ctdc-brand-blue);
-  padding: 3.5rem 0 3.75rem;
+  padding: var(--ctdc-space-3xl) 0 3.75rem;
 }
 
 .ctdc-cta-band__eyebrow {
