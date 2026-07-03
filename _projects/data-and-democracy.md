@@ -33,7 +33,7 @@ Our work makes election and democracy data easier to access and use, so that the
 
 <ul>
 <li>Building out a Python-based data pipeline to clean and standardize EAVS datasets</li>
-<li>Developing time-series data to support analysis across election cycles </li>
+<li>Developing timeseries data to support analysis across election cycles </li>
 <li>Enriching datasets with demographic and jurisdictional information (e.g., Census-based data) </li>
 <li>Preparing analysis-ready datasets for dashboards and further investigation</li>
 </ul>
@@ -48,7 +48,7 @@ Our work makes election and democracy data easier to access and use, so that the
     <p>The project is currently in mid-stage of development, with strong foundations in place and ongoing work in several areas.</p>
 <ul>
 <li>Single-year datasets for 2020, 2022, and 2024 have been cleaned and standardized; the team is now shifting to build on the EAC's own pre-harmonized timeseries dataset as the canonical cross-year source, rather than manually combining files</li>
-<li>Combined multi-year datasets and time-series outputs have been created</li>
+<li>Combined multi-year datasets and timeseries outputs have been created</li>
 <li>Demographic enrichment has been partially integrated</li>
 <li>Dashboard development and analysis concepts are in progress</li>
 <li>The team is actively engaging in outreach and user discovery to ensure the work aligns with real-world needs</li>
