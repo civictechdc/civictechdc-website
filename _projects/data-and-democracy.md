@@ -19,18 +19,10 @@ description: "We build data tools for election protection: cleaning, analyzing, 
     <p>
 Elections in the United States generate enormous amounts of public data, but that data is scattered, inconsistent, and hard to use. Patterns that matter (administrative issues, data quality problems, or practices that warrant a closer look) stay buried in spreadsheets and codebooks that few people have the time or tooling to work through.
 
-Our work makes public election data easier to clean, compare, and analyze across jurisdictions and over time, so that the people protecting elections (journalists, advocates, legal teams, and election administrators) can find those patterns and act on them.
+Our work makes election and democracy data easier to access and use, so that the people protecting elections — journalists, advocates for fairer elections, election administrators, litigators, oversight bodies, and other election protection and public-interest organizations — can find what matters and act on it. Our goal is to reduce friction and speed up the process of working with election data, so that groups spend less time wrangling spreadsheets and more time acting on what they find.
 
 </p>
 
-  </div>
-</section>
-
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg">Our Impact</h2>
-    <p>By making election data easier to clean, analyze, and compare across time and geography, this project supports election officials, researchers, advocacy organizations, legal teams, journalists, and other public-interest groups in identifying patterns that may warrant further investigation. The work aims to lower the barriers to using election data and to enable more consistent, transparent, and scalable analysis.
-    </p>
   </div>
 </section>
 
@@ -40,11 +32,10 @@ Our work makes public election data easier to clean, compare, and analyze across
     <p>Our flagship effort is a reproducible, open workflow built around the U.S. Election Administration and Voting Survey (EAVS), the most detailed national dataset on how elections are actually run, covering voter registration, mail ballots, provisional ballots, voter list maintenance, and more. Current work includes:</p>
 
 <ul>
-<li>A Python-based data pipeline to clean and standardize EAVS datasets</li>
-<li>Cleaned datasets for 2020, 2022, and 2024, along with combined multi-year outputs</li>
-<li>Time-series data to support analysis across election cycles</li>
-<li>Data enrichment with demographic and jurisdictional information (e.g., Census-based data)</li>
-<li>Analysis-ready datasets designed for dashboards and further investigation</li>
+<li>Building out a Python-based data pipeline to clean and standardize EAVS datasets</li>
+<li>Developing time-series data to support analysis across election cycles </li>
+<li>Enriching datasets with demographic and jurisdictional information (e.g., Census-based data) </li>
+<li>Preparing analysis-ready datasets for dashboards and further investigation</li>
 </ul>
   
 <p>The goal is to reduce the time and effort required to work with election data and to make analyses more transparent, reproducible, and scalable.
@@ -54,9 +45,9 @@ Our work makes public election data easier to clean, compare, and analyze across
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">Current Project Status</h2>
-    <p>The project is currently in a mid-to-late stage of development, with strong foundations in place and ongoing work in several areas.</p>
+    <p>The project is currently in midstage of development, with strong foundations in place and ongoing work in several areas.</p>
 <ul>
-<li>Core datasets for 2020, 2022, and 2024 have been cleaned and standardized</li>
+<li>Single-year datasets for 2020, 2022, and 2024 have been cleaned and standardized; the team is now shifting to build on the EAC's own pre-harmonized timeseries dataset as the canonical cross-year source, rather than manually combining files</li>
 <li>Combined multi-year datasets and time-series outputs have been created</li>
 <li>Demographic enrichment has been partially integrated</li>
 <li>Dashboard development and analysis concepts are in progress</li>
