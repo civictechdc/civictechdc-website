@@ -45,7 +45,7 @@ Our work makes election and democracy data easier to access and use, so that the
 <section class="padding-y-1 usa-prose maxw-none">
   <div class="grid-container">
     <h2 class="font-sans-lg">Current Project Status</h2>
-    <p>The project is currently in midstage of development, with strong foundations in place and ongoing work in several areas.</p>
+    <p>The project is currently in mid-stage of development, with strong foundations in place and ongoing work in several areas.</p>
 <ul>
 <li>Single-year datasets for 2020, 2022, and 2024 have been cleaned and standardized; the team is now shifting to build on the EAC's own pre-harmonized timeseries dataset as the canonical cross-year source, rather than manually combining files</li>
 <li>Combined multi-year datasets and time-series outputs have been created</li>
