@@ -19,7 +19,7 @@ description: "We build data tools for election protection: cleaning, analyzing, 
     <p>
 Elections in the United States generate enormous amounts of public data, but that data is scattered, inconsistent, and hard to use. Patterns that matter (administrative issues, data quality problems, or practices that warrant a closer look) stay buried in spreadsheets and codebooks that few people have the time or tooling to work through.
 
-Our work makes election and democracy data easier to access and use, so that the people protecting elections — journalists, advocates for fairer elections, election administrators, litigators, oversight bodies, and other election protection and public-interest organizations — can find what matters and act on it. Our goal is to reduce friction and speed up the process of working with election data, so that groups spend less time wrangling spreadsheets and more time acting on what they find.
+Our work makes election and democracy data easier to access and use, so that the people protecting elections can find what matters and act on it. These include journalists, advocates for fairer elections, election administrators, litigators, oversight bodies, and other election protection and public-interest organizations. Our goal is to reduce friction and speed up the process of working with election data, so that groups spend less time wrangling spreadsheets and more time acting on what they find.
 
 </p>
 
