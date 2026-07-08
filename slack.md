@@ -22,7 +22,7 @@ hero-image: hero-image-slack.jpg
 </div>
 
 <div class="ctdc-donate-cta">
-  <a href="https://join.slack.com/t/civictechdc/shared_invite/zt-41cna89o4-g8_Od_1YCJfq2Y6zB8csGw" target="_blank" rel="noopener noreferrer" class="usa-button ctdc-donate-btn-primary display-inline-flex flex-align-center text-no-underline">
+  <a href="https://join.slack.com/t/civictechdc/shared_invite/zt-43eotbj04-QLQ_Ria296PtRYJU2EgwxQ" target="_blank" rel="noopener noreferrer" class="usa-button ctdc-donate-btn-primary display-inline-flex flex-align-center text-no-underline">
     {% include responsive-image.html src="logos/slack.png" class="slack-btn-icon" alt="" %}
     Join Our Slack
   </a>
