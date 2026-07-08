@@ -111,6 +111,9 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
       <a href="https://github.com/civictechdc/ridescoredc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         <span aria-hidden="true">🧩</span> GitHub Repo
       </a>
+      <a href="https://www.ridescoredc.com/" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">🌐</span> Project Website
+      </a>
     </div>
   </div>
 </section>
