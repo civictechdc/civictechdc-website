@@ -116,6 +116,11 @@ We believe in building processes, not just tools, and applying human-centered sy
         {% include responsive-image.html  src="team_photos/Evan_Tung.jpg" class="team-member-photo" alt="Evan Tung" %}
         <p class="margin-top-2 font-sans-lg text-bold"><a href="https://www.linkedin.com/in/ejtung/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Evan Tung</a></p>
     </div>
+    <!-- Kurian Vithayathil -->
+    <div class="grid-col-12 tablet:grid-col-3 text-center margin-bottom-3">
+        {% include responsive-image.html src="team_photos/Kurian-Vithayathil.jpg" class="team-member-photo" alt="Kurian Vithayathil" %}
+        <p class="margin-top-2 font-sans-lg text-bold"><a href="https://www.linkedin.com/in/kurianvithayathil/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Kurian Vithayathil</a></p>
+    </div>
 </div>
 
 ## Stay Connected
