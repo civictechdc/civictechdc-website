@@ -1093,8 +1093,9 @@ pre code {
 
 .team-member-photo {
   border-radius: var(--ctdc-radius-full);
-  max-width: 150px;
-  height: auto;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   margin: 0 auto;
   display: block;
 }
