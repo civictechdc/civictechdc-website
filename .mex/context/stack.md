@@ -12,7 +12,7 @@ edges:
     condition: when the reasoning behind a tech choice is needed
   - target: context/conventions.md
     condition: when understanding how to use a technology in this codebase
-last_updated: 2026-06-22
+last_updated: 2026-07-21
 ---
 
 # Stack
@@ -32,13 +32,14 @@ last_updated: 2026-06-22
 - **gulp-imagemin** — optimizes SVGs and GIFs (these are NOT resized).
 - **gulp-rev** + **gulp-rev-delete-original** — content-hash CSS filenames for cache busting; the output map lands in `_data/css-manifest.json`.
 - **prettier** + **@shopify/prettier-plugin-liquid** — the only linter/formatter; formats Liquid/HTML/Markdown/CSS/JS. Run via `npm run lint`.
-- Gems `jekyll-redirect-from` (redirects from front matter) and `jekyll-archives` (blog category/tag pages at `/blog/category/:name/` and `/blog/tag/:name/`).
+- Gems `jekyll-redirect-from` (front-matter redirects), `jekyll-archives` (blog category/tag pages), `jekyll-sitemap` (canonical URL discovery), and `jekyll-feed` (the Atom blog feed).
+- **Nokogiri** + **TZInfo** — parse rendered HTML/XML and verify local-time offsets in the production SEO check.
 
 ## What We Deliberately Do NOT Use
 
 - **No JS framework or bundler** (React, Vue, webpack, Vite) — interactivity is USWDS JS plus minimal inline scripts; keep it that way.
 - **No CSS framework other than USWDS** — do not add Bootstrap/Tailwind; extend via the project Sass and USWDS theme settings.
-- **No test framework** — there is no test script; CI relies on lint + build-diff checks only.
+- **No application test framework** — shell and Ruby quality checks validate shared accessibility markup and rendered SEO output without a runtime test harness.
 - **No hand-written image tags to the assets folder** — use the responsive-image include so srcsets and lazy-loading stay consistent.
 
 ## Version Constraints

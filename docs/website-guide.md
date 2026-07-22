@@ -193,7 +193,7 @@ layout: project
 is_active: true
 title: Your Project Name
 image: project_thumbnails/your-image.png
-image_alt_text: A short description of the image
+image_alt_text: Describe what is visible in the image
 description: One sentence describing what the project does.
 ---
 
@@ -204,8 +204,10 @@ detail page.
 - `is_active: true` means the project appears under "Active Projects" on the homepage and
   projects page.
 - `is_active: false` moves it to "Past Projects."
-- The `image` path is relative to `assets/images/`. Put the source file in `_images/` and
-  run `npm run build` to generate the processed version (see the Images section below).
+- The `image` path is relative to `_images/`. Put the source file there and run
+  `npm run build` to generate the processed version (see the Images section below).
+- The title, description, image, and image alt text also supply the project's search and
+  social-sharing metadata.
 
 **To mark a project as inactive**, open its `.md` file and change `is_active: true` to
 `is_active: false`.
@@ -222,15 +224,20 @@ title: "My Event Title"
 date: 2026-07-15
 location: "Washington, DC"
 card_image: events/my-event-image.png
+social_image_alt: Describe what is visible in the event image
 description: "A brief description of the event."
 redirect_to: https://lu.ma/your-event-link
+sitemap: false
 ---
 ```
 
-- `redirect_to` is optional. When provided, clicking the event card sends the visitor to
-  that URL (handy for linking to a Luma or Eventbrite page).
-- The `card_image` path is relative to `assets/images/`. Add the source in `_images/events/`
-  and run `npm run build`.
+- `redirect_to` sends the visitor to the Luma or Eventbrite page. Keep `sitemap: false` on
+  redirect-only entries so search engines index the destination instead.
+- For a hosted event page, omit `redirect_to` and copy the `event` structured-data block
+  from an existing hosted event. Its date, time, venue, and address must match the visible
+  page.
+- The `card_image` path is relative to `_images/`. Add the source in `_images/events/` and
+  run `npm run build`.
 
 ### Add a blog post
 
@@ -246,6 +253,8 @@ author: "Your Name"
 categories: [Community, Announcements]
 tags: [civic tech, community]
 excerpt: "A one-sentence teaser that appears on the blog listing page."
+social_image: representative-image.jpg
+social_image_alt: Describe what is visible in the image
 ---
 
 Your post content goes here in Markdown.
@@ -323,15 +332,28 @@ After running `npm run build`, commit all changed files including the regenerate
 
 ## Linting and Formatting
 
-The project uses [Prettier](https://prettier.io/) for consistent formatting. Before you open a
-pull request, run:
+The project uses [Prettier](https://prettier.io/) for consistent formatting. Format the files
+you changed, then inspect the diff:
 
 ```bash
-npm run lint
+npx prettier --write path/to/file.md
 ```
 
-This formats all supported files in place. CI also checks formatting, so a PR that fails the
-lint check cannot be merged.
+`npm run lint` formats the entire repository. Use it cautiously: the Liquid plugin can reflow
+complex include arguments incorrectly. The current CI lint job formats its temporary checkout
+but does not compare the result, so the rendered checks are the correctness gates.
+
+## SEO and Metadata Checks
+
+Before opening a pull request that changes content, routes, images, or templates, run:
+
+```bash
+npm run check:seo
+```
+
+This builds the production site in a temporary directory and checks every rendered page,
+redirect, social preview, structured-data block, sitemap entry, robots directive, and feed
+entry. It also catches duplicate or overlong search metadata.
 
 ---
 
@@ -343,17 +365,18 @@ Here is the high-level flow:
 2. **Fork the repo** and create a branch off `main` with a descriptive name, e.g.
    `add-new-project-my-tool`.
 3. **Make your changes**, following the steps above.
-4. **Run `npm run lint`** to format your files.
+4. **Run Prettier on the files you changed** and inspect the formatting diff.
 5. **Run `npm run build`** if you changed anything in `sass/` or `_images/`.
-6. **Commit your changes** (including any regenerated assets).
-7. **Open a pull request** against `civictechdc/civictechdc-website:main` with a clear title
+6. **Run `npm run check:seo`** if you changed content, routes, images, or templates.
+7. **Commit your changes** (including any regenerated assets).
+8. **Open a pull request** against `civictechdc/civictechdc-website:main` with a clear title
    and description.
-8. **CI checks run automatically.** If anything fails (lint, or a Gulp diff), fix it and push
+9. **CI checks run automatically.** If anything fails, fix it and push
    again.
-9. A maintainer reviews and merges. The site deploys automatically to
-   [civictechdc.org](https://civictechdc.org) after merge.
+10. A maintainer reviews and merges. The site deploys automatically to
+    [civictechdc.org](https://www.civictechdc.org) after merge.
 
 For the full step-by-step contribution instructions, see [CONTRIBUTING.md](https://github.com/civictechdc/civictechdc-website/blob/main/CONTRIBUTING.md).
 
 If you get stuck, ask in the **#civictechdc-website** channel on the
-[Civic Tech DC Slack](https://civictechdc.org/slack). We're happy to help.
+[Civic Tech DC Slack](https://www.civictechdc.org/slack.html). We're happy to help.

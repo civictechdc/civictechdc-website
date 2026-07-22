@@ -12,7 +12,7 @@ edges:
     condition: when a decision relates to system structure
   - target: context/stack.md
     condition: when a decision relates to technology choice
-last_updated: 2026-06-22
+last_updated: 2026-07-21
 ---
 
 # Decisions
@@ -24,6 +24,15 @@ last_updated: 2026-06-22
      The history must be preserved — this is the event clock. -->
 
 ## Decision Log
+
+### Centralize metadata on the www origin and validate rendered output
+
+**Date:** 2026-07-21
+**Status:** Active
+**Decision:** Treat `https://www.civictechdc.org` as the only canonical origin. Generate search tags, social previews, and JSON-LD through shared Liquid includes; generate discovery files with Jekyll plugins; validate the completed site with `npm run check:seo` in CI and deployment.
+**Reasoning:** The CNAME and live redirects already prefer `www`. A single rendering path prevents duplicate hosts, broken collection-image URLs, and metadata drift between pages. Rendered validation catches Liquid and plugin behavior that source-only checks miss.
+**Alternatives considered:** `jekyll-seo-tag` alone (rejected because the site's event collections and generated responsive-image paths require site-specific mapping); hand-authored tags per page (rejected because they duplicate logic and drift); indexing only the blog index (rejected because category and tag archives are intentional navigation pages with unique metadata).
+**Consequences:** Every indexable document needs a unique description and representative image. The 404 page and redirect-only event documents stay out of the sitemap. Blog archives remain indexable. Changes to metadata, routes, content, or images must pass the rendered SEO check.
 
 ### Host on GitHub Pages with the github-pages gem
 
@@ -59,4 +68,4 @@ last_updated: 2026-06-22
 **Decision:** Use Prettier with the @shopify/prettier-plugin-liquid plugin as the sole formatter, enforced in CI.
 **Reasoning:** One opinionated tool formats Liquid/HTML/Markdown/CSS/JS consistently, lowering review friction for first-time/volunteer contributors.
 **Alternatives considered:** No formatter (rejected — inconsistent style in PRs); separate linters per language (rejected — more config to maintain).
-**Consequences:** `npm run lint` must be run before committing; the CI lint job blocks PRs on formatting drift.
+**Consequences:** Run Prettier on touched files and inspect Liquid include formatting before committing. The current CI lint command writes formatting on the runner but does not assert a clean diff; rendered checks provide separate correctness gates.

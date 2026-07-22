@@ -12,7 +12,7 @@ edges:
     condition: when specific technology details are needed
   - target: context/decisions.md
     condition: when understanding why the architecture is structured this way
-last_updated: 2026-06-22
+last_updated: 2026-07-21
 ---
 
 # Architecture
@@ -22,7 +22,7 @@ last_updated: 2026-06-22
 This is a static site — there is no runtime backend. Two pipelines feed Jekyll:
 
 1. Asset pipeline (gulp, run first): `_images/` originals are resized by gulp-sharp-responsive to 400/800/1200/1800w variants in `assets/images/`; @uswds/compile compiles `sass/` into `assets/css/`; gulp-rev content-hashes the styles, events, and civichackdc CSS files and writes the hash map to `_data/css-manifest.json`.
-2. Jekyll build: Markdown/HTML pages plus collections (`_projects`, `_events`, `_posts`) are rendered through Liquid layouts (`_layouts`) and includes (`_includes`) into `_site`. Layouts read `_data/css-manifest.json` to link the correct hashed CSS.
+2. Jekyll build: Markdown/HTML pages plus collections (`_projects`, `_events`, `_posts`) are rendered through Liquid layouts (`_layouts`) and includes (`_includes`) into `_site`. Layouts read `_data/css-manifest.json` to link the correct hashed CSS. SEO plugins also generate the sitemap and Atom feed.
 
 Flow per page: front matter `layout` → a template in `_layouts` → wraps in `_layouts/default.html` → `_layouts/base.html` (head/meta/css + GTM) → content rendered with `_includes` partials.
 
@@ -32,6 +32,7 @@ Locally, `npm run serve` runs gulp in the background and `jekyll serve` in the f
 
 - `_layouts` — page templates. `_layouts/base.html` is the HTML shell (resolves `page_css` against the manifest); `_layouts/default.html` is the standard page; specialized layouts include `_layouts/project.html`, `_layouts/events.html`, `_layouts/post.html`, `_layouts/archive.html`, `_layouts/design-system.html`, and several hero-image variants.
 - `_includes` — Liquid partials. `_includes/core/` holds structural partials (header, footer, meta, css, GTM); `_includes/components/` holds reusable UI (cards, project-cards, supporters, meetup-events); `_includes/responsive-image.html` is the canonical image tag generator.
+- `_includes/core/meta.html` + `_includes/core/structured-data.html` — the canonical metadata pipeline: titles, descriptions, canonicals, crawler directives, social cards, and JSON-LD entities.
 - Collections — `_projects` (civic-tech project pages, `project` layout) and `_events` (special-event pages, permalink `/events/:name/`). Defined in `_config.yml`.
 - `gulpfile.js` — the entire build pipeline: image processing, USWDS compile, and CSS cache-busting (the addHashToCSS task).
 - `sass` — CSS source. `sass/custom` is the USWDS project Sass; `sass/theme` holds USWDS theme settings; `sass/main.scss` is the entry.
@@ -47,5 +48,5 @@ Locally, `npm run serve` runs gulp in the background and `jekyll serve` in the f
 
 - No server, API, or database — purely static output.
 - No JS framework or bundler (React/Vue/webpack); interactivity is USWDS JS plus small inline scripts.
-- No automated tests — CI only lints and verifies the gulp build is committed.
+- No application unit or integration tests. CI validates generated assets, shared accessibility markup, rendered SEO metadata, and links.
 - Image originals and Sass live in source dirs (`_images`, `sass`); everything under `assets` and `_site` is generated and must not be hand-edited.

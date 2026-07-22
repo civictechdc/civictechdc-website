@@ -13,7 +13,7 @@ edges:
     condition: when specific technology versions or library details are needed
   - target: context/architecture.md
     condition: when understanding how components connect during setup
-last_updated: 2026-06-22
+last_updated: 2026-07-21
 ---
 
 # Setup
@@ -44,7 +44,9 @@ None required. The site is fully static and reads no secrets at build time. Do n
 - `npm run dev` — alias for `npm run serve` (convenience).
 - `npm run serve` — gulp + Jekyll dev server with livereload on port 4000.
 - `npm run build` — `gulp compile`: processes images, compiles USWDS CSS, writes `_data/css-manifest.json`.
-- `npm run lint` — `prettier . --write`: formats Liquid/HTML/Markdown/CSS/JS.
+- `npm run lint` — `prettier . --write`: formats the whole repository. Prefer targeted Prettier commands and inspect Liquid include changes.
+- `npm run check:a11y` — checks shared includes for required accessibility markup.
+- `npm run check:seo` — builds the production site in a temporary directory and validates every route's metadata, schema, social image, sitemap, robots file, and feed.
 - `bundle exec jekyll serve` — Jekyll only (no asset rebuild), if assets are already compiled.
 
 ## Common Issues

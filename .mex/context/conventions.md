@@ -11,7 +11,7 @@ triggers:
 edges:
   - target: context/architecture.md
     condition: when a convention depends on understanding the system structure
-last_updated: 2026-06-22
+last_updated: 2026-07-21
 ---
 
 # Conventions
@@ -32,6 +32,7 @@ last_updated: 2026-06-22
 - USWDS utility classes are used directly in markup (e.g. `class="margin-top-0 padding-left-0 font-heading-med"`); prefer utilities over new custom CSS where possible.
 - Generated output is treated as build artifacts — regenerate, don't edit. Tracking is selective: under `assets/`, only `assets/img`, `assets/fonts`, `assets/js`, and the unhashed `assets/css/civichackdc.css` + `assets/css/events.css` are committed. The hashed `assets/css/*-*.css` and `assets/css/styles*.css`, plus all of `assets/images/`, are gitignored and rebuilt on deploy. `_data/css-manifest.json` is the committed fingerprint the CI gulp-compile job diffs against, so after editing `sass/` you must run `npm run build` and commit the updated manifest.
 - Brand colors are centralized as CSS custom properties on `:root` in `sass/custom/styles.scss` (e.g. `--ctdc-navy`, `--ctdc-gold`, plus `--ctdc-*-rgb` channel vars for alpha variants). Reuse these instead of hardcoding hex values.
+- Shared SEO tags belong in `_includes/core/meta.html`; structured data belongs in `_includes/core/structured-data.html`. Give every indexable document a unique `description` or `excerpt` and follow `patterns/seo-metadata.md` for overrides and event data.
 
 ## Patterns
 
@@ -67,5 +68,6 @@ Before presenting any change:
 - [ ] If `sass/` or `_images/` changed: ran `npm run build` and the regenerated `assets/` + manifest are staged.
 - [ ] Images are rendered via `responsive-image.html` (originals added to `_images/`), not raw `<img>` to `assets/`.
 - [ ] New collection/blog files have correct front matter (`layout`, and for posts the `YYYY-MM-DD-` filename prefix).
-- [ ] Ran `npm run lint` (Prettier) and committed the formatting.
+- [ ] Ran `npm run check:seo` after changing page content, metadata, routes, or images.
+- [ ] Ran Prettier on touched files and inspected the diff; did not accept broken Liquid include wrapping.
 - [ ] Internal links/asset paths use `relative_url`/`baseurl`-safe forms consistent with existing pages.
