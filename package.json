@@ -8,7 +8,7 @@
     "check:seo": "bundle exec ruby scripts/check-seo.rb"
   },
   "devDependencies": {
-    "@shopify/prettier-plugin-liquid": "^1.9.3",
+    "@shopify/prettier-plugin-liquid": "^1.11.0",
     "@uswds/compile": "^1.2.1",
     "gulp": "^5.0.1",
     "gulp-imagemin": "^9.1.0",
