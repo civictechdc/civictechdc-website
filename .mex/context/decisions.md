@@ -68,4 +68,4 @@ last_updated: 2026-07-21
 **Decision:** Use Prettier with the @shopify/prettier-plugin-liquid plugin as the sole formatter, enforced in CI.
 **Reasoning:** One opinionated tool formats Liquid/HTML/Markdown/CSS/JS consistently, lowering review friction for first-time/volunteer contributors.
 **Alternatives considered:** No formatter (rejected — inconsistent style in PRs); separate linters per language (rejected — more config to maintain).
-**Consequences:** Run Prettier on touched files and inspect Liquid include formatting before committing. The current CI lint command writes formatting on the runner but does not assert a clean diff; rendered checks provide separate correctness gates.
+**Consequences:** Run Prettier on touched files and inspect Liquid include formatting before committing. CI runs Prettier in check mode; complex Liquid partials that the formatter cannot preserve safely are explicitly listed in `.prettierignore`. Rendered checks provide separate correctness gates.

@@ -48,5 +48,5 @@ Locally, `npm run serve` runs gulp in the background and `jekyll serve` in the f
 
 - No server, API, or database — purely static output.
 - No JS framework or bundler (React/Vue/webpack); interactivity is USWDS JS plus small inline scripts.
-- No application unit or integration tests. CI validates generated assets, shared accessibility markup, rendered SEO metadata, and links.
+- No application unit or integration tests. CI validates formatting, generated assets, shared accessibility markup, rendered SEO metadata, and links.
 - Image originals and Sass live in source dirs (`_images`, `sass`); everything under `assets` and `_site` is generated and must not be hand-edited.

@@ -340,8 +340,8 @@ npx prettier --write path/to/file.md
 ```
 
 `npm run lint` formats the entire repository. Use it cautiously: the Liquid plugin can reflow
-complex include arguments incorrectly. The current CI lint job formats its temporary checkout
-but does not compare the result, so the rendered checks are the correctness gates.
+complex include arguments incorrectly. CI runs Prettier in check mode and fails on formatting
+drift; complex Liquid partials that cannot be formatted safely are listed in `.prettierignore`.
 
 ## SEO and Metadata Checks
 
