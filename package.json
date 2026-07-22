@@ -11,7 +11,7 @@
     "@shopify/prettier-plugin-liquid": "^1.9.3",
     "@uswds/compile": "^1.2.1",
     "gulp": "^5.0.1",
-    "gulp-imagemin": "^9.1.0",
+    "gulp-imagemin": "^9.2.0",
     "gulp-rev": "^11.0.0",
     "gulp-rev-delete-original": "^0.2.3",
     "gulp-sharp-responsive": "^0.4.1",
