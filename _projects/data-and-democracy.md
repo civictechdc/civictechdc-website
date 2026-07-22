@@ -4,7 +4,7 @@ is_active: true
 title: Data and Democracy Project
 image: project_thumbnails/eavs.jpg
 image_alt_text: Voting precinct data table
-description: "We make election and democracy data easier to understand and use, so that investigators, election administrators, oversight bodies, journalists and others working to protect elections can find what matters and act on it."
+description: "We make election and democracy data easier to understand and use, so that investigators, election administrators, oversight bodies, journalists, and others working to protect elections can find what matters and act on it."
 ---
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
