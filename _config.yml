@@ -1,13 +1,18 @@
 markdown: kramdown
 name: Civic Tech DC
-url: https://civictechdc.org
+url: https://www.civictechdc.org
 title: Civic Tech DC
-description: "We are a non-partisan volunteer community in the DMV using open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives locally and nationally."
+description: "Join Civic Tech DC, a nonprofit volunteer community building open-source technology for civic engagement, democracy, and public-interest work in the DMV."
+default_social_image: hero-image-homepage.jpg
+default_social_image_alt: Civic Tech DC volunteers collaborating on laptops around tables at a project night
+lang: en-US
 encoding: utf-8
 timezone: America/New_York
 plugins:
   - jekyll-redirect-from
   - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-feed
 future: true
 baseurl: ""
 
@@ -53,3 +58,4 @@ exclude:
   - CLAUDE.md
   - package.json
   - package-lock.json
+  - /scripts

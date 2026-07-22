@@ -1,0 +1,175 @@
+{% comment %}
+  Search structured data. Every indexable page carries Organization, WebSite,
+  and page entities; posts add a BlogPosting, and hosted event pages add a
+  complete Event entity.
+{% endcomment %}
+{%- assign schema_page_type = 'WebPage' -%}
+{%- if page.url == '/' -%}
+  {%- assign schema_page_type = 'WebPage' -%}
+{%- elsif page.url == '/about.html' -%}
+  {%- assign schema_page_type = 'AboutPage' -%}
+{%- elsif page.url == '/blog/' or page.type == 'tag' or page.type == 'category' -%}
+  {%- assign schema_page_type = 'CollectionPage' -%}
+{%- endif -%}
+{%- assign schema_organization_id = site.url | append: '/#organization' -%}
+{%- assign schema_website_id = site.url | append: '/#website' -%}
+{%- assign schema_webpage_id = include.canonical | append: '#webpage' -%}
+{%- assign schema_article_id = include.canonical | append: '#article' -%}
+{%- assign schema_event_id = include.canonical | append: '#event' -%}
+{%- assign schema_breadcrumb_id = include.canonical | append: '#breadcrumb' -%}
+{%- assign schema_logo_url = '/assets/img/logo/civic-tech-dc-logo-256.png' | absolute_url -%}
+{%- assign schema_organization_image_url = '/assets/images/hero-image-homepage-1200w.jpg' | absolute_url -%}
+{%- assign breadcrumb_parent_name = nil -%}
+{%- assign breadcrumb_parent_url = nil -%}
+{%- if page.layout == 'project' -%}
+  {%- assign breadcrumb_parent_name = 'Projects' -%}
+  {%- assign breadcrumb_parent_url = '/projects.html' | absolute_url -%}
+{%- elsif page.layout == 'events' -%}
+  {%- assign breadcrumb_parent_name = 'Events' -%}
+  {%- assign breadcrumb_parent_url = '/events.html' | absolute_url -%}
+{%- elsif page.layout == 'post' or page.type == 'tag' or page.type == 'category' -%}
+  {%- assign breadcrumb_parent_name = 'Blog' -%}
+  {%- assign breadcrumb_parent_url = '/blog/' | absolute_url -%}
+{%- elsif page.url contains '/design-system/' and page.url != '/design-system/' -%}
+  {%- assign breadcrumb_parent_name = 'Design System' -%}
+  {%- assign breadcrumb_parent_url = '/design-system/' | absolute_url -%}
+{%- endif -%}
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": {{ schema_organization_id | jsonify }},
+        "name": {{ site.title | jsonify }},
+        "alternateName": "Code for DC",
+        "url": {{ site.url | append: '/' | jsonify }},
+        "description": {{ site.description | jsonify }},
+        "foundingDate": "2012",
+        "nonprofitStatus": "https://schema.org/Nonprofit501c3",
+        "logo": {
+          "@type": "ImageObject",
+          "url": {{ schema_logo_url | jsonify }},
+          "contentUrl": {{ schema_logo_url | jsonify }},
+          "width": 256,
+          "height": 256
+        },
+        "image": {{ schema_organization_image_url | jsonify }},
+        "sameAs": [
+          "https://github.com/civictechdc",
+          "https://www.linkedin.com/company/civic-tech-dc/",
+          "https://www.meetup.com/civic-tech-dc/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": {{ schema_website_id | jsonify }},
+        "url": {{ site.url | append: '/' | jsonify }},
+        "name": {{ site.title | jsonify }},
+        "description": {{ site.description | jsonify }},
+        "inLanguage": "en-US",
+        "publisher": { "@id": {{ schema_organization_id | jsonify }} }
+      },
+      {
+        "@type": {{ schema_page_type | jsonify }},
+        "@id": {{ schema_webpage_id | jsonify }},
+        "url": {{ include.canonical | jsonify }},
+        "name": {{ include.title | jsonify }},
+        "description": {{ include.description | jsonify }},
+        "inLanguage": "en-US",
+        "isPartOf": { "@id": {{ schema_website_id | jsonify }} },
+        "about": { "@id": {{ schema_organization_id | jsonify }} },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": {{ include.image | jsonify }},
+          "contentUrl": {{ include.image | jsonify }},
+          "caption": {{ include.image_alt | jsonify }}
+        }{% if page.url != '/' %},
+        "breadcrumb": { "@id": {{ schema_breadcrumb_id | jsonify }} }
+        {% endif %}{% if page.layout == 'post' %},
+        "mainEntity": { "@id": {{ schema_article_id | jsonify }} }
+        {% elsif page.collection == 'events' and page.event %},
+        "mainEntity": { "@id": {{ schema_event_id | jsonify }} }
+        {% endif %}
+      }
+      {% if page.url != '/' %},
+        {
+          "@type": "BreadcrumbList",
+          "@id": {{ schema_breadcrumb_id | jsonify }},
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": {{ site.url | append: '/' | jsonify }}
+            },
+            {% if breadcrumb_parent_name %}
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": {{ breadcrumb_parent_name | jsonify }},
+                "item": {{ breadcrumb_parent_url | jsonify }}
+              },
+            {% endif %}
+            {
+              "@type": "ListItem",
+              "position": {% if breadcrumb_parent_name %}3{% else %}2{% endif %},
+              "name": {{ include.title | jsonify }},
+              "item": {{ include.canonical | jsonify }}
+            }
+          ]
+        }
+      {% endif %}
+      {% if page.layout == 'post' %},
+        {
+          "@type": "BlogPosting",
+          "@id": {{ schema_article_id | jsonify }},
+          "url": {{ include.canonical | jsonify }},
+          "mainEntityOfPage": { "@id": {{ schema_webpage_id | jsonify }} },
+          "headline": {{ page.title | jsonify }},
+          "description": {{ include.description | jsonify }},
+          "image": [{{ include.image | jsonify }}],
+          "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+          "inLanguage": "en-US",
+          "author": {
+            "@type": {% if page.author contains site.title %}"Organization"{% else %}"Person"{% endif %},
+            "name": {{ page.author | jsonify }}
+          },
+          "publisher": { "@id": {{ schema_organization_id | jsonify }} }
+        }
+      {% endif %}
+      {% if page.collection == 'events' and page.event %},
+        {
+          "@type": "Event",
+          "@id": {{ schema_event_id | jsonify }},
+          "url": {{ include.canonical | jsonify }},
+          "name": {{ page.title | jsonify }},
+          "description": {{ include.description | jsonify }},
+          "image": [{{ include.image | jsonify }}],
+          "startDate": {{ page.event.start_date | jsonify }},
+          "endDate": {{ page.event.end_date | jsonify }},
+          "eventStatus": {{ page.event.status | jsonify }},
+          "eventAttendanceMode": {{ page.event.attendance_mode | jsonify }},
+          "location": {
+            "@type": "Place",
+            "name": {{ page.event.location.name | jsonify }},
+            "address": {
+              "@type": "PostalAddress",
+              {% if page.event.location.street_address %}
+                "streetAddress": {{ page.event.location.street_address | jsonify }},
+              {% endif %}
+              "addressLocality": {{ page.event.location.address_locality | jsonify }},
+              "addressRegion": {{ page.event.location.address_region | jsonify }},
+              {% if page.event.location.postal_code %}
+                "postalCode": {{ page.event.location.postal_code | jsonify }},
+              {% endif %}
+              "addressCountry": "US"
+            }
+          },
+          "organizer": { "@id": {{ schema_organization_id | jsonify }} }
+        }
+      {% endif %}
+    ]
+  }
+</script>

@@ -19,4 +19,5 @@ node_modules/
 # Ignore files with liquid syntax errors in prettier html parser
 _includes/components/project-card.html
 _includes/core/header.html
-
+_includes/core/meta.html
+_includes/core/structured-data.html
