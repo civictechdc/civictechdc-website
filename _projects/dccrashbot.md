@@ -3,8 +3,9 @@ layout: project
 is_active: false
 title: DC Crash Bot
 image: project_thumbnails/dccrashbot.png
-image_alt_text: Bike logo
+image_alt_text: DC Crash Bot bicycle logo
 description: DC Crash Bot (now known as Data-Driven Streets) combined DC police crash reports with DC Fire & EMS dispatch data to identify unrecorded “ghost crashes,” producing a more complete, data-driven picture of street safety in Washington, DC.
+seo_description: DC Crash Bot combined police crash reports with Fire and EMS dispatch data to find unrecorded crashes and improve street-safety planning in Washington, DC.
 ---
 
 In order to create safer streets in DC, the project focused on improving the understanding of where crashes were occurring. The primary dataset, sourced from police crash reports, was incomplete, as many incidents documented in DC Fire & EMS call data were not included in police records. Data-Driven Streets combined these sources to build a more complete picture of traffic safety across the city. By applying data visualization techniques, the project identified previously unrecorded “ghost crashes,” supporting better-informed decisions around safer street planning and infrastructure improvements.

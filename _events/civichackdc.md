@@ -7,10 +7,23 @@ url: /civichackdc
 redirect_from:
   - /special-events/civichackdc/
 card_image: hero-image-hackathon.png
+social_image_alt: Civic Hack DC participants building open-source public-interest technology
 registration_link: https://lu.ma/czi3y05y
 page_css: /assets/css/civichackdc.css
 description: |
   A data hackathon to build open-source tools for analyzing public comments on regulations. Join us for a day of civic innovation!
+seo_description: Civic Hack DC brought volunteers together for a one-day hackathon building open-source tools to analyze public comments on federal regulations.
+event:
+  start_date: "2025-07-26T10:00:00-04:00"
+  end_date: "2025-07-26T18:30:00-04:00"
+  status: https://schema.org/EventScheduled
+  attendance_mode: https://schema.org/OfflineEventAttendanceMode
+  location:
+    name: Taoti Creative
+    street_address: 507 8th St SE
+    address_locality: Washington
+    address_region: DC
+    postal_code: "20003"
 ---
 
 <section class="hero">

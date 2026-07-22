@@ -1,8 +1,11 @@
 ---
 layout: post
 title: "Making Public Comments Count: How 80 Civic-Technologists Hacked Regulatory Data for a More Transparent Government"
-date: 2025-08-06 16:00:00 -0500
+seo_title: "Civic Hack DC 2025: Regulatory Data Recap"
+date: 2025-08-06 16:00:00 -0400
 author: "Michael Deeb"
+social_image: hero-image-hackathon.png
+social_image_alt: Civic Hack DC participants building public-interest technology together
 page_css: /assets/css/civichackdc.css
 categories: [Events, Community]
 redirect_from:
@@ -17,6 +20,7 @@ tags:
     data for good,
   ]
 excerpt: "Over a single Saturday, we built 13 open-source tools to unlock public feedback and strengthen our democracy. Here's what we built, what we learned, and what's next."
+seo_description: See how 80 civic technologists built 13 open-source tools to make public regulatory comments easier to analyze and use.
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>

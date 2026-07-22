@@ -3,7 +3,7 @@ layout: project
 is_active: true
 title: Ride Score DC
 image: project_thumbnails/ridescoredc.png
-image_alt_text: The logo of Ride Score - the text on a gold and blue map
+image_alt_text: Ride Score logo over a gold and blue street map
 description: Rating every street segment in DC for cyclist safety - visualizing risk on an interactive map to inform riders and advocates.
 ---
 
@@ -110,6 +110,9 @@ description: Rating every street segment in DC for cyclist safety - visualizing 
       </a>
       <a href="https://github.com/civictechdc/ridescoredc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
         <span aria-hidden="true">🧩</span> GitHub Repo
+      </a>
+      <a href="https://www.ridescoredc.com/" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">🌐</span> Project Website
       </a>
     </div>
   </div>

@@ -3,7 +3,7 @@ layout: project
 is_active: true
 title: Congressional Tech
 image: project_thumbnails/congress.png
-image_alt_text: Building tech tools for congressional staff and increasing transparency for constituents
+image_alt_text: Illustration of the U.S. Capitol representing technology for congressional staff
 description: Building tech tools for congressional staff and increasing transparency for constituents.
 ---
 

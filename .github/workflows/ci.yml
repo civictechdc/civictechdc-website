@@ -9,24 +9,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
 
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run linter
-        run: npm run lint
+      - name: Check formatting
+        run: npx prettier --check .
   gulp:
-    name: Gulp compile (you may need to run `gulp compile` and commit changed files if this check fails)
+    name: Build and rendered checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.0"
+          bundler-cache: true
 
       - name: Install Dependencies
         run: npm ci
 
       - name: Check for gulp compile changes (you may need to run `gulp compile` and commit changed files if this check fails)
         run: |
-          gulp compile
+          npm run build
           git diff --no-patch --exit-code
+
+      - name: Check accessible include markup
+        run: npm run check:a11y
+
+      - name: Check rendered SEO
+        run: npm run check:seo

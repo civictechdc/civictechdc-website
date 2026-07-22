@@ -290,7 +290,11 @@ DEPENDENCIES
   github-pages
   jekyll (~> 3.10, >= 3.10.0)
   jekyll-archives
+  jekyll-feed
   jekyll-redirect-from
+  jekyll-sitemap
+  nokogiri
+  tzinfo
   webrick
 
 BUNDLED WITH

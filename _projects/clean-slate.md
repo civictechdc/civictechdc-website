@@ -7,9 +7,10 @@ image_alt_text: Clean Slate DC logo
 github_link: https://github.com/civictechdc/clean-slate
 slack_channel: clean_slate
 description: The Clean Slate Expungement Project was a digital tool that helped individuals determine their eligibility for expunging or sealing past marijuana-related criminal records following legalization in DC.
+seo_description: Clean Slate helped Washington, DC residents check whether past marijuana-related criminal records might qualify for sealing or expungement.
 ---
 
-# Clean Slate Expungement Project (2015-2017)
+## Clean Slate Expungement Project (2015-2017)
 
 The Clean Slate Expungement Project was an early Civic Tech DC initiative designed to help individuals navigate the complex legal landscape of record expungement following marijuana decriminalization and legalization in the District. This tool provided users with a preliminary evaluation of their eligibility to have past records sealed or expunged, offering a first step toward a clean slate.
 

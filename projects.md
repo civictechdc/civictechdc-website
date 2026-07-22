@@ -1,6 +1,7 @@
 ---
 layout: hero-image
 title: Projects
+description: Explore active and past Civic Tech DC projects using open-source technology to support elections, transparency, public services, and local communities.
 hero-title: Current and past projects
 hero-subtitle: See current and a selection of past projects that Civic Tech DC works on. Join us at an event to get involved.
 hero-image: hero-image-projects.jpg

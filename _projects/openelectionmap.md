@@ -3,7 +3,7 @@ layout: project
 is_active: false
 title: Open Election Map
 image: project_thumbnails/openelectionmap.png
-image_alt_text: Image of the data map
+image_alt_text: Map of Washington, DC general election results
 description: A map to display the results of Washington DC's 2014 General Election in collaboration with NPR affiliate, WAMU.
 ---
 

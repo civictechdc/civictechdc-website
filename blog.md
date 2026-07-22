@@ -1,6 +1,9 @@
 ---
 layout: default
 title: Blog
+description: Read Civic Tech DC news, project updates, event recaps, and practical insights from Washington, DC's civic technology community.
+social_image: hero-image-homepage.jpg
+social_image_alt: Civic Tech DC volunteers collaborating at a project night
 permalink: /blog/
 ---
 
@@ -154,7 +157,7 @@ permalink: /blog/
             </p>
             <div style="display: inline-flex; align-items: center;">
             <a
-            href="https://join.slack.com/t/civictechdc/shared_invite/zt-3o4t7g0ch-xy3JOE91ZQdaNXra~1j2HQ"
+            href="https://join.slack.com/t/civictechdc/shared_invite/zt-43eotbj04-QLQ_Ria296PtRYJU2EgwxQ"
             target="_blank"
             id="submitrequest"
             type="submit"

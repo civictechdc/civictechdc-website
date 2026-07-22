@@ -1,9 +1,11 @@
 ---
 layout: hero-image
 title: Events
+description: Find Civic Tech DC Project Nights, workshops, hackathons, and community events for technologists, designers, policy experts, and curious newcomers.
 hero-title: Events
 hero-subtitle: From our twice-monthly Project Nights to special events with local partners, here's what's happening at Civic Tech DC, and how to get involved.
 hero-image: hero-image-events.jpg
+hero-image-alt: Civic Tech DC volunteers gathering for a community event
 page_css: /assets/css/events.css
 redirect_from:
   - /special-events

@@ -47,6 +47,6 @@ Once you've created a pull request, it will initiate a CircleCI build that runs 
 
 ## Step 7: Get merged!
 
-Once a project maintainer has reviewed your changes and approved them, they'll merge your pull request into the `main` branch! An updated version of the website will automatically be deployed, and you can see the results in action at [Civic Tech DC](https://civictechdc.org).
+Once a project maintainer has reviewed your changes and approved them, they'll merge your pull request into the `main` branch! An updated version of the website will automatically be deployed, and you can see the results in action at [Civic Tech DC](https://www.civictechdc.org).
 
 Thank you for contributing! If you have any questions or get stuck at any point, feel free to ask for help in the `#civictechdc-website` slack channel. Happy coding!

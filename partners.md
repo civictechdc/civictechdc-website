@@ -2,9 +2,11 @@
 layout: hero-image
 banner-hero: true
 title: Partners
+description: Partner with Civic Tech DC to build public-interest technology, co-host civic events, sponsor community work, or connect volunteers with local needs.
 hero-title: Partners
 hero-subtitle: We team up with nonprofits, community groups, government, and mission-aligned organizations, to build civic tech, co-host events, and grow the community. If your organization wants to work with us, let's talk.
 hero-image: hero-image-partners.jpg
+hero-image-alt: Civic Tech DC community members gathered with partner organizations
 ---
 
 {% include components/community-partners.html title="Organizations we've worked with" desc="The nonprofits, institutions, and groups we've built tools with and worked alongside." cta=false %}

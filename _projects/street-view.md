@@ -3,8 +3,9 @@ layout: project
 is_active: false
 title: StreetView
 image: project_thumbnails/street-view.jpg
-image_alt_text: View out the windshield of a car on a dirty road overlooking a sprawling beige city. Visible is a Red Cross symbol on the car hood and a dash camera mounted to the windshield.
+image_alt_text: View through a Red Cross vehicle windshield toward a dense city, with a dashboard camera visible
 description: Automate mapping of urban vegetation from street level imagery to create a layer for exploring which areas of a city might be at greater risk during future heat waves.
+seo_description: StreetView uses street-level imagery to map urban vegetation and help communities identify areas at greater risk during extreme heat.
 ---
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">

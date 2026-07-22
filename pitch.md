@@ -2,9 +2,11 @@
 layout: hero-image
 banner-hero: true
 title: Pitch
+description: Pitch a civic problem or public-interest technology idea to Civic Tech DC and learn how projects move from validation to an open-source volunteer team.
 hero-title: Pitch an idea
 hero-subtitle: Spotted a problem worth solving, or have something you want to build? Pitch it to the Civic Tech DC team, privately at first. We'll help you shape it, and if it's a fit, turn it into a real project with a partner and a team behind it.
 hero-image: hero-image-about.jpg
+hero-image-alt: Civic Tech DC volunteers collaborating around a table
 ---
 
 ## What you can pitch

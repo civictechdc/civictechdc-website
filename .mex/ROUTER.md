@@ -14,7 +14,7 @@ edges:
     condition: when setting up the dev environment or running the project for the first time
   - target: patterns/INDEX.md
     condition: when starting a task — check the pattern index for a matching pattern file
-last_updated: 2026-06-22
+last_updated: 2026-07-21
 ---
 
 # Session Bootstrap
@@ -27,17 +27,19 @@ Then read this file fully before doing anything else in this session.
 
 **Working:**
 
-- Full Jekyll site live at civictechdc.org / www.civictechdc.org, auto-deployed from `main` to GitHub Pages.
+- Full Jekyll site live at `www.civictechdc.org`, with the bare domain redirecting to the canonical `www` origin; auto-deployed from `main` to GitHub Pages.
 - `projects` collection (`_projects/`) → rendered with the `project` layout; project cards on the projects page.
 - `events` collection (`_events/`) → permalink `/events/:name/`, often with page-specific CSS.
 - Blog (`_posts/`) with `jekyll-archives` category/tag pages.
 - USWDS 3.12 design system compiled from `sass/` via gulp; CSS cache-busted into `_data/css-manifest.json`.
 - Brand colors live as CSS custom properties on `:root` in `sass/custom/styles.scss` (`--ctdc-navy`, `--ctdc-gold`, `--ctdc-button-dark`, `--ctdc-*-rgb` channels); a `prefers-reduced-motion` guard and `.usa-button--dark` / `.ctdc-project-links` helpers exist. All page layouts route content through `default.html`'s single `<main id="main-content">` landmark (skip-link target).
 - Responsive image pipeline: originals in `_images/` → resized variants in `assets/images/` via `responsive-image.html`.
+- Canonical SEO pipeline: unique page metadata and social previews from `core/meta.html`; Organization, WebSite, WebPage, BlogPosting, and Event JSON-LD from `core/structured-data.html`; canonical sitemap, feed, and robots discovery files.
+- Rendered quality checks: `npm run check:seo` validates every built route and discovery artifact; `npm run check:a11y` checks shared include markup. Both run in pull-request CI and before deployment.
 
 **Not yet built / absent:**
 
-- No automated test suite.
+- No application unit or integration test suite.
 - No backend, database, or server-side code — fully static.
 
 **Known issues / watch-outs:**
