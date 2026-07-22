@@ -4,7 +4,8 @@
     "dev": "npm run serve",
     "serve": "gulp & bundle exec jekyll serve --host 0.0.0.0 --livereload",
     "build": "gulp compile",
-    "check:a11y": "bash scripts/check-a11y-includes.sh"
+    "check:a11y": "bash scripts/check-a11y-includes.sh",
+    "check:seo": "bundle exec ruby scripts/check-seo.rb"
   },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.9.3",

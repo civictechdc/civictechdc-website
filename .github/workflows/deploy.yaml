@@ -34,10 +34,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2.0"
+          bundler-cache: true
       - name: Install dependencies
         run: npm ci
       - name: Compile assets
         run: npm run build
+      - name: Check accessible include markup
+        run: npm run check:a11y
+      - name: Check rendered SEO
+        run: npm run check:seo
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
