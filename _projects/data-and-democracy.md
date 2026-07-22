@@ -4,13 +4,13 @@ is_active: true
 title: Data and Democracy Project
 image: project_thumbnails/eavs.jpg
 image_alt_text: Voting precinct data table
-description: "We build data tools for election protection: cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings."
-seo_description: Civic Tech DC builds tools that clean, analyze, and visualize public election data for journalists, advocates, and election administrators.
+description: "We make election and democracy data easier to understand and use, so that investigators, election administrators, oversight bodies, journalists, and others working to protect elections can find what matters and act on it."
+seo_description: The Data and Democracy Project makes election data easier to use so investigators, administrators, oversight bodies, and journalists can protect elections.
 ---
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
   <div class="grid-container usa-prose">
-    <em><span aria-hidden="true">🗳️</span> We build data tools for election protection: cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings.</em>
+    <em><span aria-hidden="true">🗳️</span> We make election and democracy data easier to understand and use, so that investigators, election administrators, oversight bodies, journalists, and others working to protect elections can find what matters and act on it.</em>
   </div>
 </section>
 
