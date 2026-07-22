@@ -3,7 +3,7 @@ layout: project
 is_active: false
 title: Housing Insights
 image: project_thumbnails/housinginsights.png
-image_alt_text: Image of affordable house map
+image_alt_text: Housing Insights map of subsidized affordable housing in Washington, DC
 description: The Housing Insights tool provides data about subsidized affordable housing projects and the neighborhoods that they're in.
 ---
 

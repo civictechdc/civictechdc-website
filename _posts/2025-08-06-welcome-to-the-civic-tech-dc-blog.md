@@ -1,8 +1,10 @@
 ---
 layout: post
 title: "Welcome to the Civic Tech DC Blog!"
-date: 2025-08-06 10:00:00 -0500
+date: 2025-08-06 10:00:00 -0400
 author: "Civic Tech DC Team"
+social_image: hero-image-homepage.jpg
+social_image_alt: Civic Tech DC volunteers collaborating at a project night
 categories: [Community, Announcements]
 redirect_from:
   - /community/announcements/2025/08/06/welcome-to-the-civic-tech-dc-blog.html

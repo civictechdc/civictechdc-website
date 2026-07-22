@@ -1,9 +1,11 @@
 ---
 layout: hero-image
 title: Join our Slack
+description: Join the Civic Tech DC Slack to meet volunteers, follow project work, hear about events, ask questions, and find ways to contribute.
 hero-title: Join our Slack
 hero-subtitle: Our Slack is where Civic Tech DC happens between events. It's where projects move forward, questions get answered, and new members find their footing.
 hero-image: hero-image-slack.jpg
+hero-image-alt: Civic Tech DC community members working together on laptops
 ---
 
 <div class="ctdc-about-grid">

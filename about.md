@@ -1,6 +1,7 @@
 ---
 layout: hero-image
 title: About Civic Tech DC
+description: Learn how Civic Tech DC brings volunteers, nonprofits, government, and community partners together to build public-interest technology in the DMV.
 hero-title: About Us
 hero-subtitle: Founded in 2012 as Code for DC, Civic Tech DC is a non-partisan 501(c)(3) nonprofit community of volunteers using open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives.
 hero-image: hero-image-about.jpg

@@ -1,6 +1,9 @@
 ---
 layout: default
 title: Community
+description: Explore Civic Tech DC community resources, including our learning-in-public log, volunteer playbook, feedback practices, and ways to participate.
+social_image: learning-in-public-log.png
+social_image_alt: Preview of the Civic Tech DC Learning in Public Log
 permalink: /community/
 ---
 

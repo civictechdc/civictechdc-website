@@ -1,6 +1,9 @@
 ---
 layout: default
 title: Blog
+description: Read Civic Tech DC news, project updates, event recaps, and practical insights from Washington, DC's civic technology community.
+social_image: hero-image-homepage.jpg
+social_image_alt: Civic Tech DC volunteers collaborating at a project night
 permalink: /blog/
 ---
 

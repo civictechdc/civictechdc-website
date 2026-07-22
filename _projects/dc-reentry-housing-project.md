@@ -5,6 +5,7 @@ title: DC Reentry Housing Project
 image: project_thumbnails/dc-reentry-housing-alliance.jpg
 image_alt_text: DC Reentry Housing Alliance logo
 description: "A Civic Tech DC project building a citywide reentry housing data platform with the DC Reentry Housing Alliance: mapping available units, eligibility, and shared outcomes across the coalition."
+seo_description: Civic Tech DC and the DC Reentry Housing Alliance are building a citywide platform to map available units, eligibility, and shared housing outcomes.
 ---
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">

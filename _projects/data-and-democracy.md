@@ -5,6 +5,7 @@ title: Data and Democracy Project
 image: project_thumbnails/eavs.jpg
 image_alt_text: Voting precinct data table
 description: "We build data tools for election protection: cleaning, analyzing, and visualizing public election datasets so that journalists, advocates, and election administrators can act on the findings."
+seo_description: Civic Tech DC builds tools that clean, analyze, and visualize public election data for journalists, advocates, and election administrators.
 ---
 
 <section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
@@ -97,7 +98,7 @@ Our work makes election and democracy data easier to access and use, so that the
 </ul>
 <p>The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.</p>
 
-<p>To get involved, join the <a href="https://www.civictechdc.org/slack">Slack workspace</a>. Once there, look for the <strong>#eavs_clc</strong> channel, where we share updates, tasks, questions, and resources.</p>
+<p>To get involved, join the <a href="{{ '/slack.html' | relative_url }}">Slack workspace</a>. Once there, look for the <strong>#eavs_clc</strong> channel, where we share updates, tasks, questions, and resources.</p>
 
 <p>If you are interested in potentially contributing now or later, please also fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZ7X3jxj1xwnmgvGi6b7FBPBf5SKoVHX3Vz1eV5wom5TXKNg/viewform">Volunteer Matchmaker Survey</a>. Completing the survey is not a commitment to volunteer; it simply helps us understand your interests, skills, and availability as the project evolves.</p>
   </div>

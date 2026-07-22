@@ -7,10 +7,23 @@ url: /nonprofit-ai-clinic
 redirect_from:
   - /special-events/nonprofit-ai-clinic/
 card_image: events/non-profit-clinic/hero.jpg
+social_image_alt: Nonprofit AI Problem Clinic event banner
 registration_link: https://luma.com/ylw43blh
 page_css: /assets/css/civichackdc.css
 description: |
   Bring a real problem. Leave with practical options, and a potential prototype. Live triage, co-design, and consulting for nonprofits.
+seo_description: The Nonprofit AI Problem Clinic brought nonprofits and technologists together for live problem triage, co-design, consulting, and prototyping.
+event:
+  start_date: "2025-10-24T13:00:00-04:00"
+  end_date: "2025-10-24T15:30:00-04:00"
+  status: https://schema.org/EventScheduled
+  attendance_mode: https://schema.org/OfflineEventAttendanceMode
+  location:
+    name: Ronald Reagan Building and International Trade Center
+    street_address: 1300 Pennsylvania Ave NW
+    address_locality: Washington
+    address_region: DC
+    postal_code: "20004"
 ---
 
 <section class="hero">
@@ -32,7 +45,7 @@ description: |
                target="_blank"
                rel="noopener noreferrer"
                style="color: inherit;
-                      text-decoration: underline">1100 15th St NW, Washington, DC 20005</a></i>
+                      text-decoration: underline">1300 Pennsylvania Ave NW, Washington, DC 20004</a></i>
         </p>
         <p style="font-size: 0.95rem;
                   opacity: 0.9;

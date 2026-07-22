@@ -3,7 +3,7 @@ layout: project
 is_active: false
 title: ANC Finder
 image: project_thumbnails/ancfinder.png
-image_alt_text: Image of ANC finder
+image_alt_text: Map interface showing Washington, DC advisory neighborhood commission boundaries
 description: ANC Finder was a project to help residents of Washington, DC understand and engage with their Advisory Neighborhood Commissions (ANCs).
 ---
 

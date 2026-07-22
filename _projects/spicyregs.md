@@ -3,7 +3,7 @@ layout: project
 is_active: true
 title: SpicyRegs
 image: project_thumbnails/spicyregs.jpg
-image_alt_text: A image from the 2025 hackathon
+image_alt_text: Civic Hack DC participants collaborating on regulatory data tools
 description: A platform that turns federal regulations and public comments into accessible, actionable insights.
 ---
 
@@ -26,7 +26,7 @@ description: A platform that turns federal regulations and public comments into 
     <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
     <p class="margin-bottom-2">
     On July 26, 2025, over 80 civic technologists, policy experts, and government staff came together to make federal regulations and public comments more transparent and actionable. In a single day, they built 13 open-source tools that combined technical innovation with real-world needs. <br> <br>
-    Building on Moravian University's Mirrulations project, which mirrors 27 million regulatory documents, the teams created tools for easy data access, AI-powered Q&A, data pipelines, and dashboards. SpicyRegs is a continuation of the hackathon to build a open, contributor-friendly platform for exploring and analyzing regulations.gov data, usable by both technical and non-technical users. Read more in our <a href="https://www.civictechdc.org/events/community/2025/08/06/civic-hackdc-july-recap.html" target="_blank" rel="noopener noreferrer">blog</a>. 
+    Building on Moravian University's Mirrulations project, which mirrors 27 million regulatory documents, the teams created tools for easy data access, AI-powered Q&A, data pipelines, and dashboards. SpicyRegs is a continuation of the hackathon to build a open, contributor-friendly platform for exploring and analyzing regulations.gov data, usable by both technical and non-technical users. Read more in our <a href="https://www.civictechdc.org/blog/2025/08/06/civic-hackdc-july-recap/" target="_blank" rel="noopener noreferrer">blog</a>.
     </p>
   </div>
 </section>

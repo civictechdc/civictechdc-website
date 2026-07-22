@@ -1,7 +1,9 @@
 ---
 layout: hero-image-small
 title: Code of Conduct
+description: Read the Civic Tech DC Code of Conduct and our standards for creating safe, welcoming, respectful in-person and online community spaces.
 hero-image: hero-image-code-of-conduct.jpg
+hero-image-alt: Civic Tech DC community members collaborating at an event
 ---
 
 # Code of Conduct

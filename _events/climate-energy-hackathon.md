@@ -6,4 +6,5 @@ location: "Washington, DC"
 card_image: events/climate-energy-hackathon.png
 description: "A one-day hackathon turning climate and energy ideas into working prototypes."
 redirect_to: https://lu.ma/c02-podsprint
+sitemap: false
 ---
