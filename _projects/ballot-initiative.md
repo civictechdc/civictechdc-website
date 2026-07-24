@@ -2,75 +2,70 @@
 layout: project
 is_active: true
 title: VoteCatcher
+seo_title: "Open-Source Campaign Tools: VoteCatcher"
 image: project_thumbnails/ballot-initiative.png
 image_alt_text: Handwritten PDF scans being converted into machine-readable format
 github_link: https://github.com/civictechdc/votecatcher
-slack_channel: vote_catcher
-description: Building open source campaign infrastructure that any grassroots organizer can use - starting with signature validation processes.
+slack_channel: C04U3D9AWER
+description: An active open-source project prototyping petition intake, OCR-assisted signature triage, voter-file matching, and human review for grassroots campaigns.
+seo_description: See how VoteCatcher is prototyping open-source petition intake, OCR-assisted signature triage, voter-file matching, and human review.
+content_owner: VoteCatcher project team
+last_reviewed: 2026-07-24
+factual_review_status: pending
+case_study_standard: true
 ---
 
-<section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
-  <div class="grid-container usa-prose">
-    <em>We're building VoteCatcher - open source campaign infrastructure that puts powerful organizing tools in the hands of grassroots campaigns. Think processes, not apps.</em>
-  </div>
-</section>
+VoteCatcher is building open-source campaign infrastructure for the labor-intensive process of reviewing ballot-petition signatures. The active project combines document intake, optical character recognition, voter-file matching, confidence scores, and a human review workflow. It is a pre-1.0 project, not a legal determination service, and the page does not claim that its matches have been validated for an election authority or production campaign.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🗳️</span> Why This Matters</h2>
-    <p>Running a grassroots campaign is hard. Organizers are often stuck with tedious, manual processes or expensive, proprietary software that doesn't fit their needs. This creates a high barrier to entry, making it difficult for community-led efforts to get off the ground. <strong>We believe technology should make democratic participation easier, not harder.</strong></p>
-  </div>
-</section>
+## Challenge: petition review is repetitive and consequential
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🛠️</span> Our Approach: Processes, Not Just Tools</h2>
-    <p>
-    Instead of building standalone apps, we build and document open source <strong>processes</strong>. Our first project uses multimodal LLMs to achieve high-accuracy signature triaging, and we've already integrated it with the DC voter file for real-time validation.
-    <br/><br/>
-    Right now, we're focused on building out the full document processing and triaging workflow in Python. The goal is a reusable playbook that other campaigns can adapt for their own needs.
-    </p>
-  </div>
-</section>
+Grassroots campaigns may receive scanned petition sheets that must be compared with an official voter-registration file. Manual transcription and matching take time, while proprietary campaign systems may be expensive or poorly suited to a local process.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🚀</span> The Big Picture</h2>
-    <p>Signature validation is just the beginning. The systems we're creating (for voter file integration, data validation, and workflow automation) are the building blocks for a full suite of open source campaign infrastructure. Our vision is to support candidate campaigns, issue advocacy, and other community organizing efforts, letting them focus on what matters: talking to people.</p>
-  </div>
-</section>
+This is not merely an OCR problem. Handwriting can be ambiguous, voter records contain sensitive personal information, petition rules vary by jurisdiction, and a false match or missed match can affect legal and campaign decisions. Automation should help people focus their review; it should not conceal uncertainty or replace the accountable reviewer.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
-    <p>VoteCatcher grew out of conversations with organizers who were spending more time on data entry and money on expensive software than running their campaign. We're a group of volunteers who believe that good campaign technology should be a public resource, accessible to everyone, not just well-funded efforts with dedicated tech teams.</p>
-  </div>
-</section>
+## Organizers, reviewers, and validation
 
-<section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
-  <div class="grid-container text-white">
-    <h2><span aria-hidden="true">👋</span> Come Join Us</h2>
-    <p>Whether you're a coder, organizer, or just someone who thinks campaigns should have better tools, we'd love to have you. We especially need help with:</p>
-    <ul class="usa-list">
-      <li>UX/UI design</li>
-      <li>Front-end development</li>
-      <li>Python and workflow automation</li>
-      <li>Multimodal LLM implementation</li>
-      <li>Data processing and validation</li>
-      <li>Testing with real campaigns</li>
-    </ul>
-  </div>
-</section>
+The intended users are grassroots campaign organizers and the people responsible for reviewing petition entries. The concept grew from conversations about costly software and manual data entry, and the public repository contains a configurable demonstration workflow.
 
-<section class="usa-section padding-y-4">
-  <div class="grid-container">
-    <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C077YB2ES84" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">💬</span> Slack (#ballot_initiative)
-      </a>
-      <a href="https://github.com/civictechdc/votecatcher" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">🧩</span> GitHub Repo
-      </a>
-    </div>
-  </div>
-</section>
+The project still needs documented validation with real campaign reviewers before it can claim that the workflow, confidence thresholds, or time savings work in practice. No named campaign partner, production deployment, adoption count, independently measured accuracy rate, or completed-election outcome is published on this page.
+
+## Approach and Civic Tech DC's role
+
+Civic Tech DC volunteers are contributing product design, document processing, data matching, web development, testing, security work, deployment documentation, and project coordination. The [public VoteCatcher repository](https://github.com/civictechdc/votecatcher) currently documents a workflow that can:
+
+1. create a campaign workspace;
+2. import a voter-registration file;
+3. upload scanned petition pages;
+4. send cropped entries to a configured OCR provider;
+5. compare extracted text with voter records using fuzzy matching;
+6. group results by confidence for human review;
+7. export results for further analysis.
+
+The application uses a SvelteKit interface and a FastAPI backend. It supports sample data and simulation so contributors can exercise the flow without uploading real voter or petition records.
+
+## Current status and known limits
+
+VoteCatcher is active and the repository receives current development. Its security policy labels the software pre-1.0 and supports only the latest release.
+
+- Human reviewers still need to examine uncertain and consequential matches.
+- Confidence scores are software signals, not proof that a signature is legally valid.
+- Petition images and voter files can contain personal information. A real deployment needs appropriate access controls, retention rules, vendor review, and legal guidance.
+- OCR providers may receive cropped petition images when configured; deployers must understand each provider's data practices.
+- Regional field definitions and election rules must be verified for the jurisdiction.
+- This page does not report a production campaign, independent accuracy study, time-savings study, or election outcome.
+
+These limits should be resolved with campaign users and election-law expertise, not inferred from passing software tests.
+
+## Reusable lessons
+
+1. **Automate triage, not accountability.** Use confidence to prioritize review while keeping a person responsible for the decision.
+2. **Test with the real document format.** Crop regions, handwriting, field order, and voter-file columns differ by jurisdiction.
+3. **Treat campaign data as sensitive.** Data flow, access, retention, deletion, and third-party processing belong in the product design.
+4. **Publish uncertainty.** A score should show why a record may match and when a reviewer must intervene.
+5. **Separate a reusable process from one campaign.** Configurable fields and documented deployment make the open-source work more adaptable.
+
+## Join the project or bring a related need
+
+Developers, designers, campaign practitioners, election-law experts, security reviewers, and people experienced with document workflows can use the GitHub and Slack links above to inspect or join the work.
+
+You can also <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="votecatcher_project_cta">meet the team at a Project Night</a>. If your public-interest organization has a different document-intake or review problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="votecatcher_project_cta">bring the workflow to Civic Tech DC</a> without assuming that OCR or AI is the right answer.

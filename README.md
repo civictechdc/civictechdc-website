@@ -7,6 +7,7 @@ Welcome! This is the repository for the website for Civic Tech DC. It is a stati
 1. [Getting Started](#getting-started)
 1. [Issues](#issues)
 1. [Contributing](#contributing)
+1. [Documentation](#documentation)
 1. [File structure](#file-structure)
 
 ## Getting Started
@@ -29,7 +30,7 @@ To stop the container you can run: `docker-compose down`. To view logs you can r
 
 1. First, make sure that you have <a href="https://git-scm.com/downloads">git</a> on your computer. Create your own <a href="https://docs.github.com/en/get-started/quickstart/contributing-to-projects">fork</a> of the repository, then clone it to your computer:
 
-`git clone git@github.com:[YOUR GITHUB NAME]/codefordc-website`
+`git clone git@github.com:[YOUR GITHUB NAME]/civictechdc-website`
 
 2. Now, install the correct version of Ruby.
 
@@ -64,13 +65,20 @@ This command will run `gulp` as a background process and then jekyll as a foregr
 
 ## Issues
 
-If you notice a problem or have an idea for an improvement you can submit an [issue](https://github.com/civictechdc/codefordc-website/issues).
+If you notice a problem or have an idea for an improvement you can submit an [issue](https://github.com/civictechdc/civictechdc-website/issues).
 
 ## Contributing
 
 Refer to the [contribution instructions](CONTRIBUTING.md) to contribute to this project. We have a [project board](https://github.com/orgs/civictechdc/projects/3) where we track issues and ideas to be implemented.
 
 Let us know if you get stuck in the Civic Tech DC Slack channel #civictechdc-website. Happy coding!
+
+## Documentation
+
+- [Website guide](docs/website-guide.md): how the Jekyll site, content, assets, and common contribution workflows work.
+- [Content and SEO strategy](docs/content-seo-strategy.md): positioning, page ownership, keyword evidence, content priorities, and measurement.
+- [Content and SEO measurement](docs/content-seo-measurement.md): data-layer events, baselines, interpretation limits, GTM handoff, and review cadence.
+- [Content and SEO factual review](docs/content-seo-factual-review.md): required project and partner reviewers, claim checklists, approval status, and evidence rules.
 
 ## File Structure
 

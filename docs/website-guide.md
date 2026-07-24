@@ -192,13 +192,40 @@ with metadata.
 layout: project
 is_active: true
 title: Your Project Name
+seo_title: Specific audience or use case title
 image: project_thumbnails/your-image.png
 image_alt_text: Describe what is visible in the image
 description: One sentence describing what the project does.
+seo_description: A search description no longer than 160 characters.
+content_owner: Your Project Name project team
+last_reviewed: YYYY-MM-DD
+factual_review_status: pending
+case_study_standard: true
 ---
 
-Write a longer description of the project here in Markdown. This appears on the project's
-detail page.
+## Challenge or prior workflow
+
+Explain who experiences the problem and what happens today.
+
+## Partners, users, and validation
+
+Name the people involved where permission allows. State what has and has not been validated.
+
+## Approach and Civic Tech DC's role
+
+Separate discovery, product, data, design, development, and coordination work.
+
+## Current status and known limits
+
+Distinguish outputs from outcomes and record what remains unknown.
+
+## Reusable lessons
+
+Explain what another organization can responsibly learn.
+
+## Participate or bring a related problem
+
+Add a next step that matches the project's status.
 ```
 
 - `is_active: true` means the project appears under "Active Projects" on the homepage and
@@ -208,6 +235,15 @@ detail page.
   `npm run build` to generate the processed version (see the Images section below).
 - The title, description, image, and image alt text also supply the project's search and
   social-sharing metadata.
+- Every active project must follow the evidence-based case-study standard shown above.
+  `npm run check:seo` checks the required metadata, ownership, review date, section coverage,
+  and instrumented next step.
+- Add the page and its claims to
+  [the factual-review packet](content-seo-factual-review.md). Keep
+  `factual_review_status: pending` until all required project and partner reviewers approve
+  the final copy and the approval evidence is recorded.
+- When approval is complete, add `factual_reviewed_by`, `factual_reviewed_on`, and a secure
+  `factual_review_evidence` URL before changing the status to `approved`.
 
 **To mark a project as inactive**, open its `.md` file and change `is_active: true` to
 `is_active: false`.
@@ -226,7 +262,7 @@ location: "Washington, DC"
 card_image: events/my-event-image.png
 social_image_alt: Describe what is visible in the event image
 description: "A brief description of the event."
-redirect_to: https://lu.ma/your-event-link
+redirect_to: https://luma.com/your-event-link
 sitemap: false
 ---
 ```

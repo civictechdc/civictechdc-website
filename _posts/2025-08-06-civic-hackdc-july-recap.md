@@ -406,7 +406,7 @@ seo_description: See how 80 civic technologists built 13 open-source tools to ma
                 <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC">
             </a> {% endcomment %}
             {% comment %} <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a> {% endcomment %}
-            <a href="https://www.meetup.com/DataKind-DC/"
+            <a href="https://www.meetup.com/datakind-dc/"
                target="_blank"
                rel="noopener noreferrer">
                 <img style="height: 75px"

@@ -35,6 +35,7 @@ Then read this file fully before doing anything else in this session.
 - Brand colors live as CSS custom properties on `:root` in `sass/custom/styles.scss` (`--ctdc-navy`, `--ctdc-gold`, `--ctdc-button-dark`, `--ctdc-*-rgb` channels); a `prefers-reduced-motion` guard and `.usa-button--dark` / `.ctdc-project-links` helpers exist. All page layouts route content through `default.html`'s single `<main id="main-content">` landmark (skip-link target).
 - Responsive image pipeline: originals in `_images/` → resized variants in `assets/images/` via `responsive-image.html`.
 - Canonical SEO pipeline: unique page metadata and social previews from `core/meta.html`; Organization, WebSite, WebPage, BlogPosting, and Event JSON-LD from `core/structured-data.html`; canonical sitemap, feed, and robots discovery files.
+- Canonical content and SEO strategy: `docs/content-seo-strategy.md` defines positioning, durable page ownership, evidence-backed keyword priorities, and the page-upgrade roadmap; `docs/content-seo-measurement.md` defines baselines, data-layer events, GTM handoff, and review cadence; `docs/content-seo-factual-review.md` tracks required project and partner approvals. Update them through `patterns/content-seo-strategy.md`.
 - Rendered quality checks: `npm run check:seo` validates every built route and discovery artifact; `npm run check:a11y` checks shared include markup. Both run in pull-request CI and before deployment.
 
 **Not yet built / absent:**
