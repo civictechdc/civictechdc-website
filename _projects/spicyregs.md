@@ -2,102 +2,69 @@
 layout: project
 is_active: true
 title: SpicyRegs
+seo_title: "Federal Regulatory Data Tools: SpicyRegs"
 image: project_thumbnails/spicyregs.jpg
 image_alt_text: Civic Hack DC participants collaborating on regulatory data tools
-description: A platform that turns federal regulations and public comments into accessible, actionable insights.
+github_link: https://github.com/civictechdc/spicy-regs
+slack_channel: C09H576E6LU
+description: An active open-source project turning federal regulatory dockets, documents, and public comments into reproducible data and accessible research tools.
+seo_description: SpicyRegs turns federal regulatory dockets, documents, and public comments into reproducible data and accessible open-source research tools.
+content_owner: SpicyRegs project team
+last_reviewed: 2026-07-24
+factual_review_status: pending
+case_study_standard: true
 ---
 
-<section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
-  <div class="grid-container usa-prose">
-    <em>A platform that turns federal regulations and public comments into accessible, actionable insights.</em>
-  </div>
-</section>
+SpicyRegs is building open, reproducible ways to acquire, clean, document, search, and analyze federal regulatory dockets, documents, and public comments. The project supports policy advocates, researchers, journalists, public-interest technologists, and government practitioners who need to work with regulatory data without relying on an undocumented sequence of downloads and spreadsheets.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🏠</span> Why This Matters</h2>
-    <p>
-      Our work unlocks public comment data from Regulations.gov and other federal portals, making complex regulatory information accessible to both technical and non-technical users. By creating tools that analyze and summarize this data, we are empowering citizens to engage meaningfully with policymaking processes. </p>
-  </div>
-</section>
+## Challenge: public comments are public but difficult to reuse
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
-    <p class="margin-bottom-2">
-    On July 26, 2025, over 80 civic technologists, policy experts, and government staff came together to make federal regulations and public comments more transparent and actionable. In a single day, they built 13 open-source tools that combined technical innovation with real-world needs. <br> <br>
-    Building on Moravian University's Mirrulations project, which mirrors 27 million regulatory documents, the teams created tools for easy data access, AI-powered Q&A, data pipelines, and dashboards. SpicyRegs is a continuation of the hackathon to build a open, contributor-friendly platform for exploring and analyzing regulations.gov data, usable by both technical and non-technical users. Read more in our <a href="https://www.civictechdc.org/blog/2025/08/06/civic-hackdc-july-recap/" target="_blank" rel="noopener noreferrer">blog</a>.
-    </p>
-  </div>
-</section>
+Federal regulatory portals contain large collections of dockets, agency documents, attachments, and public comments. Researchers still have to locate the relevant records, understand relationships among them, handle changing source formats, extract text, preserve provenance, and produce analysis-ready data.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🌍</span> Geography / Reach</h2>
-    <p>DMV-based with our platform aggregating nationwide federal regulatory data. </p>
-  </div>
-</section>
+One-off downloads make results difficult to reproduce or update. Automated summaries and search tools add another risk: they can omit context, misread attachments, or make a pattern sound more authoritative than the source record supports.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🤝</span> Community Partners</h2>
-      <p>Our project collaborates with Moravian University and DataKindDC.</p>
-  </div>
-</section>
+## Users, partners, and validation
 
-<section class="padding-y-5" style="width: 100%;">
-  <div style="max-width: 900px; margin: 0 auto; padding: 0;">
-    <h2 class="font-sans-xl margin-bottom-2"><span aria-hidden="true">📇</span> Current Project Volunteer Contacts</h2>
-    <table class="usa-table usa-table--striped usa-table--borderless" style="width: 100%;">
-      <thead>
-        <tr>
-          <th scope="col" class="font-sans-sm">Name</th>
-          <th scope="col" class="font-sans-sm">Role & Focus</th>
-          <th scope="col" class="font-sans-sm">Slack</th>
-          <!-- <th scope="col" class="font-sans-sm">Social & Contact</th> -->
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Eugene Kim</th>
-          <td><strong><span aria-hidden="true">🧩</span> Project Volunteer</strong></td>
-          <td class ="text-no-wrap">@Eugene Kim</td>
-          <!-- <td>
-            <a href="mailto:eleanor.ory@gmail.com" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Email</a><br>
-            <a href="https://www.linkedin.com/in/echo-eleanor-ory-ph-d-2aa22a242/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </td> -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+SpicyRegs grew from Civic Hack DC in July 2025, where civic technologists, policy experts, and government staff explored regulatory-data problems. The project builds on Moravian University's Mirrulations data work, and the existing project record names Moravian University and DataKind DC as collaborators.
 
-<section class="bg-primary-darker text-white padding-y-5" style="width: 100%;">
-  <div style="width: 100%; padding: 0 2rem; margin: 0;">
-    <h2 style="margin-bottom: 1rem;"><span aria-hidden="true">👋</span> Come Join Us</h2>
-    <p style="margin-bottom: 1rem;">Everyone is welcome no matter your skill level or background. We especially need help with:</p>
-    <ul style="margin: 0; padding-left: 1.5rem; list-style-position: inside; line-height: 1.6;">
-        <li><strong>Regulatory & Policy Expertise</strong> Understanding federal regulations, public comment processes, and domain-specific nuances.</li>
-        <li><strong>Data Analysis</strong> Working with large regulatory datasets and identifying trends.</li> 
-        <li><strong>Machine Learning & NLP</strong> Implementing RAG workflows, semantic search, embeddings, and text analysis for public comments.</li>
-        <li><strong>Backend Development</strong> Building APIs, ETL pipelines, and managing large-scale data with DuckDB, LanceDB, or SurrealDB.</li>
-        <li><strong>Frontend Development</strong> Creating dashboards and interfaces with React or other web frameworks.</li> 
-        <li><strong>UX/UI Design</strong> Making complex regulatory data understandable and accessible to users.</li>
-        <li><strong>Data Engineering</strong> Cleaning, transforming, and integrating 27M+ regulatory documents into usable formats.</li>
-        <li><strong>Community Engagement</strong> Partnering with civic tech volunteers, government staff, and researchers to ground-truth tools and workflow.</li>
-    </ul>
-  </div>
-</section>
+Those relationships and the priority workflows still need current factual approval. Intended users include policy advocates, researchers, journalists, academics, government staff, and technical contributors. The project is continuing to test which outputs—downloadable data, command-line tools, notebooks, search, guided analysis, or a web interface—best support their work.
 
-<section class="usa-section padding-y-4">
-  <div class="grid-container">
-    <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">💬</span> Slack (#spicyreg)
-      </a>
-      <a href="https://github.com/civictechdc/hackdc2025" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">🧩</span> GitHub Repo
-      </a>
-    </div>
-  </div>
-</section>
+## Approach and Civic Tech DC's role
+
+Civic Tech DC volunteers contribute data engineering, source acquisition, schema and provenance work, documentation, analysis, interface development, infrastructure, user research, and project coordination.
+
+The [public SpicyRegs repository](https://github.com/civictechdc/spicy-regs) currently provides:
+
+- a pipeline that reads public mirrored source records and writes Parquet data;
+- downloadable docket, document, and comment tables;
+- command-line tools for inspecting, sampling, and searching the published data;
+- a generated [data dictionary](https://docs.spicy-regs.dev/);
+- example notebooks and contributor documentation;
+- modular components that can support multiple analyses and interfaces.
+
+The [SpicyRegs application](https://app.spicy-regs.dev/feed) presents current user-facing work. The repository remains the authority for reproducibility, setup, and limitations.
+
+## Current status and known limits
+
+SpicyRegs is active. A repeatable data pipeline and public data outputs exist, while corpus completeness, text extraction, analysis, user experience, and product validation continue to evolve.
+
+- Source portals and mirrors can be incomplete, capped, delayed, or inconsistent.
+- Attachments and extracted text require quality checks.
+- A reproducible dataset does not make every comparison or summary valid.
+- Search, classification, and AI-assisted analysis need source citations and human review.
+- The project has not published a measured increase in public participation, policy influence, or research time saved.
+- Partner roles, active users, production guarantees, and long-term ownership remain pending factual review.
+
+## Reusable lessons
+
+1. **Preserve the source trail.** Keep stable identifiers, source URLs, retrieval details, and transformations with the output.
+2. **Separate the data layer from one interface.** Reusable tables can support notebooks, reports, search, and future applications.
+3. **Turn repeated preparation into code.** A rerunnable pipeline is easier to review than private manual steps.
+4. **Treat completeness as a claim to prove.** API success does not establish that every expected record was retrieved.
+5. **Keep analysis accountable to source documents.** Summaries and trends should make it easy to inspect the underlying record.
+
+## Use the data, validate a workflow, or contribute
+
+Policy advocates, researchers, journalists, academics, and government practitioners can help the team test whether its data and interfaces answer real questions responsibly. Data, policy, product, design, documentation, and software contributors can use the GitHub and Slack links above.
+
+If you have a different regulatory or public-records problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="spicyregs_project_cta">bring it to Civic Tech DC</a>. To meet active teams first, <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="spicyregs_project_cta">join a Project Night</a>.

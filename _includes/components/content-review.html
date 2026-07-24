@@ -1,0 +1,8 @@
+{% if page.content_owner or page.last_reviewed %} {% assign
+content_review_margin = include.margin | default: "margin-top-5" %}
+<p class="text-base font-body-2xs {{ content_review_margin }}">
+  {% if page.content_owner %} Content owner: {{ page.content_owner }}. {% endif
+  %} {% if page.last_reviewed %} Last reviewed: {{ page.last_reviewed | date:
+  "%B %-d, %Y" }}. {% endif %}
+</p>
+{% endif %}

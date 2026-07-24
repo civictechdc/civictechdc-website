@@ -1,0 +1,23 @@
+<script>
+  // Expose high-intent link clicks to Google Tag Manager without collecting the
+  // destination URL, email subject, or other potentially sensitive details.
+  document.addEventListener("click", function (event) {
+    const target =
+      event.target instanceof Element
+        ? event.target
+        : event.target?.parentElement;
+    const link = target && target.closest("a[data-analytics-event]");
+    if (!link) {
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: link.dataset.analyticsEvent,
+      ctdc_link_location: link.dataset.analyticsLocation || "unspecified",
+      ctdc_link_label:
+        link.dataset.analyticsLabel ||
+        link.textContent.trim().replace(/\s+/g, " "),
+    });
+  });
+</script>

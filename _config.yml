@@ -2,7 +2,7 @@ markdown: kramdown
 name: Civic Tech DC
 url: https://www.civictechdc.org
 title: Civic Tech DC
-description: "Join Civic Tech DC, a nonprofit volunteer community building open-source technology for civic engagement, democracy, and public-interest work in the DMV."
+description: "Civic Tech DC is a DMV-rooted nonprofit volunteer community that validates, scopes, and builds open-source public-interest technology with partners and users."
 default_social_image: hero-image-homepage.jpg
 default_social_image_alt: Civic Tech DC volunteers collaborating on laptops around tables at a project night
 lang: en-US
@@ -60,3 +60,4 @@ exclude:
   - package.json
   - package-lock.json
   - /scripts
+  - /ideas-graveyard/

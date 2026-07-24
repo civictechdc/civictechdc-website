@@ -2,118 +2,69 @@
 layout: project
 is_active: true
 title: Ride Score DC
+seo_title: "Bike Safety Data Project: Ride Score DC"
 image: project_thumbnails/ridescoredc.png
 image_alt_text: Ride Score logo over a gold and blue street map
-description: Rating every street segment in DC for cyclist safety - visualizing risk on an interactive map to inform riders and advocates.
+github_link: https://github.com/civictechdc/ridescoredc
+slack_channel: C09N0MZR3FY
+description: An active open-data project prototyping transparent street-segment comfort and safety scores for DC cyclists, advocates, and planners.
+seo_description: Ride Score DC is prototyping transparent street-segment bike comfort and safety scores from DC crash, street, and infrastructure data.
+content_owner: Ride Score DC project team
+last_reviewed: 2026-07-24
+factual_review_status: pending
+case_study_standard: true
 ---
 
-<section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
-  <div class="grid-container usa-prose">
-    <em> Rating every street segment in DC for cyclist safety - visualizing risk on an interactive map to inform riders and advocates. </em>
-  </div>
-</section>
+Ride Score DC is prototyping an open-data pipeline and map that describes cycling comfort and safety factors at the street-segment level. It combines crash, roadway, and bicycle-infrastructure data with documented scoring rules. The result is an exploratory planning and advocacy tool, not a guarantee that a route is safe.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🏠</span> Why This Matters</h2>
-    <p>
-      Nearly 5,000 cyclists were involved in crashes in DC between 2013 and 2022, yet there is no easy way for riders to know which streets are safest before they ride. Cyclists often rely on instinct, word of mouth, or trial and error to find comfortable routes.  
-    </p>
+## Challenge: open street data does not answer a rider's question
 
-    <p>We are bridging this gap with a tool that:</p>
+DC publishes useful crash, street, speed, and bicycle-infrastructure data, but those datasets do not automatically tell a rider how a segment may feel or which infrastructure changes could matter. Riders often rely on familiarity and local knowledge, while advocates and planners need transparent ways to compare conditions.
 
-    <ul>
-      <li>Visualizes street by street safety scores on an interactive color coded map</li>
-      <li>Shows crash data, infrastructure quality, and traffic stress for each segment</li>
-      <li>Identifies high impact opportunities for infrastructure improvements</li>
-      <li>Supports Vision Zero DC’s goal of eliminating traffic deaths</li>
-    </ul>
+Any composite score simplifies reality. Data can be incomplete or delayed, a comfortable segment for one rider may not be comfortable for another, and street conditions change. A credible score must reveal its inputs and rules rather than present one number as objective truth.
 
-  </div>
-</section>
+## Cyclists, advocates, and validation
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
-    <p class="margin-bottom-2">
-      RideScore DC was born from a simple question: "Why isn't there a safety rating for bike routes like there is for restaurants?" After discovering that DC has rich open data on crashes, bike lanes, and street characteristics, but no integrated safety scoring system, we decided to build one.
-      <br><br>
-      Inspired by proven methodologies like <a href="https://bna.peopleforbikes.org/#/" target="_blank" rel="noopener noreferrer">PeopleForBikes' Bicycle Network Analysis</a> and the Level of Traffic Stress framework, we're combining DC's excellent open data with modern data science to create actionable safety insights. Our goal is to leverage the same principles that helped cities like Minneapolis and Brooklyn dramatically improve their cycling networks.
-    </p>
-  </div>
-</section>
+The intended users include everyday cyclists, bicycle advocates, transportation researchers, and people exploring infrastructure priorities. The project draws on established concepts such as Level of Traffic Stress and Bicycle Network Analysis.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🌍</span> Geography / Reach</h2>
-    <p>DMV-based, with DC as the initial focus. The open-source methodology can be adapted to any city with crash and infrastructure data. </p>
-  </div>
-</section>
+The current project record does not name a validating organization. Direct review with riders of different ages, abilities, trip purposes, and neighborhoods is still needed, along with transportation-domain review of the scoring model. This page does not claim that WABA, DDOT, or another transportation organization has endorsed or validated the tool.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🤝</span> Community Partners</h2>
-      <p>We don’t have any currently, but would love to partner with WABA, DDOT, or Zero Vision.</p>
-  </div>
-</section>
+## Approach and Civic Tech DC's role
 
-<section class="padding-y-5" style="width: 100%;">
-  <div style="max-width: 900px; margin: 0 auto; padding: 0;">
-    <h2 class="font-sans-xl margin-bottom-2"><span aria-hidden="true">📇</span> Current Project Volunteer Contacts</h2>
-    <table class="usa-table usa-table--striped usa-table--borderless" style="width: 100%;">
-      <thead>
-        <tr>
-          <th scope="col" class="font-sans-sm">Name</th>
-          <th scope="col" class="font-sans-sm">Role & Focus</th>
-          <th scope="col" class="font-sans-sm">Slack</th>
-          <th scope="col" class="font-sans-sm">Social & Contact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">EChO</th>
-          <td><strong><span aria-hidden="true">🧩</span> Project Lead</strong></td>
-          <td class ="text-no-wrap">@EChO (Eleanor Claire-higgins Ory)</td>
-          <td>
-            <a href="mailto:eleanor.ory@gmail.com" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Email</a><br>
-            <a href="https://www.linkedin.com/in/echo-eleanor-ory-ph-d-2aa22a242/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+Civic Tech DC volunteers contribute geospatial analysis, data engineering, scoring-model design, mapping, interface work, documentation, testing, and community outreach.
 
-<section class="bg-primary-darker text-white padding-y-5" style="width: 100%;">
-  <div style="width: 100%; padding: 0 2rem; margin: 0;">
-    <h2 style="margin-bottom: 1rem;"><span aria-hidden="true">👋</span> Come Join Us</h2>
-    <p style="margin-bottom: 1rem;">Everyone is welcome no matter your skill level or background. We especially need help with:</p>
-    <ul style="margin: 0; padding-left: 1.5rem; list-style-position: inside; line-height: 1.6;">
-        <li><strong>Transportation Domain Expertise</strong> Understanding bike infrastructure, safety factors, and urban cycling conditions.</li>
-        <li><strong>Data Analysis</strong> Exploring crash patterns, infrastructure correlations, and safety trends.</li>
-        <li><strong>GIS and Spatial Analysis</strong> Mapping and visualizing geospatial datasets for safety insights.</li>
-        <li><strong>Data Science and Machine Learning</strong> Feature engineering, predictive modeling, and validation.</li>
-        <li><strong>Frontend Development</strong> Building interactive map experiences with Leaflet, Kepler dot gl, and <a href="https://deck.gl/" target="_blank" style="color: #ffffff;">Deck dot gl</a>.</li>
-        <li><strong>Backend Development</strong> Creating Python and Node APIs for serving geospatial data.</li>
-        <li><strong>UX and UI Design</strong> Turning complex safety data into intuitive, compelling interfaces.</li>
-        <li><strong>Data Engineering</strong> Managing ETL pipelines, data cleaning, and integration with DC Open Data.</li>
-        <li><strong>Cyclist Community Engagement</strong> Partnering with local riders to ground truth findings and capture lived experience.</li>
-    </ul>
-  </div>
-</section>
+The [public repository](https://github.com/civictechdc/ridescoredc) documents:
 
-<section class="usa-section padding-y-4">
-  <div class="grid-container">
-    <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C09N0MZR3FY" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">💬</span> Slack (#ride-score-dc)
-      </a>
-      <a href="https://github.com/civictechdc/ridescoredc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">🧩</span> GitHub Repo
-      </a>
-      <a href="https://www.ridescoredc.com/" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">🌐</span> Project Website
-      </a>
-    </div>
-  </div>
-</section>
+- canonical schemas for street segments and score layers;
+- transparent rulesets for established and composite measures;
+- a Python pipeline for ingesting, cleaning, scoring, and exporting data;
+- toggleable map layers for scores and source factors;
+- an early web-map implementation.
+
+A separate [public project website](https://www.ridescoredc.com/) presents the work. The repository, model, and website are active prototypes; their current state should be checked before reuse.
+
+## Current status and known limits
+
+Ride Score DC is active. The repository contains sample data, model artifacts, an MVP map, and an initial pipeline, while setup and validation work remain in progress.
+
+- The score has not been reported as validated against a representative rider study.
+- Source data may omit near misses, perceived stress, temporary conditions, or recent street changes.
+- A street-segment score does not account for an entire trip, intersection risk, weather, construction, or a rider's needs.
+- No organizational partner, public adoption count, crash reduction, or infrastructure outcome is claimed.
+- Model weights, update cadence, data provenance, and maintenance ownership require continuing review.
+
+People should use current conditions, posted rules, and their own judgment rather than relying on the prototype for safety-critical routing.
+
+## Reusable lessons
+
+1. **Expose the ingredients.** A composite score is more useful when people can inspect crash, speed, lane, and infrastructure factors separately.
+2. **Ground-truth the map.** Administrative data needs review from people who ride the streets.
+3. **Design for different users.** A confident commuter, new rider, child, and adaptive cyclist may interpret comfort differently.
+4. **Version the method and data.** A score should identify the rules and source snapshot used to calculate it.
+5. **Measure use before impact.** A working map is an output; safer behavior or infrastructure change requires separate evidence.
+
+## Test the model or contribute
+
+DC cyclists and transportation practitioners can help review source data, ground-truth segments, and test whether the explanations are understandable. GIS, data, design, frontend, backend, and outreach contributors can use the GitHub and Slack links above.
+
+If your community has a related transportation-data problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="ride_score_cta">bring it to Civic Tech DC</a>. You can also <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="ride_score_cta">meet the team at a Project Night</a>.
