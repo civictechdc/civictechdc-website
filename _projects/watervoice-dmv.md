@@ -14,7 +14,7 @@ factual_review_status: pending
 case_study_standard: true
 ---
 
-WaterVoice DMV is the current website name for an active water-quality map prototype whose repository uses the working title **DMV Water Watch**. The project is exploring how paddlers, rowers, and—where legally allowed—swimmers can see recent source data and its freshness in one place. It is not a safety guarantee or a replacement for posted warnings and public-health guidance.
+WaterVoice DMV is the current website name for an active water-quality map prototype whose repository uses the working title **DMV Water Watch**. The project is exploring how paddlers, rowers, and (where legally allowed) swimmers can see recent source data and its freshness in one place. It is not a safety guarantee or a replacement for posted warnings and public-health guidance.
 
 ## Challenge: the data is scattered and time-sensitive
 

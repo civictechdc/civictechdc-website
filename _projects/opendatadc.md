@@ -14,7 +14,7 @@ factual_review_status: pending
 case_study_standard: true
 ---
 
-Open Data DC—originally Data Code for DC—was a community-run data portal for research, visualization, learning, and civic technology in the DC region. It used the open-source CKAN platform and was separate from the District government's official open-data service. The Civic Tech DC repository is archived, and the original `data.codefordc.org` domain no longer resolves.
+Open Data DC (originally Data Code for DC) was a community-run data portal for research, visualization, learning, and civic technology in the DC region. It used the open-source CKAN platform and was separate from the District government's official open-data service. The Civic Tech DC repository is archived, and the original `data.codefordc.org` domain no longer resolves.
 
 ## Challenge: useful local data came from more than one catalog
 

@@ -27,7 +27,7 @@ One-off downloads make results difficult to reproduce or update. Automated summa
 
 SpicyRegs grew from Civic Hack DC in July 2025, where civic technologists, policy experts, and government staff explored regulatory-data problems. The project builds on Moravian University's Mirrulations data work, and the existing project record names Moravian University and DataKind DC as collaborators.
 
-Those relationships and the priority workflows still need current factual approval. Intended users include policy advocates, researchers, journalists, academics, government staff, and technical contributors. The project is continuing to test which outputs—downloadable data, command-line tools, notebooks, search, guided analysis, or a web interface—best support their work.
+Those relationships and the priority workflows still need current factual approval. Intended users include policy advocates, researchers, journalists, academics, government staff, and technical contributors. The project is continuing to test which outputs (downloadable data, command-line tools, notebooks, search, guided analysis, or a web interface) best support their work.
 
 ## Approach and Civic Tech DC's role
 

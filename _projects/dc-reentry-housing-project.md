@@ -93,4 +93,4 @@ People with experience in nonprofit data management, service-provider workflows,
   >
 </p>
 
-If your coalition has a related data-management, dashboard, or shared-measurement problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="reentry_project_cta">bring the need to Civic Tech DC</a>. We will start with users, decisions, and fit—not an assumed platform.
+If your coalition has a related data-management, dashboard, or shared-measurement problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="reentry_project_cta">bring the need to Civic Tech DC</a>. We will start with users, decisions, and fit, not an assumed platform.

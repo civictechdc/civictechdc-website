@@ -47,7 +47,7 @@ The project's [data-collection practices](https://github.com/DARIAEngineering/dc
 
 Volunteers built a Ruby on Rails application and released it under the MIT License. The public repository includes the application, tests, setup documentation, security guidance, onboarding material, a data dictionary, and contribution instructions. A [public sandbox](https://sandbox.dariaservices.com/users/sign_in) lets eligible organizations explore the workflow without real patient data.
 
-Civic Tech DC helped provide an early community and volunteer home. The sustained project also depended on fund practitioners, technical leadership, security advice, documentation, administration, and ongoing maintenance—not only initial software development.
+Civic Tech DC helped provide an early community and volunteer home. The sustained project depended on more than initial software development: fund practitioners, technical leadership, security advice, documentation, administration, and ongoing maintenance.
 
 ## Adoption, transition, and current status
 

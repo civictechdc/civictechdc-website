@@ -376,7 +376,7 @@ Treat these as questions to answer inside Pitch or the relevant project page, no
 
 ### 4. Volunteer Collaboration That Lasts
 
-**Purpose:** Help partners and volunteers understand that useful civic technology requires participation, ownership, leadership, and continuity—not a one-day build event.
+**Purpose:** Help partners and volunteers understand that useful civic technology requires participation, ownership, leadership, and continuity, not a one-day build event.
 
 **Topics:** Working with volunteer teams, project roles, Project Nights, handoff and maintenance, partner responsibilities, open-source governance, and lessons from projects that sustained or transitioned.
 
@@ -613,7 +613,7 @@ These should be answered with intake conversations, Search Console, and partner 
 1. What words do successful project partners use when they first describe their need?
 2. Which kinds of requests are most common, most feasible, and most likely to sustain a volunteer team?
 3. Which project pages already receive nonbranded impressions or referrals?
-4. Which audience—organizations with problems, project originators, validating users, or volunteers—is currently hardest to attract?
+4. Which audience (organizations with problems, project originators, validating users, or volunteers) is currently hardest to attract?
 5. What capacity can Civic Tech DC truthfully commit to during a typical quarter?
 6. Which completed projects have defensible outcomes, adoption figures, quotes, or transferable lessons?
 7. Do legal clinics, journalists, academics, and community groups use different search language that warrants separate content?

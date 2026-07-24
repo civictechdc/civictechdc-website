@@ -14,7 +14,7 @@ factual_review_status: pending
 case_study_standard: true
 ---
 
-Clean Slate was a 2015–2017 legal-access project for people trying to understand whether a DC criminal record might qualify for sealing. Civic Tech DC volunteers worked with Students in Court DC—now [Rising for Justice](https://www.risingforjustice.org/)—to turn expert legal logic into a guided triage tool while keeping lawyers in the review process.
+Clean Slate was a 2015–2017 legal-access project for people trying to understand whether a DC criminal record might qualify for sealing. Civic Tech DC volunteers worked with Students in Court DC (now [Rising for Justice](https://www.risingforjustice.org/)) to turn expert legal logic into a guided triage tool while keeping lawyers in the review process.
 
 Clean Slate is no longer active, and its historical logic must not be used as current legal advice.
 
@@ -54,7 +54,7 @@ That limited role is a useful model for pro bono legal technology. Technology ca
 
 The original Civic Tech DC repository is archived and was last active in 2017. In March 2016, further development and deployment moved to [Mission Launch's Clean Slate repository](https://github.com/MissionLaunch/clean-slate). That repository also reflects a historical version of the project rather than a current legal service.
 
-The page does not claim a verified number of users, completed cases, or legal outcomes because those measures are not available in the project record reviewed here. Its value as evidence is the collaboration model, the safeguard around human review, and the explicit transition—not an invented impact figure.
+The page does not claim a verified number of users, completed cases, or legal outcomes because those measures are not available in the project record reviewed here. Its value as evidence is the collaboration model, the safeguard around human review, and the explicit transition, not an invented impact figure.
 
 For current help with a DC legal matter, use a qualified legal-services provider and current official information. [Rising for Justice](https://www.risingforjustice.org/) is the successor organization to the project's original clinic partner.
 

@@ -20,7 +20,7 @@ last_reviewed: 2026-07-24
 
 ## Turn a public-interest problem into an open-source project
 
-People come to Civic Tech DC with a problem, an idea, a dataset, or an early build. We help find the people who experience the problem, validate what would be useful, scope feasible work, and—when a project is a fit and a volunteer team can form—build and iterate in the open. Selected projects receive no-cost, volunteer-led technical and data support.
+People come to Civic Tech DC with a problem, an idea, a dataset, or an early build. We help find the people who experience the problem, validate what would be useful, and scope feasible work. When a project is a fit and a volunteer team can form, we build and iterate in the open. Selected projects receive no-cost, volunteer-led technical and data support.
 
 <ul class="ctdc-partner-paths usa-list usa-list--unstyled">
   <li class="ctdc-partner-path">
