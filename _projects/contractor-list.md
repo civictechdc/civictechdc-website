@@ -57,7 +57,7 @@ description: Lower carbon emissions in the DMV by connecting homeowners with the
   <div class="grid-container">
     <h2 class="font-sans-lg"><span aria-hidden="true">🤝</span> Community Partners</h2>
     <p>
-    <a href="https://www.electrifydc.org/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Electrify DC</a>, Building Innovation Hub, Go Electric DMV, and several DMV-area jurisdictions and professional associations.
+    <a href="https://electrifydc.org/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">Electrify DC</a>, Building Innovation Hub, Go Electric DMV, and several DMV-area jurisdictions and professional associations.
     </p>
   </div>
 </section>
