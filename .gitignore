@@ -1,6 +1,8 @@
 _site/
 .DS_Store
 node_modules/
+.playwright-cli/
+output/playwright/
 .sass-cache
 .jekyll-cache/
 .jekyll-metadata
