@@ -16,7 +16,7 @@ edges:
     condition: when the new content needs images
   - target: patterns/seo-metadata.md
     condition: when setting titles, descriptions, social previews, redirects, or event data
-last_updated: 2026-07-21
+last_updated: 2026-07-24
 ---
 
 # Add Content (Project / Event / Blog Post)
@@ -42,26 +42,46 @@ All start with YAML front matter. Images referenced in content must follow `patt
    layout: project
    is_active: true # true = active project, false = archived/inactive
    title: Project Name
+   seo_title: Specific audience or use case title
    image: project_thumbnails/<name>.png # path relative to _images/
    image_alt_text: Describe the thumbnail
    description: One-sentence summary used on cards.
-   seo_description: Optional shorter search summary when description exceeds 160 characters.
+   seo_description: Search summary of 160 characters or fewer.
    github_link: https://github.com/... # optional
    slack_channel: project-channel-name # optional (renders a Slack link)
+   content_owner: Project Name project team
+   last_reviewed: YYYY-MM-DD
+   factual_review_status: pending
+   case_study_standard: true
    ---
    ```
-3. Add the thumbnail original to `_images/project_thumbnails/` (see responsive-images pattern), then write the body (Markdown/HTML + USWDS classes).
+3. Add the thumbnail original to `_images/project_thumbnails/` (see responsive-images pattern).
+4. Write the project as evidence, not a promotional summary. Cover:
+   - the challenge or prior workflow;
+   - partners, users, and validation;
+   - Civic Tech DC's approach and contribution;
+   - what was built or changed;
+   - current status and known limits;
+   - lessons another organization can reuse;
+   - a status-appropriate, instrumented next step.
+5. Add the page to `docs/content-seo-factual-review.md`. Leave `factual_review_status: pending` until all required project and partner reviewers approve the final claims and the evidence is recorded.
 
 ### Gotchas
 
 - `github_link` and `slack_channel` are optional — `project.html` only renders those links when present.
+- Do not leave an inactive project's Slack channel in front matter unless people should still join that channel.
 - The body's lead image is rendered by `project.html` via `responsive-image.html` using the `image` field — so `image` must be a real path under `_images/`.
 - `image` and `image_alt_text` also supply the social preview. Describe the actual image rather than writing generic text such as "project screenshot."
+- Active projects must declare `case_study_standard: true`. `npm run check:seo` verifies the required metadata, governance fields, evidence-section headings, and instrumented next step.
+- Do not change `factual_review_status` to `approved` without `factual_reviewed_by`, `factual_reviewed_on`, and a secure `factual_review_evidence` URL.
 
 ### Verify
 
 - [ ] File is `_projects/<slug>.md` with `layout: project`.
 - [ ] `image` points to a file that exists under `_images/`.
+- [ ] The page separates outputs, outcomes, and unknowns.
+- [ ] Project and partner claims are listed in `docs/content-seo-factual-review.md`.
+- [ ] The next step matches the project's current status and emits an approved analytics event.
 - [ ] Project appears on the projects page after `npm run serve`.
 - [ ] `npm run check:seo` passes.
 
@@ -80,7 +100,7 @@ All start with YAML front matter. Images referenced in content must follow `patt
    url: /shortlink # optional vanity/redirect path
    card_image: hero-image-x.png # path relative to _images/
    social_image_alt: Describe the event image
-   registration_link: https://lu.ma/...
+   registration_link: https://luma.com/...
    page_css: /assets/css/<name>.css # optional, only if the event has custom CSS
    description: |
      Short description for cards/meta.

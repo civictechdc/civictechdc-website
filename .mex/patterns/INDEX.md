@@ -26,6 +26,7 @@ Lookup table for all pattern files in this directory. Check here before starting
 | [add-content.md#task-add-a-project](add-content.md#task-add-a-project)             | Adding a new project to the `_projects` collection                   |
 | [add-content.md#task-add-a-special-event](add-content.md#task-add-a-special-event) | Adding a new event to the `_events` collection                       |
 | [add-content.md#task-add-a-blog-post](add-content.md#task-add-a-blog-post)         | Adding a new blog post under `_posts`                                |
+| [content-seo-strategy.md](content-seo-strategy.md)                                 | Creating, implementing, and measuring the content and SEO strategy   |
 | [responsive-images.md](responsive-images.md)                                       | Adding or referencing any image (responsive variants, lazy-loading)  |
 | [seo-metadata.md](seo-metadata.md)                                                 | Changing page metadata, social previews, schema, or crawler files    |
 | [styling-css.md](styling-css.md)                                                   | Changing styles via USWDS/Sass, page-specific CSS, or the gulp build |
