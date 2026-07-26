@@ -2,27 +2,29 @@
 layout: project
 is_active: false
 title: Daria
-seo_title: "Open-Source Nonprofit Case Management: Daria"
+seo_title: "DARIA: Open-Source Abortion Fund Case Management"
 image: project_thumbnails/daria.png
 image_alt_text: Daria open-source CRM logo
 github_link: https://github.com/DARIAEngineering/dcaf_case_management
-description: Open-source case-management software developed with abortion funds after the DC Abortion Fund outgrew a shared-spreadsheet workflow; DARIA is now maintained independently.
-seo_description: See how Daria turned an abortion fund's spreadsheet workflow into open-source nonprofit case-management software now used by multiple funds.
+slack_channel: daria
+description: Open-source case-management software created by abortion funders and their supporters, first deployed at the DC Abortion Fund and now maintained independently.
+seo_description: DARIA is open-source case-management software built with abortion funds after the DC Abortion Fund outgrew shared spreadsheets.
 content_owner: Civic Tech DC project archive
-last_reviewed: 2026-07-24
+last_reviewed: 2026-07-26
 factual_review_status: pending
+factual_review_required_approvals: 2
 case_study_standard: true
 ---
 
 DARIA is a case-management system for abortion funds. It began with the DC Abortion Fund (DCAF), went into service there in 2016, and is now used by multiple funds across the United States. The project is no longer an active Civic Tech DC project, but the open-source software and an independent DARIA Engineering team remain active.
 
-## Challenge: case management in shared spreadsheets
+## Why abortion funds needed more than shared spreadsheets
 
 Abortion funds help people navigate appointments and provide grants when they cannot afford the full cost of abortion care. That work involves calls, contact information, patient status, pledges, clinic coordination, and follow-up across volunteer shifts.
 
 According to the [DARIA project documentation](https://github.com/DARIAEngineering/dcaf_case_management#project-description), about 75 DCAF case managers were recording roughly 3,500 calls each year in shared Excel sheets before the application launched. Case managers had to learn spreadsheet conventions, search for missing information, avoid overwriting one another's work, and reconstruct context across shifts.
 
-## Partners, users, and validation
+## Built with abortion-fund case managers
 
 DARIA was created by abortion funders and people who support abortion funds. DCAF supplied the original workflow, case-manager expertise, and production setting. The system was designed to mirror how volunteer case managers return calls, track patient needs and status, issue funding pledges, and record fulfillment.
 
@@ -30,7 +32,7 @@ That direct user involvement shaped the product more than a generic customer-rel
 
 Those reports are valuable project evidence, but they are user accounts rather than an independent impact evaluation.
 
-## Product and data decisions
+## A workflow designed around sensitive care
 
 DARIA uses a familiar case-management workflow while making choices specific to abortion-fund practice:
 
@@ -43,19 +45,19 @@ DARIA uses a familiar case-management workflow while making choices specific to 
 
 The project's [data-collection practices](https://github.com/DARIAEngineering/dcaf_case_management/blob/main/_docs/OUR_DATA_COLLECTION_PRACTICES.md) explain how the team weighs operational value against the harm that a breach could cause. One documented example is the decision to remove an immigration-status flag because the risk to patients outweighed the convenience to case managers.
 
-## Implementation and open-source work
+## Open-source software and the work around it
 
 Volunteers built a Ruby on Rails application and released it under the MIT License. The public repository includes the application, tests, setup documentation, security guidance, onboarding material, a data dictionary, and contribution instructions. A [public sandbox](https://sandbox.dariaservices.com/users/sign_in) lets eligible organizations explore the workflow without real patient data.
 
 Civic Tech DC helped provide an early community and volunteer home. The sustained project depended on more than initial software development: fund practitioners, technical leadership, security advice, documentation, administration, and ongoing maintenance.
 
-## Adoption, transition, and current status
+## From Civic Tech DC project to independent team
 
 The [current project README](https://github.com/DARIAEngineering/dcaf_case_management) says DCAF and several other funds use DARIA and that the software is generally stable. The independent [DARIA Engineering team](https://github.com/DARIAEngineering) now supports adoption, separate deployments, patches, monitoring, and maintenance.
 
 This page labels DARIA as a **past Civic Tech DC project** because ownership and day-to-day work transitioned to the independent DARIA Engineering community. The repository is not archived and continues to receive updates. Organizations considering the software should use current DARIA documentation and contact its maintainers rather than treating this historical case study as implementation or security advice.
 
-## Reusable lessons
+## What DARIA's history shows
 
 1. **Map the real workflow before choosing a database.** The useful unit was not a generic “contact”; it was the sequence of calls, needs, pledges, clinics, and follow-up that case managers already understood.
 2. **Co-design changes the product.** Practitioners revealed shift handoffs, high-risk data, reporting needs, and terminology that an outside technical team would have missed.

@@ -6,12 +6,11 @@ on:
   push:
     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
+  issues: read
+  pull-requests: read
   pages: write
   id-token: write
 
@@ -47,6 +46,9 @@ jobs:
         run: npm run check:a11y
       - name: Check rendered SEO
         run: npm run check:seo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REQUIRE_FACTUAL_APPROVAL: "1"
       - name: Build with Jekyll
         run: bundle exec jekyll build --destination ./_site
         env:

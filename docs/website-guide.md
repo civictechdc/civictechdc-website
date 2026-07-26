@@ -197,35 +197,30 @@ image: project_thumbnails/your-image.png
 image_alt_text: Describe what is visible in the image
 description: One sentence describing what the project does.
 seo_description: A search description no longer than 160 characters.
-content_owner: Your Project Name project team
+content_owner: Civic Tech DC organizing team
 last_reviewed: YYYY-MM-DD
 factual_review_status: pending
+factual_review_required_approvals: 2
 case_study_standard: true
 ---
 
-## Challenge or prior workflow
+Lead with the project's purpose in the language its team and community use.
 
-Explain who experiences the problem and what happens today.
+## Why this project exists
 
-## Partners, users, and validation
+Explain the problem, affected community, origin, and partners.
 
-Name the people involved where permission allows. State what has and has not been validated.
+## What the team is doing
 
-## Approach and Civic Tech DC's role
+Describe the approach, Civic Tech DC's role, and current public work.
 
-Separate discovery, product, data, design, development, and coordination work.
+## Current status
 
-## Current status and known limits
+Distinguish plans, prototypes, active services, measured outcomes, and known limits.
 
-Distinguish outputs from outcomes and record what remains unknown.
+## Join the project
 
-## Reusable lessons
-
-Explain what another organization can responsibly learn.
-
-## Participate or bring a related problem
-
-Add a next step that matches the project's status.
+Name the people and skills the project needs, then add a next step that matches its status.
 ```
 
 - `is_active: true` means the project appears under "Active Projects" on the homepage and
@@ -235,15 +230,35 @@ Add a next step that matches the project's status.
   `npm run build` to generate the processed version (see the Images section below).
 - The title, description, image, and image alt text also supply the project's search and
   social-sharing metadata.
-- Every active project must follow the evidence-based case-study standard shown above.
-  `npm run check:seo` checks the required metadata, ownership, review date, section coverage,
-  and instrumented next step.
+- Every active project must meet the evidence-based project-page quality standard. The
+  questions and example headings above are guidance, not a mandatory template. Preserve
+  the project's existing mission, origin, named relationships, distinctive language, and
+  contribution needs when they remain accurate and appropriate to publish.
+- Add search terms through specific metadata and clear supporting copy. Do not replace the
+  project story with a generic Civic Tech DC service narrative.
+- `npm run check:seo` checks required metadata, ownership, review status, and an instrumented
+  next step. It intentionally does not require standard headings or exact editorial prose.
+- Once a project declares `case_study_standard` or `factual_review_status`, changing
+  `is_active` does not remove it from the release gate. De-scoping a case study requires an
+  explicit content-governance decision and corresponding checker change.
 - Add the page and its claims to
   [the factual-review packet](content-seo-factual-review.md). Keep
   `factual_review_status: pending` until all required project and partner reviewers approve
   the final copy and the approval evidence is recorded.
-- When approval is complete, add `factual_reviewed_by`, `factual_reviewed_on`, and a secure
-  `factual_review_evidence` URL before changing the status to `approved`.
+- Set `factual_review_required_approvals` to the number of required reviewers named in the
+  factual-review packet. Optional reviewers do not count toward this minimum.
+- While facts remain pending, keep `content_owner` assigned to the Civic Tech DC team
+  maintaining the draft. Do not attribute the draft to a project team that has not reviewed it.
+- When approval is complete, list every required reviewer by organization and role in
+  `factual_reviewed_by`, separated by semicolons. Add `factual_reviewed_on` and a
+  `factual_review_evidence` URL for a summary comment in this repository's GitHub pull
+  request or issue before changing the status to `approved`. The reviewer entries must be
+  distinct, and their count must equal `factual_review_required_approvals`.
+- The summary comment must use the record format in
+  [the factual-review packet](content-seo-factual-review.md#recording-an-approval). The
+  release check confirms that a repository collaborator posted the comment and matches
+  its exact ordered project, date, and reviewer record. Extra commentary or a pull request
+  or issue URL without a specific `#issuecomment-...` record does not count.
 
 **To mark a project as inactive**, open its `.md` file and change `is_active: true` to
 `is_active: false`.

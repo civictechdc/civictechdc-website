@@ -1,12 +1,26 @@
 # Content and SEO Factual Review
 
 **Status:** Pending external review<br>
-**Prepared:** July 24, 2026<br>
+**Prepared:** July 26, 2026<br>
 **Scope:** Every active project and every past project featured as a case study
 
 This packet separates editorial review from factual approval. A `last_reviewed` date means Civic Tech DC checked the page for clarity, sources, status language, and unsupported claims. It does not mean that every named partner or project owner approved the description.
 
-Each page in scope has `factual_review_status: pending` in its front matter. Change that value to `approved` only after every required reviewer for the page has confirmed the claims in scope and the approval evidence is recorded in a pull request or issue.
+Each page in scope has `factual_review_status: pending` in its front matter, and the
+rendered page states that its project details are awaiting factual review. Change that
+value to `approved` only after every required reviewer for the page has confirmed the
+claims in scope and a summary approval comment is recorded in a pull request or issue in
+this repository.
+
+The release check keeps a project in scope when it is active, is a promoted case study, or
+declares either `case_study_standard` or `factual_review_status`. Changing a project from
+active to past therefore cannot silently remove its factual-review requirement.
+
+Pending copy may be rendered for review, but it is not release-ready. Pull-request CI
+enforces factual approval when a pull request is marked ready for review, and the
+production deployment always enforces it. A pending page therefore cannot reach the
+indexable site through the documented release path. The deployment workflow runs only
+from pushes to `main`; it cannot be dispatched from another branch.
 
 ## Approval register
 
@@ -47,6 +61,8 @@ The request is for factual accuracy, not an endorsement of Civic Tech DC or the 
 
 Confirm with the project lead and practitioners:
 
+- the project remains broader open-source campaign infrastructure, with petition review
+  as its first documented process;
 - the intended workflow is petition intake, OCR-assisted extraction, voter-file matching, confidence grouping, and human review;
 - the intended users and regional configuration are described correctly;
 - the project is pre-1.0 and has no claimed production campaign, legal determination, independent accuracy study, or measured outcome;
@@ -60,6 +76,8 @@ Source: [VoteCatcher repository and project documentation](https://github.com/ci
 Confirm with the project lead, GW OSPO, and a research user:
 
 - researchers, journalists, fact-checkers, moderators, and watchdogs are the intended users;
+- the August 2024 DC origin, Taiwan civic-tech inspiration, international ambition, and
+  democratic-discourse purpose reflect the project team's account;
 - GW OSPO's relationship is described correctly;
 - the current toolkit, graphical interface, documentation, and release status are accurate;
 - the tools surface coordination signals but do not establish intent or prove inauthentic behavior;
@@ -75,7 +93,10 @@ Sources:
 Confirm with the project lead, AGI, and a workflow user:
 
 - initial needs came from congressional-staff conversations associated with the Annual Congressional Hackathon;
-- AGI's role and any current congressional relationships are described correctly;
+- the repository's description of AGI as a current project partner is accurate;
+- the stated goal of reducing staff roadblocks and improving public understanding remains
+  the project's mission;
+- any House Digital Service relationship or outreach is described at the correct level;
 - the repository is a portfolio of prototypes and proposals rather than one production service;
 - the listed committee-video, data, spreadsheet, and web work is current;
 - there is no claim of congressional endorsement, staff adoption, or measured institutional outcome.
@@ -87,6 +108,8 @@ Source: [Congressional Tech repository](https://github.com/civictechdc/congressi
 Confirm with the project lead and validating practitioners:
 
 - cyclists, advocates, researchers, and planners are the intended users;
+- the project's original “safety rating for bike routes” question, Vision Zero connection,
+  DC focus, and reuse goal remain accurate;
 - the pipeline, schemas, rulesets, source factors, and prototype map are described correctly;
 - no transportation organization is represented as a current partner or endorser;
 - scores have not been reported as validated with representative riders and are not safety guarantees;
@@ -102,7 +125,8 @@ Sources:
 Confirm with the project lead, Moravian University, DataKind DC, and a target user:
 
 - the July 2025 Civic Hack DC origin and collaborator roles are accurate;
-- policy advocates, researchers, journalists, academics, and government practitioners are appropriate intended users;
+- technical and nontechnical users, citizens, policy advocates, researchers, journalists,
+  academics, and government practitioners are appropriate intended users;
 - the current pipeline, public Parquet outputs, command-line tools, data dictionary, notebooks, and application are represented accurately;
 - completeness, extraction, interpretation, and AI-assisted analysis limits are stated correctly;
 - no public-participation, policy, adoption, or time-savings outcome is claimed.
@@ -116,22 +140,34 @@ Sources:
 
 Confirm with the project lead, users, data practitioners, and any named partner:
 
-- WaterVoice DMV and DMV Water Watch refer to the same current project;
-- intended users, geography, source types, grading method, and freshness treatment are correct;
-- the repository has a functional prototype but not a public production service;
-- fixture-backed or incomplete connectors, identifiers, site verification, hosting, monitoring, and legal review remain launch work;
-- no agency or environmental organization is represented as endorsing the grades;
+- Rajiv Sundar's leadership and the Four Mile Run Conservancy partnership remain current;
+- residents who swim, paddle, fish, or wade are the intended users;
+- the Potomac, Anacostia, Four Mile Run, and Rock Creek remain the intended geography;
+- the proposed source types, post-storm context, activity-specific guidance, and freshness
+  treatment are correct;
+- the project remains active but has no public production service or public repository
+  linked from the canonical page;
 - no safety, adoption, exposure, or public-health outcome is claimed.
 
-Source: [DMV Water Watch repository](https://github.com/civictechdc/DMVWaterWatch).
+Sources:
+
+- [Current WaterVoice DMV project page](https://www.civictechdc.org/projects/watervoice-dmv.html)
+- [Four Mile Run Conservancy](https://www.fourmilerun.org/)
+
+Do not link DMV Water Watch or import claims from that repository unless the WaterVoice
+project lead confirms that it is the same project.
 
 ### DC Reentry Housing Project
 
 Confirm with the Alliance and current project lead:
 
-- the Alliance is the problem owner and subject-matter partner;
-- coalition members are the intended initial users, while direct user roles and access remain discovery questions;
-- discovery covers availability, eligibility, referrals, shared measures, access, governance, and maintenance;
+- the Alliance is led by returning citizens and is the problem owner and subject-matter partner;
+- the team remains committed to building a citywide platform for availability,
+  eligibility, and shared outcomes;
+- providers, policymakers, and returning citizens are represented correctly as users or
+  beneficiaries;
+- current definition work covers availability, eligibility, referrals, shared measures, access, governance, and maintenance;
+- “real time” is a desired capability rather than a description of an existing service;
 - the work is active in July 2026;
 - no public production platform, public repository, complete dataset, or measured housing outcome is available yet;
 - product scope, ownership, access rules, and reporting cadence remain open questions.
@@ -160,6 +196,8 @@ Sources:
 
 Confirm with the archive owner and Rising for Justice:
 
+- the project grew from DC marijuana decriminalization and legalization and addressed
+  sealing or expunging past marijuana-related records;
 - Students in Court DC supplied the original legal-services context and record-sealing expertise;
 - Rising for Justice is the current name or successor organization relevant to that historical partner reference;
 - the application provided preliminary triage and education while lawyers retained responsibility for individual review;
@@ -178,7 +216,10 @@ Sources:
 
 Confirm with the current project lead and Campaign Legal Center:
 
-- the Campaign Legal Center Voting Rights team supplied the first concrete user relationship and workflow;
+- early work focused on how the Campaign Legal Center Voting Rights team used EAVS data
+  and where preparation created bottlenecks;
+- whether that work should be described as a user relationship, collaboration, or formal
+  partnership;
 - the broader intended users include journalists, researchers, election practitioners, advocates, litigators, and oversight groups;
 - the repository downloads, verifies, preserves, cleans, and combines Election Administration and Voting Survey data;
 - 2020, 2022, and 2024 data work and the cross-year timeseries status are current;
@@ -213,11 +254,37 @@ Sources:
 
 For each required reviewer:
 
-1. save the response in the project pull request or a public/internal issue appropriate to the sensitivity of the project;
+1. save the response in the project pull request or an issue appropriate to the
+   sensitivity of the project; do not put private correspondence or personal contact
+   details in a public comment;
 2. record the reviewer by organization and role, not a private email address;
 3. link the response in the approval register;
 4. apply requested corrections and ask the reviewer to confirm the final version;
-5. when all required reviewers approve, change `factual_review_status` to `approved`, add `factual_reviewed_by`, `factual_reviewed_on`, and `factual_review_evidence` front-matter values, and update `last_reviewed`;
-6. request partner or repository links only after the final page is approved and deployed.
+5. when all required reviewers approve, list every approving organization and role in
+   `factual_reviewed_by`, separated by semicolons; make sure the number of entries equals
+   `factual_review_required_approvals`;
+6. ask a Civic Tech DC repository collaborator to post one summary comment in this
+   repository's pull request or issue using the exact record format below; each reviewer
+   line must exactly match an entry in `factual_reviewed_by`;
+7. add `factual_reviewed_on` and the summary comment's direct
+   `#issuecomment-...` URL as `factual_review_evidence`, change
+   `factual_review_status` to `approved`, and update `last_reviewed`;
+8. request partner or repository links only after the final page is approved and deployed.
+
+```text
+Factual review: approved
+Project: _projects/example-project.md
+Reviewed on: YYYY-MM-DD
+Reviewers:
+- Partner organization and reviewer role
+- Civic Tech DC project lead
+```
+
+The release check loads that GitHub comment, confirms that it exists at the recorded URL,
+was posted by a repository collaborator, and matches the project file, approval date, and
+every distinct reviewer. The comment must contain only those ordered, nonblank record
+lines, starting at the first column as shown. Explanatory text, caveats, and indented or
+fenced templates make it fail. A made-up, deleted, unrelated, or incomplete evidence link
+also fails.
 
 If a reviewer cannot verify a claim, mark it unknown, attribute it to the available source, or remove it. Do not convert an unanswered request into approval.

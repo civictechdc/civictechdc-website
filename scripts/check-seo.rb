@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "json"
+require "net/http"
 require "nokogiri"
 require "open3"
 require "set"
@@ -13,7 +14,10 @@ ROOT = File.expand_path("..", __dir__)
 ORIGIN = "https://www.civictechdc.org"
 HOST = URI(ORIGIN).host
 SITE_TITLE = "Civic Tech DC"
+GITHUB_REPOSITORY = "civictechdc/civictechdc-website"
 SITE_TIMEZONE = TZInfo::Timezone.get("America/New_York")
+REQUIRE_FACTUAL_APPROVAL = ENV["REQUIRE_FACTUAL_APPROVAL"] == "1"
+EVIDENCE_COMMENT_CACHE = {}
 HOSTED_EVENT_PATH = %r{\A/events/[^/]+/\z}
 ARTICLE_PATH = %r{\A/blog/\d{4}/\d{2}/\d{2}/}
 MAX_TITLE_LENGTH = 65
@@ -46,176 +50,53 @@ PROMOTED_CASE_STUDY_PROJECTS = %w[
   _projects/daria.md
   _projects/opendatadc.md
 ].freeze
-CONTENT_STRATEGY_EXPECTATIONS = {
-  "/" => {
-    :title => "Civic Tech DC",
-    :description => "Civic Tech DC helps nonprofits, legal clinics, journalists, academics, and community members validate ideas and build open-source public-interest technology.",
-    :h1 => "Civic Tech DC",
-    :text => [
-      "Turn a public-interest problem into an open-source project",
-      "Selected projects receive no-cost, volunteer-led technical and data support.",
-      "How the model works",
-      "Not every proposal becomes a Civic Tech DC project",
-      "Featured project case studies",
-      "Every active project page now records its users, validation, work, status, limits, lessons, and next step."
-    ],
-    :links => [
-      { :href => "/pitch", :event => "project_inquiry_click", :location => "homepage_hero" },
-      { :href => "/projects", :event => "project_discovery_click", :location => "homepage_pathways" },
-      { :href => "/events", :event => "event_discovery_click", :location => "homepage_hero" },
-      { :href => "/partners", :event => "partner_discovery_click", :location => "homepage_pathways" },
-      { :href => "/projects/dc-reentry-housing-project.html", :event => "project_discovery_click", :location => "homepage_case_studies" },
-      { :href => "/projects/data-and-democracy.html", :event => "project_discovery_click", :location => "homepage_case_studies" }
-    ]
-  },
-  "/pitch.html" => {
-    :title => "Bring a Public-Interest Tech Project | Civic Tech DC",
-    :description => "Bring Civic Tech DC a problem or idea that could help people. We validate it with users, scope the work, and recruit volunteers to build it open source.",
-    :h1 => "Bring us a problem or an idea",
-    :text => [
-      "Nonprofits, legal clinics, journalists, academics, researchers, community groups, community members, public-interest staff, and civic technologists",
-      "Two ways to start",
-      "What support may include",
-      "What makes a project a fit",
-      "What we need from a project partner",
-      "What happens after the first email",
-      "Examples of the work",
-      "Frequently asked questions",
-      "Selected projects receive no-cost, volunteer-led support.",
-      "Content owner: Civic Tech DC organizing team.",
-      "Last reviewed: July 24, 2026."
-    ],
-    :links => [
-      { :event => "project_inquiry_click", :location => "pitch_intro" },
-      { :event => "project_inquiry_click", :location => "pitch_process" },
-      { :href => "/projects/dc-reentry-housing-project.html" },
-      { :href => "/projects/daria.html" },
-      { :href => "/projects/clean-slate.html" }
-    ]
-  },
-  "/partners.html" => {
-    :title => "Public-Interest Technology Partnerships | Civic Tech DC",
-    :description => "Work with Civic Tech DC as a project partner, validating user, subject-matter expert, event host, sponsor, or community connector.",
-    :h1 => "Partner with Civic Tech DC",
-    :text => [
-      "Problem owner",
-      "Validating user",
-      "Subject-matter collaborator",
-      "Event host",
-      "Community connector",
-      "Sponsor or in-kind supporter",
-      "Choose the right route",
-      "What project partners can expect",
-      "Content owner: Civic Tech DC organizing team.",
-      "Last reviewed: July 24, 2026."
-    ],
-    :links => [
-      { :href => "/pitch", :event => "project_inquiry_click", :location => "partners_routes" },
-      { :event => "partner_inquiry_click", :location => "partners_routes" },
-      { :href => "/support", :event => "support_click", :location => "partners_routes" }
-    ]
-  },
-  "/projects.html" => {
-    :title => "Open-Source Civic Tech Projects | Civic Tech DC",
-    :description => "Explore open-source Civic Tech DC projects built with nonprofits, public-interest partners, community users, and volunteer technologists.",
-    :h1 => "Open-source civic tech projects",
-    :text => [
-      "Public-interest technology in practice",
-      "Nonprofit data and operations",
-      "Legal access and legal clinics",
-      "Journalism, research, and democracy",
-      "Community information and public data",
-      "Content owner: Civic Tech DC organizing team.",
-      "Last reviewed: July 24, 2026."
-    ],
-    :links => [
-      { :href => "/projects/dc-reentry-housing-project.html" },
-      { :href => "/projects/daria.html" },
-      { :href => "/projects/clean-slate.html" },
-      { :href => "/projects/data-and-democracy.html" },
-      { :href => "/pitch", :event => "project_inquiry_click", :location => "projects_clusters" }
-    ]
-  },
-  "/projects/dc-reentry-housing-project.html" => {
-    :title => "Nonprofit Data Platform for DC Reentry Housing | Civic Tech DC",
-    :h1 => "DC Reentry Housing Project",
-    :text => [
-      "Challenge: important data is scattered",
-      "Partner and intended users",
-      "Validation before development",
-      "Platform approach and Civic Tech DC’s role",
-      "Current status and known limits",
-      "There is no public production platform or public repository linked from this page yet.",
-      "Lessons for other nonprofit coalitions",
-      "Content owner: DC Reentry Housing project team.",
-      "Last reviewed: July 24, 2026."
-    ],
-    :links => [
-      { :href => "/slack", :event => "project_join_click", :location => "reentry_project_cta" },
-      { :href => "/events", :event => "event_discovery_click", :location => "reentry_project_cta" },
-      { :href => "/pitch", :event => "project_inquiry_click", :location => "reentry_project_cta" }
-    ]
-  },
-  "/projects/daria.html" => {
-    :title => "Open-Source Nonprofit Case Management: Daria | Civic Tech DC",
-    :h1 => "Daria",
-    :text => [
-      "Challenge: case management in shared spreadsheets",
-      "Partners, users, and validation",
-      "Product and data decisions",
-      "Implementation and open-source work",
-      "Adoption, transition, and current status",
-      "past Civic Tech DC project",
-      "Reusable lessons",
-      "Content owner: Civic Tech DC project archive.",
-      "Last reviewed: July 24, 2026."
-    ],
-    :links => [
-      { :href => "https://github.com/DARIAEngineering/dcaf_case_management", :event => "project_repository_click", :location => "project_header" },
-      { :href => "/pitch", :event => "project_inquiry_click", :location => "daria_project_cta" }
-    ]
-  },
-  "/projects/clean-slate.html" => {
-    :title => "Legal Clinic Technology: Clean Slate | Civic Tech DC",
-    :h1 => "Clean Slate",
-    :text => [
-      "Legal need",
-      "Clinic role and user validation",
-      "Safeguards and technology’s limited role",
-      "Transition and current status",
-      "must not be used as current legal advice",
-      "Lessons for future legal-access projects",
-      "Content owner: Civic Tech DC project archive.",
-      "Last reviewed: July 24, 2026."
-    ],
-    :links => [
-      { :href => "/pitch", :event => "project_inquiry_click", :location => "clean_slate_project_cta" },
-      { :href => "/events", :event => "event_discovery_click", :location => "clean_slate_project_cta" },
-      { :href => "/slack", :event => "slack_discovery_click", :location => "clean_slate_project_cta" }
-    ]
-  },
-  "/projects/data-and-democracy.html" => {
-    :title => "Data Tools for Journalists and Researchers | Civic Tech DC",
-    :h1 => "Data and Democracy Project",
-    :text => [
-      "Data friction: public does not mean usable",
-      "Users and validation",
-      "Reproducible workflow and current outputs",
-      "Current status and known limits",
-      "There is not yet one public end-user dashboard",
-      "What another public-data project can reuse",
-      "Related Civic Tech DC public-data work",
-      "helps researchers inspect online-activity datasets for possible coordination signals.",
-      "Content owner: Data and Democracy project team.",
-      "Last reviewed: July 24, 2026."
-    ],
-    :links => [
-      { :href => "https://github.com/civictechdc/eavs_clc", :event => "project_repository_click", :location => "project_header" },
-      { :event => "partner_inquiry_click", :location => "data_democracy_cta" },
-      { :event => "project_join_click", :location => "data_democracy_cta" },
-      { :href => "/pitch", :event => "project_inquiry_click", :location => "data_democracy_cta" }
-    ]
-  }
+ROUTE_LINK_EXPECTATIONS = {
+  "/" => [
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "homepage_hero" },
+    { :href => "/projects", :event => "project_discovery_click", :location => "homepage_pathways" },
+    { :href => "/events", :event => "event_discovery_click", :location => "homepage_hero" },
+    { :href => "/partners", :event => "partner_discovery_click", :location => "homepage_pathways" },
+    { :href => "/projects/dc-reentry-housing-project.html", :event => "project_discovery_click", :location => "homepage_case_studies" },
+    { :href => "/projects/data-and-democracy.html", :event => "project_discovery_click", :location => "homepage_case_studies" }
+  ],
+  "/pitch.html" => [
+    { :event => "project_inquiry_click", :location => "pitch_intro" },
+    { :event => "project_inquiry_click", :location => "pitch_process" },
+    { :href => "/projects/dc-reentry-housing-project.html" },
+    { :href => "/projects/daria.html" },
+    { :href => "/projects/clean-slate.html" }
+  ],
+  "/partners.html" => [
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "partners_routes" },
+    { :event => "partner_inquiry_click", :location => "partners_routes" },
+    { :href => "/support", :event => "support_click", :location => "partners_routes" }
+  ],
+  "/projects.html" => [
+    { :href => "/projects/dc-reentry-housing-project.html" },
+    { :href => "/projects/daria.html" },
+    { :href => "/projects/clean-slate.html" },
+    { :href => "/projects/data-and-democracy.html" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "projects_clusters" }
+  ],
+  "/projects/dc-reentry-housing-project.html" => [
+    { :href => "/slack", :event => "project_join_click", :location => "reentry_project_cta" },
+    { :href => "/events", :event => "event_discovery_click", :location => "reentry_project_cta" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "reentry_project_cta" }
+  ],
+  "/projects/daria.html" => [
+    { :href => "https://github.com/DARIAEngineering/dcaf_case_management", :event => "project_repository_click", :location => "project_header" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "daria_project_cta" }
+  ],
+  "/projects/clean-slate.html" => [
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "clean_slate_project_cta" },
+    { :href => "/events", :event => "event_discovery_click", :location => "clean_slate_project_cta" }
+  ],
+  "/projects/data-and-democracy.html" => [
+    { :href => "https://github.com/civictechdc/eavs_clc", :event => "project_repository_click", :location => "project_header" },
+    { :event => "partner_inquiry_click", :location => "data_democracy_cta" },
+    { :event => "project_join_click", :location => "data_democracy_cta" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "data_democracy_cta" }
+  ]
 }.freeze
 
 def add_error(errors, file, message)
@@ -245,6 +126,91 @@ def secure_absolute_url?(value)
   uri.scheme == "https" && !uri.host.to_s.empty? && uri.userinfo.nil?
 rescue URI::InvalidURIError
   false
+end
+
+def factual_review_evidence_reference(value)
+  uri = URI.parse(value)
+  return unless uri.scheme == "https" &&
+    uri.host == "github.com" &&
+    uri.userinfo.nil? &&
+    uri.query.nil?
+
+  path_match = uri.path.match(
+    %r{\A/civictechdc/civictechdc-website/(?<kind>pull|issues)/(?<number>\d+)\z}
+  )
+  comment_match = uri.fragment.to_s.match(/\Aissuecomment-(?<comment_id>\d+)\z/)
+  return unless path_match && comment_match
+
+  {
+    :url => uri.to_s,
+    :comment_id => comment_match[:comment_id],
+    :kind => path_match[:kind],
+    :number => path_match[:number]
+  }
+rescue URI::InvalidURIError
+  nil
+end
+
+def github_issue_comment(comment_id)
+  return EVIDENCE_COMMENT_CACHE[comment_id] if EVIDENCE_COMMENT_CACHE.key?(comment_id)
+
+  uri = URI("https://api.github.com/repos/#{GITHUB_REPOSITORY}/issues/comments/#{comment_id}")
+  request = Net::HTTP::Get.new(uri)
+  request["Accept"] = "application/vnd.github+json"
+  request["User-Agent"] = "civictechdc-seo-check"
+  request["X-GitHub-Api-Version"] = "2022-11-28"
+  token = ENV["GITHUB_TOKEN"].to_s
+  request["Authorization"] = "Bearer #{token}" unless token.empty?
+  response = Net::HTTP.start(
+    uri.host,
+    uri.port,
+    :use_ssl => true,
+    :open_timeout => 10,
+    :read_timeout => 10
+  ) { |http| http.request(request) }
+
+  unless response.is_a?(Net::HTTPSuccess)
+    return EVIDENCE_COMMENT_CACHE[comment_id] = {
+      :error => "GitHub returned HTTP #{response.code} for issue comment #{comment_id}"
+    }
+  end
+
+  parsed = JSON.parse(response.body)
+  EVIDENCE_COMMENT_CACHE[comment_id] = {
+    :author_association => parsed["author_association"].to_s,
+    :body => parsed["body"].to_s,
+    :html_url => parsed["html_url"].to_s
+  }
+rescue JSON::ParserError, SocketError, SystemCallError, Timeout::Error, EOFError, OpenSSL::SSL::SSLError => error
+  EVIDENCE_COMMENT_CACHE[comment_id] = {
+    :error => "could not load GitHub issue comment #{comment_id}: #{error.message}"
+  }
+end
+
+def factual_review_evidence_errors(reference, relative, reviewed_on, reviewers)
+  comment = github_issue_comment(reference[:comment_id])
+  return [comment[:error]] if comment[:error]
+
+  errors = []
+  unless comment[:html_url] == reference[:url]
+    errors << "factual review evidence URL does not match the loaded GitHub comment"
+  end
+  unless %w[COLLABORATOR MEMBER OWNER].include?(comment[:author_association])
+    errors << "factual review evidence must be summarized by a repository collaborator"
+  end
+
+  evidence_lines = comment[:body].lines.map(&:rstrip).reject(&:empty?)
+  expected_lines = [
+    "Factual review: approved",
+    "Project: #{relative}",
+    "Reviewed on: #{reviewed_on}",
+    "Reviewers:",
+    *reviewers.map { |reviewer| "- #{reviewer}" }
+  ]
+  unless evidence_lines == expected_lines
+    errors << "factual review evidence must exactly match the ordered approval record"
+  end
+  errors
 end
 
 def refresh_target(refresh)
@@ -286,7 +252,14 @@ end
 
 def front_matter_value(source, key)
   front_matter = source.match(/\A---\s*\n(?<content>.*?)\n---\s*(?:\n|\z)/m)&.[](:content).to_s
-  front_matter[/^#{Regexp.escape(key)}:\s*(.+?)\s*$/, 1]&.strip
+  value = front_matter[/^#{Regexp.escape(key)}:\s*(.+?)\s*$/, 1]&.strip
+  return unless value
+
+  if value.length >= 2 && %w[" '].include?(value[0]) && value[-1] == value[0]
+    value[1...-1]
+  else
+    value
+  end
 end
 
 def matching_link?(document, requirement)
@@ -324,7 +297,16 @@ end
 active_project_files = project_sources.filter_map do |relative, source|
   relative if front_matter_value(source, "is_active") == "true"
 end
-case_study_project_files = (active_project_files + PROMOTED_CASE_STUDY_PROJECTS).uniq.sort
+declared_case_study_files = project_sources.filter_map do |relative, source|
+  declared_standard = front_matter_value(source, "case_study_standard") == "true"
+  declared_review = !front_matter_value(source, "factual_review_status").to_s.empty?
+  relative if declared_standard || declared_review
+end
+case_study_project_files = (
+  active_project_files +
+  PROMOTED_CASE_STUDY_PROJECTS +
+  declared_case_study_files
+).uniq.sort
 case_study_project_files.each do |relative|
   source = project_sources.fetch(relative)
   unless front_matter_value(source, "case_study_standard") == "true"
@@ -341,38 +323,65 @@ case_study_project_files.each do |relative|
   unless front_matter_value(source, "last_reviewed").to_s.match?(/\A\d{4}-\d{2}-\d{2}\z/)
     add_error(errors, relative, "active or promoted project needs a YYYY-MM-DD last_reviewed date")
   end
-  headings = source.scan(/^##\s+(.+?)\s*$/).flatten.join(" ")
-  {
-    "challenge or need" => /(challenge|need|friction)/i,
-    "users, partners, or validation" => /(user|partner|validation|clinic)/i,
-    "approach or implementation" => /(approach|implementation|technology|workflow)/i,
-    "status or transition" => /(status|transition|adoption)/i,
-    "reusable lessons" => /(lesson|reuse)/i,
-    "status-appropriate next step" => /(become|bring|contribute|join|participate|reuse|test|use|validate)/i
-  }.each do |section, pattern|
-    add_error(errors, relative, "case study headings need #{section}") unless headings.match?(pattern)
-  end
   unless source.include?("data-analytics-event=")
-    add_error(errors, relative, "case study needs an instrumented next step")
+    add_error(errors, relative, "project page needs an instrumented next step")
   end
   status = front_matter_value(source, "factual_review_status")
-  unless %w[approved partially_approved pending].include?(status)
-    add_error(errors, relative, "factual_review_status must be pending, partially_approved, or approved")
+  unless %w[approved pending].include?(status)
+    add_error(errors, relative, "factual_review_status must be pending or approved")
+  end
+  required_approvals_value = front_matter_value(source, "factual_review_required_approvals").to_s
+  required_approvals = required_approvals_value.to_i if required_approvals_value.match?(/\A[1-9]\d*\z/)
+  unless required_approvals
+    add_error(errors, relative, "factual_review_required_approvals must be a positive integer")
+  end
+  if status == "pending" && front_matter_value(source, "content_owner").to_s.match?(/\bproject team\b/i)
+    add_error(errors, relative, "pending editorial draft must not attribute ownership to an unreviewed project team")
+  end
+  if REQUIRE_FACTUAL_APPROVAL && status != "approved"
+    add_error(errors, relative, "release requires factual_review_status: approved")
   end
   next unless status == "approved"
 
   reviewed_by = front_matter_value(source, "factual_reviewed_by")
   reviewed_on = front_matter_value(source, "factual_reviewed_on")
   evidence = front_matter_value(source, "factual_review_evidence")
-  if reviewed_by.to_s.empty?
-    add_error(errors, relative, "approved factual review needs factual_reviewed_by")
+  reviewers = reviewed_by.to_s.split(";").map(&:strip).reject(&:empty?)
+  if required_approvals && reviewers.length != required_approvals
+    add_error(
+      errors,
+      relative,
+      "approved factual review needs #{required_approvals} semicolon-separated factual_reviewed_by entries"
+    )
+  end
+  normalized_reviewers = reviewers.map { |reviewer| reviewer.downcase.gsub(/\s+/, " ") }
+  if normalized_reviewers.uniq.length != normalized_reviewers.length
+    add_error(errors, relative, "approved factual review needs distinct factual_reviewed_by entries")
   end
   unless reviewed_on.to_s.match?(/\A\d{4}-\d{2}-\d{2}\z/)
     add_error(errors, relative, "approved factual review needs a YYYY-MM-DD factual_reviewed_on date")
   end
-  unless secure_absolute_url?(evidence.to_s)
-    add_error(errors, relative, "approved factual review needs a secure factual_review_evidence URL")
+  evidence_reference = factual_review_evidence_reference(evidence.to_s)
+  unless evidence_reference
+    add_error(
+      errors,
+      relative,
+      "approved factual review evidence must link to a GitHub issue or pull-request comment in this repository"
+    )
+    next
   end
+  factual_review_evidence_errors(
+    evidence_reference,
+    relative,
+    reviewed_on,
+    reviewers
+  ).each do |message|
+    add_error(errors, relative, message)
+  end
+end
+case_study_routes = case_study_project_files.to_h do |relative|
+  route = "/projects/#{File.basename(relative, ".md")}.html"
+  [route, front_matter_value(project_sources.fetch(relative), "factual_review_status")]
 end
 
 Dir.mktmpdir("civictechdc-seo-") do |destination|
@@ -482,6 +491,22 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
     add_error(errors, relative, "stale /about-us/ metadata remains") if document.to_html.include?("/about-us/")
     add_error(errors, relative, "bare-domain internal URL remains") if document.to_html.include?("https://civictechdc.org")
 
+    if (review_status = case_study_routes[page_url])
+      review_markers = document.css("[data-factual-review-status]")
+      unless review_markers.length == 1
+        add_error(errors, relative, "expected one visible factual-review status marker")
+      end
+      if review_markers.one?
+        review_marker = review_markers.first
+        unless review_marker["data-factual-review-status"] == review_status
+          add_error(errors, relative, "visible factual-review status does not match front matter")
+        end
+        if normalized_text(review_marker).empty?
+          add_error(errors, relative, "visible factual-review status marker is empty")
+        end
+      end
+    end
+
     document.css("a[data-analytics-event]").each do |link|
       analytics_event = link["data-analytics-event"].to_s.strip
       analytics_location = link["data-analytics-location"].to_s.strip
@@ -496,23 +521,12 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
       add_error(errors, relative, "analytics event listener is missing")
     end
 
-    if (expectation = CONTENT_STRATEGY_EXPECTATIONS[page_url])
-      add_error(errors, relative, "strategy title is incorrect") unless title == expectation[:title]
-      if expectation[:description] && description != expectation[:description]
-        add_error(errors, relative, "strategy description is incorrect")
-      end
-      add_error(errors, relative, "strategy H1 is incorrect") unless h1 == expectation[:h1]
-      visible_text = normalized_text(document)
-      Array(expectation[:text]).each do |required_text|
-        unless visible_text.include?(required_text)
-          add_error(errors, relative, "missing strategy content: #{required_text.inspect}")
-        end
-      end
-      Array(expectation[:links]).each do |required_link|
+    if (required_links = ROUTE_LINK_EXPECTATIONS[page_url])
+      required_links.each do |required_link|
         next if matching_link?(document, required_link)
 
         details = required_link.map { |key, value| "#{key}=#{value.inspect}" }.join(", ")
-        add_error(errors, relative, "missing strategy link: #{details}")
+        add_error(errors, relative, "missing required route link: #{details}")
       end
     end
 

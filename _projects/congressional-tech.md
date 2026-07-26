@@ -2,65 +2,55 @@
 layout: project
 is_active: true
 title: Congressional Tech
-seo_title: Open-Source Tools for Congressional Work
+seo_title: "Congressional Tech: Open-Source Staff Tools"
 image: project_thumbnails/congress.png
 image_alt_text: Illustration of the U.S. Capitol representing technology for congressional staff
 github_link: https://github.com/civictechdc/congressional-tech
 slack_channel: CH57ZSMK8
-description: An active portfolio of open-source prototypes exploring congressional data access, staff workflows, and public understanding of legislative activity.
-seo_description: See how Congressional Tech is exploring open-source tools for congressional data, staff workflows, and public legislative information.
-content_owner: Congressional Tech project team
-last_reviewed: 2026-07-24
+description: Building practical tools that reduce technological roadblocks for congressional staff and make legislative activity easier for the public to understand.
+seo_description: Congressional Tech builds open-source tools for congressional staff workflows, legislative data access, and public understanding of Congress.
+content_owner: Civic Tech DC organizing team
+last_reviewed: 2026-07-26
 factual_review_status: pending
+factual_review_required_approvals: 2
 case_study_standard: true
 ---
 
-Congressional Tech is an active portfolio of open-source prototypes and proposals about congressional data, staff workflows, and public access to legislative information. It is not an official House, Senate, or federal-government service. The project is still determining which needs have committed users and which prototypes merit sustained development.
+Congressional Tech builds practical tools for congressional staff while making legislative activity easier for constituents and the public to understand. The work spans small utilities, data projects, and proposals, but the mission remains concrete: remove common technological roadblocks in and around Congress.
 
-## Challenge: public institutions depend on fragmented workflows
+## Requests from people who work with Congress
 
-Congressional staff and people following Congress often work across public APIs, committee pages, videos, spreadsheets, calendars, documents, and internal processes. Even when information is public, inconsistent formats and missing links can make it difficult to discover, reuse, or connect.
+The project began with needs gathered from congressional staff during the Annual Congressional Hackathon. The American Governance Institute organized those requests and brought them to Civic Tech DC. The current [Congressional Tech repository](https://github.com/civictechdc/congressional-tech) describes the work as a continuing partnership between the two organizations.
 
-The challenge is broader than building one website. A useful project must identify a specific staff or public workflow, confirm that the underlying data is reliable, understand institutional constraints, and find someone who can test and own the result.
+The project has also sought opportunities to work with technical teams in and around Congress, including the House Digital Service. This page does not treat that outreach as an active partnership or official relationship. The project is not a House, Senate, or federal-government service.
 
-## Staff, public users, and validation
+## What the portfolio includes
 
-The project record says initial needs were collected from congressional staff during an Annual Congressional Hackathon and organized with the American Governance Institute. That history provides a starting set of real workflow questions, but the current role of that organization and the staff validation behind each proposed tool still require factual review.
+Congressional staff and people following Congress work across public APIs, committee pages, videos, spreadsheets, calendars, and documents. Congressional Tech organizes proposals and prototypes around those workflows.
 
-Potential users include congressional staff, legislative-data practitioners, journalists, researchers, civic organizations, and constituents. Those audiences do not necessarily need the same product. A staff utility may depend on a private workflow, while a public transparency tool must explain its sources and limitations.
+Current repository work includes:
 
-## Approach and Civic Tech DC's role
-
-Civic Tech DC volunteers contribute user discovery, web and data engineering, public-API work, prototyping, documentation, and project coordination. The [public repository](https://github.com/civictechdc/congressional-tech) organizes several lines of work, including:
-
-- committee and hearing metadata;
-- congressional committee YouTube-video collection and event matching;
-- structured-data and deadline concepts;
+- tools that connect congressional committee videos with hearing and event records;
+- committee and hearing metadata processing;
 - an inflation calculator for Google Sheets;
-- a web interface that groups active prototypes and proposed projects.
+- structured-data and deadline concepts;
+- a public catalog of project proposals and working tools.
 
-The repository includes a web application and exported prototype assets. The portfolio model is useful for discovery, but a proposal or prototype in the repository should not be mistaken for a validated or deployed product.
+Two proposals are described in the repository as working tools: the committee YouTube coverage dashboard and the Google Sheets inflation calculator. Other entries remain proposals or prototypes.
 
-## Current status and known limits
+## Current status
 
-Congressional Tech is active and its repository contains current code, data-processing packages, a web application, and a larger proposal backlog.
+Congressional Tech is active, DMV-based, and open for national reuse. Its repository contains current code, data-processing packages, a public website, and a larger proposal backlog.
 
-- The page does not claim that Congress, the House, the Senate, or any congressional office endorses the project.
-- Different prototypes have different levels of completeness; the repository is the source for current setup and status.
-- Public legislative sources can change, omit identifiers, or disagree, so outputs need provenance and quality checks.
-- The project has not published a verified count of staff users, time saved, constituent use, or institutional adoption.
-- The current partner relationship, project ownership, and priority prototypes remain pending factual review.
+- Different tools have different levels of completeness and user validation.
+- Public legislative sources can change, omit identifiers, or disagree.
+- The project does not claim endorsement by Congress or any congressional office.
+- It has not published verified measures of staff adoption, time saved, constituent use, or institutional outcomes.
 
-## Reusable lessons
+Each proposed tool needs a specific workflow, reliable source data, people who will test it, and someone prepared to maintain or retire it.
 
-1. **Start with one institutional workflow.** “Modernize Congress” is too broad to validate or staff as a volunteer project.
-2. **Connect records with provenance.** A useful link between a video, hearing, committee, or document should show its source and matching logic.
-3. **Distinguish prototypes from services.** A public demo can test a need without implying official status or operational support.
-4. **Expect institutional constraints.** Authentication, procurement, records policy, accessibility, security, and staff time may shape what can be used.
-5. **Find an accountable owner.** A technical prototype needs users who will test it and someone who can maintain or retire it.
+## Join Congressional Tech
 
-## Validate a workflow or join the work
+Congressional staff, legislative-data practitioners, journalists, researchers, and civic organizations can bring a workflow to the team. Volunteers can help with web scraping, data modeling, public APIs, browser extensions, Google application integrations, documentation, user research, and project coordination.
 
-Congressional staff, legislative-data practitioners, journalists, researchers, and civic organizations can help the team choose and test a concrete workflow. Developers and data contributors can inspect the GitHub repository or use the Slack link above.
-
-Have a related public-information or institutional-workflow problem? <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="congressional_tech_cta">Bring the need to Civic Tech DC</a>. To meet the community first, <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="congressional_tech_cta">join a Project Night</a>.
+Use the GitHub and Slack links above to join the work. You can also <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="congressional_tech_cta">meet the community at a Project Night</a> or <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="congressional_tech_cta">bring Civic Tech DC a related legislative workflow</a>.

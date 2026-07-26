@@ -1,16 +1,16 @@
 # Civic Tech DC Content and SEO Strategy
 
 **Status:** Implemented in the repository; external activation and review pending<br>
-**Last updated:** July 24, 2026<br>
+**Last updated:** July 26, 2026<br>
 **Primary outcome:** More qualified public-interest project conversations, validating partners, and engaged volunteers
 
 ## Implementation Record
 
-The repository implementation was completed and rendered on July 24, 2026.
+The repository implementation was revised and rendered on July 26, 2026.
 
 | Scope                                      | Status                  | Evidence                                                                                                                                                                                               |
 | ------------------------------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Homepage positioning and pathways          | Repository-complete     | Homepage preserves the `Civic Tech DC` title, names the full audience and operating model, and links distinctly to Pitch, Projects, Events, and Partners.                                              |
+| Homepage positioning and pathways          | Repository-complete     | Homepage preserves the `Civic Tech DC` title and community-first identity, names the full audience and operating model, and links distinctly to Pitch, Projects, Events, and Partners.                 |
 | Pitch owns project intake                  | Repository-complete     | Navigation now says **Start a project**; Pitch covers both intake pathways, support, fit, partner duties, capacity, process, examples, and FAQs.                                                       |
 | Partners owns relationships and trust      | Repository-complete     | Partners distinguishes problem owners, validating users, collaborators, hosts, connectors, and supporters; its project CTA routes to Pitch.                                                            |
 | Projects evidence hub                      | Repository-complete     | Projects groups nonprofit data, legal access, journalism/research, and community-data examples while retaining honest active and past labels.                                                          |
@@ -25,6 +25,13 @@ The repository implementation was completed and rendered on July 24, 2026.
 | Partner and repository distribution        | External action pending | Maintainers and partners should add canonical project links where appropriate after factual approval.                                                                                                  |
 
 Repository validation does not substitute for the three pending external controls: publishing GTM tags, recording post-deployment data, and obtaining factual approval from named partners and active project owners.
+
+The project-copy pull request remains a draft while factual approvals are pending.
+Ready-for-review CI and production deployment both enforce `factual_review_status:
+approved`, so pending descriptions cannot be released as indexable search or social copy.
+The deployment workflow accepts pushes to `main` only. For approved pages, the release
+check also loads the recorded GitHub approval comment and matches its project, date, and
+distinct reviewers instead of trusting a status field or URL alone.
 
 ## Decision Summary
 
@@ -62,7 +69,9 @@ Civic Tech DC publishes infrequently. Its SEO plan must work without an editoria
 Use this order of operations:
 
 1. **Core pages own stable intent.** Homepage, Pitch, Partners, Projects, About, Events, and Support should answer the durable questions attached to their purpose.
-2. **Project pages own problem and use-case intent.** They should explain the audience, problem, validation, work, result, lessons, and next step.
+2. **Project pages own project and use-case intent.** They should preserve the project's
+   mission and history while explaining its audience, current work, evidence, limits, and
+   next step.
 3. **Page sections own supporting questions.** Add concise FAQs, process explanations, examples, and decision guidance to the page that already owns the intent.
 4. **Blog posts remain optional.** Use them for event recaps, announcements, or exceptional stories. Link them to the durable core or project page where essential information lives.
 
@@ -241,7 +250,7 @@ Keep the homepage title as `Civic Tech DC`. It is concise, aligns with the entit
 
 Recommended description:
 
-`Civic Tech DC helps nonprofits, legal clinics, journalists, academics, and community members validate ideas and build open-source public-interest technology.`
+`Join Civic Tech DC, a nonprofit volunteer community building open-source technology for civic engagement, democracy, and public-interest work in the DMV.`
 
 ### Recommended Projects Metadata
 
@@ -384,7 +393,28 @@ Treat these as questions to answer inside Pitch or the relevant project page, no
 
 ## Project Page Content Standard
 
-Every active project and every project promoted as a case study should answer:
+Project pages belong to their project communities. Search optimization should make each
+project easier to find and understand without replacing its mission, history, language,
+people, or participation model.
+
+Follow these preservation rules:
+
+1. Treat the existing project-owned description, current project README, and direct
+   project-lead input as the authorities for purpose and scope.
+2. Preserve the project's distinctive opening, origin story, named partners, intended
+   community, and concrete contribution needs when they remain current and appropriate
+   to publish.
+3. Add current implementation details, evidence, and limitations as supporting sections.
+   Do not let those sections redefine the mission.
+4. Put audience and search terms in `seo_title`, `seo_description`, headings, and clear
+   explanatory copy. Do not turn the project itself into a generic service example.
+5. Never present central editorial work as project-team approval. Show factual-review
+   status publicly until the required reviewers approve the page.
+6. Prefer project-specific headings and narrative order. A shared quality checklist is
+   not a shared voice or mandatory page template.
+
+Every active project and every project promoted as a case study should still make it
+possible for a reader to answer:
 
 1. **Who owns or experiences the problem?** Name the partner, users, or community where permission allows.
 2. **What was happening before?** Describe the workflow, access barrier, fragmented data, cost, or unmet need.
@@ -395,7 +425,9 @@ Every active project and every project promoted as a case study should answer:
 7. **What can another organization learn or reuse?** Make the page useful beyond promotion.
 8. **How can someone participate?** Use a status-appropriate CTA.
 
-Use a Challenge → Partners and users → Validation → Approach → Work → Result → Lessons → CTA structure. Do not invent impact measures when only outputs or anecdotes are known.
+Answer these questions in the order and language that suit the project. Do not require
+literal “challenge,” “validation,” “known limits,” or “reusable lessons” headings. Do not
+invent impact measures when only outputs or anecdotes are known.
 
 ## Priority Page Backlog
 
@@ -405,7 +437,7 @@ Scores use the content-strategy weighting: audience impact 40%, content/mission 
 | -------------------------------------------------------------------------------- | -----: | --: | -----: | --------: | -------------: | ------------------------------ |
 | Clarify Homepage, Pitch, and Partners ownership and copy                         |     10 |  10 |      8 |         9 |        **9.5** | Core pages                     |
 | Expand Pitch to answer validation, fit, support, and partner questions           |      9 |  10 |      7 |         8 |        **8.8** | Pitch sections and FAQ         |
-| Standardize project pages and upgrade the strongest proof                        |      9 |  10 |      7 |         7 |        **8.7** | Project collection and layout  |
+| Strengthen project pages without standardizing project voice                     |      9 |  10 |      7 |         7 |        **8.7** | Project collection and layout  |
 | Explain nonprofit and volunteer expectations on the pages they already visit     |      9 |   9 |      8 |         8 |        **8.7** | Pitch, Projects, Events        |
 | Turn DC Reentry Housing into the nonprofit data-platform proof page              |      8 |  10 |      8 |         8 |        **8.6** | Existing project page          |
 | Turn Daria into the open-source nonprofit case-management proof page             |      8 |   9 |      8 |         8 |        **8.3** | Existing project page          |
@@ -526,7 +558,7 @@ This cadence assumes volunteer capacity and favors one substantial, evidence-bac
 
 ### Days 31–60: Strengthen Proof
 
-- Apply the project-page standard to DC Reentry Housing, Daria, Clean Slate, and one journalist/research project.
+- Apply the project-page quality checklist to DC Reentry Housing, Daria, Clean Slate, and one journalist/research project while preserving each project's own voice.
 - Substantially upgrade the DC Reentry Housing and Daria pages for their assigned keyword clusters.
 - Add user validation, partner responsibilities, and volunteer-project expectations to Pitch instead of creating separate articles.
 - Ask involved partners to review, share, and link to accurate project pages.
@@ -597,7 +629,8 @@ A strategy milestone is complete when:
 
 - Pitch and Partners have distinct purposes and CTAs.
 - The homepage explains the audience and operating model without losing the Civic Tech DC brand focus.
-- Every promoted project follows the evidence-based case-study structure or explicitly records what is still unknown.
+- Every promoted project meets the evidence-based project-page quality standard and
+  explicitly records what is still unknown.
 - Every priority keyword cluster has one durable page owner.
 - No priority keyword cluster depends on recurring blog publishing.
 - Priority pages have unique, length-compliant metadata and useful internal links.

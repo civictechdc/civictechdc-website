@@ -2,74 +2,52 @@
 layout: project
 is_active: false
 title: Clean Slate
-seo_title: "Legal Clinic Technology: Clean Slate"
+seo_title: "Clean Slate DC: Marijuana Record Relief"
 image: project_thumbnails/clean-slate.jpg
 image_alt_text: Clean Slate DC logo
 github_link: https://github.com/civictechdc/clean-slate
-description: A past legal-access project that paired a DC legal clinic's expertise and attorney review with a limited tool for understanding record-sealing eligibility.
-seo_description: Clean Slate paired legal-clinic expertise and attorney review with a limited DC record-sealing eligibility tool, then transitioned to another nonprofit.
+description: A past legal-access project that helped DC residents explore whether marijuana-related records might qualify for sealing or expungement.
+seo_description: Clean Slate helped DC residents explore whether past marijuana-related records might qualify for sealing or expungement, with lawyers retaining review.
 content_owner: Civic Tech DC project archive
-last_reviewed: 2026-07-24
+last_reviewed: 2026-07-26
 factual_review_status: pending
+factual_review_required_approvals: 2
 case_study_standard: true
 ---
 
-Clean Slate was a 2015–2017 legal-access project for people trying to understand whether a DC criminal record might qualify for sealing. Civic Tech DC volunteers worked with Students in Court DC (now [Rising for Justice](https://www.risingforjustice.org/)) to turn expert legal logic into a guided triage tool while keeping lawyers in the review process.
+Clean Slate was a 2015–2017 legal-access project that helped DC residents explore whether past marijuana-related criminal records might qualify for sealing or expungement. It grew from the policy changes surrounding marijuana decriminalization and legalization in the District, when many people still carried records from past marijuana-related offenses.
 
-Clean Slate is no longer active, and its historical logic must not be used as current legal advice.
+The historical tool is inactive. Its legal logic must not be used as current legal advice.
 
-## Legal need
+## A timely response to changing marijuana laws
 
-Record-sealing rules are difficult for a nonlawyer to interpret. The result can depend on the offense, case status, dates, waiting periods, pending matters, and changes in law. Legal clinics also needed to answer initial eligibility questions efficiently, route possible clients, train attorneys, and help people understand next steps.
+Marijuana record-sealing and expungement rules are difficult to interpret without legal training. Eligibility can depend on the offense, case status, dates, waiting periods, pending matters, and changes in law. A person seeking a clean slate needed a clearer way to understand whether to pursue legal help.
 
-The project began after marijuana decriminalization and legalization changed the local policy context. A timely digital guide could make the first step more understandable, but incorrect legal logic could also mislead someone about an important right.
+The project began at a local hackathon and later moved into Code for DC. Civic Tech DC volunteers worked with Students in Court DC, now [Rising for Justice](https://www.risingforjustice.org/), to turn legal expertise and a paper-based process into an accessible guided tool.
 
-## Clinic role and user validation
+## How the tool supported a legal clinic
 
-Students in Court DC supplied the legal-services context and record-sealing expertise. The [archived project repository](https://github.com/civictechdc/clean-slate) records needs from legal clinics, including:
+The JavaScript and React application asked a series of questions and returned a preliminary result: likely eligible, possibly eligible after a waiting period, or not currently eligible. The archived repository also records clinic needs such as intake referrals, attorney training, forms, and explanations of eligibility timelines.
 
-- quickly checking whether a client's record might be eligible for sealing;
-- receiving and routing intake referrals;
-- helping new attorneys learn the process;
-- providing forms and step-by-step information;
-- explaining the timeline for possible eligibility.
-
-The clinic relationship gave the volunteer team access to the people who understood both the law and the intake workflow. Eligibility rules were represented as a series of questions and answer paths that legal practitioners could inspect and revise.
-
-## Safeguards and technology's limited role
-
-The JavaScript and React application guided a user through questions and returned a preliminary result such as likely eligible, possibly eligible after a waiting period, or not currently eligible. It was designed as triage and education, not as a lawyer.
-
-The distinction mattered:
+Clean Slate supported triage and education. It did not replace a lawyer:
 
 - legal experts defined and reviewed the decision logic;
-- the interface explained terms and next steps rather than issuing a court determination;
-- lawyers remained responsible for reviewing individual cases;
-- the project had to change when the law changed;
-- a software answer could not account for every fact or replace legal counsel.
+- the interface explained terms and next steps;
+- attorneys remained responsible for individual cases;
+- the project had to change when the law changed.
 
-That limited role is a useful model for pro bono legal technology. Technology can organize questions, reduce repetition, and improve access to information while accountable legal professionals retain judgment.
+That boundary mattered. An outdated or incorrect legal answer could prevent someone from pursuing an important right.
 
-## Transition and current status
+## Transition and archive
 
-The original Civic Tech DC repository is archived and was last active in 2017. In March 2016, further development and deployment moved to [Mission Launch's Clean Slate repository](https://github.com/MissionLaunch/clean-slate). That repository also reflects a historical version of the project rather than a current legal service.
+The Civic Tech DC repository is archived. In March 2016, further development and deployment moved to [Mission Launch's Clean Slate repository](https://github.com/MissionLaunch/clean-slate). Both repositories document a historical project, not a current legal service.
 
-The page does not claim a verified number of users, completed cases, or legal outcomes because those measures are not available in the project record reviewed here. Its value as evidence is the collaboration model, the safeguard around human review, and the explicit transition, not an invented impact figure.
+The available record does not establish a verified number of users, sealed or expunged records, or legal outcomes. Clean Slate's documented value lies in its response to a specific policy change, its partnership with legal practitioners, and its decision to keep attorneys in the review process.
 
-For current help with a DC legal matter, use a qualified legal-services provider and current official information. [Rising for Justice](https://www.risingforjustice.org/) is the successor organization to the project's original clinic partner.
+For current help with a DC legal matter, consult a qualified legal-services provider and current official information. [Rising for Justice](https://www.risingforjustice.org/) is the successor organization to the original clinic partner.
 
-## Lessons for future legal-access projects
+## Bring a current legal-access problem
 
-1. **A legal clinic must shape the product.** Volunteer developers cannot infer legal rules, intake practice, or the consequences of an incorrect answer.
-2. **Define the boundary of automation.** Triage and education can support a professional workflow without pretending to replace legal judgment.
-3. **Make policy logic reviewable.** Structured questions and answer paths help practitioners inspect what the software will say.
-4. **Plan for legal change.** A correct tool can become harmful when law, forms, or procedure changes.
-5. **Archive responsibly.** Past legal tools should state that they are inactive and direct people to current, qualified help.
+Legal clinics, pro bono practitioners, policy advocates, and community members can <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="clean_slate_project_cta">bring a current legal-access problem to Civic Tech DC</a>. Start with the people affected, the legal workflow, and the safeguards rather than assuming the answer is software.
 
-## Bring a legal-access problem or validate one
-
-Legal clinics, pro bono practitioners, policy advocates, and community members can <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="clean_slate_project_cta">bring a current legal-access problem to Civic Tech DC</a>. You do not need to prescribe a tool; start with the people affected, the workflow, the safeguards, and the evidence.
-
-If you can help a project understand legal practice or affected users, [see how validating and subject-matter partners work with Civic Tech DC]({{ site.baseurl }}/partners).
-
-Want to help with current public-interest work instead? <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="clean_slate_project_cta">Meet active teams at a Project Night</a> or <a href="{{ site.baseurl }}/slack" data-analytics-event="slack_discovery_click" data-analytics-location="clean_slate_project_cta">join the Civic Tech DC Slack</a>.
+You can also [learn how subject-matter partners work with Civic Tech DC]({{ site.baseurl }}/partners) or <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="clean_slate_project_cta">meet active teams at a Project Night</a>.

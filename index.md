@@ -1,26 +1,26 @@
 ---
 layout: hero-image-with-supporters-footer
 title: Civic Tech DC
-description: Civic Tech DC helps nonprofits, legal clinics, journalists, academics, and community members validate ideas and build open-source public-interest technology.
+description: Join Civic Tech DC, a nonprofit volunteer community building open-source technology for civic engagement, democracy, and public-interest work in the DMV.
 hero-title: Civic Tech DC
-hero-subtitle: A DMV-rooted nonprofit volunteer community helping nonprofits, legal clinics, journalists, academics, community members, and other public-interest partners validate ideas and build useful open-source technology.
+hero-subtitle: Founded in 2012, Civic Tech DC is a non-partisan 501(c)(3) nonprofit community of volunteers using open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives in the DMV and nationally.
 hero-image: hero-image-homepage.jpg
 hero-image-alt: Civic Tech DC volunteers collaborating on laptops around tables at a project night
-hero-cta-label: Start a project
-hero-cta-link: /pitch
-hero-cta-event: project_inquiry_click
+hero-cta-label: Join an event
+hero-cta-link: /events
+hero-cta-event: event_discovery_click
 hero-cta-location: homepage_hero
-hero-cta2-label: Join an event
-hero-cta2-link: /events
-hero-cta2-event: event_discovery_click
+hero-cta2-label: Start a project
+hero-cta2-link: /pitch
+hero-cta2-event: project_inquiry_click
 hero-cta2-location: homepage_hero
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-24
 ---
 
-## Turn a public-interest problem into an open-source project
+## Build civic technology with your community
 
-People come to Civic Tech DC with a problem, an idea, a dataset, or an early build. We help find the people who experience the problem, validate what would be useful, and scope feasible work. When a project is a fit and a volunteer team can form, we build and iterate in the open. Selected projects receive no-cost, volunteer-led technical and data support.
+Civic Tech DC brings volunteers together with nonprofits, legal clinics, journalists, academics, community groups, residents, and other public-interest partners. Some people arrive with a problem, idea, dataset, or early build. Others bring technical, data, design, research, policy, or project skills. Together, we validate what would be useful, scope feasible work, and build in the open when a project and volunteer team can form. Selected projects receive no-cost, volunteer-led technical and data support.
 
 <ul class="ctdc-partner-paths usa-list usa-list--unstyled">
   <li class="ctdc-partner-path">
@@ -72,7 +72,7 @@ People come to Civic Tech DC with a problem, an idea, a dataset, or an early bui
   </li>
 </ul>
 
-## How the model works
+## How the community builds projects
 
 1. **Bring the need.** Someone shares a public-interest problem, idea, workflow, dataset, or early build.
 2. **Validate it with real people.** We look for users, partner organizations, and subject-matter expertise instead of assuming a solution.
@@ -83,9 +83,9 @@ Not every proposal becomes a Civic Tech DC project, and volunteer support is not
 
 {% include components/meetup-events.html %}
 
-## Featured project case studies
+## Projects in practice
 
-Start with project pages that identify the users and problem, explain the work and validation, distinguish outputs from outcomes, state what remains unknown, and offer a responsible next step.
+No two Civic Tech DC projects are the same. These pages show how project communities define a need, shape the work, document what exists, and invite people to help.
 
 <ul>
   <li>
@@ -95,7 +95,8 @@ Start with project pages that identify the users and problem, explain the work a
       data-analytics-location="homepage_case_studies"
       >DC Reentry Housing</a
     >
-    covers a coalition data-platform project that is still in discovery.
+    covers an Alliance-led citywide data platform whose first release is being defined
+    with returning citizens and housing providers.
   </li>
   <li>
     <a
@@ -104,8 +105,8 @@ Start with project pages that identify the users and problem, explain the work a
       data-analytics-location="homepage_case_studies"
       >Daria</a
     >
-    traces an open-source case-management system from nonprofit workflow to
-    independent maintenance.
+    traces abortion-fund case-management software from the DC Abortion Fund's
+    volunteer workflow to independent maintenance.
   </li>
   <li>
     <a
@@ -114,7 +115,8 @@ Start with project pages that identify the users and problem, explain the work a
       data-analytics-location="homepage_case_studies"
       >Clean Slate</a
     >
-    shows the boundaries of automation in a historical legal-clinic project.
+    shows how a legal-clinic partnership responded to changing marijuana laws while
+    keeping lawyers in the review process.
   </li>
   <li>
     <a
@@ -123,16 +125,16 @@ Start with project pages that identify the users and problem, explain the work a
       data-analytics-location="homepage_case_studies"
       >Data and Democracy</a
     >
-    documents reproducible public-data work for researchers, journalists, and
-    advocates.
+    makes election data more usable for journalists, advocates, administrators,
+    researchers, and oversight groups.
   </li>
 </ul>
 
 [Explore all projects and find a way to participate]({{ site.baseurl }}/projects).
 
-## Project directory
+## Explore current and past work
 
-Every active project page now records its users, validation, work, status, limits, lessons, and next step. Past-project entries form a selected archive; the featured case studies above are the strongest historical evidence pages.
+Each project has its own mission, history, people, and way to participate. Active projects welcome current contributors; past projects preserve code, decisions, and lessons that other communities may be able to reuse.
 
 ### Active projects
 

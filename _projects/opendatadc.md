@@ -2,60 +2,51 @@
 layout: project
 is_active: false
 title: Open Data DC
-seo_title: "Community Open Data Portal: Open Data DC"
+seo_title: "Open Data DC: Community Data Portal"
 image: project_thumbnails/opendatadc.png
 image_alt_text: Open Data DC public data portal interface
 github_link: https://github.com/civictechdc/opendatadc
-description: A past community-run CKAN portal that collected official and community-contributed DC datasets for research, visualization, learning, and civic projects.
-seo_description: Open Data DC was a community-run CKAN portal that collected official and community-contributed DC datasets for research and civic projects.
+description: A community-run data portal for and by the people of Washington, DC, built for research, visualization, learning, and civic projects.
+seo_description: Open Data DC was a community-run CKAN portal with official and community-contributed datasets for research and civic projects.
 content_owner: Civic Tech DC project archive
-last_reviewed: 2026-07-24
+last_reviewed: 2026-07-26
 factual_review_status: pending
+factual_review_required_approvals: 1
 case_study_standard: true
 ---
 
-Open Data DC (originally Data Code for DC) was a community-run data portal for research, visualization, learning, and civic technology in the DC region. It used the open-source CKAN platform and was separate from the District government's official open-data service. The Civic Tech DC repository is archived, and the original `data.codefordc.org` domain no longer resolves.
+Open Data DC, originally Data Code for DC, was a community-run data portal for and by the people of Washington, DC. It collected data for research, visualization, learning, and civic projects while remaining separate from the District government's official open-data service.
 
-## Challenge: useful local data came from more than one catalog
+The portal is no longer active. Its archived repository documents the project, but the original `data.codefordc.org` domain no longer resolves.
 
-The DC government maintained an official municipal catalog, while civic projects also used federal, nonprofit, research, and community-contributed data. People learning data analysis or starting a project needed a place to find and share those sources.
+## A community catalog alongside official data
 
-A community catalog could be broader than an official portal, but it also needed clear provenance, maintenance, reliable hosting, and a visible distinction between authoritative government data and community uploads.
+The DC government maintained the authoritative municipal catalog. Civic projects also used federal, nonprofit, research, and community-contributed datasets. Open Data DC created a place where volunteers could collect and share those sources.
 
-## Users, stakeholders, and validation
+The portal ran on the open-source CKAN platform and reportedly held more than 500 datasets. It served people conducting research, making visualizations, learning data-analysis skills, or building civic projects.
 
-The archived project documentation describes intended users who wanted to conduct research, make visualizations, learn data-analysis skills, or build civic projects. It also describes three volunteer workstreams: portal development, data analysis, and finding stakeholders who could use the data.
+The project clearly distinguished community-contributed data from official District data. That distinction remains important: a broader catalog can help people find useful sources, but users still need to know who published each dataset, when it was updated, and which source can correct it.
 
-The historical website record reports that the portal held more than 500 datasets. The reviewed archive does not preserve a verified user count, dataset-quality assessment, stakeholder list, or measured project outcome. Named users and partner approvals are therefore unknown.
+## Building a community around the data
 
-## Approach and Civic Tech DC's role
+Civic Tech DC volunteers worked in three connected areas:
 
-Civic Tech DC volunteers operated a CKAN catalog, contributed and organized datasets, improved the interface, supported analysis, and tried to connect data with new public-interest projects.
+- improving the CKAN portal and its interface;
+- analyzing and visualizing datasets;
+- finding community stakeholders and project teams that could use the data.
 
-The [archived repository](https://github.com/civictechdc/opendatadc) contains the portal code and historical documentation. The project explicitly distinguished its community-run catalog from the [current official DC Open Data portal](https://opendata.dc.gov/), which remains the appropriate source for current authoritative District data.
+That final work reflected a core Code for DC principle: build with stakeholders, not merely for them. The portal aimed to seed public-interest projects, not only accumulate datasets.
 
-## Current status and known limits
+## Archive and current sources
 
-Open Data DC is a **past project**, not a current data service.
+The [Open Data DC repository](https://github.com/civictechdc/opendatadc) is archived and last received substantive work in 2020. The available record does not preserve a verified user count, complete dataset inventory, downstream adoption measure, or public outcome.
 
-- The Civic Tech DC repository is archived and its last substantive push was in 2020.
-- The original project domain does not resolve as of July 2026.
-- Historical datasets may be incomplete, outdated, unavailable, or governed by source-specific terms.
-- The page does not claim a preserved dataset inventory, verified usage, downstream adoption, or public outcome.
-- Current data seekers should use maintained primary sources and verify provenance and update dates.
+Historical datasets may now be unavailable, outdated, or governed by source-specific terms. For current authoritative District data, use the maintained [DC Open Data portal](https://opendata.dc.gov/) and verify the responsible agency, update date, and license.
 
-Its value as a case study is the community-catalog model and the maintenance lesson, not a claim that the historical portal remains usable.
-
-## Reusable lessons
-
-1. **Distinguish official and community data.** Users should know which source is authoritative and who can correct it.
-2. **Catalogs need stewardship.** Metadata, links, licenses, update dates, and ownership require continuing work.
-3. **Connect datasets to real questions.** A large inventory is less useful than maintained data tied to a validated need.
-4. **Preserve provenance and snapshots.** An archived interface is not enough if the dataset history disappears.
-5. **Plan retirement.** A data portal should state when it is no longer maintained and direct people to current sources.
+Open Data DC's history shows that community catalogs need continuing stewardship: maintained metadata, working links, clear provenance, stable hosting, and a retirement plan.
 
 ## Bring a current community-data problem
 
-For current District data, start with the official DC Open Data portal and the agency responsible for the dataset. If a nonprofit, research group, newsroom, or community has a different data-access or catalog problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="open_data_dc_cta">bring the need to Civic Tech DC</a>.
+If a nonprofit, research group, newsroom, or community has a current data-access or catalog problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="open_data_dc_cta">bring the need to Civic Tech DC</a>.
 
-Want to help with active public-data work? <a href="{{ site.baseurl }}/projects/data-and-democracy.html" data-analytics-event="project_discovery_click" data-analytics-location="open_data_dc_cta">Explore Data and Democracy</a> or <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="open_data_dc_cta">join a Project Night</a>.
+To help with active public-data work, <a href="{{ site.baseurl }}/projects/data-and-democracy.html" data-analytics-event="project_discovery_click" data-analytics-location="open_data_dc_cta">explore Data and Democracy</a> or <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="open_data_dc_cta">join a Project Night</a>.

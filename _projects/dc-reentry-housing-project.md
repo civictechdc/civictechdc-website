@@ -2,78 +2,65 @@
 layout: project
 is_active: true
 title: DC Reentry Housing Project
-seo_title: Nonprofit Data Platform for DC Reentry Housing
+seo_title: DC Reentry Housing Alliance Data Platform
 image: project_thumbnails/dc-reentry-housing-alliance.jpg
 image_alt_text: DC Reentry Housing Alliance logo
-description: A Civic Tech DC project working with the DC Reentry Housing Alliance to define a shared data platform for housing availability, eligibility, and coalition measurement.
-seo_description: See how Civic Tech DC is validating a shared data platform for reentry housing providers, eligibility, availability, and coalition measurement.
-content_owner: DC Reentry Housing project team
-last_reviewed: 2026-07-24
+description: Building a citywide data platform with the DC Reentry Housing Alliance to connect housing availability, eligibility, and shared outcomes across the coalition.
+seo_description: Civic Tech DC and the DC Reentry Housing Alliance are building a shared data platform for housing availability, eligibility, and coalition outcomes.
+content_owner: Civic Tech DC organizing team
+last_reviewed: 2026-07-26
 factual_review_status: pending
+factual_review_required_approvals: 2
 case_study_standard: true
 ---
 
-The DC Reentry Housing Alliance wants a clearer, shared view of housing options and outcomes across organizations that support people returning from incarceration. Civic Tech DC is helping the Alliance explore the data definitions, workflows, and technical scope for that platform. The project is active, but it is not yet a public, real-time service and does not yet have measured outcomes.
+Civic Tech DC is working with the DC Reentry Housing Alliance to build a citywide reentry-housing data platform. The goal is to give the coalition a shared, current picture of housing availability, eligibility, and outcomes across the District.
 
-## Challenge: important data is scattered
+The platform is not yet a public production service. The team is defining the data and first release with the Alliance before making claims about real-time coverage or measurable housing outcomes.
 
-Housing providers and coalition members may track available units, eligibility rules, referrals, and outcomes in different places and formats. That fragmentation makes it harder to answer practical questions across the coalition, compare definitions, or decide what should be measured together.
+## Why the coalition needs shared data
 
-The technical challenge is not simply to put spreadsheets into a dashboard. The coalition first needs shared definitions, appropriate access rules, a sustainable data-entry or integration workflow, and agreement about which questions the platform should answer.
+People returning from incarceration face major barriers to stable housing. The DC Reentry Housing Alliance brings together returning citizens, housing providers, and policy stakeholders working to end reentry homelessness and expand access to permanent supportive housing.
 
-## Partner and intended users
+Coalition members may track available units, eligibility rules, referrals, and outcomes in different places and formats. That makes it difficult to coordinate services, compare definitions, or understand progress across the city.
 
-The **DC Reentry Housing Alliance** is the problem owner and subject-matter partner. It brings together people with lived experience, housing providers, and policy stakeholders working to address reentry homelessness in the District.
+## The platform the Alliance wants to build
 
-The intended users include coalition members coordinating housing work and people responsible for program, referral, and policy decisions. Direct user roles and access levels still need to be confirmed as part of discovery; the page does not assume that every stakeholder will use the same interface or see the same data.
+The working vision includes:
 
-## Validation before development
+- a citywide view of available housing and eligibility;
+- shared measurement across participating organizations;
+- a common data source for providers, policymakers, and returning citizens;
+- maps or other visualizations when geography helps answer a real question;
+- documentation and workflows the Alliance can maintain.
 
-The current concept comes from the Alliance's need to understand housing availability, eligibility, and shared outcomes across participating organizations. The project team is using discovery to test:
+“Real time” describes the desired usefulness of the data, not the current product. The update schedule must match how providers work and how often they can keep the information accurate.
 
-- which decisions coalition members need the data to support;
-- which terms and outcome measures can be defined consistently;
-- what data already exists, who owns it, and how often it changes;
-- which information is sensitive and who should be allowed to see it;
-- whether mapping, a dashboard, reports, or a smaller shared dataset is the most useful first product;
-- what participating organizations can realistically maintain.
+## Returning-citizen leadership and partner decisions
 
-A feature is not considered validated merely because it would be technically possible.
+The Alliance is led by returning citizens and works alongside housing providers and policymakers. It owns the problem and brings the lived experience, service knowledge, and coalition relationships needed to shape the platform.
 
-## Platform approach and Civic Tech DC's role
+Before building broad integrations or dashboards, the project team is working with the Alliance to answer:
 
-Civic Tech DC volunteers are contributing product discovery, data modeling, technical architecture, visualization exploration, and project coordination. The working scope may include:
+- Which decisions should the shared data support?
+- Which measures can participating organizations define consistently?
+- What data already exists, and who owns it?
+- Which information is sensitive, and who should see it?
+- What can coalition members maintain over time?
 
-- a shared data model for housing resources, eligibility, and coalition measures;
-- a maintainable way for participating organizations to contribute or update data;
-- maps or other visualizations when geography helps answer a validated question;
-- role-based access and data-governance decisions appropriate to the information;
-- documentation so the Alliance can understand, use, and maintain the work.
+These questions refine the platform; they do not replace the commitment to build it.
 
-The team is intentionally treating “real time” as a requirement to validate, not a marketing claim. Update frequency should match the underlying workflow and the coalition's ability to keep the data accurate.
+## Civic Tech DC's role and current status
 
-## Current status and known limits
+Civic Tech DC volunteers contribute product design, data modeling, technical architecture, mapping, interface development, data governance, and project coordination.
 
-As of July 2026, this is an **active discovery and development project**. The team is defining users, shared measures, data sources, and a feasible first milestone with the Alliance.
+As of July 2026, the project is active and working toward a feasible first release. There is no public repository or production platform yet. The data is not described as complete or authoritative, and the project has not measured changes in housing placement, coordination, or policy outcomes.
 
-- There is no public production platform or public repository linked from this page yet.
-- Availability, eligibility, and outcome data have not been described as complete or authoritative.
-- No improvement in housing placement, coordination, or policy outcomes has been measured yet.
-- Product scope, access rules, maintenance ownership, and reporting cadence remain validation questions.
+The first useful release should prove one shared workflow or measure before the team expands the platform.
 
-These limits are important. A coalition dashboard is only useful when the participating organizations agree on what the data means and can keep it current.
+## Help build the housing data platform
 
-## Lessons for other nonprofit coalitions
-
-1. **Begin with decisions, not charts.** Identify what people need to decide before selecting dashboard views or metrics.
-2. **Treat shared definitions as product work.** A common field name does not guarantee that organizations record the same thing.
-3. **Plan governance with the data model.** Ownership, consent, access, correction, and retention cannot wait until launch.
-4. **Match automation to capacity.** A technically sophisticated integration can fail if partners cannot operate or maintain it.
-5. **Ship a testable first slice.** One reliable workflow or measure can teach more than a broad platform designed without users.
-
-## Join the work or bring a related problem
-
-People with experience in nonprofit data management, service-provider workflows, data governance, product discovery, accessible visualization, and sustainable open-source systems can help the team ask better questions and test the scope.
+The project needs people with experience in nonprofit data management, housing-provider workflows, data modeling, geospatial analysis, accessible design, frontend development, data governance, and project management.
 
 <p>
   <a
@@ -93,4 +80,4 @@ People with experience in nonprofit data management, service-provider workflows,
   >
 </p>
 
-If your coalition has a related data-management, dashboard, or shared-measurement problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="reentry_project_cta">bring the need to Civic Tech DC</a>. We will start with users, decisions, and fit, not an assumed platform.
+If your coalition has a related data-management or shared-measurement problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="reentry_project_cta">bring the need to Civic Tech DC</a>.

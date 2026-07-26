@@ -1,8 +1,18 @@
-{% if page.content_owner or page.last_reviewed %} {% assign
-content_review_margin = include.margin | default: "margin-top-5" %}
+{% if page.content_owner or page.last_reviewed or page.factual_review_status %}
+{% assign content_review_margin = include.margin | default: "margin-top-5" %}
 <p class="text-base font-body-2xs {{ content_review_margin }}">
-  {% if page.content_owner %} Content owner: {{ page.content_owner }}. {% endif
-  %} {% if page.last_reviewed %} Last reviewed: {{ page.last_reviewed | date:
-  "%B %-d, %Y" }}. {% endif %}
+  {% if page.factual_review_status %}
+  <span data-factual-review-status="{{ page.factual_review_status }}">
+    {% if page.factual_review_status == "pending" %} Project details are
+    awaiting factual review. {% elsif page.factual_review_status == "approved"
+    %} Project details factually reviewed. {% endif %}
+  </span>
+  {% unless page.factual_review_status == "pending" %} {% if page.content_owner
+  %} Content steward: {{ page.content_owner }}. {% endif %} {% endunless %} {%
+  if page.last_reviewed %} Editorial update: {{ page.last_reviewed | date: "%B
+  %-d, %Y" }}. {% endif %} {% else %} {% if page.content_owner %} Content owner:
+  {{ page.content_owner }}. {% endif %} {% if page.last_reviewed %} Last
+  reviewed: {{ page.last_reviewed | date: "%B %-d, %Y" }}. {% endif %} {% endif
+  %}
 </p>
 {% endif %}

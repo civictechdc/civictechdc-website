@@ -2,70 +2,57 @@
 layout: project
 is_active: true
 title: WaterVoice DMV
-seo_title: "DMV Water-Quality Map: WaterVoice DMV"
+seo_title: "WaterVoice DMV: Local Water-Quality Map"
 image: project_thumbnails/watervoice.png
-image_alt_text: Prototype water-quality map of DC Metro waterways
-github_link: https://github.com/civictechdc/DMVWaterWatch
-description: An active open-source prototype combining water-quality, rainfall, impairment, and freshness data for paddlers and other recreational water users.
-seo_description: WaterVoice DMV is prototyping an open map of water-quality, rainfall, impairment, and freshness data for recreational users in the DMV.
-content_owner: WaterVoice DMV project team
-last_reviewed: 2026-07-24
+image_alt_text: Water-quality map of DC Metro waterways
+description: Helping DC Metro residents compare recent water-quality conditions before they swim, paddle, fish, or wade in local waterways.
+seo_description: WaterVoice DMV is building a local map that brings water-quality, rainfall, and activity-specific guidance into one view.
+content_owner: Civic Tech DC organizing team
+last_reviewed: 2026-07-26
 factual_review_status: pending
+factual_review_required_approvals: 4
 case_study_standard: true
 ---
 
-WaterVoice DMV is the current website name for an active water-quality map prototype whose repository uses the working title **DMV Water Watch**. The project is exploring how paddlers, rowers, and (where legally allowed) swimmers can see recent source data and its freshness in one place. It is not a safety guarantee or a replacement for posted warnings and public-health guidance.
+WaterVoice DMV is building a water-quality map for DC Metro waterways. It aims to help residents compare recent conditions before they swim, kayak, fish, or wade in the Potomac, Anacostia, Four Mile Run, or Rock Creek.
 
-## Challenge: the data is scattered and time-sensitive
+Water-quality readings support a decision; they do not guarantee that an activity is safe. Conditions can change between samples, and users must follow posted warnings and current public-health guidance.
 
-Recreational water users may need bacterial samples, rainfall, stream conditions, impairment status, and local advisories from different agencies or monitoring organizations. Each source has its own geography, update cadence, terminology, and gaps.
+## One place to check scattered local data
 
-A simple green, yellow, or red label can be misleading if it hides an old sample or missing source. Conditions can change between measurements, rainfall can affect waterways quickly, and different activities have different exposure risks.
+Water-quality information is spread across federal agencies, county departments, utilities, and local environmental organizations. Each source covers a different place, uses different terms, and updates on its own schedule. People who use the water often have no single place to review those signals before they go.
 
-## Recreational users, data partners, and validation
+WaterVoice DMV's working vision includes:
 
-The intended users are paddlers, rowers, anglers, local stewards, and swimmers at locations where swimming is legal. The initial geographic focus is the inner DMV, including the Potomac, Anacostia, Four Mile Run, and Rock Creek.
+- activity-aware guidance for swimming, paddling, fishing, and wading;
+- readings from sources such as the US Geological Survey, Environmental Protection Agency, Arlington County, and Alexandria Renew;
+- post-storm context when runoff may affect local waterways;
+- the measurements and freshness behind a simple status;
+- a mobile-friendly map for use near the water.
 
-The repository documents future outreach to riverkeeper organizations, local data producers, and community users. Direct user research, partner roles, source permissions, and the prior website reference to Four Mile Run Conservancy still require confirmation. This page does not claim that a monitoring organization or public agency endorses the prototype or its grades.
+An old sample or missing source must remain visible. It should never appear as a current “safe” reading.
 
-## Approach and Civic Tech DC's role
+## Local leadership and environmental partnership
 
-Civic Tech DC volunteers contribute source research, data connectors, normalization, grading logic, mapping, interface design, testing, accessibility, documentation, outreach planning, and project coordination.
+WaterVoice DMV is led by Rajiv Sundar in partnership with the [Four Mile Run Conservancy](https://www.fourmilerun.org/). The project brings civic technologists and local environmental stewards together around the needs of people who use DMV waterways.
 
-The [public DMV Water Watch repository](https://github.com/civictechdc/DMVWaterWatch) currently documents:
+## Current status
 
-- connectors for federal and local water, weather, and impairment sources;
-- a normalized build pipeline that produces site, grade, history, manifest, and source files;
-- a deterministic grading rubric with freshness windows and worked examples;
-- an activity toggle and explanations of the signals behind a grade;
-- a mobile-first map prototype, methodology pages, source attribution, and a disclaimer;
-- issue templates for site suggestions, incorrect grades, verification, bugs, and features.
+WaterVoice DMV is an active project, but this page does not link to a public production service or repository. The team is still working toward a reliable map and data process.
 
-The architecture aims to show stale and missing data rather than silently converting it into a current safety statement.
+Before launch, the project needs to confirm:
 
-## Current status and known limits
+- which activities and locations the map can responsibly cover;
+- permissions and update schedules for each data source;
+- how it will display stale, missing, or conflicting readings;
+- who will monitor data refreshes and correct errors;
+- the wording of its public-health disclaimer;
+- who will operate and maintain the service.
 
-WaterVoice DMV is active and has a functional repository prototype, but it is not yet a public production service.
+This page does not claim adoption, validated grade accuracy, fewer exposure incidents, or another measured public-health outcome.
 
-- Several connectors still rely on fixtures or need production credentials and source verification.
-- Some monitoring and assessment identifiers remain incomplete.
-- The initial site catalog needs community verification and expansion.
-- Production hosting, operational ownership, and data-refresh monitoring are not complete.
-- The user-facing disclaimer still needs legal review.
-- The page does not report adoption, a validated grade-accuracy study, fewer exposure incidents, or another measured public-health outcome.
+## Help build the map
 
-Water-quality samples are retrospective and local conditions change. Users must follow current signage and guidance from responsible authorities and use their own judgment.
+WaterVoice DMV welcomes recreational water users, environmental organizations, monitoring practitioners, public-health reviewers, GIS specialists, data engineers, React developers, designers, accessibility reviewers, project managers, and community organizers.
 
-## Reusable lessons
-
-1. **Show freshness with the result.** An old measurement should not look like a current one.
-2. **Keep sources visible.** Users need to know which agency or organization produced each signal.
-3. **Represent missing data honestly.** No measurement is not the same as a safe measurement.
-4. **Validate the decision, not only the map.** Learn what a paddler or swimmer will do with the information.
-5. **Plan operations before launch.** A real-time claim needs monitored connectors, failure states, correction paths, and an accountable owner.
-
-## Test the prototype or join the work
-
-Recreational water users, environmental organizations, monitoring practitioners, public-health reviewers, GIS contributors, data engineers, designers, and project managers can inspect the repository and help validate the work.
-
-To meet the team, <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="watervoice_project_cta">join a Project Night</a>. If your community has a related environmental-data problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="watervoice_project_cta">bring it to Civic Tech DC</a>.
+<a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="watervoice_project_cta">Meet the team at a Project Night</a>. If your community has a related environmental-data problem, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="watervoice_project_cta">bring it to Civic Tech DC</a>.
