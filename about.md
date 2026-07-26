@@ -67,11 +67,6 @@ We believe in building processes, not just tools, and applying human-centered sy
 <h2 class="text-center margin-top-4 margin-bottom-2">Directors</h2>
 <p class="text-center margin-bottom-4">Our board of directors provides governance and strategic oversight for Civic Tech DC as a 501(c)(3) nonprofit.</p>
 <div class="grid-row grid-gap flex-justify-center">
-    <!-- Shelly Bachstein -->
-    <div class="grid-col-12 tablet:grid-col-3 text-center margin-bottom-3">
-       {% include responsive-image.html  src="team_photos/shelly-bachstein.jpg" class="team-member-photo" alt="Shelly Bachstein" %}
-        <p class="margin-top-2 font-sans-lg text-bold"><a href="https://www.linkedin.com/in/sbachstein/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Shelly Bachstein</a></p>
-    </div>
     <!-- Mike Deeb -->
     <div class="grid-col-12 tablet:grid-col-3 text-center margin-bottom-3">
        {% include responsive-image.html src="team_photos/Mike-Deeb.jpg" class="team-member-photo" alt="Mike Deeb" %}
