@@ -103,7 +103,7 @@ No two Civic Tech DC projects are the same. These pages show how project communi
       href="{{ site.baseurl }}/projects/daria.html"
       data-analytics-event="project_discovery_click"
       data-analytics-location="homepage_case_studies"
-      >Daria</a
+      >DARIA</a
     >
     traces abortion-fund case-management software from the DC Abortion Fund's
     volunteer workflow to independent maintenance.

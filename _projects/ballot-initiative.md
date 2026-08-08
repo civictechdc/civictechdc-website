@@ -2,7 +2,7 @@
 layout: project
 is_active: true
 title: VoteCatcher
-seo_title: "VoteCatcher: Open-Source Campaign Infrastructure"
+seo_title: "VoteCatcher: Petition Signature Verification"
 image: project_thumbnails/ballot-initiative.png
 image_alt_text: Handwritten PDF scans being converted into machine-readable format
 github_link: https://github.com/civictechdc/votecatcher

@@ -2,7 +2,7 @@
 layout: project
 is_active: true
 title: CIB Mango Tree
-seo_title: "CIB Mango Tree: Open-Source Coordination Research"
+seo_title: "CIB Mango Tree: Detecting Coordinated Behavior"
 image: project_thumbnails/mango.png
 image_alt_text: Yellow cartoon mango fruit
 github_link: https://github.com/civictechdc/cib-mango-tree

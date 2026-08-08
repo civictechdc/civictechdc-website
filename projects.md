@@ -19,7 +19,7 @@ Every project starts with a real need or a promising idea. Partners and users he
 These examples are organized by the problems and audiences they serve, not by technology alone.
 
 {% assign reentry = site.projects | where: "title", "DC Reentry Housing Project" | first %}
-{% assign daria = site.projects | where: "title", "Daria" | first %}
+{% assign daria = site.projects | where: "title", "DARIA" | first %}
 {% assign clean_slate = site.projects | where: "title", "Clean Slate" | first %}
 {% assign data_democracy = site.projects | where: "title", "Data and Democracy Project" | first %}
 {% assign spicyregs = site.projects | where: "title", "SpicyRegs" | first %}
@@ -32,7 +32,7 @@ These examples are organized by the problems and audiences they serve, not by te
       <a href="{{ reentry.url | relative_url }}">DC Reentry Housing</a>
       documents an active coalition-data project, including what still needs
       validation.
-      <a href="{{ daria.url | relative_url }}">Daria</a> shows how an abortion
+      <a href="{{ daria.url | relative_url }}">DARIA</a> shows how an abortion
       fund's shared-spreadsheet workflow became open-source case-management
       software that is now maintained independently.
     </p>

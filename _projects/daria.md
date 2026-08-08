@@ -1,7 +1,7 @@
 ---
 layout: project
 is_active: false
-title: Daria
+title: DARIA
 seo_title: "DARIA: Open-Source Abortion Fund Case Management"
 image: project_thumbnails/daria.png
 image_alt_text: Daria open-source CRM logo

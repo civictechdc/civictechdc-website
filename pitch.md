@@ -12,7 +12,7 @@ last_reviewed: 2026-07-24
 ---
 
 {% assign reentry = site.projects | where: "title", "DC Reentry Housing Project" | first %}
-{% assign daria = site.projects | where: "title", "Daria" | first %}
+{% assign daria = site.projects | where: "title", "DARIA" | first %}
 {% assign clean_slate = site.projects | where: "title", "Clean Slate" | first %}
 
 Civic Tech DC is rooted in the Washington, DC, Maryland, and Virginia community, but a project can serve people elsewhere when it has a clear public benefit and the right partners. Nonprofits, legal clinics, journalists, academics, researchers, community groups, community members, public-interest staff, and civic technologists can all bring a need.
@@ -190,7 +190,7 @@ A problem owner, organization, or validating partner should be prepared to:
 ## Examples of the work
 
 - [DC Reentry Housing Project]({{ reentry.url | relative_url }}) is working with a coalition to define a shared data platform for reentry housing coordination.
-- [Daria]({{ daria.url | relative_url }}) grew from an abortion fund's shared-spreadsheet workflow into open-source case-management software used by multiple funds.
+- [DARIA]({{ daria.url | relative_url }}) grew from an abortion fund's shared-spreadsheet workflow into open-source case-management software used by multiple funds.
 - [Clean Slate]({{ clean_slate.url | relative_url }}) paired legal-clinic expertise and human review with a limited eligibility-triage tool.
 
 These cases differ in audience, maturity, and outcome. They show why user access, partner participation, privacy, maintenance, and honest status matter as much as code.

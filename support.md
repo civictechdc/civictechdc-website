@@ -1,7 +1,7 @@
 ---
 layout: hero-image
 banner-hero: true
-title: Support Civic Tech DC
+title: Support Us
 description: Support Civic Tech DC's free community events and volunteer-led public-interest technology projects through donations, sponsorships, and in-kind help.
 hero-title: Support Us
 hero-subtitle: "Civic Tech DC runs on the generosity of our community: individuals who donate and organizations that sponsor our work or contribute in-kind. Every contribution goes directly toward events, projects, and keeping this community free and open to everyone."
