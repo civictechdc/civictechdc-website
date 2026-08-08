@@ -304,6 +304,19 @@ def check_unlisted_page(document, relative, errors)
   unless robots.to_s.include?("noindex") && robots.to_s.include?("follow")
     add_error(errors, relative, "unlisted page must declare noindex, follow")
   end
+  og_title = one_value(document, 'meta[property="og:title"]', "content", relative, errors)
+  og_description = one_value(document, 'meta[property="og:description"]', "content", relative, errors)
+  og_url = one_value(document, 'meta[property="og:url"]', "content", relative, errors)
+  og_image = one_value(document, 'meta[property="og:image"]', "content", relative, errors)
+  twitter_card = one_value(document, 'meta[name="twitter:card"]', "content", relative, errors)
+  twitter_title = one_value(document, 'meta[name="twitter:title"]', "content", relative, errors)
+  add_error(errors, relative, "Open Graph and Twitter titles must match") unless og_title == twitter_title
+  add_error(errors, relative, "Open Graph description must equal meta description") unless og_description == description
+  unless og_url == "#{ORIGIN}#{expected_page_path(relative)}"
+    add_error(errors, relative, "Open Graph URL must use the canonical route")
+  end
+  add_error(errors, relative, "Open Graph image must use #{ORIGIN}") unless preferred_url?(og_image.to_s)
+  add_error(errors, relative, "Twitter card must be summary_large_image") unless twitter_card == "summary_large_image"
   add_error(errors, relative, "unlisted page must not emit JSON-LD") if document.at_css('script[type="application/ld+json"]')
   if document.css('meta[property="article:published_time"]').any?
     add_error(errors, relative, "unlisted page must not emit article metadata")
