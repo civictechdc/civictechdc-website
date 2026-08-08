@@ -16,7 +16,12 @@ HOST = URI(ORIGIN).host
 SITE_TITLE = "Civic Tech DC"
 GITHUB_REPOSITORY = "civictechdc/civictechdc-website"
 SITE_TIMEZONE = TZInfo::Timezone.get("America/New_York")
-REQUIRE_FACTUAL_APPROVAL = ENV["REQUIRE_FACTUAL_APPROVAL"] == "1"
+# "1" fails the check on unapproved case studies; "warn" reports them without
+# failing. Warn is the interim mode while the approval register in
+# docs/content-seo-factual-review.md is being filled; flip to "1" after.
+FACTUAL_APPROVAL_MODE = ENV["REQUIRE_FACTUAL_APPROVAL"].to_s
+REQUIRE_FACTUAL_APPROVAL = FACTUAL_APPROVAL_MODE == "1"
+WARN_FACTUAL_APPROVAL = FACTUAL_APPROVAL_MODE == "warn"
 EVIDENCE_COMMENT_CACHE = {}
 HOSTED_EVENT_PATH = %r{\A/events/[^/]+/\z}
 ARTICLE_PATH = %r{\A/blog/\d{4}/\d{2}/\d{2}/}
@@ -49,6 +54,12 @@ PROMOTED_CASE_STUDY_PROJECTS = %w[
   _projects/clean-slate.md
   _projects/daria.md
   _projects/opendatadc.md
+].freeze
+# Unlisted utility pages are reachable by direct URL only: they must declare
+# noindex,follow and carry basic metadata, but are exempt from the
+# indexable-page contract (Open Graph, JSON-LD, analytics, canonical, feed).
+UNLISTED_PAGES = %w[
+  archive-dig/index.html
 ].freeze
 ROUTE_LINK_EXPECTATIONS = {
   "/" => [
@@ -276,7 +287,35 @@ def nodes_of_type(graph, type)
   end
 end
 
+def check_unlisted_page(document, relative, errors)
+  html_lang = one_value(document, "html", "lang", relative, errors)
+  charset = one_value(document, "meta[charset]", "charset", relative, errors)
+  viewport = one_value(document, 'meta[name="viewport"]', "content", relative, errors)
+  title = one_value(document, "title", nil, relative, errors)
+  description = one_value(document, 'meta[name="description"]', "content", relative, errors)
+  robots = one_value(document, 'meta[name="robots"]', "content", relative, errors)
+  add_error(errors, relative, "HTML language must be en-US") unless html_lang == "en-US"
+  add_error(errors, relative, "character encoding must be UTF-8") unless charset.to_s.downcase == "utf-8"
+  add_error(errors, relative, "viewport metadata is incorrect") unless viewport == "width=device-width, initial-scale=1"
+  add_error(errors, relative, "title exceeds #{MAX_TITLE_LENGTH} characters") if title.to_s.length > MAX_TITLE_LENGTH
+  if description.to_s.length > MAX_DESCRIPTION_LENGTH
+    add_error(errors, relative, "description exceeds #{MAX_DESCRIPTION_LENGTH} characters")
+  end
+  unless robots.to_s.include?("noindex") && robots.to_s.include?("follow")
+    add_error(errors, relative, "unlisted page must declare noindex, follow")
+  end
+  add_error(errors, relative, "unlisted page must not emit JSON-LD") if document.at_css('script[type="application/ld+json"]')
+  if document.css('meta[property="article:published_time"]').any?
+    add_error(errors, relative, "unlisted page must not emit article metadata")
+  end
+end
+
+# Everything below runs the site-wide check; skip it when this file is
+# required by the self-test so the pure helpers above stay testable.
+return unless $PROGRAM_NAME == __FILE__
+
 errors = []
+warnings = []
 analytics_events = Set.new
 cname = File.read(File.join(ROOT, "CNAME")).strip
 add_error(errors, "CNAME", "must match the canonical host #{HOST}") unless cname == HOST
@@ -338,8 +377,12 @@ case_study_project_files.each do |relative|
   if status == "pending" && front_matter_value(source, "content_owner").to_s.match?(/\bproject team\b/i)
     add_error(errors, relative, "pending editorial draft must not attribute ownership to an unreviewed project team")
   end
-  if REQUIRE_FACTUAL_APPROVAL && status != "approved"
-    add_error(errors, relative, "release requires factual_review_status: approved")
+  if status != "approved"
+    if REQUIRE_FACTUAL_APPROVAL
+      add_error(errors, relative, "release requires factual_review_status: approved")
+    elsif WARN_FACTUAL_APPROVAL
+      warnings << "#{relative}: factual_review_status is #{status.inspect}; needs approval before enforcement flips to hard"
+    end
   end
   next unless status == "approved"
 
@@ -401,6 +444,7 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
   indexable = []
   redirects = []
   noindex = []
+  unlisted = []
   html_files = Dir.glob(File.join(destination, "**", "*.html")).sort
 
   html_files.each do |path|
@@ -417,6 +461,12 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
       add_error(errors, relative, "redirect refresh target must equal canonical") unless target == canonical
       add_error(errors, relative, "redirect target must not use the bare site domain") if canonical.start_with?("https://civictechdc.org")
       redirects << relative
+      next
+    end
+
+    if UNLISTED_PAGES.include?(relative)
+      check_unlisted_page(document, relative, errors)
+      unlisted << relative
       next
     end
 
@@ -745,10 +795,14 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
     add_error(errors, "feed.xml", "file is missing")
   end
 
+  unless warnings.empty?
+    warn "SEO check warnings (#{warnings.length}):"
+    warnings.each { |warning| warn "- #{warning}" }
+  end
   if errors.empty?
     puts "SEO check passed: #{indexable.length} indexable pages, " \
-         "#{noindex.length} noindex pages, #{redirects.length} redirects, " \
-         "#{html_files.length} HTML files."
+         "#{noindex.length} noindex pages, #{unlisted.length} unlisted pages, " \
+         "#{redirects.length} redirects, #{html_files.length} HTML files."
   else
     warn "SEO check failed with #{errors.length} error#{errors.length == 1 ? '' : 's'}:"
     errors.each { |error| warn "- #{error}" }
