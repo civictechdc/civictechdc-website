@@ -88,6 +88,8 @@
             rel="noopener"
             aria-label="Slack"
             class="ctdc-footer__social-link"
+            data-analytics-event="slack_join_click"
+            data-analytics-location="footer_social"
           >
             <svg
               class="ctdc-icon"
@@ -113,11 +115,25 @@
             <div class="mobile-lg:grid-col-6 tablet:grid-col-3">
               <h2 class="ctdc-footer__heading">Get Involved</h2>
               <ul class="ctdc-footer__list">
-                <li><a href="{{ site.baseurl }}/events">Events</a></li>
+                <li>
+                  <a
+                    href="{{ site.baseurl }}/events"
+                    data-analytics-event="event_discovery_click"
+                    data-analytics-location="footer_navigation"
+                    >Events</a
+                  >
+                </li>
                 <li><a href="{{ site.baseurl }}/projects">Projects</a></li>
                 <li><a href="{{ site.baseurl }}/slack">Join Slack</a></li>
                 <li><a href="{{ site.baseurl }}/partners">Partners</a></li>
-                <li><a href="{{ site.baseurl }}/pitch">Pitch an idea</a></li>
+                <li>
+                  <a
+                    href="{{ site.baseurl }}/pitch"
+                    data-analytics-event="project_inquiry_click"
+                    data-analytics-location="footer_navigation"
+                    >Start a project</a
+                  >
+                </li>
               </ul>
             </div>
 
@@ -140,7 +156,14 @@
             <div class="mobile-lg:grid-col-6 tablet:grid-col-3">
               <h2 class="ctdc-footer__heading">Support</h2>
               <ul class="ctdc-footer__list">
-                <li><a href="{{ site.baseurl }}/support">Support Us</a></li>
+                <li>
+                  <a
+                    href="{{ site.baseurl }}/support"
+                    data-analytics-event="support_click"
+                    data-analytics-location="footer_navigation"
+                    >Support Us</a
+                  >
+                </li>
                 <li>
                   <a
                     href="https://forms.gle/HrpBe69qqCG8NiNo6"

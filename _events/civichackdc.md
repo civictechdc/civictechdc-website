@@ -8,7 +8,7 @@ redirect_from:
   - /special-events/civichackdc/
 card_image: hero-image-hackathon.png
 social_image_alt: Civic Hack DC participants building open-source public-interest technology
-registration_link: https://lu.ma/czi3y05y
+registration_link: https://luma.com/czi3y05y
 page_css: /assets/css/civichackdc.css
 description: |
   A data hackathon to build open-source tools for analyzing public comments on regulations. Join us for a day of civic innovation!
@@ -80,7 +80,7 @@ event:
         </p>
         <!-- <p style="font-size: 0.9rem; text-align: center; margin: 0.5rem auto; opacity: 0.7;">Free to attend (optional $5 donation, refundable upon attendance)</p> -->
         <div class="cta-buttons">
-            <a href="https://lu.ma/czi3y05y" class="btn btn-secondary">Register Now</a>
+            <a href="https://luma.com/czi3y05y" class="btn btn-secondary">Register Now</a>
             <a href="#about" class="btn btn-secondary">Learn More</a>
         </div>
         <div class="cta-buttons">
@@ -190,7 +190,7 @@ event:
                 <img style="height: 75px" class="partner-logo" src="/assets/images/events/civichackdc/dsdc-400w.png" alt="DSDC">
             </a> {% endcomment %}
             {% comment %} <a href="https://www.meetup.com/women-and-gender-expansive-coders-dc-wgxc-dc/" target="_blank" rel="noopener noreferrer"> <img class="partner-logo" src="/assets/images/events/civichackdc/WGXCDC-400w.png" alt="WGXCDC"></a> {% endcomment %}
-            <a href="https://www.meetup.com/DataKind-DC/"
+            <a href="https://www.meetup.com/datakind-dc/"
                target="_blank"
                rel="noopener noreferrer">
                 <img style="height: 75px"
@@ -277,7 +277,7 @@ event:
             </p>
         </div>
         <div style="text-align: center; margin: 2rem auto;">
-            <a href="https://lu.ma/czi3y05y" class="btn btn-secondary">Register Today</a>
+            <a href="https://luma.com/czi3y05y" class="btn btn-secondary">Register Today</a>
         </div>
     </div>
 </section>

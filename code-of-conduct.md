@@ -79,4 +79,4 @@ Captains may take any appropriate action, including expulsion and a ban from fut
 
 ## Contributing to This Code
 
-This is a living document and is ultimately owned by the Civic Tech DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this [repository](https://github.com/civictechdc/codefordc-website) or by contacting the leadership team at <team@civictechdc.org>.
+This is a living document and is ultimately owned by the Civic Tech DC community. We are interested in your comments and suggestions! You can contribute to the code by opening an issue or pull request on this [repository](https://github.com/civictechdc/civictechdc-website) or by contacting the leadership team at <team@civictechdc.org>.

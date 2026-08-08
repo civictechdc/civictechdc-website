@@ -1,6 +1,8 @@
 _site/
 .DS_Store
 node_modules/
+.playwright-cli/
+output/playwright/
 .sass-cache
 .jekyll-cache/
 .jekyll-metadata
@@ -338,3 +340,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Local Docker Compose overrides (per-machine, never committed)
+docker-compose.override.yml

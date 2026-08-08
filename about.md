@@ -1,6 +1,6 @@
 ---
 layout: hero-image
-title: About Civic Tech DC
+title: About Us
 description: Learn how Civic Tech DC brings volunteers, nonprofits, government, and community partners together to build public-interest technology in the DMV.
 hero-title: About Us
 hero-subtitle: Founded in 2012 as Code for DC, Civic Tech DC is a non-partisan 501(c)(3) nonprofit community of volunteers using open-source technology to support civic engagement, strengthen democracy, and empower public-interest initiatives.
@@ -102,6 +102,11 @@ We believe in building processes, not just tools, and applying human-centered sy
 <h2 class="text-center margin-top-4 margin-bottom-2">Organizers</h2>
 <p class="text-center margin-bottom-4">Organizers lead day-to-day operations, events, and community programming.</p>
 <div class="grid-row grid-gap flex-justify-center">
+    <!-- Cameron Peltz -->
+    <div class="grid-col-12 tablet:grid-col-3 text-center margin-bottom-3">
+        {% include responsive-image.html src="team_photos/Cameron-Peltz.jpg" class="team-member-photo" alt="Cameron Peltz" %}
+        <p class="margin-top-2 font-sans-lg text-bold"><a href="https://www.linkedin.com/in/cameron-peltz/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Cameron Peltz</a></p>
+    </div>
     <!-- Nick Stoler -->
     <div class="grid-col-12 tablet:grid-col-3 text-center margin-bottom-3">
         {% include responsive-image.html  src="team_photos/Nick-Stoler.jpg" class="team-member-photo" alt="Nick Stoler" %}

@@ -10,13 +10,17 @@ hero-image-with-supporters-footer layout, just above the footer. {% endcomment
     </h2>
     <div class="ctdc-cta-band__paths">
       <div class="ctdc-cta-band__path">
-        <p class="ctdc-cta-band__path-title">Bring us a project</p>
+        <p class="ctdc-cta-band__path-title">Bring a problem or idea</p>
         <p class="ctdc-cta-band__path-text">
-          Nonprofits, government, and community groups: we build civic tech with
-          you and co-host events.
+          Start a private conversation about a public-interest need. We will
+          explore users, validation, fit, scope, and volunteer capacity.
         </p>
-        <a href="{{ site.baseurl }}/partners" class="usa-button"
-          >Partner with us</a
+        <a
+          href="{{ site.baseurl }}/pitch"
+          class="usa-button"
+          data-analytics-event="project_inquiry_click"
+          data-analytics-location="homepage_closing_cta"
+          >Start a project</a
         >
       </div>
       <div class="ctdc-cta-band__path">
@@ -28,6 +32,8 @@ hero-image-with-supporters-footer layout, just above the footer. {% endcomment
         <a
           href="{{ site.baseurl }}/support"
           class="usa-button usa-button--outline"
+          data-analytics-event="support_click"
+          data-analytics-location="homepage_closing_cta"
           >Support us</a
         >
       </div>

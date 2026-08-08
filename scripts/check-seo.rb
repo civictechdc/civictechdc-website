@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require "json"
+require "net/http"
 require "nokogiri"
 require "open3"
+require "set"
 require "time"
 require "tmpdir"
 require "tzinfo"
@@ -12,7 +14,15 @@ ROOT = File.expand_path("..", __dir__)
 ORIGIN = "https://www.civictechdc.org"
 HOST = URI(ORIGIN).host
 SITE_TITLE = "Civic Tech DC"
+GITHUB_REPOSITORY = "civictechdc/civictechdc-website"
 SITE_TIMEZONE = TZInfo::Timezone.get("America/New_York")
+# "1" fails the check on unapproved case studies; "warn" reports them without
+# failing. Warn is the interim mode while the approval register in
+# docs/content-seo-factual-review.md is being filled; flip to "1" after.
+FACTUAL_APPROVAL_MODE = ENV["REQUIRE_FACTUAL_APPROVAL"].to_s
+REQUIRE_FACTUAL_APPROVAL = FACTUAL_APPROVAL_MODE == "1"
+WARN_FACTUAL_APPROVAL = FACTUAL_APPROVAL_MODE == "warn"
+EVIDENCE_COMMENT_CACHE = {}
 HOSTED_EVENT_PATH = %r{\A/events/[^/]+/\z}
 ARTICLE_PATH = %r{\A/blog/\d{4}/\d{2}/\d{2}/}
 MAX_TITLE_LENGTH = 65
@@ -24,6 +34,80 @@ IMAGE_TYPES = {
   ".png" => "image/png",
   ".svg" => "image/svg+xml",
   ".webp" => "image/webp"
+}.freeze
+REQUIRED_ANALYTICS_EVENTS = %w[
+  event_discovery_click
+  event_registration_click
+  partner_discovery_click
+  partner_inquiry_click
+  project_discovery_click
+  project_inquiry_click
+  project_join_click
+  project_repository_click
+  slack_discovery_click
+  slack_join_click
+  support_click
+  support_inquiry_click
+].freeze
+CONDITIONALLY_RENDERED_ANALYTICS_EVENTS = %w[event_registration_click].freeze
+PROMOTED_CASE_STUDY_PROJECTS = %w[
+  _projects/clean-slate.md
+  _projects/daria.md
+  _projects/opendatadc.md
+].freeze
+# Unlisted utility pages are reachable by direct URL only: they must declare
+# noindex,follow and carry basic metadata, but are exempt from the
+# indexable-page contract (Open Graph, JSON-LD, analytics, canonical, feed).
+UNLISTED_PAGES = %w[
+  archive-dig/index.html
+].freeze
+ROUTE_LINK_EXPECTATIONS = {
+  "/" => [
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "homepage_hero" },
+    { :href => "/projects", :event => "project_discovery_click", :location => "homepage_pathways" },
+    { :href => "/events", :event => "event_discovery_click", :location => "homepage_hero" },
+    { :href => "/partners", :event => "partner_discovery_click", :location => "homepage_pathways" },
+    { :href => "/projects/dc-reentry-housing-project.html", :event => "project_discovery_click", :location => "homepage_case_studies" },
+    { :href => "/projects/data-and-democracy.html", :event => "project_discovery_click", :location => "homepage_case_studies" }
+  ],
+  "/pitch.html" => [
+    { :event => "project_inquiry_click", :location => "pitch_intro" },
+    { :event => "project_inquiry_click", :location => "pitch_process" },
+    { :href => "/projects/dc-reentry-housing-project.html" },
+    { :href => "/projects/daria.html" },
+    { :href => "/projects/clean-slate.html" }
+  ],
+  "/partners.html" => [
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "partners_routes" },
+    { :event => "partner_inquiry_click", :location => "partners_routes" },
+    { :href => "/support", :event => "support_click", :location => "partners_routes" }
+  ],
+  "/projects.html" => [
+    { :href => "/projects/dc-reentry-housing-project.html" },
+    { :href => "/projects/daria.html" },
+    { :href => "/projects/clean-slate.html" },
+    { :href => "/projects/data-and-democracy.html" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "projects_clusters" }
+  ],
+  "/projects/dc-reentry-housing-project.html" => [
+    { :href => "/slack", :event => "project_join_click", :location => "reentry_project_cta" },
+    { :href => "/events", :event => "event_discovery_click", :location => "reentry_project_cta" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "reentry_project_cta" }
+  ],
+  "/projects/daria.html" => [
+    { :href => "https://github.com/DARIAEngineering/dcaf_case_management", :event => "project_repository_click", :location => "project_header" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "daria_project_cta" }
+  ],
+  "/projects/clean-slate.html" => [
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "clean_slate_project_cta" },
+    { :href => "/events", :event => "event_discovery_click", :location => "clean_slate_project_cta" }
+  ],
+  "/projects/data-and-democracy.html" => [
+    { :href => "https://github.com/civictechdc/eavs_clc", :event => "project_repository_click", :location => "project_header" },
+    { :event => "partner_inquiry_click", :location => "data_democracy_cta" },
+    { :event => "project_join_click", :location => "data_democracy_cta" },
+    { :href => "/pitch", :event => "project_inquiry_click", :location => "data_democracy_cta" }
+  ]
 }.freeze
 
 def add_error(errors, file, message)
@@ -53,6 +137,91 @@ def secure_absolute_url?(value)
   uri.scheme == "https" && !uri.host.to_s.empty? && uri.userinfo.nil?
 rescue URI::InvalidURIError
   false
+end
+
+def factual_review_evidence_reference(value)
+  uri = URI.parse(value)
+  return unless uri.scheme == "https" &&
+    uri.host == "github.com" &&
+    uri.userinfo.nil? &&
+    uri.query.nil?
+
+  path_match = uri.path.match(
+    %r{\A/civictechdc/civictechdc-website/(?<kind>pull|issues)/(?<number>\d+)\z}
+  )
+  comment_match = uri.fragment.to_s.match(/\Aissuecomment-(?<comment_id>\d+)\z/)
+  return unless path_match && comment_match
+
+  {
+    :url => uri.to_s,
+    :comment_id => comment_match[:comment_id],
+    :kind => path_match[:kind],
+    :number => path_match[:number]
+  }
+rescue URI::InvalidURIError
+  nil
+end
+
+def github_issue_comment(comment_id)
+  return EVIDENCE_COMMENT_CACHE[comment_id] if EVIDENCE_COMMENT_CACHE.key?(comment_id)
+
+  uri = URI("https://api.github.com/repos/#{GITHUB_REPOSITORY}/issues/comments/#{comment_id}")
+  request = Net::HTTP::Get.new(uri)
+  request["Accept"] = "application/vnd.github+json"
+  request["User-Agent"] = "civictechdc-seo-check"
+  request["X-GitHub-Api-Version"] = "2022-11-28"
+  token = ENV["GITHUB_TOKEN"].to_s
+  request["Authorization"] = "Bearer #{token}" unless token.empty?
+  response = Net::HTTP.start(
+    uri.host,
+    uri.port,
+    :use_ssl => true,
+    :open_timeout => 10,
+    :read_timeout => 10
+  ) { |http| http.request(request) }
+
+  unless response.is_a?(Net::HTTPSuccess)
+    return EVIDENCE_COMMENT_CACHE[comment_id] = {
+      :error => "GitHub returned HTTP #{response.code} for issue comment #{comment_id}"
+    }
+  end
+
+  parsed = JSON.parse(response.body)
+  EVIDENCE_COMMENT_CACHE[comment_id] = {
+    :author_association => parsed["author_association"].to_s,
+    :body => parsed["body"].to_s,
+    :html_url => parsed["html_url"].to_s
+  }
+rescue JSON::ParserError, SocketError, SystemCallError, Timeout::Error, EOFError, OpenSSL::SSL::SSLError => error
+  EVIDENCE_COMMENT_CACHE[comment_id] = {
+    :error => "could not load GitHub issue comment #{comment_id}: #{error.message}"
+  }
+end
+
+def factual_review_evidence_errors(reference, relative, reviewed_on, reviewers)
+  comment = github_issue_comment(reference[:comment_id])
+  return [comment[:error]] if comment[:error]
+
+  errors = []
+  unless comment[:html_url] == reference[:url]
+    errors << "factual review evidence URL does not match the loaded GitHub comment"
+  end
+  unless %w[COLLABORATOR MEMBER OWNER].include?(comment[:author_association])
+    errors << "factual review evidence must be summarized by a repository collaborator"
+  end
+
+  evidence_lines = comment[:body].lines.map(&:rstrip).reject(&:empty?)
+  expected_lines = [
+    "Factual review: approved",
+    "Project: #{relative}",
+    "Reviewed on: #{reviewed_on}",
+    "Reviewers:",
+    *reviewers.map { |reviewer| "- #{reviewer}" }
+  ]
+  unless evidence_lines == expected_lines
+    errors << "factual review evidence must exactly match the ordered approval record"
+  end
+  errors
 end
 
 def refresh_target(refresh)
@@ -88,15 +257,188 @@ rescue JSON::ParserError => error
   []
 end
 
+def normalized_text(document)
+  document.text.gsub(/\s+/, " ").strip
+end
+
+def front_matter_value(source, key)
+  front_matter = source.match(/\A---\s*\n(?<content>.*?)\n---\s*(?:\n|\z)/m)&.[](:content).to_s
+  value = front_matter[/^#{Regexp.escape(key)}:\s*(.+?)\s*$/, 1]&.strip
+  return unless value
+
+  if value.length >= 2 && %w[" '].include?(value[0]) && value[-1] == value[0]
+    value[1...-1]
+  else
+    value
+  end
+end
+
+def matching_link?(document, requirement)
+  document.css("a").any? do |link|
+    (!requirement[:href] || link["href"] == requirement[:href]) &&
+      (!requirement[:event] || link["data-analytics-event"] == requirement[:event]) &&
+      (!requirement[:location] || link["data-analytics-location"] == requirement[:location])
+  end
+end
+
 def nodes_of_type(graph, type)
   graph.select do |node|
     Array(node["@type"]).include?(type)
   end
 end
 
+def check_unlisted_page(document, relative, errors)
+  html_lang = one_value(document, "html", "lang", relative, errors)
+  charset = one_value(document, "meta[charset]", "charset", relative, errors)
+  viewport = one_value(document, 'meta[name="viewport"]', "content", relative, errors)
+  title = one_value(document, "title", nil, relative, errors)
+  description = one_value(document, 'meta[name="description"]', "content", relative, errors)
+  robots = one_value(document, 'meta[name="robots"]', "content", relative, errors)
+  add_error(errors, relative, "HTML language must be en-US") unless html_lang == "en-US"
+  add_error(errors, relative, "character encoding must be UTF-8") unless charset.to_s.downcase == "utf-8"
+  add_error(errors, relative, "viewport metadata is incorrect") unless viewport == "width=device-width, initial-scale=1"
+  add_error(errors, relative, "title exceeds #{MAX_TITLE_LENGTH} characters") if title.to_s.length > MAX_TITLE_LENGTH
+  if description.to_s.length > MAX_DESCRIPTION_LENGTH
+    add_error(errors, relative, "description exceeds #{MAX_DESCRIPTION_LENGTH} characters")
+  end
+  unless robots.to_s.include?("noindex") && robots.to_s.include?("follow")
+    add_error(errors, relative, "unlisted page must declare noindex, follow")
+  end
+  og_title = one_value(document, 'meta[property="og:title"]', "content", relative, errors)
+  og_description = one_value(document, 'meta[property="og:description"]', "content", relative, errors)
+  og_url = one_value(document, 'meta[property="og:url"]', "content", relative, errors)
+  og_image = one_value(document, 'meta[property="og:image"]', "content", relative, errors)
+  twitter_card = one_value(document, 'meta[name="twitter:card"]', "content", relative, errors)
+  twitter_title = one_value(document, 'meta[name="twitter:title"]', "content", relative, errors)
+  add_error(errors, relative, "Open Graph and Twitter titles must match") unless og_title == twitter_title
+  add_error(errors, relative, "Open Graph description must equal meta description") unless og_description == description
+  unless og_url == "#{ORIGIN}#{expected_page_path(relative)}"
+    add_error(errors, relative, "Open Graph URL must use the canonical route")
+  end
+  add_error(errors, relative, "Open Graph image must use #{ORIGIN}") unless preferred_url?(og_image.to_s)
+  add_error(errors, relative, "Twitter card must be summary_large_image") unless twitter_card == "summary_large_image"
+  add_error(errors, relative, "unlisted page must not emit JSON-LD") if document.at_css('script[type="application/ld+json"]')
+  if document.css('meta[property="article:published_time"]').any?
+    add_error(errors, relative, "unlisted page must not emit article metadata")
+  end
+end
+
+# Everything below runs the site-wide check; skip it when this file is
+# required by the self-test so the pure helpers above stay testable.
+return unless $PROGRAM_NAME == __FILE__
+
 errors = []
+warnings = []
+analytics_events = Set.new
 cname = File.read(File.join(ROOT, "CNAME")).strip
 add_error(errors, "CNAME", "must match the canonical host #{HOST}") unless cname == HOST
+analytics_source = File.read(File.join(ROOT, "_includes", "core", "analytics-events.html"))
+add_error(errors, "_includes/core/analytics-events.html", "must push events to dataLayer") unless analytics_source.include?("window.dataLayer.push")
+%w[link.href getAttribute("href")].each do |forbidden|
+  if analytics_source.include?(forbidden)
+    add_error(errors, "_includes/core/analytics-events.html", "must not collect link destinations")
+  end
+end
+event_card_source = File.read(File.join(ROOT, "_includes", "components", "event-card.html"))
+unless event_card_source.include?("event_registration_click")
+  add_error(errors, "_includes/components/event-card.html", "must support event registration measurement")
+end
+project_sources = Dir.glob(File.join(ROOT, "_projects", "*.md")).to_h do |absolute|
+  [absolute.delete_prefix("#{ROOT}/"), File.read(absolute)]
+end
+active_project_files = project_sources.filter_map do |relative, source|
+  relative if front_matter_value(source, "is_active") == "true"
+end
+declared_case_study_files = project_sources.filter_map do |relative, source|
+  declared_standard = front_matter_value(source, "case_study_standard") == "true"
+  declared_review = !front_matter_value(source, "factual_review_status").to_s.empty?
+  relative if declared_standard || declared_review
+end
+case_study_project_files = (
+  active_project_files +
+  PROMOTED_CASE_STUDY_PROJECTS +
+  declared_case_study_files
+).uniq.sort
+case_study_project_files.each do |relative|
+  source = project_sources.fetch(relative)
+  unless front_matter_value(source, "case_study_standard") == "true"
+    add_error(errors, relative, "active or promoted project must declare case_study_standard: true")
+  end
+  %w[description seo_description seo_title].each do |field|
+    if front_matter_value(source, field).to_s.empty?
+      add_error(errors, relative, "active or promoted project needs #{field}")
+    end
+  end
+  if front_matter_value(source, "content_owner").to_s.empty?
+    add_error(errors, relative, "active or promoted project needs a content_owner")
+  end
+  unless front_matter_value(source, "last_reviewed").to_s.match?(/\A\d{4}-\d{2}-\d{2}\z/)
+    add_error(errors, relative, "active or promoted project needs a YYYY-MM-DD last_reviewed date")
+  end
+  unless source.include?("data-analytics-event=")
+    add_error(errors, relative, "project page needs an instrumented next step")
+  end
+  status = front_matter_value(source, "factual_review_status")
+  unless %w[approved pending].include?(status)
+    add_error(errors, relative, "factual_review_status must be pending or approved")
+  end
+  required_approvals_value = front_matter_value(source, "factual_review_required_approvals").to_s
+  required_approvals = required_approvals_value.to_i if required_approvals_value.match?(/\A[1-9]\d*\z/)
+  unless required_approvals
+    add_error(errors, relative, "factual_review_required_approvals must be a positive integer")
+  end
+  if status == "pending" && front_matter_value(source, "content_owner").to_s.match?(/\bproject team\b/i)
+    add_error(errors, relative, "pending editorial draft must not attribute ownership to an unreviewed project team")
+  end
+  if status != "approved"
+    if REQUIRE_FACTUAL_APPROVAL
+      add_error(errors, relative, "release requires factual_review_status: approved")
+    elsif WARN_FACTUAL_APPROVAL
+      warnings << "#{relative}: factual_review_status is #{status.inspect}; needs approval before enforcement flips to hard"
+    end
+  end
+  next unless status == "approved"
+
+  reviewed_by = front_matter_value(source, "factual_reviewed_by")
+  reviewed_on = front_matter_value(source, "factual_reviewed_on")
+  evidence = front_matter_value(source, "factual_review_evidence")
+  reviewers = reviewed_by.to_s.split(";").map(&:strip).reject(&:empty?)
+  if required_approvals && reviewers.length != required_approvals
+    add_error(
+      errors,
+      relative,
+      "approved factual review needs #{required_approvals} semicolon-separated factual_reviewed_by entries"
+    )
+  end
+  normalized_reviewers = reviewers.map { |reviewer| reviewer.downcase.gsub(/\s+/, " ") }
+  if normalized_reviewers.uniq.length != normalized_reviewers.length
+    add_error(errors, relative, "approved factual review needs distinct factual_reviewed_by entries")
+  end
+  unless reviewed_on.to_s.match?(/\A\d{4}-\d{2}-\d{2}\z/)
+    add_error(errors, relative, "approved factual review needs a YYYY-MM-DD factual_reviewed_on date")
+  end
+  evidence_reference = factual_review_evidence_reference(evidence.to_s)
+  unless evidence_reference
+    add_error(
+      errors,
+      relative,
+      "approved factual review evidence must link to a GitHub issue or pull-request comment in this repository"
+    )
+    next
+  end
+  factual_review_evidence_errors(
+    evidence_reference,
+    relative,
+    reviewed_on,
+    reviewers
+  ).each do |message|
+    add_error(errors, relative, message)
+  end
+end
+case_study_routes = case_study_project_files.to_h do |relative|
+  route = "/projects/#{File.basename(relative, ".md")}.html"
+  [route, front_matter_value(project_sources.fetch(relative), "factual_review_status")]
+end
 
 Dir.mktmpdir("civictechdc-seo-") do |destination|
   output, status = Open3.capture2e(
@@ -115,6 +457,7 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
   indexable = []
   redirects = []
   noindex = []
+  unlisted = []
   html_files = Dir.glob(File.join(destination, "**", "*.html")).sort
 
   html_files.each do |path|
@@ -134,11 +477,17 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
       next
     end
 
+    if UNLISTED_PAGES.include?(relative)
+      check_unlisted_page(document, relative, errors)
+      unlisted << relative
+      next
+    end
+
     html_lang = one_value(document, "html", "lang", relative, errors)
     charset = one_value(document, "meta[charset]", "charset", relative, errors)
     viewport = one_value(document, 'meta[name="viewport"]', "content", relative, errors)
     title = one_value(document, "title", nil, relative, errors)
-    one_value(document, "h1", nil, relative, errors)
+    h1 = one_value(document, "h1", nil, relative, errors)
     description = one_value(document, 'meta[name="description"]', "content", relative, errors)
     author = one_value(document, 'meta[name="author"]', "content", relative, errors)
     robots = one_value(document, 'meta[name="robots"]', "content", relative, errors)
@@ -204,6 +553,45 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
     end
     add_error(errors, relative, "stale /about-us/ metadata remains") if document.to_html.include?("/about-us/")
     add_error(errors, relative, "bare-domain internal URL remains") if document.to_html.include?("https://civictechdc.org")
+
+    if (review_status = case_study_routes[page_url])
+      review_markers = document.css("[data-factual-review-status]")
+      unless review_markers.length == 1
+        add_error(errors, relative, "expected one visible factual-review status marker")
+      end
+      if review_markers.one?
+        review_marker = review_markers.first
+        unless review_marker["data-factual-review-status"] == review_status
+          add_error(errors, relative, "visible factual-review status does not match front matter")
+        end
+        if normalized_text(review_marker).empty?
+          add_error(errors, relative, "visible factual-review status marker is empty")
+        end
+      end
+    end
+
+    document.css("a[data-analytics-event]").each do |link|
+      analytics_event = link["data-analytics-event"].to_s.strip
+      analytics_location = link["data-analytics-location"].to_s.strip
+      add_error(errors, relative, "analytics event is empty") if analytics_event.empty?
+      unless analytics_event.empty? || REQUIRED_ANALYTICS_EVENTS.include?(analytics_event)
+        add_error(errors, relative, "unknown analytics event: #{analytics_event.inspect}")
+      end
+      add_error(errors, relative, "analytics location is empty for #{analytics_event.inspect}") if analytics_location.empty?
+      analytics_events << analytics_event unless analytics_event.empty?
+    end
+    unless document.css("script").any? { |script| script.text.include?('a[data-analytics-event]') }
+      add_error(errors, relative, "analytics event listener is missing")
+    end
+
+    if (required_links = ROUTE_LINK_EXPECTATIONS[page_url])
+      required_links.each do |required_link|
+        next if matching_link?(document, required_link)
+
+        details = required_link.map { |key, value| "#{key}=#{value.inspect}" }.join(", ")
+        add_error(errors, relative, "missing required route link: #{details}")
+      end
+    end
 
     if preferred_url?(og_image.to_s)
       image_uri_path = URI.parse(og_image).path
@@ -360,6 +748,11 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
   unless noindex.map { |row| row[:page_url] } == ["/404.html"]
     add_error(errors, "site", "404.html must be the only noindex HTML page")
   end
+  supported_analytics_events = analytics_events.to_a + CONDITIONALLY_RENDERED_ANALYTICS_EVENTS
+  missing_analytics_events = REQUIRED_ANALYTICS_EVENTS - supported_analytics_events
+  unless missing_analytics_events.empty?
+    add_error(errors, "site", "missing analytics events: #{missing_analytics_events.join(', ')}")
+  end
 
   {
     "title" => indexable.map { |row| row[:title] },
@@ -383,7 +776,7 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
       add_error(errors, "sitemap.xml", "URL must use #{ORIGIN}: #{location}") unless preferred_url?(location)
     end
     add_error(errors, "sitemap.xml", "contains duplicate URLs") unless locations.uniq.length == locations.length
-    expected = indexable.map { |row| row[:canonical] }.sort
+    expected = indexable.filter_map { |row| row[:canonical] }.sort
     missing = expected - locations
     extra = locations - expected
     add_error(errors, "sitemap.xml", "missing URLs: #{missing.join(', ')}") unless missing.empty?
@@ -415,10 +808,14 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
     add_error(errors, "feed.xml", "file is missing")
   end
 
+  unless warnings.empty?
+    warn "SEO check warnings (#{warnings.length}):"
+    warnings.each { |warning| warn "- #{warning}" }
+  end
   if errors.empty?
     puts "SEO check passed: #{indexable.length} indexable pages, " \
-         "#{noindex.length} noindex pages, #{redirects.length} redirects, " \
-         "#{html_files.length} HTML files."
+         "#{noindex.length} noindex pages, #{unlisted.length} unlisted pages, " \
+         "#{redirects.length} redirects, #{html_files.length} HTML files."
   else
     warn "SEO check failed with #{errors.length} error#{errors.length == 1 ? '' : 's'}:"
     errors.each { |error| warn "- #{error}" }

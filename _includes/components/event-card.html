@@ -10,7 +10,11 @@ assign cols = include.columns | default: 3 -%} {%- if cols == 2 -%}{%- assign
 desktop_col = "desktop:grid-col-6" -%}{%- else -%}{%- assign desktop_col =
 "desktop:grid-col-4" -%}{%- endif -%} {%- assign event_external = false -%} {%-
 if event.redirect_to -%}{%- assign event_external = true -%}{%- endif -%} {%-
-assign event_link = event.redirect_to | default: event.url -%}
+assign event_link = event.redirect_to | default: event.url -%} {%- assign
+event_analytics = "event_discovery_click" -%} {%- if event_external -%}{%-
+assign event_analytics = "event_registration_click" -%}{%- endif -%} {%- if
+include.past -%}{%- assign event_analytics = "event_discovery_click" -%}{%-
+endif -%}
 <li
   class="usa-card grid-col-12 tablet:grid-col-6 {{ desktop_col }} ctdc-event-card ctdc-event-card--{{ variant }}"
 >
@@ -27,6 +31,8 @@ assign event_link = event.redirect_to | default: event.url -%}
       {%
       endif
       %}
+      data-analytics-event="{{ event_analytics }}"
+      data-analytics-location="event_card"
       >{% endif %} {% if event.card_image %}
       <div class="usa-card__media">
         <div class="usa-card__img">

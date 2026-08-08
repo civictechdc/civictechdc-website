@@ -2,117 +2,85 @@
 layout: project
 is_active: true
 title: Data and Democracy Project
+seo_title: "Election Data Tools: Data and Democracy"
 image: project_thumbnails/eavs.jpg
 image_alt_text: Voting precinct data table
-description: "We make election and democracy data easier to understand and use, so that investigators, election administrators, oversight bodies, journalists, and others working to protect elections can find what matters and act on it."
-seo_description: The Data and Democracy Project makes election data easier to use so investigators, administrators, oversight bodies, and journalists can protect elections.
+github_link: https://github.com/civictechdc/eavs_clc
+slack_channel: C07HS3V6AAF
+description: Making election and democracy data easier to understand and use so journalists, advocates, administrators, and oversight groups can act on what they find.
+seo_description: Data and Democracy builds reproducible election-data tools for journalists, advocates, administrators, researchers, and oversight groups.
+content_owner: Civic Tech DC organizing team
+last_reviewed: 2026-07-26
+factual_review_status: pending
+factual_review_required_approvals: 2
+case_study_standard: true
 ---
 
-<section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
-  <div class="grid-container usa-prose">
-    <em><span aria-hidden="true">🗳️</span> We make election and democracy data easier to understand and use, so that investigators, election administrators, oversight bodies, journalists, and others working to protect elections can find what matters and act on it.</em>
-  </div>
-</section>
+The Data and Democracy Project makes public election data easier to understand and use. It helps journalists, advocates, election administrators, litigators, researchers, and oversight groups spend less time wrangling spreadsheets and more time examining what the data shows.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg">Why This Matters</h2>
-    <p>
-Elections in the United States generate enormous amounts of public data, but that data is scattered, inconsistent, and hard to use. Patterns that matter (administrative issues, data quality problems, or practices that warrant a closer look) stay buried in spreadsheets and codebooks that few people have the time or tooling to work through.
+The project is active and in mid-stage development. Its data pipeline exists; analysis, visualization, outreach, and user discovery continue.
 
-Our work makes election and democracy data easier to access and use, so that the people protecting elections can find what matters and act on it. These include journalists, advocates for fairer elections, election administrators, litigators, oversight bodies, and other election protection and public-interest organizations. Our goal is to reduce friction and speed up the process of working with election data, so that groups spend less time wrangling spreadsheets and more time acting on what they find.
+## Why election data is hard to use
 
+US elections generate large public datasets, but the files are scattered, inconsistent, and documented for specialists. Patterns that matter can remain buried in spreadsheets and codebooks because few public-interest teams have time to prepare the data repeatedly.
+
+The project's flagship dataset is the US Election Administration and Voting Survey (EAVS). It covers voter registration, mail ballots, provisional ballots, voter-list maintenance, and other election practices. A typical file contains roughly 400 columns and 6,000 jurisdiction rows.
+
+## What the team is building
+
+The public [EAVS repository](https://github.com/civictechdc/eavs_clc) contains a Python workflow that:
+
+1. downloads source files from the US Election Assistance Commission;
+2. verifies downloads with SHA-256 checksums;
+3. preserves raw inputs separately from transformed data;
+4. replaces compact variable names with readable labels;
+5. produces analysis-ready files, including a Parquet timeseries;
+6. supports exploratory notebooks and dashboard prototypes.
+
+The team uses notebooks to explore questions. It moves stable transformations into Python scripts so another person can rebuild and review the output instead of relying on private spreadsheet steps.
+
+## Campaign Legal Center and broader users
+
+Early work focused on understanding how the [Campaign Legal Center](https://campaignlegal.org/)'s Voting Rights team worked with EAVS data and where preparation created bottlenecks. That workflow helped shape the pipeline. This page treats it as early user research, not a formal partnership or broader endorsement.
+
+The project is also talking with journalists, researchers, election practitioners, advocates, litigators, and oversight organizations. Those groups may use the same dataset to answer different questions, so the team does not assume that one dashboard will serve everyone.
+
+## Current project status
+
+As of July 2026:
+
+- data for 2020, 2022, and 2024 have been cleaned and standardized;
+- the team is shifting toward the Election Assistance Commission's harmonized timeseries as the canonical cross-year source;
+- combined timeseries outputs exist;
+- demographic enrichment is partly integrated;
+- analysis and visualization concepts are in development;
+- outreach and user discovery continue.
+
+No single public dashboard represents the final product. The pipeline makes preparation more reproducible; it does not decide what a pattern means, establish wrongdoing, or remove the need for source documentation and election-administration expertise.
+
+## Join the project or test the data
+
+Michael, Yashin, and Cameron coordinate the project with Civic Tech DC volunteers. Current work includes Python data pipelines, data quality, analytics, visualization, documentation, user research, outreach, and project management. The most important qualification is curiosity about how elections work and who gets to participate.
+
+Journalists, researchers, election administrators, litigators, advocates, and oversight groups can share a question or data obstacle as validating users. Use the GitHub and Slack links above, or:
+
+<p>
+  <a
+    href="mailto:team@civictechdc.org?subject=Data%20and%20Democracy%20user%20or%20partner"
+    class="usa-button"
+    data-analytics-event="partner_inquiry_click"
+    data-analytics-location="data_democracy_cta"
+    >Help validate the election-data work</a
+  >
+  <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSfZ7X3jxj1xwnmgvGi6b7FBPBf5SKoVHX3Vz1eV5wom5TXKNg/viewform"
+    class="usa-button usa-button--outline"
+    target="_blank"
+    rel="noopener"
+    data-analytics-event="project_join_click"
+    data-analytics-location="data_democracy_cta"
+    >Share your volunteer interests</a
+  >
 </p>
 
-  </div>
-</section>
-
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg">What We're Building</h2>
-    <p>Our flagship effort is a reproducible, open workflow built around the U.S. Election Administration and Voting Survey (EAVS), the most detailed national dataset on how elections are actually run, covering voter registration, mail ballots, provisional ballots, voter list maintenance, and more. Current work includes:</p>
-
-<ul>
-<li>Building out a Python-based data pipeline to clean and standardize EAVS datasets</li>
-<li>Developing timeseries data to support analysis across election cycles </li>
-<li>Enriching datasets with demographic and jurisdictional information (e.g., Census-based data) </li>
-<li>Preparing analysis-ready datasets for dashboards and further investigation</li>
-</ul>
-  
-<p>The goal is to reduce the time and effort required to work with election data and to make analyses more transparent, reproducible, and scalable.
-    </p>
-  </div>
-</section>
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg">Current Project Status</h2>
-    <p>The project is currently in mid-stage of development, with strong foundations in place and ongoing work in several areas.</p>
-<ul>
-<li>Single-year datasets for 2020, 2022, and 2024 have been cleaned and standardized; the team is now shifting to build on the EAC's own pre-harmonized timeseries dataset as the canonical cross-year source, rather than manually combining files</li>
-<li>Combined multi-year datasets and timeseries outputs have been created</li>
-<li>Demographic enrichment has been partially integrated</li>
-<li>Dashboard development and analysis concepts are in progress</li>
-<li>The team is actively engaging in outreach and user discovery to ensure the work aligns with real-world needs</li>
-</ul>
-<p>The focus now is on refining the pipeline, expanding analysis and visualization, and working with potential users to guide further development.
-    </p>
-  </div>
-</section>
-
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg">Our Story</h2>
-    <p>The project is led by a small core team (Michael, Yashin, and Cameron) alongside Civic Tech DC volunteers. It began with a simple observation: the data that could help protect elections is rich but not user-friendly. Working with it often requires identifying relevant variables across multiple files and codebooks, cleaning and standardizing inconsistent formats, calculating key metrics, and comparing results across years and jurisdictions. In practice, this has often meant manual, spreadsheet-based workflows that are time-consuming, difficult to reproduce, and prone to error.</p>
-
-<p>Early work focused on understanding how the Campaign Legal Center was working with EAVS data and where the biggest bottlenecks existed. The project has since evolved into building a reusable, multi-year data pipeline and supporting tools to enable more reliable and scalable analysis, and into a broader effort to make public election data usable for everyone working to protect the vote.</p>
-  </div>
-</section>
-
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg">How the Project Is Organised</h2>
-    <p>The project is organized into five areas:</p>
-
-<ul>
-<li>Data Cleaning / Pipeline (Python) – cleaning and standardizing datasets, building reproducible workflows</li>
-<li>Data Visualization (Tableau, Plotly, etc.) – developing dashboards and user-facing tools</li>
-<li>Analytics / Modeling – exploring data, identifying patterns, and generating findings</li>
-<li>Outreach – connecting with potential users and partners to understand needs and use cases</li>
-<li>Project Management – coordinating tasks, documentation, and team processes</li>
-</ul>
-<p>Volunteers are welcome to contribute to one or more areas depending on their interests and experience.
-    </p>
-  </div>
-</section>
-
-<section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
-  <div class="grid-container text-white">
-    <h2><span aria-hidden="true">👋</span> Come Join Us</h2>
-    <p>We're looking for volunteers with skills in Python data pipelines, data visualization, analytics and modeling, and outreach. But the most important thing is curiosity about how elections actually work and who gets to participate in them. Current needs include:</p>
-<ul>
-<li>Data Cleaning / Pipeline Building (Python) – cleaning and standardizing datasets, improving and extending the pipeline</li>
-<li>Data Visualization (Tableau, Plotly, etc.) – building and refining dashboards and visualizations</li>
-<li>Data Analytics / Modeling – conducting quality checks, exploratory analysis, modeling, and identifying meaningful patterns</li>
-<li>Outreach – identifying and connecting with potential users of the work</li>
-<li>Project Management and Coordination – supporting organization, onboarding, and communication</li>
-</ul>
-<p>The project is coordinated through the Civic Tech DC Slack workspace and during in-person project nights on the 2nd and 4th Wednesdays of each month. Work is largely asynchronous between meetings.</p>
-
-<p>To get involved, join the <a href="{{ '/slack.html' | relative_url }}">Slack workspace</a>. Once there, look for the <strong>#eavs_clc</strong> channel, where we share updates, tasks, questions, and resources.</p>
-
-<p>If you are interested in potentially contributing now or later, please also fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfZ7X3jxj1xwnmgvGi6b7FBPBf5SKoVHX3Vz1eV5wom5TXKNg/viewform">Volunteer Matchmaker Survey</a>. Completing the survey is not a commitment to volunteer; it simply helps us understand your interests, skills, and availability as the project evolves.</p>
-  </div>
-</section>
-
-<section class="usa-section padding-y-4">
-  <div class="grid-container">
-    <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C07HS3V6AAF" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">💬</span> Slack (#eavs_clc)
-      </a>
-      <a href="https://github.com/civictechdc/eavs_clc" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">🧩</span> GitHub Repo
-      </a>
-    </div>
-  </div>
-</section>
+Have a different public-data problem? <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="data_democracy_cta">Bring it to Civic Tech DC</a>.

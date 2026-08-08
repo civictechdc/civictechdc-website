@@ -42,7 +42,7 @@ event:
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; height: auto; margin: 20px 0;">
-    <a href="https://lu.ma/53d1fuu9" target="_blank" style="text-decoration: none;">
+    <a href="https://luma.com/53d1fuu9" target="_blank" style="text-decoration: none;">
         <button style="background-color: #f8c45c; color: white; width: 100%; max-width: 450px; padding: 1.5rem; font-size: 1.8rem; font-weight: bold; border-radius: 15px; border: none; cursor: pointer;">
             Register
         </button>

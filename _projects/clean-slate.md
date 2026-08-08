@@ -2,28 +2,52 @@
 layout: project
 is_active: false
 title: Clean Slate
+seo_title: "Clean Slate DC: Marijuana Record Relief"
 image: project_thumbnails/clean-slate.jpg
 image_alt_text: Clean Slate DC logo
 github_link: https://github.com/civictechdc/clean-slate
-slack_channel: clean_slate
-description: The Clean Slate Expungement Project was a digital tool that helped individuals determine their eligibility for expunging or sealing past marijuana-related criminal records following legalization in DC.
-seo_description: Clean Slate helped Washington, DC residents check whether past marijuana-related criminal records might qualify for sealing or expungement.
+description: A past legal-access project that helped DC residents explore whether marijuana-related records might qualify for sealing or expungement.
+seo_description: Clean Slate helped DC residents explore whether past marijuana-related records might qualify for sealing or expungement, with lawyers retaining review.
+content_owner: Civic Tech DC project archive
+last_reviewed: 2026-07-26
+factual_review_status: pending
+factual_review_required_approvals: 2
+case_study_standard: true
 ---
 
-## Clean Slate Expungement Project (2015-2017)
+Clean Slate was a 2015–2017 legal-access project that helped DC residents explore whether past marijuana-related criminal records might qualify for sealing or expungement. It grew from the policy changes surrounding marijuana decriminalization and legalization in the District, when many people still carried records from past marijuana-related offenses.
 
-The Clean Slate Expungement Project was an early Civic Tech DC initiative designed to help individuals navigate the complex legal landscape of record expungement following marijuana decriminalization and legalization in the District. This tool provided users with a preliminary evaluation of their eligibility to have past records sealed or expunged, offering a first step toward a clean slate.
+The historical tool is inactive. Its legal logic must not be used as current legal advice.
 
-## Project Background
+## A timely response to changing marijuana laws
 
-As part of the effort to address the lingering effects of criminal records from past marijuana-related offenses, Clean Slate was built to help individuals understand whether they qualified for expungement under evolving laws. Initiated at a local hackathon and later brought to Code for DC, the project emerged from a collaboration with Students In Court DC (now [Rising for Justice](https://www.risingforjustice.org/)), which had expertise in expungement requirements. This partnership helped transform the paper-based process into an accessible digital tool.
+Marijuana record-sealing and expungement rules are difficult to interpret without legal training. Eligibility can depend on the offense, case status, dates, waiting periods, pending matters, and changes in law. A person seeking a clean slate needed a clearer way to understand whether to pursue legal help.
 
-## How It Worked
+The project began at a local hackathon and later moved into Code for DC. Civic Tech DC volunteers worked with Students in Court DC, now [Rising for Justice](https://www.risingforjustice.org/), to turn legal expertise and a paper-based process into an accessible guided tool.
 
-The Clean Slate app functioned as a triage tool, developed using JavaScript and React, that guided users through a series of questions to determine their eligibility. Based on users’ responses, the app would provide an initial determination: whether they were currently eligible, might be eligible after a certain period, or did not meet eligibility criteria. However, the app was not a replacement for legal counsel; it was a starting point. Lawyers would manually review each case to ensure accuracy and compliance.
+## How the tool supported a legal clinic
 
-## Impact and Transition
+The JavaScript and React application asked a series of questions and returned a preliminary result: likely eligible, possibly eligible after a waiting period, or not currently eligible. The archived repository also records clinic needs such as intake referrals, attorney training, forms, and explanations of eligibility timelines.
 
-The project operated as a stopgap solution, adapting to changes in expungement law from 2014 to 2017. While it offered valuable support during its active years, changes in legislation and the need for more comprehensive tools led to its transition to another nonprofit organization, Mission Launch, for further development. The project's success was due to consistent stakeholder involvement, local support, and its ability to address a timely legal challenge in a straightforward, tech-enabled way.
+Clean Slate supported triage and education. It did not replace a lawyer:
 
-Today, while the Clean Slate Expungement Project is no longer active at Civic Tech DC, it remains an example of how civic technology can respond quickly to policy changes, offering critical resources to the community.
+- legal experts defined and reviewed the decision logic;
+- the interface explained terms and next steps;
+- attorneys remained responsible for individual cases;
+- the project had to change when the law changed.
+
+That boundary mattered. An outdated or incorrect legal answer could prevent someone from pursuing an important right.
+
+## Transition and archive
+
+The Civic Tech DC repository is archived. In March 2016, further development and deployment moved to [Mission Launch's Clean Slate repository](https://github.com/MissionLaunch/clean-slate). Both repositories document a historical project, not a current legal service.
+
+The available record does not establish a verified number of users, sealed or expunged records, or legal outcomes. Clean Slate's documented value lies in its response to a specific policy change, its partnership with legal practitioners, and its decision to keep attorneys in the review process.
+
+For current help with a DC legal matter, consult a qualified legal-services provider and current official information. [Rising for Justice](https://www.risingforjustice.org/) is the successor organization to the original clinic partner.
+
+## Bring a current legal-access problem
+
+Legal clinics, pro bono practitioners, policy advocates, and community members can <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="clean_slate_project_cta">bring a current legal-access problem to Civic Tech DC</a>. Start with the people affected, the legal workflow, and the safeguards rather than assuming the answer is software.
+
+You can also [learn how subject-matter partners work with Civic Tech DC]({{ site.baseurl }}/partners) or <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="clean_slate_project_cta">meet active teams at a Project Night</a>.

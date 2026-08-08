@@ -2,116 +2,55 @@
 layout: project
 is_active: true
 title: Congressional Tech
+seo_title: "Congressional Tech: Open-Source Staff Tools"
 image: project_thumbnails/congress.png
 image_alt_text: Illustration of the U.S. Capitol representing technology for congressional staff
-description: Building tech tools for congressional staff and increasing transparency for constituents.
+github_link: https://github.com/civictechdc/congressional-tech
+slack_channel: CH57ZSMK8
+description: Building practical tools that reduce technological roadblocks for congressional staff and make legislative activity easier for the public to understand.
+seo_description: Congressional Tech builds open-source tools for congressional staff workflows, legislative data access, and public understanding of Congress.
+content_owner: Civic Tech DC organizing team
+last_reviewed: 2026-07-26
+factual_review_status: pending
+factual_review_required_approvals: 2
+case_study_standard: true
 ---
 
-<section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
-  <div class="grid-container usa-prose">
-    <em>Building tools to tackle common technological roadblocks that make congressional staff’s work difficult, while increasing transparency so constituents can better understand their representatives' activities.</em>
-  </div>
-</section>
+Congressional Tech builds practical tools for congressional staff while making legislative activity easier for constituents and the public to understand. The work spans small utilities, data projects, and proposals, but the mission remains concrete: remove common technological roadblocks in and around Congress.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🏠</span> Why This Matters</h2>
-    <p>We collaborate with key technical personnel in and around Congress to improve legislative processes by enhancing operations, transparency, and public access to procedural legislative information. The focus is on civic tech initiatives that make <strong>legislative data more discoverable and useful</strong> for both congressional staff and the public.</p>
-  </div>
-</section>
+## Requests from people who work with Congress
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🚀</span> Our Impact</h2>
-    <p>
-      To foster a strong relationship between the House Digital Service and Civic Tech DC to find opportunities for engagement with important congressional stakeholders, ultimately increasing efficiency and transparency in legislative operations.
-    </p>
-  </div>
-</section>
+The project began with needs gathered from congressional staff during the Annual Congressional Hackathon. The American Governance Institute organized those requests and brought them to Civic Tech DC. The current [Congressional Tech repository](https://github.com/civictechdc/congressional-tech) describes the work as a continuing partnership between the two organizations.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🌍</span> Geography / Reach</h2>
-    <p>Primarily the DMV area, but open source and available for national use.</p>
-  </div>
-</section>
+The project has also sought opportunities to work with technical teams in and around Congress, including the House Digital Service. This page does not treat that outreach as an active partnership or official relationship. The project is not a House, Senate, or federal-government service.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🤝</span> Community Partners</h2>
-    <a href="https://americalabs.org/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">American Governance Institute (AGI)</a>.
-  </div>
-</section>
+## What the portfolio includes
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
-    <p>Technological roadblocks were gathered organically from Congressional Staffers during the Annual Congressional Hackathon. These needs were compiled by a member of the American Governance Institute (AGI) and shared with Civic Tech DC (CTDC). The AGI–CTDC relationship continues as an ongoing partnership.</p>
-  </div>
-</section>
+Congressional staff and people following Congress work across public APIs, committee pages, videos, spreadsheets, calendars, and documents. Congressional Tech organizes proposals and prototypes around those workflows.
 
-<section class="padding-y-5 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-xl margin-bottom-2"><span aria-hidden="true">📇</span> Current Project Volunteer Contacts</h2>
-    <table class="usa-table usa-table--striped usa-table--borderless">
-      <thead>
-        <tr>
-          <th scope="col" class="font-sans-sm text-no-wrap">Name</th>
-          <th scope="col" class="font-sans-sm text-no-wrap">Role & Focus</th>
-          <th scope="col" class="font-sans-sm text-no-wrap">Slack</th>
-          <th scope="col" class="font-sans-sm text-no-wrap">Social & Contact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row" class="text-no-wrap">Matthew Zamora</th>
-          <td>
-            <strong><span aria-hidden="true">🧩</span> Project Lead</strong><br>
-          </td>
-          <td class="text-no-wrap">@Matthew Zamora</td>
-          <td>
-            <a href="https://www.linkedin.com/in/matthew-zamora-18433656/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-            <a href="mailto:matt@mocomakers.com" class="usa-link">Email</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row" class="text-no-wrap">Cameron Peltz</th>
-          <td>
-            <strong><span aria-hidden="true">🛠</span> Volunteer Developer</strong><br>
-          </td>
-          <td class="text-no-wrap">@Cameron Peltz</td>
-          <td>
-            <a href="https://www.linkedin.com/in/cameron-peltz-b280a618/" class="usa-link usa-link--external" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
+Current repository work includes:
 
-<section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
-  <div class="grid-container text-white">
-    <h2><span aria-hidden="true">👋</span> Come Join Us</h2>
-    <p>Everyone is welcome no matter your skill level or background. We especially need help with:</p>
-    <ul class="usa-list">
-      <li>Web scraping</li>
-      <li>Data modeling</li>
-      <li>Finding and using open data APIs</li>
-      <li>Creating Chrome/Firefox browser extensions </li>
-      <li>Google application integrations (e.g., Google Sheets, Google Forms)</li>
-    </ul>
-  </div>
-</section>
+- tools that connect congressional committee videos with hearing and event records;
+- committee and hearing metadata processing;
+- an inflation calculator for Google Sheets;
+- structured-data and deadline concepts;
+- a public catalog of project proposals and working tools.
 
-<section class="usa-section padding-y-4">
-  <div class="grid-container">
-    <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/CH57ZSMK8" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">💬</span> Slack (#congress-modernization)
-      </a>
-      <a href="https://github.com/civictechdc/congressional-tech" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">🧩</span> GitHub Repo
-      </a>
-    </div>
-  </div>
-</section>
+Two proposals are described in the repository as working tools: the committee YouTube coverage dashboard and the Google Sheets inflation calculator. Other entries remain proposals or prototypes.
+
+## Current status
+
+Congressional Tech is active, DMV-based, and open for national reuse. Its repository contains current code, data-processing packages, a public website, and a larger proposal backlog.
+
+- Different tools have different levels of completeness and user validation.
+- Public legislative sources can change, omit identifiers, or disagree.
+- The project does not claim endorsement by Congress or any congressional office.
+- It has not published verified measures of staff adoption, time saved, constituent use, or institutional outcomes.
+
+Each proposed tool needs a specific workflow, reliable source data, people who will test it, and someone prepared to maintain or retire it.
+
+## Join Congressional Tech
+
+Congressional staff, legislative-data practitioners, journalists, researchers, and civic organizations can bring a workflow to the team. Volunteers can help with web scraping, data modeling, public APIs, browser extensions, Google application integrations, documentation, user research, and project coordination.
+
+Use the GitHub and Slack links above to join the work. You can also <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="congressional_tech_cta">meet the community at a Project Night</a> or <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="congressional_tech_cta">bring Civic Tech DC a related legislative workflow</a>.

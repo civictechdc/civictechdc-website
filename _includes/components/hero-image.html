@@ -9,13 +9,47 @@
     <p>{{ include.subtitle }}</p>
     {% if include.cta_label and include.cta_link %}
     <p class="hero-text__cta">
-      <a href="{{ include.cta_link | relative_url }}" class="usa-button"
+      <a
+        href="{{ include.cta_link | relative_url }}"
+        class="usa-button"
+        {%
+        if
+        include.cta_event
+        %}
+        data-analytics-event="{{ include.cta_event }}"
+        {%
+        endif
+        %}
+        {%
+        if
+        include.cta_location
+        %}
+        data-analytics-location="{{ include.cta_location }}"
+        {%
+        endif
+        %}
         >{{ include.cta_label }}</a
       >
       {% if include.cta2_label and include.cta2_link %}
       <a
         href="{{ include.cta2_link | relative_url }}"
         class="usa-button hero-text__cta-secondary"
+        {%
+        if
+        include.cta2_event
+        %}
+        data-analytics-event="{{ include.cta2_event }}"
+        {%
+        endif
+        %}
+        {%
+        if
+        include.cta2_location
+        %}
+        data-analytics-location="{{ include.cta2_location }}"
+        {%
+        endif
+        %}
       >
         {% if include.cta2_icon == "slack" %}
         <svg

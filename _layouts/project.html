@@ -19,6 +19,7 @@ layout: default
     {% if page.description %}
       <p class="ctdc-project-detail__lead">{{ page.description }}</p>
     {% endif %}
+    {% include components/content-review.html margin="margin-bottom-2" %}
     {% if page.github_link or page.slack_channel %}
       <ul class="ctdc-project-links">
         {% if page.github_link %}
@@ -28,6 +29,8 @@ layout: default
               href="{{ page.github_link }}"
               target="_blank"
               rel="noopener"
+              data-analytics-event="project_repository_click"
+              data-analytics-location="project_header"
             >
               <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
                 <use xlink:href="/assets/img/sprite.svg#code"></use>
@@ -43,6 +46,8 @@ layout: default
               href="https://slack.com/app_redirect?channel={{ page.slack_channel }}"
               target="_blank"
               rel="noopener"
+              data-analytics-event="project_join_click"
+              data-analytics-location="project_header"
             >
               <svg class="usa-icon" aria-hidden="true" focusable="false" role="img">
                 <use xlink:href="/assets/img/sprite.svg#forum"></use>

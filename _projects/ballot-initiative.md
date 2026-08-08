@@ -2,75 +2,62 @@
 layout: project
 is_active: true
 title: VoteCatcher
+seo_title: "VoteCatcher: Petition Signature Verification"
 image: project_thumbnails/ballot-initiative.png
 image_alt_text: Handwritten PDF scans being converted into machine-readable format
 github_link: https://github.com/civictechdc/votecatcher
-slack_channel: vote_catcher
-description: Building open source campaign infrastructure that any grassroots organizer can use - starting with signature validation processes.
+slack_channel: C04U3D9AWER
+description: Building open-source campaign infrastructure that grassroots organizers can use, starting with petition-signature review.
+seo_description: VoteCatcher builds reusable open-source campaign processes, starting with OCR-assisted petition review and voter-file matching.
+content_owner: Civic Tech DC organizing team
+last_reviewed: 2026-07-26
+factual_review_status: pending
+factual_review_required_approvals: 3
+case_study_standard: true
 ---
 
-<section class="bg-base-lightest padding-y-4 usa-prose maxw-none">
-  <div class="grid-container usa-prose">
-    <em>We're building VoteCatcher - open source campaign infrastructure that puts powerful organizing tools in the hands of grassroots campaigns. Think processes, not apps.</em>
-  </div>
-</section>
+VoteCatcher puts practical campaign infrastructure in the hands of grassroots organizers. The project starts with petition-signature review, but its larger goal is to document reusable campaign processes that community-led efforts can adapt. Think processes, not apps.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🗳️</span> Why This Matters</h2>
-    <p>Running a grassroots campaign is hard. Organizers are often stuck with tedious, manual processes or expensive, proprietary software that doesn't fit their needs. This creates a high barrier to entry, making it difficult for community-led efforts to get off the ground. <strong>We believe technology should make democratic participation easier, not harder.</strong></p>
-  </div>
-</section>
+## Why grassroots campaigns need shared infrastructure
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🛠️</span> Our Approach: Processes, Not Just Tools</h2>
-    <p>
-    Instead of building standalone apps, we build and document open source <strong>processes</strong>. Our first project uses multimodal LLMs to achieve high-accuracy signature triaging, and we've already integrated it with the DC voter file for real-time validation.
-    <br/><br/>
-    Right now, we're focused on building out the full document processing and triaging workflow in Python. The goal is a reusable playbook that other campaigns can adapt for their own needs.
-    </p>
-  </div>
-</section>
+Organizers often choose between tedious manual work and expensive software that does not fit a local campaign. Time spent transcribing documents, reconciling voter records, or moving data between tools is time taken from organizing.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">🚀</span> The Big Picture</h2>
-    <p>Signature validation is just the beginning. The systems we're creating (for voter file integration, data validation, and workflow automation) are the building blocks for a full suite of open source campaign infrastructure. Our vision is to support candidate campaigns, issue advocacy, and other community organizing efforts, letting them focus on what matters: talking to people.</p>
-  </div>
-</section>
+VoteCatcher grew from conversations with organizers facing those tradeoffs. The project treats good campaign technology as a public resource, not an advantage reserved for well-funded campaigns with dedicated technical teams.
 
-<section class="padding-y-1 usa-prose maxw-none">
-  <div class="grid-container">
-    <h2 class="font-sans-lg"><span aria-hidden="true">📖</span> Our Story</h2>
-    <p>VoteCatcher grew out of conversations with organizers who were spending more time on data entry and money on expensive software than running their campaign. We're a group of volunteers who believe that good campaign technology should be a public resource, accessible to everyone, not just well-funded efforts with dedicated tech teams.</p>
-  </div>
-</section>
+## Starting with petition review
 
-<section class="bg-primary-darker text-white padding-y-5 usa-prose maxw-none">
-  <div class="grid-container text-white">
-    <h2><span aria-hidden="true">👋</span> Come Join Us</h2>
-    <p>Whether you're a coder, organizer, or just someone who thinks campaigns should have better tools, we'd love to have you. We especially need help with:</p>
-    <ul class="usa-list">
-      <li>UX/UI design</li>
-      <li>Front-end development</li>
-      <li>Python and workflow automation</li>
-      <li>Multimodal LLM implementation</li>
-      <li>Data processing and validation</li>
-      <li>Testing with real campaigns</li>
-    </ul>
-  </div>
-</section>
+The current application supports a petition-review workflow:
 
-<section class="usa-section padding-y-4">
-  <div class="grid-container">
-    <div class="usa-button-group">
-      <a href="https://civictechdc.slack.com/archives/C077YB2ES84" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">💬</span> Slack (#ballot_initiative)
-      </a>
-      <a href="https://github.com/civictechdc/votecatcher" class="usa-button usa-button--dark" target="_blank" rel="noopener noreferrer">
-        <span aria-hidden="true">🧩</span> GitHub Repo
-      </a>
-    </div>
-  </div>
-</section>
+1. create a campaign workspace;
+2. import a voter-registration file;
+3. upload scanned petition pages;
+4. extract cropped entries with a configured optical-character-recognition provider;
+5. compare extracted text with voter records;
+6. group possible matches by confidence for human review;
+7. export the reviewed results.
+
+The public repository contains a SvelteKit interface, a FastAPI backend, sample data, and a simulation mode. These features let contributors exercise the workflow without uploading real voter or petition records.
+
+## The bigger campaign-infrastructure vision
+
+Signature review is the first process, not the full mission. Voter-file integration, data validation, documented workflows, and deployment guidance can support candidate campaigns, issue advocacy, ballot initiatives, and other community organizing.
+
+The project aims to produce a playbook that another campaign can inspect and adapt. That requires more than code: organizers must help define the workflow, reviewers must test it with real document formats, and maintainers must explain what the software can and cannot decide.
+
+## Current status and safeguards
+
+VoteCatcher is active and pre-1.0. It has not published an independent accuracy study, measured time savings, a production campaign deployment, or an election outcome.
+
+- A confidence score helps prioritize review; it does not establish that a signature is legally valid.
+- Petition images and voter files can contain sensitive personal information.
+- Deployers need access controls, retention and deletion rules, vendor review, security practices, and jurisdiction-specific legal guidance.
+- A configured OCR provider may receive cropped petition images.
+- Human reviewers remain responsible for consequential decisions.
+
+The project should earn claims about accuracy and usefulness through documented work with campaign reviewers.
+
+## Help build open campaign processes
+
+VoteCatcher welcomes campaign practitioners, election-law experts, designers, frontend and Python developers, security reviewers, data specialists, testers, and project coordinators. Use the GitHub and Slack links above to inspect the work or join the team.
+
+You can also <a href="{{ site.baseurl }}/events" data-analytics-event="event_discovery_click" data-analytics-location="votecatcher_project_cta">meet the team at a Project Night</a>. If your public-interest organization has a related campaign workflow, <a href="{{ site.baseurl }}/pitch" data-analytics-event="project_inquiry_click" data-analytics-location="votecatcher_project_cta">bring the problem to Civic Tech DC</a>.

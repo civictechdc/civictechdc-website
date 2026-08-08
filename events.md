@@ -45,13 +45,19 @@ redirect_from:
   </dl>
   <div class="ctdc-recurring__actions">
     <a
-      href="https://lu.ma/civic-tech-dc"
+      href="https://luma.com/civic-tech-dc"
       target="_blank"
       rel="noopener"
       class="usa-button"
+      data-analytics-event="event_discovery_click"
+      data-analytics-location="recurring_events"
       >See upcoming dates</a
     >
-    <a href="{{ site.baseurl }}/slack" class="usa-button usa-button--outline"
+    <a
+      href="{{ site.baseurl }}/slack"
+      class="usa-button usa-button--outline"
+      data-analytics-event="slack_discovery_click"
+      data-analytics-location="recurring_events"
       >Join us on Slack</a
     >
   </div>
@@ -67,7 +73,13 @@ redirect_from:
     Check the calendar below for what's coming up next, or follow us so you hear
     about the next one first.
   </p>
-  <a href="{{ site.baseurl }}/slack" class="usa-button">Join us on Slack</a>
+  <a
+    href="{{ site.baseurl }}/slack"
+    class="usa-button"
+    data-analytics-event="slack_discovery_click"
+    data-analytics-location="events_empty_state"
+    >Join us on Slack</a
+  >
 </div>
 {% else %}
 <ul class="usa-card-group ctdc-event-grid">
@@ -89,7 +101,13 @@ redirect_from:
   {% endfor %}
 </ul>
 <p class="ctdc-events-archive-link">
-  <a href="https://lu.ma/civic-tech-dc?period=past" target="_blank" rel="noopener">
+  <a
+    href="https://luma.com/civic-tech-dc?period=past"
+    target="_blank"
+    rel="noopener"
+    data-analytics-event="event_discovery_click"
+    data-analytics-location="past_events"
+  >
     See all past events on Lu.ma
     <svg
       class="ctdc-icon"

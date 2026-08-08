@@ -11,7 +11,12 @@
         <span class="ctdc-project-badge ctdc-project-badge--past">Past</span>
       {% endif %}
       <h{{ card_heading }} class="usa-card__heading">
-        <a href="{{ project.url }}">{{ project.title }}</a>
+        <a
+          href="{{ project.url }}"
+          data-analytics-event="project_discovery_click"
+          data-analytics-location="project_card"
+          >{{ project.title }}</a
+        >
       </h{{ card_heading }}>
     </div>
     <div class="usa-card__media">

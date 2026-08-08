@@ -29,6 +29,9 @@ fallback_extensions = ["html"]
 # Skip common false-positive sources:
 #   - localhost URLs in code examples
 #   - mailto: and tel: links (not HTTP)
+#   - Slack invites and app redirects (reject automated clients)
+#   - signed-in Slack archives (redirect automated clients to login)
+#   - Google Forms and federal regulatory sites (reject automated clients)
 #   - GitHub edit/blob/tree links that may require auth
 #   - LinkedIn (rate-limits crawlers aggressively)
 #   - Twitter/X (rate-limits crawlers aggressively)
@@ -37,6 +40,13 @@ exclude = [
   "^tel:",
   "localhost",
   "127\\.0\\.0\\.1",
+  "join\\.slack\\.com",
+  "slack\\.com/app_redirect",
+  "civictechdc\\.slack\\.com/archives",
+  "docs\\.google\\.com/forms",
+  "forms\\.gle",
+  "federalregister\\.gov/documents",
+  "regulations\\.gov",
   "linkedin\\.com",
   "twitter\\.com",
   "x\\.com",
