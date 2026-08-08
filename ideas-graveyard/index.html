@@ -9,595 +9,644 @@ sitemap: false
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <meta name="robots" content="noindex" />
     <title>Civic Tech DC — Ideas Graveyard</title>
     <meta
       name="description"
-      content="A filterable field guide to 13 years of buried Civic Tech DC / Code for DC project ideas, scored for revival potential."
+      content="Civic Tech DC's records room: buried project ideas worth reviving, projects alive today, and an open drawer for new proposals."
     />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%AA%A6</text></svg>"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%97%84%EF%B8%8F</text></svg>"
     />
-  </head>
-  <body>
     <style>
       :root {
-        --paper: #f3f4f1;
-        --surface: #fbfbf9;
-        --surface-2: #eef0ec;
-        --ink: #191d1a;
-        --ink-soft: #5a655e;
-        --line: #e2e5df;
-        --brick: #9e2b25;
-        --revive: #2f7d4f;
-        --look: #a9751a;
-        --rest: #6f7a84;
-        --active: #2160a6;
-        --revive-bg: #e7f1ea;
-        --look-bg: #f5ecd8;
-        --rest-bg: #eceef0;
-        --active-bg: #e3ecf6;
-        --shadow:
-          0 1px 2px rgba(20, 30, 25, 0.05),
-          0 6px 20px -12px rgba(20, 30, 25, 0.18);
+        --cabinet: #46524b;
+        --cabinet-deep: #39443e;
+        --cabinet-edge: #2f3833;
+        --manila: #eadcb4;
+        --manila-2: #e0cf9f;
+        --manila-3: #d5c28c;
+        --ink: #2b261c;
+        --ink-soft: #6b6353;
+        --cream: #f1ead4;
+        --cream-soft: rgba(241, 234, 212, 0.72);
+        --stamp-red: #a63a2e;
+        --ink-blue: #2c4b8f;
+        --stamp-green: #3f6b4c;
+        --mono:
+          ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
         --serif:
           "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua",
           Georgia, serif;
-        --sans:
-          system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-          sans-serif;
-        --mono:
-          ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --paper: #111412;
-          --surface: #191d1a;
-          --surface-2: #1f2420;
-          --ink: #e9ede9;
-          --ink-soft: #93a09a;
-          --line: #272d28;
-          --brick: #d76a61;
-          --revive: #5cbd82;
-          --look: #d4a24c;
-          --rest: #8894a0;
-          --active: #69a2dc;
-          --revive-bg: #16241c;
-          --look-bg: #241f13;
-          --rest-bg: #1d2226;
-          --active-bg: #152130;
-          --shadow:
-            0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -14px rgba(0, 0, 0, 0.6);
-        }
-      }
-      :root[data-theme="light"] {
-        --paper: #f3f4f1;
-        --surface: #fbfbf9;
-        --surface-2: #eef0ec;
-        --ink: #191d1a;
-        --ink-soft: #5a655e;
-        --line: #e2e5df;
-        --brick: #9e2b25;
-        --revive: #2f7d4f;
-        --look: #a9751a;
-        --rest: #6f7a84;
-        --active: #2160a6;
-        --revive-bg: #e7f1ea;
-        --look-bg: #f5ecd8;
-        --rest-bg: #eceef0;
-        --active-bg: #e3ecf6;
         --shadow:
-          0 1px 2px rgba(20, 30, 25, 0.05),
-          0 6px 20px -12px rgba(20, 30, 25, 0.18);
-      }
-      :root[data-theme="dark"] {
-        --paper: #111412;
-        --surface: #191d1a;
-        --surface-2: #1f2420;
-        --ink: #e9ede9;
-        --ink-soft: #93a09a;
-        --line: #272d28;
-        --brick: #d76a61;
-        --revive: #5cbd82;
-        --look: #d4a24c;
-        --rest: #8894a0;
-        --active: #69a2dc;
-        --revive-bg: #16241c;
-        --look-bg: #241f13;
-        --rest-bg: #1d2226;
-        --active-bg: #152130;
-        --shadow:
-          0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -14px rgba(0, 0, 0, 0.6);
+          0 1px 2px rgba(20, 25, 20, 0.25),
+          0 8px 22px -14px rgba(15, 20, 15, 0.6);
       }
       * {
         box-sizing: border-box;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         margin: 0;
-        background: var(--paper);
-        color: var(--ink);
-        font-family: var(--sans);
+        background: var(--cabinet);
+        color: var(--cream);
+        font-family: var(--serif);
+        font-size: 16px;
         line-height: 1.55;
         -webkit-font-smoothing: antialiased;
-        font-size: 16px;
       }
       .wrap {
-        max-width: 1120px;
+        max-width: 1080px;
         margin: 0 auto;
-        padding: 0 24px;
+        padding: 0 20px;
       }
       a {
-        color: inherit;
+        color: var(--ink-blue);
+      }
+      a:focus-visible,
+      button:focus-visible,
+      summary:focus-visible,
+      input:focus-visible {
+        outline: 2px solid var(--cream);
+        outline-offset: 2px;
+      }
+      .card a:focus-visible,
+      .card summary:focus-visible {
+        outline-color: var(--ink-blue);
       }
 
-      /* Masthead */
-      header.mast {
-        border-bottom: 1px solid var(--line);
-        background: linear-gradient(
-          180deg,
-          color-mix(in srgb, var(--brick) 5%, var(--paper)),
-          var(--paper)
-        );
-        padding: 56px 0 34px;
+      /* ---------- masthead ---------- */
+      .mast {
+        padding: 56px 0 36px;
+        border-bottom: 1px solid var(--cabinet-edge);
       }
       .eyebrow {
         font-family: var(--mono);
-        font-size: 12px;
-        letter-spacing: 0.18em;
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
-        color: var(--brick);
-        font-weight: 600;
+        color: var(--cream-soft);
         margin: 0 0 14px;
       }
       h1 {
-        font-family: var(--serif);
-        font-weight: 600;
-        font-size: clamp(2.3rem, 5.4vw, 3.6rem);
-        line-height: 1.02;
-        margin: 0;
-        letter-spacing: -0.01em;
-        text-wrap: balance;
-        max-width: 16ch;
+        font-family: var(--mono);
+        font-weight: 700;
+        font-size: clamp(2rem, 5.5vw, 3.4rem);
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        line-height: 1.05;
+        margin: 0 0 18px;
+        color: var(--cream);
       }
       .lede {
-        font-size: 1.12rem;
-        color: var(--ink-soft);
-        max-width: 60ch;
-        margin: 18px 0 0;
-        text-wrap: pretty;
+        max-width: 62ch;
+        font-size: 1.08rem;
+        color: var(--cream-soft);
+        margin: 0 0 30px;
       }
-      .mast-rule {
-        height: 3px;
-        width: 64px;
-        background: var(--brick);
-        margin: 22px 0 0;
-        border-radius: 2px;
+      .lede strong {
+        color: var(--cream);
+        font-weight: 600;
       }
 
-      /* Stat tiles */
+      /* drawer-plate stats */
       .stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1px;
-        background: var(--line);
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        overflow: hidden;
-        margin: 34px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
       }
       .stat {
-        background: var(--surface);
-        padding: 18px 20px;
+        background: var(--cabinet-deep);
+        border: 1px solid var(--cabinet-edge);
+        border-radius: 4px;
+        padding: 10px 16px 8px;
+        min-width: 118px;
       }
       .stat .n {
         font-family: var(--mono);
-        font-size: 1.9rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        font-variant-numeric: tabular-nums;
-        line-height: 1;
-      }
-      .stat .l {
-        font-size: 0.82rem;
-        color: var(--ink-soft);
-        margin-top: 6px;
-        text-wrap: balance;
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: var(--cream);
       }
       .stat.top .n {
-        color: var(--revive);
-      }
-      .stat.arch .n {
-        color: var(--rest);
+        color: #e8b9a2;
       }
       .stat.act .n {
-        color: var(--active);
+        color: #b5d4b0;
+      }
+      .stat .l {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--cream-soft);
+        margin-top: 2px;
       }
 
-      /* Controls */
+      /* ---------- lessons strip ---------- */
+      .lessons {
+        padding: 30px 0 6px;
+      }
+      .lessons-head {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--cream-soft);
+        margin: 0 0 4px;
+      }
+      .lessons-sub {
+        margin: 0 0 16px;
+        color: var(--cream-soft);
+        font-size: 0.95rem;
+        font-style: italic;
+      }
+      .lessons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 10px;
+      }
+      .lesson {
+        background: var(--cabinet-deep);
+        border: 1px solid var(--cabinet-edge);
+        border-left: 3px solid var(--stamp-red);
+        border-radius: 3px;
+        padding: 12px 14px;
+      }
+      .lesson h3 {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--cream);
+        margin: 0 0 6px;
+      }
+      .lesson p {
+        margin: 0;
+        font-size: 0.88rem;
+        color: var(--cream-soft);
+      }
+
+      /* ---------- drawer rail: search + folder tabs ---------- */
       .controls {
         position: sticky;
         top: 0;
-        z-index: 20;
-        background: color-mix(in srgb, var(--paper) 88%, transparent);
-        backdrop-filter: saturate(1.4) blur(10px);
-        border-bottom: 1px solid var(--line);
-        padding: 14px 0;
-        margin-top: 40px;
+        z-index: 5;
+        background: var(--cabinet-deep);
+        border-bottom: 4px solid var(--manila);
+        margin-top: 26px;
       }
       .controls-inner {
         display: flex;
         flex-wrap: wrap;
-        gap: 12px;
-        align-items: center;
+        align-items: flex-end;
+        gap: 8px;
+        padding-top: 14px;
       }
       .search {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--cabinet);
+        border: 1px solid var(--cabinet-edge);
+        border-radius: 4px;
+        padding: 7px 12px;
+        margin-bottom: 8px;
         flex: 1 1 240px;
-        position: relative;
-        min-width: 200px;
-      }
-      .search input {
-        width: 100%;
-        font: inherit;
-        font-size: 0.95rem;
-        padding: 9px 12px 9px 34px;
-        border: 1px solid var(--line);
-        background: var(--surface);
-        color: var(--ink);
-        border-radius: 9px;
-      }
-      .search input:focus {
-        outline: 2px solid var(--brick);
-        outline-offset: 1px;
-        border-color: transparent;
+        max-width: 340px;
       }
       .search svg {
-        position: absolute;
-        left: 11px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 15px;
-        height: 15px;
-        stroke: var(--ink-soft);
+        width: 14px;
+        height: 14px;
+        stroke: var(--cream-soft);
         fill: none;
         stroke-width: 2;
+        flex: none;
       }
-      .chips {
+      .search input {
+        border: 0;
+        background: transparent;
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--cream);
+        width: 100%;
+      }
+      .search input::placeholder {
+        color: var(--cream-soft);
+      }
+      .search input:focus {
+        outline: none;
+      }
+      .tabs {
         display: flex;
         flex-wrap: wrap;
-        gap: 7px;
+        align-items: flex-end;
+        gap: 4px;
+        margin-left: auto;
       }
-      .chip {
-        font: inherit;
-        font-size: 0.82rem;
-        font-weight: 500;
-        cursor: pointer;
-        padding: 7px 13px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: var(--surface);
-        color: var(--ink-soft);
-        display: inline-flex;
-        gap: 7px;
-        align-items: center;
-        transition:
-          background 0.12s,
-          color 0.12s,
-          border-color 0.12s;
-      }
-      .chip:hover {
-        color: var(--ink);
-      }
-      .chip .dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--rest);
-      }
-      .chip[data-t="top"] .dot {
-        background: var(--revive);
-      }
-      .chip[data-t="look"] .dot {
-        background: var(--look);
-      }
-      .chip[data-t="rest"] .dot {
-        background: var(--rest);
-      }
-      .chip[data-t="active"] .dot {
-        background: var(--active);
-      }
-      .chip[aria-pressed="true"] {
-        background: var(--ink);
-        color: var(--paper);
-        border-color: var(--ink);
-      }
-      .chip[aria-pressed="true"] .ct {
-        opacity: 0.6;
-      }
-      .chip .ct {
+      .tab {
         font-family: var(--mono);
-        font-size: 0.75rem;
-        font-variant-numeric: tabular-nums;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: 1px solid var(--manila-3);
+        border-bottom: 0;
+        border-radius: 6px 6px 0 0;
+        background: var(--manila-2);
+        color: var(--ink-soft);
+        padding: 7px 12px 6px;
+        cursor: pointer;
+        transition:
+          padding 0.12s ease,
+          background 0.12s ease;
+      }
+      .tab .ct {
+        color: var(--ink-soft);
+        margin-left: 3px;
+      }
+      .tab[aria-pressed="true"] {
+        background: var(--manila);
+        color: var(--ink);
+        font-weight: 700;
+        padding-top: 10px;
+        padding-bottom: 8px;
+      }
+      .tab[aria-pressed="true"] .ct {
+        color: var(--stamp-red);
+      }
+      .tab:hover {
+        background: var(--manila);
       }
 
-      /* Sections + cards */
+      /* ---------- groups + folder cards ---------- */
       main {
-        padding: 34px 0 80px;
+        padding: 34px 20px 40px;
       }
       .group {
-        margin: 0 0 40px;
+        margin-bottom: 38px;
       }
       .group-head {
         display: flex;
         align-items: baseline;
-        gap: 12px;
-        margin: 0 0 6px;
+        gap: 10px;
       }
       .group-head h2 {
-        font-family: var(--serif);
-        font-weight: 600;
-        font-size: 1.5rem;
-        margin: 0;
-        letter-spacing: -0.01em;
-      }
-      .group-head .gcount {
         font-family: var(--mono);
-        font-size: 0.8rem;
-        color: var(--ink-soft);
-        font-variant-numeric: tabular-nums;
+        font-size: 1.02rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--cream);
+        margin: 0;
+      }
+      .gcount {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--cream-soft);
       }
       .group-sub {
-        color: var(--ink-soft);
-        font-size: 0.92rem;
-        margin: 0 0 18px;
-        max-width: 70ch;
+        margin: 4px 0 18px;
+        color: var(--cream-soft);
+        font-size: 0.95rem;
+        font-style: italic;
       }
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-        gap: 16px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 22px 16px;
       }
 
       .card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 13px;
-        box-shadow: var(--shadow);
-        overflow: hidden;
         position: relative;
-        display: flex;
-        flex-direction: column;
+        background: var(--manila);
+        color: var(--ink);
+        border-radius: 2px 6px 6px 6px;
+        box-shadow: var(--shadow);
+        margin-top: 14px;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
       }
-      .card::before {
-        content: "";
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow:
+          0 2px 4px rgba(20, 25, 20, 0.3),
+          0 14px 30px -14px rgba(15, 20, 15, 0.7);
+      }
+      /* folder tab */
+      .folder-tab {
         position: absolute;
+        top: -14px;
         left: 0;
-        top: 0;
-        bottom: 0;
-        width: 4px;
-        background: var(--rest);
-      }
-      .card.t-top::before {
-        background: var(--revive);
-      }
-      .card.t-look::before {
-        background: var(--look);
-      }
-      .card.t-active::before {
-        background: var(--active);
+        max-width: 75%;
+        background: var(--manila-2);
+        border-radius: 5px 5px 0 0;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        padding: 3px 12px 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       .card-body {
-        padding: 16px 18px 16px 20px;
+        padding: 16px 16px 14px;
       }
       .card-top {
         display: flex;
-        justify-content: space-between;
         align-items: flex-start;
+        justify-content: space-between;
         gap: 10px;
       }
       .repo {
-        font-family: var(--mono);
-        font-size: 0.98rem;
-        font-weight: 600;
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: 1.12rem;
         color: var(--ink);
         text-decoration: none;
-        word-break: break-word;
-        line-height: 1.25;
+        border-bottom: 1px solid var(--manila-3);
+        overflow-wrap: anywhere;
       }
-      .repo:hover {
-        color: var(--brick);
-        text-decoration: underline;
+      a.repo:hover {
+        color: var(--ink-blue);
+        border-bottom-color: var(--ink-blue);
+      }
+      .stamp {
+        flex: none;
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        border: 2px solid;
+        border-radius: 3px;
+        padding: 3px 7px 2px;
+        transform: rotate(-4deg);
+        opacity: 0.85;
+        white-space: nowrap;
+      }
+      .t-top .stamp {
+        color: var(--stamp-red);
+        border-color: var(--stamp-red);
+      }
+      .t-look .stamp {
+        color: var(--ink-blue);
+        border-color: var(--ink-blue);
+      }
+      .t-active .stamp {
+        color: var(--stamp-green);
+        border-color: var(--stamp-green);
       }
       .stars {
-        font-family: var(--mono);
-        font-size: 0.86rem;
-        white-space: nowrap;
-        letter-spacing: 0.5px;
-      }
-      .t-top .stars {
-        color: var(--revive);
-      }
-      .t-look .stars {
-        color: var(--look);
-      }
-      .t-rest .stars {
-        color: var(--rest);
-      }
-      .t-active .stars {
-        color: var(--active);
+        font-size: 0.8rem;
+        color: var(--stamp-red);
+        letter-spacing: 0.06em;
+        margin-top: 4px;
       }
       .meta-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
-        margin: 10px 0 0;
-      }
-      .tag {
-        font-size: 0.72rem;
+        gap: 4px 10px;
+        margin: 8px 0 10px;
         font-family: var(--mono);
-        padding: 2px 8px;
-        border-radius: 6px;
-        background: var(--surface-2);
-        color: var(--ink-soft);
-        white-space: nowrap;
-      }
-      .tag.theme {
-        background: var(--rest-bg);
-        color: var(--ink);
-      }
-      .t-top .tag.theme {
-        background: var(--revive-bg);
-      }
-      .t-look .tag.theme {
-        background: var(--look-bg);
-      }
-      .t-active .tag.theme {
-        background: var(--active-bg);
-      }
-      .tag.arch {
-        background: transparent;
-        border: 1px solid var(--line);
-        color: var(--rest);
+        font-size: 0.62rem;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
-        font-size: 0.66rem;
+        color: var(--ink-soft);
+      }
+      .meta-row .arch {
+        color: var(--stamp-red);
       }
       .one {
-        margin: 12px 0 0;
-        font-size: 0.94rem;
-        color: var(--ink);
+        margin: 0 0 12px;
+        font-size: 0.95rem;
       }
       details {
-        margin: 12px 0 0;
-        border-top: 1px solid var(--line);
-        padding-top: 2px;
+        border-top: 1px dashed var(--manila-3);
+        padding-top: 8px;
       }
-      details summary {
+      summary {
         cursor: pointer;
         list-style: none;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--brick);
-        padding: 8px 0 2px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--stamp-red);
       }
-      details summary::-webkit-details-marker {
+      summary::-webkit-details-marker {
         display: none;
       }
-      details summary .caret {
-        transition: transform 0.15s;
+      summary .caret {
         display: inline-block;
+        transition: transform 0.12s ease;
+        margin-right: 5px;
       }
       details[open] summary .caret {
         transform: rotate(90deg);
       }
       .detail-block {
+        padding-top: 10px;
+      }
+      .row {
+        margin-bottom: 10px;
         font-size: 0.88rem;
-        color: var(--ink-soft);
-        padding: 4px 0 8px;
       }
-      .detail-block .row {
-        margin: 9px 0 0;
-      }
-      .detail-block .k {
-        font-family: var(--mono);
-        font-size: 0.7rem;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--ink-soft);
+      .row .k {
         display: block;
-        margin-bottom: 1px;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 2px;
       }
-      .detail-block .pitch {
-        color: var(--ink);
+      .row.pitch {
+        background: rgba(166, 58, 46, 0.07);
+        border-left: 3px solid var(--stamp-red);
+        padding: 8px 10px;
+        border-radius: 2px;
       }
-      .detail-meta {
+      .detail-meta .tag {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        color: var(--ink-soft);
+        border: 1px solid var(--manila-3);
+        border-radius: 3px;
+        padding: 2px 7px;
+      }
+
+      /* proposed drawer CTA */
+      .propose-card {
+        border: 2px dashed var(--manila-3);
+        border-radius: 6px;
+        background: transparent;
+        color: var(--cream);
+        padding: 26px 24px;
+        max-width: 620px;
+      }
+      .propose-card h3 {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+        color: var(--cream);
+      }
+      .propose-card p {
+        margin: 0 0 16px;
+        color: var(--cream-soft);
+      }
+      .propose-actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
-        margin-top: 11px;
+        gap: 10px;
+      }
+      .propose-actions a {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--ink);
+        background: var(--manila);
+        border-radius: 4px;
+        padding: 9px 14px;
+      }
+      .propose-actions a:hover {
+        background: var(--manila-2);
       }
 
       .empty {
         display: none;
-        text-align: center;
-        color: var(--ink-soft);
-        padding: 60px 0;
-        font-size: 1rem;
+        color: var(--cream-soft);
+        font-style: italic;
+        padding: 30px 20px;
       }
+
+      /* ---------- footer ---------- */
       footer {
-        border-top: 1px solid var(--line);
-        padding: 34px 0 60px;
-        color: var(--ink-soft);
-        font-size: 0.86rem;
+        background: var(--cabinet-deep);
+        border-top: 1px solid var(--cabinet-edge);
+        padding: 30px 0 40px;
+        font-size: 0.88rem;
+        color: var(--cream-soft);
       }
-      footer .wrap > p {
-        max-width: 74ch;
-        margin: 0 0 10px;
-      }
-      footer code {
-        font-family: var(--mono);
-        font-size: 0.82em;
-        background: var(--surface-2);
-        padding: 1px 5px;
-        border-radius: 4px;
+      footer p {
+        max-width: 72ch;
       }
       footer a {
-        color: var(--brick);
-        text-decoration: none;
+        color: var(--cream);
       }
-      footer a:hover {
-        text-decoration: underline;
+      footer strong {
+        color: var(--cream);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 560px) {
+        .stamp {
+          transform: none;
+        }
+        .tabs {
+          margin-left: 0;
+        }
       }
       @media (prefers-reduced-motion: reduce) {
-        * {
-          transition: none !important;
+        html {
+          scroll-behavior: auto;
         }
-      }
-      @media (max-width: 520px) {
-        header.mast {
-          padding: 40px 0 26px;
+        .card,
+        .tab,
+        summary .caret {
+          transition: none;
         }
-        .grid {
-          grid-template-columns: 1fr;
+        .card:hover {
+          transform: none;
         }
       }
     </style>
-
+  </head>
+  <body>
     <header class="mast">
       <div class="wrap">
         <p class="eyebrow">Civic Tech DC &middot; Archive Dig</p>
         <h1>Ideas Graveyard</h1>
         <p class="lede">
           Thirteen years of Code&nbsp;for&nbsp;DC and Civic Tech DC left behind
-          nearly a hundred repositories. Most went quiet. Some held genuinely
-          good ideas that just ran out of runway. This is the field guide to the
-          ones worth reviving.
+          nearly a hundred repositories. Most went quiet; some held genuinely
+          good ideas that ran out of runway. This is the records room:
+          <strong>files worth reviving</strong>,
+          <strong>projects alive right now</strong>, and
+          <strong>an empty drawer</strong> for the idea you haven't filed yet.
         </p>
-        <div class="mast-rule"></div>
         <div class="stats">
           <div class="stat">
-            <div class="n">51</div>
-            <div class="l">ideas catalogued</div>
+            <div class="n" id="stat-all">–</div>
+            <div class="l">ideas on file</div>
           </div>
           <div class="stat top">
-            <div class="n">18</div>
-            <div class="l">top revival candidates</div>
+            <div class="n" id="stat-top">–</div>
+            <div class="l">revival candidates</div>
           </div>
           <div class="stat">
             <div class="n">2013&ndash;26</div>
             <div class="l">years of history</div>
           </div>
           <div class="stat act">
-            <div class="n">16</div>
-            <div class="l">still active today</div>
+            <div class="n" id="stat-active">–</div>
+            <div class="l">active today</div>
           </div>
-          <div class="stat arch">
+          <div class="stat">
             <div class="n">71</div>
-            <div class="l">now archived</div>
+            <div class="l">repos archived</div>
+          </div>
+        </div>
+        <div class="lessons">
+          <p class="lessons-head">Why files end up here</p>
+          <p class="lessons-sub">
+            Four patterns from thirteen years of stalled repos. Read them before
+            you file a new idea.
+          </p>
+          <div class="lessons-grid">
+            <div class="lesson">
+              <h3>Tied to one cycle</h3>
+              <p>
+                Projects built for a single election, budget year, or event
+                stalled the day it passed. Design for the second cycle from day
+                one.
+              </p>
+            </div>
+            <div class="lesson">
+              <h3>Infra outlived the team</h3>
+              <p>
+                Self-hosted stacks rotted once the one person who ran them moved
+                on. Choose boring, cheap hosting.
+              </p>
+            </div>
+            <div class="lesson">
+              <h3>No path to the data</h3>
+              <p>
+                Projects that depended on a dataset or partner that never
+                materialized stayed prototypes. Secure the data source before
+                writing code.
+              </p>
+            </div>
+            <div class="lesson">
+              <h3>One maintainer deep</h3>
+              <p>
+                When the initiating volunteer left, the project followed.
+                Recruit a co-owner early, not after the first stall.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -606,36 +655,39 @@ sitemap: false
     <div class="controls">
       <div class="wrap controls-inner">
         <label class="search">
-          <svg viewBox="0 0 24 24">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="11" cy="11" r="7" />
             <path d="M21 21l-4.3-4.3" />
           </svg>
           <input
             id="q"
             type="search"
-            placeholder="Search ideas, tech, themes&hellip;"
+            placeholder="Search the files&hellip;"
             aria-label="Search ideas"
           />
         </label>
-        <div class="chips" id="chips">
-          <button class="chip" data-t="all" aria-pressed="true">
-            All <span class="ct">51</span>
+        <div class="tabs" id="chips">
+          <button class="tab" data-t="all" aria-pressed="true">
+            All <span class="ct"></span>
           </button>
-          <button class="chip" data-t="top" aria-pressed="false">
-            <span class="dot"></span>Top <span class="ct">18</span>
+          <button class="tab" data-t="top" aria-pressed="false">
+            Revive <span class="ct"></span>
           </button>
-          <button class="chip" data-t="look" aria-pressed="false">
-            <span class="dot"></span>Worth a look <span class="ct">17</span>
+          <button class="tab" data-t="look" aria-pressed="false">
+            Worth a look <span class="ct"></span>
           </button>
-          <button class="chip" data-t="active" aria-pressed="false">
-            <span class="dot"></span>Active <span class="ct">16</span>
+          <button class="tab" data-t="active" aria-pressed="false">
+            Active <span class="ct"></span>
+          </button>
+          <button class="tab" data-t="proposed" aria-pressed="false">
+            Proposed <span class="ct"></span>
           </button>
         </div>
       </div>
     </div>
 
     <main class="wrap" id="main"></main>
-    <p class="empty wrap" id="empty">No ideas match that search.</p>
+    <p class="empty wrap" id="empty">No files match that search.</p>
 
     <footer>
       <div class="wrap">
@@ -654,12 +706,15 @@ sitemap: false
           <strong>Scoring.</strong> &#9733;&#9733;&#9733;&#9733;&#9733; = an
           idea that deserves a second life &middot; &#9733;&#9733;&#9733; =
           solid but niche or partly superseded &middot; &#9733; = one-off or
-          dead end. Tiers: <span style="color: var(--revive)">Top</span> and
-          <span style="color: var(--look)">Worth a look</span> are
-          dormant-but-revivable; <span style="color: var(--rest)">Rest</span> is
-          logged for completeness;
-          <span style="color: var(--active)">Active</span> repos were pushed
-          within the last year &mdash; join those instead of starting fresh.
+          dead end. Revive and Worth&nbsp;a&nbsp;look are dormant-but-revivable;
+          Active repos were pushed within the last year &mdash; join those
+          instead of starting fresh.
+        </p>
+        <p>
+          <strong>Filing a new idea.</strong> New proposals get added by the
+          organizers. Bring yours to a <a href="/events">project night</a> or
+          start a thread in <a href="/slack">Slack</a>, and if it finds legs it
+          gets a folder here with your name on it.
         </p>
         <p>
           Repository names link to GitHub &middot;
@@ -1639,6 +1694,7 @@ sitemap: false
           relevant: true,
         },
       ];
+
       const GROUPS = [
         {
           id: "top",
@@ -1653,7 +1709,12 @@ sitemap: false
         {
           id: "active",
           label: "Still alive — go contribute",
-          sub: "Pushed within the last year. Not graveyard material — join these rather than rebuild them.",
+          sub: "Pushed within the last year. Join these rather than rebuild them.",
+        },
+        {
+          id: "proposed",
+          label: "Proposed — the empty drawer",
+          sub: "Ideas that don't exist yet. Pitch one and it gets a folder.",
         },
       ];
       const stars = (n) => "★".repeat(n) + "☆".repeat(5 - n);
@@ -1662,6 +1723,7 @@ sitemap: false
           /[&<>"]/g,
           (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
         );
+      const STAMP = { top: "Revive", look: "Worth a look", active: "Active" };
       const main = document.getElementById("main");
 
       function card(d) {
@@ -1670,24 +1732,23 @@ sitemap: false
             ? `<div class="row"><span class="k">Data source</span>${esc(d.data)}</div>`
             : "";
         return `<article class="card t-${d.tier}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem).toLowerCase())}">
+    <span class="folder-tab">${esc(d.theme)}</span>
     <div class="card-body">
       <div class="card-top">
-        ${
-          d.url
-            ? `<a class="repo" href="${d.url}" target="_blank" rel="noopener">${esc(d.name)}</a>`
-            : `<span class="repo" title="Repository deleted from the org">${esc(d.name)}</span>`
-        }
-        <span class="stars" title="${d.score} of 5">${stars(d.score)}</span>
+        <div>
+          <a class="repo" href="${d.url}" target="_blank" rel="noopener">${esc(d.name)}</a>
+          <div class="stars" title="${d.score} of 5">${stars(d.score)}</div>
+        </div>
+        <span class="stamp">${STAMP[d.tier] || esc(d.tier)}</span>
       </div>
       <div class="meta-row">
-        <span class="tag theme">${esc(d.theme)}</span>
-        <span class="tag">${esc(d.maturity)}</span>
-        <span class="tag">pushed ${esc(d.pushed)}</span>
-        ${d.arch ? '<span class="tag arch">archived</span>' : ""}
+        <span>${esc(d.maturity)}</span>
+        <span>pushed ${esc(d.pushed)}</span>
+        ${d.arch ? '<span class="arch">archived</span>' : ""}
       </div>
       <p class="one">${esc(d.one)}</p>
       <details>
-        <summary><span class="caret">›</span>Revival brief</summary>
+        <summary><span class="caret">›</span>Open the file</summary>
         <div class="detail-block">
           <div class="row pitch"><span class="k">Revival pitch</span>${esc(d.pitch)}</div>
           <div class="row"><span class="k">Problem it solved</span>${esc(d.problem)}</div>
@@ -1700,55 +1761,83 @@ sitemap: false
   </article>`;
       }
 
+      const PROPOSE_CARD = `<div class="propose-card" data-tier="proposed" data-text="propose new idea pitch project night slack">
+    <h3>This folder is empty</h3>
+    <p>
+      Have a civic idea worth building? Pitch it at a project night or start a
+      thread in Slack. If it finds legs, it gets filed here — with your name
+      on it.
+    </p>
+    <div class="propose-actions">
+      <a href="/events">Pitch at a project night</a>
+      <a href="/slack">Start a thread in Slack</a>
+    </div>
+  </div>`;
+
       function render() {
         main.innerHTML = GROUPS.map((g) => {
           const items = DATA.filter((d) => d.tier === g.id);
+          const body = items.length
+            ? `<div class="grid">${items.map(card).join("")}</div>`
+            : PROPOSE_CARD;
+          const count = items.length ? items.length : "";
           return `<section class="group" data-group="${g.id}">
-      <div class="group-head"><h2>${g.label}</h2><span class="gcount">${items.length}</span></div>
+      <div class="group-head"><h2>${g.label}</h2><span class="gcount">${count}</span></div>
       <p class="group-sub">${g.sub}</p>
-      <div class="grid">${items.map(card).join("")}</div>
+      ${body}
     </section>`;
         }).join("");
       }
       render();
 
+      // counts (computed from DATA so they can never drift)
+      const countOf = (t) => DATA.filter((d) => d.tier === t).length;
+      document.getElementById("stat-all").textContent = DATA.length;
+      document.getElementById("stat-top").textContent = countOf("top");
+      document.getElementById("stat-active").textContent = countOf("active");
+
       let activeTier = "all",
         query = "";
-      const chips = [...document.querySelectorAll(".chip")];
+      const chips = [...document.querySelectorAll(".tab")];
+      chips.forEach((c) => {
+        const t = c.dataset.t;
+        const n = t === "all" ? DATA.length : countOf(t);
+        c.querySelector(".ct").textContent = n || "";
+      });
       const empty = document.getElementById("empty");
 
-      function apply() {
+      function applyFilter() {
         let shown = 0;
         document.querySelectorAll(".group").forEach((sec) => {
           const gid = sec.dataset.group;
           let vis = 0;
-          sec.querySelectorAll(".card").forEach((c) => {
+          sec.querySelectorAll("[data-tier]").forEach((c) => {
             const okTier =
               activeTier === "all" || c.dataset.tier === activeTier;
-            const okQ = !query || c.dataset.text.includes(query);
+            const okQ = !query || (c.dataset.text || "").includes(query);
             const show = okTier && okQ;
             c.style.display = show ? "" : "none";
-            if (show) {
-              vis++;
-              shown++;
-            }
+            if (show) vis++;
           });
-          sec.style.display = vis ? "" : "none";
-          sec.querySelector(".gcount").textContent = vis;
+          const tierMatch = activeTier === "all" || gid === activeTier;
+          sec.style.display = tierMatch && vis > 0 ? "" : "none";
+          if (tierMatch) shown += vis;
         });
         empty.style.display = shown ? "none" : "block";
       }
-      chips.forEach((ch) =>
-        ch.addEventListener("click", () => {
-          chips.forEach((c) => c.setAttribute("aria-pressed", "false"));
-          ch.setAttribute("aria-pressed", "true");
-          activeTier = ch.dataset.t;
-          apply();
+
+      chips.forEach((c) =>
+        c.addEventListener("click", () => {
+          activeTier = c.dataset.t;
+          chips.forEach((x) =>
+            x.setAttribute("aria-pressed", x === c ? "true" : "false"),
+          );
+          applyFilter();
         }),
       );
       document.getElementById("q").addEventListener("input", (e) => {
         query = e.target.value.trim().toLowerCase();
-        apply();
+        applyFilter();
       });
     </script>
   </body>
