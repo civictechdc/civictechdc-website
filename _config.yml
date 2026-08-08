@@ -60,4 +60,3 @@ exclude:
   - package.json
   - package-lock.json
   - /scripts
-  - /ideas-graveyard/
