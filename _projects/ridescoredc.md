@@ -34,13 +34,11 @@ The project aims to:
 
 ## An open and reusable method
 
-Ride Score DC draws on established approaches such as Level of Traffic Stress and PeopleForBikes' Bicycle Network Analysis. The [public repository](https://github.com/civictechdc/ridescoredc) contains:
+Ride Score DC draws on established approaches such as Level of Traffic Stress and PeopleForBikes' Bicycle Network Analysis. The work is split across public repositories:
 
-- documented schemas for street segments and score layers;
-- transparent rulesets for established and composite measures;
-- a Python pipeline for ingesting, cleaning, scoring, and exporting data;
-- map layers for scores and source factors;
-- an early web-map implementation.
+- the [main repository](https://github.com/civictechdc/ridescoredc) holds project documentation, onboarding material, and sample data;
+- the [models repository](https://github.com/civictechdc/ridescoredc-models) holds the Python scoring pipeline and early model work, including a first Level of Traffic Stress implementation;
+- the [website repository](https://github.com/civictechdc/ridescoredc-website) holds an early web-map implementation.
 
 DC is the first focus. The open-source method can be adapted by other cities that have suitable crash, roadway, and infrastructure data.
 
@@ -52,7 +50,7 @@ Ride Score DC does not currently name an organizational partner. The team would 
 
 ## Current status and limits
 
-The project is active. Its repository includes sample data, model artifacts, an MVP map, and an initial pipeline; setup, model review, data updates, and rider validation remain in progress.
+The project is active. Across its repositories the team has sample data, early model artifacts, an MVP map, and an initial pipeline; setup, model review, data updates, and rider validation remain in progress.
 
 - Source data may omit near misses, perceived stress, temporary conditions, or recent street changes.
 - A segment score cannot describe an entire trip, intersection risk, weather, construction, or every rider's needs.

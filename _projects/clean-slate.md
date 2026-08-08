@@ -40,7 +40,7 @@ That boundary mattered. An outdated or incorrect legal answer could prevent some
 
 ## Transition and archive
 
-The Civic Tech DC repository is archived. In March 2016, further development and deployment moved to [Mission Launch's Clean Slate repository](https://github.com/MissionLaunch/clean-slate). Both repositories document a historical project, not a current legal service.
+The Civic Tech DC repository is archived. A March 2016 repository note records the intent to move further development to [Mission Launch's Clean Slate repository](https://github.com/MissionLaunch/clean-slate), though statute-tracking work continued in the Code for DC repository into early 2017. Both repositories document a historical project, not a current legal service.
 
 The available record does not establish a verified number of users, sealed or expunged records, or legal outcomes. Clean Slate's documented value lies in its response to a specific policy change, its partnership with legal practitioners, and its decision to keep attorneys in the review process.
 
