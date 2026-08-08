@@ -454,6 +454,10 @@ sitemap: false
         text-transform: uppercase;
         color: var(--ink-soft);
       }
+      .meta-row .incub {
+        color: #7a5b12;
+        font-weight: 700;
+      }
       .meta-row .arch {
         color: #9c3d10;
       }
@@ -1517,27 +1521,9 @@ sitemap: false
           relevant: true,
         },
         {
-          name: "ai-literacy-workshop",
-          url: "https://github.com/civictechdc/ai-literacy-workshop",
-          score: 4,
-          tier: "active",
-          theme: "Org Infrastructure",
-          one: "A slide-deck web app and companion playbook teaching non-technical people first-principles AI literacy (how LLMs actually work, prompting mental models, agentic workflows), built for a live 2-hour public library workshop.",
-          problem:
-            "Public literacy about AI is shallow and tool-chasing; people (library patrons, civic groups) need a coherent, first-principles mental model of how LLMs work and how to use them effectively, rather than a list of app tutorials.",
-          why: "Not really stalled - it is a recent, single-purpose deliverable (one workshop session) rather than an ongoing product; no further commits after the initial build/fix suggests it was used once and shelved rather than abandoned mid-effort.",
-          pitch:
-            'The underlying playbook content (context-as-working-memory, structured output as precision tool, agentic tool-calling mental models) is a genuinely well-written, durable explainer that could be turned into a reusable Civic Tech DC community workshop kit - package the slide deck as a generic template, keep the content updated as models evolve, and offer it as a repeatable "AI literacy 101" session for libraries, nonprofits, and civic groups beyond the original one-off MLK library talk.',
-          maturity: "working",
-          tech: "TypeScript + Vite + Tailwind (slide presentation app)",
-          data: "none",
-          pushed: "2025-09-29",
-          arch: false,
-          relevant: true,
-        },
-        {
           name: "ballot-sign",
           url: "https://github.com/civictechdc/ballot-sign",
+          incubator: true,
           score: 4,
           tier: "active",
           theme: "Elections, ANC & Voting",
@@ -1577,6 +1563,7 @@ sitemap: false
         {
           name: "congress_meeting_map",
           url: "https://github.com/civictechdc/congress_meeting_map",
+          site: "/projects/congressional-tech.html",
           score: 4,
           tier: "active",
           theme: "Misc / Civic Data",
@@ -1594,26 +1581,9 @@ sitemap: false
           relevant: true,
         },
         {
-          name: "ctdc-event-manager",
-          url: "https://github.com/civictechdc/ctdc-event-manager",
-          score: 4,
-          tier: "active",
-          theme: "Org Infrastructure",
-          one: 'A TypeScript CLI that publishes Civic Tech DC events simultaneously to Luma and Meetup.com, with venue templates, draft-mode safety, Docker packaging, and a GitHub Actions "Run workflow" button for one-click event creation.',
-          problem: "duplicate",
-          why: "Not stalled — actively maintained, created/pushed July 2026, most recent commits are routine CI/runtime version bumps and a coverage-enforcement change, consistent with ongoing upkeep rather than abandonment.",
-          pitch:
-            "This isn't a graveyard candidate so much as a live tool worth adopting/expanding: add more platforms (Eventbrite, Discord events, a CTDC website calendar) to the existing EventPlatform interface, or wire it into a Slack/Discord slash-command so organizers never leave chat to post an event. The template system (Taoti/Virtru/Prefect project nights) is a clean pattern any recurring-venue meetup could reuse as-is.",
-          maturity: "working",
-          tech: "TypeScript (Bun, Commander.js, Vitest, Zod)",
-          data: "none",
-          pushed: "2026-07-16",
-          arch: false,
-          relevant: true,
-        },
-        {
           name: "dc-campaign-finance-scraper",
           url: "https://github.com/civictechdc/dc-campaign-finance-scraper",
+          incubator: true,
           score: 4,
           tier: "active",
           theme: "Elections, ANC & Voting",
@@ -1731,25 +1701,6 @@ sitemap: false
           relevant: true,
         },
         {
-          name: "employment-platform",
-          url: "https://github.com/civictechdc/employment-platform",
-          score: 3,
-          tier: "active",
-          theme: "Org Infrastructure",
-          one: "A volunteer directory and project showcase site for Civic Tech DC to help new volunteers find projects and let existing volunteers publicize their work.",
-          problem:
-            "Civic Tech DC volunteers and newcomers have no central place to browse active/past projects, see who's working on what and in what role, find projects needing their skills, or view volunteer profiles/contact project leads.",
-          why: "Not stalled — actively developed as of the most recent push (May 2026), currently in Phase 1 of planned rollout.",
-          pitch:
-            "This one isn't stalled, it's live and being actively built (Phase 1 of a 3-phase roadmap toward open registration + skills matching); worth checking current status/adoption rather than reviving, and could be a template for other civic tech orgs wanting a volunteer/project directory.",
-          maturity: "deployed",
-          tech: "Next.js (App Router) + Supabase (Postgres), hosted on Vercel",
-          data: "none (internal Civic Tech DC volunteer/project data via Supabase)",
-          pushed: "2026-05-14",
-          arch: false,
-          relevant: true,
-        },
-        {
           name: "repower-dmv",
           url: "https://github.com/civictechdc/repower-dmv",
           site: "/projects/contractor-list.html",
@@ -1825,6 +1776,7 @@ sitemap: false
         <span>${esc(d.maturity)}</span>
         <span>pushed ${esc(d.pushed)}</span>
         ${d.arch ? '<span class="arch">archived</span>' : ""}
+        ${d.incubator ? '<span class="incub">incubator</span>' : ""}
       </div>
       <p class="one">${esc(d.one)}</p>
       ${filelinks}
