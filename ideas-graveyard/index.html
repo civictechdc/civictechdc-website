@@ -25,10 +25,19 @@ sitemap: false
       property="og:description"
       content="Civic Tech DC's records room: buried project ideas worth reviving, projects alive today, and an open drawer for new proposals."
     />
-    <meta property="og:url" content="https://www.civictechdc.org/archive-dig/" />
+    <meta
+      property="og:url"
+      content="https://www.civictechdc.org/archive-dig/"
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.civictechdc.org/assets/images/hero-image-homepage-1200w.jpg" />
-    <meta property="og:image:secure_url" content="https://www.civictechdc.org/assets/images/hero-image-homepage-1200w.jpg" />
+    <meta
+      property="og:image"
+      content="https://www.civictechdc.org/assets/images/hero-image-homepage-1200w.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://www.civictechdc.org/assets/images/hero-image-homepage-1200w.jpg"
+    />
     <meta property="og:image:type" content="image/jpeg" />
     <meta
       property="og:image:alt"
@@ -40,8 +49,14 @@ sitemap: false
       name="twitter:description"
       content="Civic Tech DC's records room: buried project ideas worth reviving, projects alive today, and an open drawer for new proposals."
     />
-    <meta name="twitter:url" content="https://www.civictechdc.org/archive-dig/" />
-    <meta name="twitter:image" content="https://www.civictechdc.org/assets/images/hero-image-homepage-1200w.jpg" />
+    <meta
+      name="twitter:url"
+      content="https://www.civictechdc.org/archive-dig/"
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.civictechdc.org/assets/images/hero-image-homepage-1200w.jpg"
+    />
     <meta
       name="twitter:image:alt"
       content="Civic Tech DC volunteers collaborating on laptops around tables at a project night"
@@ -866,6 +881,7 @@ sitemap: false
         {
           name: "ancfinder",
           url: "https://github.com/civictechdc/ancfinder",
+          site: "/projects/ANCFinder.html",
           score: 4,
           tier: "top",
           theme: "Elections, ANC & Voting",
@@ -999,6 +1015,7 @@ sitemap: false
         {
           name: "clean-slate",
           url: "https://github.com/civictechdc/clean-slate",
+          site: "/projects/clean-slate.html",
           score: 4,
           tier: "top",
           theme: "Criminal Justice",
@@ -1417,6 +1434,7 @@ sitemap: false
         {
           name: "opendatadc",
           url: "https://github.com/civictechdc/opendatadc",
+          site: "/projects/opendatadc.html",
           score: 3,
           tier: "look",
           theme: "Regulations & Legislation",
@@ -1789,7 +1807,7 @@ sitemap: false
             ? `<div class="row"><span class="k">Data source</span>${esc(d.data)}</div>`
             : "";
         const filelinks =
-          d.tier === "active"
+          d.tier === "active" || d.site
             ? `<div class="filelinks"><a href="${d.url}" target="_blank" rel="noopener">GitHub &#8599;</a>${d.site ? `<a href="${d.site}">Project page &#8599;</a>` : ""}</div>`
             : "";
         return `<article class="card t-${d.tier}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem).toLowerCase())}">
