@@ -340,3 +340,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Local Docker Compose overrides (per-machine, never committed)
+docker-compose.override.yml
