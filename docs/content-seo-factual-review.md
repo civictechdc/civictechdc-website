@@ -16,11 +16,15 @@ The release check keeps a project in scope when it is active, is a promoted case
 declares either `case_study_standard` or `factual_review_status`. Changing a project from
 active to past therefore cannot silently remove its factual-review requirement.
 
-Pending copy may be rendered for review, but it is not release-ready. Pull-request CI
-enforces factual approval when a pull request is marked ready for review, and the
-production deployment always enforces it. A pending page therefore cannot reach the
-indexable site through the documented release path. The deployment workflow runs only
-from pushes to `main`; it cannot be dispatched from another branch.
+Pending copy may be rendered for review, but it is not release-ready. While this
+approval register is being filled, pull-request CI and the production deployment run
+the factual gate in warn mode (`REQUIRE_FACTUAL_APPROVAL: warn`): unapproved pages are
+reported in every check and deploy log but do not block unrelated releases. Once every
+page in the register is approved, flip the workflow values to `"1"` so pending copy
+hard-fails the release path again. Each pending page continues to display its
+awaiting-factual-review notice to readers in the meantime. The deployment workflow runs
+from pushes to `main` or a manual dispatch of the deploy workflow; both run the same
+checks.
 
 ## Approval register
 
