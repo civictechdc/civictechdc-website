@@ -917,14 +917,14 @@ sitemap: false
           stillGoUrl: "https://code.dccouncil.gov/us/dc/council/laws/24-342",
           stillGoName: "D.C. Law 24-342",
           stillGo:
-            "Checked Aug 2026: DC Law 24-342 mandates a searchable election-data portal with ANC and ward dashboards, and DCBOE has not shipped it. A statutory mandate with no implementation is the strongest kind of gap.",
+            "Checked Aug 2026, verified twice: the portal D.C. Code 1-1001.05(a)(21) mandates is codified as Not Funded, and the FY27 budget released every other conditioned piece of Law 24-342 while leaving the data portal as the last one. DCBOE ships certified CSVs back to 2012 and OpenANC covers 2020-2024, but no official longitudinal view exists, and ANC-level turnout exists nowhere.",
           theme: "Elections, ANC & Voting",
           one: "A data pipeline and planned Shiny/web app to visualize historical trends in DC Advisory Neighborhood Commission (ANC) election results.",
           problem:
             "DC has ANCs (hyperlocal elected bodies) but no easy way to see historical trends: turnout, uncontested seats, incumbency, seat vacancies/turnover over time. Data existed only as scattered board-of-elections pages and a hard-to-parse historical PDF (1979-2012).",
           why: "Appears to be a data-collection/cleaning phase that never advanced to the planned visualization app (Shiny) or public deployment; likely a hack-day/volunteer project that lost momentum after the initial scraping work, common for Code for DC projects without a dedicated ongoing maintainer.",
           pitch:
-            "DC Law 24-342 requires DCBOE to run a searchable election-data portal with dashboards sortable by ANC and ward, and it has not shipped. That makes this the rare civic project backed by a statutory mandate: build the longitudinal ANC dashboard (turnout, uncontested seats, incumbency) from DCBOE's per-election results, or use the mandate to push the Board to comply. OpenANC's machine-readable dataset is a ready starting point.",
+            "The portal mandated by D.C. Code 1-1001.05(a)(21) sits codified as Not Funded, which turns this project into either the pilot that shames the line item into a budget or the stopgap that serves residents meanwhile. DCBOE's certified CSVs (2012-2024) and OpenANC's 2020-2024 dataset with uncontested and margin fields mean the longitudinal ANC dashboard is mostly assembly work; ANC-level turnout needs precinct-to-SMD estimation nobody has attempted.",
           maturity: "prototype",
           tech: "R and Python (Jupyter notebooks), R Markdown",
           data: "DC Board of Elections website (ANC election results, scraped), anc.dc.gov (current ANC membership), historical_commissioners.pdf (1979-2012)",
@@ -964,14 +964,14 @@ sitemap: false
           stillGoUrl: "https://github.com/ProjectSidewalk/SidewalkWebpage",
           stillGoName: "Project Sidewalk",
           stillGo:
-            "Checked Aug 2026: DC's per-stop ADA data dates to 2016 while DDOT's transition-plan update is live now. Project Sidewalk is actively maintained, and its dead DC pilot left 205,000 labels to build on.",
+            "Checked Aug 2026, verified twice: DC's per-stop ADA data still dates to the 2016 transition-plan survey, DDOT's update effort is in its 2025 cycle, and Better Bus removed 527 stops in June 2025, so the official data is stale on the stop set itself. Project Sidewalk remains actively maintained, with 205,000 labels left from its dormant DC pilot.",
           theme: "Transit & Mobility",
           one: "A tool to remotely audit WMATA bus stop ADA compliance by overlaying a survey form on Google Street View imagery aimed at each stop.",
           problem:
             "Auditing physical ADA accessibility (curb ramps, sidewalk-to-curb connections, benches/shelters) at thousands of WMATA bus stops normally requires expensive in-person site visits by DDOT/WMATA staff.",
           why: "One-day hackathon build (#innoMAYtion, May 2015); no commits after July 2015, no README or docs, Python 2 syntax (dict.has_key/iteritems) now broken, hardcoded/expired Google Maps API usage pattern (signed_in=true) — classic hack-day project that was never picked back up after the event ended.",
           pitch:
-            "DC's authoritative per-stop ADA dataset was captured in 2016, and DDOT's ADA transition plan update is live now, which means stale compliance data during an active planning window. Project Sidewalk, still actively maintained with two hundred thousand labels from its old DC pilot, is the identical crowdsourcing method with a dead DC instance: the ask is restarting DC coverage with a bus-stop label type, not building from scratch.",
+            "DC's authoritative per-stop ADA dataset was captured in 2016, DDOT's ADA transition plan is in its 2025 update cycle, and Better Bus eliminated 527 stops in June 2025, so the official inventory is stale on the stop set itself, not just condition. Project Sidewalk, actively maintained with 205,000 labels from its dormant DC pilot, is the identical crowdsourcing method: the ask is restarting DC coverage with a bus-stop label type, not building from scratch.",
           maturity: "working",
           tech: "Python 2 (GTFS processing) + vanilla JS/jQuery/Bootstrap 3 (Google Maps/Street View frontend)",
           data: "WMATA GTFS feed (stops.txt, stop_times.txt) + Google Street View API",
@@ -1010,14 +1010,14 @@ sitemap: false
           stillGoUrl: "https://dcbudget.com/",
           stillGoName: "dcbudget.com",
           stillGo:
-            "Checked Aug 2026: the CIP still ships as PDF volumes, and nothing official tracks project costs across editions. dcbudget.com exports project-level data daily; partner with it and build the longitudinal join.",
+            "Checked Aug 2026, verified twice: the CIP still ships as PDF volumes, the CFO's interactive capital dashboard (cfoinfo.dc.gov) is offline entirely, and the quarterly Capital Financial Status Report tracks spend against lifetime authority but never how planned costs drift between CIP editions. That cross-edition join is the build.",
           theme: "Budget & Spending",
           one: "A searchable web explorer that scrapes DC's annual six-year Capital Improvement Plan (buildings/roads investment) out of locked PDF/XML files and lets residents track how project costs and timelines change year over year.",
           problem:
             "DC's capital improvement plans (multi-year budget for infrastructure like schools, roads, buildings) were published only in non-open, hard-to-parse formats, making it nearly impossible for residents to see how planned projects and their costs/timelines evolved over time.",
           why: "Appears to be a Code for DC hack-project that got a working v1 shipped and iterated for about a month (June-July 2016), then lost momentum once the initial volunteer(s) moved on; no updates since, and the underlying data source/parsing likely needs re-scraping each year, which nobody kept doing.",
           pitch:
-            "The gap narrowed but sharpened: Edscape and the CFO now publish what and when, but no tool anywhere tracks project costs across CIP editions, so slippage and inflation stay invisible. dcbudget.com, a solo volunteer project, already exports project-level JSON and Excel; partner with it rather than rebuilding, and add the longitudinal cost join the official tools avoid.",
+            "The gap narrowed but sharpened: the CFO's quarterly Capital Financial Status Report tracks project spend against lifetime budget authority, but nothing anywhere tracks how planned costs and schedules drift from one CIP edition to the next, and the CFO's old interactive dashboard is dead. dcbudget.com, a solo volunteer project, exports project-level JSON and Excel with each deployment; partner with it rather than rebuilding, and add the cross-edition join the official tools avoid.",
           maturity: "deployed",
           tech: "JavaScript (Gulp/Bower frontend) + Ruby ETL scraper",
           data: "DC OCFO Capital Improvement Plan documents (PDF/XML), scraped via custom Ruby ETL",
@@ -1080,14 +1080,14 @@ sitemap: false
           stillGoUrl: "https://oanc.dc.gov/",
           stillGoName: "OANC minutes",
           stillGo:
-            "Checked Aug 2026: the Office of ANCs now posts minutes for all 40-plus ANCs centrally through FY26. The corpus is collected, uniform, and still un-indexed.",
+            "Checked Aug 2026, verified twice: the Office of ANCs posts minutes centrally for all 46 ANCs, FY24 through FY26, collected but uneven, with about a sixth as image-only scans. No cross-ANC full-text search exists; OANC's own site search cannot see inside the documents.",
           theme: "Misc / Civic Data",
           one: 'A proposed chatbot to let DC residents "chat with" their Advisory Neighborhood Commission (ANC) meeting minutes/records via LLM.',
           problem:
             "ANCs are DC's hyperlocal government bodies, but their meeting minutes are scattered, inconsistent PDFs/text dumps that residents never read, making it hard to track what's happening in local government (zoning, liquor licenses, development) at the neighborhood level.",
           why: "Likely a hack-day idea where only the tedious data-collection step (manually gathering ANC1A minutes) got done before interest/time ran out; no LLM chat layer was ever built.",
           pitch:
-            "The Office of ANCs solved the hard part in the meantime: minutes for all forty-plus ANCs are now centrally posted through FY26 as uniform PDFs, collected, current, and un-indexed. The build is exactly this idea's second half: full-text and retrieval-augmented search across the corpus, with citations back to the source minutes.",
+            "The Office of ANCs solved collection: minutes for all 46 ANCs are centrally posted for FY24 through FY26, uniform in location if not in format, with about a sixth needing OCR. The build is exactly this idea's second half: full-text and retrieval-augmented search across the corpus, with citations back to the source minutes.",
           maturity: "idea-only",
           tech: "none (plain text data only, no code)",
           data: "ANC1A meeting minutes (manually collected text files, 2021-2023)",
@@ -1102,14 +1102,14 @@ sitemap: false
           score: 4,
           tier: "top",
           stillGo:
-            "Checked Aug 2026: automatic sealing under the Second Chance Act covers most tiers, but motion-based relief (misdemeanor 5-year, felony 8-year, actual innocence) still has no eligibility screener, official or otherwise.",
+            "Checked Aug 2026, verified twice: automatic relief is still phasing in, with courts given until October 2027 and a ten-year automatic tier, so motion-based relief (misdemeanor five years, felony eight from completion of sentence, plus actual innocence) is the near-term path, and no eligibility screener exists for it, official or otherwise.",
           theme: "Criminal Justice",
           one: "A guided-interview website that walks DC residents/attorneys through whether their criminal record is eligible to be sealed/expunged, with forms and attorney lookup tools.",
           problem:
             "DC legal clinics needed a fast way to determine if a client's criminal record qualifies for sealing/expungement, generate intake referrals, train new attorneys on the process, and give clients self-service guidance plus the actual court forms.",
           why: "Last push Jan 2017; the README notes a hand-off to MissionLaunch's fork, and the eligibility logic was never maintained here after that.",
           pitch:
-            "DC's Second Chance Amendment Act now auto-seals most eligible records, which retires the original wizard. The surviving need is an eligibility screener for motion-based relief (the misdemeanor five-year, felony eight-year, and actual-innocence paths): no official checker exists, and legal-aid intake is a form, not a screener.",
+            "DC's Second Chance Amendment Act retires the original wizard, but automatic relief phases in slowly: courts have until October 2027, and the automatic tier requires ten years. The near-term need is an eligibility screener for motion-based relief, the misdemeanor five-year, felony eight-year (from completion of sentence), and actual-innocence paths. No official checker exists, and legal-aid intake is a form, not a screener.",
           maturity: "deployed",
           tech: "Static HTML/JS site with a JSON-driven rules/flow engine (no backend), bilingual (en/es)",
           data: "DC criminal record sealing/expungement eligibility rules (statutory logic, e.g. § 48-904.01); combined-flow.json wizard tree",
@@ -1240,14 +1240,14 @@ sitemap: false
           stillGoUrl: "https://rentregistry.dc.gov/",
           stillGoName: "DC RentRegistry",
           stillGo:
-            "Checked Aug 2026: the rent registry publishes free bulk CSVs but holds roughly 5,400 registrations against about 76,600 rent-controlled units, with no analytics layer. Compliance is invisible.",
+            "Checked Aug 2026, verified twice: the November 2025 re-registration deadline filled the registry, now 19,582 registrations covering roughly 194,000 units in free bulk CSVs refreshed daily. Coverage chasing is over; what is missing is the analytics layer, compliance and rent-adjustment views, plus public surfacing of the monthly reports section 42-3502.03c already requires of DHCD.",
           theme: "Housing & Tenant Rights",
           one: "A data pipeline to infer which DC rental units are subject to rent stabilization (rent control) and model the effect of policy changes, since no direct public dataset says which units are covered.",
           problem:
             "DC's rent control law exempts many units (post-1976 buildings, small landlords with ≤4 units, voluntary agreements, etc.) but there is no public list of which specific units/buildings are actually rent-controlled, making the law's real coverage and the impact of proposed changes (e.g., moving the exemption cutoff from 1976 to 1986) impossible to assess without inference from property records.",
           why: "Analysis reached a first-pass conclusion (e.g., ~48% of DC housing units are in buildings with 4-or-fewer units), but the visualization was explicitly marked work-in-progress using simulated (not real) data, and commits stopped in March 2017 after final analysis tweaks. No technical blocker is evident; the repo doesn't record why work ended.",
           pitch:
-            "DHCD's rent registry launched in June 2025 with free bulk CSV exports, so the data problem is solved and the accountability problem is wide open: roughly 5,400 registrations against about 76,600 rent-controlled units, with the registry's analytics section unreleased. A coverage and compliance tracker built on the CSVs is a weekend-scale project with real policy weight.",
+            "DHCD's rent registry launched in June 2025 with free bulk CSV exports refreshed daily, and the November re-registration deadline filled it: 19,582 registrations covering roughly 194,000 units. The build is no longer chasing registrations. It is the analytics layer the registry still lacks: compliance views, rent-adjustment tracking, and surfacing the monthly section 42-3502.03c reports DHCD owes the Council.",
           maturity: "working",
           tech: "R and Python (data wrangling/analysis scripts), Shiny (visualization demo)",
           data: "DC Open Data (CAMA residential/condo/commercial property assessment datasets), ACS, HUD PHA inventory, CPI-W",
@@ -1263,14 +1263,14 @@ sitemap: false
           stillGoUrl: "https://www.risingforjustice.org/",
           stillGoName: "Rising for Justice",
           stillGo:
-            "Checked Aug 2026: Rising for Justice still determines eligibility manually by phone and email intake; no rules-as-code exists for the amended DC statute.",
+            "Checked Aug 2026, verified twice: Rising for Justice still determines eligibility manually by phone and email intake, and no rules-as-code exists for the amended DC statute. Worth checking Code for America's DC policy-design work for reusable artifacts before building.",
           theme: "Criminal Justice",
           one: "A Next.js web form that encodes Rising for Justice's legal logic to help pro bono attorneys determine whether a DC client's criminal record is eligible for expungement.",
           problem:
             "Pro bono lawyers at legal clinics need to quickly and correctly evaluate whether a client's DC criminal record qualifies for expungement/sealing — the underlying law is a complex, jurisdiction-specific decision tree that's easy to get wrong manually.",
           why: "Unclear — development stopped abruptly in January 2023 after a long active run (97 merged PRs), which reads more like an engagement winding down than an idea failing. The repo doesn't record why.",
           pitch:
-            "Rising for Justice still determines expungement eligibility manually by phone and email intake. The 2025 statute rewrite invalidated this repo's decision logic but shrank the build to something tractable: rules-as-code for D.C. Code sections 16-801 through 16-806 as amended. Rasa Legal proves the model commercially in three other states; nobody has built it for DC.",
+            "Rising for Justice still determines expungement eligibility manually by phone and email intake. The 2025 statute rewrite invalidated this repo's decision logic but shrank the build to something tractable: rules-as-code for D.C. Code sections 16-801 through 16-806 as amended. Rasa Legal proves the model commercially in three other states, and Code for America's DC policy-design work is worth mining for artifacts before building.",
           maturity: "working",
           tech: "JavaScript/TypeScript, Next.js, Jest, CircleCI",
           data: "none (encodes RFJ's internal legal eligibility rules, no external dataset)",
@@ -1309,14 +1309,14 @@ sitemap: false
           stillGoUrl: "https://www.dcboe.org/",
           stillGoName: "DCBOE",
           stillGo:
-            "Checked Aug 2026: DCBOE lists every active measure as PDF documents with no status pipeline or signature clocks, in a cycle with rent control and tipped-wage measures live.",
+            "Checked Aug 2026, verified twice: DCBOE still publishes measures as titles plus loose PDFs, with its own eight-step pipeline documented but never rendered as per-measure status with signature clocks. Only the foie gras measure is certified for November 2026; the wage and rent-freeze initiatives missed the July deadline and target 2027, the cycle this build should aim at.",
           theme: "Elections, ANC & Voting",
           one: "A proposed dashboard to track future/upcoming DC ballot initiatives",
           problem:
             "DC residents and civic groups have no easy way to track ballot initiatives that are being proposed or gathering signatures before they reach the ballot, making it hard to engage early or plan advocacy.",
           why: "Never got past the initial scaffolding/data-gathering stage; abandoned after one month with no code written, likely a hack-day idea that lost momentum",
           pitch:
-            "DCBOE's current-measures page now lists every active measure, but as a PDF document dump with no status pipeline, signature clocks, or progress tracking. Scraping it into a structured dashboard is a small, high-visibility build in a cycle with rent control and tipped-wage measures live.",
+            "DCBOE's current-measures page lists every measure as a title plus loose PDFs, with no status pipeline, signature clocks, or machine-readable export, and Ballotpedia only loosely tracks certification. The wage and rent-freeze initiatives that missed the July 2026 deadline are aiming at 2027; a structured tracker of DCBOE's own eight-step pipeline, shipped before that cycle heats up, is a small, high-visibility build.",
           maturity: "idea-only",
           tech: "None (no code committed; primaryLanguage null)",
           data: "Likely DC Board of Elections ballot initiative filings (unconfirmed, no code exists to verify)",
@@ -1445,14 +1445,14 @@ sitemap: false
           stillGoUrl: "https://www.dccouncilbudget.com/analytics",
           stillGoName: "Council budget lookup",
           stillGo:
-            "Checked Aug 2026: agency drill-down exists twice over, but no flow visualization of the DC budget exists anywhere, and structured data to feed one now does.",
+            "Checked Aug 2026, verified twice: this repo's own demo once ran and died along with its data source (cfoinfo.dc.gov), so no flow visualization of the DC budget exists today, while structured data to feed one finally does.",
           theme: "Budget & Spending",
           one: "A Sankey diagram visualizing how DC's budget funds flow into specific government agencies.",
           problem:
             "DC's budget is published as opaque tabular financial data; ordinary residents can't see at a glance where tax dollars actually go by agency/fund.",
           why: "Single hack-day/hackathon-style project (created Oct 2015, last commit Feb 2016 plus an automated civic.json spec-update PR merged later); no ongoing maintainer, no license file (flagged by the bot PR), budget data was hardcoded/manually converted so it would go stale every fiscal year without upkeep.",
           pitch:
-            "dcbudget.com and the Council's Budget Lookup Tool now cover agency drill-down, but no flow visualization of the DC budget exists anywhere. The niche left is the Sankey itself, fed from dcbudget.com's daily JSON exports instead of hand-converted PDFs.",
+            "This repo's demo once ran and died with its cfoinfo.dc.gov data source. No flow visualization of the DC budget exists today, and the niche is unclaimed: rebuild the Sankey on dcbudget.com's structured exports and the Council lookup tool's data instead of hand-converted PDFs.",
           maturity: "working",
           tech: "JavaScript (D3.js-style Sankey), static site on GitHub Pages",
           data: "DC CFO budget/finance data (cfoinfo.dc.gov)",
@@ -1489,14 +1489,14 @@ sitemap: false
           score: 3,
           tier: "top",
           stillGo:
-            "Checked Aug 2026: DDOT publishes bus-lane geometry and WMATA publishes on-time performance, but nobody joins bus speeds to lane segments. Seattle and Boston prove the pattern works.",
+            "Checked Aug 2026, verified twice: DDOT's bus-lane layer is twelve unlisted segments with no install dates, WMATA reports bus performance at system and line level only, and the public join is a single roll-up figure (13 percent faster since 2019). Boston's TransitMatters proves stop-pair transit analysis in production; nobody has built the DC lane-by-lane version.",
           theme: "Transit & Mobility",
           one: "A 2019 Code for DC repo exploring DC bus GPS/bustime data to evaluate bus infrastructure, starting with the H Street bus lane pilot.",
           problem:
             "DC transit riders and planners lack accessible tools to evaluate whether bus infrastructure interventions (like dedicated bus lanes) actually improve reliability, or to identify where buses are slow/unreliable and where new interventions are needed.",
           why: "Looks like a single hack-night/hack-day exploration that got one round of real analysis (H Street pilot) done, then the more ambitious ideas (camera counting, bus-stop quality score) were never picked up; no commits after Sept 2019, likely lost momentum after the initial volunteer(s) moved on.",
           pitch:
-            "Still nobody's build: DDOT publishes bus-priority projects and lane geometry, WMATA publishes route-level on-time performance, and no one joins realtime bus speeds to lane segments. Seattle and Boston have working precedents. A lane-by-lane bus priority scorecard remains the most novel local build in this archive.",
+            "Still nobody's build: DDOT publishes a thin bus-lane layer, WMATA publishes system- and line-level performance, and the only public join is WMATA's single roll-up that priority segments run 13 percent faster since 2019. Boston's TransitMatters dashboard proves stop-pair transit analysis in production. A lane-by-lane bus priority scorecard, with install dates reconstructed from DDOT project pages, remains the most novel local build in this archive.",
           maturity: "prototype",
           tech: "Jupyter Notebook / Python",
           data: "WMATA bustime GPS archive (via markongithub/bus_data_archive) + WMATA GTFS/developer APIs",
@@ -1512,14 +1512,14 @@ sitemap: false
           stillGoUrl: "https://dcbudget.com/",
           stillGoName: "dcbudget.com",
           stillGo:
-            "Checked Aug 2026: the parsing this repo attempted is solved by daily structured exports; the missing layer is multi-year trend and cost analysis on top, which no tool attempts.",
+            "Checked Aug 2026, verified twice: DC has no open checkbook, just single-payment lookup, per-year purchase-order snapshots, and agency dashboards. dcbudget.com's structured exports cover one fiscal year at a time; the missing layer is multi-year analysis stitched across editions, which no tool attempts.",
           theme: "Budget & Spending",
           one: "A 2013 Code for DC hack project to parse DC government budget and spending data (agency POs, CBE contracts) into structured CSV/JSON for eventual analysis and visualization.",
           problem:
             "DC government budget and spending data (purchase orders, contract/vendor data, CBE certifications) was locked in inconsistent spreadsheets/PDFs, making it hard for the public or watchdogs to analyze how DC spends money or track certified business enterprise contracting.",
           why: "Classic hack-day project: got as far as writing data parsers and exporting CSVs from raw spreadsheets, but never built the promised analysis/visualization layer and was abandoned after initial data-wrangling burst (no commits after June 2013).",
           pitch:
-            "The parsing job this repo attempted is done: dcbudget.com publishes daily JSON and Excel exports of agency, project, grant, and contract rows, and the Council runs an official lookup tool. What survives of the idea is the analysis layer on top: multi-year spending trends and capital cost tracking that neither tool attempts.",
+            "The parsing this repo attempted is now largely solved by dcbudget.com's structured per-deployment exports, and DC still has no open checkbook, only single-payment lookup and per-year purchase-order snapshots. What survives of the idea is the analysis layer: multi-year spending trends and cost tracking stitched across budget editions, which neither dcbudget.com, a single-year snapshot, nor any official tool attempts.",
           maturity: "prototype",
           tech: "JavaScript (parsing scripts) + raw Excel/CSV data files",
           data: "DC Open Data (data.dc.gov) - DCFPI budget spreadsheets, CBE (Certified Business Enterprise) contract/PO data",
@@ -1629,7 +1629,7 @@ sitemap: false
             "https://edscape.dc.gov/page/dcps-public-school-facility-modernizations",
           stillGoName: "Edscape map",
           stillGo:
-            "Checked Aug 2026: DME's Edscape map shows which schools are modernized and when, but publishes no dollar amounts, so the equity-spending question remains unanswerable.",
+            "Checked Aug 2026, verified twice: DME's Edscape map shows which schools are modernized and when, but publishes no dollar amounts, so the equity-spending question remains unanswerable. The dollars exist in CIP PDFs and dcbudget.com's export; the join is the whole build.",
           theme: "Budget & Spending",
           one: "A data viz project mapping 15 years (~$5B) of DCPS school facilities modernization spending by school/neighborhood to reveal equity gaps in fund distribution",
           problem:
