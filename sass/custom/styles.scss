@@ -1595,6 +1595,47 @@ main:has(> .ctdc-content-area + .ctdc-logo-section)
   }
 }
 
+/* Initiative cards (/initiatives/): project-card idiom, but the badge names
+   the specific need and the body carries a "What we need" ask list. */
+.ctdc-initiative-cards {
+  margin-top: 2rem;
+}
+
+.ctdc-initiative-card .usa-card__container {
+  border-top: 3px solid var(--ctdc-gold);
+}
+
+.ctdc-project-badge--need {
+  background-color: rgb(var(--ctdc-gold-rgb) / 0.15);
+  color: var(--ctdc-button-dark);
+  border: 1px solid rgb(var(--ctdc-gold-rgb) / 0.4);
+}
+
+.ctdc-initiative-card__ask-title {
+  font-size: var(--ctdc-text-2xs);
+  font-weight: var(--ctdc-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--ctdc-tracking-wide);
+  color: var(--ctdc-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.ctdc-initiative-card__asks {
+  margin: 0;
+  padding-left: 1.1rem;
+
+  li {
+    margin-bottom: 0.25rem;
+    line-height: var(--ctdc-leading-normal);
+  }
+}
+
+.ctdc-initiative-card .ctdc-project-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
 /* ==========================================================================
    17. Hero text typography
    ========================================================================== */

@@ -1,0 +1,97 @@
+# Organizational initiatives: internal programs and infrastructure that keep
+# Civic Tech DC running, each with a specific support ask. Rendered on
+# /initiatives/ by _includes/components/initiative-card.html.
+#
+# Fields:
+#   name        - display name
+#   need_label  - badge text naming the primary need (short, "Needs X")
+#   body        - what it is and why the org needs it (2-3 sentences, plain)
+#   asks        - concrete support asks (2-4 bullets)
+#   links       - optional; kind: repo | page (picks analytics event)
+
+- name: Civic Hack DC
+  need_label: Needs a venue
+  body: >-
+    Our annual civic hackathon. The 2025 edition brought more than 80
+    participants together to build on federal regulatory data, and the next
+    one is September 12, 2026. It has organizers and a theme. It does not yet
+    have a home.
+  asks:
+    - A DC venue that can host roughly 100 people on a Saturday
+    - Food and prize sponsors for the event day
+  links:
+    - text: Civic Hack DC 2025
+      url: /events/civichackdc/
+      kind: page
+
+- name: Organizational Support Fellowship
+  need_label: Needs funding
+  body: >-
+    An eight-month, part-time fellowship to build our partnership pipeline:
+    shared relationship records, outreach materials, and real discovery
+    conversations with DC nonprofits, proven on live projects. The role is
+    designed and supervised. A stipend is what makes it real.
+  asks:
+    - Stipend funding for one fellow
+    - Introductions to nonprofits that should be working with us
+
+- name: Volunteer Platform
+  need_label: Needs builders
+  body: >-
+    A volunteer directory and project showcase. Browse projects, see who works
+    on what, and find where your skills fit. The product vision and data model
+    are documented and the stack is chosen; the build needs hands to reach
+    launch.
+  asks:
+    - Next.js and Supabase contributors
+    - A design pass on the core screens
+    - A product lead to carry it to launch
+  links:
+    - text: employment-platform on GitHub
+      url: https://github.com/civictechdc/employment-platform
+      kind: repo
+
+- name: AI Literacy Workshop
+  need_label: Needs facilitators
+  body: >-
+    A workshop kit for teaching non-technical audiences how AI actually works
+    and where it fails: a slide-deck web app plus a facilitator playbook. We
+    piloted it in 2025 and nonprofits keep asking for sessions.
+  asks:
+    - Volunteer facilitators to run sessions
+    - A maintainer to keep the materials current
+    - Nonprofits that want a workshop for their staff
+  links:
+    - text: ai-literacy-workshop on GitHub
+      url: https://github.com/civictechdc/ai-literacy-workshop
+      kind: repo
+    - text: Workshop at the AI clinic
+      url: /events/ai-literacy-workshop/
+      kind: page
+
+- name: Event Automation
+  need_label: Needs a maintainer
+  body: >-
+    A TypeScript command-line tool that publishes our events to Luma and
+    Meetup in one step, with venue templates. It saves organizers hours every
+    month, and it breaks quietly whenever either platform changes something.
+  asks:
+    - A TypeScript maintainer for a few hours a month
+  links:
+    - text: ctdc-event-manager on GitHub
+      url: https://github.com/civictechdc/ctdc-event-manager
+      kind: repo
+
+- name: Project Playbook
+  need_label: Needs writers
+  body: >-
+    A documentation site collecting how we actually run things, from project
+    intake to event operations to volunteer onboarding, so the organization
+    stops living in individual organizers' heads.
+  asks:
+    - Technical writers and editors
+    - Organizers willing to turn what they know into runbooks
+  links:
+    - text: Project-Playbook on GitHub
+      url: https://github.com/civictechdc/Project-Playbook
+      kind: repo

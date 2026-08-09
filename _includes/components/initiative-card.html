@@ -1,0 +1,46 @@
+{% comment %} Organizational-initiative card for /initiatives/. Pass initiative=
+one entry from _data/initiatives.yml. The badge names the specific need (venue,
+funding, maintainer) rather than a generic status — the ask is the point of the
+page. {% endcomment %} {% assign initiative = include.initiative %}
+<li class="usa-card grid-col-12 tablet:grid-col-6 ctdc-initiative-card">
+  <div class="usa-card__container">
+    <div class="usa-card__header">
+      <span class="ctdc-project-badge ctdc-project-badge--need"
+        >{{ initiative.need_label }}</span
+      >
+      <h3 class="usa-card__heading">{{ initiative.name }}</h3>
+    </div>
+    <div class="usa-card__body">
+      <p>{{ initiative.body }}</p>
+      <p class="ctdc-initiative-card__ask-title">What we need</p>
+      <ul class="ctdc-initiative-card__asks">
+        {% for ask in initiative.asks %}
+        <li>{{ ask }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% if initiative.links %}
+    <div class="ctdc-project-card__footer">
+      {% for link in initiative.links %} {% if link.kind == 'repo' %}
+      <a
+        class="ctdc-project-card__cta ctdc-initiative-card__link"
+        href="{{ link.url }}"
+        target="_blank"
+        rel="noopener"
+        data-analytics-event="project_repository_click"
+        data-analytics-location="initiatives_page"
+        >{{ link.text }}</a
+      >
+      {% else %}
+      <a
+        class="ctdc-project-card__cta ctdc-initiative-card__link"
+        href="{{ site.baseurl }}{{ link.url }}"
+        data-analytics-event="project_discovery_click"
+        data-analytics-location="initiatives_page"
+        >{{ link.text }}</a
+      >
+      {% endif %} {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</li>
