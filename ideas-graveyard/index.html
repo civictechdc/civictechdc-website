@@ -31,8 +31,6 @@ permalink: /archive-dig/
     --dig-ease: cubic-bezier(0.16, 1, 0.3, 1);
     --dig-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
     --dig-shadow-hover: 0 10px 26px rgba(0, 0, 0, 0.32);
-    /* clearance for the sticky site header when the drawer rail sticks */
-    --dig-header-offset: 68px;
     background: linear-gradient(
         180deg,
         var(--dig-midnight),
@@ -176,12 +174,7 @@ permalink: /archive-dig/
 
   /* ---------- drawer rail ---------- */
   .archive-dig .dig-controls {
-    position: sticky;
-    top: var(--dig-header-offset);
-    z-index: 5;
     background: rgba(6, 17, 33, 0.72);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--dig-glass-line);
     margin-top: 28px;
   }
@@ -1882,18 +1875,6 @@ permalink: /archive-dig/
       });
     };
     var root = document.getElementById("archive-dig-root");
-    // keep the drawer rail clear of the sticky site header at any viewport
-    var siteHeader = document.querySelector(".ctdc-header");
-    function setHeaderOffset() {
-      if (siteHeader) {
-        root.style.setProperty(
-          "--dig-header-offset",
-          Math.round(siteHeader.getBoundingClientRect().height) + "px",
-        );
-      }
-    }
-    setHeaderOffset();
-    window.addEventListener("resize", setHeaderOffset);
     var cardsHost = document.getElementById("dig-cards");
 
     function noteBlock(d) {
