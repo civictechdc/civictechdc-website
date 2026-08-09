@@ -410,8 +410,8 @@ sitemap: false
         transform: translateY(-4px);
         box-shadow: var(--card-shadow-hover);
       }
-      /* gold thread marks the high-importance (Revive) files */
-      .card.t-top {
+      /* gold thread marks the strongest ideas (4+ stars) */
+      .card.hi {
         border-left: 2px solid var(--gold);
       }
       /* folder tab */
@@ -473,10 +473,6 @@ sitemap: false
       .t-top .stamp {
         color: var(--stamp-top);
         border-color: var(--stamp-top);
-      }
-      .t-look .stamp {
-        color: var(--stamp-look);
-        border-color: var(--stamp-look);
       }
       .t-active .stamp {
         color: var(--stamp-active);
@@ -787,9 +783,6 @@ sitemap: false
           </button>
           <button class="tab" data-t="top" aria-pressed="false">
             Revive <span class="ct"></span>
-          </button>
-          <button class="tab" data-t="look" aria-pressed="false">
-            Worth a look <span class="ct"></span>
           </button>
           <button class="tab" data-t="active" aria-pressed="false">
             Active <span class="ct"></span>
@@ -1188,7 +1181,7 @@ sitemap: false
           name: "ballot-initiative-dashboard",
           url: "https://github.com/civictechdc/ballot-initiative-dashboard",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Elections, ANC & Voting",
           one: "A proposed dashboard to track future/upcoming DC ballot initiatives",
           problem:
@@ -1207,7 +1200,7 @@ sitemap: false
           name: "baltimore-lunch",
           url: "https://github.com/civictechdc/baltimore-lunch",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Social Services & Benefits",
           one: "A geolocation map app pinpointing free summer lunch locations for Baltimore students.",
           problem:
@@ -1226,7 +1219,7 @@ sitemap: false
           name: "bikeshare-odds",
           url: "https://github.com/civictechdc/bikeshare-odds",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Transit & Mobility",
           one: "A Leaflet.js map of DC Capital Bikeshare stations showing the odds of finding an available bike based on historical dock data.",
           problem:
@@ -1245,7 +1238,7 @@ sitemap: false
           name: "capital-nature-ingest",
           url: "https://github.com/civictechdc/capital-nature-ingest",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Misc / Civic Data",
           one: "A scraper pipeline that pulls nature/outdoor events from dozens of DC-area sources (NPS, Eventbrite, park/nature orgs) and feeds them into the Capital Nature events calendar.",
           problem:
@@ -1264,7 +1257,7 @@ sitemap: false
           name: "communityresources",
           url: "https://github.com/civictechdc/communityresources",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Social Services & Benefits",
           one: 'A static web front-end (index.html + JS/CSS) for browsing DC community/social-service resource data, hosted at communityresourcedata.codefordc.org, formerly branded "DC Open 211".',
           problem:
@@ -1283,7 +1276,7 @@ sitemap: false
           name: "curiouscity",
           url: "https://github.com/civictechdc/curiouscity",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Misc / Civic Data",
           one: "A Rails web app letting residents submit and vote on questions about their city, with selected questions investigated and answered by journalists/reporters.",
           problem:
@@ -1302,7 +1295,7 @@ sitemap: false
           name: "DC-Budget-Sankey",
           url: "https://github.com/civictechdc/DC-Budget-Sankey",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Budget & Spending",
           one: "A Sankey diagram visualizing how DC's budget funds flow into specific government agencies.",
           problem:
@@ -1321,7 +1314,7 @@ sitemap: false
           name: "dc-council-chat",
           url: "https://github.com/civictechdc/dc-council-chat",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Misc / Civic Data",
           one: "A site to watch DC Council meetings live and chat about them alongside other civically-engaged viewers.",
           problem:
@@ -1340,7 +1333,7 @@ sitemap: false
           name: "dc_bus_stuff",
           url: "https://github.com/civictechdc/dc_bus_stuff",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Transit & Mobility",
           one: "A 2019 Code for DC repo exploring DC bus GPS/bustime data to evaluate bus infrastructure, starting with the H Street bus lane pilot.",
           problem:
@@ -1359,7 +1352,7 @@ sitemap: false
           name: "dcfinancials",
           url: "https://github.com/civictechdc/dcfinancials",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Budget & Spending",
           one: "A 2013 Code for DC hack project to parse DC government budget and spending data (agency POs, CBE contracts) into structured CSV/JSON for eventual analysis and visualization.",
           problem:
@@ -1378,7 +1371,7 @@ sitemap: false
           name: "ERDA",
           url: "https://github.com/civictechdc/ERDA",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Public Safety",
           one: "A 2014 Code for DC project to statistically analyze DC's emergency response (fire/EMS dispatch) data and expose it via an API for visualizations.",
           problem:
@@ -1397,7 +1390,7 @@ sitemap: false
           name: "hospital-pricing",
           url: "https://github.com/civictechdc/hospital-pricing",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Public Health",
           one: "A bare data repository for manually collecting and standardizing DC-area hospital chargemaster/price-transparency files.",
           problem:
@@ -1416,7 +1409,7 @@ sitemap: false
           name: "LegiTrack",
           url: "https://github.com/civictechdc/LegiTrack",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Regulations & Legislation",
           one: "A front-end tracker for DC Council bills and council-member votes, built as a Middleman/Ruby static site.",
           problem:
@@ -1436,7 +1429,7 @@ sitemap: false
           url: "https://github.com/civictechdc/opendatadc",
           site: "/projects/opendatadc.html",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Regulations & Legislation",
           one: "A community-run open data portal (data.codefordc.org) built on CKAN, intended as a broader/complementary alternative to the DC government's official Open Data DC portal.",
           problem:
@@ -1455,7 +1448,7 @@ sitemap: false
           name: "school-modernization",
           url: "https://github.com/civictechdc/school-modernization",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Budget & Spending",
           one: "A data viz project mapping 15 years (~$5B) of DCPS school facilities modernization spending by school/neighborhood to reveal equity gaps in fund distribution",
           problem:
@@ -1474,7 +1467,7 @@ sitemap: false
           name: "the-rat-hack",
           url: "https://github.com/civictechdc/the-rat-hack",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Public Health",
           one: "A 2017-18 Code for DC hack project analyzing DC 311 rodent-complaint data to predict rat outbreak trends and feed a public 311 data portal.",
           problem:
@@ -1493,7 +1486,7 @@ sitemap: false
           name: "us-congress-pizza-flag-tracker",
           url: "https://github.com/civictechdc/us-congress-pizza-flag-tracker",
           score: 3,
-          tier: "look",
+          tier: "top",
           theme: "Org Infrastructure",
           one: "A tracker for the U.S. Capitol's flag-flying request/fulfillment process, built with congressional staff (Modernization Staff Association) to manage constituent flag orders.",
           problem:
@@ -1573,12 +1566,12 @@ sitemap: false
           url: "https://github.com/civictechdc/ballot-sign",
           incubator: true,
           score: 4,
-          tier: "active",
+          tier: "top",
           theme: "Elections, ANC & Voting",
           one: "A proposed open-source, legally-compliant digital platform for discovering and signing DC ballot initiative petitions, replacing door-to-door canvassing.",
           problem:
             "DC ballot initiative campaigns rely on inefficient, costly door-to-door canvassing to collect signatures, and residents have limited awareness of active initiatives; signature collection also must be securely recorded per DC election law.",
-          why: "A project team never assembled at the January 2026 meetings; no legal, architectural, or technical work began beyond the intent statement.",
+          why: "A project team never assembled at the January 2026 meetings; no legal, architectural, or technical work began beyond the intent statement. The repository has been archived.",
           pitch:
             "The concept (discover + digitally sign + securely record ballot-initiative signatures within DC election law) is still compelling civic infrastructure, but this repo never got past the intent-statement stage — a revival would start from zero: legal research on DC's e-signature/petition requirements, a look at existing open-source petition/e-signature platforms, and a real architecture/security design before any code. Modern identity-verification and e-signature tooling (and LLM-assisted legal research) make the feasibility study much cheaper to do now than in 2025.",
           maturity: "idea-only",
@@ -1652,12 +1645,12 @@ sitemap: false
           name: "repower-dmv-extractor",
           url: "https://github.com/civictechdc/repower-dmv-extractor",
           score: 4,
-          tier: "active",
+          tier: "top",
           theme: "Housing & Tenant Rights",
           one: "A TypeScript CLI pipeline that extracts, cross-references, and fuzzy-matches contractor records to build a clean dataset of DMV-area businesses that do home-efficiency/electrification work.",
           problem:
             "DC-area residents need a trustworthy, up-to-date list of legitimate contractors who do home-efficiency and electrification work (insulation, heat pumps, etc.), matched against official licensing data so scam/unlicensed operators can be filtered out.",
-          why: 'No README or docs on intended distribution/use; no CI, no deployed output, no stars/forks. Looks like it hit a natural "extract-and-transform is done, now what" wall - likely needs a place to publish/host the resulting directory (a public site or API) which was never built.',
+          why: "The ElectrifyDMV partnership ended for lack of sustained project leadership; the extraction pipeline never got a public destination.",
           pitch:
             "DC residents still have no easy, trustworthy directory of vetted home-efficiency/electrification contractors, and utility rebate/DOEE programs keep changing - this pipeline already solves the hard data-matching problem (license registry + Google Places fuzzy dedupe). Revive it by scheduling the extract/transform run periodically, adding an LLM-based reviewer for messy source records, and shipping the output as a simple searchable site (e.g. static site + Cloudflare D1) - the backend is basically done.",
           maturity: "working",
@@ -1684,26 +1677,6 @@ sitemap: false
           tech: "Jupyter Notebook / Python (planned), Leaflet/MapLibre web map",
           data: "DC Open Data / OSM (roads, lanes, speed, crashes) — per README, not yet actually ingested in visible code",
           pushed: "2026-03-09",
-          arch: false,
-          relevant: true,
-        },
-        {
-          name: "ridescoredc-website",
-          url: "https://github.com/civictechdc/ridescoredc-website",
-          site: "/projects/ridescoredc.html",
-          score: 4,
-          tier: "active",
-          theme: "Transit & Mobility",
-          one: 'An interactive map of DC streets scored for bike safety, combining a custom Level-of-Traffic-Stress (LTS) model, bike lane type, and 5-year crash history into a user-adjustable "ridescore."',
-          problem:
-            "DC cyclists have no easy way to see which streets are actually safe to ride, or to weigh factors (speed limit, lane count, bike lane type, crash history, pavement) according to their own risk tolerance when route planning.",
-          why: 'Not stalled - actively developed as of July 2026 (this is a live, in-progress project, not a graveyard candidate); README notes backend/frontend deployment docs are still "coming soon."',
-          pitch:
-            'The core idea (personalized, factor-weighted bike-safety scoring per road segment, not just a static "bike friendliness" layer) is still differentiated from existing tools like Ride Report or Strava heatmaps. It\'s already working end-to-end; reviving it means finishing frontend polish, adding more cities/factors (transit conflicts, construction, lighting), and could plug into modern LLM-based trip planning for a "safest route" API.',
-          maturity: "deployed",
-          tech: "FastAPI + PostGIS/Martin tile server + Jupyter (Python) + HTML/JS frontend, Docker Compose",
-          data: "DC Open Data portal (Roadway Block dataset + DC Crashes dataset)",
-          pushed: "2026-07-22",
           arch: false,
           relevant: true,
         },
@@ -1751,12 +1724,12 @@ sitemap: false
           name: "repower-dmv",
           url: "https://github.com/civictechdc/repower-dmv",
           score: 3,
-          tier: "active",
+          tier: "top",
           theme: "Environment & Energy",
           one: "ElectrifyDC (repo repower-dmv) — a Remix/TypeScript website helping DC residents find info and contractors for home electrification (e.g. heat pumps, induction stoves).",
           problem:
             "DC residents lack an easy way to learn about home electrification incentives/programs and find vetted local contractors to do heat pump/induction stove/electrical panel upgrades.",
-          why: "Unclear — appears to be an active, maintained project with a real grant-driven use case (iframe embed for WordPress); may just have low visibility rather than being stalled.",
+          why: "The ElectrifyDMV partnership ended for lack of sustained project leadership.",
           pitch:
             "The contractor-directory + CMS-driven content model is solid and was already validated enough to get embedded into a partner WordPress site for a grant — the underlying idea (connect residents to electrification programs/contractors) is more relevant now given IRA rebates and rising DC electrification incentives. A revival could add an LLM-based eligibility/rebate-matching assistant on top of the existing contractor data model, and modernize by dropping the custom Decap-CMS/iframe embed pattern for a simpler headless CMS or static site generator.",
           maturity: "deployed",
@@ -1771,13 +1744,8 @@ sitemap: false
       const GROUPS = [
         {
           id: "top",
-          label: "Top revival candidates",
-          sub: "Dead or dormant, still relevant in 2026, and the idea is strong. Start here.",
-        },
-        {
-          id: "look",
-          label: "Worth a look",
-          sub: "Decent ideas, more niche or partly superseded by newer work.",
+          label: "Worth reviving",
+          sub: "Dead or dormant, still relevant in 2026. The stars say how strong the idea is.",
         },
         {
           id: "active",
@@ -1796,7 +1764,7 @@ sitemap: false
           /[&<>"]/g,
           (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
         );
-      const STAMP = { top: "Revive", look: "Worth a look", active: "Active" };
+      const STAMP = { top: "Revive", active: "Active" };
       const main = document.getElementById("main");
 
       function card(d) {
@@ -1808,7 +1776,7 @@ sitemap: false
           d.tier === "active" || d.site
             ? `<div class="filelinks"><a href="${d.url}" target="_blank" rel="noopener">GitHub &#8599;</a>${d.site ? `<a href="${d.site}">Project page &#8599;</a>` : ""}</div>`
             : "";
-        return `<article class="card t-${d.tier}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem).toLowerCase())}">
+        return `<article class="card t-${d.tier}${d.score >= 4 ? " hi" : ""}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem).toLowerCase())}">
     <span class="folder-tab">${esc(d.theme)}</span>
     <div class="card-body">
       <div class="card-top">
