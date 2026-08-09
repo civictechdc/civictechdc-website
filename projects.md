@@ -103,6 +103,11 @@ Since its founding in 2012, Civic Tech DC has worked on dozens of projects. This
 
 {% include components/project-cards.html is_active=false heading=3 columns=4 %}
 
+Looking for deeper history, or an idea to pick up? The
+[Ideas Graveyard]({{ site.baseurl }}/archive-dig/){: data-analytics-event="project_discovery_click" data-analytics-location="projects_archive"}
+catalogs 13 years of project files: dormant ideas verified as still worth
+reviving, and superseded ones with a record of what replaced them.
+
 </div>
 
 {% include components/content-review.html %}
