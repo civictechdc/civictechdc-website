@@ -980,18 +980,18 @@ sitemap: false
           name: "campaign-finance-explorer",
           url: "https://github.com/civictechdc/campaign-finance-explorer",
           score: 4,
-          tier: "superseded",
-          supersededUrl: "https://efiling.ocf.dc.gov/",
-          supersededName: "OCF e-filing search",
-          superseded:
-            "DC OCF publishes contributions and expenditures through its e-filing portal with a map view and CSV and XML bulk downloads. No API exists, but bulk export covers the analysis this project contemplated.",
+          tier: "top",
+          stillGoUrl: "https://efiling.ocf.dc.gov/",
+          stillGoName: "OCF e-filing portal",
+          stillGo:
+            "OCF now publishes the data: e-filing search, a contributions map, and CSV and XML bulk downloads. But analysis is left to the reader — no candidate comparison, donor pattern, or cycle-over-cycle dashboards exist, official or community. The data problem this project fought is solved; the dashboard it wanted to be is still unbuilt.",
           theme: "Elections, ANC & Voting",
           one: "An interactive visual explorer for DC political campaign contributions, letting users filter/compare donors and money flows by candidate and ward on a map.",
           problem:
             "DC campaign finance data (from the Office of Campaign Finance) is hard for ordinary citizens to explore — who's funding which candidates, by ward, by contribution size — without a visual, filterable tool.",
           why: "Last pushed May 2017; likely reliant on a custom backend API (campaign-finance.codefordc.org) that has since gone dark, and built on an aging Keshif/jQuery/Leaflet stack from the mid-2010s Code for DC hack-day era — classic volunteer-project attrition once the original maintainers moved on.",
           pitch:
-            'The concept (a public, filterable map+table explorer of local campaign contributions) is still exactly what good-government/transparency advocates want, and it\'s now much easier: OCF likely has better bulk/API data today, and a modern stack (a lightweight React/Observable Plot or D3 build, hosted static with a serverless data-refresh job, plus an LLM to auto-summarize "who funds whom" narratives) would replace the aging jQuery/Keshif/Leaflet 1.0 stack and dead custom API dependency in a fraction of the effort.',
+            "The Keshif-era visual explorer died with its custom API, but the concept, a filterable visual explorer of DC contributions by candidate, ward, and donor, now sits one static build away from OCF bulk exports. Pair it with dc-campaign-finance-watch: one modern build covers both cards.",
           maturity: "deployed",
           tech: "JavaScript (jQuery + D3 v4 + Keshif visualization framework + Leaflet 1.0)",
           data: "DC campaign finance contribution records (via a custom codefordc.org API, likely sourced from DC OCF filings), plus a 2012 ward geojson for map overlay",
@@ -1118,18 +1118,18 @@ sitemap: false
           name: "dc-campaign-finance-watch",
           url: "https://github.com/civictechdc/dc-campaign-finance-watch",
           score: 4,
-          tier: "superseded",
-          supersededUrl: "https://efiling.ocf.dc.gov/",
-          supersededName: "OCF e-filing search",
-          superseded:
-            "DC OCF publishes contributions and expenditures through its e-filing portal with a map view and CSV and XML bulk downloads. No API exists, but bulk export covers the analysis this project contemplated.",
+          tier: "top",
+          stillGoUrl: "https://efiling.ocf.dc.gov/",
+          stillGoName: "OCF e-filing portal",
+          stillGo:
+            "OCF now publishes the data: e-filing search, a contributions map, and CSV and XML bulk downloads. But analysis is left to the reader — no candidate comparison, donor pattern, or cycle-over-cycle dashboards exist, official or community. The data problem this project fought is solved; the dashboard it wanted to be is still unbuilt.",
           theme: "Elections, ANC & Voting",
           one: "A full-stack open API and web dashboard for exploring DC campaign contribution data, letting citizens compare candidates' fundraising side by side.",
           problem:
             "DC campaign finance data from the Office of Campaign Finance was historically opaque and hard to query or compare across candidates; this project aimed to expose it via an open API plus visualizations.",
           why: "Long-running Code for DC hack-night project that got real sustained contributor effort over years but eventually lost active maintainers; likely stalled on OCF data-format changes/scraper rot and the burden of maintaining a Mongo+Docker stack with no dedicated owner.",
           pitch:
-            "Campaign finance transparency is evergreen civic value, and DC OCF now (2026) likely has better structured data/exports plus modern hosting (serverless Postgres, static site + edge functions) that could replace the whole Mongo/Docker/Node stack with something far lighter; an LLM could also auto-generate plain-English candidate summaries and flag suspicious donation patterns, features that weren't feasible when this was built.",
+            "The original ran for years at campaign-finance.codefordc.org on scraped data and a Mongo stack. A rebuild is far cheaper now: OCF bulk CSV and XML feed a static pipeline directly, no scraper and no database. The unbuilt layer is the analytics — candidate comparisons, donor patterns, small-dollar versus PAC shares, cycle-over-cycle trends — with the 2026 races as the launch moment.",
           maturity: "deployed",
           tech: "Node.js/Express + MongoDB + React/Webpack, Dockerized",
           data: "DC Office of Campaign Finance (ocf.dc.gov)",
