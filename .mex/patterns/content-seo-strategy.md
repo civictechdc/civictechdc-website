@@ -18,7 +18,7 @@ last_updated: 2026-07-24
 
 ## Context
 
-The canonical strategy lives at `docs/content-seo-strategy.md`; its measurement contract lives at `docs/content-seo-measurement.md`; project and partner approval status lives at `docs/content-seo-factual-review.md`. They must reflect the current repository, live site, publishing capacity, audience language, project evidence, validated search intent, instrumentation, and factual-review state. Search observations are dated snapshots, not permanent rank claims.
+The canonical strategy lives at `docs/content-seo-strategy.md`; its measurement contract lives at `docs/content-seo-measurement.md`. They must reflect the current repository, live site, publishing capacity, audience language, project evidence, validated search intent, and instrumentation. Search observations are dated snapshots, not permanent rank claims.
 
 ## Steps
 
@@ -51,7 +51,6 @@ The canonical strategy lives at `docs/content-seo-strategy.md`; its measurement 
 - [ ] The plan optimizes for qualified mission outcomes rather than traffic alone.
 - [ ] Priority content has a factual source, responsible owner, CTA, and measurement path.
 - [ ] Every active project and explicitly promoted past case study declares and follows `case_study_standard: true`.
-- [ ] Factual approval remains visibly pending in source until the required project and partner reviewers record approval evidence.
 - [ ] Measurement distinguishes discovery clicks, intent signals, completed actions, and qualified outcomes.
 - [ ] `npm run check:seo` verifies the implemented priority-page content and conversion hooks.
-- [ ] `docs/content-seo-strategy.md`, `docs/content-seo-measurement.md`, `docs/content-seo-factual-review.md`, this pattern, the pattern index, and the router remain synchronized.
+- [ ] `docs/content-seo-strategy.md`, `docs/content-seo-measurement.md`, this pattern, the pattern index, and the router remain synchronized.

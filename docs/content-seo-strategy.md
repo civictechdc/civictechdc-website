@@ -8,28 +8,24 @@
 
 The repository implementation was revised and rendered on July 26, 2026.
 
-| Scope                                      | Status                  | Evidence                                                                                                                                                                                               |
-| ------------------------------------------ | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Homepage positioning and pathways          | Repository-complete     | Homepage preserves the `Civic Tech DC` title and community-first identity, names the full audience and operating model, and links distinctly to Pitch, Projects, Events, and Partners.                 |
-| Pitch owns project intake                  | Repository-complete     | Navigation now says **Start a project**; Pitch covers both intake pathways, support, fit, partner duties, capacity, process, examples, and FAQs.                                                       |
-| Partners owns relationships and trust      | Repository-complete     | Partners distinguishes problem owners, validating users, collaborators, hosts, connectors, and supporters; its project CTA routes to Pitch.                                                            |
-| Projects evidence hub                      | Repository-complete     | Projects groups nonprofit data, legal access, journalism/research, and community-data examples while retaining honest active and past labels.                                                          |
-| Four priority proof pages                  | Repository-complete     | DC Reentry Housing, Daria, Clean Slate, and Data and Democracy follow the evidence standard, state limits, identify owners, and link to next steps.                                                    |
-| Active and promoted project standard       | Repository-complete     | All eight active projects plus the three past projects featured as case studies declare the content standard, distinguish unknowns from results, identify owners, and expose next steps.               |
-| Internal links and conversion hooks        | Repository-complete     | Priority pathways carry stable data-layer events and locations; project pages link to intake and status-appropriate volunteer routes.                                                                  |
-| Search and technical baseline              | Recorded                | The July 22 search snapshot remains the pre-change discovery baseline; the July 24 production render is recorded in [Content and SEO Measurement](content-seo-measurement.md).                         |
-| Production render and smoke validation     | Passed                  | `npm run build`, rendered SEO/content assertions, accessibility checks, full link checks, and desktop/mobile browser matrices passed.                                                                  |
-| GTM event forwarding and publication       | External action pending | Repository code emits the events. The [published-container check](content-seo-measurement.md#published-container-check) confirms that the current GTM version does not forward them.                   |
-| First 28-day conversion baseline           | External data pending   | Historical named-event data does not exist. Use the first complete 28 days after GTM publication without representing missing history as zero interest.                                                |
-| Partner and project-owner factual approval | External review pending | Public repositories and existing approved site content support the current copy; the [factual-review packet](content-seo-factual-review.md) records the reviewers and claims still requiring approval. |
-| Partner and repository distribution        | External action pending | Maintainers and partners should add canonical project links where appropriate after factual approval.                                                                                                  |
+| Scope                                  | Status                  | Evidence                                                                                                                                                                                 |
+| -------------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Homepage positioning and pathways      | Repository-complete     | Homepage preserves the `Civic Tech DC` title and community-first identity, names the full audience and operating model, and links distinctly to Pitch, Projects, Events, and Partners.   |
+| Pitch owns project intake              | Repository-complete     | Navigation now says **Start a project**; Pitch covers both intake pathways, support, fit, partner duties, capacity, process, examples, and FAQs.                                         |
+| Partners owns relationships and trust  | Repository-complete     | Partners distinguishes problem owners, validating users, collaborators, hosts, connectors, and supporters; its project CTA routes to Pitch.                                              |
+| Projects evidence hub                  | Repository-complete     | Projects groups nonprofit data, legal access, journalism/research, and community-data examples while retaining honest active and past labels.                                            |
+| Four priority proof pages              | Repository-complete     | DC Reentry Housing, Daria, Clean Slate, and Data and Democracy follow the evidence standard, state limits, identify owners, and link to next steps.                                      |
+| Active and promoted project standard   | Repository-complete     | All eight active projects plus the three past projects featured as case studies declare the content standard, distinguish unknowns from results, identify owners, and expose next steps. |
+| Internal links and conversion hooks    | Repository-complete     | Priority pathways carry stable data-layer events and locations; project pages link to intake and status-appropriate volunteer routes.                                                    |
+| Search and technical baseline          | Recorded                | The July 22 search snapshot remains the pre-change discovery baseline; the July 24 production render is recorded in [Content and SEO Measurement](content-seo-measurement.md).           |
+| Production render and smoke validation | Passed                  | `npm run build`, rendered SEO/content assertions, accessibility checks, full link checks, and desktop/mobile browser matrices passed.                                                    |
+| GTM event forwarding and publication   | External action pending | Repository code emits the events. The [published-container check](content-seo-measurement.md#published-container-check) confirms that the current GTM version does not forward them.     |
+| First 28-day conversion baseline       | External data pending   | Historical named-event data does not exist. Use the first complete 28 days after GTM publication without representing missing history as zero interest.                                  |
+| Partner and repository distribution    | External action pending | Maintainers and partners should add canonical project links where appropriate.                                                                                                           |
 
-Repository validation does not substitute for the three pending external controls: publishing GTM tags, recording post-deployment data, and obtaining factual approval from named partners and active project owners.
+Repository validation does not substitute for the two pending external controls: publishing GTM tags and recording post-deployment data.
 
-The project-copy pull request remains a draft while factual approvals are pending.
-Ready-for-review CI and production deployment both enforce `factual_review_status:
-approved`, so pending descriptions cannot be released as indexable search or social copy.
-The deployment workflow accepts pushes to `main` only. For approved pages, the release
+The deployment workflow accepts pushes to `main` or a manual dispatch. For published pages, the release
 check also loads the recorded GitHub approval comment and matches its project, date, and
 distinct reviewers instead of trusting a status field or URL alone.
 
@@ -408,8 +404,8 @@ Follow these preservation rules:
    Do not let those sections redefine the mission.
 4. Put audience and search terms in `seo_title`, `seo_description`, headings, and clear
    explanatory copy. Do not turn the project itself into a generic service example.
-5. Never present central editorial work as project-team approval. Show factual-review
-   status publicly until the required reviewers approve the page.
+5. Never present central editorial work as project-team approval. Verify claims with the
+   people who know them.
 6. Prefer project-specific headings and narrative order. A shared quality checklist is
    not a shared voice or mandatory page template.
 

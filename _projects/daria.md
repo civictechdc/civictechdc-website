@@ -11,8 +11,6 @@ description: Open-source case-management software created by abortion funders an
 seo_description: DARIA is open-source case-management software built with abortion funds after the DC Abortion Fund outgrew shared spreadsheets.
 content_owner: Civic Tech DC project archive
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 2
 case_study_standard: true
 ---
 

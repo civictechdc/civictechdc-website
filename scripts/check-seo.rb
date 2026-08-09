@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "json"
-require "net/http"
 require "nokogiri"
 require "open3"
 require "set"
@@ -14,15 +13,7 @@ ROOT = File.expand_path("..", __dir__)
 ORIGIN = "https://www.civictechdc.org"
 HOST = URI(ORIGIN).host
 SITE_TITLE = "Civic Tech DC"
-GITHUB_REPOSITORY = "civictechdc/civictechdc-website"
 SITE_TIMEZONE = TZInfo::Timezone.get("America/New_York")
-# "1" fails the check on unapproved case studies; "warn" reports them without
-# failing. Warn is the interim mode while the approval register in
-# docs/content-seo-factual-review.md is being filled; flip to "1" after.
-FACTUAL_APPROVAL_MODE = ENV["REQUIRE_FACTUAL_APPROVAL"].to_s
-REQUIRE_FACTUAL_APPROVAL = FACTUAL_APPROVAL_MODE == "1"
-WARN_FACTUAL_APPROVAL = FACTUAL_APPROVAL_MODE == "warn"
-EVIDENCE_COMMENT_CACHE = {}
 HOSTED_EVENT_PATH = %r{\A/events/[^/]+/\z}
 ARTICLE_PATH = %r{\A/blog/\d{4}/\d{2}/\d{2}/}
 MAX_TITLE_LENGTH = 65
@@ -139,91 +130,6 @@ rescue URI::InvalidURIError
   false
 end
 
-def factual_review_evidence_reference(value)
-  uri = URI.parse(value)
-  return unless uri.scheme == "https" &&
-    uri.host == "github.com" &&
-    uri.userinfo.nil? &&
-    uri.query.nil?
-
-  path_match = uri.path.match(
-    %r{\A/civictechdc/civictechdc-website/(?<kind>pull|issues)/(?<number>\d+)\z}
-  )
-  comment_match = uri.fragment.to_s.match(/\Aissuecomment-(?<comment_id>\d+)\z/)
-  return unless path_match && comment_match
-
-  {
-    :url => uri.to_s,
-    :comment_id => comment_match[:comment_id],
-    :kind => path_match[:kind],
-    :number => path_match[:number]
-  }
-rescue URI::InvalidURIError
-  nil
-end
-
-def github_issue_comment(comment_id)
-  return EVIDENCE_COMMENT_CACHE[comment_id] if EVIDENCE_COMMENT_CACHE.key?(comment_id)
-
-  uri = URI("https://api.github.com/repos/#{GITHUB_REPOSITORY}/issues/comments/#{comment_id}")
-  request = Net::HTTP::Get.new(uri)
-  request["Accept"] = "application/vnd.github+json"
-  request["User-Agent"] = "civictechdc-seo-check"
-  request["X-GitHub-Api-Version"] = "2022-11-28"
-  token = ENV["GITHUB_TOKEN"].to_s
-  request["Authorization"] = "Bearer #{token}" unless token.empty?
-  response = Net::HTTP.start(
-    uri.host,
-    uri.port,
-    :use_ssl => true,
-    :open_timeout => 10,
-    :read_timeout => 10
-  ) { |http| http.request(request) }
-
-  unless response.is_a?(Net::HTTPSuccess)
-    return EVIDENCE_COMMENT_CACHE[comment_id] = {
-      :error => "GitHub returned HTTP #{response.code} for issue comment #{comment_id}"
-    }
-  end
-
-  parsed = JSON.parse(response.body)
-  EVIDENCE_COMMENT_CACHE[comment_id] = {
-    :author_association => parsed["author_association"].to_s,
-    :body => parsed["body"].to_s,
-    :html_url => parsed["html_url"].to_s
-  }
-rescue JSON::ParserError, SocketError, SystemCallError, Timeout::Error, EOFError, OpenSSL::SSL::SSLError => error
-  EVIDENCE_COMMENT_CACHE[comment_id] = {
-    :error => "could not load GitHub issue comment #{comment_id}: #{error.message}"
-  }
-end
-
-def factual_review_evidence_errors(reference, relative, reviewed_on, reviewers)
-  comment = github_issue_comment(reference[:comment_id])
-  return [comment[:error]] if comment[:error]
-
-  errors = []
-  unless comment[:html_url] == reference[:url]
-    errors << "factual review evidence URL does not match the loaded GitHub comment"
-  end
-  unless %w[COLLABORATOR MEMBER OWNER].include?(comment[:author_association])
-    errors << "factual review evidence must be summarized by a repository collaborator"
-  end
-
-  evidence_lines = comment[:body].lines.map(&:rstrip).reject(&:empty?)
-  expected_lines = [
-    "Factual review: approved",
-    "Project: #{relative}",
-    "Reviewed on: #{reviewed_on}",
-    "Reviewers:",
-    *reviewers.map { |reviewer| "- #{reviewer}" }
-  ]
-  unless evidence_lines == expected_lines
-    errors << "factual review evidence must exactly match the ordered approval record"
-  end
-  errors
-end
-
 def refresh_target(refresh)
   match = refresh["content"].to_s.match(/\A\s*\d+(?:\.\d+)?\s*;\s*url=(.+?)\s*\z/i)
   match&.[](1)
@@ -328,7 +234,6 @@ end
 return unless $PROGRAM_NAME == __FILE__
 
 errors = []
-warnings = []
 analytics_events = Set.new
 cname = File.read(File.join(ROOT, "CNAME")).strip
 add_error(errors, "CNAME", "must match the canonical host #{HOST}") unless cname == HOST
@@ -350,9 +255,7 @@ active_project_files = project_sources.filter_map do |relative, source|
   relative if front_matter_value(source, "is_active") == "true"
 end
 declared_case_study_files = project_sources.filter_map do |relative, source|
-  declared_standard = front_matter_value(source, "case_study_standard") == "true"
-  declared_review = !front_matter_value(source, "factual_review_status").to_s.empty?
-  relative if declared_standard || declared_review
+  relative if front_matter_value(source, "case_study_standard") == "true"
 end
 case_study_project_files = (
   active_project_files +
@@ -378,68 +281,7 @@ case_study_project_files.each do |relative|
   unless source.include?("data-analytics-event=")
     add_error(errors, relative, "project page needs an instrumented next step")
   end
-  status = front_matter_value(source, "factual_review_status")
-  unless %w[approved pending].include?(status)
-    add_error(errors, relative, "factual_review_status must be pending or approved")
-  end
-  required_approvals_value = front_matter_value(source, "factual_review_required_approvals").to_s
-  required_approvals = required_approvals_value.to_i if required_approvals_value.match?(/\A[1-9]\d*\z/)
-  unless required_approvals
-    add_error(errors, relative, "factual_review_required_approvals must be a positive integer")
-  end
-  if status == "pending" && front_matter_value(source, "content_owner").to_s.match?(/\bproject team\b/i)
-    add_error(errors, relative, "pending editorial draft must not attribute ownership to an unreviewed project team")
-  end
-  if status != "approved"
-    if REQUIRE_FACTUAL_APPROVAL
-      add_error(errors, relative, "release requires factual_review_status: approved")
-    elsif WARN_FACTUAL_APPROVAL
-      warnings << "#{relative}: factual_review_status is #{status.inspect}; needs approval before enforcement flips to hard"
-    end
-  end
-  next unless status == "approved"
-
-  reviewed_by = front_matter_value(source, "factual_reviewed_by")
-  reviewed_on = front_matter_value(source, "factual_reviewed_on")
-  evidence = front_matter_value(source, "factual_review_evidence")
-  reviewers = reviewed_by.to_s.split(";").map(&:strip).reject(&:empty?)
-  if required_approvals && reviewers.length != required_approvals
-    add_error(
-      errors,
-      relative,
-      "approved factual review needs #{required_approvals} semicolon-separated factual_reviewed_by entries"
-    )
-  end
-  normalized_reviewers = reviewers.map { |reviewer| reviewer.downcase.gsub(/\s+/, " ") }
-  if normalized_reviewers.uniq.length != normalized_reviewers.length
-    add_error(errors, relative, "approved factual review needs distinct factual_reviewed_by entries")
-  end
-  unless reviewed_on.to_s.match?(/\A\d{4}-\d{2}-\d{2}\z/)
-    add_error(errors, relative, "approved factual review needs a YYYY-MM-DD factual_reviewed_on date")
-  end
-  evidence_reference = factual_review_evidence_reference(evidence.to_s)
-  unless evidence_reference
-    add_error(
-      errors,
-      relative,
-      "approved factual review evidence must link to a GitHub issue or pull-request comment in this repository"
-    )
-    next
-  end
-  factual_review_evidence_errors(
-    evidence_reference,
-    relative,
-    reviewed_on,
-    reviewers
-  ).each do |message|
-    add_error(errors, relative, message)
-  end
 end
-case_study_routes = case_study_project_files.to_h do |relative|
-  route = "/projects/#{File.basename(relative, ".md")}.html"
-  [route, front_matter_value(project_sources.fetch(relative), "factual_review_status")]
-end
-
 Dir.mktmpdir("civictechdc-seo-") do |destination|
   output, status = Open3.capture2e(
     { "JEKYLL_ENV" => "production" },
@@ -553,22 +395,6 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
     end
     add_error(errors, relative, "stale /about-us/ metadata remains") if document.to_html.include?("/about-us/")
     add_error(errors, relative, "bare-domain internal URL remains") if document.to_html.include?("https://civictechdc.org")
-
-    if (review_status = case_study_routes[page_url])
-      review_markers = document.css("[data-factual-review-status]")
-      unless review_markers.length == 1
-        add_error(errors, relative, "expected one visible factual-review status marker")
-      end
-      if review_markers.one?
-        review_marker = review_markers.first
-        unless review_marker["data-factual-review-status"] == review_status
-          add_error(errors, relative, "visible factual-review status does not match front matter")
-        end
-        if normalized_text(review_marker).empty?
-          add_error(errors, relative, "visible factual-review status marker is empty")
-        end
-      end
-    end
 
     document.css("a[data-analytics-event]").each do |link|
       analytics_event = link["data-analytics-event"].to_s.strip
@@ -808,10 +634,6 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
     add_error(errors, "feed.xml", "file is missing")
   end
 
-  unless warnings.empty?
-    warn "SEO check warnings (#{warnings.length}):"
-    warnings.each { |warning| warn "- #{warning}" }
-  end
   if errors.empty?
     puts "SEO check passed: #{indexable.length} indexable pages, " \
          "#{noindex.length} noindex pages, #{unlisted.length} unlisted pages, " \

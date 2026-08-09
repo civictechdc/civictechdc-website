@@ -51,7 +51,6 @@ All start with YAML front matter. Images referenced in content must follow `patt
    slack_channel: project-channel-name # optional (renders a Slack link)
    content_owner: Project Name project team
    last_reviewed: YYYY-MM-DD
-   factual_review_status: pending
    case_study_standard: true
    ---
    ```
@@ -64,7 +63,7 @@ All start with YAML front matter. Images referenced in content must follow `patt
    - current status and known limits;
    - lessons another organization can reuse;
    - a status-appropriate, instrumented next step.
-5. Add the page to `docs/content-seo-factual-review.md`. Leave `factual_review_status: pending` until all required project and partner reviewers approve the final claims and the evidence is recorded.
+5. Verify project and partner claims with the people who know them before publishing.
 
 ### Gotchas
 
@@ -72,15 +71,13 @@ All start with YAML front matter. Images referenced in content must follow `patt
 - Do not leave an inactive project's Slack channel in front matter unless people should still join that channel.
 - The body's lead image is rendered by `project.html` via `responsive-image.html` using the `image` field — so `image` must be a real path under `_images/`.
 - `image` and `image_alt_text` also supply the social preview. Describe the actual image rather than writing generic text such as "project screenshot."
-- Active projects must declare `case_study_standard: true`. `npm run check:seo` verifies the required metadata, governance fields, evidence-section headings, and instrumented next step.
-- Do not change `factual_review_status` to `approved` without `factual_reviewed_by`, `factual_reviewed_on`, and a secure `factual_review_evidence` URL.
+- Active projects must declare `case_study_standard: true`. `npm run check:seo` verifies the required metadata, evidence-section headings, and instrumented next step.
 
 ### Verify
 
 - [ ] File is `_projects/<slug>.md` with `layout: project`.
 - [ ] `image` points to a file that exists under `_images/`.
 - [ ] The page separates outputs, outcomes, and unknowns.
-- [ ] Project and partner claims are listed in `docs/content-seo-factual-review.md`.
 - [ ] The next step matches the project's current status and emits an approved analytics event.
 - [ ] Project appears on the projects page after `npm run serve`.
 - [ ] `npm run check:seo` passes.

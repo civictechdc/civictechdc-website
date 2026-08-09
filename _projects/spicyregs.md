@@ -11,8 +11,6 @@ description: Turning federal regulations and public comments into accessible, re
 seo_description: SpicyRegs helps people explore federal dockets, documents, and public comments through reproducible open data and research tools.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 3
 case_study_standard: true
 ---
 

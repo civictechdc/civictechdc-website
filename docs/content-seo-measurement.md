@@ -143,4 +143,4 @@ The content owner should ask each active project or named partner to verify:
 - repositories, live artifacts, and participation routes;
 - what another organization can responsibly learn or reuse.
 
-Use the [factual-review packet](content-seo-factual-review.md) and record approval in the pull request or project issue. If review is unavailable, attribute the claim to a public source, state the uncertainty, or remove the claim.
+Attribute the claim to a public source, state the uncertainty, or remove the claim.
