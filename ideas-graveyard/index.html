@@ -525,6 +525,16 @@ sitemap: false
       .go-note a {
         color: var(--primary);
       }
+      .note-when {
+        display: block;
+        margin-top: 6px;
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        opacity: 0.8;
+      }
       .stars {
         font-size: 0.8rem;
         color: var(--primary);
@@ -917,7 +927,7 @@ sitemap: false
           stillGoUrl: "https://code.dccouncil.gov/us/dc/council/laws/24-342",
           stillGoName: "D.C. Law 24-342",
           stillGo:
-            "Checked Aug 2026, verified twice: the portal D.C. Code 1-1001.05(a)(21) mandates is codified as Not Funded, and the FY27 budget released every other conditioned piece of Law 24-342 while leaving the data portal as the last one. DCBOE ships certified CSVs back to 2012 and OpenANC covers 2020-2024, but no official longitudinal view exists, and ANC-level turnout exists nowhere.",
+            "The portal D.C. Code 1-1001.05(a)(21) mandates is codified as Not Funded, and the FY27 budget released every other conditioned piece of Law 24-342 while leaving the data portal as the last one. DCBOE ships certified CSVs back to 2012 and OpenANC covers 2020-2024, but no official longitudinal view exists, and ANC-level turnout exists nowhere.",
           theme: "Elections, ANC & Voting",
           one: "A data pipeline and planned Shiny/web app to visualize historical trends in DC Advisory Neighborhood Commission (ANC) election results.",
           problem:
@@ -964,7 +974,7 @@ sitemap: false
           stillGoUrl: "https://github.com/ProjectSidewalk/SidewalkWebpage",
           stillGoName: "Project Sidewalk",
           stillGo:
-            "Checked Aug 2026, verified twice: DC's per-stop ADA data still dates to the 2016 transition-plan survey, DDOT's update effort is in its 2025 cycle, and Better Bus removed 527 stops in June 2025, so the official data is stale on the stop set itself. Project Sidewalk remains actively maintained, with 205,000 labels left from its dormant DC pilot.",
+            "DC's per-stop ADA data still dates to the 2016 transition-plan survey, DDOT's update effort is in its 2025 cycle, and Better Bus removed 527 stops in June 2025, so the official data is stale on the stop set itself. Project Sidewalk remains actively maintained, with 205,000 labels left from its dormant DC pilot.",
           theme: "Transit & Mobility",
           one: "A tool to remotely audit WMATA bus stop ADA compliance by overlaying a survey form on Google Street View imagery aimed at each stop.",
           problem:
@@ -1010,7 +1020,7 @@ sitemap: false
           stillGoUrl: "https://dcbudget.com/",
           stillGoName: "dcbudget.com",
           stillGo:
-            "Checked Aug 2026, verified twice: the CIP still ships as PDF volumes, the CFO's interactive capital dashboard (cfoinfo.dc.gov) is offline entirely, and the quarterly Capital Financial Status Report tracks spend against lifetime authority but never how planned costs drift between CIP editions. That cross-edition join is the build.",
+            "The CIP still ships as PDF volumes, the CFO's interactive capital dashboard (cfoinfo.dc.gov) is offline entirely, and the quarterly Capital Financial Status Report tracks spend against lifetime authority but never how planned costs drift between CIP editions. That cross-edition join is the build.",
           theme: "Budget & Spending",
           one: "A searchable web explorer that scrapes DC's annual six-year Capital Improvement Plan (buildings/roads investment) out of locked PDF/XML files and lets residents track how project costs and timelines change year over year.",
           problem:
@@ -1080,7 +1090,7 @@ sitemap: false
           stillGoUrl: "https://oanc.dc.gov/",
           stillGoName: "OANC minutes",
           stillGo:
-            "Checked Aug 2026, verified twice: the Office of ANCs posts minutes centrally for all 46 ANCs, FY24 through FY26, collected but uneven, with about a sixth as image-only scans. No cross-ANC full-text search exists; OANC's own site search cannot see inside the documents.",
+            "The Office of ANCs posts minutes centrally for all 46 ANCs, FY24 through FY26, collected but uneven, with about a sixth as image-only scans. No cross-ANC full-text search exists; OANC's own site search cannot see inside the documents.",
           theme: "Misc / Civic Data",
           one: 'A proposed chatbot to let DC residents "chat with" their Advisory Neighborhood Commission (ANC) meeting minutes/records via LLM.',
           problem:
@@ -1102,7 +1112,7 @@ sitemap: false
           score: 4,
           tier: "top",
           stillGo:
-            "Checked Aug 2026, verified twice: automatic relief is still phasing in, with courts given until October 2027 and a ten-year automatic tier, so motion-based relief (misdemeanor five years, felony eight from completion of sentence, plus actual innocence) is the near-term path, and no eligibility screener exists for it, official or otherwise.",
+            "Automatic relief is still phasing in, with courts given until October 2027 and a ten-year automatic tier, so motion-based relief (misdemeanor five years, felony eight from completion of sentence, plus actual innocence) is the near-term path, and no eligibility screener exists for it, official or otherwise.",
           theme: "Criminal Justice",
           one: "A guided-interview website that walks DC residents/attorneys through whether their criminal record is eligible to be sealed/expunged, with forms and attorney lookup tools.",
           problem:
@@ -1240,7 +1250,7 @@ sitemap: false
           stillGoUrl: "https://rentregistry.dc.gov/",
           stillGoName: "DC RentRegistry",
           stillGo:
-            "Checked Aug 2026, verified twice: the November 2025 re-registration deadline filled the registry, now 19,582 registrations covering roughly 194,000 units in free bulk CSVs refreshed daily. Coverage chasing is over; what is missing is the analytics layer, compliance and rent-adjustment views, plus public surfacing of the monthly reports section 42-3502.03c already requires of DHCD.",
+            "The November 2025 re-registration deadline filled the registry, now 19,582 registrations covering roughly 194,000 units in free bulk CSVs refreshed daily. Coverage chasing is over; what is missing is the analytics layer, compliance and rent-adjustment views, plus public surfacing of the monthly reports section 42-3502.03c already requires of DHCD.",
           theme: "Housing & Tenant Rights",
           one: "A data pipeline to infer which DC rental units are subject to rent stabilization (rent control) and model the effect of policy changes, since no direct public dataset says which units are covered.",
           problem:
@@ -1263,7 +1273,7 @@ sitemap: false
           stillGoUrl: "https://www.risingforjustice.org/",
           stillGoName: "Rising for Justice",
           stillGo:
-            "Checked Aug 2026, verified twice: Rising for Justice still determines eligibility manually by phone and email intake, and no rules-as-code exists for the amended DC statute. Worth checking Code for America's DC policy-design work for reusable artifacts before building.",
+            "Rising for Justice still determines eligibility manually by phone and email intake, and no rules-as-code exists for the amended DC statute. Worth checking Code for America's DC policy-design work for reusable artifacts before building.",
           theme: "Criminal Justice",
           one: "A Next.js web form that encodes Rising for Justice's legal logic to help pro bono attorneys determine whether a DC client's criminal record is eligible for expungement.",
           problem:
@@ -1309,7 +1319,7 @@ sitemap: false
           stillGoUrl: "https://www.dcboe.org/",
           stillGoName: "DCBOE",
           stillGo:
-            "Checked Aug 2026, verified twice: DCBOE still publishes measures as titles plus loose PDFs, with its own eight-step pipeline documented but never rendered as per-measure status with signature clocks. Only the foie gras measure is certified for November 2026; the wage and rent-freeze initiatives missed the July deadline and target 2027, the cycle this build should aim at.",
+            "DCBOE still publishes measures as titles plus loose PDFs, with its own eight-step pipeline documented but never rendered as per-measure status with signature clocks. Only the foie gras measure is certified for November 2026; the wage and rent-freeze initiatives missed the July deadline and target 2027, the cycle this build should aim at.",
           theme: "Elections, ANC & Voting",
           one: "A proposed dashboard to track future/upcoming DC ballot initiatives",
           problem:
@@ -1445,7 +1455,7 @@ sitemap: false
           stillGoUrl: "https://www.dccouncilbudget.com/analytics",
           stillGoName: "Council budget lookup",
           stillGo:
-            "Checked Aug 2026, verified twice: this repo's own demo once ran and died along with its data source (cfoinfo.dc.gov), so no flow visualization of the DC budget exists today, while structured data to feed one finally does.",
+            "This repo's own demo once ran and died along with its data source (cfoinfo.dc.gov), so no flow visualization of the DC budget exists today, while structured data to feed one finally does.",
           theme: "Budget & Spending",
           one: "A Sankey diagram visualizing how DC's budget funds flow into specific government agencies.",
           problem:
@@ -1489,7 +1499,7 @@ sitemap: false
           score: 3,
           tier: "top",
           stillGo:
-            "Checked Aug 2026, verified twice: DDOT's bus-lane layer is twelve unlisted segments with no install dates, WMATA reports bus performance at system and line level only, and the public join is a single roll-up figure (13 percent faster since 2019). Boston's TransitMatters proves stop-pair transit analysis in production; nobody has built the DC lane-by-lane version.",
+            "DDOT's bus-lane layer is twelve unlisted segments with no install dates, WMATA reports bus performance at system and line level only, and the public join is a single roll-up figure (13 percent faster since 2019). Boston's TransitMatters proves stop-pair transit analysis in production; nobody has built the DC lane-by-lane version.",
           theme: "Transit & Mobility",
           one: "A 2019 Code for DC repo exploring DC bus GPS/bustime data to evaluate bus infrastructure, starting with the H Street bus lane pilot.",
           problem:
@@ -1512,7 +1522,7 @@ sitemap: false
           stillGoUrl: "https://dcbudget.com/",
           stillGoName: "dcbudget.com",
           stillGo:
-            "Checked Aug 2026, verified twice: DC has no open checkbook, just single-payment lookup, per-year purchase-order snapshots, and agency dashboards. dcbudget.com's structured exports cover one fiscal year at a time; the missing layer is multi-year analysis stitched across editions, which no tool attempts.",
+            "DC has no open checkbook, just single-payment lookup, per-year purchase-order snapshots, and agency dashboards. dcbudget.com's structured exports cover one fiscal year at a time; the missing layer is multi-year analysis stitched across editions, which no tool attempts.",
           theme: "Budget & Spending",
           one: "A 2013 Code for DC hack project to parse DC government budget and spending data (agency POs, CBE contracts) into structured CSV/JSON for eventual analysis and visualization.",
           problem:
@@ -1629,7 +1639,7 @@ sitemap: false
             "https://edscape.dc.gov/page/dcps-public-school-facility-modernizations",
           stillGoName: "Edscape map",
           stillGo:
-            "Checked Aug 2026, verified twice: DME's Edscape map shows which schools are modernized and when, but publishes no dollar amounts, so the equity-spending question remains unanswerable. The dollars exist in CIP PDFs and dcbudget.com's export; the join is the whole build.",
+            "DME's Edscape map shows which schools are modernized and when, but publishes no dollar amounts, so the equity-spending question remains unanswerable. The dollars exist in CIP PDFs and dcbudget.com's export; the join is the whole build.",
           theme: "Budget & Spending",
           one: "A data viz project mapping 15 years (~$5B) of DCPS school facilities modernization spending by school/neighborhood to reveal equity gaps in fund distribution",
           problem:
@@ -2004,8 +2014,8 @@ sitemap: false
         ${d.incubator ? '<span class="incub">incubator</span>' : ""}
       </div>
       <p class="one">${esc(d.one)}</p>
-      ${d.superseded ? `<p class="sup-note"><span class="k">Superseded</span>${esc(d.superseded)}${d.supersededUrl ? ` <a href="${d.supersededUrl}" target="_blank" rel="noopener">${esc(d.supersededName)} &#8599;</a>` : ""}</p>` : ""}
-      ${d.stillGo ? `<p class="go-note"><span class="k">Still open</span>${esc(d.stillGo)}${d.stillGoUrl ? ` <a href="${d.stillGoUrl}" target="_blank" rel="noopener">${esc(d.stillGoName)} &#8599;</a>` : ""}</p>` : ""}
+      ${d.superseded ? `<p class="sup-note"><span class="k">Superseded</span>${esc(d.superseded)}${d.supersededUrl ? ` <a href="${d.supersededUrl}" target="_blank" rel="noopener">${esc(d.supersededName)} &#8599;</a>` : ""}<span class="note-when">Aug 2026</span></p>` : ""}
+      ${d.stillGo ? `<p class="go-note"><span class="k">Still open</span>${esc(d.stillGo)}${d.stillGoUrl ? ` <a href="${d.stillGoUrl}" target="_blank" rel="noopener">${esc(d.stillGoName)} &#8599;</a>` : ""}<span class="note-when">Aug 2026</span></p>` : ""}
       ${filelinks}
       <details>
         <summary><span class="caret">›</span>Open the file</summary>
