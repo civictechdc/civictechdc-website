@@ -478,6 +478,33 @@ sitemap: false
         color: var(--stamp-active);
         border-color: var(--stamp-active);
       }
+      .t-superseded {
+        background: var(--card-2);
+      }
+      .t-superseded .stamp {
+        color: var(--ink-soft);
+        border-color: var(--ink-soft);
+      }
+      .sup-note {
+        margin: 0 0 12px;
+        font-size: 0.88rem;
+        background: #eef0f2;
+        border-left: 2px solid var(--ink-soft);
+        border-radius: 2px;
+        padding: 8px 10px;
+      }
+      .sup-note .k {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 2px;
+      }
+      .sup-note a {
+        color: var(--primary);
+      }
       .stars {
         font-size: 0.8rem;
         color: var(--primary);
@@ -787,6 +814,9 @@ sitemap: false
           <button class="tab" data-t="active" aria-pressed="false">
             Active <span class="ct"></span>
           </button>
+          <button class="tab" data-t="superseded" aria-pressed="false">
+            Superseded <span class="ct"></span>
+          </button>
           <button class="tab" data-t="proposed" aria-pressed="false">
             Proposed <span class="ct"></span>
           </button>
@@ -805,7 +835,9 @@ sitemap: false
           scored the underlying idea 1&ndash;5 for revival potential. This is a
           scouting report on <em>ideas</em>, not a code review &mdash; treat
           every assessment as a lead to verify, not a verdict. Stall reasons are
-          inferred from repo evidence unless stated otherwise. This public
+          inferred from repo evidence unless stated otherwise. In August 2026 a
+          web scan checked every dormant file against current official and
+          public tools; superseded files record what replaced them. This public
           version is curated: private repositories, empty placeholders, mirrors
           of external tools, and internal infrastructure repos are omitted from
           the full scan.
@@ -837,7 +869,12 @@ sitemap: false
           name: "adopt-a-hydrant",
           url: "https://github.com/civictechdc/adopt-a-hydrant",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl:
+            "https://doc.arcgis.com/en/arcgis-solutions/latest/reference/introduction-to-adopt-a-hydrant.htm",
+          supersededName: "Esri Adopt-A-Hydrant",
+          superseded:
+            "Now a maintained Esri ArcGIS Solutions product, and Fairfax, Prince William, Montgomery, and WSSC all run programs. DC's gap is adopting a program, not building software.",
           theme: "Org Infrastructure",
           one: 'A Rails app letting DC residents "adopt" and claim responsibility for shoveling out a specific fire hydrant after snowstorms.',
           problem:
@@ -863,7 +900,7 @@ sitemap: false
             "DC has ANCs (hyperlocal elected bodies) but no easy way to see historical trends: turnout, uncontested seats, incumbency, seat vacancies/turnover over time. Data existed only as scattered board-of-elections pages and a hard-to-parse historical PDF (1979-2012).",
           why: "Appears to be a data-collection/cleaning phase that never advanced to the planned visualization app (Shiny) or public deployment; likely a hack-day/volunteer project that lost momentum after the initial scraping work, common for Code for DC projects without a dedicated ongoing maintainer.",
           pitch:
-            "The hard, tedious part (scraping/cleaning ANC results + building a 2012-2018 dataset, plus a partial 1979-2012 historical parse) is already done and sitting in cleaned_data/ - a revival could skip straight to building the visualization layer. Modern LLM-based PDF/OCR extraction would finally crack the messy historical_commissioners.pdf, and a lightweight Observable/D3 or Streamlit app (rather than R Shiny) could ship a live ANC turnout/turnover dashboard in a weekend, feeding into ongoing DC civic-engagement and redistricting conversations.",
+            "DC Law 24-342 requires DCBOE to run a searchable election-data portal with dashboards sortable by ANC and ward, and it has not shipped. That makes this the rare civic project backed by a statutory mandate: build the longitudinal ANC dashboard (turnout, uncontested seats, incumbency) from DCBOE's per-election results, or use the mandate to push the Board to comply. OpenANC's machine-readable dataset is a ready starting point.",
           maturity: "prototype",
           tech: "R and Python (Jupyter notebooks), R Markdown",
           data: "DC Board of Elections website (ANC election results, scraped), anc.dc.gov (current ANC membership), historical_commissioners.pdf (1979-2012)",
@@ -876,7 +913,11 @@ sitemap: false
           url: "https://github.com/civictechdc/ancfinder",
           site: "/projects/ANCFinder.html",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://openanc.org/",
+          supersededName: "OpenANC",
+          superseded:
+            "OANC's official commissioner lookup and the community-run OpenANC both cover this, current through 2026.",
           theme: "Elections, ANC & Voting",
           one: "A public website (ancfinder.org) that lets DC residents find their Advisory Neighborhood Commission (ANC), see commissioners, boundaries on a map, meeting info, and election candidates.",
           problem:
@@ -902,7 +943,7 @@ sitemap: false
             "Auditing physical ADA accessibility (curb ramps, sidewalk-to-curb connections, benches/shelters) at thousands of WMATA bus stops normally requires expensive in-person site visits by DDOT/WMATA staff.",
           why: "One-day hackathon build (#innoMAYtion, May 2015); no commits after July 2015, no README or docs, Python 2 syntax (dict.has_key/iteritems) now broken, hardcoded/expired Google Maps API usage pattern (signed_in=true) — classic hack-day project that was never picked back up after the event ended.",
           pitch:
-            "The core insight is still smart: crowdsource ADA compliance checks by having volunteers \"virtually visit\" stops via Street View instead of walking every corner in DC. Today this is far more buildable: Street View Static API + newer panorama coverage, an LLM/vision model (e.g. Claude with vision) could pre-screen images for ramps/obstructions before a human confirms, and results could feed a public map (Mapbox/Leaflet) cross-referenced with WMATA's current GTFS and DDOT's sidewalk/curb-ramp inventory data, which barely existed in 2015. A modern rebuild could also auto-flag likely-noncompliant stops for prioritized human review, turning it from a manual survey tool into a triage pipeline.",
+            "DC's authoritative per-stop ADA dataset was captured in 2016, and DDOT's ADA transition plan update is live now, which means stale compliance data during an active planning window. Project Sidewalk, still actively maintained with two hundred thousand labels from its old DC pilot, is the identical crowdsourcing method with a dead DC instance: the ask is restarting DC coverage with a bus-stop label type, not building from scratch.",
           maturity: "working",
           tech: "Python 2 (GTFS processing) + vanilla JS/jQuery/Bootstrap 3 (Google Maps/Street View frontend)",
           data: "WMATA GTFS feed (stops.txt, stop_times.txt) + Google Street View API",
@@ -914,7 +955,11 @@ sitemap: false
           name: "campaign-finance-explorer",
           url: "https://github.com/civictechdc/campaign-finance-explorer",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://efiling.ocf.dc.gov/",
+          supersededName: "OCF e-filing search",
+          superseded:
+            "DC OCF now runs an official contributions explorer with map views, daily-updated data, bulk downloads, and an API.",
           theme: "Elections, ANC & Voting",
           one: "An interactive visual explorer for DC political campaign contributions, letting users filter/compare donors and money flows by candidate and ward on a map.",
           problem:
@@ -940,7 +985,7 @@ sitemap: false
             "DC's capital improvement plans (multi-year budget for infrastructure like schools, roads, buildings) were published only in non-open, hard-to-parse formats, making it nearly impossible for residents to see how planned projects and their costs/timelines evolved over time.",
           why: "Appears to be a Code for DC hack-project that got a working v1 shipped and iterated for about a month (June-July 2016), then lost momentum once the initial volunteer(s) moved on; no updates since, and the underlying data source/parsing likely needs re-scraping each year, which nobody kept doing.",
           pitch:
-            "The core idea (turn DC's opaque CIP PDFs into a trackable, comparable timeline of public infrastructure spending) is still squarely relevant and probably more valuable now given years of added budget cycles to compare. Modern tooling makes the hard part trivial: an LLM can parse the CIP PDF/XML far more robustly than the 2016 Ruby ETL, and the data could be re-hosted as a simple static site with a spreadsheet/SQLite backend instead of a Bower/Gulp build. Good starting point for a volunteer with a budget-transparency or accountability bent.",
+            "The gap narrowed but sharpened: Edscape and the CFO now publish what and when, but no tool anywhere tracks project costs across CIP editions, so slippage and inflation stay invisible. dcbudget.com, a solo volunteer project, already exports project-level JSON and Excel; partner with it rather than rebuilding, and add the longitudinal cost join the official tools avoid.",
           maturity: "deployed",
           tech: "JavaScript (Gulp/Bower frontend) + Ruby ETL scraper",
           data: "DC OCFO Capital Improvement Plan documents (PDF/XML), scraped via custom Ruby ETL",
@@ -952,7 +997,12 @@ sitemap: false
           name: "CashBailApp",
           url: "https://github.com/civictechdc/CashBailApp",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl:
+            "https://www.communityjusticeexchange.org/en/nbfn-directory",
+          supersededName: "National Bail Fund Network",
+          superseded:
+            "DC abolished cash bail in 1992, so there is no local use, and national bail funds run their own infrastructure. Congress could change this: H.R. 5214 passed the House in late 2025.",
           theme: "Criminal Justice",
           one: "A web app (Java/Spring Boot) built at a 2020 NYC Coders BLM Hackathon to connect people held on cash bail with community donors/advocates and local nonprofit bail funds.",
           problem:
@@ -971,7 +1021,11 @@ sitemap: false
           name: "cfsa-referral",
           url: "https://github.com/civictechdc/cfsa-referral",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://211warmline.dc.gov/",
+          supersededName: "DC 211 Warmline",
+          superseded:
+            "CFSA and OUC launched the official DC 211 Warmline in February 2025; a competing routing tool has no adoption path into agency workflows.",
           theme: "Social Services & Benefits",
           one: "A React decision-tree app for CFSA caseworkers to answer yes/no questions in the field and get routed to the right voluntary child-welfare program.",
           problem:
@@ -997,7 +1051,7 @@ sitemap: false
             "ANCs are DC's hyperlocal government bodies, but their meeting minutes are scattered, inconsistent PDFs/text dumps that residents never read, making it hard to track what's happening in local government (zoning, liquor licenses, development) at the neighborhood level.",
           why: "Likely a hack-day idea where only the tedious data-collection step (manually gathering ANC1A minutes) got done before interest/time ran out; no LLM chat layer was ever built.",
           pitch:
-            "This is now trivial to build well: RAG over ANC minutes with a modern LLM (retrieval + citations) could let residents ask \"what did my ANC decide about X liquor license\" and get sourced answers. The hard part was always data collection (minutes aren't centralized/structured across DC's 40+ ANCs) - a revival should pair this with OpenANC or DC's own Legistar-style data feeds rather than manual scraping, and scope it as a multi-ANC citywide tool rather than single-commission.",
+            "The Office of ANCs solved the hard part in the meantime: minutes for all forty-plus ANCs are now centrally posted through FY26 as uniform PDFs, collected, current, and un-indexed. The build is exactly this idea's second half: full-text and retrieval-augmented search across the corpus, with citations back to the source minutes.",
           maturity: "idea-only",
           tech: "none (plain text data only, no code)",
           data: "ANC1A meeting minutes (manually collected text files, 2021-2023)",
@@ -1017,7 +1071,7 @@ sitemap: false
             "DC legal clinics needed a fast way to determine if a client's criminal record qualifies for sealing/expungement, generate intake referrals, train new attorneys on the process, and give clients self-service guidance plus the actual court forms.",
           why: "Last push Jan 2017; the README notes a hand-off to MissionLaunch's fork, and the eligibility logic was never maintained here after that.",
           pitch:
-            "The core idea (statute-driven eligibility wizard + forms + Spanish localization) is exactly the kind of civic-legal-tech tool that ages well; the hand-authored JSON decision tree could now be regenerated/validated against current DC Code far more cheaply with an LLM, paired with a modern low-code form builder and hosted as a static site for near-zero cost — worth checking if DC's expungement statute has changed enough to warrant a refresh and relaunch with a legal aid partner.",
+            "DC's Second Chance Amendment Act now auto-seals most eligible records, which retires the original wizard. The surviving need is an eligibility screener for motion-based relief (the misdemeanor five-year, felony eight-year, and actual-innocence paths): no official checker exists, and legal-aid intake is a form, not a screener.",
           maturity: "deployed",
           tech: "Static HTML/JS site with a JSON-driven rules/flow engine (no backend), bilingual (en/es)",
           data: "DC criminal record sealing/expungement eligibility rules (statutory logic, e.g. § 48-904.01); combined-flow.json wizard tree",
@@ -1029,7 +1083,11 @@ sitemap: false
           name: "dc-campaign-finance-watch",
           url: "https://github.com/civictechdc/dc-campaign-finance-watch",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://efiling.ocf.dc.gov/",
+          supersededName: "OCF e-filing search",
+          superseded:
+            "DC OCF now runs an official contributions explorer with map views, daily-updated data, bulk downloads, and an API.",
           theme: "Elections, ANC & Voting",
           one: "A full-stack open API and web dashboard for exploring DC campaign contribution data, letting citizens compare candidates' fundraising side by side.",
           problem:
@@ -1048,7 +1106,11 @@ sitemap: false
           name: "dcps-budget",
           url: "https://github.com/civictechdc/dcps-budget",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://dcpsbudget.com/",
+          supersededName: "dcpsbudget.com",
+          superseded:
+            "DCPS runs an official per-school budget site with worksheets, comparisons, and archives back to FY17.",
           theme: "Budget & Spending",
           one: "A public-facing interactive visualization of the DC Public Schools (DCPS) budget, built as a static-site data viz app with a Gulp/Bower/npm toolchain.",
           problem:
@@ -1067,7 +1129,11 @@ sitemap: false
           name: "districthousing",
           url: "https://github.com/civictechdc/districthousing",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://dhcd.dc.gov/page/housing-locator-services",
+          supersededName: "DC housing locator services",
+          superseded:
+            "Housing applications moved into official portals (DCHA's agency portal, the IZ lottery, DCHousingSearch). The real blocker for cross-program intake is consent and data-sharing, not PDF filling.",
           theme: "Housing & Tenant Rights",
           one: "A Rails app that lets caseworkers fill out one online intake form and auto-generates the multiple separate PDF applications needed for DC Section 8 housing programs.",
           problem:
@@ -1086,7 +1152,11 @@ sitemap: false
           name: "eligibility-blueprint",
           url: "https://github.com/civictechdc/eligibility-blueprint",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://github.com/MyFriendBen/benefits-api",
+          supersededName: "MyFriendBen",
+          superseded:
+            "MyFriendBen on PolicyEngine is exactly this product: an open-source, white-label, multi-state benefits screener, funded and actively maintained.",
           theme: "Social Services & Benefits",
           one: "A generic React app that turns a spreadsheet of questions/answers/programs into a decision-tree eligibility screener webform",
           problem:
@@ -1105,7 +1175,11 @@ sitemap: false
           name: "open211",
           url: "https://github.com/civictechdc/open211",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://211warmline.dc.gov/",
+          supersededName: "DC 211 Warmline",
+          superseded:
+            "The directory need is served twice over, by the official DC 211 Warmline and findhelp. The remaining gap, no open API for the city's directory data, is procurement advocacy rather than code.",
           theme: "Regulations & Legislation",
           one: "An open, standardized API and website for DC's 211 human/social services directory, built on the Ohana API design so DC's out-of-date 211 data could be interoperable and commonly maintained.",
           problem:
@@ -1131,7 +1205,7 @@ sitemap: false
             "DC's rent control law exempts many units (post-1976 buildings, small landlords with ≤4 units, voluntary agreements, etc.) but there is no public list of which specific units/buildings are actually rent-controlled, making the law's real coverage and the impact of proposed changes (e.g., moving the exemption cutoff from 1976 to 1986) impossible to assess without inference from property records.",
           why: "Analysis reached a first-pass conclusion (e.g., ~48% of DC housing units are in buildings with 4-or-fewer units), but the visualization was explicitly marked work-in-progress using simulated (not real) data, and commits stopped in March 2017 after final analysis tweaks. No technical blocker is evident; the repo doesn't record why work ended.",
           pitch:
-            "DC's affordability and rent-control debate is still live in 2026, and the core hard part here (matching owner names across records to detect 4-or-fewer-unit exemptions, and inferring unit counts from use codes) is exactly the kind of fuzzy-entity-resolution and imputation problem LLMs now handle far better and cheaper than 2016 string-matching heuristics. A revival could pull current DC Open Data CAMA extracts, use an LLM for owner-name entity resolution and building classification, and turn the static analysis.md into an interactive, regularly-refreshed map/dashboard (extending Harlan's abandoned Shiny prototype) that housing advocates and DC Council staff could actually use when new rent-control legislation is debated.",
+            "DHCD's rent registry launched in June 2025 with free bulk CSV exports, so the data problem is solved and the accountability problem is wide open: roughly 5,400 registrations against about 76,600 rent-controlled units, with the registry's analytics section unreleased. A coverage and compliance tracker built on the CSVs is a weekend-scale project with real policy weight.",
           maturity: "working",
           tech: "R and Python (data wrangling/analysis scripts), Shiny (visualization demo)",
           data: "DC Open Data (CAMA residential/condo/commercial property assessment datasets), ACS, HUD PHA inventory, CPI-W",
@@ -1150,7 +1224,7 @@ sitemap: false
             "Pro bono lawyers at legal clinics need to quickly and correctly evaluate whether a client's DC criminal record qualifies for expungement/sealing — the underlying law is a complex, jurisdiction-specific decision tree that's easy to get wrong manually.",
           why: "Unclear — development stopped abruptly in January 2023 after a long active run (97 merged PRs), which reads more like an engagement winding down than an idea failing. The repo doesn't record why.",
           pitch:
-            "The eligibility-rules-as-decision-tree pattern is exactly what modern LLMs are good at augmenting (e.g., turning statute text into structured logic, or explaining eligibility results in plain language to clients) — a rebuilt version could generalize the same case-intake/decision-tree architecture to other jurisdictions' expungement laws or other legal-eligibility domains (benefits screening, record sealing elsewhere), which is a huge unmet access-to-justice need nationally.",
+            "Rising for Justice still determines expungement eligibility manually by phone and email intake. The 2025 statute rewrite invalidated this repo's decision logic but shrank the build to something tractable: rules-as-code for D.C. Code sections 16-801 through 16-806 as amended. Rasa Legal proves the model commercially in three other states; nobody has built it for DC.",
           maturity: "working",
           tech: "JavaScript/TypeScript, Next.js, Jest, CircleCI",
           data: "none (encodes RFJ's internal legal eligibility rules, no external dataset)",
@@ -1162,7 +1236,11 @@ sitemap: false
           name: "rfk-community",
           url: "https://github.com/civictechdc/rfk-community",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://ourrfk.dc.gov/",
+          supersededName: "OurRFK",
+          superseded:
+            "Overtaken by events: the stadium deal was approved and the District ran its own master-plan engagement; the site's future is decided.",
           theme: "Misc / Civic Data",
           one: "A civic engagement tool built with DC Councilmember Charles Allen's office to collect resident input on redeveloping the 170-acre former RFK stadium site in Ward 7.",
           problem:
@@ -1188,7 +1266,7 @@ sitemap: false
             "DC residents and civic groups have no easy way to track ballot initiatives that are being proposed or gathering signatures before they reach the ballot, making it hard to engage early or plan advocacy.",
           why: "Never got past the initial scaffolding/data-gathering stage; abandoned after one month with no code written, likely a hack-day idea that lost momentum",
           pitch:
-            "The concept (a living tracker of DC ballot initiatives, their status, signature thresholds, and sponsors) is still valuable and cheap to build today: scrape/monitor the DC Board of Elections initiative filings page, use an LLM to summarize initiative text and flag key dates, and ship a simple static site with a Cloudflare Worker cron job for updates — a weekend project now versus a bigger lift in 2023.",
+            "DCBOE's current-measures page now lists every active measure, but as a PDF document dump with no status pipeline, signature clocks, or progress tracking. Scraping it into a structured dashboard is a small, high-visibility build in a cycle with rent control and tipped-wage measures live.",
           maturity: "idea-only",
           tech: "None (no code committed; primaryLanguage null)",
           data: "Likely DC Board of Elections ballot initiative filings (unconfirmed, no code exists to verify)",
@@ -1200,7 +1278,11 @@ sitemap: false
           name: "baltimore-lunch",
           url: "https://github.com/civictechdc/baltimore-lunch",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://cityservices.baltimorecity.gov/summerfood/",
+          supersededName: "Baltimore summer food",
+          superseded:
+            "Official tools run live every season at three levels: USDA's site finder, Maryland MSDE's search, and Baltimore City's own map, with SUN Bucks reducing the need further.",
           theme: "Social Services & Benefits",
           one: "A geolocation map app pinpointing free summer lunch locations for Baltimore students.",
           problem:
@@ -1219,7 +1301,11 @@ sitemap: false
           name: "bikeshare-odds",
           url: "https://github.com/civictechdc/bikeshare-odds",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://capitalbikeshare.com/bike-angels",
+          supersededName: "Bike Angels",
+          superseded:
+            "Real-time availability is built into the CaBi, Transit, and Google Maps apps via GBFS, and Lyft's Bike Angels attacks dock scarcity with rider incentives instead of forecasts.",
           theme: "Transit & Mobility",
           one: "A Leaflet.js map of DC Capital Bikeshare stations showing the odds of finding an available bike based on historical dock data.",
           problem:
@@ -1238,7 +1324,9 @@ sitemap: false
           name: "capital-nature-ingest",
           url: "https://github.com/civictechdc/capital-nature-ingest",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          superseded:
+            "Capital Nature curates its own events calendar now, with dozens of listings maintained through the current season.",
           theme: "Misc / Civic Data",
           one: "A scraper pipeline that pulls nature/outdoor events from dozens of DC-area sources (NPS, Eventbrite, park/nature orgs) and feeds them into the Capital Nature events calendar.",
           problem:
@@ -1257,7 +1345,11 @@ sitemap: false
           name: "communityresources",
           url: "https://github.com/civictechdc/communityresources",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://211warmline.dc.gov/",
+          supersededName: "DC 211 Warmline",
+          superseded:
+            "The directory need is served twice over, by the official DC 211 Warmline and findhelp. The remaining gap, no open API for the city's directory data, is procurement advocacy rather than code.",
           theme: "Social Services & Benefits",
           one: 'A static web front-end (index.html + JS/CSS) for browsing DC community/social-service resource data, hosted at communityresourcedata.codefordc.org, formerly branded "DC Open 211".',
           problem:
@@ -1276,7 +1368,11 @@ sitemap: false
           name: "curiouscity",
           url: "https://github.com/civictechdc/curiouscity",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://51st.news/",
+          supersededName: "The 51st",
+          superseded:
+            "The 51st, the worker-run successor to DCist, runs reader-question journalism for DC.",
           theme: "Misc / Civic Data",
           one: "A Rails web app letting residents submit and vote on questions about their city, with selected questions investigated and answered by journalists/reporters.",
           problem:
@@ -1302,7 +1398,7 @@ sitemap: false
             "DC's budget is published as opaque tabular financial data; ordinary residents can't see at a glance where tax dollars actually go by agency/fund.",
           why: "Single hack-day/hackathon-style project (created Oct 2015, last commit Feb 2016 plus an automated civic.json spec-update PR merged later); no ongoing maintainer, no license file (flagged by the bot PR), budget data was hardcoded/manually converted so it would go stale every fiscal year without upkeep.",
           pitch:
-            'Budget transparency via flow diagrams is still a great, legible civic-tech format, and this is now much easier to redo well: DC now publishes richer open budget/CAFR data (and possibly APIs) that could feed an automated ETL instead of hand-converted JSON, and modern libraries (D3 v7, Plotly, or an LLM-assisted CFO-PDF-to-structured-data pipeline) could keep it current year over year with minimal maintenance — worth reviving as an auto-updating "Where Does DC\'s Money Go" dashboard.',
+            "dcbudget.com and the Council's Budget Lookup Tool now cover agency drill-down, but no flow visualization of the DC budget exists anywhere. The niche left is the Sankey itself, fed from dcbudget.com's daily JSON exports instead of hand-converted PDFs.",
           maturity: "working",
           tech: "JavaScript (D3.js-style Sankey), static site on GitHub Pages",
           data: "DC CFO budget/finance data (cfoinfo.dc.gov)",
@@ -1314,7 +1410,11 @@ sitemap: false
           name: "dc-council-chat",
           url: "https://github.com/civictechdc/dc-council-chat",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://dccouncil.gov/hearings/",
+          supersededName: "Council hearings",
+          superseded:
+            "Council streams are plentiful and official, and YouTube's native live chat on the Committee of the Whole stream covers the co-watching layer.",
           theme: "Misc / Civic Data",
           one: "A site to watch DC Council meetings live and chat about them alongside other civically-engaged viewers.",
           problem:
@@ -1340,7 +1440,7 @@ sitemap: false
             "DC transit riders and planners lack accessible tools to evaluate whether bus infrastructure interventions (like dedicated bus lanes) actually improve reliability, or to identify where buses are slow/unreliable and where new interventions are needed.",
           why: "Looks like a single hack-night/hack-day exploration that got one round of real analysis (H Street pilot) done, then the more ambitious ideas (camera counting, bus-stop quality score) were never picked up; no commits after Sept 2019, likely lost momentum after the initial volunteer(s) moved on.",
           pitch:
-            'The core idea (measure whether a bus lane pilot worked, using GPS trace data) is exactly the kind of accountability analysis civic tech should keep doing, and WMATA\'s GTFS-realtime feeds plus modern geospatial/LLM tooling make this dramatically easier now than piecing together notebooks in 2019 — a revived version could auto-generate a public "bus lane scorecard" dashboard for any DC bus-priority project and extend to the never-built bus-stop reliability score and camera-based ground-truth counting ideas.',
+            "Still nobody's build: DDOT publishes bus-priority projects and lane geometry, WMATA publishes route-level on-time performance, and no one joins realtime bus speeds to lane segments. Seattle and Boston have working precedents. A lane-by-lane bus priority scorecard remains the most novel local build in this archive.",
           maturity: "prototype",
           tech: "Jupyter Notebook / Python",
           data: "WMATA bustime GPS archive (via markongithub/bus_data_archive) + WMATA GTFS/developer APIs",
@@ -1359,7 +1459,7 @@ sitemap: false
             "DC government budget and spending data (purchase orders, contract/vendor data, CBE certifications) was locked in inconsistent spreadsheets/PDFs, making it hard for the public or watchdogs to analyze how DC spends money or track certified business enterprise contracting.",
           why: "Classic hack-day project: got as far as writing data parsers and exporting CSVs from raw spreadsheets, but never built the promised analysis/visualization layer and was abandoned after initial data-wrangling burst (no commits after June 2013).",
           pitch:
-            "The core idea - a clean, queryable, public dataset of DC agency spending and CBE contract awards with a simple visualization/dashboard on top - is still exactly the kind of accountability tool DC needs, and modern LLM-based document parsing would make ingesting DC's messy budget PDFs/spreadsheets far easier than the manual CSV wrangling this repo attempted in 2013; pair with DC's now-richer open data portal and a lightweight dashboard (e.g. Observable or a simple React app) to revive it in a weekend.",
+            "The parsing job this repo attempted is done: dcbudget.com publishes daily JSON and Excel exports of agency, project, grant, and contract rows, and the Council runs an official lookup tool. What survives of the idea is the analysis layer on top: multi-year spending trends and capital cost tracking that neither tool attempts.",
           maturity: "prototype",
           tech: "JavaScript (parsing scripts) + raw Excel/CSV data files",
           data: "DC Open Data (data.dc.gov) - DCFPI budget spreadsheets, CBE (Certified Business Enterprise) contract/PO data",
@@ -1371,7 +1471,11 @@ sitemap: false
           name: "ERDA",
           url: "https://github.com/civictechdc/ERDA",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://fems.dc.gov/",
+          supersededName: "FEMS",
+          superseded:
+            "DC FEMS publishes official response-time dashboards mapped to a 300-meter grid, plus daily metrics.",
           theme: "Public Safety",
           one: "A 2014 Code for DC project to statistically analyze DC's emergency response (fire/EMS dispatch) data and expose it via an API for visualizations.",
           problem:
@@ -1390,7 +1494,11 @@ sitemap: false
           name: "hospital-pricing",
           url: "https://github.com/civictechdc/hospital-pricing",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://hospitalpricingfiles.org/",
+          supersededName: "Hospital pricing files",
+          superseded:
+            "Price-file aggregation is commodity now: Turquoise Health's free patient tool, PatientRightsAdvocate's file library, and Sage Transparency all cover it.",
           theme: "Public Health",
           one: "A bare data repository for manually collecting and standardizing DC-area hospital chargemaster/price-transparency files.",
           problem:
@@ -1409,7 +1517,11 @@ sitemap: false
           name: "LegiTrack",
           url: "https://github.com/civictechdc/LegiTrack",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://lims.dccouncil.gov/",
+          supersededName: "LIMS",
+          superseded:
+            "The Council's LIMS covers bills and member voting records back to 1989, updated daily, with a public API.",
           theme: "Regulations & Legislation",
           one: "A front-end tracker for DC Council bills and council-member votes, built as a Middleman/Ruby static site.",
           problem:
@@ -1429,7 +1541,11 @@ sitemap: false
           url: "https://github.com/civictechdc/opendatadc",
           site: "/projects/opendatadc.html",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://opendata.dc.gov/",
+          supersededName: "Open Data DC",
+          superseded:
+            "The official portal serves the catalog role. The remaining gap, roughly a quarter of non-sensitive datasets unpublished, is an advocacy fight, not a rebuild.",
           theme: "Regulations & Legislation",
           one: "A community-run open data portal (data.codefordc.org) built on CKAN, intended as a broader/complementary alternative to the DC government's official Open Data DC portal.",
           problem:
@@ -1455,7 +1571,7 @@ sitemap: false
             "DCPS ran a ~15-year, ~$5B facilities modernization program; spending data existed but wasn't legible, making it hard to tell whether upgrades were distributed equitably across neighborhoods/schools ahead of council budget hearings",
           why: "Likely a volunteer project tied to a specific public-hearing timeline; once that legislative moment passed, momentum and maintenance stopped (last push July 2016).",
           pitch:
-            "The hard part (scraping/cleaning 15 years of DCPS/OCFO capital spending data with a data dictionary) is already done and reusable as a template; refresh with post-2016 capital budget data, add DC's now-richer open-data/GIS layers, and an LLM could auto-generate the equity narrative/heat-map commentary per ward that used to require manual analysis — cheap to relaunch as a live dashboard ahead of any DCPS capital budget hearing.",
+            "DME's official Edscape map now shows which schools are modernized and when, through FY31, and even publishes the ward-equity framing. But it shows no dollar amounts, so the original equity-spending question is still unanswerable. The remaining build is joining CIP cost data to the official map's timeline.",
           maturity: "prototype",
           tech: "HTML/JS (d3.js) with R data-processing scripts",
           data: "DCPS/PCSB/OSSE/OCFO facilities spending data (input/output CSVs in repo)",
@@ -1467,7 +1583,11 @@ sitemap: false
           name: "the-rat-hack",
           url: "https://github.com/civictechdc/the-rat-hack",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://dchealth.dc.gov/rodent-control-dashboard",
+          supersededName: "Rodent Control Dashboard",
+          superseded:
+            "DC Health launched an official rodent-control dashboard in July 2026: complaint hotspots, seasonal trends, ward-level treatment counts.",
           theme: "Public Health",
           one: "A 2017-18 Code for DC hack project analyzing DC 311 rodent-complaint data to predict rat outbreak trends and feed a public 311 data portal.",
           problem:
@@ -1486,7 +1606,12 @@ sitemap: false
           name: "us-congress-pizza-flag-tracker",
           url: "https://github.com/civictechdc/us-congress-pizza-flag-tracker",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl:
+            "https://www.aoc.gov/what-we-do/programs-ceremonies/capitol-flag-program",
+          supersededName: "Capitol Flag Program",
+          superseded:
+            "The Architect of the Capitol's flag portal now gives congressional offices real order tracking. The constituent-facing gap survives, but it is an access negotiation with the AOC, not a build.",
           theme: "Org Infrastructure",
           one: "A tracker for the U.S. Capitol's flag-flying request/fulfillment process, built with congressional staff (Modernization Staff Association) to manage constituent flag orders.",
           problem:
@@ -1566,7 +1691,11 @@ sitemap: false
           url: "https://github.com/civictechdc/ballot-sign",
           incubator: true,
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://www.dcboe.org/",
+          supersededName: "DCBOE",
+          superseded:
+            "Legally closed to third parties: DCBOE's eSign has been the mandated digital petition path since 2018, and only the Board can validate signatures against the voter roll.",
           theme: "Elections, ANC & Voting",
           one: "A proposed open-source, legally-compliant digital platform for discovering and signing DC ballot initiative petitions, replacing door-to-door canvassing.",
           problem:
@@ -1645,7 +1774,11 @@ sitemap: false
           name: "repower-dmv-extractor",
           url: "https://github.com/civictechdc/repower-dmv-extractor",
           score: 4,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://contractors.electrifydc.org/",
+          supersededName: "Electrify DC contractor finder",
+          superseded:
+            "Electrify DC runs a live, vetted contractor finder and hosts an Electrify DMV network page, backed by DCSEU rebates and DOEE programs.",
           theme: "Housing & Tenant Rights",
           one: "A TypeScript CLI pipeline that extracts, cross-references, and fuzzy-matches contractor records to build a clean dataset of DMV-area businesses that do home-efficiency/electrification work.",
           problem:
@@ -1724,7 +1857,11 @@ sitemap: false
           name: "repower-dmv",
           url: "https://github.com/civictechdc/repower-dmv",
           score: 3,
-          tier: "top",
+          tier: "superseded",
+          supersededUrl: "https://contractors.electrifydc.org/",
+          supersededName: "Electrify DC contractor finder",
+          superseded:
+            "Electrify DC runs a live, vetted contractor finder and hosts an Electrify DMV network page, backed by DCSEU rebates and DOEE programs.",
           theme: "Environment & Energy",
           one: "ElectrifyDC (repo repower-dmv) — a Remix/TypeScript website helping DC residents find info and contractors for home electrification (e.g. heat pumps, induction stoves).",
           problem:
@@ -1753,6 +1890,11 @@ sitemap: false
           sub: "Pushed within the last year. Join these rather than rebuild them.",
         },
         {
+          id: "superseded",
+          label: "Superseded — case closed",
+          sub: "An August 2026 scan found the need now served by an official or maintained public tool. Each file records what replaced it, so nobody rebuilds these.",
+        },
+        {
           id: "proposed",
           label: "Proposed — the empty drawer",
           sub: "Ideas that don't exist yet. Pitch one and it gets a folder.",
@@ -1764,7 +1906,11 @@ sitemap: false
           /[&<>"]/g,
           (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
         );
-      const STAMP = { top: "Revive", active: "Active" };
+      const STAMP = {
+        top: "Revive",
+        active: "Active",
+        superseded: "Superseded",
+      };
       const main = document.getElementById("main");
 
       function card(d) {
@@ -1776,7 +1922,7 @@ sitemap: false
           d.tier === "active" || d.site
             ? `<div class="filelinks"><a href="${d.url}" target="_blank" rel="noopener">GitHub &#8599;</a>${d.site ? `<a href="${d.site}">Project page &#8599;</a>` : ""}</div>`
             : "";
-        return `<article class="card t-${d.tier}${d.score >= 4 ? " hi" : ""}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem).toLowerCase())}">
+        return `<article class="card t-${d.tier}${d.score >= 4 && d.tier !== "superseded" ? " hi" : ""}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem + " " + (d.superseded || "")).toLowerCase())}">
     <span class="folder-tab">${esc(d.theme)}</span>
     <div class="card-body">
       <div class="card-top">
@@ -1793,11 +1939,12 @@ sitemap: false
         ${d.incubator ? '<span class="incub">incubator</span>' : ""}
       </div>
       <p class="one">${esc(d.one)}</p>
+      ${d.superseded ? `<p class="sup-note"><span class="k">Superseded</span>${esc(d.superseded)}${d.supersededUrl ? ` <a href="${d.supersededUrl}" target="_blank" rel="noopener">${esc(d.supersededName)} &#8599;</a>` : ""}</p>` : ""}
       ${filelinks}
       <details>
         <summary><span class="caret">›</span>Open the file</summary>
         <div class="detail-block">
-          <div class="row pitch"><span class="k">Revival pitch</span>${esc(d.pitch)}</div>
+          ${d.superseded ? "" : `<div class="row pitch"><span class="k">Revival pitch</span>${esc(d.pitch)}</div>`}
           <div class="row"><span class="k">Problem it solved</span>${esc(d.problem)}</div>
           <div class="row"><span class="k">Why it stalled</span>${esc(d.why)}</div>
           ${dataline}
