@@ -505,6 +505,26 @@ sitemap: false
       .sup-note a {
         color: var(--primary);
       }
+      .go-note {
+        margin: 0 0 12px;
+        font-size: 0.88rem;
+        background: rgba(238, 192, 94, 0.14);
+        border-left: 2px solid var(--gold);
+        border-radius: 2px;
+        padding: 8px 10px;
+      }
+      .go-note .k {
+        display: block;
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #7a5b12;
+        margin-bottom: 2px;
+      }
+      .go-note a {
+        color: var(--primary);
+      }
       .stars {
         font-size: 0.8rem;
         color: var(--primary);
@@ -894,6 +914,10 @@ sitemap: false
           url: "https://github.com/civictechdc/ancElectionHistory",
           score: 4,
           tier: "top",
+          stillGoUrl: "https://code.dccouncil.gov/us/dc/council/laws/24-342",
+          stillGoName: "D.C. Law 24-342",
+          stillGo:
+            "Checked Aug 2026: DC Law 24-342 mandates a searchable election-data portal with ANC and ward dashboards, and DCBOE has not shipped it. A statutory mandate with no implementation is the strongest kind of gap.",
           theme: "Elections, ANC & Voting",
           one: "A data pipeline and planned Shiny/web app to visualize historical trends in DC Advisory Neighborhood Commission (ANC) election results.",
           problem:
@@ -937,6 +961,10 @@ sitemap: false
           url: "https://github.com/civictechdc/bus-ada",
           score: 4,
           tier: "top",
+          stillGoUrl: "https://github.com/ProjectSidewalk/SidewalkWebpage",
+          stillGoName: "Project Sidewalk",
+          stillGo:
+            "Checked Aug 2026: DC's per-stop ADA data dates to 2016 while DDOT's transition-plan update is live now. Project Sidewalk is actively maintained, and its dead DC pilot left 205,000 labels to build on.",
           theme: "Transit & Mobility",
           one: "A tool to remotely audit WMATA bus stop ADA compliance by overlaying a survey form on Google Street View imagery aimed at each stop.",
           problem:
@@ -979,6 +1007,10 @@ sitemap: false
           url: "https://github.com/civictechdc/capital-improvement",
           score: 4,
           tier: "top",
+          stillGoUrl: "https://dcbudget.com/",
+          stillGoName: "dcbudget.com",
+          stillGo:
+            "Checked Aug 2026: the CIP still ships as PDF volumes, and nothing official tracks project costs across editions. dcbudget.com exports project-level data daily; partner with it and build the longitudinal join.",
           theme: "Budget & Spending",
           one: "A searchable web explorer that scrapes DC's annual six-year Capital Improvement Plan (buildings/roads investment) out of locked PDF/XML files and lets residents track how project costs and timelines change year over year.",
           problem:
@@ -1045,6 +1077,10 @@ sitemap: false
           url: "https://github.com/civictechdc/chat-with-your-anc",
           score: 4,
           tier: "top",
+          stillGoUrl: "https://oanc.dc.gov/",
+          stillGoName: "OANC minutes",
+          stillGo:
+            "Checked Aug 2026: the Office of ANCs now posts minutes for all 40-plus ANCs centrally through FY26. The corpus is collected, uniform, and still un-indexed.",
           theme: "Misc / Civic Data",
           one: 'A proposed chatbot to let DC residents "chat with" their Advisory Neighborhood Commission (ANC) meeting minutes/records via LLM.',
           problem:
@@ -1065,6 +1101,8 @@ sitemap: false
           site: "/projects/clean-slate.html",
           score: 4,
           tier: "top",
+          stillGo:
+            "Checked Aug 2026: automatic sealing under the Second Chance Act covers most tiers, but motion-based relief (misdemeanor 5-year, felony 8-year, actual innocence) still has no eligibility screener, official or otherwise.",
           theme: "Criminal Justice",
           one: "A guided-interview website that walks DC residents/attorneys through whether their criminal record is eligible to be sealed/expunged, with forms and attorney lookup tools.",
           problem:
@@ -1199,6 +1237,10 @@ sitemap: false
           url: "https://github.com/civictechdc/rent-stabilization",
           score: 4,
           tier: "top",
+          stillGoUrl: "https://rentregistry.dc.gov/",
+          stillGoName: "DC RentRegistry",
+          stillGo:
+            "Checked Aug 2026: the rent registry publishes free bulk CSVs but holds roughly 5,400 registrations against about 76,600 rent-controlled units, with no analytics layer. Compliance is invisible.",
           theme: "Housing & Tenant Rights",
           one: "A data pipeline to infer which DC rental units are subject to rent stabilization (rent control) and model the effect of policy changes, since no direct public dataset says which units are covered.",
           problem:
@@ -1218,6 +1260,10 @@ sitemap: false
           url: "https://github.com/civictechdc/rfj_expungement",
           score: 4,
           tier: "top",
+          stillGoUrl: "https://www.risingforjustice.org/",
+          stillGoName: "Rising for Justice",
+          stillGo:
+            "Checked Aug 2026: Rising for Justice still determines eligibility manually by phone and email intake; no rules-as-code exists for the amended DC statute.",
           theme: "Criminal Justice",
           one: "A Next.js web form that encodes Rising for Justice's legal logic to help pro bono attorneys determine whether a DC client's criminal record is eligible for expungement.",
           problem:
@@ -1260,6 +1306,10 @@ sitemap: false
           url: "https://github.com/civictechdc/ballot-initiative-dashboard",
           score: 3,
           tier: "top",
+          stillGoUrl: "https://www.dcboe.org/",
+          stillGoName: "DCBOE",
+          stillGo:
+            "Checked Aug 2026: DCBOE lists every active measure as PDF documents with no status pipeline or signature clocks, in a cycle with rent control and tipped-wage measures live.",
           theme: "Elections, ANC & Voting",
           one: "A proposed dashboard to track future/upcoming DC ballot initiatives",
           problem:
@@ -1392,6 +1442,10 @@ sitemap: false
           url: "https://github.com/civictechdc/DC-Budget-Sankey",
           score: 3,
           tier: "top",
+          stillGoUrl: "https://www.dccouncilbudget.com/analytics",
+          stillGoName: "Council budget lookup",
+          stillGo:
+            "Checked Aug 2026: agency drill-down exists twice over, but no flow visualization of the DC budget exists anywhere, and structured data to feed one now does.",
           theme: "Budget & Spending",
           one: "A Sankey diagram visualizing how DC's budget funds flow into specific government agencies.",
           problem:
@@ -1434,6 +1488,8 @@ sitemap: false
           url: "https://github.com/civictechdc/dc_bus_stuff",
           score: 3,
           tier: "top",
+          stillGo:
+            "Checked Aug 2026: DDOT publishes bus-lane geometry and WMATA publishes on-time performance, but nobody joins bus speeds to lane segments. Seattle and Boston prove the pattern works.",
           theme: "Transit & Mobility",
           one: "A 2019 Code for DC repo exploring DC bus GPS/bustime data to evaluate bus infrastructure, starting with the H Street bus lane pilot.",
           problem:
@@ -1453,6 +1509,10 @@ sitemap: false
           url: "https://github.com/civictechdc/dcfinancials",
           score: 3,
           tier: "top",
+          stillGoUrl: "https://dcbudget.com/",
+          stillGoName: "dcbudget.com",
+          stillGo:
+            "Checked Aug 2026: the parsing this repo attempted is solved by daily structured exports; the missing layer is multi-year trend and cost analysis on top, which no tool attempts.",
           theme: "Budget & Spending",
           one: "A 2013 Code for DC hack project to parse DC government budget and spending data (agency POs, CBE contracts) into structured CSV/JSON for eventual analysis and visualization.",
           problem:
@@ -1565,6 +1625,11 @@ sitemap: false
           url: "https://github.com/civictechdc/school-modernization",
           score: 3,
           tier: "top",
+          stillGoUrl:
+            "https://edscape.dc.gov/page/dcps-public-school-facility-modernizations",
+          stillGoName: "Edscape map",
+          stillGo:
+            "Checked Aug 2026: DME's Edscape map shows which schools are modernized and when, but publishes no dollar amounts, so the equity-spending question remains unanswerable.",
           theme: "Budget & Spending",
           one: "A data viz project mapping 15 years (~$5B) of DCPS school facilities modernization spending by school/neighborhood to reveal equity gaps in fund distribution",
           problem:
@@ -1922,7 +1987,7 @@ sitemap: false
           d.tier === "active" || d.site
             ? `<div class="filelinks"><a href="${d.url}" target="_blank" rel="noopener">GitHub &#8599;</a>${d.site ? `<a href="${d.site}">Project page &#8599;</a>` : ""}</div>`
             : "";
-        return `<article class="card t-${d.tier}${d.score >= 4 && d.tier !== "superseded" ? " hi" : ""}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem + " " + (d.superseded || "")).toLowerCase())}">
+        return `<article class="card t-${d.tier}${d.score >= 4 && d.tier !== "superseded" ? " hi" : ""}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem + " " + (d.superseded || "") + " " + (d.stillGo || "")).toLowerCase())}">
     <span class="folder-tab">${esc(d.theme)}</span>
     <div class="card-body">
       <div class="card-top">
@@ -1940,6 +2005,7 @@ sitemap: false
       </div>
       <p class="one">${esc(d.one)}</p>
       ${d.superseded ? `<p class="sup-note"><span class="k">Superseded</span>${esc(d.superseded)}${d.supersededUrl ? ` <a href="${d.supersededUrl}" target="_blank" rel="noopener">${esc(d.supersededName)} &#8599;</a>` : ""}</p>` : ""}
+      ${d.stillGo ? `<p class="go-note"><span class="k">Still open</span>${esc(d.stillGo)}${d.stillGoUrl ? ` <a href="${d.stillGoUrl}" target="_blank" rel="noopener">${esc(d.stillGoName)} &#8599;</a>` : ""}</p>` : ""}
       ${filelinks}
       <details>
         <summary><span class="caret">›</span>Open the file</summary>
