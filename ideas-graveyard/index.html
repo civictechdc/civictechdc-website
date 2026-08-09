@@ -410,10 +410,6 @@ sitemap: false
         transform: translateY(-4px);
         box-shadow: var(--card-shadow-hover);
       }
-      /* gold thread marks the strongest ideas (4+ stars) */
-      .card.hi {
-        border-left: 2px solid var(--gold);
-      }
       /* folder tab */
       .folder-tab {
         position: absolute;
@@ -525,11 +521,15 @@ sitemap: false
       .go-note a {
         color: var(--primary);
       }
-      .stars {
-        font-size: 0.8rem;
-        color: var(--primary);
-        letter-spacing: 0.06em;
-        margin-top: 4px;
+      .note-when {
+        display: block;
+        margin-top: 6px;
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        opacity: 0.8;
       }
       .meta-row {
         display: flex;
@@ -863,12 +863,9 @@ sitemap: false
           the full scan.
         </p>
         <p>
-          <strong>Scoring.</strong> &#9733;&#9733;&#9733;&#9733;&#9733; = an
-          idea that deserves a second life &middot; &#9733;&#9733;&#9733; =
-          solid but niche or partly superseded &middot; &#9733; = one-off or
-          dead end. Revive and Worth&nbsp;a&nbsp;look are dormant-but-revivable;
-          Active repos were pushed within the last year &mdash; join those
-          instead of starting fresh.
+          <strong>Tiers.</strong> Revive files are dormant but worth a second
+          life. Active repos were pushed within the last year &mdash; join those
+          instead of starting fresh. Superseded files record what replaced them.
         </p>
         <p>
           <strong>Filing a new idea.</strong> New proposals get added by the
@@ -917,7 +914,7 @@ sitemap: false
           stillGoUrl: "https://code.dccouncil.gov/us/dc/council/laws/24-342",
           stillGoName: "D.C. Law 24-342",
           stillGo:
-            "Checked Aug 2026, verified twice: the portal D.C. Code 1-1001.05(a)(21) mandates is codified as Not Funded, and the FY27 budget released every other conditioned piece of Law 24-342 while leaving the data portal as the last one. DCBOE ships certified CSVs back to 2012 and OpenANC covers 2020-2024, but no official longitudinal view exists, and ANC-level turnout exists nowhere.",
+            "The portal D.C. Code 1-1001.05(a)(21) mandates is codified as Not Funded, and the FY27 budget released every other conditioned piece of Law 24-342 while leaving the data portal as the last one. DCBOE ships certified CSVs back to 2012 and OpenANC covers 2020-2024, but no official longitudinal view exists, and ANC-level turnout exists nowhere.",
           theme: "Elections, ANC & Voting",
           one: "A data pipeline and planned Shiny/web app to visualize historical trends in DC Advisory Neighborhood Commission (ANC) election results.",
           problem:
@@ -964,7 +961,7 @@ sitemap: false
           stillGoUrl: "https://github.com/ProjectSidewalk/SidewalkWebpage",
           stillGoName: "Project Sidewalk",
           stillGo:
-            "Checked Aug 2026, verified twice: DC's per-stop ADA data still dates to the 2016 transition-plan survey, DDOT's update effort is in its 2025 cycle, and Better Bus removed 527 stops in June 2025, so the official data is stale on the stop set itself. Project Sidewalk remains actively maintained, with 205,000 labels left from its dormant DC pilot.",
+            "DC's per-stop ADA data still dates to the 2016 transition-plan survey, DDOT's update effort is in its 2025 cycle, and Better Bus removed 527 stops in June 2025, so the official data is stale on the stop set itself. Project Sidewalk remains actively maintained, with 205,000 labels left from its dormant DC pilot.",
           theme: "Transit & Mobility",
           one: "A tool to remotely audit WMATA bus stop ADA compliance by overlaying a survey form on Google Street View imagery aimed at each stop.",
           problem:
@@ -983,18 +980,18 @@ sitemap: false
           name: "campaign-finance-explorer",
           url: "https://github.com/civictechdc/campaign-finance-explorer",
           score: 4,
-          tier: "superseded",
-          supersededUrl: "https://efiling.ocf.dc.gov/",
-          supersededName: "OCF e-filing search",
-          superseded:
-            "DC OCF now runs an official contributions explorer with map views, daily-updated data, bulk downloads, and an API.",
+          tier: "top",
+          stillGoUrl: "https://efiling.ocf.dc.gov/",
+          stillGoName: "OCF e-filing portal",
+          stillGo:
+            "OCF now publishes the data: e-filing search, a contributions map, and CSV and XML bulk downloads. But analysis is left to the reader — no candidate comparison, donor pattern, or cycle-over-cycle dashboards exist, official or community. The data problem this project fought is solved; the dashboard it wanted to be is still unbuilt.",
           theme: "Elections, ANC & Voting",
           one: "An interactive visual explorer for DC political campaign contributions, letting users filter/compare donors and money flows by candidate and ward on a map.",
           problem:
             "DC campaign finance data (from the Office of Campaign Finance) is hard for ordinary citizens to explore — who's funding which candidates, by ward, by contribution size — without a visual, filterable tool.",
           why: "Last pushed May 2017; likely reliant on a custom backend API (campaign-finance.codefordc.org) that has since gone dark, and built on an aging Keshif/jQuery/Leaflet stack from the mid-2010s Code for DC hack-day era — classic volunteer-project attrition once the original maintainers moved on.",
           pitch:
-            'The concept (a public, filterable map+table explorer of local campaign contributions) is still exactly what good-government/transparency advocates want, and it\'s now much easier: OCF likely has better bulk/API data today, and a modern stack (a lightweight React/Observable Plot or D3 build, hosted static with a serverless data-refresh job, plus an LLM to auto-summarize "who funds whom" narratives) would replace the aging jQuery/Keshif/Leaflet 1.0 stack and dead custom API dependency in a fraction of the effort.',
+            "The Keshif-era visual explorer died with its custom API, but the concept, a filterable visual explorer of DC contributions by candidate, ward, and donor, now sits one static build away from OCF bulk exports. Pair it with dc-campaign-finance-watch: one modern build covers both cards.",
           maturity: "deployed",
           tech: "JavaScript (jQuery + D3 v4 + Keshif visualization framework + Leaflet 1.0)",
           data: "DC campaign finance contribution records (via a custom codefordc.org API, likely sourced from DC OCF filings), plus a 2012 ward geojson for map overlay",
@@ -1010,7 +1007,7 @@ sitemap: false
           stillGoUrl: "https://dcbudget.com/",
           stillGoName: "dcbudget.com",
           stillGo:
-            "Checked Aug 2026, verified twice: the CIP still ships as PDF volumes, the CFO's interactive capital dashboard (cfoinfo.dc.gov) is offline entirely, and the quarterly Capital Financial Status Report tracks spend against lifetime authority but never how planned costs drift between CIP editions. That cross-edition join is the build.",
+            "The CIP still ships as PDF volumes, the CFO's interactive capital dashboard (cfoinfo.dc.gov) is offline entirely, and the quarterly Capital Financial Status Report tracks spend against lifetime authority but never how planned costs drift between CIP editions. That cross-edition join is the build.",
           theme: "Budget & Spending",
           one: "A searchable web explorer that scrapes DC's annual six-year Capital Improvement Plan (buildings/roads investment) out of locked PDF/XML files and lets residents track how project costs and timelines change year over year.",
           problem:
@@ -1057,7 +1054,7 @@ sitemap: false
           supersededUrl: "https://211warmline.dc.gov/",
           supersededName: "DC 211 Warmline",
           superseded:
-            "CFSA and OUC launched the official DC 211 Warmline in February 2025; a competing routing tool has no adoption path into agency workflows.",
+            "The 211 Warmline (February 2025, CFSA's Office of Thriving Families with DBH) is a resident-facing referral hub, not a caseworker decision tree. But an internal CFSA routing tool cannot be built or adopted by outside volunteers, and the District now funds the hub that owns the service inventory it would need. Revisit only if CFSA initiates the ask.",
           theme: "Social Services & Benefits",
           one: "A React decision-tree app for CFSA caseworkers to answer yes/no questions in the field and get routed to the right voluntary child-welfare program.",
           problem:
@@ -1080,7 +1077,7 @@ sitemap: false
           stillGoUrl: "https://oanc.dc.gov/",
           stillGoName: "OANC minutes",
           stillGo:
-            "Checked Aug 2026, verified twice: the Office of ANCs posts minutes centrally for all 46 ANCs, FY24 through FY26, collected but uneven, with about a sixth as image-only scans. No cross-ANC full-text search exists; OANC's own site search cannot see inside the documents.",
+            "The Office of ANCs posts minutes centrally for all 46 ANCs, FY24 through FY26, collected but uneven, with about a sixth as image-only scans. No cross-ANC full-text search exists; OANC's own site search cannot see inside the documents.",
           theme: "Misc / Civic Data",
           one: 'A proposed chatbot to let DC residents "chat with" their Advisory Neighborhood Commission (ANC) meeting minutes/records via LLM.',
           problem:
@@ -1102,7 +1099,7 @@ sitemap: false
           score: 4,
           tier: "top",
           stillGo:
-            "Checked Aug 2026, verified twice: automatic relief is still phasing in, with courts given until October 2027 and a ten-year automatic tier, so motion-based relief (misdemeanor five years, felony eight from completion of sentence, plus actual innocence) is the near-term path, and no eligibility screener exists for it, official or otherwise.",
+            "Automatic relief is still phasing in, with courts given until October 2027 and a ten-year automatic tier, so motion-based relief (misdemeanor five years, felony eight from completion of sentence, plus actual innocence) is the near-term path, and no eligibility screener exists for it, official or otherwise.",
           theme: "Criminal Justice",
           one: "A guided-interview website that walks DC residents/attorneys through whether their criminal record is eligible to be sealed/expunged, with forms and attorney lookup tools.",
           problem:
@@ -1121,18 +1118,18 @@ sitemap: false
           name: "dc-campaign-finance-watch",
           url: "https://github.com/civictechdc/dc-campaign-finance-watch",
           score: 4,
-          tier: "superseded",
-          supersededUrl: "https://efiling.ocf.dc.gov/",
-          supersededName: "OCF e-filing search",
-          superseded:
-            "DC OCF now runs an official contributions explorer with map views, daily-updated data, bulk downloads, and an API.",
+          tier: "top",
+          stillGoUrl: "https://efiling.ocf.dc.gov/",
+          stillGoName: "OCF e-filing portal",
+          stillGo:
+            "OCF now publishes the data: e-filing search, a contributions map, and CSV and XML bulk downloads. But analysis is left to the reader — no candidate comparison, donor pattern, or cycle-over-cycle dashboards exist, official or community. The data problem this project fought is solved; the dashboard it wanted to be is still unbuilt.",
           theme: "Elections, ANC & Voting",
           one: "A full-stack open API and web dashboard for exploring DC campaign contribution data, letting citizens compare candidates' fundraising side by side.",
           problem:
             "DC campaign finance data from the Office of Campaign Finance was historically opaque and hard to query or compare across candidates; this project aimed to expose it via an open API plus visualizations.",
           why: "Long-running Code for DC hack-night project that got real sustained contributor effort over years but eventually lost active maintainers; likely stalled on OCF data-format changes/scraper rot and the burden of maintaining a Mongo+Docker stack with no dedicated owner.",
           pitch:
-            "Campaign finance transparency is evergreen civic value, and DC OCF now (2026) likely has better structured data/exports plus modern hosting (serverless Postgres, static site + edge functions) that could replace the whole Mongo/Docker/Node stack with something far lighter; an LLM could also auto-generate plain-English candidate summaries and flag suspicious donation patterns, features that weren't feasible when this was built.",
+            "The original ran for years at campaign-finance.codefordc.org on scraped data and a Mongo stack. A rebuild is far cheaper now: OCF bulk CSV and XML feed a static pipeline directly, no scraper and no database. The unbuilt layer is the analytics — candidate comparisons, donor patterns, small-dollar versus PAC shares, cycle-over-cycle trends — with the 2026 races as the launch moment.",
           maturity: "deployed",
           tech: "Node.js/Express + MongoDB + React/Webpack, Dockerized",
           data: "DC Office of Campaign Finance (ocf.dc.gov)",
@@ -1148,7 +1145,7 @@ sitemap: false
           supersededUrl: "https://dcpsbudget.com/",
           supersededName: "dcpsbudget.com",
           superseded:
-            "DCPS runs an official per-school budget site with worksheets, comparisons, and archives back to FY17.",
+            "DCPS runs an official per-school budget site with worksheets, comparisons, and an archive back to SY22-23, four years of comparable data, enough for recent trend analysis.",
           theme: "Budget & Spending",
           one: "A public-facing interactive visualization of the DC Public Schools (DCPS) budget, built as a static-site data viz app with a Gulp/Bower/npm toolchain.",
           problem:
@@ -1240,7 +1237,7 @@ sitemap: false
           stillGoUrl: "https://rentregistry.dc.gov/",
           stillGoName: "DC RentRegistry",
           stillGo:
-            "Checked Aug 2026, verified twice: the November 2025 re-registration deadline filled the registry, now 19,582 registrations covering roughly 194,000 units in free bulk CSVs refreshed daily. Coverage chasing is over; what is missing is the analytics layer, compliance and rent-adjustment views, plus public surfacing of the monthly reports section 42-3502.03c already requires of DHCD.",
+            "The November 2025 re-registration deadline filled the registry, now 19,582 registrations covering roughly 194,000 units in free bulk CSVs refreshed daily. Coverage chasing is over; what is missing is the analytics layer, compliance and rent-adjustment views, plus public surfacing of the monthly reports section 42-3502.03c already requires of DHCD.",
           theme: "Housing & Tenant Rights",
           one: "A data pipeline to infer which DC rental units are subject to rent stabilization (rent control) and model the effect of policy changes, since no direct public dataset says which units are covered.",
           problem:
@@ -1263,7 +1260,7 @@ sitemap: false
           stillGoUrl: "https://www.risingforjustice.org/",
           stillGoName: "Rising for Justice",
           stillGo:
-            "Checked Aug 2026, verified twice: Rising for Justice still determines eligibility manually by phone and email intake, and no rules-as-code exists for the amended DC statute. Worth checking Code for America's DC policy-design work for reusable artifacts before building.",
+            "Rising for Justice still determines eligibility manually by phone and email intake, and no rules-as-code exists for the amended DC statute. Worth checking Code for America's DC policy-design work for reusable artifacts before building.",
           theme: "Criminal Justice",
           one: "A Next.js web form that encodes Rising for Justice's legal logic to help pro bono attorneys determine whether a DC client's criminal record is eligible for expungement.",
           problem:
@@ -1309,7 +1306,7 @@ sitemap: false
           stillGoUrl: "https://www.dcboe.org/",
           stillGoName: "DCBOE",
           stillGo:
-            "Checked Aug 2026, verified twice: DCBOE still publishes measures as titles plus loose PDFs, with its own eight-step pipeline documented but never rendered as per-measure status with signature clocks. Only the foie gras measure is certified for November 2026; the wage and rent-freeze initiatives missed the July deadline and target 2027, the cycle this build should aim at.",
+            "DCBOE still publishes measures as titles plus loose PDFs, with its own eight-step pipeline documented but never rendered as per-measure status with signature clocks. Only the foie gras measure is certified for November 2026; the wage and rent-freeze initiatives missed the July deadline and target 2027, the cycle this build should aim at.",
           theme: "Elections, ANC & Voting",
           one: "A proposed dashboard to track future/upcoming DC ballot initiatives",
           problem:
@@ -1355,7 +1352,7 @@ sitemap: false
           supersededUrl: "https://capitalbikeshare.com/bike-angels",
           supersededName: "Bike Angels",
           superseded:
-            "Real-time availability is built into the CaBi, Transit, and Google Maps apps via GBFS, and Lyft's Bike Angels attacks dock scarcity with rider incentives instead of forecasts.",
+            "Superseded sideways: no maintained tool forecasts CaBi availability, and fifteen years of abandoned prototypes is the demand signal. Real-time status is commoditized across the major apps, and Lyft's Bike Angels rebalances scarcity with rider incentives instead of predictions. Skip unless a specific underserved corridor shows up.",
           theme: "Transit & Mobility",
           one: "A Leaflet.js map of DC Capital Bikeshare stations showing the odds of finding an available bike based on historical dock data.",
           problem:
@@ -1445,7 +1442,7 @@ sitemap: false
           stillGoUrl: "https://www.dccouncilbudget.com/analytics",
           stillGoName: "Council budget lookup",
           stillGo:
-            "Checked Aug 2026, verified twice: this repo's own demo once ran and died along with its data source (cfoinfo.dc.gov), so no flow visualization of the DC budget exists today, while structured data to feed one finally does.",
+            "This repo's own demo once ran and died along with its data source (cfoinfo.dc.gov), so no flow visualization of the DC budget exists today, while structured data to feed one finally does.",
           theme: "Budget & Spending",
           one: "A Sankey diagram visualizing how DC's budget funds flow into specific government agencies.",
           problem:
@@ -1489,7 +1486,7 @@ sitemap: false
           score: 3,
           tier: "top",
           stillGo:
-            "Checked Aug 2026, verified twice: DDOT's bus-lane layer is twelve unlisted segments with no install dates, WMATA reports bus performance at system and line level only, and the public join is a single roll-up figure (13 percent faster since 2019). Boston's TransitMatters proves stop-pair transit analysis in production; nobody has built the DC lane-by-lane version.",
+            "DDOT's bus-lane layer is twelve unlisted segments with no install dates, WMATA reports bus performance at system and line level only, and the public join is a single roll-up figure (13 percent faster since 2019). Boston's TransitMatters proves stop-pair transit analysis in production; nobody has built the DC lane-by-lane version.",
           theme: "Transit & Mobility",
           one: "A 2019 Code for DC repo exploring DC bus GPS/bustime data to evaluate bus infrastructure, starting with the H Street bus lane pilot.",
           problem:
@@ -1512,7 +1509,7 @@ sitemap: false
           stillGoUrl: "https://dcbudget.com/",
           stillGoName: "dcbudget.com",
           stillGo:
-            "Checked Aug 2026, verified twice: DC has no open checkbook, just single-payment lookup, per-year purchase-order snapshots, and agency dashboards. dcbudget.com's structured exports cover one fiscal year at a time; the missing layer is multi-year analysis stitched across editions, which no tool attempts.",
+            "DC has no open checkbook, just single-payment lookup, per-year purchase-order snapshots, and agency dashboards. dcbudget.com's structured exports cover one fiscal year at a time; the missing layer is multi-year analysis stitched across editions, which no tool attempts.",
           theme: "Budget & Spending",
           one: "A 2013 Code for DC hack project to parse DC government budget and spending data (agency POs, CBE contracts) into structured CSV/JSON for eventual analysis and visualization.",
           problem:
@@ -1531,18 +1528,18 @@ sitemap: false
           name: "ERDA",
           url: "https://github.com/civictechdc/ERDA",
           score: 3,
-          tier: "superseded",
-          supersededUrl: "https://fems.dc.gov/",
-          supersededName: "FEMS",
-          superseded:
-            "DC FEMS publishes official response-time dashboards mapped to a 300-meter grid, plus daily metrics.",
+          tier: "top",
+          stillGoUrl: "https://fems.dc.gov/",
+          stillGoName: "FEMS",
+          stillGo:
+            "FEMS' neighborhood response-time maps are static FY2022 snapshots on a 300-meter grid, the performance page tops out at the FY24 plan, and OUC's 911 dashboard measures call answering, not unit arrival. The equity question, which blocks wait longest, is four years stale in official channels.",
           theme: "Public Safety",
           one: "A 2014 Code for DC project to statistically analyze DC's emergency response (fire/EMS dispatch) data and expose it via an API for visualizations.",
           problem:
             "DC's emergency response (911/EMS/fire) data was hard to access and analyze; the project wanted to clean, merge, and expose it so the public/researchers could understand response times and patterns.",
-          why: "Appears to be a single hack-season project (created and abandoned within one summer, 2014) - likely lost momentum after the initial volunteer group moved on and never found a dedicated maintainer for ongoing data analysis.",
+          why: "A single hack-season project (2014) that lost momentum after the initial volunteer group moved on; reopened in 2026 when verification showed the official response-time products had gone stale.",
           pitch:
-            "Response-time and equity analysis of emergency dispatch data is still a live civic issue (response time disparities by ward, EMS unit availability), and DC's Open Data portal now publishes much richer, live-updating fire/EMS incident datasets than the manual Google Drive CSV exports this project relied on. A modern revival could skip the tedious Excel-sanitization work entirely and go straight to a live dashboard (e.g. response-time-by-neighborhood heatmap) using current Socrata/Open Data DC APIs plus an LLM for narrative summarization of trends.",
+            "The Excel-sanitization era this repo fought is over, but the official replacements went stale: response-time equity analysis needs incident-level dispatch data joined to neighborhoods, and nothing current is published. A refreshed dashboard would be the only current view in the city. Confirm the incident-level data source on Open Data DC before building; if it has to come from FOIA, that is where this project stalls.",
           maturity: "working",
           tech: "Python (data cleaning scripts) + a separate API layer, published via GitHub Pages",
           data: "DC emergency response (fire/EMS) dispatch data, sourced from DC government + Google Drive raw/preprocessed exports",
@@ -1629,7 +1626,7 @@ sitemap: false
             "https://edscape.dc.gov/page/dcps-public-school-facility-modernizations",
           stillGoName: "Edscape map",
           stillGo:
-            "Checked Aug 2026, verified twice: DME's Edscape map shows which schools are modernized and when, but publishes no dollar amounts, so the equity-spending question remains unanswerable. The dollars exist in CIP PDFs and dcbudget.com's export; the join is the whole build.",
+            "DME's Edscape map shows which schools are modernized and when, but publishes no dollar amounts, so the equity-spending question remains unanswerable. The dollars exist in CIP PDFs and dcbudget.com's export; the join is the whole build.",
           theme: "Budget & Spending",
           one: "A data viz project mapping 15 years (~$5B) of DCPS school facilities modernization spending by school/neighborhood to reveal equity gaps in fund distribution",
           problem:
@@ -1676,7 +1673,7 @@ sitemap: false
             "https://www.aoc.gov/what-we-do/programs-ceremonies/capitol-flag-program",
           supersededName: "Capitol Flag Program",
           superseded:
-            "The Architect of the Capitol's flag portal now gives congressional offices real order tracking. The constituent-facing gap survives, but it is an access negotiation with the AOC, not a build.",
+            "The House runs its own system: FlagTrack at flagorder.house.gov (staff-facing), with FlagTrack 2.0 funded in March 2026 to add constituent-facing tracking across order, fly, shipping, and delivery dates. An outside tracker would duplicate a funded official build with no data access.",
           theme: "Org Infrastructure",
           one: "A tracker for the U.S. Capitol's flag-flying request/fulfillment process, built with congressional staff (Modernization Staff Association) to manage constituent flag orders.",
           problem:
@@ -1757,10 +1754,11 @@ sitemap: false
           incubator: true,
           score: 4,
           tier: "superseded",
-          supersededUrl: "https://www.dcboe.org/",
-          supersededName: "DCBOE",
+          supersededUrl:
+            "https://code.dccouncil.gov/us/dc/council/code/sections/1-1001.16",
+          supersededName: "DC Code 1-1001.16",
           superseded:
-            "Legally closed to third parties: DCBOE's eSign has been the mandated digital petition path since 2018, and only the Board can validate signatures against the voter roll.",
+            "Blocked by statute, not by a competing product: DC Code 1-1001.16 requires circulators to witness each signature in person and file completed petition sheets in hard copy, and DCBOE's own 2015 eSign pilot is dead. Digital signing needs the Council to amend the election code first, which makes this advocacy, not software.",
           theme: "Elections, ANC & Voting",
           one: "A proposed open-source, legally-compliant digital platform for discovering and signing DC ballot initiative petitions, replacing door-to-door canvassing.",
           problem:
@@ -1947,7 +1945,7 @@ sitemap: false
         {
           id: "top",
           label: "Worth reviving",
-          sub: "Dead or dormant, still relevant in 2026. The stars say how strong the idea is.",
+          sub: "Dead or dormant, still relevant in 2026. Start here.",
         },
         {
           id: "active",
@@ -1965,7 +1963,6 @@ sitemap: false
           sub: "Ideas that don't exist yet. Pitch one and it gets a folder.",
         },
       ];
-      const stars = (n) => "★".repeat(n) + "☆".repeat(5 - n);
       const esc = (s) =>
         String(s).replace(
           /[&<>"]/g,
@@ -1987,13 +1984,12 @@ sitemap: false
           d.tier === "active" || d.site
             ? `<div class="filelinks"><a href="${d.url}" target="_blank" rel="noopener">GitHub &#8599;</a>${d.site ? `<a href="${d.site}">Project page &#8599;</a>` : ""}</div>`
             : "";
-        return `<article class="card t-${d.tier}${d.score >= 4 && d.tier !== "superseded" ? " hi" : ""}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem + " " + (d.superseded || "") + " " + (d.stillGo || "")).toLowerCase())}">
+        return `<article class="card t-${d.tier}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem + " " + (d.superseded || "") + " " + (d.stillGo || "")).toLowerCase())}">
     <span class="folder-tab">${esc(d.theme)}</span>
     <div class="card-body">
       <div class="card-top">
         <div>
           <a class="repo" href="${d.url}" target="_blank" rel="noopener">${esc(d.name)}</a>
-          <div class="stars" title="${d.score} of 5">${stars(d.score)}</div>
         </div>
         <span class="stamp">${STAMP[d.tier] || esc(d.tier)}</span>
       </div>
@@ -2004,8 +2000,8 @@ sitemap: false
         ${d.incubator ? '<span class="incub">incubator</span>' : ""}
       </div>
       <p class="one">${esc(d.one)}</p>
-      ${d.superseded ? `<p class="sup-note"><span class="k">Superseded</span>${esc(d.superseded)}${d.supersededUrl ? ` <a href="${d.supersededUrl}" target="_blank" rel="noopener">${esc(d.supersededName)} &#8599;</a>` : ""}</p>` : ""}
-      ${d.stillGo ? `<p class="go-note"><span class="k">Still open</span>${esc(d.stillGo)}${d.stillGoUrl ? ` <a href="${d.stillGoUrl}" target="_blank" rel="noopener">${esc(d.stillGoName)} &#8599;</a>` : ""}</p>` : ""}
+      ${d.superseded ? `<p class="sup-note"><span class="k">Superseded</span>${esc(d.superseded)}${d.supersededUrl ? ` <a href="${d.supersededUrl}" target="_blank" rel="noopener">${esc(d.supersededName)} &#8599;</a>` : ""}<span class="note-when">Aug 2026</span></p>` : ""}
+      ${d.stillGo ? `<p class="go-note"><span class="k">Still open</span>${esc(d.stillGo)}${d.stillGoUrl ? ` <a href="${d.stillGoUrl}" target="_blank" rel="noopener">${esc(d.stillGoName)} &#8599;</a>` : ""}<span class="note-when">Aug 2026</span></p>` : ""}
       ${filelinks}
       <details>
         <summary><span class="caret">›</span>Open the file</summary>
