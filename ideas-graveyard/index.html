@@ -984,7 +984,7 @@ sitemap: false
           supersededUrl: "https://efiling.ocf.dc.gov/",
           supersededName: "OCF e-filing search",
           superseded:
-            "DC OCF now runs an official contributions explorer with map views, daily-updated data, bulk downloads, and an API.",
+            "DC OCF publishes contributions and expenditures through its e-filing portal with a map view and CSV and XML bulk downloads. No API exists, but bulk export covers the analysis this project contemplated.",
           theme: "Elections, ANC & Voting",
           one: "An interactive visual explorer for DC political campaign contributions, letting users filter/compare donors and money flows by candidate and ward on a map.",
           problem:
@@ -1054,7 +1054,7 @@ sitemap: false
           supersededUrl: "https://211warmline.dc.gov/",
           supersededName: "DC 211 Warmline",
           superseded:
-            "CFSA and OUC launched the official DC 211 Warmline in February 2025; a competing routing tool has no adoption path into agency workflows.",
+            "The 211 Warmline (February 2025, CFSA's Office of Thriving Families with DBH) is a resident-facing referral hub, not a caseworker decision tree. But an internal CFSA routing tool cannot be built or adopted by outside volunteers, and the District now funds the hub that owns the service inventory it would need. Revisit only if CFSA initiates the ask.",
           theme: "Social Services & Benefits",
           one: "A React decision-tree app for CFSA caseworkers to answer yes/no questions in the field and get routed to the right voluntary child-welfare program.",
           problem:
@@ -1122,7 +1122,7 @@ sitemap: false
           supersededUrl: "https://efiling.ocf.dc.gov/",
           supersededName: "OCF e-filing search",
           superseded:
-            "DC OCF now runs an official contributions explorer with map views, daily-updated data, bulk downloads, and an API.",
+            "DC OCF publishes contributions and expenditures through its e-filing portal with a map view and CSV and XML bulk downloads. No API exists, but bulk export covers the analysis this project contemplated.",
           theme: "Elections, ANC & Voting",
           one: "A full-stack open API and web dashboard for exploring DC campaign contribution data, letting citizens compare candidates' fundraising side by side.",
           problem:
@@ -1145,7 +1145,7 @@ sitemap: false
           supersededUrl: "https://dcpsbudget.com/",
           supersededName: "dcpsbudget.com",
           superseded:
-            "DCPS runs an official per-school budget site with worksheets, comparisons, and archives back to FY17.",
+            "DCPS runs an official per-school budget site with worksheets, comparisons, and an archive back to SY22-23, four years of comparable data, enough for recent trend analysis.",
           theme: "Budget & Spending",
           one: "A public-facing interactive visualization of the DC Public Schools (DCPS) budget, built as a static-site data viz app with a Gulp/Bower/npm toolchain.",
           problem:
@@ -1352,7 +1352,7 @@ sitemap: false
           supersededUrl: "https://capitalbikeshare.com/bike-angels",
           supersededName: "Bike Angels",
           superseded:
-            "Real-time availability is built into the CaBi, Transit, and Google Maps apps via GBFS, and Lyft's Bike Angels attacks dock scarcity with rider incentives instead of forecasts.",
+            "Superseded sideways: no maintained tool forecasts CaBi availability, and fifteen years of abandoned prototypes is the demand signal. Real-time status is commoditized across the major apps, and Lyft's Bike Angels rebalances scarcity with rider incentives instead of predictions. Skip unless a specific underserved corridor shows up.",
           theme: "Transit & Mobility",
           one: "A Leaflet.js map of DC Capital Bikeshare stations showing the odds of finding an available bike based on historical dock data.",
           problem:
@@ -1528,18 +1528,18 @@ sitemap: false
           name: "ERDA",
           url: "https://github.com/civictechdc/ERDA",
           score: 3,
-          tier: "superseded",
-          supersededUrl: "https://fems.dc.gov/",
-          supersededName: "FEMS",
-          superseded:
-            "DC FEMS publishes official response-time dashboards mapped to a 300-meter grid, plus daily metrics.",
+          tier: "top",
+          stillGoUrl: "https://fems.dc.gov/",
+          stillGoName: "FEMS",
+          stillGo:
+            "FEMS' neighborhood response-time maps are static FY2022 snapshots on a 300-meter grid, the performance page tops out at the FY24 plan, and OUC's 911 dashboard measures call answering, not unit arrival. The equity question, which blocks wait longest, is four years stale in official channels.",
           theme: "Public Safety",
           one: "A 2014 Code for DC project to statistically analyze DC's emergency response (fire/EMS dispatch) data and expose it via an API for visualizations.",
           problem:
             "DC's emergency response (911/EMS/fire) data was hard to access and analyze; the project wanted to clean, merge, and expose it so the public/researchers could understand response times and patterns.",
-          why: "Appears to be a single hack-season project (created and abandoned within one summer, 2014) - likely lost momentum after the initial volunteer group moved on and never found a dedicated maintainer for ongoing data analysis.",
+          why: "A single hack-season project (2014) that lost momentum after the initial volunteer group moved on; reopened in 2026 when verification showed the official response-time products had gone stale.",
           pitch:
-            "Response-time and equity analysis of emergency dispatch data is still a live civic issue (response time disparities by ward, EMS unit availability), and DC's Open Data portal now publishes much richer, live-updating fire/EMS incident datasets than the manual Google Drive CSV exports this project relied on. A modern revival could skip the tedious Excel-sanitization work entirely and go straight to a live dashboard (e.g. response-time-by-neighborhood heatmap) using current Socrata/Open Data DC APIs plus an LLM for narrative summarization of trends.",
+            "The Excel-sanitization era this repo fought is over, but the official replacements went stale: response-time equity analysis needs incident-level dispatch data joined to neighborhoods, and nothing current is published. A refreshed dashboard would be the only current view in the city. Confirm the incident-level data source on Open Data DC before building; if it has to come from FOIA, that is where this project stalls.",
           maturity: "working",
           tech: "Python (data cleaning scripts) + a separate API layer, published via GitHub Pages",
           data: "DC emergency response (fire/EMS) dispatch data, sourced from DC government + Google Drive raw/preprocessed exports",
@@ -1673,7 +1673,7 @@ sitemap: false
             "https://www.aoc.gov/what-we-do/programs-ceremonies/capitol-flag-program",
           supersededName: "Capitol Flag Program",
           superseded:
-            "The Architect of the Capitol's flag portal now gives congressional offices real order tracking. The constituent-facing gap survives, but it is an access negotiation with the AOC, not a build.",
+            "The House runs its own system: FlagTrack at flagorder.house.gov (staff-facing), with FlagTrack 2.0 funded in March 2026 to add constituent-facing tracking across order, fly, shipping, and delivery dates. An outside tracker would duplicate a funded official build with no data access.",
           theme: "Org Infrastructure",
           one: "A tracker for the U.S. Capitol's flag-flying request/fulfillment process, built with congressional staff (Modernization Staff Association) to manage constituent flag orders.",
           problem:
@@ -1754,10 +1754,11 @@ sitemap: false
           incubator: true,
           score: 4,
           tier: "superseded",
-          supersededUrl: "https://www.dcboe.org/",
-          supersededName: "DCBOE",
+          supersededUrl:
+            "https://code.dccouncil.gov/us/dc/council/code/sections/1-1001.16",
+          supersededName: "DC Code 1-1001.16",
           superseded:
-            "Legally closed to third parties: DCBOE's eSign has been the mandated digital petition path since 2018, and only the Board can validate signatures against the voter roll.",
+            "Blocked by statute, not by a competing product: DC Code 1-1001.16 requires circulators to witness each signature in person and file completed petition sheets in hard copy, and DCBOE's own 2015 eSign pilot is dead. Digital signing needs the Council to amend the election code first, which makes this advocacy, not software.",
           theme: "Elections, ANC & Voting",
           one: "A proposed open-source, legally-compliant digital platform for discovering and signing DC ballot initiative petitions, replacing door-to-door canvassing.",
           problem:
