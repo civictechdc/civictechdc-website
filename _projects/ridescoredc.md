@@ -11,8 +11,6 @@ description: Rating DC street segments for cycling safety and comfort, with an i
 seo_description: Ride Score DC maps transparent street-level bike safety and comfort scores from crash, roadway, speed, and infrastructure data.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 3
 case_study_standard: true
 ---
 

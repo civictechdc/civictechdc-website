@@ -78,7 +78,6 @@ Let us know if you get stuck in the Civic Tech DC Slack channel #civictechdc-web
 - [Website guide](docs/website-guide.md): how the Jekyll site, content, assets, and common contribution workflows work.
 - [Content and SEO strategy](docs/content-seo-strategy.md): positioning, page ownership, keyword evidence, content priorities, and measurement.
 - [Content and SEO measurement](docs/content-seo-measurement.md): data-layer events, baselines, interpretation limits, GTM handoff, and review cadence.
-- [Content and SEO factual review](docs/content-seo-factual-review.md): required project and partner reviewers, claim checklists, approval status, and evidence rules.
 
 ## File Structure
 

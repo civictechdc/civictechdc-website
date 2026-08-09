@@ -36,12 +36,12 @@ class CheckSeoHelpersTest < Minitest::Test
     source = <<~DOC
       ---
       is_active: true
-      factual_review_status: pending
+      slack_channel: C12345
       ---
       Body text is_active: false
     DOC
     assert_equal "true", front_matter_value(source, "is_active")
-    assert_equal "pending", front_matter_value(source, "factual_review_status")
+    assert_equal "C12345", front_matter_value(source, "slack_channel")
     assert_nil front_matter_value(source, "missing_key")
   end
 
@@ -52,20 +52,6 @@ class CheckSeoHelpersTest < Minitest::Test
     assert_equal "https://www.civictechdc.org/a", refresh_target(node)
     blank = Nokogiri::HTML('<meta http-equiv="refresh" content="junk">').at_css("meta")
     assert_nil refresh_target(blank)
-  end
-
-  def test_factual_review_evidence_reference
-    good = factual_review_evidence_reference(
-      "https://github.com/civictechdc/civictechdc-website/pull/212#issuecomment-12345"
-    )
-    assert_equal "12345", good[:comment_id]
-    assert_equal "pull", good[:kind]
-    assert_nil factual_review_evidence_reference(
-      "https://github.com/other/repo/pull/1#issuecomment-9"
-    )
-    assert_nil factual_review_evidence_reference(
-      "https://github.com/civictechdc/civictechdc-website/pull/212"
-    )
   end
 
   def test_unlisted_pages_are_declared

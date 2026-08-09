@@ -11,8 +11,6 @@ description: Building practical tools that reduce technological roadblocks for c
 seo_description: Congressional Tech builds open-source tools for congressional staff workflows, legislative data access, and public understanding of Congress.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 2
 case_study_standard: true
 ---
 

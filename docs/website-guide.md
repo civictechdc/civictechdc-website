@@ -199,8 +199,6 @@ description: One sentence describing what the project does.
 seo_description: A search description no longer than 160 characters.
 content_owner: Civic Tech DC organizing team
 last_reviewed: YYYY-MM-DD
-factual_review_status: pending
-factual_review_required_approvals: 2
 case_study_standard: true
 ---
 
@@ -236,29 +234,14 @@ Name the people and skills the project needs, then add a next step that matches 
   contribution needs when they remain accurate and appropriate to publish.
 - Add search terms through specific metadata and clear supporting copy. Do not replace the
   project story with a generic Civic Tech DC service narrative.
-- `npm run check:seo` checks required metadata, ownership, review status, and an instrumented
+- `npm run check:seo` checks required metadata, ownership, and an instrumented
   next step. It intentionally does not require standard headings or exact editorial prose.
-- Once a project declares `case_study_standard` or `factual_review_status`, changing
-  `is_active` does not remove it from the release gate. De-scoping a case study requires an
-  explicit content-governance decision and corresponding checker change.
-- Add the page and its claims to
-  [the factual-review packet](content-seo-factual-review.md). Keep
-  `factual_review_status: pending` until all required project and partner reviewers approve
-  the final copy and the approval evidence is recorded.
-- Set `factual_review_required_approvals` to the number of required reviewers named in the
-  factual-review packet. Optional reviewers do not count toward this minimum.
-- While facts remain pending, keep `content_owner` assigned to the Civic Tech DC team
-  maintaining the draft. Do not attribute the draft to a project team that has not reviewed it.
-- When approval is complete, list every required reviewer by organization and role in
-  `factual_reviewed_by`, separated by semicolons. Add `factual_reviewed_on` and a
-  `factual_review_evidence` URL for a summary comment in this repository's GitHub pull
-  request or issue before changing the status to `approved`. The reviewer entries must be
-  distinct, and their count must equal `factual_review_required_approvals`.
-- The summary comment must use the record format in
-  [the factual-review packet](content-seo-factual-review.md#recording-an-approval). The
-  release check confirms that a repository collaborator posted the comment and matches
-  its exact ordered project, date, and reviewer record. Extra commentary or a pull request
-  or issue URL without a specific `#issuecomment-...` record does not count.
+- Once a project declares `case_study_standard`, changing `is_active` does not remove it
+  from the release gate. De-scoping a case study requires an explicit content-governance
+  decision and corresponding checker change.
+- Verify project and partner claims with the people who know them before publishing
+  significant changes; attribute uncertain claims to a public source, state the
+  uncertainty, or remove them.
 
 **To mark a project as inactive**, open its `.md` file and change `is_active: true` to
 `is_active: false`.

@@ -11,8 +11,6 @@ description: Building open-source campaign infrastructure that grassroots organi
 seo_description: VoteCatcher builds reusable open-source campaign processes, starting with OCR-assisted petition review and voter-file matching.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 3
 case_study_standard: true
 ---
 

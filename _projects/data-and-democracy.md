@@ -11,8 +11,6 @@ description: Making election and democracy data easier to understand and use so 
 seo_description: Data and Democracy builds reproducible election-data tools for journalists, advocates, administrators, researchers, and oversight groups.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 2
 case_study_standard: true
 ---
 

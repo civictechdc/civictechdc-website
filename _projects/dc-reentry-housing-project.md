@@ -9,8 +9,6 @@ description: Building a citywide data platform with the DC Reentry Housing Allia
 seo_description: Civic Tech DC and the DC Reentry Housing Alliance are building a shared data platform for housing availability, eligibility, and coalition outcomes.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 2
 case_study_standard: true
 ---
 

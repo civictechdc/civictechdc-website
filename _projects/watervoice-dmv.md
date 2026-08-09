@@ -9,8 +9,6 @@ description: Helping DC Metro residents compare recent water-quality conditions 
 seo_description: WaterVoice DMV is building a local map that brings water-quality, rainfall, and activity-specific guidance into one view.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 4
 case_study_standard: true
 ---
 

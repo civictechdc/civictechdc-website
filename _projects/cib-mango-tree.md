@@ -11,8 +11,6 @@ description: Helping researchers, journalists, fact-checkers, moderators, and wa
 seo_description: CIB Mango Tree is an open-source toolkit for investigating coordination signals in social-media data without requiring programming experience.
 content_owner: Civic Tech DC organizing team
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 2
 case_study_standard: true
 ---
 

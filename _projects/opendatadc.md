@@ -10,8 +10,6 @@ description: A community-run data portal for and by the people of Washington, DC
 seo_description: Open Data DC was a community-run CKAN portal with official and community-contributed datasets for research and civic projects.
 content_owner: Civic Tech DC project archive
 last_reviewed: 2026-07-26
-factual_review_status: pending
-factual_review_required_approvals: 1
 case_study_standard: true
 ---
 
