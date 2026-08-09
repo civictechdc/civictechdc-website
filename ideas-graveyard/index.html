@@ -410,10 +410,6 @@ sitemap: false
         transform: translateY(-4px);
         box-shadow: var(--card-shadow-hover);
       }
-      /* gold thread marks the strongest ideas (4+ stars) */
-      .card.hi {
-        border-left: 2px solid var(--gold);
-      }
       /* folder tab */
       .folder-tab {
         position: absolute;
@@ -534,12 +530,6 @@ sitemap: false
         text-transform: uppercase;
         color: var(--ink-soft);
         opacity: 0.8;
-      }
-      .stars {
-        font-size: 0.8rem;
-        color: var(--primary);
-        letter-spacing: 0.06em;
-        margin-top: 4px;
       }
       .meta-row {
         display: flex;
@@ -873,12 +863,9 @@ sitemap: false
           the full scan.
         </p>
         <p>
-          <strong>Scoring.</strong> &#9733;&#9733;&#9733;&#9733;&#9733; = an
-          idea that deserves a second life &middot; &#9733;&#9733;&#9733; =
-          solid but niche or partly superseded &middot; &#9733; = one-off or
-          dead end. Revive and Worth&nbsp;a&nbsp;look are dormant-but-revivable;
-          Active repos were pushed within the last year &mdash; join those
-          instead of starting fresh.
+          <strong>Tiers.</strong> Revive files are dormant but worth a second
+          life. Active repos were pushed within the last year &mdash; join those
+          instead of starting fresh. Superseded files record what replaced them.
         </p>
         <p>
           <strong>Filing a new idea.</strong> New proposals get added by the
@@ -1957,7 +1944,7 @@ sitemap: false
         {
           id: "top",
           label: "Worth reviving",
-          sub: "Dead or dormant, still relevant in 2026. The stars say how strong the idea is.",
+          sub: "Dead or dormant, still relevant in 2026. Start here.",
         },
         {
           id: "active",
@@ -1975,7 +1962,6 @@ sitemap: false
           sub: "Ideas that don't exist yet. Pitch one and it gets a folder.",
         },
       ];
-      const stars = (n) => "★".repeat(n) + "☆".repeat(5 - n);
       const esc = (s) =>
         String(s).replace(
           /[&<>"]/g,
@@ -1997,13 +1983,12 @@ sitemap: false
           d.tier === "active" || d.site
             ? `<div class="filelinks"><a href="${d.url}" target="_blank" rel="noopener">GitHub &#8599;</a>${d.site ? `<a href="${d.site}">Project page &#8599;</a>` : ""}</div>`
             : "";
-        return `<article class="card t-${d.tier}${d.score >= 4 && d.tier !== "superseded" ? " hi" : ""}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem + " " + (d.superseded || "") + " " + (d.stillGo || "")).toLowerCase())}">
+        return `<article class="card t-${d.tier}" data-tier="${d.tier}" data-text="${esc((d.name + " " + d.one + " " + d.theme + " " + d.tech + " " + d.pitch + " " + d.problem + " " + (d.superseded || "") + " " + (d.stillGo || "")).toLowerCase())}">
     <span class="folder-tab">${esc(d.theme)}</span>
     <div class="card-body">
       <div class="card-top">
         <div>
           <a class="repo" href="${d.url}" target="_blank" rel="noopener">${esc(d.name)}</a>
-          <div class="stars" title="${d.score} of 5">${stars(d.score)}</div>
         </div>
         <span class="stamp">${STAMP[d.tier] || esc(d.tier)}</span>
       </div>
