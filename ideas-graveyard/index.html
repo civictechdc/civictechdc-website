@@ -8,39 +8,39 @@ permalink: /archive-dig/
 
 <style>
   .archive-dig {
-    --ad-midnight: #0b1a30;
-    --ad-vessel: #061121;
-    --ad-primary: #104378;
-    --ad-gold: #eec05e;
-    --ad-card: #ffffff;
-    --ad-card-2: #f8f9fa;
-    --ad-card-line: #e6e6e6;
-    --ad-ink: #1b1b1b;
-    --ad-ink-soft: #565c65;
-    --ad-on-dark: rgba(255, 255, 255, 0.7);
-    --ad-on-dark-faint: rgba(255, 255, 255, 0.45);
-    --ad-glass: rgba(255, 255, 255, 0.05);
-    --ad-glass-line: rgba(255, 255, 255, 0.12);
-    --ad-stamp-top: #104378;
-    --ad-stamp-active: #2f6f4d;
-    --ad-sans:
+    --dig-midnight: #0b1a30;
+    --dig-vessel: #061121;
+    --dig-primary: #104378;
+    --dig-gold: #eec05e;
+    --dig-card: #ffffff;
+    --dig-card-2: #f8f9fa;
+    --dig-card-line: #e6e6e6;
+    --dig-ink: #1b1b1b;
+    --dig-ink-soft: #565c65;
+    --dig-on-dark: rgba(255, 255, 255, 0.7);
+    --dig-on-dark-faint: rgba(255, 255, 255, 0.45);
+    --dig-glass: rgba(255, 255, 255, 0.05);
+    --dig-glass-line: rgba(255, 255, 255, 0.12);
+    --dig-stamp-top: #104378;
+    --dig-stamp-active: #2f6f4d;
+    --dig-sans:
       "Source Sans Pro", "Source Sans 3", -apple-system, "Segoe UI", Helvetica,
       Arial, sans-serif;
-    --ad-mono:
+    --dig-mono:
       "Source Code Pro", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    --ad-ease: cubic-bezier(0.16, 1, 0.3, 1);
-    --ad-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-    --ad-shadow-hover: 0 10px 26px rgba(0, 0, 0, 0.32);
+    --dig-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --dig-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    --dig-shadow-hover: 0 10px 26px rgba(0, 0, 0, 0.32);
     /* clearance for the sticky site header when the drawer rail sticks */
-    --ad-header-offset: 68px;
+    --dig-header-offset: 68px;
     background: linear-gradient(
         180deg,
-        var(--ad-midnight),
-        var(--ad-vessel) 640px
+        var(--dig-midnight),
+        var(--dig-vessel) 640px
       )
-      var(--ad-vessel);
-    color: var(--ad-on-dark);
-    font-family: var(--ad-sans);
+      var(--dig-vessel);
+    color: var(--dig-on-dark);
+    font-family: var(--dig-sans);
     font-size: 16.5px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
@@ -50,118 +50,118 @@ permalink: /archive-dig/
   .archive-dig *::after {
     box-sizing: border-box;
   }
-  .archive-dig .ad-wrap {
+  .archive-dig .dig-wrap {
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 20px;
   }
   .archive-dig a {
-    color: var(--ad-gold);
+    color: var(--dig-gold);
   }
   .archive-dig a:focus-visible,
   .archive-dig button:focus-visible,
   .archive-dig summary:focus-visible,
   .archive-dig input:focus-visible {
-    outline: 2px solid var(--ad-gold);
+    outline: 2px solid var(--dig-gold);
     outline-offset: 2px;
   }
   .archive-dig .card a:focus-visible,
   .archive-dig .card summary:focus-visible {
-    outline-color: var(--ad-primary);
+    outline-color: var(--dig-primary);
   }
 
   /* ---------- masthead ---------- */
-  .archive-dig .ad-mast {
+  .archive-dig .dig-mast {
     padding: 58px 0 38px;
   }
-  .archive-dig .ad-eyebrow {
-    font-family: var(--ad-mono);
+  .archive-dig .dig-eyebrow {
+    font-family: var(--dig-mono);
     font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--ad-gold);
+    color: var(--dig-gold);
     margin: 0 0 14px;
   }
   .archive-dig h1 {
-    font-family: var(--ad-sans);
+    font-family: var(--dig-sans);
     font-weight: 700;
     font-size: clamp(2.1rem, 5.5vw, 3.3rem);
     line-height: 1.06;
     margin: 0 0 18px;
     color: #ffffff;
   }
-  .archive-dig .ad-lede {
+  .archive-dig .dig-lede {
     max-width: 64ch;
     font-size: 1.1rem;
     margin: 0 0 30px;
-    color: var(--ad-on-dark);
+    color: var(--dig-on-dark);
   }
-  .archive-dig .ad-lede strong {
+  .archive-dig .dig-lede strong {
     color: #ffffff;
     font-weight: 700;
   }
-  .archive-dig .ad-stats {
+  .archive-dig .dig-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
   .archive-dig .stat {
-    background: var(--ad-glass);
-    border: 1px solid var(--ad-glass-line);
+    background: var(--dig-glass);
+    border: 1px solid var(--dig-glass-line);
     border-radius: 6px;
     padding: 10px 16px 8px;
     min-width: 122px;
   }
   .archive-dig .stat .n {
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 1.45rem;
     font-weight: 700;
     color: #ffffff;
   }
   .archive-dig .stat.top .n {
-    color: var(--ad-gold);
+    color: var(--dig-gold);
   }
   .archive-dig .stat .l {
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.6rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ad-on-dark-faint);
+    color: var(--dig-on-dark-faint);
     margin-top: 2px;
   }
 
   /* ---------- lessons ---------- */
-  .archive-dig .ad-lessons {
+  .archive-dig .dig-lessons {
     padding: 32px 0 4px;
   }
-  .archive-dig .ad-lessons-head {
-    font-family: var(--ad-mono);
+  .archive-dig .dig-lessons-head {
+    font-family: var(--dig-mono);
     font-size: 0.72rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--ad-on-dark-faint);
+    color: var(--dig-on-dark-faint);
     margin: 0 0 4px;
   }
-  .archive-dig .ad-lessons-sub {
+  .archive-dig .dig-lessons-sub {
     margin: 0 0 16px;
     font-size: 0.98rem;
     font-style: italic;
-    color: var(--ad-on-dark);
+    color: var(--dig-on-dark);
   }
-  .archive-dig .ad-lessons-grid {
+  .archive-dig .dig-lessons-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 10px;
   }
   .archive-dig .lesson {
-    background: var(--ad-glass);
-    border: 1px solid var(--ad-glass-line);
-    border-left: 2px solid var(--ad-gold);
+    background: var(--dig-glass);
+    border: 1px solid var(--dig-glass-line);
+    border-left: 2px solid var(--dig-gold);
     border-radius: 4px;
     padding: 12px 14px;
   }
   .archive-dig .lesson h3 {
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -171,105 +171,105 @@ permalink: /archive-dig/
   .archive-dig .lesson p {
     margin: 0;
     font-size: 0.9rem;
-    color: var(--ad-on-dark);
+    color: var(--dig-on-dark);
   }
 
   /* ---------- drawer rail ---------- */
-  .archive-dig .ad-controls {
+  .archive-dig .dig-controls {
     position: sticky;
-    top: var(--ad-header-offset);
+    top: var(--dig-header-offset);
     z-index: 5;
     background: rgba(6, 17, 33, 0.72);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--ad-glass-line);
+    border-bottom: 1px solid var(--dig-glass-line);
     margin-top: 28px;
   }
-  .archive-dig .ad-controls-inner {
+  .archive-dig .dig-controls-inner {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     gap: 8px;
     padding-top: 12px;
   }
-  .archive-dig .ad-search {
+  .archive-dig .dig-search {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--ad-glass);
-    border: 1px solid var(--ad-glass-line);
+    background: var(--dig-glass);
+    border: 1px solid var(--dig-glass-line);
     border-radius: 6px;
     padding: 7px 12px;
     margin-bottom: 10px;
     flex: 1 1 240px;
     max-width: 340px;
   }
-  .archive-dig .ad-search svg {
+  .archive-dig .dig-search svg {
     width: 14px;
     height: 14px;
-    stroke: var(--ad-on-dark-faint);
+    stroke: var(--dig-on-dark-faint);
     fill: none;
     stroke-width: 2;
     flex: none;
   }
-  .archive-dig .ad-search input {
+  .archive-dig .dig-search input {
     border: 0;
     background: transparent;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.85rem;
     color: #ffffff;
     width: 100%;
   }
-  .archive-dig .ad-search input::placeholder {
-    color: var(--ad-on-dark-faint);
+  .archive-dig .dig-search input::placeholder {
+    color: var(--dig-on-dark-faint);
   }
-  .archive-dig .ad-search input:focus {
+  .archive-dig .dig-search input:focus {
     outline: none;
   }
-  .archive-dig .ad-tabs {
+  .archive-dig .dig-tabs {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     gap: 4px;
     margin-left: auto;
   }
-  .archive-dig .ad-tab {
-    font-family: var(--ad-mono);
+  .archive-dig .dig-tab {
+    font-family: var(--dig-mono);
     font-size: 0.68rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border: 1px solid var(--ad-glass-line);
+    border: 1px solid var(--dig-glass-line);
     border-bottom: 0;
     border-radius: 6px 6px 0 0;
-    background: var(--ad-glass);
-    color: var(--ad-on-dark);
+    background: var(--dig-glass);
+    color: var(--dig-on-dark);
     padding: 7px 12px 6px;
     cursor: pointer;
-    transition: all 0.25s var(--ad-ease);
+    transition: all 0.25s var(--dig-ease);
   }
-  .archive-dig .ad-tab .ct {
-    color: var(--ad-on-dark-faint);
+  .archive-dig .dig-tab .ct {
+    color: var(--dig-on-dark-faint);
     margin-left: 3px;
   }
-  .archive-dig .ad-tab:hover {
+  .archive-dig .dig-tab:hover {
     background: rgba(255, 255, 255, 0.12);
     transform: translateY(-2px);
   }
-  .archive-dig .ad-tab[aria-pressed="true"] {
-    background: var(--ad-card);
-    color: var(--ad-primary);
+  .archive-dig .dig-tab[aria-pressed="true"] {
+    background: var(--dig-card);
+    color: var(--dig-primary);
     font-weight: 700;
-    border-color: var(--ad-card);
+    border-color: var(--dig-card);
     padding-top: 10px;
     padding-bottom: 8px;
     transform: none;
   }
-  .archive-dig .ad-tab[aria-pressed="true"] .ct {
-    color: var(--ad-ink-soft);
+  .archive-dig .dig-tab[aria-pressed="true"] .ct {
+    color: var(--dig-ink-soft);
   }
 
   /* ---------- groups + cards ---------- */
-  .archive-dig .ad-cards {
+  .archive-dig .dig-cards {
     padding: 36px 20px 44px;
   }
   .archive-dig .group {
@@ -281,22 +281,22 @@ permalink: /archive-dig/
     gap: 10px;
   }
   .archive-dig .group-head h2 {
-    font-family: var(--ad-sans);
+    font-family: var(--dig-sans);
     font-weight: 700;
     font-size: 1.25rem;
     color: #ffffff;
     margin: 0;
   }
   .archive-dig .gcount {
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.78rem;
-    color: var(--ad-on-dark-faint);
+    color: var(--dig-on-dark-faint);
   }
   .archive-dig .group-sub {
     margin: 4px 0 20px;
     font-size: 0.98rem;
     font-style: italic;
-    color: var(--ad-on-dark);
+    color: var(--dig-on-dark);
   }
   .archive-dig .grid {
     display: grid;
@@ -305,31 +305,31 @@ permalink: /archive-dig/
   }
   .archive-dig .card {
     position: relative;
-    background: var(--ad-card);
-    color: var(--ad-ink);
+    background: var(--dig-card);
+    color: var(--dig-ink);
     border-radius: 2px 8px 8px 8px;
-    box-shadow: var(--ad-shadow);
+    box-shadow: var(--dig-shadow);
     margin-top: 14px;
-    transition: all 0.25s var(--ad-ease);
+    transition: all 0.25s var(--dig-ease);
   }
   .archive-dig .card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--ad-shadow-hover);
+    box-shadow: var(--dig-shadow-hover);
   }
   .archive-dig .folder-tab {
     position: absolute;
     top: -14px;
     left: 0;
     max-width: 75%;
-    background: var(--ad-card-2);
-    border: 1px solid var(--ad-card-line);
+    background: var(--dig-card-2);
+    border: 1px solid var(--dig-card-line);
     border-bottom: 0;
     border-radius: 6px 6px 0 0;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.6rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ad-ink-soft);
+    color: var(--dig-ink-soft);
     padding: 3px 12px 2px;
     white-space: nowrap;
     overflow: hidden;
@@ -345,22 +345,22 @@ permalink: /archive-dig/
     gap: 10px;
   }
   .archive-dig .repo {
-    font-family: var(--ad-sans);
+    font-family: var(--dig-sans);
     font-weight: 700;
     font-size: 1.14rem;
-    color: var(--ad-primary);
+    color: var(--dig-primary);
     text-decoration: none;
-    border-bottom: 1px solid var(--ad-card-line);
+    border-bottom: 1px solid var(--dig-card-line);
     overflow-wrap: anywhere;
-    transition: all 0.25s var(--ad-ease);
+    transition: all 0.25s var(--dig-ease);
   }
   .archive-dig a.repo:hover {
-    border-bottom-color: var(--ad-gold);
-    color: var(--ad-primary);
+    border-bottom-color: var(--dig-gold);
+    color: var(--dig-primary);
   }
   .archive-dig .stamp {
     flex: none;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.58rem;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -373,47 +373,47 @@ permalink: /archive-dig/
     white-space: nowrap;
   }
   .archive-dig .t-top .stamp {
-    color: var(--ad-stamp-top);
-    border-color: var(--ad-stamp-top);
+    color: var(--dig-stamp-top);
+    border-color: var(--dig-stamp-top);
   }
   .archive-dig .t-active .stamp {
-    color: var(--ad-stamp-active);
-    border-color: var(--ad-stamp-active);
+    color: var(--dig-stamp-active);
+    border-color: var(--dig-stamp-active);
   }
   .archive-dig .t-superseded {
-    background: var(--ad-card-2);
+    background: var(--dig-card-2);
   }
   .archive-dig .t-superseded .stamp {
-    color: var(--ad-ink-soft);
-    border-color: var(--ad-ink-soft);
+    color: var(--dig-ink-soft);
+    border-color: var(--dig-ink-soft);
   }
   .archive-dig .sup-note {
     margin: 0 0 12px;
     font-size: 0.88rem;
     background: #eef0f2;
-    border-left: 2px solid var(--ad-ink-soft);
+    border-left: 2px solid var(--dig-ink-soft);
     border-radius: 2px;
     padding: 8px 10px;
   }
   .archive-dig .sup-note .k,
   .archive-dig .go-note .k {
     display: block;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.6rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ad-ink-soft);
+    color: var(--dig-ink-soft);
     margin-bottom: 2px;
   }
   .archive-dig .sup-note a,
   .archive-dig .go-note a {
-    color: var(--ad-primary);
+    color: var(--dig-primary);
   }
   .archive-dig .go-note {
     margin: 0 0 12px;
     font-size: 0.88rem;
     background: rgba(238, 192, 94, 0.14);
-    border-left: 2px solid var(--ad-gold);
+    border-left: 2px solid var(--dig-gold);
     border-radius: 2px;
     padding: 8px 10px;
   }
@@ -423,11 +423,11 @@ permalink: /archive-dig/
   .archive-dig .note-when {
     display: block;
     margin-top: 6px;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.56rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ad-ink-soft);
+    color: var(--dig-ink-soft);
     opacity: 0.8;
   }
   .archive-dig .meta-row {
@@ -435,11 +435,11 @@ permalink: /archive-dig/
     flex-wrap: wrap;
     gap: 4px 10px;
     margin: 8px 0 10px;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.62rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--ad-ink-soft);
+    color: var(--dig-ink-soft);
   }
   .archive-dig .meta-row .arch {
     color: #9c3d10;
@@ -457,39 +457,39 @@ permalink: /archive-dig/
     flex-wrap: wrap;
     gap: 4px 16px;
     margin: 0 0 12px;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.68rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
   .archive-dig .filelinks a {
-    color: var(--ad-primary);
+    color: var(--dig-primary);
     text-decoration: none;
-    transition: all 0.25s var(--ad-ease);
+    transition: all 0.25s var(--dig-ease);
   }
   .archive-dig .filelinks a:hover {
     color: #7a5b12;
     transform: translateX(3px);
   }
   .archive-dig details {
-    border-top: 1px dashed var(--ad-card-line);
+    border-top: 1px dashed var(--dig-card-line);
     padding-top: 8px;
   }
   .archive-dig summary {
     cursor: pointer;
     list-style: none;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--ad-primary);
+    color: var(--dig-primary);
   }
   .archive-dig summary::-webkit-details-marker {
     display: none;
   }
   .archive-dig summary .caret {
     display: inline-block;
-    transition: transform 0.25s var(--ad-ease);
+    transition: transform 0.25s var(--dig-ease);
     margin-right: 5px;
   }
   .archive-dig details[open] summary .caret {
@@ -504,38 +504,38 @@ permalink: /archive-dig/
   }
   .archive-dig .row .k {
     display: block;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.6rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--ad-ink-soft);
+    color: var(--dig-ink-soft);
     margin-bottom: 2px;
   }
   .archive-dig .row.pitch {
-    background: var(--ad-card-2);
-    border-left: 2px solid var(--ad-gold);
+    background: var(--dig-card-2);
+    border-left: 2px solid var(--dig-gold);
     padding: 8px 10px;
     border-radius: 2px;
   }
   .archive-dig .detail-meta .tag {
     display: inline-block;
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.62rem;
-    color: var(--ad-ink-soft);
-    border: 1px solid var(--ad-card-line);
+    color: var(--dig-ink-soft);
+    border: 1px solid var(--dig-card-line);
     border-radius: 3px;
     padding: 2px 7px;
   }
   .archive-dig .propose-card {
-    border: 2px dashed var(--ad-glass-line);
+    border: 2px dashed var(--dig-glass-line);
     border-radius: 8px;
-    background: var(--ad-glass);
-    color: var(--ad-on-dark);
+    background: var(--dig-glass);
+    color: var(--dig-on-dark);
     padding: 26px 24px;
     max-width: 620px;
   }
   .archive-dig .propose-card h3 {
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.78rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -551,50 +551,50 @@ permalink: /archive-dig/
     gap: 10px;
   }
   .archive-dig .propose-actions a {
-    font-family: var(--ad-mono);
+    font-family: var(--dig-mono);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--ad-vessel);
-    background: var(--ad-gold);
+    color: var(--dig-vessel);
+    background: var(--dig-gold);
     border-radius: 6px;
     padding: 10px 15px;
-    transition: all 0.25s var(--ad-ease);
+    transition: all 0.25s var(--dig-ease);
   }
   .archive-dig .propose-actions a:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 16px rgba(238, 192, 94, 0.25);
-    color: var(--ad-vessel);
+    color: var(--dig-vessel);
   }
-  .archive-dig .ad-empty {
+  .archive-dig .dig-empty {
     display: none;
     font-style: italic;
     padding: 30px 20px;
-    color: var(--ad-on-dark-faint);
+    color: var(--dig-on-dark-faint);
   }
 
   /* ---------- method section ---------- */
-  .archive-dig .ad-method {
-    border-top: 1px solid var(--ad-glass-line);
+  .archive-dig .dig-method {
+    border-top: 1px solid var(--dig-glass-line);
     padding: 30px 0 42px;
     font-size: 0.9rem;
-    color: var(--ad-on-dark-faint);
+    color: var(--dig-on-dark-faint);
   }
-  .archive-dig .ad-method p {
+  .archive-dig .dig-method p {
     max-width: 76ch;
   }
-  .archive-dig .ad-method a {
-    color: var(--ad-on-dark);
-    transition: color 0.25s var(--ad-ease);
+  .archive-dig .dig-method a {
+    color: var(--dig-on-dark);
+    transition: color 0.25s var(--dig-ease);
   }
-  .archive-dig .ad-method a:hover {
-    color: var(--ad-gold);
+  .archive-dig .dig-method a:hover {
+    color: var(--dig-gold);
   }
-  .archive-dig .ad-method strong {
-    color: var(--ad-on-dark);
-    font-family: var(--ad-mono);
+  .archive-dig .dig-method strong {
+    color: var(--dig-on-dark);
+    font-family: var(--dig-mono);
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -604,22 +604,22 @@ permalink: /archive-dig/
     .archive-dig .stamp {
       transform: none;
     }
-    .archive-dig .ad-tabs {
+    .archive-dig .dig-tabs {
       margin-left: 0;
     }
   }
   @media (prefers-reduced-motion: reduce) {
     .archive-dig .card,
-    .archive-dig .ad-tab,
+    .archive-dig .dig-tab,
     .archive-dig .repo,
     .archive-dig .filelinks a,
     .archive-dig summary .caret,
     .archive-dig .propose-actions a,
-    .archive-dig .ad-method a {
+    .archive-dig .dig-method a {
       transition: none;
     }
     .archive-dig .card:hover,
-    .archive-dig .ad-tab:hover,
+    .archive-dig .dig-tab:hover,
     .archive-dig .filelinks a:hover,
     .archive-dig .propose-actions a:hover {
       transform: none;
@@ -628,11 +628,11 @@ permalink: /archive-dig/
 </style>
 
 <div class="archive-dig" id="archive-dig-root">
-  <header class="ad-mast">
-    <div class="ad-wrap">
-      <p class="ad-eyebrow">Civic Tech DC &middot; Archive Dig</p>
+  <header class="dig-mast">
+    <div class="dig-wrap">
+      <p class="dig-eyebrow">Civic Tech DC &middot; Archive Dig</p>
       <h1>Ideas Graveyard</h1>
-      <p class="ad-lede">
+      <p class="dig-lede">
         Thirteen years of Code&nbsp;for&nbsp;DC and Civic Tech DC left behind
         nearly a hundred repositories. Most went quiet; some held genuinely good
         ideas that ran out of runway. This is the records room:
@@ -640,7 +640,7 @@ permalink: /archive-dig/
         <strong>projects alive right now</strong>, and
         <strong>an empty drawer</strong> for the idea you haven't filed yet.
       </p>
-      <div class="ad-stats">
+      <div class="dig-stats">
         <div class="stat">
           <div class="n" id="stat-all">–</div>
           <div class="l">ideas on file</div>
@@ -662,13 +662,13 @@ permalink: /archive-dig/
           <div class="l">repos archived</div>
         </div>
       </div>
-      <div class="ad-lessons">
-        <p class="ad-lessons-head">Why files end up here</p>
-        <p class="ad-lessons-sub">
+      <div class="dig-lessons">
+        <p class="dig-lessons-head">Why files end up here</p>
+        <p class="dig-lessons-sub">
           Four patterns from thirteen years of stalled repos. Read them before
           you file a new idea.
         </p>
-        <div class="ad-lessons-grid">
+        <div class="dig-lessons-grid">
           <div class="lesson">
             <h3>Tied to one cycle</h3>
             <p>
@@ -704,45 +704,45 @@ permalink: /archive-dig/
     </div>
   </header>
 
-  <div class="ad-controls">
-    <div class="ad-wrap ad-controls-inner">
-      <label class="ad-search">
+  <div class="dig-controls">
+    <div class="dig-wrap dig-controls-inner">
+      <label class="dig-search">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="11" cy="11" r="7" />
           <path d="M21 21l-4.3-4.3" />
         </svg>
         <input
-          id="ad-q"
+          id="dig-q"
           type="search"
           placeholder="Search the files&hellip;"
           aria-label="Search ideas"
         />
       </label>
-      <div class="ad-tabs" id="ad-chips">
-        <button class="ad-tab" data-t="all" aria-pressed="true">
+      <div class="dig-tabs" id="dig-chips">
+        <button class="dig-tab" data-t="all" aria-pressed="true">
           All <span class="ct"></span>
         </button>
-        <button class="ad-tab" data-t="top" aria-pressed="false">
+        <button class="dig-tab" data-t="top" aria-pressed="false">
           Revive <span class="ct"></span>
         </button>
-        <button class="ad-tab" data-t="active" aria-pressed="false">
+        <button class="dig-tab" data-t="active" aria-pressed="false">
           Active <span class="ct"></span>
         </button>
-        <button class="ad-tab" data-t="superseded" aria-pressed="false">
+        <button class="dig-tab" data-t="superseded" aria-pressed="false">
           Superseded <span class="ct"></span>
         </button>
-        <button class="ad-tab" data-t="proposed" aria-pressed="false">
+        <button class="dig-tab" data-t="proposed" aria-pressed="false">
           Proposed <span class="ct"></span>
         </button>
       </div>
     </div>
   </div>
 
-  <div class="ad-wrap ad-cards" id="ad-cards"></div>
-  <p class="ad-empty ad-wrap" id="ad-empty">No files match that search.</p>
+  <div class="dig-wrap dig-cards" id="dig-cards"></div>
+  <p class="dig-empty dig-wrap" id="dig-empty">No files match that search.</p>
 
-  <section class="ad-method">
-    <div class="ad-wrap">
+  <section class="dig-method">
+    <div class="dig-wrap">
       <p>
         <strong>How this was made.</strong> On 24 July 2026, a swarm of 97 AI
         agents (one per repo) read each repository's README and metadata and
@@ -1887,14 +1887,14 @@ permalink: /archive-dig/
     function setHeaderOffset() {
       if (siteHeader) {
         root.style.setProperty(
-          "--ad-header-offset",
+          "--dig-header-offset",
           Math.round(siteHeader.getBoundingClientRect().height) + "px",
         );
       }
     }
     setHeaderOffset();
     window.addEventListener("resize", setHeaderOffset);
-    var cardsHost = document.getElementById("ad-cards");
+    var cardsHost = document.getElementById("dig-cards");
 
     function noteBlock(d) {
       var out = "";
@@ -2065,13 +2065,13 @@ permalink: /archive-dig/
 
     var activeTier = "all";
     var query = "";
-    var chips = Array.prototype.slice.call(root.querySelectorAll(".ad-tab"));
+    var chips = Array.prototype.slice.call(root.querySelectorAll(".dig-tab"));
     chips.forEach(function (c) {
       var t = c.getAttribute("data-t");
       var n = t === "all" ? DATA.length : countOf(t);
       c.querySelector(".ct").textContent = n || "";
     });
-    var empty = document.getElementById("ad-empty");
+    var empty = document.getElementById("dig-empty");
 
     function applyFilter() {
       var shown = 0;
@@ -2111,7 +2111,7 @@ permalink: /archive-dig/
         applyFilter();
       });
     });
-    document.getElementById("ad-q").addEventListener("input", function (e) {
+    document.getElementById("dig-q").addEventListener("input", function (e) {
       query = e.target.value.trim().toLowerCase();
       applyFilter();
     });
