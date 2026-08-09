@@ -54,7 +54,8 @@ class CheckSeoHelpersTest < Minitest::Test
     assert_nil refresh_target(blank)
   end
 
-  def test_unlisted_pages_are_declared
-    assert_includes UNLISTED_PAGES, "archive-dig/index.html"
+  def test_unlisted_pages_is_a_frozen_list
+    assert_kind_of Array, UNLISTED_PAGES
+    assert_predicate UNLISTED_PAGES, :frozen?
   end
 end

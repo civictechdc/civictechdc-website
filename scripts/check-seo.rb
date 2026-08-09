@@ -49,9 +49,7 @@ PROMOTED_CASE_STUDY_PROJECTS = %w[
 # Unlisted utility pages are reachable by direct URL only: they must declare
 # noindex,follow and carry basic metadata, but are exempt from the
 # indexable-page contract (Open Graph, JSON-LD, analytics, canonical, feed).
-UNLISTED_PAGES = %w[
-  archive-dig/index.html
-].freeze
+UNLISTED_PAGES = %w[].freeze
 ROUTE_LINK_EXPECTATIONS = {
   "/" => [
     { :href => "/pitch", :event => "project_inquiry_click", :location => "homepage_hero" },
