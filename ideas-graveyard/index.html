@@ -519,48 +519,6 @@ permalink: /archive-dig/
     border-radius: 3px;
     padding: 2px 7px;
   }
-  .archive-dig .propose-card {
-    border: 2px dashed var(--dig-glass-line);
-    border-radius: 8px;
-    background: var(--dig-glass);
-    color: var(--dig-on-dark);
-    padding: 26px 24px;
-    max-width: 620px;
-  }
-  .archive-dig .propose-card h3 {
-    font-family: var(--dig-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin: 0 0 10px;
-    color: #ffffff;
-  }
-  .archive-dig .propose-card p {
-    margin: 0 0 16px;
-  }
-  .archive-dig .propose-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .archive-dig .propose-actions a {
-    font-family: var(--dig-mono);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--dig-vessel);
-    background: var(--dig-gold);
-    border-radius: 6px;
-    padding: 10px 15px;
-    transition: all 0.25s var(--dig-ease);
-  }
-  .archive-dig .propose-actions a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(238, 192, 94, 0.25);
-    color: var(--dig-vessel);
-  }
   .archive-dig .dig-empty {
     display: none;
     font-style: italic;
@@ -607,14 +565,12 @@ permalink: /archive-dig/
     .archive-dig .repo,
     .archive-dig .filelinks a,
     .archive-dig summary .caret,
-    .archive-dig .propose-actions a,
     .archive-dig .dig-method a {
       transition: none;
     }
     .archive-dig .card:hover,
     .archive-dig .dig-tab:hover,
-    .archive-dig .filelinks a:hover,
-    .archive-dig .propose-actions a:hover {
+    .archive-dig .filelinks a:hover {
       transform: none;
     }
   }
@@ -718,14 +674,11 @@ permalink: /archive-dig/
         <button class="dig-tab" data-t="top" aria-pressed="false">
           Revive <span class="ct"></span>
         </button>
-        <button class="dig-tab" data-t="active" aria-pressed="false">
-          Active <span class="ct"></span>
-        </button>
         <button class="dig-tab" data-t="superseded" aria-pressed="false">
           Superseded <span class="ct"></span>
         </button>
-        <button class="dig-tab" data-t="proposed" aria-pressed="false">
-          Proposed <span class="ct"></span>
+        <button class="dig-tab" data-t="active" aria-pressed="false">
+          Active <span class="ct"></span>
         </button>
       </div>
     </div>
@@ -1853,19 +1806,14 @@ permalink: /archive-dig/
         sub: "Dead or dormant, still relevant in 2026. Start here.",
       },
       {
-        id: "active",
-        label: "Still alive — go contribute",
-        sub: "Pushed within the last year. Join these rather than rebuild them.",
-      },
-      {
         id: "superseded",
         label: "Superseded — case closed",
         sub: "An August 2026 scan found the need now served by an official or maintained public tool. Each file records what replaced it, so nobody rebuilds these.",
       },
       {
-        id: "proposed",
-        label: "Proposed — the empty drawer",
-        sub: "Ideas that don't exist yet. Pitch one and it gets a folder.",
+        id: "active",
+        label: "Still alive — go contribute",
+        sub: "Pushed within the last year. Join these rather than rebuild them.",
       },
     ];
     var STAMP = { top: "Revive", active: "Active", superseded: "Superseded" };
@@ -1999,24 +1947,13 @@ permalink: /archive-dig/
       );
     }
 
-    var PROPOSE_CARD =
-      '<div class="propose-card" data-tier="proposed" data-text="propose new idea pitch project night slack">' +
-      "<h3>This folder is empty</h3>" +
-      "<p>Have a civic idea worth building? Pitch it at a project night or start a thread in Slack. If it finds legs, it gets filed here — with your name on it.</p>" +
-      '<div class="propose-actions">' +
-      '<a href="/events" data-analytics-event="event_discovery_click" data-analytics-location="archive_propose">Pitch at a project night</a>' +
-      '<a href="/slack" data-analytics-event="slack_discovery_click" data-analytics-location="archive_propose">Start a thread in Slack</a>' +
-      "</div></div>";
-
     function render() {
       cardsHost.innerHTML = GROUPS.map(function (g) {
         var items = DATA.filter(function (d) {
           return d.tier === g.id;
         });
-        var body = items.length
-          ? '<div class="grid">' + items.map(card).join("") + "</div>"
-          : PROPOSE_CARD;
-        var count = items.length ? items.length : "";
+        var body = '<div class="grid">' + items.map(card).join("") + "</div>";
+        var count = items.length;
         return (
           '<section class="group" data-group="' +
           g.id +
