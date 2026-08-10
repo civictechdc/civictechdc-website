@@ -108,6 +108,11 @@ Looking for deeper history, or an idea to pick up? The
 catalogs 13 years of project files: dormant ideas verified as still worth
 reviving, and superseded ones with a record of what replaced them.
 
+Beyond the projects themselves, our
+[organizational initiatives]({{ site.baseurl }}/initiatives/){: data-analytics-event="project_discovery_click" data-analytics-location="projects_initiatives"}
+are the programs and infrastructure that keep Civic Tech DC running, and each
+one names the specific support it needs.
+
 </div>
 
 {% include components/content-review.html %}

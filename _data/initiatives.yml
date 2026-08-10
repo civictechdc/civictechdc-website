@@ -1,0 +1,52 @@
+# Organizational initiatives: internal programs and infrastructure that keep
+# Civic Tech DC running, each with a specific support ask. Rendered on
+# /initiatives/ by _includes/components/initiative-card.html.
+#
+# Fields:
+#   name        - display name
+#   need_label  - badge text naming the primary need (short, "Needs X")
+#   body        - what it is and why the org needs it (2-3 sentences, plain)
+#   asks        - concrete support asks (2-4 bullets)
+#   links       - optional; kind: repo | page (picks analytics event)
+
+- name: Project Playbook
+  need_label: Needs writers
+  body: >-
+    A documentation site collecting how we actually run things, from project
+    intake to event operations to volunteer onboarding, so the organization
+    stops living in individual organizers' heads.
+  asks:
+    - Technical writers and editors
+    - Organizers willing to turn what they know into runbooks
+  links:
+    - text: Project-Playbook on GitHub
+      url: https://github.com/civictechdc/Project-Playbook
+      kind: repo
+
+- name: Opportunities Platform
+  need_label: Needs builders
+  body: >-
+    A volunteer directory and project showcase. Browse projects, see who works
+    on what, and find where your skills fit. The product vision and data model
+    are documented and the stack is chosen; the build needs hands to reach
+    launch.
+  asks:
+    - Next.js and Supabase contributors
+    - A design pass on the core screens
+    - A product lead to carry it to launch
+  links:
+    - text: employment-platform on GitHub
+      url: https://github.com/civictechdc/employment-platform
+      kind: repo
+
+- name: Civic Tech Academy
+  need_label: Needs instructors
+  body: >-
+    A recurring training program teaching practical civic tech and data
+    skills to volunteers and the wider community. It has run informally and
+    people keep showing up; turning it into a real program needs people to
+    teach it and shape it.
+  asks:
+    - A co-organizer to run the program
+    - Instructors and curriculum contributors
+    - Organizations willing to host sessions

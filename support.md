@@ -29,4 +29,12 @@ Civic Tech DC is a registered 501(c)(3) nonprofit. All donations are tax-deducti
   <p class="ctdc-donate-cta__note">Contributions of any size are welcome.</p>
 </div>
 
+## Sponsor something specific
+
+Prefer to back a particular piece of the work? Our
+[organizational initiatives]({{ site.baseurl }}/initiatives/){: data-analytics-event="support_click" data-analytics-location="support_initiatives"}
+each name exactly what they need: writers for our playbook, builders for our
+opportunities platform, instructors for our academy. Pick one and we will
+connect you to it directly.
+
 {% include components/supporters.html %}
