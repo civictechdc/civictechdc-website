@@ -2,9 +2,9 @@
 layout: hero-image
 banner-hero: true
 title: Initiatives
-description: "The programs and infrastructure that keep Civic Tech DC running, and what each needs to continue: venues, funding, maintainers, facilitators, and writers."
+description: "The programs and infrastructure that keep Civic Tech DC running, and what each needs to continue: writers, builders, and instructors."
 hero-title: Initiatives
-hero-subtitle: "Behind our projects sits the machinery that keeps a volunteer organization running: the hackathon, the fellowship, the tools and documentation organizers rely on. Each initiative below names exactly what it needs to keep going."
+hero-subtitle: "Behind our projects sits the machinery that keeps a volunteer organization running: the playbook, the platforms, the training. Each initiative below names exactly what it needs to keep going."
 hero-image: hero-image-partners.jpg
 hero-image-alt: Civic Tech DC organizers and partners at a community event
 permalink: /initiatives/
@@ -14,7 +14,7 @@ permalink: /initiatives/
 
 Our [projects]({{ site.baseurl }}/projects.html) serve the public. These
 initiatives serve the organization, and they only move when someone puts time,
-money, or a venue behind them. Every card says what the initiative is and
+money, or skills behind them. Every card says what the initiative is and
 exactly what it needs. If one of them is yours to solve, email
 <a href="mailto:team@civictechdc.org?subject=Supporting%20a%20Civic%20Tech%20DC%20initiative" data-analytics-event="support_click" data-analytics-location="initiatives_page">team@civictechdc.org</a>
 and we will take it from there.
