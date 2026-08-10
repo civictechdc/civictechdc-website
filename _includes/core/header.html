@@ -26,6 +26,11 @@
           </a>
         </li>
         <li class="usa-nav__primary-item">
+          <a class="usa-nav__link" href="{{ site.baseurl }}/initiatives/"{% if page.url contains '/initiatives' %} aria-current="page"{% endif %}>
+            <span>Initiatives</span>
+          </a>
+        </li>
+        <li class="usa-nav__primary-item">
           <a class="usa-nav__link" href="{{ site.baseurl }}/events"{% if page.url contains '/events' %} aria-current="page"{% endif %}>
             <span>Events</span>
           </a>
