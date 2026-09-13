@@ -12,7 +12,9 @@ original_source: "Technical.ly"
 original_url: "https://technical.ly/civics/civic-tech-dc-rebuilds-trust-at-scale/"
 ---
 
-Civic tech has meant many different things over the past decade, including different tools, tactics, and ideas for “fixing” systems. But what does the field of civic tech mean now? 
+![Civic Tech DC community members gathering at a meetup](/assets/images/civic-tech-dc-meetup.jpg)
+
+Civic tech has meant many different things over the past decade, including different tools, tactics, and ideas for “fixing” systems. But what does the field of civic tech mean now?
 
 At Civic Tech DC, this question drives our work. As technology rapidly changes how we operate, we’re thinking about what it means to build technology that is not only useful, but grounded in the communities it serves.
 
