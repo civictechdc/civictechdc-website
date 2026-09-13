@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Building from the Ground Up: What Civic Tech Means in the Age of AI"
+title: "What Civic Tech Means in the Age of AI"
 date: 2026-08-12 10:00:00 -0400
 author: "Helen Glover"
+description: "Civic Tech DC explores what civic tech means in the age of AI, from prototyping ideas to building pathways into institutions where change happens"
 social_image: civic-tech-dc-meetup.jpg
 social_image_alt: "Civic Tech DC community members gathering at a meetup"
 categories: [Community, Civic Tech, AI]
