@@ -1,0 +1,104 @@
+<div class="ctdc-opportunities-board">
+{% if include.preview %}
+<div class="usa-alert usa-alert--info margin-bottom-3">
+  <div class="usa-alert__body"><p class="usa-alert__text">Local layout preview: these roles are proposals, not confirmed openings. Remove the local preview file before publishing.</p></div>
+</div>
+{% endif %}
+<h1>Find your next way to contribute</h1>
+<p class="usa-intro">
+  Build skills, meet collaborators, and work on technology for the public good.
+  Find a role with a Civic Tech DC project or explore another way to contribute.
+</p>
+<section aria-labelledby="project-opportunities-heading">
+  <h2 id="project-opportunities-heading">
+    Find a role within a Civic Tech DC project
+  </h2>
+  <p>Choose a project to learn about its work and ways to get involved.</p>
+  <ul class="ctdc-project-opportunity-grid">
+    {% assign active_projects = site.projects | where: 'is_active', true %} {%
+    for project in active_projects %}
+    <li class="ctdc-project-opportunity-grid__item">
+      <a
+        class="ctdc-project-opportunity-tile"
+        href="{{ project.url | relative_url }}"
+      >
+        {% if project.image %}
+        {% include responsive-image.html src=project.image alt="" class="ctdc-project-opportunity-tile__image" sizes="160px" %}
+        {% endif %}
+        <span class="ctdc-project-opportunity-tile__title">{{ project.title | escape }}</span>
+        <span class="ctdc-project-opportunity-tile__action">View project <span aria-hidden="true">&rarr;</span></span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+<h2>Explore other ways to contribute</h2>
+<p>
+  Support the wider community through leadership, teaching, mentoring, and other
+  volunteer opportunities.
+</p>
+{% assign role_status_label = 'open' %}
+{% assign candidates = site.data.opportunities.opportunities %}
+{% if include.preview %}
+  {% assign role_status_label = 'proposed' %}
+{% else %}
+  {% assign candidates = candidates | where: 'status', 'open' %}
+{% endif %}
+{% assign opportunities = '' | split: ',' %}
+{% for candidate in candidates %}
+  {% if candidate.project_path == nil or candidate.project_path == '' %}
+    {% assign opportunities = opportunities | push: candidate %}
+  {% endif %}
+{% endfor %}
+{% assign interest_url = site.data.opportunities.interest_url %}
+<div id="opportunity-filters" hidden>
+  <label class="usa-label" for="opportunity-category">Filter by category</label>
+  <select class="usa-select margin-bottom-3" id="opportunity-category">
+    <option value="all">All categories</option>
+    <option>Leadership</option>
+    <option>Projects &amp; Working Groups</option>
+    <option>Teaching &amp; Mentoring</option>
+    <option>Community &amp; Operations</option>
+  </select>
+</div>
+<p id="opportunity-count" role="status" aria-live="polite">
+  {{ opportunities.size }} {{ role_status_label }} opportunities
+</p>
+<ul class="usa-card-group" id="opportunity-list">
+  {% for opportunity in opportunities %}
+  {% include components/opportunity-card.html opportunity=opportunity %}
+  {% endfor %}
+</ul>
+{% if opportunities.size == 0 %}
+<p id="opportunity-empty">There are no open opportunities right now. Please check back, or <a href="{{ '/events' | relative_url }}">meet the community at an upcoming event</a>.</p>
+{% else %}
+<p id="opportunity-empty" hidden>No opportunities match this category. Try another category.</p>
+{% endif %}
+<p>
+  Explore our <a href="{{ '/projects' | relative_url }}">projects</a> and
+  <a href="{{ '/community/' | relative_url }}">community resources</a>.
+</p>
+<script>
+  (() => {
+    const statusLabel = {{ role_status_label | jsonify }};
+    const cards = [...document.querySelectorAll("#opportunity-list > li")];
+    if (!cards.length) return;
+    document.getElementById("opportunity-filters").hidden = false;
+    document
+      .getElementById("opportunity-category")
+      .addEventListener("change", (event) => {
+        let count = 0;
+        cards.forEach((card) => {
+          card.hidden =
+            event.target.value !== "all" &&
+            card.dataset.category !== event.target.value;
+          if (!card.hidden) count++;
+        });
+        document.getElementById("opportunity-count").textContent =
+          `${count} ${statusLabel} ${count === 1 ? "opportunity" : "opportunities"}`;
+        document.getElementById("opportunity-empty").hidden = count > 0;
+      });
+  })();
+</script>
+
+</div>

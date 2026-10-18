@@ -1,0 +1,65 @@
+{% assign opportunity = include.opportunity %}
+<li
+  class="usa-card tablet:grid-col-6 desktop:grid-col-4"
+  data-category="{{ opportunity.category | escape }}"
+>
+  <article
+    class="usa-card__container"
+    aria-labelledby="title-{{ opportunity.id | escape }}"
+  >
+    <div class="usa-card__header">
+      <p class="text-uppercase font-sans-3xs text-bold">
+        {{ opportunity.category | escape }}
+      </p>
+      <h3 class="usa-card__heading" id="title-{{ opportunity.id | escape }}">
+        {{ opportunity.title | escape }}
+      </h3>
+    </div>
+    <div class="usa-card__body">
+      {% if opportunity.accepts_multiple %}
+      <p class="font-sans-xs text-bold text-primary">
+        <span aria-hidden="true">&#128101;</span> Multiple contributors welcome
+      </p>
+      {% endif %}
+      <p class="text-bold">{{ opportunity.commitment | escape }}</p>
+      <p>{{ opportunity.description | escape }}</p>
+      <p>
+        <strong>What you’ll gain:</strong> {{ opportunity.benefit | escape }}
+      </p>
+      <details>
+        <summary class="text-primary cursor-pointer">
+          View opportunity<span class="usa-sr-only"
+            >: {{ opportunity.title | escape }}</span
+          >
+        </summary>
+        <h3 class="font-sans-md">Responsibilities</h3>
+        <p>{{ opportunity.responsibilities | escape | newline_to_br }}</p>
+        <h3 class="font-sans-md">Expected deliverables</h3>
+        <p>{{ opportunity.deliverables | escape | newline_to_br }}</p>
+        <h3 class="font-sans-md">Support available</h3>
+        <p>{{ opportunity.support | escape | newline_to_br }}</p>
+        <p><strong>Contact:</strong> {{ opportunity.contact | escape }}</p>
+        <p>
+          <strong>Last reviewed:</strong> {{ opportunity.reviewed_on | escape }}
+        </p>
+        {% assign interest_prefix = interest_url | slice: 0, 8 %} {% if
+        interest_prefix == 'https://' %}
+        <a class="usa-button" href="{{ interest_url | escape }}"
+          >Express interest<span class="usa-sr-only">
+            in {{ opportunity.title | escape }}</span
+          ></a
+        >
+        <p>
+          Choose “{{ opportunity.title | escape }}” in the shared interest form.
+          You do not need to join Slack.
+        </p>
+        {% else %}
+        <p>
+          To express interest, contact the organizer named above. The shared
+          interest form is not available yet.
+        </p>
+        {% endif %}
+      </details>
+    </div>
+  </article>
+</li>

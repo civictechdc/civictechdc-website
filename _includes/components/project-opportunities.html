@@ -1,0 +1,12 @@
+{% assign project_roles = site.data.opportunities.opportunities | where: 'status', 'open' | where: 'project_path', page.url %}
+{% assign interest_url = site.data.opportunities.interest_url %}
+{% if project_roles.size > 0 %}
+<section aria-labelledby="project-contribute-heading" class="margin-top-4">
+  <h2 id="project-contribute-heading">Contribute to this project</h2>
+  <ul class="usa-card-group">
+    {% for opportunity in project_roles %}
+    {% include components/opportunity-card.html opportunity=opportunity %}
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
