@@ -45,3 +45,15 @@ repository permissions, then GitHub Pages build logs.
 ## Update Scaffold
 
 Update the router and these instructions when authentication or form setup changes.
+
+## Jekyll 3.10 preview regression
+
+Do not use `where_exp: 'role', 'role.project_path == blank'` to select
+community roles with a missing `project_path` key. The real Jekyll renderer
+excluded those records even though the alternate Liquid renderer passed. Use
+a Liquid loop with an explicit nil-or-empty comparison and push the matching
+records into the list. Verify the real Jekyll preview displays all 11 roles.
+Keep empty-state elements as complete tags in each Liquid branch; formatting
+a conditional opening tag can produce malformed markup or duplicate IDs.
+Board-specific styles live in `sass/custom/opportunities.scss` and compile to
+`assets/css/opportunities.css`; the board and local preview use `page_css`.

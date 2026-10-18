@@ -1,3 +1,4 @@
+<div class="ctdc-opportunities-board">
 {% if include.preview %}
 <div class="usa-alert usa-alert--info margin-bottom-3">
   <div class="usa-alert__body"><p class="usa-alert__text">Local layout preview: these roles are proposals, not confirmed openings. Remove the local preview file before publishing.</p></div>
@@ -13,20 +14,19 @@
     Find a role within a Civic Tech DC project
   </h2>
   <p>Choose a project to learn about its work and ways to get involved.</p>
-  <ul class="grid-row grid-gap-2 usa-list--unstyled margin-bottom-4">
+  <ul class="ctdc-project-opportunity-grid">
     {% assign active_projects = site.projects | where: 'is_active', true %} {%
     for project in active_projects %}
-    <li class="grid-col-6 tablet:grid-col-3 margin-bottom-3">
+    <li class="ctdc-project-opportunity-grid__item">
       <a
-        class="display-flex flex-column flex-align-center padding-2"
+        class="ctdc-project-opportunity-tile"
         href="{{ project.url | relative_url }}"
       >
         {% if project.image %}
-        {% include responsive-image.html src=project.image alt="" class="height-8 width-auto maxw-full" sizes="160px" %}
+        {% include responsive-image.html src=project.image alt="" class="ctdc-project-opportunity-tile__image" sizes="160px" %}
         {% endif %}
-        <span class="margin-top-1 text-center"
-          >{{ project.title | escape }}</span
-        >
+        <span class="ctdc-project-opportunity-tile__title">{{ project.title | escape }}</span>
+        <span class="ctdc-project-opportunity-tile__action">View project <span aria-hidden="true">&rarr;</span></span>
       </a>
     </li>
     {% endfor %}
@@ -38,13 +38,19 @@
   volunteer opportunities.
 </p>
 {% assign role_status_label = 'open' %}
+{% assign candidates = site.data.opportunities.opportunities %}
 {% if include.preview %}
-{% assign opportunities = site.data.opportunities.opportunities | where_exp: 'opportunity', 'opportunity.project_path == blank' %}
-{% assign role_status_label = 'proposed' %}
+  {% assign role_status_label = 'proposed' %}
 {% else %}
-{% assign opportunities = site.data.opportunities.opportunities | where: 'status', 'open' | where_exp: 'opportunity', 'opportunity.project_path == blank' %}
-{% endif %} {% assign interest_url =
-site.data.opportunities.interest_url %}
+  {% assign candidates = candidates | where: 'status', 'open' %}
+{% endif %}
+{% assign opportunities = '' | split: ',' %}
+{% for candidate in candidates %}
+  {% if candidate.project_path == nil or candidate.project_path == '' %}
+    {% assign opportunities = opportunities | push: candidate %}
+  {% endif %}
+{% endfor %}
+{% assign interest_url = site.data.opportunities.interest_url %}
 <div id="opportunity-filters" hidden>
   <label class="usa-label" for="opportunity-category">Filter by category</label>
   <select class="usa-select margin-bottom-3" id="opportunity-category">
@@ -63,16 +69,11 @@ site.data.opportunities.interest_url %}
   {% include components/opportunity-card.html opportunity=opportunity %}
   {% endfor %}
 </ul>
-{% if opportunities.size > 0 %}
-<p id="opportunity-empty" hidden>{% else %}</p>
-
-<p id="opportunity-empty">
-  {% endif %}There are no open opportunities in this category right now. Please
-  check back, or
-  <a href="{{ '/events' | relative_url }}"
-    >meet the community at an upcoming event</a
-  >.
-</p>
+{% if opportunities.size == 0 %}
+<p id="opportunity-empty">There are no open opportunities right now. Please check back, or <a href="{{ '/events' | relative_url }}">meet the community at an upcoming event</a>.</p>
+{% else %}
+<p id="opportunity-empty" hidden>No opportunities match this category. Try another category.</p>
+{% endif %}
 <p>
   Explore our <a href="{{ '/projects' | relative_url }}">projects</a> and
   <a href="{{ '/community/' | relative_url }}">community resources</a>.
@@ -99,3 +100,5 @@ site.data.opportunities.interest_url %}
       });
   })();
 </script>
+
+</div>

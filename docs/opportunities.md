@@ -113,6 +113,10 @@ The logo section links to current project pages. Drafts remain hidden everywhere
 
 ## Windows local preview
 
+Fetch the generated `assets/css/opportunities.css` along with the board include
+and data. This stylesheet is generated from `sass/custom/opportunities.scss`;
+it makes project links into tiles and removes the intro text width limit.
+
 After obtaining the branch files, copy `scripts/opportunities-preview.html` to
 `opportunities-local-preview.html` at the checkout root. This file renders the
 same shared board include with draft roles visible and a preview warning. Use
