@@ -2366,3 +2366,21 @@ main:has(> .ctdc-content-area + .ctdc-logo-section)
     scroll-behavior: auto !important;
   }
 }
+
+/* Matter of Public local preview */
+.ctdc-content-area .usa-card-group:has(a[href="https://publicfutures.netlify.app/"]) {
+  justify-content: center;
+  padding-left: 0;
+}
+.usa-card:has(a[href="https://publicfutures.netlify.app/"]) .usa-card__container {
+  position: relative;
+}
+.usa-card:has(a[href="https://publicfutures.netlify.app/"]) .usa-card__img img {
+  object-fit: contain;
+}
+.usa-card a[href="https://publicfutures.netlify.app/"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}

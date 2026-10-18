@@ -1,5 +1,9 @@
+{% assign matching_projects = site.projects | where: 'is_active', include.is_active %}
+{% assign regular_projects = matching_projects | where_exp: 'project', 'project.card_position != "last"' %}
+{% assign trailing_projects = matching_projects | where: 'card_position', 'last' %}
+{% assign ordered_projects = regular_projects | concat: trailing_projects %}
 <ul class="usa-card-group">
-  {% for project in site.projects %} {% if project.is_active ==
-  include.is_active %} {% include components/project-card.html project=project
-  heading=include.heading columns=include.columns %} {% endif %} {% endfor %}
+  {% for project in ordered_projects %}
+  {% include components/project-card.html project=project heading=include.heading columns=include.columns %}
+  {% endfor %}
 </ul>
