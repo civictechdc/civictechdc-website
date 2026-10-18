@@ -569,8 +569,8 @@ Dir.mktmpdir("civictechdc-seo-") do |destination|
     indexable << row
   end
 
-  unless noindex.map { |row| row[:page_url] } == ["/404.html"]
-    add_error(errors, "site", "404.html must be the only noindex HTML page")
+  unless noindex.map { |row| row[:page_url] }.sort == ["/404.html", "/admin/", "/admin/local.html"].sort
+    add_error(errors, "site", "only 404.html and the two admin routes may be noindex HTML pages")
   end
   supported_analytics_events = analytics_events.to_a + CONDITIONALLY_RENDERED_ANALYTICS_EVENTS
   missing_analytics_events = REQUIRED_ANALYTICS_EVENTS - supported_analytics_events

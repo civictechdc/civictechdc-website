@@ -30,3 +30,5 @@ Lookup table for all pattern files in this directory. Check here before starting
 | [responsive-images.md](responsive-images.md)                                       | Adding or referencing any image (responsive variants, lazy-loading)  |
 | [seo-metadata.md](seo-metadata.md)                                                 | Changing page metadata, social previews, schema, or crawler files    |
 | [styling-css.md](styling-css.md)                                                   | Changing styles via USWDS/Sass, page-specific CSS, or the gulp build |
+
+| [opportunities.md](opportunities.md) | Maintaining the opportunity board and Decap editor |

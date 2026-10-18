@@ -28,3 +28,7 @@ The goal is not to create a public voting system or guarantee implementation of 
 </div>
 
 ## Playbook - Coming in July 2026
+
+## Find a way to contribute
+
+Browse the [opportunities board]({{ "/opportunities/" | relative_url }}) for volunteer roles, short activities, and ways to build your skills.

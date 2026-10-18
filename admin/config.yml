@@ -1,0 +1,129 @@
+backend:
+  name: github
+  repo: civictechdc/civictechdc-website
+  branch: main
+publish_mode: editorial_workflow
+local_backend: true
+media_folder: _images/opportunities
+public_folder: /assets/images/opportunities
+collections:
+  - name: opportunities
+    label: Opportunities Board
+    files:
+      - name: board
+        label: Opportunities and interest form
+        file: _data/opportunities.json
+        fields:
+          - {
+              label: Shared interest form URL,
+              name: interest_url,
+              widget: string,
+              required: false,
+              pattern: ["^https://.+$", "Use a complete HTTPS URL."],
+            }
+          - label: Opportunities
+            name: opportunities
+            widget: list
+            summary: "{{fields.title}} — {{fields.status}}"
+            fields:
+              - {
+                  label: Stable ID,
+                  name: id,
+                  widget: string,
+                  pattern:
+                    [
+                      "^[a-z0-9]+(-[a-z0-9]+)*$",
+                      "Use a unique lowercase ID with hyphens.",
+                    ],
+                }
+              - { label: Title, name: title, widget: string }
+              - {
+                  label: Multiple contributors welcome,
+                  name: accepts_multiple,
+                  widget: boolean,
+                  default: false,
+                }
+              - label: Project (leave blank for community-wide roles)
+                name: project_path
+                widget: select
+                required: false
+                options:
+                  - {
+                      label: VoteCatcher,
+                      value: /projects/ballot-initiative.html,
+                    }
+                  - {
+                      label: CIB Mango Tree,
+                      value: /projects/cib-mango-tree.html,
+                    }
+                  - {
+                      label: Congressional Tech,
+                      value: /projects/congressional-tech.html,
+                    }
+                  - {
+                      label: Data and Democracy,
+                      value: /projects/data-and-democracy.html,
+                    }
+                  - {
+                      label: DC Reentry Housing,
+                      value: /projects/dc-reentry-housing-project.html,
+                    }
+                  - { label: Ride Score DC, value: /projects/ridescoredc.html }
+                  - { label: SpicyRegs, value: /projects/spicyregs.html }
+                  - {
+                      label: WaterVoice DMV,
+                      value: /projects/watervoice-dmv.html,
+                    }
+              - label: Category
+                name: category
+                widget: select
+                options:
+                  [
+                    Leadership,
+                    Projects & Working Groups,
+                    Teaching & Mentoring,
+                    Community & Operations,
+                  ]
+              - { label: Time commitment, name: commitment, widget: string }
+              - { label: Short description, name: description, widget: text }
+              - { label: What volunteers gain, name: benefit, widget: text }
+              - {
+                  label: Status,
+                  name: status,
+                  widget: select,
+                  options: [draft, open, closed],
+                  default: draft,
+                }
+              - {
+                  label: Named contact and contact method,
+                  name: contact,
+                  widget: string,
+                }
+              - {
+                  label: Responsibilities,
+                  name: responsibilities,
+                  widget: text,
+                }
+              - {
+                  label: Expected deliverables,
+                  name: deliverables,
+                  widget: text,
+                }
+              - { label: Support available, name: support, widget: text }
+              - {
+                  label: Last reviewed,
+                  name: reviewed_on,
+                  widget: datetime,
+                  date_format: YYYY-MM-DD,
+                  time_format: false,
+                  format: YYYY-MM-DD,
+                }
+  - name: projects
+    label: Project pages
+    folder: _projects
+    create: false
+    identifier_field: title
+    fields:
+      - { label: Project name, name: title, widget: string }
+      - { label: Summary, name: description, widget: text }
+      - { label: Page content, name: body, widget: markdown }

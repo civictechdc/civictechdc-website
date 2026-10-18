@@ -1,0 +1,22 @@
+---
+layout: default
+title: Local Opportunity Editor
+description: Local development editor for Civic Tech DC opportunity listings.
+permalink: /admin/local.html
+robots: noindex, follow
+sitemap: false
+---
+
+<h1>Local opportunity editor</h1>
+<p>
+  This editor is available only on localhost. Hosted organizer login is not
+  configured.
+</p>
+<script>
+  if (["localhost", "127.0.0.1"].includes(location.hostname)) {
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/npm/decap-cms@3.8.3/dist/decap-cms.js";
+    document.body.append(script);
+  }
+</script>
