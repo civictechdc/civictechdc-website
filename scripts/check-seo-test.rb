@@ -7,6 +7,13 @@ require "minitest/autorun"
 require_relative "check-seo"
 
 class CheckSeoHelpersTest < Minitest::Test
+  def test_external_project_redirect_requires_matching_https_destination
+    assert external_project_redirect?("---\nexternal_url: https://example.org/\nredirect_to: https://example.org/\n---\n")
+    refute external_project_redirect?("---\nexternal_url: http://example.org/\nredirect_to: http://example.org/\n---\n")
+    refute external_project_redirect?("---\nexternal_url: https://example.org/\nredirect_to: https://other.org/\n---\n")
+    refute external_project_redirect?("---\nis_active: true\n---\n")
+  end
+
   def test_preferred_url_accepts_canonical_origin
     assert preferred_url?("https://www.civictechdc.org/projects.html")
   end
