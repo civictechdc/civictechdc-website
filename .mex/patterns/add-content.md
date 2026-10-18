@@ -67,6 +67,12 @@ All start with YAML front matter. Images referenced in content must follow `patt
 
 ### Gotchas
 
+- For an externally hosted initiative, use matching HTTPS `external_url` and
+  `redirect_to` plus `sitemap: false`. The card links directly to the external
+  site; the generated internal route is a redirect, not an invented case study.
+  SEO checks validate that both URLs match before exempting the redirect from
+  the internal case-study requirements. `card_position: last` places a card
+  after the regular projects; the active grid centers an incomplete final row.
 - `github_link` and `slack_channel` are optional — `project.html` only renders those links when present.
 - Do not leave an inactive project's Slack channel in front matter unless people should still join that channel.
 - The body's lead image is rendered by `project.html` via `responsive-image.html` using the `image` field — so `image` must be a real path under `_images/`.

@@ -177,6 +177,13 @@ def front_matter_value(source, key)
   end
 end
 
+# External project cards redirect to the same HTTPS destination instead of
+# claiming to be locally hosted case studies.
+def external_project_redirect?(source)
+  target = front_matter_value(source, "external_url")
+  secure_absolute_url?(target.to_s) && front_matter_value(source, "redirect_to") == target
+end
+
 def matching_link?(document, requirement)
   document.css("a").any? do |link|
     (!requirement[:href] || link["href"] == requirement[:href]) &&
@@ -249,8 +256,14 @@ end
 project_sources = Dir.glob(File.join(ROOT, "_projects", "*.md")).to_h do |absolute|
   [absolute.delete_prefix("#{ROOT}/"), File.read(absolute)]
 end
+project_sources.each do |relative, source|
+  next if front_matter_value(source, "external_url").to_s.empty?
+  unless external_project_redirect?(source)
+    add_error(errors, relative, "external project must redirect to its matching HTTPS external_url")
+  end
+end
 active_project_files = project_sources.filter_map do |relative, source|
-  relative if front_matter_value(source, "is_active") == "true"
+  relative if front_matter_value(source, "is_active") == "true" && !external_project_redirect?(source)
 end
 declared_case_study_files = project_sources.filter_map do |relative, source|
   relative if front_matter_value(source, "case_study_standard") == "true"
