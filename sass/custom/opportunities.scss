@@ -1,6 +1,7 @@
 /* Opportunity-board styles; compiled by the existing USWDS/Gulp pipeline. */
 .ctdc-opportunities-board {
   .usa-intro {
+    font-size: 1.25rem;
     max-width: none;
     width: 100%;
   }
@@ -58,6 +59,7 @@
   }
 
   .ctdc-project-opportunity-tile__title {
+    font-size: 1.125rem;
     font-weight: 700;
     line-height: 1.4;
   }
