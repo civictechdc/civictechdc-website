@@ -27,7 +27,7 @@ Then read this file fully before doing anything else in this session.
 
 **Working:**
 
-- Opportunities board source at `/opportunities/`, backed by `_data/opportunities.json`; open-only cards with category filtering and expandable details. The board links to active project images and has 11 draft roles; four welcome multiple contributors. Directus 12.5.0 was evaluated, but custom permission rules required a license; the trial service was stopped and no migration was made. Decap schema and localhost editor are prepared; hosted OAuth and shared interest form remain unconfigured (see `docs/opportunities.md`).
+- Opportunities board source at `/opportunities/`, backed by `_data/opportunities.json`; open-only cards with category filtering and expandable details. The board links to active project images and has 11 publicly visible proposed roles; four welcome multiple contributors. Directus 12.5.0 was evaluated, but custom permission rules required a license; the trial service was stopped and no migration was made. Decap schema and localhost editor are prepared; hosted OAuth and shared interest form remain unconfigured (see `docs/opportunities.md`).
 
 - Full Jekyll site live at `www.civictechdc.org`, with the bare domain redirecting to the canonical `www` origin; auto-deployed from `main` to GitHub Pages.
 - `projects` collection (`_projects/`) → rendered with the `project` layout; project cards on the projects page.

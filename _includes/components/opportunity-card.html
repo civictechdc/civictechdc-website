@@ -16,7 +16,11 @@
       </h3>
     </div>
     <div class="usa-card__body">
-      {% if opportunity.accepts_multiple %}
+      {% unless opportunity.status == 'open' %}
+      <p class="font-sans-xs text-bold">
+        Proposed opportunity: details being finalized
+      </p>
+      {% endunless %} {% if opportunity.accepts_multiple %}
       <p class="font-sans-xs text-bold text-primary">
         <span aria-hidden="true">&#128101;</span> Multiple contributors welcome
       </p>
@@ -38,12 +42,19 @@
         <p>{{ opportunity.deliverables | escape | newline_to_br }}</p>
         <h3 class="font-sans-md">Support available</h3>
         <p>{{ opportunity.support | escape | newline_to_br }}</p>
+        {% if opportunity.contact != blank %}
         <p><strong>Contact:</strong> {{ opportunity.contact | escape }}</p>
+        {% endif %} {% if opportunity.reviewed_on != blank %}
         <p>
           <strong>Last reviewed:</strong> {{ opportunity.reviewed_on | escape }}
         </p>
-        {% assign interest_prefix = interest_url | slice: 0, 8 %} {% if
-        interest_prefix == 'https://' %}
+        {% endif %} {% if opportunity.status != 'open' %}
+        <p>
+          This role is being developed. The contact and interest process will be
+          confirmed before recruitment opens.
+        </p>
+        {% else %} {% assign interest_prefix = interest_url | slice: 0, 8 %} {%
+        if interest_prefix == 'https://' %}
         <a class="usa-button" href="{{ interest_url | escape }}"
           >Express interest<span class="usa-sr-only">
             in {{ opportunity.title | escape }}</span
@@ -58,7 +69,7 @@
           To express interest, contact the organizer named above. The shared
           interest form is not available yet.
         </p>
-        {% endif %}
+        {% endif %} {% endif %}
       </details>
     </div>
   </article>

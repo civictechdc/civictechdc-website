@@ -2,12 +2,13 @@
 
 The public page is `/opportunities/`. Its cards and expandable details come from
 `_data/opportunities.json`; organizers never need to edit the card layout.
-The 11 retained entries are illustrative **drafts**, not confirmed openings.
+The 11 retained entries are **proposed opportunities**, not confirmed openings.
 The board links to the eight projects currently marked active in the Jekyll
 collection, reusing their existing project images. Four role types are marked
 `accepts_multiple`: Workshop Instructor, Portfolio Mentor, Communications
 Contributor, and Website Contributor.
-Only `status: open` entries are published. Closed and draft entries remain in the
+`proposed` entries appear publicly with an explicit label and no application button.
+`open` entries appear as confirmed openings. Closed and draft entries remain in the
 file for organizers but are not rendered. This is visibility, not confidentiality:
 the GitHub repository is public. Do not store private applicant information here.
 
@@ -122,7 +123,7 @@ After obtaining the branch files, copy `scripts/opportunities-preview.html` to
 same shared board include with draft roles visible and a preview warning. Use
 `bundle exec jekyll serve --host 127.0.0.1 --no-watch` and visit
 `/opportunities-preview/`. Remove the root preview file before committing or
-publishing. The production board continues to show only open roles.
+publishing. The production board shows open and explicitly proposed roles. Draft and closed roles stay hidden.
 
 On Windows, run Gulp separately from Jekyll: the POSIX `gulp & ...` serve script
 otherwise runs the watcher first and never starts Jekyll. Use `npm run build`
