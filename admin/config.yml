@@ -91,7 +91,7 @@ collections:
                   label: Status,
                   name: status,
                   widget: select,
-                  options: [draft, open, closed],
+                  options: [draft, proposed, open, closed],
                   default: draft,
                 }
               - {

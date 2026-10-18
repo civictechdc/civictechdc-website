@@ -37,17 +37,17 @@
   Support the wider community through leadership, teaching, mentoring, and other
   volunteer opportunities.
 </p>
-{% assign role_status_label = 'open' %}
+{% assign role_status_label = '' %}
 {% assign candidates = site.data.opportunities.opportunities %}
 {% if include.preview %}
   {% assign role_status_label = 'proposed' %}
-{% else %}
-  {% assign candidates = candidates | where: 'status', 'open' %}
 {% endif %}
 {% assign opportunities = '' | split: ',' %}
 {% for candidate in candidates %}
   {% if candidate.project_path == nil or candidate.project_path == '' %}
-    {% assign opportunities = opportunities | push: candidate %}
+    {% if include.preview or candidate.status == 'open' or candidate.status == 'proposed' %}
+      {% assign opportunities = opportunities | push: candidate %}
+    {% endif %}
   {% endif %}
 {% endfor %}
 {% assign interest_url = site.data.opportunities.interest_url %}
@@ -70,7 +70,7 @@
   {% endfor %}
 </ul>
 {% if opportunities.size == 0 %}
-<p id="opportunity-empty">There are no open opportunities right now. Please check back, or <a href="{{ '/events' | relative_url }}">meet the community at an upcoming event</a>.</p>
+<p id="opportunity-empty">There are no opportunities listed right now. Please check back, or <a href="{{ '/events' | relative_url }}">meet the community at an upcoming event</a>.</p>
 {% else %}
 <p id="opportunity-empty" hidden>No opportunities match this category. Try another category.</p>
 {% endif %}
@@ -95,7 +95,7 @@
           if (!card.hidden) count++;
         });
         document.getElementById("opportunity-count").textContent =
-          `${count} ${statusLabel} ${count === 1 ? "opportunity" : "opportunities"}`;
+          `${count} ${statusLabel ? statusLabel + " " : ""}${count === 1 ? "opportunity" : "opportunities"}`;
         document.getElementById("opportunity-empty").hidden = count > 0;
       });
   })();
