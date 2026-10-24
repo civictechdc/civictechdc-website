@@ -10,10 +10,9 @@ categories: [Community, Civic Tech, AI]
 tags: [civic tech, artificial intelligence, community, public interest technology, Washington DC]
 original_source: "Technical.ly"
 original_url: "https://technical.ly/civics/civic-tech-dc-rebuilds-trust-at-scale/"
-excerpt: "Civic Tech DC explores what civic tech means in the age of AI and how communities can create lasting change."
 ---
 
-![Civic Tech DC community members gathering at a meetup](/assets/images/civic-tech-dc-meetup-800w.jpg)
+![Civic Tech DC community members gathering at a meetup](/assets/images/civic-tech-dc-meetup.jpg)
 
 Civic tech has meant many different things over the past decade, including different tools, tactics, and ideas for “fixing” systems. But what does the field of civic tech mean now?
 
@@ -23,8 +22,4 @@ In a new guest post for [Technical.ly](https://technical.ly/), we look at how Ci
 
 > “What we do know is that the impact of this work is not only found in tangible products or prototypes. It can be in the movement of people into institutions, and in how those institutions change once new voices are inside them, shaping decisions from within.”
 
-<p class="blog-source-link">
-  <a class="usa-button" href="https://technical.ly/civics/civic-tech-dc-rebuilds-trust-at-scale/">
-    Read the full article on Technical.ly &rarr;
-  </a>
-</p>
+Read more on [**Technical.ly →**](https://technical.ly/civics/civic-tech-dc-rebuilds-trust-at-scale/)

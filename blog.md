@@ -8,37 +8,19 @@ permalink: /blog/
 ---
 
 <div class="grid-row grid-gap">
-  <div class="grid-col-12">
+  <div class="tablet:grid-col-8">
     <header class="margin-bottom-4">
       <h1 class="font-heading-xl">Blog</h1>
       <p class="font-body-lg text-base-darker">
         Stay up to date with the latest news, project updates, and insights from the Civic Tech DC community.
       </p>
-      {% assign all_tags = site.tags | sort %}
-      {% if all_tags.size > 0 %}
-        <nav class="blog-tag-cloud margin-top-3" aria-label="Blog tags">
-          {% for tag in all_tags %}
-            <a href="{{ site.baseurl }}/blog/tag/{{ tag[0] | slugify }}"
-               class="usa-tag margin-right-05 margin-bottom-05">
-              {{ tag[0] }}
-            </a>
-          {% endfor %}
-        </nav>
-      {% endif %}
     </header>
 
     {% if site.posts.size > 0 %}
-      <div class="blog-posts grid-row grid-gap">
+      <div class="blog-posts">
         {% for post in site.posts %}
-          <article class="usa-card grid-col-12 tablet:grid-col-6 desktop:grid-col-4 margin-bottom-4">
+          <article class="usa-card margin-bottom-4">
             <div class="usa-card__container">
-              {% assign card_image = post.social_image | default: site.default_social_image %}
-              {% assign card_alt = post.social_image_alt | default: post.title %}
-              <div class="usa-card__media usa-card__media--exdent">
-                <div class="usa-card__img">
-                  {% include responsive-image.html src=card_image alt=card_alt sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" style="width: 100%; aspect-ratio: 16 / 9; object-fit: cover;" %}
-                </div>
-              </div>
               <div class="usa-card__header">
                 <h2 class="usa-card__heading">
                   <a href="{{ post.url }}" class="usa-link">{{ post.title }}</a>
@@ -53,6 +35,14 @@ permalink: /blog/
                     <span class="margin-x-1">•</span>
                     <span>by {{ post.author }}</span>
                   {% endif %}
+                  {% if post.categories.size > 0 %}
+                    <span class="margin-x-1">•</span>
+                    <span>in
+                      {% for category in post.categories %}
+                        <a href="{{ site.baseurl }}/blog/category/{{ category | slugify }}" class="usa-link">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                      {% endfor %}
+                    </span>
+                  {% endif %}
                 </div>
 
                 {% if post.excerpt %}
@@ -62,7 +52,14 @@ permalink: /blog/
                 {% endif %}
 
                 {% if post.tags.size > 0 %}
-                  
+                  <div class="blog-post-tags margin-top-2">
+                    {% for tag in post.tags limit:3 %}
+                      <span class="usa-tag usa-tag--small">{{ tag }}</span>
+                    {% endfor %}
+                    {% if post.tags.size > 3 %}
+                      <span class="text-base-dark">+{{ post.tags.size | minus: 3 }} more</span>
+                    {% endif %}
+                  </div>
                 {% endif %}
               </div>
               <div class="usa-card__footer">
@@ -84,4 +81,96 @@ permalink: /blog/
     {% endif %}
 
   </div>
+
+  <aside class="tablet:grid-col-4">
+    <div class="blog-sidebar padding-left-3">
+      {% if site.posts.size > 0 %}
+        <div class="usa-card margin-bottom-3">
+          <div class="usa-card__container">
+            <div class="usa-card__header">
+              <h3 class="usa-card__heading">Recent Posts</h3>
+            </div>
+            <div class="usa-card__body">
+              <ul class="add-list-reset">
+                {% for post in site.posts limit:5 %}
+                  <li class="margin-bottom-2">
+                    <a href="{{ post.url }}" class="usa-link">{{ post.title }}</a>
+                    <div class="text-base-dark font-mono-2xs">{{ post.date | date: "%b %d, %Y" }}</div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {% assign categories = site.categories | sort %}
+        {% if categories.size > 0 %}
+          <div class="usa-card margin-bottom-3">
+            <div class="usa-card__container">
+              <div class="usa-card__header">
+                <h3 class="usa-card__heading">Categories</h3>
+              </div>
+              <div class="usa-card__body">
+                <ul class="add-list-reset">
+                  {% for category in categories %}
+                    <li class="margin-bottom-1">
+                      <a href="{{ site.baseurl }}/blog/category/{{ category[0] | slugify }}" class="usa-link">
+                        {{ category[0] }} ({{ category[1].size }})
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% assign all_tags = site.tags | sort %}
+        {% if all_tags.size > 0 %}
+          <div class="usa-card">
+            <div class="usa-card__container">
+              <div class="usa-card__header">
+                <h3 class="usa-card__heading">Popular Tags</h3>
+              </div>
+              <div class="usa-card__body">
+                <div class="blog-tag-cloud">
+                  {% for tag in all_tags limit:10 %}
+                    <a href="{{ site.baseurl }}/blog/tag/{{ tag[0] | slugify }}" class="usa-tag margin-right-05 margin-bottom-05">
+                      {{ tag[0] }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <div class="usa-card">
+        <div class="usa-card__container">
+          <div class="usa-card__header">
+            <h3 class="usa-card__heading">Get Involved</h3>
+          </div>
+          <div class="usa-card__body">
+            <p class="font-body-sm">
+              Want to contribute to our blog? Share your civic tech experiences, project updates, or insights with the community.
+            </p>
+            <div style="display: inline-flex; align-items: center;">
+            <a
+            href="https://join.slack.com/t/civictechdc/shared_invite/zt-43eotbj04-QLQ_Ria296PtRYJU2EgwxQ"
+            target="_blank"
+            id="submitrequest"
+            type="submit"
+            class="usa-button usa-button--small"
+            style="display: inline-flex; align-items: center; text-decoration: none;">
+            {% include responsive-image.html src="logos/slack.png" style="margin-right: 0.5rem; width: 24px; height: auto;" alt="Join our Slack" %}
+            Join Our Slack
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
 </div>

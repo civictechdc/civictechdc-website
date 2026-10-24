@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How 80 Civic-Technologists Hacked Regulatory Data for a More Transparent Government"
+title: "Making Public Comments Count: How 80 Civic-Technologists Hacked Regulatory Data for a More Transparent Government"
 seo_title: "Civic Hack DC 2025: Regulatory Data Recap"
 date: 2025-08-06 16:00:00 -0400
 author: "Michael Deeb"
@@ -458,7 +458,7 @@ The room that Saturday morning was unlike any typical hackathon. Yes, we had dat
 This diversity wasn't decorative; it was essential to our success. When one team started building a sophisticated algorithm for detecting malicious campaigns based on the timing of comment submissions, a policy expert asked a simple question: _"But what if those were submitted on behalf of another group? That happens all the time, it doesn’t mean they were bad actors."_ That question completely reframed the problem. The team realized that their work was not isolated, but was interdependent with the work the other teams were working on, such as the entity resolution team, working on a tool that could identify organizations even when they're referenced inconsistently across documents. To achieve the desired outcome, everyone needed to be able to understand the real world nuance of how these comments are submitted, and begin to explore how they could connect the various work streams to achieve their goals.
 
 <figure class="margin-y-2">
-  {% include responsive-image.html src="blog/civic-hack/photo-b9c5b525cb6e45c2b9a0a25d4a8ba563.jpg" alt="Introduction to the hackathon." sizes="(min-width: 800px) 768px, 100vw" style="width:100%; height:auto;" %}
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczNOGscwFA0CeO20syJhLlH-oDZZUkbTccwV36PG8MYArRlp2MPHthLcDYqT8NrAAezyIRHQ4Bcr6M0fN3zfpHiG46Amg7jPerJsX26et0GJzQb6Tco=w1920-h1080" alt="Introduction to the hackathon." style="width:100%;height:auto;">
   <figcaption>Introduction to the hackathon.</figcaption>
   </figure>
 
@@ -495,7 +495,7 @@ _Read more in the [HackDC 2025 documentation](https://github.com/civictechdc/hac
 Over the course of eight intensive hours, thirteen teams produced a remarkable portfolio of tools. Rather than competing against each other, they focused on creating solutions that work together as an ecosystem. These are the highlights.
 
 <figure class="margin-y-2">
-  {% include responsive-image.html src="blog/civic-hack/photo-692b21dcb87c4ee1897b7cca531f8dde.jpg" alt="Demos and prototypes from 13 teams." sizes="(min-width: 800px) 768px, 100vw" style="width:100%; height:auto;" %}
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczPWVCmsZv247MxaSML21MuQnYzvTVT7cK6hjy_zzbgxlXH1cF2iYbd5xgD1LKOk50hn3vFHkdCPwMh-WcIJ1GjEOpDWNqH8cdF7e-K7YZeV9qbEnuo=w1920-h1080" alt="Demos and prototypes from 13 teams." style="width:100%;height:auto;">
   <figcaption>Demos and prototypes from 13 teams.</figcaption>
 </figure>
 
@@ -570,7 +570,7 @@ The event also served as a proof point for a different model of civic technology
 By starting with validated problems, mapping out the problem space, creating sustainable documentation, and framing the event as "Part 1" of a longer journey, we set expectations that this work would continue. The GitHub repository we created preserves context, documentation, and connections to upstream development. Projects aren't abandoned; they're critical building blocks for the teams that have the resources to continue development.
 
 <figure class="margin-y-2">
-  {% include responsive-image.html src="blog/civic-hack/photo-9a7476cccd244e78b906cfee327dbcd9.jpg" alt="Full room during project share-outs." sizes="(min-width: 800px) 768px, 100vw" style="width:100%; height:auto;" %}
+  <img src="https://lh3.googleusercontent.com/pw/AP1GczPzUPaLRbq-hNXXXIWmUe6FcT4vNPpFysTAsjNyp_MLUy2bSTk4weBJ7fZfY1gNn_lxrWoaBZH4VWWT24vXVlra6IWToDpBw_v1qRpvvcjrR2dXHB-N=w1920-h1080" alt="Full room during project share-outs." style="width:100%;height:auto;">
   <figcaption>Full room during project share-outs.</figcaption>
 </figure>
 
